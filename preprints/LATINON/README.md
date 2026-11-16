@@ -2,6 +2,8 @@
 
 Preprint 1.0 · Juan Pablo Traverso Gianini · 16 November 2026
 
+Available on [alphaXiv](https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations).
+
 [Manuscript EN](01_manuscript/latinon_en.pdf) · [Manuscrito ES](01_manuscript/latinon_es.pdf)
 
 [Companion EN](05_formalization/formal_companion_en.pdf) · [Companion ES](05_formalization/formal_companion_es.pdf)

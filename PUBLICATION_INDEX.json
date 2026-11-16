@@ -14,7 +14,8 @@
       "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/latinon-v1.0",
       "id": "LATINON",
       "sequence": 1,
-      "doi_status": "reserved_not_published"
+      "doi_status": "reserved_not_published",
+      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations"
     }
   ],
   "series": {

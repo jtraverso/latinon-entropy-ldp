@@ -339,7 +339,7 @@
   "02_validation/incremental/retry_build.stdout.log": "91e56314b49b6265c12010371140005fb21565643900e9c16d7e35cca724d493",
   "02_validation/incremental/ReviewAxioms.trace.json": "1fd31b46eb2d14552989b336cae71f25eae2fcbaa172990539a3b20db0cf444a",
   "02_validation/SOURCE_AUDIT.json": "ba9a34099a5660e2667045cdb79575dd984241b9cdb9ade259bd15f739892746",
-  "02_validation/v1.0/AUDIT_RESULT.json": "4085132257058842c02bf91f4ae3d8a8535331b42c6ec2b45f85c83a3650a6b3",
+  "02_validation/v1.0/AUDIT_RESULT.json": "5c8401439f0bd5fe960ba7a4b7a1e7ca781c8036b873a95a4e886dcfdb03bbbd",
   "02_validation/v1.0/BASELINE_FREEZE.json": "e395348b4751bd29cf8c7b0f34d0372204716af5b661fcd2186083f4abc85201",
   "02_validation/v1.0/CDR_STRUCTURE_COMPARISON.json": "6fd03fab359f9622ad5f050c8ecfd8b8638d10c24cbc6b99d5438cf083fef9cd",
   "02_validation/v1.0/CORRECTION_FIGURE.json": "d30c1b6eb8ef9a87ab20efa7f1782b1bbb42786ee0fb2dd2b4aab5f829d06db9",
@@ -503,5 +503,5 @@
   "05_formalization/formal_companion_es.pdf": "acc218f5656a9965fda99a16982142e6ab6495463707c21a675cb0f86798e329",
   "05_formalization/formal_companion_es.tex": "65c6dbdc7c3d789d6d0983c483644d6f930e29269d831ddde1edb5d0e0b604ff",
   "05_formalization/Latinon_Lean_v1.0.zip": "567ac3561332351313d176018f5d41e475f88bfbd031cf05dad6b448635cfe81",
-  "README.md": "2e1a8be3dc45ed938b22f0301a3c9e6632f6506c49fc441c2a1081d2fcfed843"
+  "README.md": "7f959f19965d0fb2d1484f7c6da613675ba7a09254c2950e699cb0dec34d6657"
 }

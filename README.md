@@ -7,6 +7,8 @@ source freezes and per-paper audit records. The catalogue currently contains one
 article: **Entropy and large deviations for Latin squares**, preprint 1.0.
 See [Series catalogue and publication policy](SERIES.md).
 
+Read the preprint on [alphaXiv](https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations).
+
 This preprint proves a large deviation principle for uniform labeled Latin
 squares in the full ordered Latinon distance, with speed n² and relative-entropy
 rate. It deduces finite-pattern counting and applications to labeled bipartite
