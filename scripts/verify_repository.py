@@ -154,6 +154,11 @@ def check_documents():
     typed=read(V/'TYPESETTING.json');doc=read(V/'DOCUMENT_AUDIT.json');visual=read(V/'VISUAL_REVIEW.json')
     assert typed['status']=='PASS_COMPILATION' and doc['status']=='PASS_STATIC_RENDERED_AWAITING_VISUAL'
     assert visual['status']=='PASS_ALL_RENDERED_PAGES'
+    figure=read(V/'CORRECTION_FIGURE.json')
+    assert figure['status']=='PASS_SCHEMATIC_REVIEW' and typed['figure_assets']==figure['documents']
+    assert digest(P/'03_reproducibility/generate_correction_figure.py')==figure['generator_sha256']
+    for item in figure['documents']:
+        for asset in item.values():assert digest(asset['path'])==asset['sha256']
     assert digest(V/'DOCUMENT_AUDIT.json')==visual['document_audit_sha256']
     assert len(typed['documents'])==len(doc['documents'])==4
     for item in typed['documents']:
@@ -175,10 +180,18 @@ def check_metadata():
     assert index['license']=='CC-BY-4.0' and len(index['papers'])>=1
     assert index['series']['initial_paper']=='LATINON'
     assert len({paper['id'] for paper in index['papers']})==len(index['papers'])
-    assert index['papers'][0]['version']=='1.0' and index['papers'][0]['doi'] is None
+    reservation=read('publication/ZENODO_RESERVATION.json')
+    assert reservation['status']=='RESERVED_NOT_PUBLISHED' and reservation['submitted'] is False
+    doi=reservation['doi']
+    assert doi=='10.5281/zenodo.'+str(reservation['id'])
+    assert index['papers'][0]['version']=='1.0' and index['papers'][0]['doi']==doi
+    assert index['papers'][0]['doi_status']=='reserved_not_published'
     cff=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
     assert 'version: "1.0"' in cff and 'date-released: 2026-11-16' in cff
-    assert 'license: CC-BY-4.0' in cff and '\ndoi:' not in cff
+    assert 'license: CC-BY-4.0' in cff and '\n  doi: '+doi+'\n' in cff
+    for folder,stem in [('01_manuscript','latinon'),('05_formalization','formal_companion')]:
+        for lang in ['en','es']:
+            assert 'https://doi.org/'+doi in (ROOT/P/folder/f'{stem}_{lang}.md').read_text(encoding='utf-8')
     assert 'Creative Commons Attribution 4.0' in (ROOT/'LICENSE.md').read_text(encoding='utf-8')
     for folder in ['01_manuscript','02_validation','03_reproducibility','04_integrity','05_formalization']:
         assert (ROOT/P/folder).is_dir()

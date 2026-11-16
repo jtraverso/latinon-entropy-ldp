@@ -1,93 +1,123 @@
 {
   "status": "PASS_COMPILATION",
+  "figure_assets": [
+    {
+      ".tex": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.tex",
+        "sha256": "20b66fd51dd1fea999bfbd305b97807e8de92d6ed7dbafe3fe0250a06bf507f4"
+      },
+      ".pdf": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.pdf",
+        "sha256": "2970973815e22c134b54924f858f49058e7dd5d72a946250be403a42683f2c35"
+      },
+      ".png": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.png",
+        "sha256": "cb5328e560e0558b401171a55b6efdc57664b85e3c684d5e5edd7d81afa23abd"
+      }
+    },
+    {
+      ".tex": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.tex",
+        "sha256": "3b8b07209c3107dd6f935cd1ece5510ccfbc252f9d7ef671863698a3711cbd9c"
+      },
+      ".pdf": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.pdf",
+        "sha256": "79cdeb2fe68a3bd4e6a4574e349047a176001ca6f2e7540e12630abdf1de5561"
+      },
+      ".png": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.png",
+        "sha256": "f06201b081f2f5106e57ff9153b177e6b39ad5fe293534d41592f412fc301e39"
+      }
+    }
+  ],
   "documents": [
     {
       "source": "preprints/LATINON/01_manuscript/latinon_en.md",
-      "source_sha256": "26a007c708bc677e7b5eaaed1c90b5bd11ace931b8b169df87fb569015a244d1",
+      "source_sha256": "ebb84fd4e3bd48e4165cb556e32030bc2fad892ef99fb439130efb26c927c778",
       "tex": "preprints/LATINON/01_manuscript/latinon_en.tex",
-      "tex_sha256": "866256bdc166a7b776d1dce4edc2423a0f351629d5761f84358bf2c850837e0c",
+      "tex_sha256": "61338c0655d2b9688b3853462c298046234b9b8dae7e2c4fb4eb82e784747156",
       "pdf": "preprints/LATINON/01_manuscript/latinon_en.pdf",
-      "pdf_sha256": "c39cd9a47db24116af9afbbd62b94891be74a3438a31cea23a4f4abca9c6c952",
+      "pdf_sha256": "96b2cceffb09e30fe4e77c48249ebcbdd5f5f664733f6160a5e4a11a9c93572f",
       "passes": [
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_en_pass1.log",
-          "sha256": "185d46ace36af761bbbed879634a23154a5d784dae4df44fc94b2c1acc1e7d2e",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_en_pass1.log",
+          "sha256": "a5f1f65f2dd3bbd7d651f009ca5b5a24b159a5bf84f07ce454adc010ea613801",
           "exit_code": 0
         },
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_en_pass2.log",
-          "sha256": "f362e23872e016abe71608836b1e374ad8faaed4ede73b1a8112a664b95bb53a",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_en_pass2.log",
+          "sha256": "f4478724ad8f8e7949715c618932a0c1b9fc3d8f3f7817f28d67a4ad990e6ccb",
           "exit_code": 0
         }
       ],
-      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_en.log",
-      "final_log_sha256": "f5748357d571336e95530cb3b5d7ce9b988cba3e6492fea666da00eeaf3466d3"
+      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_en.log",
+      "final_log_sha256": "389de0a02bdeaa36d88ce4c5f6023c6be114499dfffecf7edb6a670307c2fff4"
     },
     {
       "source": "preprints/LATINON/01_manuscript/latinon_es.md",
-      "source_sha256": "e779b63c4cd7bd9aad43b1bdadcf6a2c85e635c97f51197d1aa5e8d1f9e342d1",
+      "source_sha256": "adc162fdcd986dcdf1ff47f42011866769828aa387242effd30ff4ecff675ba4",
       "tex": "preprints/LATINON/01_manuscript/latinon_es.tex",
-      "tex_sha256": "fee782303111f39a3486fa012ade11d0b41f058d580daad24b44276940b19c9e",
+      "tex_sha256": "b194922aa6d24dde5c53a6afc2a83f3538aa041b43a8300a4400fe412340c697",
       "pdf": "preprints/LATINON/01_manuscript/latinon_es.pdf",
-      "pdf_sha256": "e2cea7566b9135828eb6de71365ff9ea573b8b64f57bb5bb9c4d9b98a77dd86f",
+      "pdf_sha256": "89d5ab37311550ef2dbea76dc171129a992da273776b246e131555d1d59630c4",
       "passes": [
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_es_pass1.log",
-          "sha256": "575ae966eddafda84500f700cb638a779263e4cb01e1be37d8e26189f47e229d",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_es_pass1.log",
+          "sha256": "de3b01e5004c026ed44b527131d35b0496a440e184ed79449ebe29341c5445eb",
           "exit_code": 0
         },
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_es_pass2.log",
-          "sha256": "d7125a77ddb192098cee374fe2a9263a6351fe0ce7278caae2d71cbb2f0b3684",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_es_pass2.log",
+          "sha256": "ec2983467318d022e83f5c4cd2d5d944e7d7626ae2fb9177247297aa60a401cd",
           "exit_code": 0
         }
       ],
-      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/latinon_es.log",
-      "final_log_sha256": "bf6944b1188762937777f3dfd412783016f42bff36102f2008d3c540be84f870"
+      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/latinon_es.log",
+      "final_log_sha256": "2edfa31a1e9c4da5e9c25c9f646217d5e3233cbb648fdff1661e4acf8c59e99e"
     },
     {
       "source": "preprints/LATINON/05_formalization/formal_companion_en.md",
-      "source_sha256": "6adc6851a1a6305c77de6363d8ac8943996856d9af3e542218f22ba68abba8d8",
+      "source_sha256": "f85ebdd74a85cfe9b42bb1b179fadaef56ef412f904e1a054953781ffa7136c3",
       "tex": "preprints/LATINON/05_formalization/formal_companion_en.tex",
-      "tex_sha256": "3fde49fd3cc0f8db67ad4a5816c75e8ea9988f5b17511f4010e3f8ce5c3f9f75",
+      "tex_sha256": "3e013546682b5ebf161ecc39336b52f7e4b18c2128679e4d9c99c57141dc655d",
       "pdf": "preprints/LATINON/05_formalization/formal_companion_en.pdf",
-      "pdf_sha256": "b8a610e2879e8d44f79e37282acf8d1b642f2b67c9206d0104a45e675696c9ab",
+      "pdf_sha256": "a33ea75ba35c7e80d2603ac872baa21a8336ea2415598471b9e7d5b4119c95b9",
       "passes": [
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_en_pass1.log",
-          "sha256": "b522e1e5b939e604806f5ceb977da904761b9ffddddc7b44e1ee777407b4071b",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_en_pass1.log",
+          "sha256": "fd2e77ee8f64360fa6f44e10c1b3c2d082dcf21a431cdb032123a83834ae3c8e",
           "exit_code": 0
         },
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_en_pass2.log",
-          "sha256": "f16b33ba921cb5ae6fba5afb46f1058c778f21dba6003dbfb4b6ba4ede92ee0a",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_en_pass2.log",
+          "sha256": "c2d4b6f4eba34f28493f54d3abaaf0967aee7c3ab96e26ac9dbbd1186edbdc07",
           "exit_code": 0
         }
       ],
-      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_en.log",
-      "final_log_sha256": "13ec10b79bb277bf1a547807f8ce8b2fdc4dbee25c01a150c1b070f552ae5383"
+      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_en.log",
+      "final_log_sha256": "0746a3b67b2c37656542843e23a581b9a3224767ac93575d192180a46df6ca9e"
     },
     {
       "source": "preprints/LATINON/05_formalization/formal_companion_es.md",
-      "source_sha256": "00c471df68aeb160a1b752f780b4b11b7b720b556e0ff7684c0555cb1ee7495f",
+      "source_sha256": "4bbe8bdea242bc28ff1f57a8c9e103e15e90efe162a3ba913f13c6ec52252fd7",
       "tex": "preprints/LATINON/05_formalization/formal_companion_es.tex",
-      "tex_sha256": "69eb0eb413ad9b68dbfb34d64922ece6fec07c1dc261a7c715173789067dd763",
+      "tex_sha256": "65c6dbdc7c3d789d6d0983c483644d6f930e29269d831ddde1edb5d0e0b604ff",
       "pdf": "preprints/LATINON/05_formalization/formal_companion_es.pdf",
-      "pdf_sha256": "10d47025d4c11e6a2ca9a67668f0444139d2b7ee1c0bf5bdb390e6b59b948e2b",
+      "pdf_sha256": "acc218f5656a9965fda99a16982142e6ab6495463707c21a675cb0f86798e329",
       "passes": [
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_es_pass1.log",
-          "sha256": "8dc44c50427327f8ff3c5ca1e85a4219bfb50ec2b922054e9f9dc691cfc38b28",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_es_pass1.log",
+          "sha256": "9059878ad912f06639b382cea3f42c059c838dc6bef6b9e843e65a8def8cd7c8",
           "exit_code": 0
         },
         {
-          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_es_pass2.log",
-          "sha256": "a706effe92ec32267b8828779af65b8aa1a5574f6c1f66628839ec44a29fe638",
+          "path": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_es_pass2.log",
+          "sha256": "b7c9a6848e807c8ed70b58818b3798d34d89b31d6561e72936fb9db2c9437775",
           "exit_code": 0
         }
       ],
-      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T145240574912Z/formal_companion_es.log",
-      "final_log_sha256": "66dfc0a073f644d92602047de3d7eab74517680ab2f9767ed6f79887ec428e0d"
+      "final_log": "preprints/LATINON/02_validation/v1.0/typesetting/revision_20261116T151845795680Z/formal_companion_es.log",
+      "final_log_sha256": "84ccc6b98f348a92ab574120a131a1f7e785fee0b48139f58ed7ee83e66cd923"
     }
   ]
 }

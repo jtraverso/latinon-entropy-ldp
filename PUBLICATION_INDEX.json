@@ -10,10 +10,11 @@
       "title_es": "Entropía y grandes desviaciones para cuadrados latinos",
       "directory": "preprints/LATINON",
       "version": "1.0",
-      "doi": null,
+      "doi": "10.5281/zenodo.24284129",
       "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/latinon-v1.0",
       "id": "LATINON",
-      "sequence": 1
+      "sequence": 1,
+      "doi_status": "reserved_not_published"
     }
   ],
   "series": {

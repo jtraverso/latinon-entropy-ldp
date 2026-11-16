@@ -4,6 +4,8 @@ Juan Pablo Traverso Gianini
 
 Preprint 1.0 — 16 de noviembre de 2026.
 
+DOI: https://doi.org/10.5281/zenodo.24284129.
+
 Repositorio: https://github.com/jtraverso/latinon-entropy-ldp.
 
 ## Resumen
@@ -207,6 +209,8 @@ $$
 Esto establece (4.3), y la positividad de $\ell$ asegura el soporte exacto. $\square$
 
 El coeficiente de corrección puede reducirse a $5/2$ bajo las mismas hipótesis. Aplicamos el argumento de cuatro pasos entre filas a las matrices transpuestas e invertimos los caminos resultantes: las columnas también se alcanzan en cuatro pasos. Un camino entre lados opuestos requiere a lo sumo una arista adicional, por lo que el diámetro es a lo sumo cinco. El potencial tiene entonces oscilación a lo sumo cinco y puede centrarse en $[-5/2,5/2]$; (4.6) da $\|Q-M\|_1\le(5/2)D(M)$. La formalización Lean que acompaña al artículo incluye esta cota más fina; utilizamos el coeficiente 3 en las estimaciones posteriores.
+
+![Caminos residuales y centrado del potencial en el argumento de corrección. Las cuatro flechas continuas representan un camino entre vértices del mismo lado, y una arista adicional alcanza el lado opuesto. La transposición da la otra cota entre vértices del mismo lado. Centrar el intervalo del potencial da el coeficiente $5/2$ en la mejora no numerada del lema 4.1.](figures/correction_paths_es.png){width=96%}
 
 ## 5. Leyes permanentales y error de sus marginales
 

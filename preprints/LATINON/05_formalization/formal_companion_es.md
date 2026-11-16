@@ -4,6 +4,8 @@ Juan Pablo Traverso Gianini
 
 Preprint 1.0 — 16 de noviembre de 2026.
 
+DOI: https://doi.org/10.5281/zenodo.24284129.
+
 Repositorio: https://github.com/jtraverso/latinon-entropy-ldp.
 
 ## 1. Alcance e interfaz matemática

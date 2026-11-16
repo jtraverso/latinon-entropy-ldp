@@ -53,7 +53,7 @@ Repository visibility controls access; changing it does not change the edition's
 mathematical content or the scope of its internal audit.
 
 The manuscripts and companions use [CC BY 4.0](LICENSE.md). The Lean sources
-retain their upstream licenses. No DOI or journal acceptance is claimed.
+retain their upstream licenses. The Zenodo DOI https://doi.org/10.5281/zenodo.24284129 is reserved; the deposit is not yet published. No journal acceptance is claimed.
 
 [Edition downloads](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/latinon-v1.0) ·
 [Audit guide](publication/REVIEW_GUIDE.md) · [Attribution](NOTICE.md).

@@ -27,7 +27,7 @@
     "initial series contains one published-format paper",
     "original reconstruction and archive retained as baseline",
     "additive improvement checked incrementally with caches",
-    "no DOI or Zenodo claim"
+    "Zenodo DOI reserved in an unpublished deposit"
   ],
   "layout_template_sha256": {
     "en": "73cc218d9b5654c6570a460b85028fa3a572ea792c942ded59ab7e524659b4f5",

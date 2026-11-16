@@ -4,6 +4,8 @@ Juan Pablo Traverso Gianini
 
 Preprint 1.0 — 16 November 2026.
 
+DOI: https://doi.org/10.5281/zenodo.24284129.
+
 Repository: https://github.com/jtraverso/latinon-entropy-ldp.
 
 ## 1. Scope and mathematical interface

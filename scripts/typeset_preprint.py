@@ -11,6 +11,9 @@ pandoc=shutil.which('pandoc') or str(Path.home()/'.cache/nw-typesetting/pandoc/p
 tectonic=shutil.which('tectonic') or str(Path.home()/'.cache/nw-typesetting/tectonic/tectonic.exe')
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 records=[]
+doi=json.loads((root/'PUBLICATION_INDEX.json').read_text(encoding='utf-8'))['papers'][0]['doi']
+figure=json.loads((base/'02_validation/v1.0/CORRECTION_FIGURE.json').read_text(encoding='utf-8'))
+assert figure['status']=='PASS_SCHEMATIC_REVIEW'
 fontenv=os.environ.copy()
 fontconfig=root/'tmp/fontconfig.xml'
 fontconfig.parent.mkdir(exist_ok=True)
@@ -25,6 +28,9 @@ for folder,stem in [('01_manuscript','latinon'),('05_formalization','formal_comp
         conv=subprocess.run([pandoc,'--from=markdown+tex_math_dollars','--to=latex','--wrap=none'],
           input=body,text=True,encoding='utf-8',capture_output=True,check=True)
         texbody=conv.stdout
+        if stem=='latinon':
+            texbody=texbody.replace(f'figures/correction_paths_{lang}.png',f'figures/correction_paths_{lang}.pdf')
+            texbody=texbody.replace(r'\begin{figure}',r'\begin{figure}[H]')
         # Long formal identifiers are breakable paths, not overflowing typewriter boxes.
         def inline_code(match):
             value=match.group(1)
@@ -47,7 +53,9 @@ for folder,stem in [('01_manuscript','latinon'),('05_formalization','formal_comp
           r'\title{'+title+'}\n'+
           r'\author{Juan Pablo Traverso Gianini\\\small Independent researcher, Santiago, Chile\\\small \href{mailto:jtraverso@gmail.com}{jtraverso@gmail.com}\\\small \href{https://orcid.org/0009-0003-6068-4096}{ORCID: 0009-0003-6068-4096}}'+'\n'+
           r'\date{}\begin{document}\raggedbottom\maketitle'+'\n'+
-          (r'\textbf{Preprint 1.0 --- 16 November 2026.}' if lang=='en' else r'\textbf{Preprint 1.0 --- 16 de noviembre de 2026.}')+'\n\n'+r'\textbf{'+('Repository' if lang=='en' else 'Repositorio')+r':} \url{https://github.com/jtraverso/latinon-entropy-ldp}.'+'\n\n')
+          (r'\textbf{Preprint 1.0 --- 16 November 2026.}' if lang=='en' else r'\textbf{Preprint 1.0 --- 16 de noviembre de 2026.}')+'\n\n'+
+          r'\textbf{DOI:} \href{https://doi.org/'+doi+'}{'+doi+'}.'+'\n\n'+
+          r'\textbf{'+('Repository' if lang=='en' else 'Repositorio')+r':} \url{https://github.com/jtraverso/latinon-entropy-ldp}.'+'\n\n')
         tex=source.with_suffix('.tex')
         tex.write_text(preamble+meta+texbody+'\n\\end{document}\n',encoding='utf-8')
         passes=[]
@@ -66,4 +74,5 @@ for folder,stem in [('01_manuscript','latinon'),('05_formalization','formal_comp
           'pdf':pdf.relative_to(root).as_posix(),'pdf_sha256':sha(pdf),'passes':passes,
           'final_log':final_log.relative_to(root).as_posix(),'final_log_sha256':sha(final_log)})
         print('Built '+pdf.name,flush=True)
-(base/'02_validation/v1.0/TYPESETTING.json').write_text(json.dumps({'status':'PASS_COMPILATION','documents':records},indent=2)+'\n',encoding='utf-8')
+(base/'02_validation/v1.0/TYPESETTING.json').write_text(json.dumps({'status':'PASS_COMPILATION',
+    'figure_assets':figure['documents'],'documents':records},indent=2)+'\n',encoding='utf-8')

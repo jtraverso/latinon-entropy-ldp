@@ -26,4 +26,4 @@ sidecars are named per paper. Verifiers and CI record which paper they cover.
 
 Edition 1.0 contains only Latinon. Repository visibility is an access setting,
 separate from the edition bytes and its internal audit. Each public edition carries its own
-source archive, verification evidence and citation. There is no DOI or journal claim.
+source archive, verification evidence and citation. The Latinon DOI https://doi.org/10.5281/zenodo.24284129 is reserved for its unpublished deposit. No journal acceptance is claimed.

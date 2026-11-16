@@ -51,3 +51,15 @@ The read-only release verifier and axiom summary support isolated Python mode.
 Final TeX/PDF binding, bilingual parity, all rendered pages, archive integrity
 and remote CI are separate evidence gates. Internal audit does not substitute
 for journal peer review or an exhaustive priority certification.
+
+The author paused publication to reserve the Zenodo DOI before the final seal.
+DOI 10.5281/zenodo.24284129 is reserved in an unpublished deposit; no files have
+been uploaded there. The four document title blocks and citation metadata carry
+that identifier. GitHub remains private and its release is a draft.
+
+One bilingual vector figure is included beside the correction argument. Its
+solid and dashed paths distinguish the four-edge same-side bound from the
+additional edge to the opposite side. The second panel shows potential
+centering and the existing coefficient-5/2 bound. This is exposition of the
+proved unnumbered refinement, with no new assertion of optimality. Both figure
+renders were inspected; all manuscript pages are rechecked after typesetting.

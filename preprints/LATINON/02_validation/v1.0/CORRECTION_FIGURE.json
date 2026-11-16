@@ -1,0 +1,38 @@
+{
+  "status": "PASS_SCHEMATIC_REVIEW",
+  "generator_sha256": "d2e3bf6a66491d92697f3d867f3ed79f57c625ba9b7735848380509f95e4a0f8",
+  "scope": "Schematic of the existing proved residual diameter and centered potential bounds; no new claim of optimality",
+  "documents": [
+    {
+      ".tex": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.tex",
+        "sha256": "20b66fd51dd1fea999bfbd305b97807e8de92d6ed7dbafe3fe0250a06bf507f4"
+      },
+      ".pdf": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.pdf",
+        "sha256": "2970973815e22c134b54924f858f49058e7dd5d72a946250be403a42683f2c35"
+      },
+      ".png": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_en.png",
+        "sha256": "cb5328e560e0558b401171a55b6efdc57664b85e3c684d5e5edd7d81afa23abd"
+      }
+    },
+    {
+      ".tex": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.tex",
+        "sha256": "3b8b07209c3107dd6f935cd1ece5510ccfbc252f9d7ef671863698a3711cbd9c"
+      },
+      ".pdf": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.pdf",
+        "sha256": "79cdeb2fe68a3bd4e6a4574e349047a176001ca6f2e7540e12630abdf1de5561"
+      },
+      ".png": {
+        "path": "preprints/LATINON/01_manuscript/figures/correction_paths_es.png",
+        "sha256": "f06201b081f2f5106e57ff9153b177e6b39ad5fe293534d41592f412fc301e39"
+      }
+    }
+  ],
+  "generated_utc": "2026-11-16T15:12:57.181320+00:00",
+  "visual_review": "Both vector schematics rendered and inspected; no clipped label, overlapping symbol or new mathematical assertion",
+  "mathematical_review": "Alternating same-side paths have at most four edges, opposite-side paths at most five; potential oscillation at most five yields the centered interval and the existing cost bound. This does not assert sharpness for the correction lemma."
+}

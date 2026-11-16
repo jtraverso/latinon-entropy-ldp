@@ -4,6 +4,8 @@ Juan Pablo Traverso Gianini
 
 Preprint 1.0 — 16 November 2026.
 
+DOI: https://doi.org/10.5281/zenodo.24284129.
+
 Repository: https://github.com/jtraverso/latinon-entropy-ldp.
 
 ## Abstract
@@ -207,6 +209,8 @@ $$
 This establishes (4.3), and positivity of $\ell$ ensures exact support. $\square$
 
 The correction coefficient can be reduced to $5/2$ under the same hypotheses. Apply the row-to-row four-step argument to the transposed matrices and reverse the resulting paths: columns also reach columns in four steps. A path between opposite sides needs at most one additional edge, so the diameter is at most five. The potential then has oscillation at most five and can be centered in $[-5/2,5/2]$; (4.6) gives $\|Q-M\|_1\le(5/2)D(M)$. The accompanying Lean formalization includes this sharper bound; we use coefficient 3 in the subsequent estimates.
+
+![Residual paths and potential centering in the correction argument. The four solid arrows represent a same-side path, and one further edge reaches the opposite side. Transposition supplies the other same-side bound. Centering the potential interval gives the coefficient $5/2$ in the unnumbered refinement of Lemma 4.1.](figures/correction_paths_en.png){width=96%}
 
 ## 5. Permanental laws and their marginal error
 

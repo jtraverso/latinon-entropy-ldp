@@ -5,7 +5,7 @@
     {
       "source": "preprints/LATINON/01_manuscript/latinon_en.md",
       "baseline_sha256": "05288c1461eb25af15f424e3f5e2225ab2fa0292b866d1692dddb27267dad874",
-      "edition_sha256": "26a007c708bc677e7b5eaaed1c90b5bd11ace931b8b169df87fb569015a244d1",
+      "edition_sha256": "ebb84fd4e3bd48e4165cb556e32030bc2fad892ef99fb439130efb26c927c778",
       "unchanged_statements": 11,
       "unchanged_displays": 57,
       "mathematical_statements_displays_and_appendix_exactly_preserved": true,
@@ -14,7 +14,7 @@
     {
       "source": "preprints/LATINON/01_manuscript/latinon_es.md",
       "baseline_sha256": "e2b128f19073dfac0a4a9da5bdcffce3ccf2bbc875896aa104e938f8ddf750b3",
-      "edition_sha256": "e779b63c4cd7bd9aad43b1bdadcf6a2c85e635c97f51197d1aa5e8d1f9e342d1",
+      "edition_sha256": "adc162fdcd986dcdf1ff47f42011866769828aa387242effd30ff4ecff675ba4",
       "unchanged_statements": 11,
       "unchanged_displays": 57,
       "mathematical_statements_displays_and_appendix_exactly_preserved": true,
@@ -24,5 +24,15 @@
   "mathematical_source_archive_changed": true,
   "unresolved_content_queries": [],
   "authorized_addition": "Unnumbered coefficient 5/2 refinement with Lean proof",
-  "final_editorial_scope": "Reader-facing prose and layout; source-only Lean archive unchanged"
+  "final_editorial_scope": "Reader-facing prose and layout; source-only Lean archive unchanged",
+  "doi_and_figure_revision": {
+    "reserved_doi": "10.5281/zenodo.24284129",
+    "deposit_published": false,
+    "figure": "Existing residual path and centered-potential argument, bilingual vector schematic",
+    "protected_numbered_statements_unchanged": true,
+    "protected_displays_unchanged": true,
+    "lean_sources_changed_in_this_pass": false,
+    "new_mathematical_claims": false,
+    "publication_authorization": "Publication paused by author; GitHub private and release draft"
+  }
 }

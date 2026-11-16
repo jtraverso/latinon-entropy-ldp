@@ -29,6 +29,7 @@ paths += [V/'EDITORIAL_REVISION.json',Path('publication/audit/REVISION_REVIEW.md
           Path('publication/audit/CONSTANTS_ASSESSMENT.md')]
 paths += [V/'BASELINE_FREEZE.json']
 paths += [Path('publication/audit/FINAL_EDITORIAL_REVIEW.md')]
+paths += [Path('publication/ZENODO_RESERVATION.json'),V/'CORRECTION_FIGURE.json']
 report={'status':'PASS_INTERNAL_RELEASE_AUDIT','editorial_verdict':'EDITORIALLY_READY',
     'version':'1.0','completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'scope':'Internal edition preparation, source binding, semantic and rendered-artifact checks; not independent peer review or public-access certification',
