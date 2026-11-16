@@ -1,0 +1,12 @@
+note: Running TeX ...
+note: Rerunning TeX because "ghhsbridge_en.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `ghhsbridge_en.pdf` (81.3193359375 KiB)
+note: Writing `ghhsbridge_en.log` (25.240234375 KiB)
+note: Skipped writing 1 intermediate files (use --keep-intermediates to keep them)
+
+warning: ghhsbridge_en.tex:217: Underfull \hbox (badness 1360) in paragraph at lines 216--217
+warning: ghhsbridge_en.tex:299: Underfull \hbox (badness 2245) in paragraph at lines 298--299
+warning: ghhsbridge_en.tex:217: Underfull \hbox (badness 1360) in paragraph at lines 216--217
+warning: ghhsbridge_en.tex:299: Underfull \hbox (badness 2245) in paragraph at lines 298--299
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.

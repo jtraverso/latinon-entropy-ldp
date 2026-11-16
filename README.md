@@ -3,9 +3,10 @@
 Juan Pablo Traverso Gianini
 
 A series of independently versioned preprints with bilingual manuscripts, Lean
-source freezes and per-paper audit records. The catalogue currently contains one
-article: **Entropy and large deviations for Latin squares**, preprint 1.0.
-See [Series catalogue and publication policy](SERIES.md).
+source freezes and per-paper audit records. The catalogue contains the article
+**Entropy and large deviations for Latin squares**, preprint 1.0, and the research
+note **The kernel and measure representations of Latinons agree: a Lean
+formalization**, preprint 1.0. See [Series catalogue and publication policy](SERIES.md).
 
 Read the preprint on [alphaXiv](https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations).
 
@@ -53,6 +54,34 @@ Development manuscripts and their Git history are kept separately. The
 publication layout follows the author's official CDR preprint repository.
 Repository visibility controls access; changing it does not change the edition's
 mathematical content or the scope of its internal audit.
+
+## Research note: the kernel and measure representations of Latinons agree
+
+The Latinon preprint states and verifies its theorems in Lean for Latinons
+described by measures; the conjecture of Garbe, Hancock, Hladký and Sharifzadeh is
+written for Latinons described by kernels. The research note proves in Lean that
+the two descriptions give the same Latinons, cut distance, pattern densities and
+entropy, and so completes the Lean proof of their Conjecture 12.4 with their
+definitions on the ground space [0,1] (entropy taken as minus relative entropy).
+
+| Document | English | Español |
+| --- | --- | --- |
+| Research note | [PDF](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.pdf) · [Markdown](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.md) · [TeX](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.tex) | [PDF](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.pdf) · [Markdown](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.md) · [TeX](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.tex) |
+
+[Paper directory](preprints/GHHSBRIDGE/README.md) ·
+[Lean source freeze](preprints/GHHSBRIDGE/05_formalization/GHHSBridge_Lean_v1.0.zip) ·
+[Freeze record](preprints/GHHSBRIDGE/02_validation/FREEZE.json).
+Its seven Lean modules contain no `sorry`, and twelve axiom queries report only
+`propext`, `Classical.choice` and `Quot.sound`. Read-only check:
+
+```text
+python scripts/verify_ghhsbridge.py
+```
+
+Reserved DOI https://doi.org/10.5281/zenodo.24293531 (deposit not yet published) ·
+[Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/ghhsbridge-v1.0).
+
+## Licenses and status
 
 The manuscripts and companions use [CC BY 4.0](LICENSE.md). The Lean sources
 retain their upstream licenses. The Zenodo DOI https://doi.org/10.5281/zenodo.24284129 is reserved; the deposit is not yet published. No journal acceptance is claimed.

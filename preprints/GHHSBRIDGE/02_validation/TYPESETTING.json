@@ -1,0 +1,50 @@
+{
+  "status": "PASS_COMPILATION",
+  "run": "20261116T223121Z",
+  "documents": [
+    {
+      "source": "01_manuscript/ghhsbridge_en.md",
+      "source_sha256": "0fdbf5254a2634deb042a193c422fdee27b62448a0722e56f473acfe6af40425",
+      "tex": "01_manuscript/ghhsbridge_en.tex",
+      "tex_sha256": "cc685a367a4c0b124de067c08af0bb04593b113e33e9987df18b4e9e7b94c463",
+      "pdf": "01_manuscript/ghhsbridge_en.pdf",
+      "pdf_sha256": "330be7e4222aa01661a592ed34fb5279fe900c5b3c43b28aa2798bfc2a365a9d",
+      "passes": [
+        {
+          "path": "02_validation/typesetting/ghhsbridge_en_20261116T223121Z_pass1.log",
+          "sha256": "ba5b4a48be4884c424ae3a63ac56d974c0a7f5dbfa296319b26585693ebf6093"
+        },
+        {
+          "path": "02_validation/typesetting/ghhsbridge_en_20261116T223121Z_pass2.log",
+          "sha256": "cd801534a210ef86bac25e4fd165c3a5780674ddb850484a19bc3e2b745e854d"
+        }
+      ],
+      "final_log": "02_validation/typesetting/ghhsbridge_en_20261116T223121Z.log",
+      "final_log_sha256": "663e8540beb470e2f010f06e2f61ab5a2340a737085aa71fe86157e89373b8e6",
+      "overfull_boxes": 0,
+      "undefined_references": 0
+    },
+    {
+      "source": "01_manuscript/ghhsbridge_es.md",
+      "source_sha256": "e179d8b236a61ba9d5eb40b032692977182267ac160627941ada501b522020bf",
+      "tex": "01_manuscript/ghhsbridge_es.tex",
+      "tex_sha256": "2d8a32592c30d199ae8e7c518a47a170292b4009b73665628da3a120405f9f82",
+      "pdf": "01_manuscript/ghhsbridge_es.pdf",
+      "pdf_sha256": "b2c539b67dd6273516df87c5b600e19f922fd64ea3f9533704ef96af28bc7028",
+      "passes": [
+        {
+          "path": "02_validation/typesetting/ghhsbridge_es_20261116T223121Z_pass1.log",
+          "sha256": "22e6514d9385c50cfaf61aa5348efd58b319d4e06a5a61c66c2f2976065e5c13"
+        },
+        {
+          "path": "02_validation/typesetting/ghhsbridge_es_20261116T223121Z_pass2.log",
+          "sha256": "22e6514d9385c50cfaf61aa5348efd58b319d4e06a5a61c66c2f2976065e5c13"
+        }
+      ],
+      "final_log": "02_validation/typesetting/ghhsbridge_es_20261116T223121Z.log",
+      "final_log_sha256": "198c4fb06abefa50eceeebb9627d01757975ba2aaa1ffb2eaf9d789ebc87fd82",
+      "overfull_boxes": 0,
+      "undefined_references": 0
+    }
+  ]
+}

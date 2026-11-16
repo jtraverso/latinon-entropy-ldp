@@ -14,3 +14,4 @@ jobs:
           python-version: '3.12'
       - run: python -B scripts/verify_repository.py
       - run: python -B scripts/verify_release.py
+      - run: python -B scripts/verify_ghhsbridge.py

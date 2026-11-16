@@ -13,9 +13,16 @@ The five-part layout follows CDR Paper III at the official series commit
 - `preprints/LATINON/04_integrity/`: the paper's file manifest.
 - `preprints/LATINON/05_formalization/`: bilingual companions and the portable source-only Lean freeze.
 
-`publication/` contains the edition audit, proof ledger, source/provenance
+The research note `preprints/GHHSBRIDGE/` uses the same five parts. Its
+validation folder holds the freeze record, the Lean build log and axiom output
+(`02_validation/lean/`), the typesetting and document audits, the editorial report
+and the Zenodo reservation; its integrity folder holds the package manifest.
+The note has no separate formal companion: the correspondence between numbered
+results and Lean declarations is Section 7 of the note.
+
+`publication/` contains the Latinon edition audit, proof ledger, source/provenance
 checks and bibliography review. `scripts/` contains document tools and
-read-only verifiers. `archives/` contains the complete preprint package and its
+read-only verifiers. `archives/` contains the complete package of each paper and its
 SHA-256 sidecar. The source ZIP contains its own `lean/` project directory;
 there is no second mutable source tree at repository root.
 
@@ -26,6 +33,14 @@ The edition verifier reads sources inside the portable ZIP when a retained
 record refers to `lean/`. It requires neither private Git objects nor the
 original machine's dependency junctions. Local build objects, dependency
 caches, runtime files and development manuscript versions are excluded.
+
+Verification is per paper. `scripts/verify_repository.py` and
+`scripts/verify_release.py` cover LATINON: the files of the Latinon paper and its
+audit must equal the entries of its sealed archive, while repository catalogue
+files (README, series catalogue, index, citations, root manifest, scripts) may
+grow with later papers and are checked inside the archive and through the root
+manifest. `scripts/verify_ghhsbridge.py` covers GHHSBRIDGE. Each release tag keeps
+its paper's edition exactly as released.
 
 Operational visibility is separate from edition metadata. The same files can
 undergo final audits with restricted access and subsequently be made public
