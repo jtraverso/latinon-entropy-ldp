@@ -11,7 +11,15 @@
       "directory": "preprints/LATINON",
       "version": "1.0",
       "doi": null,
-      "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/v1.0"
+      "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/latinon-v1.0",
+      "id": "LATINON",
+      "sequence": 1
     }
-  ]
+  ],
+  "series": {
+    "title": "Combinatorial entropy and counting",
+    "initial_paper": "LATINON",
+    "catalogue": "SERIES.md",
+    "policy": "Per-paper versions, source freezes, audits and release tags; only completed editions are listed"
+  }
 }

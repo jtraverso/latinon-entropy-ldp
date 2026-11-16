@@ -1,12 +1,12 @@
 {
   "status": "PASS_ALL_RENDERED_PAGES",
   "reviewer": "Codex primary agent; internal visual inspection, not independent specialist review",
-  "completed_utc": "2026-11-16T09:58:21.687633+00:00",
-  "document_audit_sha256": "c49952b6ebd318cb649cbf60566b6eef89fc6496117723b34308b353e55d4ba0",
-  "total_pages": 50,
+  "completed_utc": "2026-11-16T14:17:12.680639+00:00",
+  "document_audit_sha256": "89d760d309cc655a75e57b9e259cc136db3a51e2c866c379f5f4f9e3ebfa592b",
+  "total_pages": 52,
   "documents": {
     "preprints/LATINON/01_manuscript/latinon_en.pdf": {
-      "pdf_sha256": "f99ab43c20bfa50bc42413942a7e7c7faf3b796caef06fee4f06d5291d6573ff",
+      "pdf_sha256": "9f5ef37e29a65198b96db14776924b7f6a24099180f15236e72a59ce7e602fdd",
       "pages_inspected": [
         1,
         2,
@@ -30,33 +30,33 @@
       ],
       "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
       "individual_dense_pages": [
-        17
+        14
       ],
       "rendered_page_sha256": {
-        "1": "62be859277b2901166c2e2a3f391c29f2fd5d653de17606072f9c0fa7837f5ec",
-        "2": "a66535ff869ed6cfc143355d85e769b593494dbc60baaca3c0ac600290aa8a32",
-        "3": "98c8ca23e18e3534c7d65a822028f68c1acbfcf212b3412301522eff5f34db3c",
-        "4": "a90f9e1b4089ef415f1f974f5ffaecaf5dad148665baea9970fbb744234fb60f",
-        "5": "ac2822c1ac92190ba37a1bc61d9438bb67cca1c03bafdf5fdb12c4160fa67dda",
-        "6": "07201f4e502b5c8233943bb0b91bea702fd04077f32abfc7090b9e313c6eb0b8",
-        "7": "247dc23a6e75b6d65fa5b47cc0d0a03b6fed1e93e56781b7917b68aca504a836",
-        "8": "5de8c70f54a7dee60c2cb42f4ecdd5a75243ca056ae7974f7f263cb60a6bcf5b",
-        "9": "a5d022cd9dfa4f18b8364dd4ab36eb75e56aca8c871dad57a48cab4e37fdb343",
-        "10": "f4ca7ed4a7e9ea2d0f780deb986bcdde2b2af96d384aeaba653b8408b6e82491",
-        "11": "c672fdb070d8141e7a7ad583ba38e7eb2d59b771d6560b25ec5c4d415747f0c7",
-        "12": "afde020cadfdc21d12740c900c22d9e0e3b050cce652309208d7dbffde7c5f58",
-        "13": "5c7a5ab6a664c660023efac793cab386efa329b0b5dacaed11229a481cf8483d",
-        "14": "a8f9e5b8b3da46d4f57695acc758426bf80d2f7187e51f89d42f85fec05ddbd7",
-        "15": "a811cba9b01a8d97fa4e9ab5345d2fdabbec1ddb1f687a9daaf25a2e3181ceb9",
-        "16": "1bcce007d3a51e06b84daa007932bcf8c3918e9db15c7f6b905f32326dbc3c0b",
-        "17": "db1e5426b8825d5d09877b1dbc38c60018ed9db207ebc609b7292ecf116db3c6",
-        "18": "c5abfc763de9e7323cde93b0d2029be8efbe68a115f3734336662e8b626414ed",
-        "19": "59f3a44f59d3869b6b8af07aebce51a6c2f88dbe9d23bf5b085ba74d692c2e4b"
+        "1": "196b695ee87e78f0463506ed3289fc8b58338bf8b03c091dbc2e5c9f7228c36b",
+        "2": "1ee6e24d47ae7b8b9ea2baf16f79b7b76b346f526518eccb9fbf7b02d4cb2937",
+        "3": "b6a86c53af5e89dcad28ff44a7686c006f4d9cc965a6b11a34ba0873023fef64",
+        "4": "3e83473421ad7ed30d4102631e57499e31dd6137cd825b36a025bfec65905727",
+        "5": "b6db75ab3c3761b5e1f6b72394014a657f0e1fa016f5ab87aa9a12e4a79abaef",
+        "6": "23ee461cc2a817fc0679d8d8339b156994084c6616f3ed02fe2d91ac912db6e6",
+        "7": "7c38d89c94dd2097c257417b4644df430ff7b159cb5046395d2ab3a9ffa7b93f",
+        "8": "d497e6c39564776ac5fc597d1c7430abe30dbfb906482d88c9392d2e9f863444",
+        "9": "d2dcb867b7b223441c15ba78007aec9d07015215ef3566421ffc686e7331051c",
+        "10": "acdc4892b79029ccb456fbb79e24de186681349b00dfabfb2968c6328aaf48e8",
+        "11": "c2842563785e61c5498e5dcf054ac3046f07b35ac8e8bcf31cc86c5c37d9d8e8",
+        "12": "ce4bf823ff9aedaf986a166d728b70572085327fe658b3fca1fda1938d75d433",
+        "13": "c7413462b5fc72bf5324e71b73637cc7a8b056f1f70e3bf3a9ddf7bbf879a143",
+        "14": "19965b0861f66e26ca7b2a09afc843947f4d065f989e88b91b64486cd9c9b1a9",
+        "15": "b3fc7ffc7a157ae71316beff2f6ee18a7bffad4b2848ef8151472a14f750fb77",
+        "16": "c58faab522e78af789a8ab06832b90a3b502ea53bb9048b81c57f3be42b64a00",
+        "17": "f1cbc0a75ae934b770daaf8b1100630fc154d8bb400aee919f0ef2ec4c0acc86",
+        "18": "5c39a70995393e4827ad930bb9b2b832f16462ee18571caab32586410d8cc25e",
+        "19": "7ff5b5005c83078bdaa4bd4847bddfde971faff89d10416557e9beb283c8c580"
       },
       "open_layout_issues": []
     },
     "preprints/LATINON/01_manuscript/latinon_es.pdf": {
-      "pdf_sha256": "30f8a19ef5812dfb9acf7051cc2a8c7701b9c4b2d2c3c673309b0dfcd2127d1c",
+      "pdf_sha256": "01f89a65f50e4dec6a1b04021c1da4304392667b394734f2b932a239e7bc949c",
       "pages_inspected": [
         1,
         2,
@@ -76,35 +76,41 @@
         16,
         17,
         18,
-        19
+        19,
+        20,
+        21
       ],
       "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
-      "individual_dense_pages": [],
+      "individual_dense_pages": [
+        15
+      ],
       "rendered_page_sha256": {
-        "1": "e9d2f8c51f1c9cec01fc3f4b1e282e5dcdf4d2c9b3dba01b08d12dd88de5aa24",
-        "2": "474768aca83d0b63c0a3f038310311e39d4599a6716ecf7aad09c70a4f0ae4e5",
-        "3": "6555e260606d9b65d116dd17a954fe0563b59f14b8199b7769e902a82fe8d144",
-        "4": "b12a13b372a7e599d22b362dcda2a5d4fcd3e8f580438747df4eaa9ec85e57e4",
-        "5": "2ab59586d99944e6f84d1891e28d1cc63a1d0241faef74be2ecbe08a220d3e1f",
-        "6": "c622376d453beb4af9ef992cafbc4335de6b882ade995c1747f46f09fa802f2a",
-        "7": "c3726b877481b22310fbe5185fd8a30321a3a9314eea7bf29fdcf8b85b1255ee",
-        "8": "6941e5b51b83dc29e836d2d45d6e086f41132b0a064e601c664f781813bccf49",
-        "9": "c74907c0f7ddedfc3c381f470d86767be5a77d4a4e718f257a78054f129fa797",
-        "10": "bf3a053383e90a2e1e115cbed382b777e0dead7098ae884150a1b7a14c165050",
-        "11": "cd9f1d4f4ddba0679403a81a237e52021492882026555cc8bf668d3bf657e362",
-        "12": "20f2b9d3a1dc4703ce6a2bcac0c7836c76aa67c0880d2d2928621795417b6141",
-        "13": "7f9c6d648401ac91f738161f7eb847751436289239eafcb3363791389288ca42",
-        "14": "32ff4b0f0585d9384fa23a65c8760c5efab3d20c77bb5666747dbcfbc793acb0",
-        "15": "e11ea1474ba5541365fa414addd45317ab8efb6d456c53a79579f6774b02b0c0",
-        "16": "d26e016aefb99deea4fca127e814115a2e2175e2ba665f193569e7d31349506a",
-        "17": "7b20a73140475fbb74780957bee96102ddaed3d629d603e3afb2dc4d1aa8ac87",
-        "18": "070ae07156a54ae27a55bd07e9250dce84fef4ff01ccf0526fe928049ab2c095",
-        "19": "2a168d8716cb9217f3bd4c271b27442821dfcd98421f64ccaae8b2cc641cb833"
+        "1": "33ecd424f7e62659b22dc005f571529e1cd674aeb661f0ac8a23894e993d593c",
+        "2": "94ac197c2dd5039bf3f2f288db4006309e068bdd3d2957049189e147053c16aa",
+        "3": "1c22013c5f98de6febb79b9255f63f3e8000e290eee5c2bc3a78b53152c80608",
+        "4": "b31f67ef7701ad551d70d7d629f675f7eef5fe53f17511b8f6f4ea87407081c7",
+        "5": "72d64df9f9670f3262c9de8b40ec850f0dbb4166938cea55c7b39c3b5a3387b6",
+        "6": "1466b8e29caf4fcdf730e3213358b570e375187830eae861bf278567df4118ff",
+        "7": "a646570affe97ae7f726a0d858e00fddf14d6804407636303297a8caa5453124",
+        "8": "378edb2a03103ffb4a036f6d1e7dcef3f39337a3662629d98f7fc0eb22e94295",
+        "9": "252d56bf27fab340b6aaa7f9b0372692b6a92527684a2f85ba2315cdc9a3a2ac",
+        "10": "77aeb45d6de5fb70ac077ca283968467e5b81c6a06037da2932ff32569797320",
+        "11": "11b042d9c2f46af91eadf60044b655efcc6a91ebaee20caf01c4513eefae969b",
+        "12": "209950f32c99328fe77babafa0dc12a6d61b3f95ce359b75ad8547afffdb571e",
+        "13": "d6ae2b9012f8539c1c97687eb4cf22423887611b0b7fd8dcd945e301b03ca307",
+        "14": "e9ba2607d920bffe5832fddd4a0837906cf313714b8053aef1366e6dfbf6851a",
+        "15": "5007f9396c94a02300b2dec26a64bf159cebfc13c34934f9cd26333c5d72862a",
+        "16": "2e84a85c2c7a5d941b6ad3b63f3e084d3eb6329b699eb9406f5c918bc15d6681",
+        "17": "42e5b7cebce3cf0239b94506d5bde507f6c2bb9339c6725d94ed3f202d5d5e4e",
+        "18": "7d7baa72528d9e2eaf2ea964f14a7f0b1d7a6bcc176ca4efe4891d0d9f6f650c",
+        "19": "c55d107468d780abea4226ac9f97837e458ada6a251152799b388d51f1dba24f",
+        "20": "81d666b9a390d7ee9b460db3342f4c71eccf81007f63fbd4a91836e237a9153a",
+        "21": "28d48b878691aceeafb5429b8cca1ae1f605f777572aa38c278f11c749be5f7f"
       },
       "open_layout_issues": []
     },
     "preprints/LATINON/05_formalization/formal_companion_en.pdf": {
-      "pdf_sha256": "74f4ed6b9395ba1e91c1ff0ae7facc7cf9cf7b987b2e79a8725a6a35db3240e7",
+      "pdf_sha256": "77a67caeaa81182babba1e6ecba9b8eab0c41cff7fdcb39905d0c4bd96fdcd0a",
       "pages_inspected": [
         1,
         2,
@@ -115,20 +121,20 @@
       ],
       "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
       "individual_dense_pages": [
-        5
+        4
       ],
       "rendered_page_sha256": {
         "1": "7dd8e2ba817aa9306493b3fb6a50bc59b5f09db132c7bc42b72b713e1eb58eb9",
-        "2": "0ff3ab84f7127bd70a777989acda6a29a1ebda1de1260dd2aba79e81cb51d159",
-        "3": "cdc6818c641af691e77da64a3fceecec41c82a8758abf8fcf0c75ef687a3a733",
-        "4": "289d1aec41e86bebcd645ad98168366e9e85f3b053b7fbdc36c74e932d0b559c",
-        "5": "f266ecee08a0da4dd0f66bbd856f76e51aa8efa9bb93d07f3b4685fddca45355",
-        "6": "3fa030cdcf380147698c2d3fdcf4eb2a063abef3b58eaa5c0eaf2c2618695f95"
+        "2": "0bf389b09a90adf5d760f226a0185535ad548a57719683a52c02b0d281a9f962",
+        "3": "d171c55043376a29b832eba965f0bca02c25aec049a1b07e8dd3d2688cc39f90",
+        "4": "64117854d45e9a97d108d053d7016b8646f054afb77de39e7b117003aed8a73a",
+        "5": "a1e6b6529a87930b2ecf4ab9d7e7156674bc417bc192f6c5ae2a271bec19eb3d",
+        "6": "dcb19cfd8637d7a3cf9b2eecd5dacf1f9678340735c601ea4ce615bde4eb3a51"
       },
       "open_layout_issues": []
     },
     "preprints/LATINON/05_formalization/formal_companion_es.pdf": {
-      "pdf_sha256": "7d846c5e302e87b3581a371396de060326375d3ea1849df08c86c607a6b30d5f",
+      "pdf_sha256": "acfc4884114aaf4d27275e94f356ca51d56167e4f0189a8ce1b0b0ddd9f9ee36",
       "pages_inspected": [
         1,
         2,
@@ -143,11 +149,11 @@
       ],
       "rendered_page_sha256": {
         "1": "8e246412e1bfb6907f6478c441befb03d5a888ba29b49ffc36dfcb5291e5a231",
-        "2": "5863bd7e69cb25c63880f1ec55c32a39b8266e987560c2f70ab57c159299df41",
-        "3": "24e730934e7546cf4e700466ee95bf15b5873048acb45b7169790da0c27cb17a",
-        "4": "2b8f5742f3ccaa9e707e43bde2133c57332489f57f3db5b06d551452473a06f4",
-        "5": "6bf17fd1e5274a77aa7b001b1e9dc603cc17399bc07bf8f3641dbb4dc89384bb",
-        "6": "aafa680b5f0784b60d3f760aabb252e5929a8082526828618a545c7b0b0ce28e"
+        "2": "1a84cd0afc5b6d0d1f78b82ca4b9e45dfa564133c4427d6b612f569e2121365c",
+        "3": "cb666523115f0312b4467396c6405873d5eefc9f936936270dace8d99db9a910",
+        "4": "7ab4763c71a9585e9e70ff704d9a61f960f35ecf2d80acad595397597a4c3e0f",
+        "5": "55d7752a1d4093fef94eaab130d658a0ad2edcd45551d0bd8a52a02426b07d58",
+        "6": "68aaa0d09486d8c215048528f09eb2965cd8da573bcbe99d6b5f68e0a8c9f457"
       },
       "open_layout_issues": []
     }
@@ -163,13 +169,15 @@
       30
     ],
     "compared": "title and author block, preprint/repository metadata, theorem and display typography, bibliography, geometry and fonts",
-    "figure_and_table_comparison": "Not applicable: this edition introduces no figures or mathematical tables"
+    "figure_and_table_comparison": "One explanatory table per language; longtable/booktabs and small text follow the reference preamble. Both table pages inspected individually. No figures introduced."
   },
   "observations": [
-    "All 50 final pages inspected after preprint 1.0 generation",
+    "All 52 final pages inspected after the final compilation",
     "Title metadata, repository URLs and completed formalization status are readable",
     "No clipping, overlap, missing glyph or stranded heading found",
     "Long paths and hashes remain breakable and the rendered build commands match their sources",
-    "The final English page contains two remaining bibliography entries; no heading is orphaned"
+    "The English bibliography fits its final appendix page; the Spanish bibliography continues with two entries on its final page",
+    "Reported missing mathematical symbols are visible in final renders; extraction is not used to infer formula corrections",
+    "The explanatory table is legible and its captions, geometry and dependencies agree across languages"
   ]
 }

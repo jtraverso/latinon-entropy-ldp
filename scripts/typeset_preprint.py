@@ -1,11 +1,11 @@
 """Convert semantic Markdown bodies through the frozen CDR layout; serial PDFs."""
 from pathlib import Path
-import subprocess,json,hashlib,os,re,shutil
+import subprocess,json,hashlib,os,re,shutil,datetime
 
 root=Path(__file__).resolve().parents[1]
 base=root/'preprints/LATINON'
-logs=base/'02_validation/v1.0/typesetting'
-logs.mkdir(parents=True,exist_ok=True)
+logs=base/'02_validation/v1.0/typesetting'/datetime.datetime.now(datetime.timezone.utc).strftime('revision_%Y%m%dT%H%M%S%fZ')
+logs.mkdir(parents=True,exist_ok=False)
 cache=Path(os.environ.get('LOCALAPPDATA',str(Path.home()/'AppData/Local')))
 pandoc=shutil.which('pandoc') or str(Path.home()/'.cache/nw-typesetting/pandoc/pandoc-3.12.1/pandoc.exe')
 tectonic=shutil.which('tectonic') or str(Path.home()/'.cache/nw-typesetting/tectonic/tectonic.exe')
@@ -34,6 +34,11 @@ for folder,stem in [('01_manuscript','latinon'),('05_formalization','formal_comp
         texbody=re.sub(r'\\textbf\{((?:Theorem|Lemma|Corollary|Proposition|Teorema|Lema|Corolario|Proposición) [^{}]+)\}',lambda m:r'\Needspace{7\baselineskip}\textbf{'+m.group(1)+'}',texbody)
         texbody=re.sub(r'\\textbf\{(\d+\. [^{}]+)\}',lambda m:r'\Needspace{6\baselineskip}\textbf{'+m.group(1)+'}',texbody)
         texbody=texbody.replace('\n\\[','\n\\nopagebreak[4]\n\\[')
+        # Compact bibliography avoids a final page containing one reference only.
+        if stem=='latinon':
+            texbody=re.sub(r'(\\subsection\{(?:References|Referencias)\}\\label\{[^}]+\})',
+                lambda m:m.group(1)+'\n'+r'\begingroup\small',texbody)
+            texbody+='\n'+r'\endgroup'+'\n'
         preamble=(base/f'03_reproducibility/layout/series_{lang}.tex').read_text(encoding='utf-8')
         # Names in (9.1) are language-independent mathematical notation.
         preamble += '\n'+r'\newcommand{\KL}{\operatorname{KL}}'+'\n'

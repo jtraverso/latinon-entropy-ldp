@@ -19,13 +19,15 @@
     "package ZIP with checksum",
     "read-only executable verifiers",
     "artifact verification CI",
-    "development manuscript history kept separately"
+    "development manuscript history kept separately",
+    "series catalogue with per-paper identifiers",
+    "independent per-paper release tags"
   ],
   "intentional_differences": [
-    "one paper rather than three CDR papers",
-    "original reconstruction records retain their already-bound paths",
-    "no DOI or Zenodo publication claimed",
-    "no new Lean reconstruction for an unchanged source archive"
+    "initial series contains one published-format paper",
+    "original reconstruction and archive retained as baseline",
+    "additive improvement checked incrementally with caches",
+    "no DOI or Zenodo claim"
   ],
   "layout_template_sha256": {
     "en": "73cc218d9b5654c6570a460b85028fa3a572ea792c942ded59ab7e524659b4f5",

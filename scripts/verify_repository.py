@@ -1,4 +1,4 @@
-"""Read-only verification of the preprint and original reconstruction; no Lean."""
+"""Read-only verification of the preprint, baseline and incremental evidence."""
 from pathlib import Path
 import hashlib,json,re,zipfile
 from urllib.parse import unquote,urlsplit
@@ -10,7 +10,7 @@ def digest(path):return sha((ROOT/path).read_bytes())
 def read(path):return json.loads((ROOT/path).read_text(encoding='utf-8'))
 
 def check_evidence():
-    freeze=read(V/'FREEZE.json');clean=read(P/'02_validation/CLEAN_REBUILD_AUDIT.json')
+    freeze=read(V/'BASELINE_FREEZE.json');clean=read(P/'02_validation/CLEAN_REBUILD_AUDIT.json')
     assert freeze['version']=='1.0' and clean['status']=='PASS_SOURCE_BOUND_CLEAN_RECONSTRUCTION'
     assert digest(freeze['archive'])==freeze['sha256']
     assert digest(freeze['clean_reconstruction_audit'])==freeze['clean_reconstruction_audit_sha256']
@@ -72,28 +72,81 @@ def check_evidence():
     for step in ledger['core_steps']:assert freeze['entry_sha256'][step['source']]==step['source_sha256']
     finite=read(P/'02_validation/FINITE_REGRESSIONS.json')
     assert finite['status']=='PASS' and digest('scripts/check_finite_identities.py')==finite['script_sha256']
-    return {'compiled_modules':309,'canonical_import_closure':298,'endpoint_queries':8,
-            'additional_good_rate_queries':3,'lean_source_archive_sha256':freeze['sha256'],
-            'fresh_lean_build_in_this_edition':False}
+    current=read(V/'FREEZE.json')
+    assert current['status']=='PASS_INCREMENTAL_FREEZE'
+    assert digest(current['archive'])==current['sha256']
+    for name,h in current['incremental_evidence_sha256'].items():assert digest(name)==h,name
+    incremental=read(current['incremental_status'])
+    assert incremental['status']=='PASS_INCREMENTAL_BUILD_AND_AXIOMS' and incremental['exit_code']==0
+    assert incremental['query_count']==12
+    inc=P/'02_validation/incremental'
+    for name,h in incremental['logs'].items():
+        if (ROOT/inc/name).exists():assert digest(inc/name)==h,name
+    log=(ROOT/inc/'retry_build.stdout.log').read_text(encoding='utf-8')
+    assert 'Build completed successfully' in log and 'sorryAx' not in log and not re.search(r'^error:',log,re.M)
+    for name in ['CorrectionFive','LatinonFormalization','ReviewAxioms']:
+        assert re.search(r'Built '+name+r'\b',log),name
+    query_text=(ROOT/inc/'axioms.stdout.log').read_text(encoding='utf-8')
+    queries=dict(re.findall(r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]",query_text))
+    assert len(queries)==12 and queries==incremental['queries']
+    for value in queries.values():assert {a.strip() for a in value.split(',')}<=standard
+    with zipfile.ZipFile(ROOT/current['archive']) as z:
+        assert z.testzip() is None and set(z.namelist())==set(current['entry_sha256'])
+        for name,h in current['entry_sha256'].items():assert sha(z.read(name))==h,name
+        changed={name for name,h in freeze['entry_sha256'].items() if current['entry_sha256'][name]!=h}
+        assert changed=={'lean/LatinonFormalization.lean','lean/ReviewAxioms.lean','lean/lakefile.toml','lean/source_manifest.json'}
+        assert set(current['entry_sha256'])-set(freeze['entry_sha256'])=={'lean/CorrectionFive.lean'}
+        manifest=json.loads(z.read('lean/source_manifest.json'));modules=manifest['modules']
+        assert len(modules)==310
+        for name,h in current['source_configuration_files'].items():assert sha(z.read('lean/'+name))==h,name
+        for name,h in manifest['files_sha256'].items():assert sha(z.read('lean/'+name))==h,name
+        for name,h in incremental['source_sha256'].items():assert sha(z.read('lean/'+name))==h,name
+        seen=set()
+        def visit(name):
+            if name in seen or name not in modules:return
+            seen.add(name)
+            for dep in re.findall(r'^\s*(?:public )?import\s+([\w.]+)',z.read('lean/'+modules[name]).decode(),re.M):visit(dep)
+        visit('LatinonFormalization');assert len(seen)==299
+        assert len(re.findall(r'^#print axioms ',z.read('lean/ReviewAxioms.lean').decode(),re.M))==12
+        assert not re.search(r'\bsorry\b|^\s*axiom\b',z.read('lean/CorrectionFive.lean').decode(),re.M)
+    return {'compiled_modules':310,'canonical_import_closure':299,'endpoint_queries':12,
+            'baseline_clean_compiled_modules':309,'lean_source_archive_sha256':current['sha256'],
+            'verification_mode':'original clean reconstruction plus incremental cached build',
+            'fresh_clean_reconstruction_in_this_revision':False}
 
 def check_mathematics():
     old=read(V/'PROTECTED_BASELINE.json');records=[]
+    revision=read(V/'EDITORIAL_REVISION.json')
+    assert revision['status']=='EDITORIALLY_READY'
+    for name,original in revision['original_text'].items():
+        current=(ROOT/name).read_text(encoding='utf-8')
+        assert digest(name)==revision['source_sha256'][name]
+        for change in revision['changes']:
+            if change['source']==name:
+                assert original.count(change['before'])==1
+                original=original.replace(change['before'],change['after'])
+        assert current==original,(name,'unreviewed editorial edit')
     for name,item in old['documents'].items():
         text=(ROOT/name).read_text(encoding='utf-8')
         statements=re.findall(r'^\*\*(?:Theorem|Lemma|Corollary|Proposition|Teorema|Lema|Corolario|Proposición) [^\n]+',text,re.M)
         assert statements==item['statements'],name
         assert re.findall(r'\$\$(.*?)\$\$',text,re.S)==item['displays'],name
-        assert text[text.index('## 1.'):text.index('## 11.')]==item['mathematical_body_before_section_11'],name
+        prior=revision['original_text'][name]
+        assert prior[prior.index('## 1.'):prior.index('## 11.')]==item['mathematical_body_before_section_11'],name
         marker='## Appendix.' if name.endswith('_en.md') else '## Apéndice.'
-        assert text[text.index(marker):]==item['appendix_and_references'],name
+        assert prior[prior.index(marker):]==item['appendix_and_references'],name
+        assert text[text.index(marker):text.index('## References' if name.endswith('_en.md') else '## Referencias')]==prior[prior.index(marker):prior.index('## References' if name.endswith('_en.md') else '## Referencias')],name
         assert 'Preprint 1.0' in text and not re.search(r'Private review candidate|Candidata privada|ongoing reconstruction|reconstrucción en curso',text)
         records.append({'source':name,'baseline_sha256':item['sha256'],'edition_sha256':digest(name),
             'unchanged_statements':len(statements),'unchanged_displays':len(item['displays']),
-            'mathematical_sections_appendix_and_references_exactly_preserved':True})
+            'mathematical_statements_displays_and_appendix_exactly_preserved':True,
+            'expository_and_citation_edits_match_reviewed_revision':True})
     for name,item in old['companions'].items():
         text=(ROOT/name).read_text(encoding='utf-8')
         actual=re.findall(r'`(LatinonEntropy\.[^`]+)`',text)
-        assert actual==item['declarations'],name
+        additions={'LatinonEntropy.ScaledResidualData.diameter_five','LatinonEntropy.correction_lemma_five'}
+        assert [x for x in actual if x not in additions]==item['declarations'],name
+        assert additions<=set(actual),name
         assert 'Preprint 1.0' in text and not re.search(r'Private review candidate|Candidata privada|ongoing reconstruction|reconstrucción en curso',text)
     return records
 
@@ -119,7 +172,9 @@ def check_metadata():
     index=read('PUBLICATION_INDEX.json')
     assert index['edition']=='1.0' and index['date']=='2026-11-16'
     assert index['repository']=='https://github.com/jtraverso/latinon-entropy-ldp'
-    assert index['license']=='CC-BY-4.0' and len(index['papers'])==1
+    assert index['license']=='CC-BY-4.0' and len(index['papers'])>=1
+    assert index['series']['initial_paper']=='LATINON'
+    assert len({paper['id'] for paper in index['papers']})==len(index['papers'])
     assert index['papers'][0]['version']=='1.0' and index['papers'][0]['doi'] is None
     cff=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
     assert 'version: "1.0"' in cff and 'date-released: 2026-11-16' in cff
@@ -150,6 +205,6 @@ def check():
     for line in lines:
         h,name=line.split('  ',1);assert digest(name)==h,name
     return {'status':'PASS','version':'1.0',**evidence,**documents,**metadata,
-        'scope':'Delivered edition, original reconstruction evidence and observed document QA; no new Lean build or independent peer review'}
+        'scope':'Read-only verification of the delivered edition, baseline clean and incremental evidence, and observed document QA; does not invoke Lean or constitute independent peer review'}
 
 if __name__=='__main__':print(json.dumps(check(),indent=2))

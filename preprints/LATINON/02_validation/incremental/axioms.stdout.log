@@ -1,0 +1,14 @@
+'LatinonEntropy.correction_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.finite_latin_tensor_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.closed_uniform_latinon_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.open_uniform_latinon_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.finite_rate_standard_pattern_log_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.finite_rate_factorization_entropy_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.wilson_distinguished_latinon_blocks_entropy_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LatinonEntropy.wilson_completed_exact_type_count_eq_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.latinon_rate_lowerSemicontinuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.latinon_full_cut_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.latinon_rate_sublevels_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LatinonEntropy.correction_lemma_five' depends on axioms: [propext, Classical.choice, Quot.sound]

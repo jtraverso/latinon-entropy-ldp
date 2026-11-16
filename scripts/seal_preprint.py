@@ -14,7 +14,7 @@ assert read(V/'CDR_STRUCTURE_COMPARISON.json')['status']=='PASS_CDR_STRUCTURE_CO
 assert '**PASS_TARGETED_WRITTEN_REVIEW**' in (ROOT/'publication/audit/PRINTED_PROOFS.md').read_text(encoding='utf-8')
 assert '**PASS_SCOPED_BIBLIOGRAPHIC_REVIEW**' in (ROOT/'publication/audit/LITERATURE_REVIEW.md').read_text(encoding='utf-8')
 checks={name:'PASS' for name in ['retained_source_bound_reconstruction','source_only_lean_freeze',
-    'eight_endpoint_and_three_good_rate_axiom_queries','protected_mathematical_content',
+    'twelve_current_axiom_queries','protected_mathematical_content','incremental_cached_build',
     'targeted_written_proof_review','scoped_bibliography_review','bilingual_parity',
     'source_tex_pdf_binding','all_rendered_pages','cdr_structure_and_layout','metadata_and_license']}
 paths=[P/'02_validation/CLEAN_REBUILD_AUDIT.json',P/'02_validation/SOURCE_AUDIT.json',
@@ -25,10 +25,13 @@ paths=[P/'02_validation/CLEAN_REBUILD_AUDIT.json',P/'02_validation/SOURCE_AUDIT.
 paths += [V/name for name in ['FREEZE.json','PROTECTED_BASELINE.json','SEMANTIC_DIFF.json',
     'RECONSTRUCTION_BINDING.json','PROVENANCE.json','CDR_STRUCTURE_COMPARISON.json',
     'TYPESETTING.json','DOCUMENT_AUDIT.json','VISUAL_REVIEW.json']]
+paths += [V/'EDITORIAL_REVISION.json',Path('publication/audit/REVISION_REVIEW.md'),
+          Path('publication/audit/CONSTANTS_ASSESSMENT.md')]
+paths += [V/'BASELINE_FREEZE.json']
 report={'status':'PASS_INTERNAL_RELEASE_AUDIT','editorial_verdict':'EDITORIALLY_READY',
     'version':'1.0','completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'scope':'Internal edition preparation, source binding, semantic and rendered-artifact checks; not independent peer review or public-access certification',
-    **evidence,**documents,'checks':checks,'mathematical_sources_changed':False,
+    **evidence,**documents,'checks':checks,'mathematical_sources_changed':True,
     'cdr_standard_commit':'d12d980f8c86d8795e9faa0c6bb274ee936c7c8e',
     'evidence':{p.as_posix():digest(p) for p in paths},
     'limitations':['Pinned external Mathlib ecosystem caches reused, not rebuilt',
@@ -39,7 +42,7 @@ put('publication/LATINON_RELEASE_AUDIT.json',report);put(V/'AUDIT_RESULT.json',r
 put('publication/RELEASE_CHECKS.json',{'status':'PASS','version':'1.0','documents':4,
     'release_audit':'publication/LATINON_RELEASE_AUDIT.json',
     'release_audit_sha256':digest('publication/LATINON_RELEASE_AUDIT.json'),
-    'source_lean_freeze_unchanged':True,'visibility_is_an_operational_setting':True})
+    'source_lean_freeze_updated_with_incremental_evidence':True,'visibility_is_an_operational_setting':True})
 check_metadata()
 
 def files():

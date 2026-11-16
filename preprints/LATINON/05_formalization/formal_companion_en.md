@@ -62,11 +62,19 @@ Source: `lean/LatinonBridge/LatinonCompactness.lean`, line 60.
 
 Source: `lean/LatinonBridge/LatinonGlobalDeviations.lean`, line 15.
 
-These three properties have their own axiom queries in the source modules. The completed reconstruction report records their three successful outputs separately from the eight selected endpoint queries in `ReviewAxioms.lean`. All eleven reported only the standard foundational axioms. See `preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json`.
+These three properties are queried together with the eight original endpoints and the strengthened correction theorem in `ReviewAxioms.lean`. All twelve current queries report only standard foundational axioms. The original eleven outputs are also retained with the clean reconstruction in `preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json`.
 
 The finite tensor theorem quantifies the order threshold before the profile. The correction theorem has no residual-diameter or potential certificate among its hypotheses. Its explicit box constants and linear coefficient 3 are preserved in Lemma 4.1.
 
 The diameter-six argument is also present internally as `LatinonEntropy.ScaledResidualData.diameter_six` in `lean/ResidualDiameter.lean`. Its absence from the hypotheses of `correction_lemma` means it is derived internally, not that it exists only on paper. Review Lemma 4.1 as a written proof separately from checking its correspondence with that source argument.
+
+**Refinement of Lemma 4.1.**
+
+`LatinonEntropy.ScaledResidualData.diameter_five`
+
+`LatinonEntropy.correction_lemma_five`
+
+Both declarations are in `lean/CorrectionFive.lean`. The transpose reverses residual arcs; its four-step row paths give four-step column paths in the original graph. Opposite-side paths use at most five edges, giving the potential radius and correction coefficient $5/2$. These declarations strengthen the original coefficient-three result without changing its consumers or the numbered theorem correspondence.
 
 ## 3. Dependency ledger
 
@@ -234,15 +242,17 @@ The CDR endpoints quantify an already completed base system containing the disti
 
 ## 5. Toolchain, imports and reconstruction
 
-The delivered project pins Lean 4.35.0 and Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679`. Its manifest pins eight further ecosystem repositories. The configuration declares 309 local module roots, including the canonical entry and the axiom-query module. The canonical entry imports the principal chain through the application assembly. The source manifest records every selected module and hash. This edition makes no claim of compatibility with the earlier 4.35.0-rc3 snapshot.
+The current project pins Lean 4.35.0, Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679` and eight further ecosystem repositories. It declares 310 local module roots. The canonical entry `LatinonFormalization` imports the applications assembly and `CorrectionFive`; its local import closure has 299 modules. The source manifest lists all modules and selected file hashes.
 
-Extract the source archive from `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`; it contains the project directory `lean/` and its upstream licenses. Install the pinned toolchain, obtain the pinned external packages and their caches, then from the extracted project run `lake build LatinonFormalization` and `lake env lean ReviewAxioms.lean`, sequentially. The first command builds the configured 309-target library. The recorded reconstruction instead compiled one explicit local target at a time. Its source/configuration hashes, 309 object hashes and module logs are retained. No project object was restored; reuse of external caches is disclosed.
+Extract `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`, which contains the project `lean/` and upstream licenses. Install the pinned toolchain and external packages, then run `lake build LatinonFormalization` and `lake env lean ReviewAxioms.lean` sequentially from that project. The library build covers 310 configured targets. The original 309-target reconstruction began without project objects; the subsequent incremental build reused those objects and pinned external caches.
 
-All 309 local targets completed successfully on 16 November 2026. The eight endpoint queries and the three good-rate queries contain only `propext`, `Classical.choice` and `Quot.sound`, with no project mathematical axiom or `sorryAx`. The edition verifier checks their retained logs against the archive and frozen source hashes. It does not invoke Lean or rebuild external packages.
+Both builds completed on 16 November 2026. The current twelve-query file and its successful output are delivered with the incremental evidence. All reported axiom sets are contained in `propext`, `Classical.choice` and `Quot.sound`. The archive and logs are bound by SHA-256; read-only package verification does not invoke Lean.
+
+Run `python scripts/review_axioms.py` from the publication repository to verify all twelve recorded queries in one command. This checks certified log and source bindings. For a fresh Lean execution, use the query command above.
 
 ## 6. Provenance and review limits
 
-The source freeze identifier is `7b603942c8d078db6c0a5c8729df7012b7786db8`. Its 309 module files and three configuration/toolchain files have the same bytes as in the completed reconstruction. The source archive is unchanged in this edition. `preprints/LATINON/02_validation/v1.0/FREEZE.json` records its SHA-256 and entry hashes. From the repository root, `python scripts/verify_repository.py` checks the package without requiring access to the development repository or its Git objects.
+The original clean snapshot is identified by `7b603942c8d078db6c0a5c8729df7012b7786db8` and is retained separately. The current source freeze adds one module and changes the canonical entry, query file and library configuration. Its source manifest is regenerated for the delivered ZIP. `preprints/LATINON/02_validation/v1.0/FREEZE.json` binds the current archive and entry hashes; `BASELINE_FREEZE.json` binds the original evidence. From the repository root, `python scripts/verify_repository.py` checks both without private Git objects.
 
 Nine graphon modules originate from Cameron Freer's graphon project at commit `9f7be59fa754d260a544b4cfd83d6a5b94f7552e`. The retained provenance file lists removed blueprint metadata and compatibility changes. The finite CDR source cut originates from `jtraverso/cdr-palomar-kernel` at commit `5d1e6fe301e5fc01c92f6145aa34fddfe9c2bd10`. The basic definitions are byte-identical; Wilson compatibility edits and the Latin-array representation change are enumerated. This selection does not import the former absorption existence library.
 

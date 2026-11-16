@@ -1,0 +1,40 @@
+{
+  "status": "PASS_INCREMENTAL_BUILD_AND_AXIOMS",
+  "updated_utc": "2026-11-16T13:33:23.058723+00:00",
+  "mode": "incremental with copied project objects and pinned external caches",
+  "fresh_clean_reconstruction": false,
+  "one_latinon_build_at_a_time": true,
+  "attempt": 2,
+  "exit_code": 0,
+  "query_count": 12,
+  "queries": {
+    "LatinonEntropy.correction_lemma": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.finite_latin_tensor_lower_bound": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.closed_uniform_latinon_upper": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.open_uniform_latinon_lower": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.finite_rate_standard_pattern_log_count": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.finite_rate_factorization_entropy_count": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.wilson_distinguished_latinon_blocks_entropy_count": "propext,\n Classical.choice,\n Quot.sound",
+    "LatinonEntropy.wilson_completed_exact_type_count_eq_base": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.latinon_rate_lowerSemicontinuous": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.latinon_full_cut_compact": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.latinon_rate_sublevels_compact": "propext, Classical.choice, Quot.sound",
+    "LatinonEntropy.correction_lemma_five": "propext, Classical.choice, Quot.sound"
+  },
+  "source_sha256": {
+    "CorrectionFive.lean": "8ca68bbcfb5ff0c3aad4c12e28462864953929ef02ba6aacf4b264c89ab35c21",
+    "LatinonFormalization.lean": "0ac6d7a59aecfbea06abad45d3b254aea60f9e1160269b1ade3e47201cab1472",
+    "ReviewAxioms.lean": "b8dbc5ba72ad8bc9b046eb60ee2ae802977f44d71ce1d0e22eb1a3a42ca83432",
+    "lakefile.toml": "4ee7943ee550341ce3f9fd4efc75399c9643c7919a5bfd5093281833e169bce4"
+  },
+  "logs": {
+    "axioms.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "axioms.stdout.log": "1f56ff4b77a90cdf7e252c65b3cad39bf9d2f56f86d7446077ae4cce03071489",
+    "retry_build.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retry_build.stdout.log": "91e56314b49b6265c12010371140005fb21565643900e9c16d7e35cca724d493",
+    "retry_driver.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retry_driver.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supervisor.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supervisor.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

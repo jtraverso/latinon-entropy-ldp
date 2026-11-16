@@ -1,0 +1,51 @@
+{
+  "certo_version": "0.40.0",
+  "build": {
+    "source": "build",
+    "commit": "df0ec25178a6a5fd4a26a815d05042503820aa54",
+    "clean": true,
+    "built": "2026-11-12T19:20:53Z"
+  },
+  "meta": {
+    "objective": "5/2",
+    "rounded": null,
+    "lp_solver": "pulp/HiGHS",
+    "objective_float": 2.5,
+    "bound": null,
+    "exact": true,
+    "solution": {
+      "radius": "5/2",
+      "center": "5/2"
+    },
+    "stopped_by": null,
+    "optimality_certified": true,
+    "integer": false,
+    "denominator": 2,
+    "min_dual": "1/2",
+    "target": null,
+    "meets_target": null,
+    "scope": "optimum",
+    "relaxation": {
+      "sense": "min",
+      "value": "5/2",
+      "justification": "exact dual: c.x = b.y in rationals"
+    },
+    "objective_declared": "5/2",
+    "objective_canonical": "-5/2",
+    "sense": "min",
+    "canonical_form": "max of the NEGATED objective",
+    "free_split": {
+      "center": [
+        "center__pos",
+        "center__neg"
+      ]
+    },
+    "self_check_ms": 0.25,
+    "phases_ms": {
+      "self_check": 0.25
+    },
+    "self_check": "ok"
+  },
+  "verified": true,
+  "scope": "Optimal centering of a width-five interval; not optimal correction constant"
+}

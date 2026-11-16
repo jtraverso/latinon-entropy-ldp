@@ -1,0 +1,51 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["8b9f79c57b6d5c29.olean"],
+  "m": false,
+  "i": "811318552fa01667.ilean",
+  "c": "7eccadecad903feb.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean c:\\Users\\jtraverso\\.elan\\toolchains\\leanprover--lean4---v4.35.0\\bin\\lean.exe C:\\nw\\latinon-lean-improvements-20261116\\CorrectionFive.lean -o C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\CorrectionFive.olean -i C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\CorrectionFive.ilean -c C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\CorrectionFive.c --setup C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\CorrectionFive.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "CorrectionFive.lean:53:22: Unused tactic linter: `<;>` should be replaced with `;` or be removed.\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+   "level": "warning"},
+  {"message":
+   "CorrectionFive.lean:53:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`",
+   "level": "warning"},
+  {"message":
+   "CorrectionFive.lean:62:26: `simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [boxResidual, transpose, Sum.swap] at h\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+   "level": "warning"},
+  {"message":
+   "CorrectionFive.lean:62:26: `simp` already closes the goal\n\nHint: Use `simp` instead of `simpa`:\n  [apply] simp [boxResidual, transpose, Sum.swap] at h\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`",
+   "level": "warning"},
+  {"message":
+   "CorrectionFive.lean:369:0: 'LatinonEntropy.ScaledResidualData.diameter_five' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "CorrectionFive.lean:370:0: 'LatinonEntropy.correction_lemma_five' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"}],
+ "inputs":
+ [["deps",
+   [["LatinonEntropy/LatinonFormalization:extraDep",
+     [["@LatinonEntropy:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["QuasirandomCorrection transitive imports (legacy)", "95cdf1a16ff98ed8"],
+      ["QuasirandomCorrection:importAllArts", "b532beb48edf6351"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+   "407ce514b71d5a10"],
+  ["C:\\nw\\latinon-lean-improvements-20261116\\CorrectionFive.lean",
+   "98b6511331cd1801"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: CorrectionFive", "0a1e6d1407c32fe2"],
+  ["Package.id?: (some LatinonEntropy)", "2edff3e0171ae21a"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "a1bb0bbdd94e8ad9"}

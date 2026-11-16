@@ -1,5 +1,5 @@
 {
-  "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION",
+  "status": "PASS_CLEAN_BASELINE_PLUS_INCREMENTAL_REFINEMENT",
   "core_steps": [
     {
       "step": 1,
@@ -366,7 +366,18 @@
   "current_clean_audit": "preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json",
   "current_clean_audit_sha256": "fb1207440e08fdd8a7adc1b77c6d4af523d535dce993c22cf7607d4bd25504b7",
   "canonical_entry": "lean/LatinonFormalization.lean",
-  "source_freeze_commit": "7b603942c8d078db6c0a5c8729df7012b7786db8",
   "historical_ledgers_preserved_unchanged": true,
-  "scope": "Current compilation of the selected dependency chain; independent external review remains separate"
+  "scope": "Current compilation of the selected dependency chain; independent external review remains separate",
+  "additive_refinements": [
+    {
+      "declaration": "LatinonEntropy.correction_lemma_five",
+      "source": "lean/CorrectionFive.lean",
+      "source_sha256": "8ca68bbcfb5ff0c3aad4c12e28462864953929ef02ba6aacf4b264c89ab35c21",
+      "depends_on_core_step": 2,
+      "status": "PASS_INCREMENTAL_BUILD_AND_AXIOMS",
+      "scope": "Coefficient 5/2 under the original hypotheses; existing 23 core and eight application steps unchanged"
+    }
+  ],
+  "baseline_source_freeze_commit": "7b603942c8d078db6c0a5c8729df7012b7786db8",
+  "current_source_freeze": "preprints/LATINON/02_validation/v1.0/FREEZE.json"
 }

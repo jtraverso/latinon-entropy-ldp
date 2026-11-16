@@ -1,9 +1,11 @@
 {
   "edition": "1.0",
   "mathematical_baseline_commit": "cb61d185b2fd27168771d7da7b2a9294d7ffb61b",
-  "completed_internal_audit_sha256": "9c03559a4778c85675eafcc9c84509ad25caf8fc7cb4f70e8435765d16bf718b",
   "inherited_printed_proof_review_sha256": "f4971e956fff8b0ad4b1e016b30165ed1274e65cad6987eace2e842ceef19535",
-  "mathematical_sources_unchanged": true,
-  "source_freeze_sha256": "83332812574e022ceff8bcdf5c334616279b298cd8dab91b266173efdbdd1981",
-  "new_repository_contains_development_git_history": false
+  "mathematical_sources_unchanged": false,
+  "source_freeze_sha256": "567ac3561332351313d176018f5d41e475f88bfbd031cf05dad6b448635cfe81",
+  "new_repository_contains_development_git_history": false,
+  "baseline_clean_source_freeze_sha256": "83332812574e022ceff8bcdf5c334616279b298cd8dab91b266173efdbdd1981",
+  "current_revision": "One added correction module; canonical entry, queries and library roots updated; incremental cache-based verification",
+  "baseline_completed_internal_audit_sha256": "9c03559a4778c85675eafcc9c84509ad25caf8fc7cb4f70e8435765d16bf718b"
 }

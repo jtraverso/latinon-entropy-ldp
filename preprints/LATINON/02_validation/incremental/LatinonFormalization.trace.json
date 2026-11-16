@@ -1,0 +1,48 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["27138dc04f3f33a8.olean"],
+  "m": false,
+  "i": "1d61a2679c6d6be0.ilean",
+  "c": "5f2c9f5fde16e170.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean c:\\Users\\jtraverso\\.elan\\toolchains\\leanprover--lean4---v4.35.0\\bin\\lean.exe C:\\nw\\latinon-lean-improvements-20261116\\LatinonFormalization.lean -o C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\LatinonFormalization.olean -i C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\LatinonFormalization.ilean -c C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\LatinonFormalization.c --setup C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\LatinonFormalization.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "LatinonFormalization.lean:4:0: LatinonEntropy.closed_uniform_latinon_upper (F : Set LatinonEntropy.LatinonMeasure) (hF : IsClosed F) (t : ℝ)\n  (ht : ∀ W ∈ F, ENNReal.ofReal t ≤ LatinonEntropy.latinonRate W) (eps : ℝ) (heps : 0 < eps) :\n  ∃ N,\n    ∃ (hN : 0 < N), ∀ (n : ℕ) (hn : N ≤ n), (LatinonEntropy.uniformLatinonLaw ⋯).real F ≤ Real.exp (↑n ^ 2 * (-t + eps))",
+   "level": "info"},
+  {"message":
+   "LatinonFormalization.lean:5:0: LatinonEntropy.open_uniform_latinon_lower (G : Set LatinonEntropy.LatinonMeasure) (hG : IsOpen G) (t : ℝ) (ht0 : 0 ≤ t)\n  (ht : ∃ W ∈ G, LatinonEntropy.latinonRate W ≤ ENNReal.ofReal t) (eps : ℝ) (heps : 0 < eps) :\n  ∃ N,\n    ∃ (hN : 0 < N), ∀ (n : ℕ) (hn : N ≤ n), Real.exp (-↑n ^ 2 * (t + eps)) ≤ (LatinonEntropy.uniformLatinonLaw ⋯).real G",
+   "level": "info"},
+  {"message":
+   "LatinonFormalization.lean:6:0: LatinonEntropy.finite_rate_standard_pattern_log_count.{u_1} {J : Type u_1} [Fintype J] {k l : J → ℕ}\n  (P : (j : J) → LatinonEntropy.LatinOrderPattern (k j) (l j)) (z : J → ℝ)\n  (hfinite : LatinonEntropy.latinonContractedRate (LatinonEntropy.latinonPatternProfile P) z ≠ ⊤) (r eta : ℝ)\n  (hr : 0 < r) (heta : 0 < eta) :\n  ∃ rho,\n    0 < rho ∧\n      rho ≤ r ∧\n        ∃ N,\n          ∃ (_ : 0 < N),\n            ∀ (n : ℕ),\n              N ≤ n →\n                0 < (LatinonEntropy.standardMatrixPatternBoxFamily P z rho n).card ∧\n                  |Real.log ↑(LatinonEntropy.standardMatrixPatternBoxFamily P z rho n).card / ↑n ^ 2 -\n                          (Real.log ↑n - 2) +\n                        (LatinonEntropy.latinonContractedRate (LatinonEntropy.latinonPatternProfile P) z).toReal| ≤\n                    eta",
+   "level": "info"},
+  {"message":
+   "LatinonFormalization.lean:7:0: LatinonEntropy.wilson_distinguished_latinon_blocks_entropy_count {g : ℕ} (G : Finset (Finset (Fin g)))\n  (hG : STS.IsSTS G) (W : CDRBicolour.Absorption.Count.Wilson.Ix G → LatinonEntropy.LatinonMeasure)\n  (hfinite : ∀ (j : CDRBicolour.Absorption.Count.Wilson.Ix G), LatinonEntropy.latinonRate (W j) ≠ ⊤) (r eta : ℝ)\n  (hr : 0 < r) (heta : 0 < eta) :\n  ∃ rho,\n    (∀ (j : CDRBicolour.Absorption.Count.Wilson.Ix G), 0 < rho j ∧ rho j ≤ r) ∧\n      ∃ N,\n        ∃ (hN : 0 < N),\n          ∀ (n : ℕ) (hn : N ≤ n) (a b c : ℕ) (h : CDRBicolour.Absorption.Count.Wilson.WCond a b c g n)\n            (S : CDRBicolour.STS (Fin (a + b + c))),\n            CDRBicolour.IsStrictBicolouring S (CDRBicolour.Prefix.col3 a b c) →\n              ∀ (Λ₀ : CDRBicolour.Absorption.Count.Wilson.Ix G → LatinonEntropy.LatinArray n)\n                (hbase : CDRBicolour.Absorption.Count.Wilson.crossP h Λ₀ ⊆ S.blocks),\n                (Real.exp (∑ j, ↑n ^ 2 * (Real.log ↑n - 2 - (LatinonEntropy.latinonRate (W j)).toReal - eta)) ≤\n                      ↑(LatinonEntropy.wilsonProfileRealizations h hG S Λ₀ hbase ⋯ W rho).card ∧\n                    ↑(LatinonEntropy.wilsonProfileRealizations h hG S Λ₀ hbase ⋯ W rho).card ≤\n                      Real.exp (∑ j, ↑n ^ 2 * (Real.log ↑n - 2 - (LatinonEntropy.latinonRate (W j)).toReal + eta))) ∧\n                  ∀ B ∈ LatinonEntropy.wilsonProfileRealizations h hG S Λ₀ hbase ⋯ W rho,\n                    ∃ S', S'.blocks = B ∧ CDRBicolour.IsStrictBicolouring S' (CDRBicolour.Prefix.col3 a b c)",
+   "level": "info"}],
+ "inputs":
+ [["deps",
+   [["LatinonEntropy/LatinonFormalization:extraDep",
+     [["@LatinonEntropy:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["CorrectionFive transitive imports (legacy)", "e02e7feb6872bedb"],
+      ["CorrectionFive:importAllArts", "aab1cb673c2a58c6"],
+      ["LatinonSeriesApplications transitive imports (legacy)",
+       "7d661ad24addf08f"],
+      ["LatinonSeriesApplications:importAllArts", "c248ad5e5e76099c"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+   "407ce514b71d5a10"],
+  ["C:\\nw\\latinon-lean-improvements-20261116\\LatinonFormalization.lean",
+   "e8431a85d31307f5"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: LatinonFormalization", "00deef3ad0bfbcb1"],
+  ["Package.id?: (some LatinonEntropy)", "2edff3e0171ae21a"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "3efea2f20aef3eca"}

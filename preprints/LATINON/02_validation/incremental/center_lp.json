@@ -1,0 +1,77 @@
+{
+  "schema": 5,
+  "kind": "lp_dual",
+  "solver_free": true,
+  "note_key": "cert.note.lp_dual.exact",
+  "note_args": {},
+  "note": "Optimality certified in EXACT rationals: primal and dual feasibility plus c.x = b.y, all in Fraction. No tolerances and no trust in CBC.",
+  "provenance": {
+    "certo_version": "0.40.0",
+    "created": "2026-11-16T13:02:32+00:00"
+  },
+  "payload": {
+    "sense": "min",
+    "objective": "-5/2",
+    "dual": [
+      "1/2",
+      "1/2"
+    ],
+    "primal": [
+      "5/2",
+      "5/2",
+      "0"
+    ],
+    "A": [
+      [
+        "-1",
+        "1",
+        "-1"
+      ],
+      [
+        "-1",
+        "-1",
+        "1"
+      ]
+    ],
+    "b": [
+      "0",
+      "-5"
+    ],
+    "c": [
+      "-1",
+      "0",
+      "0"
+    ],
+    "names": [
+      "left_endpoint",
+      "right_endpoint"
+    ],
+    "var_names": [
+      "radius",
+      "center__pos",
+      "center__neg"
+    ],
+    "exact": true,
+    "integer": false,
+    "integral_point": null,
+    "integral_objective": null,
+    "kinds": {
+      "radius": "continuous",
+      "center__pos": "continuous",
+      "center__neg": "continuous"
+    },
+    "target": null,
+    "declared": {
+      "objective": "5/2"
+    },
+    "loads": [],
+    "backend": "pulp/HiGHS",
+    "claim_scope": "optimum",
+    "free_split": {
+      "center": [
+        "center__pos",
+        "center__neg"
+      ]
+    }
+  }
+}

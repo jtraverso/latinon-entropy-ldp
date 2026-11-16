@@ -1,0 +1,69 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["53c4941488f032cf.olean"],
+  "m": false,
+  "i": "41d6364b8dcad4f1.ilean",
+  "c": "235522dbc3d9b23f.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\jtraverso\\lean435_shared_20261018\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean c:\\Users\\jtraverso\\.elan\\toolchains\\leanprover--lean4---v4.35.0\\bin\\lean.exe C:\\nw\\latinon-lean-improvements-20261116\\ReviewAxioms.lean -o C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\ReviewAxioms.olean -i C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\lib\\lean\\ReviewAxioms.ilean -c C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\ReviewAxioms.c --setup C:\\nw\\latinon-lean-improvements-20261116\\.lake\\build\\ir\\ReviewAxioms.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "ReviewAxioms.lean:3:0: 'LatinonEntropy.correction_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:4:0: 'LatinonEntropy.finite_latin_tensor_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:5:0: 'LatinonEntropy.closed_uniform_latinon_upper' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:6:0: 'LatinonEntropy.open_uniform_latinon_lower' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:7:0: 'LatinonEntropy.finite_rate_standard_pattern_log_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:8:0: 'LatinonEntropy.finite_rate_factorization_entropy_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:9:0: 'LatinonEntropy.wilson_distinguished_latinon_blocks_entropy_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:10:0: 'LatinonEntropy.wilson_completed_exact_type_count_eq_base' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:12:0: 'LatinonEntropy.latinon_rate_lowerSemicontinuous' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:13:0: 'LatinonEntropy.latinon_full_cut_compact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:14:0: 'LatinonEntropy.latinon_rate_sublevels_compact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "ReviewAxioms.lean:15:0: 'LatinonEntropy.correction_lemma_five' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"}],
+ "inputs":
+ [["deps",
+   [["LatinonEntropy/LatinonFormalization:extraDep",
+     [["@LatinonEntropy:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["LatinonFormalization transitive imports (legacy)", "187f4cf0661b4570"],
+      ["LatinonFormalization:importAllArts", "9de49dade9576ad7"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.35.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+   "407ce514b71d5a10"],
+  ["C:\\nw\\latinon-lean-improvements-20261116\\ReviewAxioms.lean",
+   "2333dbee876bf0d2"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: ReviewAxioms", "9ab59854eee95298"],
+  ["Package.id?: (some LatinonEntropy)", "2edff3e0171ae21a"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "55fb17c3b0fa3742"}

@@ -2,11 +2,8 @@
 
 Verdict: **PASS_TARGETED_WRITTEN_REVIEW**, with the scope below.
 
-Sections 1–10, all 57 displayed formulas, the eleven principal statement
-paragraphs, appendix and bibliography are unchanged from the source-bound
-mathematical baseline. The exact comparisons are in the edition's protected
-index and semantic report. The targeted written-proof review of that baseline
-is retained by its source hash in `02_validation/v1.0/PROVENANCE.json`.
+All 57 displayed formulas, eleven principal statement paragraphs and the appendix are unchanged from the protected mathematical baseline. Expository and citation revisions are recorded passage by passage. The sole authorized mathematical addition is the coefficient-5/2 refinement after Lemma 4.1, proved by transposition and walk reversal and checked in CorrectionFive. The numbered results and their consumers retain their original valid constants.
+
 This edition does not claim a new independent line-by-line review of every
 analytic provider.
 
@@ -33,3 +30,5 @@ theorem has been introduced.
 Unresolved content queries identified in this edition review: **none**.
 Independent mathematical and priority reviews remain separate from this
 internal preparation result.
+
+The added argument was checked against the current compiled declarations: transposition exchanges sides and reverses residual arcs; four-step row walks therefore give four-step column walks. Same-side endpoints need four edges, opposite-side endpoints at most five. Centering the existing potential gives radius 5/2 and the unchanged margin pairing yields the stated refinement. Its exact hypotheses match correction_lemma; no extra feasibility or potential assumption is introduced.

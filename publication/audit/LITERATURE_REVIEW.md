@@ -153,3 +153,15 @@ and attribute its origin to Trashorras. Publisher metadata identifies Random
 Structures & Algorithms 56 (2020), 220--250, with online publication in 2019:
 https://doi.org/10.1002/rsa.20882 . This is cited directly in the manuscript.
 It supplies context, not the n-squared-speed Latinon result.
+
+
+Final pre-release positioning check, 16 November 2026: GHHS arXiv v3,
+Remark 3.2, Definitions 3.3/3.7 and Conjecture 12.4 were read literally.
+The finite normalization agrees exactly; the embedding error is separate.
+The v2 locator 12.5 is from the author's supplied independent PDF review.
+The Discrete Analysis landing page https://discreteanalysisjournal.com/article/83253-limits-of-latin-squares
+links to arXiv for the article. No independent journal-PDF numbering check is
+claimed. GHHS uses the positive displayed integral in Section 12.2; the
+manuscript's confirmation uses negative KL and treats the extended cases
+explicitly. This identifies the intended counting statement, not its literal
+opposite-sign display. No unreleased colour-statistics work is cited.

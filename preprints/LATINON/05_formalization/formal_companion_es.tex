@@ -95,11 +95,19 @@ Fuente: \path{lean/LatinonBridge/LatinonCompactness.lean}, línea 60.
 
 Fuente: \path{lean/LatinonBridge/LatinonGlobalDeviations.lean}, línea 15.
 
-Estas tres propiedades tienen sus propias consultas de axiomas en los módulos de fuentes. El informe de reconstrucción completada registra sus tres salidas exitosas por separado de las ocho consultas seleccionadas de resultados finales en \path{ReviewAxioms.lean}. Las once informaron solo los axiomas fundacionales estándar. Véase \path{preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json}.
+Estas tres propiedades se consultan junto con los ocho resultados originales y el teorema de corrección reforzado en \path{ReviewAxioms.lean}. Las doce consultas actuales informan únicamente axiomas fundacionales estándar. Las once salidas originales también se conservan con la reconstrucción limpia en \path{preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json}.
 
 El teorema finito de tensores cuantifica el umbral de orden antes del perfil. El teorema de corrección no tiene hipótesis de diámetro residual ni certificados de potenciales. El lema 4.1 conserva sus constantes explícitas de caja y el coeficiente lineal 3.
 
 El argumento de diámetro seis también aparece internamente como \path{LatinonEntropy.ScaledResidualData.diameter_six} en \path{lean/ResidualDiameter.lean}. Su ausencia de las hipótesis de \path{correction_lemma} significa que se deduce internamente, no que solo exista en papel. Se revisa el lema 4.1 como prueba escrita por separado de su correspondencia con ese argumento de fuentes.
+
+\textbf{Mejora del lema 4.1.}
+
+\path{LatinonEntropy.ScaledResidualData.diameter_five}
+
+\path{LatinonEntropy.correction_lemma_five}
+
+Ambas declaraciones están en \path{lean/CorrectionFive.lean}. La transposición invierte las aristas residuales; sus caminos de cuatro pasos entre filas dan caminos de cuatro pasos entre columnas en el grafo original. Los caminos entre lados opuestos usan a lo sumo cinco aristas, lo que da el radio del potencial y el coeficiente de corrección \(5/2\). Estas declaraciones refuerzan el resultado original de coeficiente tres sin modificar sus consumidores ni la correspondencia de teoremas numerados.
 
 \subsection{3. Registro de dependencias}\label{registro-de-dependencias}
 
@@ -267,15 +275,17 @@ Los resultados CDR cuantifican un sistema base ya completado que contiene el pac
 
 \subsection{5. Herramientas, imports y reconstrucción}\label{herramientas-imports-y-reconstrucciuxf3n}
 
-El proyecto entregado fija Lean 4.35.0 y Mathlib en el commit \path{56a005855ea17e0b0958f73ec801ae140b0a1679}. Su manifiesto fija otros ocho repositorios del ecosistema. La configuración declara 309 raíces de módulos locales, incluidas la entrada canónica y el módulo de consulta de axiomas. La entrada canónica importa la cadena principal mediante el ensamblaje de aplicaciones. El manifiesto de fuentes registra cada módulo seleccionado y su hash. Esta edición no afirma compatibilidad con el snapshot anterior 4.35.0-rc3.
+El proyecto actual fija Lean 4.35.0, el commit de Mathlib \path{56a005855ea17e0b0958f73ec801ae140b0a1679} y otros ocho repositorios del ecosistema. Declara 310 raíces de módulos locales. La entrada canónica \path{LatinonFormalization} importa el ensamblaje de aplicaciones y \path{CorrectionFive}; su clausura local de imports tiene 299 módulos. El manifiesto de fuentes lista todos los módulos y hashes de archivos seleccionados.
 
-Extraiga el archivo de fuentes de \path{preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip}; contiene el directorio de proyecto \path{lean/} y sus licencias de origen. Instale la herramienta fijada, obtenga los paquetes externos fijados y sus cachés y ejecute desde el proyecto extraído \texttt{lake\ build\ LatinonFormalization} y \texttt{lake\ env\ lean\ ReviewAxioms.lean}, secuencialmente. El primer comando construye la biblioteca configurada de 309 objetivos. La reconstrucción registrada compiló en cambio un objetivo local explícito a la vez. Se conservan sus hashes de fuentes y configuración, los 309 hashes de objetos y los logs de módulos. No se restauró ningún objeto del proyecto; se declara la reutilización de cachés externas.
+Extraiga \path{preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip}, que contiene el proyecto \path{lean/} y las licencias de origen. Instale el toolchain y los paquetes externos fijados y ejecute secuencialmente \texttt{lake\ build\ LatinonFormalization} y \texttt{lake\ env\ lean\ ReviewAxioms.lean} desde ese proyecto. El build de la biblioteca abarca 310 objetivos configurados. La reconstrucción original de 309 objetivos comenzó sin objetos del proyecto; el build incremental posterior reutilizó esos objetos y las cachés externas fijadas.
 
-Los 309 objetivos locales terminaron correctamente el 16 de noviembre de 2026. Las ocho consultas de resultados finales y las tres de tasa buena contienen solo \path{propext}, \path{Classical.choice} y \path{Quot.sound}, sin axiomas matemáticos del proyecto ni \path{sorryAx}. El verificador de la edición comprueba sus logs conservados contra el archivo y los hashes congelados de fuentes. No ejecuta Lean ni reconstruye paquetes externos.
+Ambos builds terminaron el 16 de noviembre de 2026. El archivo actual de doce consultas y su salida exitosa se entregan con la evidencia incremental. Todos los conjuntos de axiomas informados están contenidos en \path{propext}, \path{Classical.choice} y \path{Quot.sound}. El archivo y los logs están vinculados mediante SHA-256; la verificación del paquete de solo lectura no ejecuta Lean.
+
+Ejecute \texttt{python\ scripts/review\_axioms.py} desde el repositorio de publicación para verificar las doce consultas registradas con un solo comando. Comprueba los vínculos de logs y fuentes certificados. Para una ejecución nueva de Lean, utilice el comando de consultas anterior.
 
 \subsection{6. Procedencia y límites de la revisión}\label{procedencia-y-luxedmites-de-la-revisiuxf3n}
 
-El identificador del freeze de fuentes es \path{7b603942c8d078db6c0a5c8729df7012b7786db8}. Sus 309 archivos de módulos y tres archivos de configuración y herramienta tienen los mismos bytes que en la reconstrucción completada. El archivo de fuentes no cambia en esta edición. \path{preprints/LATINON/02_validation/v1.0/FREEZE.json} registra su SHA-256 y hashes de entradas. Desde la raíz del repositorio, \texttt{python\ scripts/verify\_repository.py} comprueba el paquete sin necesitar acceso al repositorio de desarrollo ni a sus objetos Git.
+La instantánea limpia original se identifica mediante \path{7b603942c8d078db6c0a5c8729df7012b7786db8} y se conserva por separado. El freeze actual añade un módulo y modifica la entrada canónica, el archivo de consultas y la configuración de la biblioteca. Su manifiesto de fuentes se regenera para el ZIP entregado. \path{preprints/LATINON/02_validation/v1.0/FREEZE.json} vincula el archivo actual y los hashes de sus entradas; \path{BASELINE_FREEZE.json} vincula la evidencia original. Desde la raíz del repositorio, \texttt{python\ scripts/verify\_repository.py} comprueba ambos sin objetos Git privados.
 
 Nueve módulos de grafones provienen del proyecto de Cameron Freer en el commit \path{9f7be59fa754d260a544b4cfd83d6a5b94f7552e}. El archivo de procedencia conservado enumera los metadatos blueprint retirados y los cambios de compatibilidad. La selección CDR finita proviene de \path{jtraverso/cdr-palomar-kernel} en el commit \path{5d1e6fe301e5fc01c92f6145aa34fddfe9c2bd10}. Las definiciones básicas son idénticas byte a byte; se enumeran los cambios de compatibilidad de Wilson y de representación de matrices latinas. Esta selección no importa la antigua biblioteca de existencia por absorción.
 

@@ -13,7 +13,9 @@ independent mathematical review remains separate.
 2. **Correction.** Lemma 4.1, (4.1)–(4.6): witness A/d, residual expansion,
    repeated arcs, diameter six, potentials and coefficient 3. Source:
    `QuasirandomCorrection.lean` and `ResidualDiameter.lean` inside the ZIP.
-   The diameter and potential are derived, not caller hypotheses.
+   The diameter and potential are derived, not caller hypotheses. The unnumbered
+   refinement and `CorrectionFive.lean` improve diameter six to five and the
+   coefficient 3 to 5/2 under the same hypotheses.
 3. **Lower count.** Theorem 3.1 and §§5–6: weighted Gibbs (5.0), capped
    permanent, the finite size condition for recentring, predictable stopping,
    first-failure estimate (6.4'), active/inactive split (6.4c), Gronwall,
@@ -24,8 +26,8 @@ independent mathematical review remains separate.
    compactness via the explicit GHHS comparison.
 5. **LDP and patterns.** Theorems 2.1–2.2 and §§8–9: finite thresholds,
    contraction, radius before order, finite binomial normalization, empty
-   fibers and infinite-rate cases. Check all three good-rate query logs in
-   addition to the eight selected endpoint queries.
+   fibers and infinite-rate cases. The current `ReviewAxioms.lean` checks all twelve declarations together,
+   including the three good-rate properties and the strengthened correction.
 6. **Applications.** Corollary 10.1, Lemma 10.2 and Proposition 10.3:
    ordered bijection, supplied completed CDR base, fixed pair footprint,
    injective recovery, product count and exact six-type preservation. This

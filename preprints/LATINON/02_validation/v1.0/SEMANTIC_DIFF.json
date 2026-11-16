@@ -1,31 +1,27 @@
 {
   "status": "PASS",
   "version": "1.0",
-  "baseline_commit": "cb61d185b2fd27168771d7da7b2a9294d7ffb61b",
   "manuscripts": [
     {
       "source": "preprints/LATINON/01_manuscript/latinon_en.md",
       "baseline_sha256": "05288c1461eb25af15f424e3f5e2225ab2fa0292b866d1692dddb27267dad874",
-      "edition_sha256": "7db2ab26f399019c09312dbcead8eff7c4c9fe6888f9e081a817db1fb0917b3f",
+      "edition_sha256": "754d105fb1b4c6ef6f47c28ccd56b9d72d54105590c2ece027fcf536be4ccffe",
       "unchanged_statements": 11,
       "unchanged_displays": 57,
-      "mathematical_sections_appendix_and_references_exactly_preserved": true
+      "mathematical_statements_displays_and_appendix_exactly_preserved": true,
+      "expository_and_citation_edits_match_reviewed_revision": true
     },
     {
       "source": "preprints/LATINON/01_manuscript/latinon_es.md",
       "baseline_sha256": "e2b128f19073dfac0a4a9da5bdcffce3ccf2bbc875896aa104e938f8ddf750b3",
-      "edition_sha256": "72479df020e384edd28a543db0e42e62971c212e33ed7bc695e42b1d863046b0",
+      "edition_sha256": "c8c7f900b24f7448e5a41bc40cc5ed1d1d79df31e43e4b39252daeb6cbd1b72c",
       "unchanged_statements": 11,
       "unchanged_displays": 57,
-      "mathematical_sections_appendix_and_references_exactly_preserved": true
+      "mathematical_statements_displays_and_appendix_exactly_preserved": true,
+      "expository_and_citation_edits_match_reviewed_revision": true
     }
   ],
-  "companion_formal_declaration_maps_preserved": true,
-  "changed_passages": [
-    "edition metadata and repository address",
-    "Section 11 formalization/reproduction status",
-    "companion reconstruction and package navigation prose"
-  ],
-  "mathematical_source_archive_changed": false,
-  "unresolved_content_queries": []
+  "mathematical_source_archive_changed": true,
+  "unresolved_content_queries": [],
+  "authorized_addition": "Unnumbered coefficient 5/2 refinement with Lean proof"
 }
