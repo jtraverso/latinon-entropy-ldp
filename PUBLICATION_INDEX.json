@@ -28,7 +28,8 @@
       "sequence": 2,
       "kind": "research_note",
       "depends_on": ["LATINON"],
-      "doi_status": "reserved_not_published"
+      "doi_status": "reserved_not_published",
+      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latinons-kernel-measure-lean-formalization"
     }
   ],
   "series": {

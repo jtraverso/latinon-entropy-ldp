@@ -10,6 +10,7 @@ Latinons agree: a Lean formalization*. Research note, preprint 1.0. DOI:
 https://doi.org/10.5281/zenodo.24293531.
 
 GitHub edition: <https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/ghhsbridge-v1.0>.
+alphaXiv: <https://www.alphaxiv.org/abs/2611.latinons-kernel-measure-lean-formalization>.
 
 The repository contains the bilingual manuscript and companion, the source-only
 Lean freeze and its internal audit. Both Zenodo DOIs are reserved; the deposits remain unpublished.
