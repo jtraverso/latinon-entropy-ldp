@@ -1,0 +1,32 @@
+⚠ [1995/2020] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2005/2041] Replayed WeightedLogSum
+warning: WeightedLogSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedLogSum.lean:94:0: 'LatinonEntropy.weighted_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3138/3151] Replayed FiniteAverages
+warning: FiniteAverages.lean: imports `Mathlib.Logic.Equiv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteAverages.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteAverages.lean:93:0: 'LatinonEntropy.finiteMean_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteAverages.lean:94:0: 'LatinonEntropy.finiteMean_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3311/3313] Replayed SymbolIntervalWeights
+warning: SymbolIntervalWeights.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3312/3313] Replayed SymbolFloorCuts
+warning: SymbolFloorCuts.lean: imports `Mathlib.Algebra.Order.Floor.Semiring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3313/3313] Built SymbolIntervalClasses (114s)
+warning: SymbolIntervalClasses.lean: imports `Mathlib.Order.Interval.Finset.Nat` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: SymbolIntervalClasses.lean:128:0: 'LatinonEntropy.symbolIntervalWeight_eq_indicator_off_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SymbolIntervalClasses.lean:129:0: 'LatinonEntropy.symbolIntervalClass_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:130:0: 'LatinonEntropy.symbolIntervalClass_card_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:131:0: 'LatinonEntropy.symbolIntervalClass_proportion_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:132:0: 'LatinonEntropy.exists_symbolIntervalClass_size_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:133:0: 'LatinonEntropy.symbolIntervalWeight_indicator_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3313 jobs).

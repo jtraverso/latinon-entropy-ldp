@@ -1,0 +1,175 @@
+{
+  "status": "PASS_ALL_RENDERED_PAGES",
+  "reviewer": "Codex primary agent; internal visual inspection, not independent specialist review",
+  "completed_utc": "2026-11-16T09:58:21.687633+00:00",
+  "document_audit_sha256": "c49952b6ebd318cb649cbf60566b6eef89fc6496117723b34308b353e55d4ba0",
+  "total_pages": 50,
+  "documents": {
+    "preprints/LATINON/01_manuscript/latinon_en.pdf": {
+      "pdf_sha256": "f99ab43c20bfa50bc42413942a7e7c7faf3b796caef06fee4f06d5291d6573ff",
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
+      "individual_dense_pages": [
+        17
+      ],
+      "rendered_page_sha256": {
+        "1": "62be859277b2901166c2e2a3f391c29f2fd5d653de17606072f9c0fa7837f5ec",
+        "2": "a66535ff869ed6cfc143355d85e769b593494dbc60baaca3c0ac600290aa8a32",
+        "3": "98c8ca23e18e3534c7d65a822028f68c1acbfcf212b3412301522eff5f34db3c",
+        "4": "a90f9e1b4089ef415f1f974f5ffaecaf5dad148665baea9970fbb744234fb60f",
+        "5": "ac2822c1ac92190ba37a1bc61d9438bb67cca1c03bafdf5fdb12c4160fa67dda",
+        "6": "07201f4e502b5c8233943bb0b91bea702fd04077f32abfc7090b9e313c6eb0b8",
+        "7": "247dc23a6e75b6d65fa5b47cc0d0a03b6fed1e93e56781b7917b68aca504a836",
+        "8": "5de8c70f54a7dee60c2cb42f4ecdd5a75243ca056ae7974f7f263cb60a6bcf5b",
+        "9": "a5d022cd9dfa4f18b8364dd4ab36eb75e56aca8c871dad57a48cab4e37fdb343",
+        "10": "f4ca7ed4a7e9ea2d0f780deb986bcdde2b2af96d384aeaba653b8408b6e82491",
+        "11": "c672fdb070d8141e7a7ad583ba38e7eb2d59b771d6560b25ec5c4d415747f0c7",
+        "12": "afde020cadfdc21d12740c900c22d9e0e3b050cce652309208d7dbffde7c5f58",
+        "13": "5c7a5ab6a664c660023efac793cab386efa329b0b5dacaed11229a481cf8483d",
+        "14": "a8f9e5b8b3da46d4f57695acc758426bf80d2f7187e51f89d42f85fec05ddbd7",
+        "15": "a811cba9b01a8d97fa4e9ab5345d2fdabbec1ddb1f687a9daaf25a2e3181ceb9",
+        "16": "1bcce007d3a51e06b84daa007932bcf8c3918e9db15c7f6b905f32326dbc3c0b",
+        "17": "db1e5426b8825d5d09877b1dbc38c60018ed9db207ebc609b7292ecf116db3c6",
+        "18": "c5abfc763de9e7323cde93b0d2029be8efbe68a115f3734336662e8b626414ed",
+        "19": "59f3a44f59d3869b6b8af07aebce51a6c2f88dbe9d23bf5b085ba74d692c2e4b"
+      },
+      "open_layout_issues": []
+    },
+    "preprints/LATINON/01_manuscript/latinon_es.pdf": {
+      "pdf_sha256": "30f8a19ef5812dfb9acf7051cc2a8c7701b9c4b2d2c3c673309b0dfcd2127d1c",
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
+      "individual_dense_pages": [],
+      "rendered_page_sha256": {
+        "1": "e9d2f8c51f1c9cec01fc3f4b1e282e5dcdf4d2c9b3dba01b08d12dd88de5aa24",
+        "2": "474768aca83d0b63c0a3f038310311e39d4599a6716ecf7aad09c70a4f0ae4e5",
+        "3": "6555e260606d9b65d116dd17a954fe0563b59f14b8199b7769e902a82fe8d144",
+        "4": "b12a13b372a7e599d22b362dcda2a5d4fcd3e8f580438747df4eaa9ec85e57e4",
+        "5": "2ab59586d99944e6f84d1891e28d1cc63a1d0241faef74be2ecbe08a220d3e1f",
+        "6": "c622376d453beb4af9ef992cafbc4335de6b882ade995c1747f46f09fa802f2a",
+        "7": "c3726b877481b22310fbe5185fd8a30321a3a9314eea7bf29fdcf8b85b1255ee",
+        "8": "6941e5b51b83dc29e836d2d45d6e086f41132b0a064e601c664f781813bccf49",
+        "9": "c74907c0f7ddedfc3c381f470d86767be5a77d4a4e718f257a78054f129fa797",
+        "10": "bf3a053383e90a2e1e115cbed382b777e0dead7098ae884150a1b7a14c165050",
+        "11": "cd9f1d4f4ddba0679403a81a237e52021492882026555cc8bf668d3bf657e362",
+        "12": "20f2b9d3a1dc4703ce6a2bcac0c7836c76aa67c0880d2d2928621795417b6141",
+        "13": "7f9c6d648401ac91f738161f7eb847751436289239eafcb3363791389288ca42",
+        "14": "32ff4b0f0585d9384fa23a65c8760c5efab3d20c77bb5666747dbcfbc793acb0",
+        "15": "e11ea1474ba5541365fa414addd45317ab8efb6d456c53a79579f6774b02b0c0",
+        "16": "d26e016aefb99deea4fca127e814115a2e2175e2ba665f193569e7d31349506a",
+        "17": "7b20a73140475fbb74780957bee96102ddaed3d629d603e3afb2dc4d1aa8ac87",
+        "18": "070ae07156a54ae27a55bd07e9250dce84fef4ff01ccf0526fe928049ab2c095",
+        "19": "2a168d8716cb9217f3bd4c271b27442821dfcd98421f64ccaae8b2cc641cb833"
+      },
+      "open_layout_issues": []
+    },
+    "preprints/LATINON/05_formalization/formal_companion_en.pdf": {
+      "pdf_sha256": "74f4ed6b9395ba1e91c1ff0ae7facc7cf9cf7b987b2e79a8725a6a35db3240e7",
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
+      "individual_dense_pages": [
+        5
+      ],
+      "rendered_page_sha256": {
+        "1": "7dd8e2ba817aa9306493b3fb6a50bc59b5f09db132c7bc42b72b713e1eb58eb9",
+        "2": "0ff3ab84f7127bd70a777989acda6a29a1ebda1de1260dd2aba79e81cb51d159",
+        "3": "cdc6818c641af691e77da64a3fceecec41c82a8758abf8fcf0c75ef687a3a733",
+        "4": "289d1aec41e86bebcd645ad98168366e9e85f3b053b7fbdc36c74e932d0b559c",
+        "5": "f266ecee08a0da4dd0f66bbd856f76e51aa8efa9bb93d07f3b4685fddca45355",
+        "6": "3fa030cdcf380147698c2d3fdcf4eb2a063abef3b58eaa5c0eaf2c2618695f95"
+      },
+      "open_layout_issues": []
+    },
+    "preprints/LATINON/05_formalization/formal_companion_es.pdf": {
+      "pdf_sha256": "7d846c5e302e87b3581a371396de060326375d3ea1849df08c86c607a6b30d5f",
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "inspection_mode": "Every page viewed in original-resolution paired layout; listed dense pages viewed individually",
+      "individual_dense_pages": [
+        6
+      ],
+      "rendered_page_sha256": {
+        "1": "8e246412e1bfb6907f6478c441befb03d5a888ba29b49ffc36dfcb5291e5a231",
+        "2": "5863bd7e69cb25c63880f1ec55c32a39b8266e987560c2f70ab57c159299df41",
+        "3": "24e730934e7546cf4e700466ee95bf15b5873048acb45b7169790da0c27cb17a",
+        "4": "2b8f5742f3ccaa9e707e43bde2133c57332489f57f3db5b06d551452473a06f4",
+        "5": "6bf17fd1e5274a77aa7b001b1e9dc603cc17399bc07bf8f3641dbb4dc89384bb",
+        "6": "aafa680b5f0784b60d3f760aabb252e5929a8082526828618a545c7b0b0ce28e"
+      },
+      "open_layout_issues": []
+    }
+  },
+  "reference_comparison": {
+    "repository": "https://github.com/jtraverso/cdr-steiner-preprints",
+    "commit": "d12d980f8c86d8795e9faa0c6bb274ee936c7c8e",
+    "pdf": "preprints/PAPER_III/01_manuscript/prescribed_en.pdf",
+    "pdf_sha256": "70bc7d4dc895687439d67c43ace338455d8e8efe718ec40f539097c61ea12476",
+    "observed_pages": [
+      1,
+      2,
+      30
+    ],
+    "compared": "title and author block, preprint/repository metadata, theorem and display typography, bibliography, geometry and fonts",
+    "figure_and_table_comparison": "Not applicable: this edition introduces no figures or mathematical tables"
+  },
+  "observations": [
+    "All 50 final pages inspected after preprint 1.0 generation",
+    "Title metadata, repository URLs and completed formalization status are readable",
+    "No clipping, overlap, missing glyph or stranded heading found",
+    "Long paths and hashes remain breakable and the rendered build commands match their sources",
+    "The final English page contains two remaining bibliography entries; no heading is orphaned"
+  ]
+}

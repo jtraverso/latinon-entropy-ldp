@@ -1,0 +1,1113 @@
+⚠ [2739/2754] Replayed Graphon.Basic
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2746/2768] Replayed Graphon.Step
+warning: Graphon\Step.lean: imports `Mathlib.Order.Partition.Finpartition` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.Combinatorics.SimpleGraph.Density` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Function.Floor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Step.lean:120:0: automatically included section variable(s) unused in theorem `Graphon.trivialPartition_card`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Step.lean:183:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/Step.lean:194:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [2747/2768] Replayed Graphon.CutNorm
+warning: Graphon\CutNorm.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Set` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/CutNorm.lean:77:0: automatically included section variable(s) unused in theorem `SymmKernel.rectIntegral_empty_left`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutNorm.lean:82:0: automatically included section variable(s) unused in theorem `SymmKernel.rectIntegral_empty_right`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutNorm.lean:87:0: automatically included section variable(s) unused in theorem `SymmKernel.rectIntegral_univ`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutNorm.lean:106:17: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutNorm.lean:106:52: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutNorm.lean:110:0: automatically included section variable(s) unused in theorem `SymmKernel.cutNorm_nonneg`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutNorm.lean:125:0: automatically included section variable(s) unused in theorem `SymmKernel.graphon_abs_le_one`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutNorm.lean:296:10: `mul_le_one₀` has been deprecated: No replacement, use constituent lemmas from proof.
+warning: Graphon/CutNorm.lean:318:16: `mul_le_one₀` has been deprecated: No replacement, use constituent lemmas from proof.
+⚠ [2750/2768] Replayed Graphon.HomDensity
+warning: Graphon\HomDensity.lean: imports `Mathlib.Combinatorics.SimpleGraph.Maps` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.Combinatorics.SimpleGraph.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.MeasureTheory.Constructions.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.Probability.Independence.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/HomDensity.lean:80:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_eq_integral`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:88:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_congr_decRel`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:101:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_bot`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:117:0: automatically included section variable(s) unused in theorem `Graphon.edge_out_ne`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:134:0: automatically included section variable(s) unused in theorem `Graphon.graphonEval_mem_Icc_ae`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:448:25: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:450:25: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/HomDensity.lean:453:39: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:470:80: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:474:23: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/HomDensity.lean:470:44: This simp argument is unused:
+  Subtype.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Equiv.ofInjective_apply, Set.mem_range_self, dif_pos, f.right_inv_of_invOfMemRange]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2755/2771] Replayed Graphon.Pullback
+warning: Graphon\Pullback.lean: imports `Mathlib.Dynamics.Ergodic.MeasurePreserving` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Pullback.lean:56:0: automatically included section variable(s) unused in theorem `SymmKernel.measurePreserving_prodMap_self`:
+  [IsProbabilityMeasure ν]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure ν] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Pullback.lean:248:0: automatically included section variable(s) unused in theorem `Graphon.measurable_piMap`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Pullback.lean:252:0: automatically included section variable(s) unused in theorem `Graphon.measurePreserving_piMap`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [2783/2799] Replayed Graphon.MeasureIso
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Arctan` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Dynamics.Ergodic.MeasurePreserving` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Constructions.Polish.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Constructions.Polish.EmbeddingReal` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.MeasurableSpace.Embedding` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Measure.Stieltjes` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Measure.Support` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.MeasureTheory.Measure.Typeclasses.NullSingletonClass` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Probability.CDF` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.SetTheory.Cardinal.Aleph` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Topology.MetricSpace.CantorScheme` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Topology.Metrizable.CompletelyMetrizable` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\MeasureIso.lean: imports `Mathlib.Topology.Order.LeftRightLim` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/MeasureIso.lean:140:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:217:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/MeasureIso.lean:226:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/MeasureIso.lean:267:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/MeasureIso.lean:309:22: `Set.setOf_mem_eq` has been deprecated: Use `Set.ofPred_mem_eq` instead
+
+Hint: Replace the deprecated name:
+  s̵e̵t̵O̵f̵_̵m̵e̵m̵_̵e̵q̵o̲f̲P̲r̲e̲d̲_̲m̲e̲m̲_̲e̲q̲
+warning: Graphon/MeasureIso.lean:332:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:336:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:342:8: `Filter.eventuallyEq_set` has been deprecated: Use `Filter.eventuallyEqSet_iff` instead
+
+Hint: Replace the deprecated name:
+  e̵v̵e̵n̵t̵u̵a̵l̵l̵y̵E̵q̵_̵s̵e̵t̵e̲v̲e̲n̲t̲u̲a̲l̲l̲y̲E̲q̲S̲e̲t̲_̲i̲f̲f̲
+warning: Graphon/MeasureIso.lean:523:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:550:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:552:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:598:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:634:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:635:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:730:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:735:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:847:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/MeasureIso.lean:896:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:897:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:971:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:972:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/MeasureIso.lean:975:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3143/3158] Replayed Graphon.CutDistance
+warning: Graphon\CutDistance.lean: imports `Mathlib.MeasureTheory.Constructions.Polish.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\CutDistance.lean: imports `Mathlib.MeasureTheory.Integral.Layercake` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\CutDistance.lean: imports `Mathlib.Probability.Kernel.Composition.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\CutDistance.lean: imports `Mathlib.Probability.Kernel.Disintegration.StandardBorel` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/CutDistance.lean:88:17: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:88:52: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:92:0: automatically included section variable(s) unused in theorem `Graphon.cutNormDiff_nonneg`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutDistance.lean:175:0: automatically included section variable(s) unused in theorem `Graphon.cutNormDiff_self`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutDistance.lean:201:0: automatically included section variable(s) unused in theorem `Graphon.cutNormDiff_symm`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutDistance.lean:443:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/CutDistance.lean:381:17: Variable name `hg_meas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg_meas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:381:42: Variable name `hg_bound` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg_bound
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:756:10: `mul_le_one₀` has been deprecated: No replacement, use constituent lemmas from proof.
+warning: Graphon/CutDistance.lean:1072:0: automatically included section variable(s) unused in theorem `Graphon.mp_align_forces_equal_measure`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutDistance.lean:1083:0: automatically included section variable(s) unused in theorem `Graphon.mp_maps_into_forces_measure_le`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/CutDistance.lean:1110:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1121:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1122:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1135:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1136:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1158:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1160:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1190:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1107:7: Variable name `hχ₁` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hχ₁
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:1107:40: Variable name `hχ₂` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hχ₂
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:1260:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1264:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1268:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1272:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1519:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/CutDistance.lean:1543:20: Variable name `he` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/CutDistance.lean:1664:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/CutDistance.lean:1665:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3144/3158] Replayed Graphon.Approximation
+warning: Graphon/Approximation.lean:58:5: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Approximation.lean:59:10: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Approximation.lean:65:5: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Approximation.lean:65:28: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Approximation.lean:107:26: unused name: _
+warning: Graphon/Approximation.lean:163:0: automatically included section variable(s) unused in theorem `Graphon.Refines.refl`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Approximation.lean:167:0: automatically included section variable(s) unused in theorem `Graphon.Refines.trans`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Approximation.lean:234:0: automatically included section variable(s) unused in theorem `Graphon.MeasurablePartition.splitPart_refines`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Approximation.lean:248:0: automatically included section variable(s) unused in theorem `Graphon.MeasurablePartition.splitPart_card`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Approximation.lean:450:4: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Approximation.lean:452:4: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+ℹ [3151/3158] Replayed LatinonBridge.BipartiteKernel
+info: LatinonBridge/BipartiteKernel.lean:84:0: 'LatinonEntropy.bipartiteValue_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:85:0: 'LatinonEntropy.bipartiteValue_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:86:0: 'LatinonEntropy.bipartiteValue_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:87:0: 'LatinonEntropy.bipartiteGraphon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:88:0: 'LatinonEntropy.bipartiteValue_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3152/3158] Replayed LatinonBridge.BlockIntegrals
+warning: LatinonBridge\BlockIntegrals.lean: imports `Mathlib.MeasureTheory.Integral.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinonBridge/BlockIntegrals.lean:62:0: 'LatinonEntropy.binaryTagMeasure_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:63:0: 'LatinonEntropy.binaryTagMeasure_real_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:64:0: 'LatinonEntropy.ae_bipartite_tag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:65:0: 'LatinonEntropy.bipartite_setIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:66:0: 'LatinonEntropy.bipartite_blockIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3156/3158] Replayed Graphon.Regularity
+warning: Graphon\Regularity.lean: imports `Mathlib.Analysis.Convex.Integral` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Regularity.lean: imports `Mathlib.Analysis.Convex.SpecificFunctions.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Regularity.lean:63:0: automatically included section variable(s) unused in theorem `Graphon.energy_nonneg`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:124:5: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:123:18: Overlapping instance parameters in `tAverage`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:132:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:133:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:128:0: automatically included section variable(s) unused in theorem `Graphon.tAverage_measurable`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:128:59: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:128:8: Overlapping instance parameters in `tAverage_measurable`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:160:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:161:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:149:0: automatically included section variable(s) unused in theorem `Graphon.tAverage_ae_mem_Icc`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:149:59: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:149:8: Overlapping instance parameters in `tAverage_ae_mem_Icc`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:200:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:203:23: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:194:0: automatically included section variable(s) unused in theorem `Graphon.tAverage_integral_eq_rectAverage`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:195:5: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:195:28: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:194:8: Overlapping instance parameters in `tAverage_integral_eq_rectAverage`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:258:0: automatically included section variable(s) unused in theorem `Graphon.sq_setIntegral_le_measure_mul_setIntegral_sq`:
+  [IsProbabilityMeasure μ]
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:258:6: Overlapping instance parameters in `sq_setIntegral_le_measure_mul_setIntegral_sq`:
+
+⚠️ There are 3 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:311:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:303:0: automatically included section variable(s) unused in theorem `Graphon.tAverage_sub_sq_le_avg_sq`:
+  [IsProbabilityMeasure μ]
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:303:6: Overlapping instance parameters in `tAverage_sub_sq_le_avg_sq`:
+
+⚠️ There are 3 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:338:0: automatically included section variable(s) unused in theorem `Graphon.tAverage_sq_le_defect_div`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:340:5: Variable name `hμS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hμS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:338:8: Overlapping instance parameters in `tAverage_sq_le_defect_div`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:456:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:438:0: automatically included section variable(s) unused in theorem `Graphon.ae_setIntegral_sub_tAverage_eq_zero`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:438:8: Overlapping instance parameters in `ae_setIntegral_sub_tAverage_eq_zero`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:468:0: automatically included section variable(s) unused in theorem `Graphon.setIntegral_sq_eq_variance_plus_mean_sq`:
+  [IsProbabilityMeasure μ]
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:472:5: Variable name `hfsq_c_int` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfsq_c_int
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:468:6: Overlapping instance parameters in `setIntegral_sq_eq_variance_plus_mean_sq`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:535:0: automatically included section variable(s) unused in theorem `Graphon.defect_eq_within_plus_between`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:537:5: Variable name `hμS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hμS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Graphon/Regularity.lean:535:8: Overlapping instance parameters in `defect_eq_within_plus_between`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:753:0: automatically included section variable(s) unused in theorem `Graphon.exists_variance_cut`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:940:46: This simp argument is unused:
+  Pi.le_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Filter.EventuallyLE]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:753:8: Overlapping instance parameters in `exists_variance_cut`:
+
+⚠️ There are 2 `[IsProbabilityMeasure μ]` instances; one is sufficient.
+
+Note: This linter can be disabled with `set_option linter.overlappingInstances false`
+warning: Graphon/Regularity.lean:1036:0: automatically included section variable(s) unused in theorem `Graphon.defect_nonneg`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:1081:38: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:1264:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/Regularity.lean:1386:37: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:1956:29: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:1998:30: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2418:52: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2421:47: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2424:53: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2664:28: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2692:33: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:2208:54: This simp argument is unused:
+  Set.mem_inter_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_prod, Set.mem_union, Set.mem_sdiff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:2208:73: This simp argument is unused:
+  Set.mem_sdiff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_prod, Set.mem_union, Set.mem_inter_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:2418:52: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hμB, hμS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:2421:47: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hμB]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:2424:53: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hμB, hμSB]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:3391:26: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/Regularity.lean:3601:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/Regularity.lean:3602:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/Regularity.lean:3659:6: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:3657:20: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:3647:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.mem_product] at hst
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:3680:42: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cellUnion, Set.mem_iUnion, Finset.mem_product]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:3804:8: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:3802:22: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:4108:8: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:4106:22: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:4133:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/Regularity.lean:4134:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/Regularity.lean:4175:10: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:4173:24: `MeasureTheory.Measure.QuasiMeasurePreserving.ae` has been deprecated: Use `MeasureTheory.QuasiMeasurePreserving.ae` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.ae` to `QuasiMeasurePreserving.ae x`).
+
+Hint: Replace the deprecated name:
+  M̵e̵a̵s̵u̵r̵e̵.̵QuasiMeasurePreserving.ae
+warning: Graphon/Regularity.lean:4292:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: Graphon/Regularity.lean:3808:33: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_iUnion, Finset.mem_product, Prod.exists]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:3816:44: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cellUnion, Set.mem_iUnion] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:4111:40: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cellU, Set.mem_iUnion, Finset.mem_product, Prod.exists]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:4165:19: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.mem_product] at hst
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:4213:43: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [qUnion, Set.mem_iUnion, Finset.mem_product]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Graphon/Regularity.lean:4421:8: automatically included section variable(s) unused in theorem `_private.Graphon.Regularity.0.Graphon.exists_rectIntegralDiff_gt_of_cutNormDiff_gt`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Regularity.lean:4574:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5313:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5315:50: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5319:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5320:49: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5325:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5328:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5332:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5334:53: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5339:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5342:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5346:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5347:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/Regularity.lean:5350:67: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/Regularity.lean:5422:47: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+ℹ [3157/3158] Replayed LatinonBridge.Regularity
+info: LatinonBridge/Regularity.lean:25:0: 'LatinonEntropy.exists_bipartite_regular_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/Regularity.lean:26:0: 'Graphon.regularity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/Regularity.lean:27:0: 'Graphon.exists_equipartition_almost_refining' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/Regularity.lean:28:0: 'Graphon.MeasurePreserving.exists_controlled_cell_alignment' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3158/3158] Built LatinonBridge.DirectedRegularity (142s)
+info: LatinonBridge/DirectedRegularity.lean:93:0: 'LatinonEntropy.taggedBlock_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/DirectedRegularity.lean:94:0: 'LatinonEntropy.ae_bipartite_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/DirectedRegularity.lean:95:0: 'LatinonEntropy.directedStepApprox_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/DirectedRegularity.lean:96:0: 'LatinonEntropy.directedStepApprox_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/DirectedRegularity.lean:97:0: 'LatinonEntropy.exists_directed_regular_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3158 jobs).

@@ -1,0 +1,603 @@
+# Entropía y grandes desviaciones para cuadrados latinos
+
+Juan Pablo Traverso Gianini
+
+Preprint 1.0 — 16 de noviembre de 2026.
+
+Repositorio: https://github.com/jtraverso/latinon-entropy-ldp.
+
+## Resumen
+
+Demostramos un principio de grandes desviaciones para cuadrados latinos etiquetados uniformes en la distancia de corte completa de Latinons, incluidos los órdenes de filas y columnas. La velocidad es el cuadrado del orden y la tasa buena es la entropía relativa respecto de la medida uniforme del cubo. La cota inferior procede de una construcción fila por fila que sigue un perfil triestocástico positivo y acotado. Su ingrediente determinista es una corrección de transporte con soporte controlado, entradas acotadas y costo lineal en el defecto total de márgenes. Las estimaciones permanentales controlan la diferencia entre una matriz corregida y sus marginales de permutación; un proceso parado proporciona la pérdida de entropía de dos unidades por celda. Una cota de entropía sobre particiones finitas da la estimación superior. Deducimos un conteo local bilateral para cualquier familia finita de patrones de orden, con la normalización binomial usual. Obtenemos además resultados de conteo para factorizaciones bipartitas etiquetadas y para construcciones CDR completadas con bloques latinos distinguidos, residuo fijo y los mismos conteos de tipos de bloques.
+
+## 1. El problema de conteo
+
+Un cuadrado latino etiquetado de orden $n$ es una aplicación $L:[n]^2\to[n]$ cuyas filas y columnas son biyecciones. Las tres copias de $[n]$ conservan su orden natural. Sea $\mathcal L_n$ el conjunto de estos cuadrados. Todos los logaritmos son naturales. La estimación clásica es
+
+$$
+\log|\mathcal L_n|=n^2(\log n-2)+o(n^2).\tag{1.1}
+$$
+
+La pregunta es cómo cambia este conteo cuando el cuadrado debe seguir un perfil espacial o tener densidades de patrones prescritas. Garbe, Hancock, Hladký y Sharifzadeh desarrollaron la teoría de límites de cuadrados latinos [1]. Su sección 12.2 plantea la búsqueda de herramientas de conteo basadas en entropía. Trabajamos en su marco ordenado y usamos la convención de entropía no positiva: es el negativo de la divergencia de Kullback--Leibler. Esta convención será explícita en todas las fórmulas de conteo.
+
+La prueba mediante permanentes de filas de la cota inferior en (1.1) es clásica; véase, por ejemplo, [2, sección 2.1]. En un rectángulo latino sin restricciones, el grafo restante columna-símbolo es regular y van der Waerden cuenta sus matchings perfectos. Seguir un perfil no uniforme requiere otro paso: la matriz natural de riesgos solo está cerca de ser doblemente estocástica en un sentido agregado. El lema de corrección transforma esa información agregada en una matriz cuyo permanente puede utilizarse sin perder la constante de segundo orden.
+
+Las conclusiones principales son el principio de grandes desviaciones en el espacio completo y su consecuencia de conteo con patrones finitos. La sección 10 desarrolla ambas aplicaciones mencionadas en el resumen: el corolario 10.1 transfiere el conteo mediante la biyección entre cuadrados latinos y factorizaciones bipartitas, y el lema 10.2 y la proposición 10.3 dan la sustitución y el conteo producto para una construcción CDR completada de los trabajos previos del autor [5,6]. Su alcance es una familia con residuo fijo; no cuenta todos los sistemas triples de Steiner bicoloreados con tipos prescritos.
+
+Los argumentos de revelado tienen antecedentes concretos. La prueba entrópica de Radhakrishnan del teorema de Brègman [7] proporciona el método de revelado de filas, y Linial--Luria [8] usan las dos restricciones de disponibilidad que producen la pérdida de dos en cuadrados latinos. Escribimos sus pasos ponderados explícitamente en las secciones 5 y 7. La comparación más próxima en teoría de límites es el LDP entrópico de permutones formulado en Kenyon--Král'--Radin--Winkler [9, teorema 1], donde se atribuye a Trashorras; su velocidad es $n$, mientras la nuestra es $n^2$. La convergencia de un cuadrado latino uniforme al Latinon uniforme ya se demostró en [1, teorema 12.2], usando Kwan--Sudakov. Nuestra contribución trata los conteos exponenciales cerca de perfiles no uniformes y sus restricciones de patrones finitos.
+
+## 2. Latinons, entropía y teoremas principales
+
+Escribimos $I=[0,1]$ y denotamos por $\lambda$ la medida de Lebesgue. Usamos la representación por medidas $W=(\nu,f)$ de un Latinon: $\nu$ es una medida de probabilidad en $I^3$, cada margen de dos coordenadas es $\lambda^2$ y $f:I\to I$ preserva la medida. La desintegración respecto de las dos primeras coordenadas da el núcleo condicional de símbolos. Ponemos $O_f(x,x')=\mathbf1[f(x)<f(x')]$.
+
+La distancia de corte completa $\delta$ es el ínfimo, sobre biyecciones medibles que preservan la medida $\phi,\psi$ independientes, de la suma siguiente. El término de distribución prueba conjuntos medibles de filas y columnas e intervalos de símbolos. El reetiquetado de la medida utiliza las inversas de $\phi,\psi$.
+
+$$
+\|O_f-O_{g\circ\phi}\|_\square+
+\|O_f-O_{g\circ\psi}\|_\square+
+\sup_{S,T,J}|\nu(S\times T\times J)-\mu^{\phi,\psi}(S\times T\times J)|.\tag{2.1}
+$$
+
+Se trata de una pseudométrica sobre representaciones. La compacidad y el calificativo «buena» que aparece más abajo pueden leerse equivalentemente en su cociente métrico. Distancia cero no significa igualdad de representantes. Definimos la tasa y la entropía extendidas por
+
+$$
+\mathcal I(W)=\operatorname{KL}(\nu\Vert\lambda^3)\in[0,\infty],
+\qquad \operatorname{Ent}(W)=-\mathcal I(W).\tag{2.2}
+$$
+
+Si $\nu$ tiene densidad $q$, esto da $\operatorname{Ent}(W)=-\int q\log q$, admitiendo el valor $-\infty$. Las medidas singulares tienen tasa infinita. Sea $W_L$ el embedding de rejilla de un cuadrado finito, con sus órdenes de filas y columnas.
+
+**Teorema 2.1 (grandes desviaciones en el espacio completo).** Para $L\in\mathcal L_n$ uniforme, las leyes de $W_L$ satisfacen un principio de grandes desviaciones a velocidad $n^2$ con tasa buena $\mathcal I$. Más explícitamente, si $F$ es cerrado, $t\in\mathbb R$ e $\mathcal I(W)\ge\max(t,0)$ en $F$, entonces para toda $\eta>0$, eventualmente
+
+$$
+\mathbb P(W_L\in F)\le\exp\{n^2(-t+\eta)\}.\tag{2.3}
+$$
+
+Si $G$ es abierto, $t\ge0$ y algún $W\in G$ tiene $\mathcal I(W)\le t$, entonces para toda $\eta>0$, eventualmente
+
+$$
+\mathbb P(W_L\in G)\ge\exp\{-n^2(t+\eta)\}.\tag{2.4}
+$$
+
+La tasa es semicontinua inferiormente y sus subniveles son compactos. Los umbrales finitos de (2.3) cubren el caso de tasa infinita sin asignar un valor real al infinito.
+
+Un patrón de orden $P$ de forma $k\times l$ asigna rangos distintos $1,\ldots,kl$ a sus posiciones. Escribimos $\mathcal P_{k,l}$ para el conjunto de estos patrones. Su densidad $d_P(W)$ es la probabilidad de obtener esos rangos al elegir coordenadas de filas y columnas, ordenarlas mediante $f$ y muestrear los símbolos condicionalmente de manera independiente a partir del núcleo. Sea $c_P(L)$ el número de elecciones crecientes de $k$ filas y $l$ columnas con ese patrón estricto. Ponemos
+
+$$
+t(P,L)=\frac{c_P(L)}{\binom nk\binom nl}.\tag{2.5}
+$$
+
+**Teorema 2.2 (conteo local de patrones).** Fijemos una familia finita $(P_j)_{j\in J}$ y escribamos
+
+$$
+T(W)=(d_{P_j}(W))_{j\in J},\qquad
+\mathcal J(z)=\inf\{\mathcal I(W):T(W)=z\}.\tag{2.6}
+$$
+
+El ínfimo sobre una fibra vacía es infinito. Si $\mathcal J(z)<\infty$, entonces para todos $r,\eta>0$ existen $0<\rho\le r$ y $N>0$ tales que, para cada $n\ge N$, la familia
+
+$$
+\mathcal A_n(z,\rho)=\{L\in\mathcal L_n:|t(P_j,L)-z_j|\le\rho\ (j\in J)\}\tag{2.7}
+$$
+
+es no vacía y satisface
+
+$$
+\left|\frac{\log|\mathcal A_n(z,\rho)|}{n^2}-(\log n-2)+\mathcal J(z)\right|\le\eta.\tag{2.8}
+$$
+
+Si $\mathcal J(z)=\infty$, cualquier penalización finita $A\in\mathbb R$ puede reemplazar a $\mathcal J(z)$ en la cota exponencial superior, después de elegir un radio positivo suficientemente pequeño. Si la fibra es vacía, una caja así, arbitrariamente pequeña, es vacía para todos los órdenes suficientemente grandes.
+
+El radio se elige antes de $n$ y puede depender de $z,r,\eta$. El teorema no afirma el valor $\mathcal J(z)$ para un radio fijo arbitrario. Los patrones utilizados tienen símbolos distintos. Los intercalados, estudiados en [3], tienen símbolos repetidos y no pertenecen a esta familia de patrones.
+
+**Observación sobre el radio.** El entorno de la prueba se elige en el objetivo particular $z$: su cota superior usa la semicontinuidad inferior de $\mathcal J$ y su cota inferior usa un testigo minimizador en esa fibra. Ninguno de los pasos proporciona un radio común para todos los objetivos. Conservamos esta conclusión puntual; no hace falta afirmar que la uniformidad siempre falle. Una versión uniforme requeriría un argumento cuantitativo adicional que controlara estas elecciones en la familia de objetivos.
+
+**Proposición 2.3 (identificación con el modelo GHHS).** En el espacio base estándar sin átomos $I$, la representación por medidas de esta sección y la representación por núcleos de [1, definición 3.5] identifican los mismos Latinons, salvo conjuntos nulos. Esta identificación conserva la distancia (2.1), las densidades de patrones y la entropía con signo (2.2). En particular induce una isometría de los cocientes por distancia cero.
+
+*Demostración.* Escribimos $K(x,y)$ para el núcleo condicional de símbolos. Dado un Latinon GHHS $(K,f)$, integramos el núcleo sobre sus primeras dos coordenadas para definir una medida. Recíprocamente, una medida cuyo margen en las primeras dos coordenadas es $\lambda^2$ admite una desintegración mediante un núcleo de probabilidad en este espacio boreliano estándar. Ambas operaciones son inversas salvo conjuntos nulos, como se describe en [1, definición 3.16 y secciones 3.2.2--3.2.3]:
+
+$$
+\nu_K(S\times T\times J)=\int_{S\times T}K(x,y)(J)\,d\lambda^2(x,y).
+\tag{2.9}
+$$
+
+Los otros dos márgenes uniformes de pares significan que, para casi toda fila fija, promediar el núcleo de símbolos sobre las columnas da $\lambda$, y análogamente para una columna fija. Para obtener un conjunto nulo excepcional común, probamos primero intervalos de extremos racionales y usamos después la unicidad de medidas. Transportar la coordenada de columnas mediante $f$ da primer margen $\lambda$ porque $f$ preserva la medida, y segundo margen $\lambda$ por esa identidad de fila. Esta es exactamente la condición de permutón de fila de [1, definición 3.5]; la condición de columna se sigue del mismo modo. Recíprocamente, en cada condición de permutón por fila tomamos como primer conjunto de prueba todo el intervalo. Su segundo margen dice que el promedio de símbolos en esa fila es uniforme. Integrar sobre conjuntos arbitrarios de filas recupera el margen fila-símbolo; la condición por columna da el margen columna-símbolo. La integración del núcleo ya da el margen fila-columna. Por tanto, un solo mapa de orden forma parte de ambas definiciones y no es una restricción adicional impuesta aquí.
+
+Queda comparar las convenciones de reetiquetado. Para biyecciones medibles que preservan la medida $\phi,\psi$, definimos el reetiquetado del núcleo por composición. Un cambio de variables da
+
+$$
+\begin{aligned}
+K^{\phi,\psi}(x,y)&=K(\phi(x),\psi(y)),\\
+\nu_{K^{\phi,\psi}}&=(\phi^{-1}\times\psi^{-1}\times\mathrm{id})_\#\nu_K,\\
+\nu_{K^{\phi,\psi}}(S\times T\times J)
+&=\int_{S\times T}K(\phi(x),\psi(y))(J)\,d\lambda^2.
+\end{aligned}\tag{2.10}
+$$
+
+Por tanto, el término de distribución en (2.1) es la norma de corte con valores en distribuciones de [1, definición 4.1], para cada alineamiento por separado. Los dos términos de orden también son idénticos a los de [1, definición 4.3]. Tomar el mismo ínfimo da la igualdad de distancias. Ninguna de las definiciones reetiqueta los símbolos. Los intervalos de símbolos cerrados, abiertos o semiabiertos dan aquí las mismas pruebas porque el margen de símbolos da masa cero a los extremos. Los cambios en conjuntos nulos de filas o columnas tampoco alteran las pruebas. Esto permite la identificación usual de espacios estándar sin átomos salvo conjuntos nulos.
+
+Ambas definiciones de patrones usan el mismo muestreo de filas y columnas, el mismo orden según $f$ y muestras condicionalmente independientes de $K$; por tanto coinciden sus probabilidades. Si $\nu_K$ tiene densidad $q$, la desintegración da la densidad condicional $q(x,y,\cdot)$ casi en todas partes. Integrar $-q\log q$ da la entropía con signo de (2.2), interpretando entropía relativa infinita como entropía $-\infty$. Esto prueba la proposición. $\square$
+
+## 3. Un teorema finito uniforme con perfil
+
+Un perfil triestocástico es un tensor $p=(p_{xyz})_{x,y,z\in[n]}$ con todas sus sumas de línea iguales a uno. Su entropía y su familia de cortes son
+
+$$
+H(p)=-\sum_{x,y,z}p_{xyz}\log p_{xyz},\qquad
+\sum_zp_{xyz}=\sum_yp_{xyz}=\sum_xp_{xyz}=1,\tag{3.1}
+$$
+
+$$
+\mathcal L(p,\rho)=\left\{L\in\mathcal L_n:
+\left|\sum_{I\times U\times V}(\mathbf1[L(x,y)=z]-p_{xyz})\right|\le\rho n^2
+\quad\forall I,U,V\subseteq[n]\right\}.\tag{3.2}
+$$
+
+**Teorema 3.1 (cota inferior finita uniforme).** Dados $a>0$, $b\in\mathbb R$ y $\rho,\eta>0$, existe $N>0$ tal que, para todo $n\ge N$ y todo $p$ triestocástico que satisfaga $a/n\le p_{xyz}\le b/n$,
+
+$$
+\varnothing\ne\mathcal L(p,\rho),\qquad |\mathcal L(p,\rho)|\ge\exp\{H(p)-(2+\eta)n^2\}.\tag{3.3}
+$$
+
+El cuantificador sobre perfiles sigue al umbral de orden. En particular, el perfil puede variar con $n$. Si las cotas no admiten ningún tensor triestocástico, la afirmación correspondiente es vacua; no hace falta una hipótesis implícita sobre $b$. Demostramos el teorema en las secciones 4--6. Todas las constantes dependen de $a,b$ y de un parámetro positivo fijo del rango principal, nunca del perfil individual.
+
+## 4. Corrección de transporte sobre un soporte regular
+
+Para una matriz $M$, sea $D(M)$ la suma de los defectos absolutos de márgenes de filas y columnas. Las normas de matrices de esta sección son sumas no normalizadas de valores absolutos.
+
+**Lema 4.1 (corrección).** Sean $n>0$, $\varepsilon>0$, $0<\alpha\le1$ y $0<a\le c$. Supongamos que $A$ es una matriz cero-uno con todas sus sumas de filas y columnas iguales a $d\ge\varepsilon n$. Ponemos
+
+$$
+\ell=\min(a/2,1/4),\qquad C=\max(c,16/(\alpha\varepsilon)),
+\qquad\theta=\frac{\alpha\varepsilon}{64C}.\tag{4.1}
+$$
+
+Supongamos que todo par de subconjuntos satisface
+
+$$
+A(S,T):=\sum_{S\times T}A_{yz}\ge\alpha|S||T|-\theta n^2.\tag{4.2}
+$$
+
+Si $M$ se anula fuera de $A$ y sus entradas en $A$ están en $[a/n,c/n]$, existe una matriz doblemente estocástica $Q$, nula fuera de $A$, con
+
+$$
+\frac\ell n\le Q_{yz}\le\frac Cn\quad(A_{yz}=1),\qquad
+\|Q-M\|_1\le3D(M).\tag{4.3}
+$$
+
+*Demostración.* Damos el argumento finito de transporte, incluidas las construcciones del diámetro y del potencial. Sus únicos ingredientes son las hipótesis del lema.
+
+**Factibilidad y minimización.** La regularidad da todos los márgenes de $A/d$ iguales a uno. Como $d\le n$, $\ell\le1/4$ y $d\ge\varepsilon n$, sus entradas no nulas están entre $1/n$ y $1/(\varepsilon n)$ y, por tanto, en la caja de (4.3). Aquí $C\varepsilon\ge16$ se sigue de (4.1) y $\alpha\le1$. El politopo de transporte factible es entonces no vacío y compacto. Fijamos un minimizador de la función continua $\|Q-M\|_1$ en él.
+
+**Expansión del grafo residual.** Trabajamos en la escala $B=nQ$, cuyas sumas de filas y columnas son $n$. Una arista hacia delante $y\to z$ significa $B_{yz}<CA_{yz}$; una arista hacia atrás $z\to y$ significa $\ell A_{yz}<B_{yz}$. Sean $F(y)$ los vecinos hacia delante de una fila, $B^-(y)=\{z:\ell A_{yz}<B_{yz}\}$ las columnas cuyos arcos hacia atrás entran en la fila $y$ y $B^-(T)$ las filas alcanzadas hacia atrás desde columnas $T$.
+
+Sumar $A_{yz}\le\mathbf1[z\in F(y)]+B_{yz}/C$ da $d\le |F(y)|+n/C$ y, por tanto, la primera cota siguiente. Para la segunda, ponemos $U=B^-(T)$. Las filas fuera de $U$ contribuyen a lo sumo $\ell|T|$ cada una a la masa que entra en $T$, y cada fila en $U$ contribuye a lo sumo su masa total $n$. Así, $n|T|\le n|U|+\ell n|T|$. Finalmente, $n\le\ell n+C|B^-(y)|$, pues las entradas fuera de $B^-(y)$ son a lo sumo $\ell$ y todas las entradas son a lo sumo $C$. Esto da
+
+$$
+|F(y)|\ge\varepsilon n/2,\qquad
+|B^-(T)|\ge(1-\ell)|T|,\qquad |B^-(y)|\ge n/(4C).\tag{4.4}
+$$
+
+Si $|S|\ge\varepsilon n/4$, menos de $n/(4C)$ columnas pueden quedar fuera del vecindario hacia delante $F(S)$. En efecto, en un rectángulo omitido $S\times T$ todas las entradas están saturadas por arriba. Las sumas de columnas de $B$ implican entonces $CA(S,T)\le n|T|$. Si además $|T|\ge n/(4C)$, (4.2) da, en cambio,
+
+$$
+CA(S,T)\ge C\alpha|S||T|-\frac{\alpha\varepsilon n^2}{64}
+\ge\frac{3C\alpha\varepsilon}{16}n|T|\ge3n|T|,\tag{4.5}
+$$
+
+una contradicción. Partiendo de una fila $y$, el conjunto $S=B^-(F(y))$ tiene tamaño al menos $\varepsilon n/4$. Su vecindario hacia delante intersecta el vecindario hacia atrás de cualquier fila objetivo por (4.4). Así, cualquier fila alcanza cualquier fila en cuatro pasos. Toda columna tiene un predecesor hacia delante y un sucesor hacia atrás, por la regularidad y las masas de filas y columnas. Añadir a lo sumo dos aristas da diámetro dirigido a lo sumo seis.
+
+**Optimalidad y potencial acotado.** Asignamos a las aristas residuales sus costos de derivada lateral para $\|Q-M\|_1$. Una arista hacia delante tiene costo $-1$ si $Q_{yz}<M_{yz}$ y $+1$ en otro caso; una arista hacia atrás tiene costo $-1$ si $Q_{yz}>M_{yz}$ y $+1$ en otro caso. Estos costos están en $\{-1,1\}$.
+
+En un minimizador todo paseo residual cerrado tiene costo no negativo. En efecto, contamos sus recorridos hacia delante y hacia atrás en cada entrada y los restamos para obtener una circulación. Un paso positivo suficientemente pequeño en ella conserva todos los márgenes y las cotas de caja: lo elegimos menor que cada holgura residual positiva utilizada dividida por la multiplicidad correspondiente, y menor que cada distancia a un punto de quiebre distinto $M_{yz}$ dividida por la multiplicidad neta. En una entrada distinta de $M_{yz}$ el objetivo es lineal durante el paso. En la igualdad ambos costos son $+1$, y $|a-b|\le a+b$ acota el incremento del objetivo para los dos números de recorridos. Sumar da un incremento a lo sumo igual al paso multiplicado por el costo del paseo. Un paseo cerrado de costo negativo contradiría la minimalidad.
+
+Fijamos una raíz y sea $\pi(v)$ el ínfimo de costos de caminos desde ella a un vértice $v$. Un camino de retorno de longitud a lo sumo seis tiene costo a lo sumo seis, por lo que la ausencia de paseos cerrados negativos acota cada ínfimo inferiormente. Si $c(u,v)$ denota el costo de una arista residual $u\to v$, añadirla da $\pi(v)\le\pi(u)+c(u,v)$. Aplicarlo a caminos de longitud a lo sumo seis en ambas direcciones muestra $|\pi(v)-\pi(u)|\le6$. Restar el punto medio del mayor y el menor valor sitúa todos los potenciales en $[-3,3]$ sin cambiar ninguna desigualdad de aristas.
+
+Sean $u_y,v_z$ los potenciales trasladados de filas y columnas y $\Delta=Q-M$. Las cotas de $M$ la sitúan en la misma caja. Así, $\Delta_{yz}>0$ garantiza una arista residual hacia atrás de costo $-1$, y $\Delta_{yz}<0$ garantiza una arista hacia delante de costo $-1$. Sus desigualdades de potencial dan $v_z-u_y\ge1$ y $v_z-u_y\le-1$, respectivamente. Multiplicar por el signo correspondiente de $\Delta_{yz}$ y sumar da
+
+$$
+\begin{aligned}
+\|\Delta\|_1&\le\sum_{y,z}\Delta_{yz}(v_z-u_y)\\
+&=\sum_zv_z\sum_y\Delta_{yz}-\sum_yu_y\sum_z\Delta_{yz}\le3D(M).
+\end{aligned}\tag{4.6}
+$$
+
+Esto prueba (4.3). La positividad de $\ell$ da además el soporte exacto. La demostración proporciona el testigo factible, el minimizador, el diámetro residual y los potenciales; ninguno es una hipótesis adicional. $\square$
+
+## 5. Leyes permanentales y error de sus marginales
+
+Usamos una forma ponderada de la cota de entropía para una variable con soporte restringido. Sea $X$ una variable con valores en un conjunto finito, sea $\mathcal F$ la información ya revelada y sea $A$ un conjunto medible respecto de $\mathcal F$ que contiene a $X$ casi seguramente. Fijamos pesos de referencia no negativos $r(a)$, positivos donde sea posible una probabilidad condicional positiva, y escribimos $r(A)=\sum_{a\in A}r(a)$. Los normalizamos en $A$. Para una ley condicional $p$, Jensen aplicado a $\log$ da $\sum_{p(a)>0}p(a)\log(r(a)/(p(a)r(A)))\le0$. Desarrollar y promediar sobre la información revelada da
+
+$$
+H(X\mid\mathcal F)\le
+\mathbb E[-\log r(X)]+\mathbb E[\log r(A)].\tag{5.0}
+$$
+
+El primer término es el costo de referencia del valor realmente elegido. El segundo registra cuánta masa de referencia queda disponible. Aplicar (5.0) a cada coordenada en un orden de revelado y sumar usa exactamente la regla de la cadena de entropía. Los valores de probabilidad cero pueden omitirse en todo momento. Este es el paso ponderado de las pruebas de revelado siguientes; el método entrópico de base se debe a Radhakrishnan [7] y su extensión con dos propietarios sigue el argumento de Linial--Luria [8].
+
+Para una matriz doblemente estocástica no negativa $Q$, sea $\mu_Q$ la ley que asigna peso proporcional a $\prod_yQ_{y,\sigma(y)}$ a cada permutación $\sigma$, y sea $m_Q$ su matriz de marginales. Van der Waerden, en la forma demostrada por Gurvits [4], implica
+
+$$
+\operatorname{per}(Q)\ge n!/n^n\ge e^{-n}.\tag{5.1}
+$$
+
+**Lema 5.1 (permanente con entradas acotadas).** Si una matriz no negativa $B$ tiene sumas de fila uno y entradas a lo sumo $m/n$, con entero $m\ge0$ y $n>0$, entonces
+
+$$
+\operatorname{per}(B)\le e^{-n+E_m(n)},\qquad
+E_m(n)=(m+1)\log n+m(m+1)+1.\tag{5.2}
+$$
+
+*Demostración.* Si el permanente es cero no hay nada que probar. En otro caso muestreamos una permutación $\sigma$ con probabilidad proporcional a $\prod_iB_{i,\sigma(i)}$. Toda entrada utilizada es positiva. Tomar logaritmos de esa probabilidad y promediar da $\log\operatorname{per}(B)=H(\sigma)+\mathbb E\sum_i\log B_{i,\sigma(i)}$.
+
+Asignamos a cada fila una etiqueta uniforme independiente $\lambda_i\in\{0,\ldots,n-1\}$, independientemente de $\sigma$, y revelamos filas en el orden lexicográfico creciente de $(\lambda_i,i)$. Al llegar a la fila $i$, sea $S_i$ la suma de sus pesos de referencia sobre columnas no utilizadas por una fila anterior. Aplicamos (5.0) con pesos de referencia $B_{ij}$ y sumamos sobre filas. Los costos de referencia se cancelan en la identidad anterior y queda $\log\operatorname{per}(B)\le\sum_i\mathbb E\log S_i$.
+
+Fijamos ahora toda la permutación y la etiqueta $\lambda_i=t$. La columna $\sigma(i)$ siempre está disponible. Cualquier otra columna tiene una única fila propietaria; solo puede seguir disponible si la etiqueta de esa propietaria es al menos $t$, un evento de probabilidad a lo sumo $u_t=(n-t)/n$. Por tanto,
+
+$$
+\mathbb E[S_i\mid\sigma,\lambda_i=t]
+\le B_{i,\sigma(i)}+u_t\sum_{j\ne\sigma(i)}B_{ij}
+\le m/n+u_t.\tag{5.2a}
+$$
+
+La columna realmente emparejada hace positivo a $S_i$. Jensen acota entonces su logaritmo esperado condicional por $\log(m/n+u_t)$. Cada etiqueta tiene probabilidad $1/n$, por lo que sumar sobre las $n$ filas cancela ese factor. Reindexar mediante $k=n-t$ da $\log\operatorname{per}(B)\le\sum_{k=1}^n\log((m+k)/n)$. La estimación elemental de factoriales (A.1)--(A.2), demostrada en el apéndice, acota esta suma por $-n+E_m(n)$. Exponenciar prueba (5.2). $\square$
+
+Esta es una estimación de tipo Brègman; no afirmamos prioridad para el principio de acotar el permanente mediante entradas acotadas. Aquí basta el error logarítmico explícito. Ninguna cota continua de Soules es un ingrediente sin demostrar de este argumento.
+
+**Lema 5.2 (comparación permanental).** Supongamos $Q_{yz}\le c/n$ y elijamos un entero $m\ge e^2c$. Para $|g_{yz}|\le1$ y $|s|\le1$, ponemos $Z_g(\sigma)=\sum_yg(y,\sigma(y))$. Entonces
+
+$$
+\log\mathbb E_{\mu_Q}e^{s(Z_g-\langle Q,g\rangle)}
+\le ns^2/2+E_m(n).\tag{5.3}
+$$
+
+Si $E_m(n)\le n/2$, entonces
+
+$$
+\|m_Q-Q\|_1\le\sqrt{2nE_m(n)}.\tag{5.4}
+$$
+
+Bajo la misma condición de tamaño, recentrar en el marginal real da
+
+$$
+\log\mathbb E_{\mu_Q}e^{s(Z_g-\langle m_Q,g\rangle)}
+\le ns^2+2E_m(n),\qquad |s|\le1.\tag{5.5}
+$$
+
+*Demostración.* La función generadora de momentos no centrada es el permanente de $Q\circ e^{sg}$ dividido por $\operatorname{per}(Q)$. Normalizamos cada fila del numerador por su suma $\rho_y$. Las entradas normalizadas son a lo sumo $e^{2|s|}c/n\le m/n$. Aplicamos (5.2) a esa matriz y (5.1) al denominador. La desigualdad de Hoeffding para la distribución de fila da $\log\rho_y\le s\sum_zQ_{yz}g_{yz}+s^2/2$, lo que prueba (5.3).
+
+Tomamos $g=\operatorname{sign}(m_Q-Q)$. Jensen y (5.3) dan $s\|m_Q-Q\|_1\le ns^2/2+E_m(n)$ para $s\le1$ positivo. Elegimos $s=\sqrt{2E_m(n)/n}$ y obtenemos (5.4). Para (5.5), aplicamos (5.3) a ambos signos y usamos la misma estimación del sesgo; la desigualdad $|s|\sqrt{2nE}\le ns^2/2+E$ paga el cambio de centro. $\square$
+
+Si $0<\kappa\le1$ y las entradas no nulas de $Q$ están en $[\kappa/n,1/(\kappa n)]$, escribimos $H(Q)=-\sum_{y,z}Q_{yz}\log Q_{yz}$, con $0\log0=0$. La entropía de su ley de permutaciones satisface
+
+$$
+H(\mu_Q)\ge H(Q)-n-G\|m_Q-Q\|_1,\qquad G=2|\log\kappa|.\tag{5.6}
+$$
+
+En efecto, $H(\mu_Q)=\sum m_Q\log(1/Q)+\log\operatorname{per}(Q)$. Al comparar la primera suma con $H(Q)$, la constante $\log n$ se cancela porque ambas matrices tienen masa total $n$. Los logaritmos restantes están acotados por $G$. Esta cancelación evita un factor $\log n$ innecesario en el error por fila.
+
+## 6. Seguimiento del perfil fila por fila
+
+Indexamos el tiempo por $t=0,\ldots,n-1$. La masa restante determinista, el riesgo y la disponibilidad aleatoria son
+
+$$
+R_t(y,z)=\sum_{s\ge t}p_{syz},\qquad h_t=p_t/R_t,\qquad
+A_t(y,z)=1-\sum_{s<t}\mathbf1[\sigma_s(y)=z].\tag{6.1}
+$$
+
+La matriz $A_t$ es $(n-t)$-regular en todo prefijo válido. Fijamos $0<\varepsilon<1$. En el rango principal $n-t\ge\varepsilon n$, se tiene $R_t\ge a\varepsilon$ y $a/n\le h_t\le c/n$, donde $c=b/(a\varepsilon)$.
+
+Esta es una elección precisa de guardas. Ponemos $c_0=\max(a,c)$ y aplicamos las constantes de corrección (4.1) con $\alpha=\min(1,a\varepsilon/2)$ y entrada superior $c_0$; llamamos $C$ a la constante superior de caja resultante y $\gamma=\alpha\varepsilon/(64C)$ a la tolerancia de cortes. Son constantes positivas fijas. En el tiempo $t$ exigimos $A_t(S,T)\ge\alpha|S||T|-\gamma n^2$ para todo corte fila-columna. Exigimos además que la suma de las normas de deriva activa anteriores sea a lo sumo $\gamma n^2/4$. Antes de la primera falla de guarda aplicamos el lema 4.1 a $M_t=A_t\circ h_t$ y elegimos la fila con $\mu_{Q_t}$. Después de la primera falla usamos $A_t/(n-t)$. Este respaldo es doblemente estocástico y tiene soporte en los pares disponibles, por lo que todo prefijo de peso positivo sigue siendo un rectángulo latino y toda historia completa de peso positivo es un cuadrado latino. La señal de falla es absorbente.
+
+Estas son las estimaciones que cierran el proceso. Escribimos $E=E_m(n)$, eligiendo $m$ al menos $e^2$ veces la cota superior fija de corrección. En un paso activo, la deriva $e_t=m_{Q_t}-M_t$ satisface $\|e_t\|_1\le\sqrt{2nE}+3D(M_t)$. El error centrado es $\xi_t=\mathbf1[\sigma_t(y)=z]-m_{Q_t}(y,z)$. Antes de la parada, la disponibilidad obedece
+
+$$
+A_{t+1}-R_{t+1}=(1-h_t)(A_t-R_t)-\xi_t-e_t.\tag{6.2}
+$$
+
+Para las estimaciones después del tiempo de parada, usamos una disponibilidad auxiliar definida por esta recurrencia con ruido y deriva anulados tras la parada. Coincide con la disponibilidad real mientras el proceso está activo. No se afirma que (6.2) con errores anulados describa el proceso real de respaldo. Desarrollar la recurrencia auxiliar introduce los coeficientes deterministas
+
+$$
+K_{s,t}(y,z)=\prod_{s<u<t}(1-h_u(y,z))\in[0,1].\tag{6.3}
+$$
+
+Para estimar un margen de fila en el tiempo $t$, multiplicamos los errores anteriores por $K_{s,t}h_t$. Estos pesos son a lo sumo $c/n$. Cada incremento centrado de fila es una función acotada de un único símbolo elegido, por lo que su varianza condicional es a lo sumo $(c/n)^2$. La ortogonalidad de diferencias de martingala acota la suma de errores absolutos esperados de filas por $c\sqrt n$. El mismo argumento trata las columnas. Sea $D_t$ el defecto total esperado de márgenes de la candidata auxiliar. Sumar las contribuciones de deriva da
+
+$$
+D_t\le2c\sqrt n+\frac{2c}{n}\sum_{s<t}(\sqrt{2nE}+3D_s),\qquad
+D_t\le(2c\sqrt n+2c\sqrt{2nE})e^{6c}.\tag{6.4}
+$$
+
+La segunda desigualdad es Gronwall finito. Denotamos su lado derecho por $S_n$. La deriva parada esperada total hasta cualquier tiempo principal es a lo sumo $n(\sqrt{2nE}+3S_n)$. Como la deriva acumulada es no decreciente, una sola aplicación de Markov en el último tiempo principal acota la probabilidad de cruzar alguna vez el presupuesto por $4(\sqrt{2nE}+3S_n)/(\gamma n)$; para esta parte no hace falta una unión sobre tiempos.
+
+Para un corte y tiempo terminal fijos, los coeficientes de (6.3) multiplicados por su indicador de corte tienen valor absoluto a lo sumo uno. En cada fila (5.5) acota la MGF condicional centrada. Anular el incremento mediante el indicador de que el prefijo sigue activo conserva la misma cota: en prefijos inactivos el incremento es cero y ese indicador se conoce antes de muestrear la fila. Iterar sobre a lo sumo $n$ filas da log MGF a lo sumo $n^2s^2+2nE$. Chernoff con $s=\gamma/4$ en el umbral $\gamma n^2/2$, y después con el signo opuesto, da $2\exp(2nE-\gamma^2n^2/16)$.
+
+Consideramos ahora el primer prefijo que falla. La disponibilidad auxiliar aún coincide allí con la real, pues todas las transiciones anteriores fueron activas. Una falla de guarda de cortes implica un déficit de corte del fluido menos la disponibilidad mayor que $\gamma n^2$, ya que $R_t\ge a\varepsilon\ge\alpha$. Si el presupuesto es a lo sumo $\gamma n^2/4$ y todo ruido centrado de corte es a lo sumo $\gamma n^2/2$, (6.2)--(6.3) acotan ese déficit por $3\gamma n^2/4$, una contradicción. Así, toda primera falla está incluida en una falla de presupuesto o de ruido centrado de corte. Una unión sobre a lo sumo $n4^n$ cortes y tiempos acota la probabilidad de falla de guarda en el rango principal $q_n$ por
+
+$$
+q_n\le\frac{4(\sqrt{2nE}+3S_n)}{\gamma n}
++2n4^n\exp(2nE-\gamma^2n^2/16),\qquad q_n\log n\longrightarrow0.
+\tag{6.4'}
+$$
+
+Para la prueba final del perfil se usa la misma estimación condicional con un conjunto adicional de tiempos de filas. Hay a lo sumo $8^n$ triples de subconjuntos. Los coeficientes de respuesta siguen siendo acotados y deterministas. La deriva acumulada tiene la misma cota; las últimas $\varepsilon n$ filas contribuyen a lo sumo $O(\varepsilon n^2)$ al error de cortes. Primero se elige $\varepsilon$ pequeño respecto del radio requerido y después crece $n$. La probabilidad de cuadrado malo $b_n$ satisface $b_n\log n\to0$.
+
+**Comparación de entropía en una fila principal.** La regla de la cadena se aplica a la ley finita de historias completas, incluidas las transiciones de peso cero. Sea $\widetilde A_t$ la disponibilidad auxiliar parada anterior. Sea $S_n$ el lado derecho de (6.4), ponemos $U_n=\sqrt{2nE}$ y elegimos $\kappa$ en (5.6) suficientemente pequeño para la caja fija de corrección. Las entradas no nulas tanto de la candidata como de la corregida están entonces en esa caja. Sea $q_n$ una cota para la probabilidad de que la historia ya esté parada en cualquier tiempo principal; las estimaciones de guardas dan $q_n\log n\to0$. Definimos
+
+$$
+w_t=h_t\log(1/h_t),\qquad
+\mathcal F_t(B)=\sum_{y,z}B_{yz}w_t(y,z),\qquad
+0\le w_t\le W_n:=\frac cn(\log n+|\log a|).\tag{6.4a}
+$$
+
+En una historia activa, la disponibilidad binaria da $H(M_t)=\mathcal F_t(A_t)$. La derivada de $-u\log u$ en la caja común de entradas está acotada en valor absoluto por $\log n+G+1$. La cota de corrección y (5.6) dan entonces entropía de fila al menos $\mathcal F_t(A_t)-n-GU_n-3(\log n+G+1)D(M_t)$.
+
+Para promediar esta desigualdad, reemplazamos primero $A_t$ por $\widetilde A_t$, que coincide en las historias activas. Sus entradas están en $[0,1]$, incluso después de la parada, por lo que su entropía lineal está entre cero y $n^2W_n$. En historias paradas la entropía real de fila es no negativa; descartarlas cuesta a lo sumo $n^2W_nq_n$. En la esperanza de $\mathcal F_t(R_t)-\mathcal F_t(\widetilde A_t)$, el ruido anulado tiene media cero por (6.2)--(6.3). La deriva cuesta a lo sumo $W_nt(U_n+3S_n)$. Usar $t\le n$ y la cota de defecto esperado da
+
+$$
+\begin{aligned}
+\mathbb E\,H(\sigma_t\mid\mathrm{past})&\ge\mathcal F_t(R_t)-n-\mathcal E_n,\\
+\mathcal E_n&=GU_n+3(\log n+G+1)S_n\\
+&\quad+W_nn(U_n+3S_n)+n^2W_nq_n=o(n).
+\end{aligned}\tag{6.4b}
+$$
+
+La restricción a historias activas se comprueba directamente. Sea $E_t$ el evento de que el prefijo está activo. En $E_t$ la disponibilidad auxiliar coincide con $A_t$; en todas partes está en $[0,1]$, pues después de la parada se multiplica entrada a entrada por $1-h_t$. Por tanto,
+
+$$
+\begin{aligned}
+\mathbb E\mathcal F_t(\widetilde A_t)
+&=\mathbb E[\mathbf1_{E_t}\mathcal F_t(A_t)]
++\mathbb E[\mathbf1_{E_t^c}\mathcal F_t(\widetilde A_t)]\\
+&\le\mathbb E[\mathbf1_{E_t}\mathcal F_t(A_t)]+n^2W_nq_n.
+\end{aligned}\tag{6.4c}
+$$
+
+Esta es la pérdida de probabilidad por entropía. No condicionamos una diferencia de martingala en todo el evento $E_t$ para declararla después centrada. El centrado se utiliza en la esperanza no restringida de la recurrencia anulada de forma predecible; (6.4c) paga por separado la restricción a historias activas. En (6.4b), la entropía dentro de la esperanza significa la entropía de la ley condicional de fila en el prefijo realizado.
+
+Cada término es uniforme sobre los perfiles del teorema 3.1: $U_n,S_n=O(\sqrt{n\log n})$, $W_n=O(\log n/n)$ y $q_n\log n\to0$. Por tanto, sumar los errores de fila cuesta $o(n^2)$. No se requiere una identidad de esperanzas para la disponibilidad real después del respaldo. La suma determinista del fluido es
+
+$$
+\sum_{t,y,z}p_{tyz}\log\frac{R_t(y,z)}{p_{tyz}}
+=H(p)+\sum_{y,z}\sum_t p_{tyz}\log R_t(y,z)\ge H(p)-n^2.\tag{6.5}
+$$
+
+Para cada $y,z$, los términos $p_{tyz}$ particionan el intervalo unidad y $R_t$ es el extremo derecho del intervalo correspondiente. Como $\log$ es creciente, su suma de extremos derechos es al menos $\int_0^1\log u\,du=-1$. También se puede evitar la integral impropia: ponemos $\Phi(u)=u\log u-u$, con $\Phi(0)=0$. La desigualdad $\Phi(u)-\Phi(v)\le(u-v)\log u$ para $0\le v<u$ se sigue de $\log x\le x-1$ cuando $v>0$, y directamente cuando $v=0$. La aplicamos con $u=R_t$ y $v=R_{t+1}$ y telescopamos desde $R_0=1$ hasta $R_n=0$. La suma es al menos $\Phi(1)-\Phi(0)=-1$. Esto prueba (6.5) mediante un argumento finito. La pérdida de permanente en (5.6) contribuye otro $n$ por fila.
+
+En una fila de cola con grado restante $k$, la matriz disponible uniforme tiene todas sus entradas no nulas iguales a $1/k$. Su ley permanental es uniforme sobre los matchings perfectos disponibles, por lo que (5.1) da entropía al menos $n\log k-n$. Para cada columna, los pesos $p_{tyz}$ suman uno; Jensen acota su término de fluido por $\log\sum_zR_t(y,z)=\log k$. Sumar da $\mathcal F_t(R_t)\le n\log k$, así que la cola tiene la misma pérdida $n$ por fila. Si el redondeo entero del corte principal deja una fila de frontera, la entropía no negativa y la cota simple de fluido $n\log n$ cuestan a lo sumo un $n\log n=o(n^2)$ adicional. Combinar la regla finita de la cadena, (6.4b) y (6.5) da
+
+$$
+H(X)\ge H(p)-2n^2-o(n^2).\tag{6.6}
+$$
+
+El espacio ambiente de historias tiene tamaño a lo sumo $n^{n^2}$. Separar la entropía según el evento bueno da $H(X)\le\log2+(1-b_n)\log|\mathrm{Good}|+b_n n^2\log n$, y por tanto
+
+$$
+\log|\mathrm{Good}|\ge H(X)-b_n n^2\log n-\log2.\tag{6.7}
+$$
+
+Leer las filas cronológicamente es inyectivo en historias latinas completas. Así, (6.6)--(6.7) prueban (3.3). Cada estimación finita usó una constante que solo depende de las cotas y tolerancias fijas, lo que prueba el orden uniforme de cuantificadores. $\square$
+
+## 7. La estimación superior de entropía
+
+La cota superior debe conservar la misma constante de segundo orden. Sean etiquetas de filas, columnas y símbolos que particionan $[n]$ en un número finito de fibras. Para una familia no vacía $\mathcal S\subseteq\mathcal L_n$, sea $v_b$ el volumen producto de un bloque y $q_b$ su masa ocupada esperada dividida por $n^2$, bajo la ley uniforme en $\mathcal S$. Entonces $\sum_bq_b=\sum_bv_b=1$ y definimos
+
+$$
+H_{\mathrm{coarse}}(\mathcal S)=\sum_bq_b\log(v_b/q_b).\tag{7.1}
+$$
+
+Las masas cero contribuyen cero; solo se necesitan las fibras no vacías.
+
+**Lema 7.1 (conteo por bloques).** Si cada fibra de símbolos tiene al menos $K^2$ elementos, con $K>0$ entero, entonces
+
+$$
+\log|\mathcal S|\le n^2\left(\log n-2+H_{\mathrm{coarse}}(\mathcal S)
++\frac{2E_1(K)}K\right).\tag{7.2}
+$$
+
+*Demostración.* Tomamos primero cualquier ley finita sobre cuadrados latinos, escribiendo $L$ para su cuadrado aleatorio y $r_v(s)=\mathbb P(L_v=s)$ para el marginal de símbolo en una celda $v$. Supongamos que cada marginal es a lo sumo $K^{-2}$. Damos a las celdas etiquetas uniformes independientes $\lambda_v\in\{0,\ldots,K-1\}$, independientemente de $L$, y desempatamos según una enumeración fija de celdas.
+
+En la celda $v=(i,j)$, un símbolo candidato $s$ solo está disponible si no apareció en una celda ya revelada de la fila $i$ o la columna $j$. Sea $A_v$ este conjunto disponible y $\mathcal R_v=\sum_{s\in A_v}r_v(s)$ su masa de referencia. Aplicamos (5.0) con estos pesos de referencia marginales. Sumar su primer término sobre celdas da la entropía marginal; sumar el lado izquierdo es la regla de la cadena de entropía. Por tanto,
+
+$$
+H(L)\le-\sum_{v,s}r_v(s)\log r_v(s)
++\sum_v\mathbb E\log\mathcal R_v.\tag{7.3}
+$$
+
+Fijamos todo el cuadrado $L$ y la etiqueta actual $\lambda_v=t$. Si $s\ne L_v$, la unicidad latina da dos celdas propietarias: la única aparición de $s$ en la fila $i$ y su única aparición en la columna $j$. Ninguna es $v$ y son distintas entre sí. Sus etiquetas son independientes después de este condicionamiento. Cada propietaria solo puede seguir sin revelar si su etiqueta es al menos $t$, lo que tiene probabilidad $u_t=(K-t)/K$. La probabilidad de que ambas sobrevivan es entonces a lo sumo $u_t^2$. El símbolo real $L_v$ siempre está disponible. Se sigue que
+
+$$
+\mathbb E[\mathcal R_v\mid L,\lambda_v=t]
+\le r_v(L_v)+(1-r_v(L_v))u_t^2
+\le K^{-2}+u_t^2.\tag{7.3a}
+$$
+
+La masa de referencia es positiva casi seguramente, pues el símbolo real tiene marginal positivo. Jensen y el promedio sobre $t$ acotan $\mathbb E\log\mathcal R_v$ por el lado izquierdo de (A.3), con $s=K^{-2}$. Así, cada una de las $n^2$ celdas contribuye a lo sumo $-2+2E_1(K)/K$ a la última suma de (7.3). Esto prueba la estimación para leyes con marginales acotados, y el factor dos procede precisamente de las dos etiquetas independientes de propietarias.
+
+Para la familia dada $\mathcal S$, elegimos independientemente una permutación uniforme dentro de cada fibra de símbolos y aplicamos la permutación resultante a un miembro uniforme de $\mathcal S$. Condicionando en la permutación elegida su entropía es $\log|\mathcal S|$, de modo que por concavidad la mezcla tiene al menos esa entropía. Dentro de una fibra de símbolos, su marginal en una celda fija es la probabilidad de esa fibra dividida por su tamaño. Como cada tamaño es al menos $K^2$, se cumple la cota marginal. La mezcla conserva además cada masa media original de bloques, por lo que la estimación anterior se aplica con la tabla gruesa requerida.
+
+Para explicitar cómo esa tabla acota la entropía marginal restante, un bloque tiene $n^3v_b$ posiciones celda-símbolo que llevan masa marginal total $n^2q_b$. La concavidad de $-u\log u$ maximiza su entropía cuando esa masa se distribuye por igual entre las posiciones. Su contribución es a lo sumo $n^2q_b\log(nv_b/q_b)$, y un bloque de masa cero contribuye cero. Sumar da $n^2\log n+n^2H_{\mathrm{coarse}}(\mathcal S)$. Junto con (7.3), esto es (7.2). No se utilizó invariancia de la familia original bajo permutaciones de símbolos. $\square$
+
+Fijamos una partición finita antes de hacer crecer $n$. Todas sus fibras positivas de símbolos tienen entonces tamaño tendiente a infinito, mientras $2E_1(K)/K\to0$. El redondeo finito de pesos de alineamiento de filas y columnas transforma una bola de la distancia completa en una unión de familias etiquetadas discretamente cuyas tablas medias están cerca de las masas observadas prescritas. La continuidad de la entropía de tablas finitas, con los volúmenes reales de bloques, se aplica a cada familia. Para una partición fija hay a lo sumo un número exponencial en $n$ de etiquetados, por lo que su logaritmo es $o(n^2)$. Las familias vacías se tratan en la forma exponencial, evitando $\log0$. Estas observaciones dan una cota superior local de conteo con la divergencia de la partición finita como penalización.
+
+Este es el paso de redondeo finito en esa última deducción. Fijamos particiones de filas y columnas con $r$ y $s$ partes y una partición de símbolos en intervalos. Un alineamiento de un cuadrado embebido en rejilla da, para cada fila finita $x$, probabilidades $\alpha_{i,x}$ de pertenecer a la parte de filas $i$; suman uno. Obtenemos análogamente probabilidades de columnas $\beta_{j,y}$. Sus sumas sobre filas y columnas son las medidas prescritas de partes multiplicadas por $n$. Elegimos cada etiqueta de fila independientemente según sus probabilidades y cada etiqueta de columna del mismo modo. Los conteos esperados de bloques son exactamente los conteos fraccionarios de la medida alineada, salvo errores de frontera de celdas de símbolos. Cada intervalo de símbolos tiene a lo sumo dos celdas de símbolos de frontera, que afectan a lo sumo $2n$ entradas porque un símbolo aparece una vez en cada fila.
+
+Para un bloque fijo, su conteo es una suma de $n^2$ indicadores. Dos indicadores con filas y columnas distintas son independientes; solo $O(n^3)$ pares ordenados pueden compartir una etiqueta aleatoria de fila o columna. Cada covarianza está acotada por uno, por lo que el conteo tiene varianza $O(n^3)$. Los conteos de tamaños de partes tienen varianza $O(n)$. Chebyshev y una unión sobre la colección finita fija de bloques y partes dan un etiquetado con errores de bloques a lo sumo $\zeta n^2$ y de tamaños a lo sumo $\zeta n$, para cualquier $\zeta>0$ fijo y todo $n$ suficientemente grande.
+
+Solo hay $r^ns^n$ etiquetados posibles de filas y columnas, por lo que pasar a su unión cuesta $O(n)$ en el logaritmo del conteo. Para cada etiquetado fijo tomamos la subfamilia cuyos conteos de bloques cumplen las cotas requeridas. Su tabla media de bloques cumple las mismas cotas y sus volúmenes reales de partes están cerca de los volúmenes positivos prescritos. El lema 7.1 se aplica a esa subfamilia. La continuidad de la entropía de tablas finitas en masas y volúmenes positivos da la penalización local de entropía deseada. Esto explica tanto el redondeo como el carácter despreciable de su costo de conteo en la escala $n^2$.
+
+## 8. De perfiles finitos al principio en el espacio completo
+
+Registramos por separado los ingredientes analíticos del paso a Latinons. El marco de compacidad y continuidad de patrones es el de [1, teoremas 3.13 y 4.7]; el desarrollo formal proporciona además estas propiedades para la representación (2.1).
+
+**Cota inferior en un centro fijo.** Un perfil $p$ define una densidad de rejilla $np_{xyz}$ en celdas de lado $1/n$. Sus sumas de línea dan los tres márgenes uniformes de dos coordenadas. La cota de cortes de subconjuntos (3.2) se extiende a pesos fraccionarios mediante la identidad de capas, sin constante adicional. Controla así conjuntos medibles arbitrarios de filas y columnas y los intervalos de símbolos requeridos.
+
+Para una densidad positiva acotada fija, construimos sus perfiles promediados en celdas para todo orden suficientemente grande. Jensen da $H(p)/n^2-\log n\ge\operatorname{Ent}(W)$. Un mapa de orden que preserva la medida se aproxima por permutaciones de intervalos en todos los órdenes grandes. Reetiquetar el tensor finito por esas permutaciones conserva sus sumas de línea y su entropía; transportar inversamente la medida de rejilla cancela ese reetiquetado. Ambos términos de orden en (2.1) son por tanto pequeños. La uniformidad del teorema 3.1 es esencial, pues estos perfiles dependen de $n$.
+
+Para un centro de tasa finita, tomamos esperanzas condicionales en rejillas producto cada vez más finas y mezclamos con una pequeña cantidad de medida uniforme. La esperanza condicional conserva cada margen de dos coordenadas y no aumenta la entropía relativa. La mezcla da una cota inferior positiva de densidad, conserva los márgenes y tampoco aumenta la tasa. Las esperanzas condicionales de rejillas producto aproximan una densidad integrable en $L^1$; el mapa de orden se conserva y se aproxima como antes. Aplicar el resultado de densidad acotada dentro de una bola menor prueba el conteo local inferior en todo centro de tasa finita.
+
+**Cota superior y semicontinuidad.** La entropía relativa se recupera a partir de observaciones diádicas finitas, incluidos sus valores infinitos:
+
+$$
+\mathcal I(W)=\sup_{q\ge0}\sum_{B\in\mathcal D_q^3}
+\nu(B)\log\frac{\nu(B)}{\lambda^3(B)}.\tag{8.1}
+$$
+
+Justificamos (8.1) también en el caso singular. Para medidas de probabilidad $\nu,\mu$ en el cubo ponemos $\Psi_{\nu,\mu}(g)=\int g\,d\nu-\log\int e^g\,d\mu$, donde $\mathcal B_b(I^3)$ denota las funciones borelianas acotadas y $g\in\mathcal B_b(I^3)$. Primero,
+$$
+\operatorname{KL}(\nu\Vert\mu)=\sup_{g\in\mathcal B_b(I^3)}\Psi_{\nu,\mu}(g).
+\tag{8.2}
+$$
+Si $\nu=q\mu$ tiene divergencia finita, Gibbs aplicado a $e^g\mu/\int e^g\,d\mu$ acota cada $\Psi$ superiormente. La divergencia infinita hace inmediata esa desigualdad superior. Para la inversa, truncamos $\log q$ a $[-N,N]$, con valor $-N$ en los ceros. Las integrales respecto de $\nu$ tienden a $\int q\log q\,d\mu$, posiblemente infinito: las partes positivas crecen y las negativas están dominadas por $-q\log q\le1/e$ en $q\le1$. Las exponenciales tienden a $q$ y están acotadas por $1+q$, por lo que sus integrales tienden a uno. Si falla la continuidad absoluta, tomamos un conjunto $\mu$-nulo $A$ con $\nu(A)>0$ y usamos $g=t\mathbf1_A$; entonces $\Psi=t\nu(A)$ no está acotado. Esto prueba (8.2) en todos los casos.
+
+En una partición finita, Gibbs finito identifica la divergencia de la tabla de masas con el supremo de $\Psi$ sobre funciones constantes en sus celdas. La desigualdad inversa se obtiene eligiendo cocientes logarítmicos de masas en celdas positivas y haciendo tender a menos infinito los valores en celdas de masa cero.
+
+Ponemos $\mu=\lambda^3$ y $\rho=(\nu+\mu)/2$. Toda $g$ medible acotada se aproxima en $L^1(\rho)$ por funciones escalonadas diádicas con la misma cota uniforme. Para verlo, los conjuntos aproximables en medida $\rho$ por uniones finitas de cajas diádicas forman una sigma-álgebra: complementos y uniones finitas son inmediatos, y las uniones numerables se reducen a finitas por la finitud de $\rho$. Esta clase contiene el álgebra generadora diádica y, por tanto, todo conjunto boreliano. Aproximamos funciones simples y truncamos a la cota de $g$. Ambas integrales de $\Psi$ convergen entonces, pues la exponencial es Lipschitz en un intervalo acotado. Así, bastan las funciones escalonadas diádicas en (8.2). La identidad de partición finita da ahora (8.1), sin una hipótesis de densidad.
+
+Para convertir una observación fija en una estimación de entorno, elegimos una partición producto finita con volúmenes positivos de celdas $v_b$. Para $V$ cercano a $W$, elegimos un alineamiento cuyo costo esté cerca de (2.1). Transportamos por él los conjuntos de filas y columnas de la partición. Cada masa resultante difiere de la masa en $W$ a lo sumo por la parte de distribución del costo de alineamiento. Los volúmenes de referencia siguen siendo $v_b$, pues el alineamiento preserva la medida producto. La observación finita acota entonces $\mathcal I(V)$ inferiormente por la divergencia de esta tabla finita cercana. La divergencia de la tabla es continua en las masas, incluidas masas cero, porque $v_b>0$ y $u\log u$ se extiende continuamente en cero. Así, todo piso finito estricto de tasa por debajo del costo observado en $W$ sigue siendo un piso inferior en un entorno suficientemente pequeño de la distancia completa. Tomar el supremo en (8.1) prueba la semicontinuidad inferior, incluso en centros de tasa infinita. El lema 7.1 y el redondeo finito anterior dan la cota superior local de conteo correspondiente.
+
+**Compacidad y el resultado citado.** Usamos [1, teorema 3.13] como teorema publicado de compacidad. Dada una sucesión de nuestras representaciones por medidas, la proposición 2.3 da representaciones por núcleos GHHS en un espacio base estándar sin átomos. El teorema citado proporciona una subsucesión convergente por patrones y un Latinon límite. Por [1, teorema 4.7], esa subsucesión converge en la distancia de corte GHHS. La proposición 2.3 identifica esa distancia con (2.1), incluidos ambos términos de orden. Así, toda sucesión en el cociente por distancia cero tiene una subsucesión convergente. El cociente es un espacio métrico, de modo que compacidad secuencial implica compacidad. Todo abierto del espacio pseudométrico original está saturado por distancia cero; la misma compacidad da entonces los subrecubrimientos finitos utilizados a continuación. La semicontinuidad inferior hace cerrado y, por tanto, compacto todo subnivel de tasa. Esto prueba la afirmación de tasa buena a partir del teorema de compacidad citado explícitamente.
+
+Cubrimos un cerrado por un número finito de sus entornos superiores locales y sumamos las probabilidades superiores después de (1.1). Esto prueba (2.3). Para un abierto, tomamos una bola alrededor de un testigo de tasa finita contenida en él y usamos su conteo local inferior, normalizado nuevamente por (1.1), para obtener (2.4). La semicontinuidad inferior y la compacidad hacen buena la tasa. Esto prueba el teorema 2.1. $\square$
+
+## 9. Patrones de orden y normalización finita
+
+Damos los detalles de continuidad y transferencia finita porque la normalización de (2.5) importa. Comprimimos los símbolos en $q$ intervalos iguales. El evento de que ninguno de los $kl$ símbolos muestreados caiga en el mismo intervalo que otro es una unión finita de eventos de núcleos coloreados. Cada uno tiene una integral producto, con factores de orden de filas y columnas. Desarrollar telescópicamente los factores de aristas y aplicar la desigualdad de corte ponderada con signo acota su cambio bajo (2.1).
+
+Para dos celdas distintas, sus símbolos muestreados son variables uniformes independientes antes de ordenar las coordenadas de filas y columnas. Si las celdas comparten fila, condicionamos en ella y usamos el margen fila-símbolo; el caso de columna es idéntico. Si no comparten ninguna, usamos coordenadas independientes. Una unión sobre pares de celdas da un error de colisión a lo sumo $k!l!(kl)^2/q$, incluida la normalización de orden. Es uniforme sobre todos los Latinons, también los singulares. Los polinomios finitos de núcleos coloreados convergen así uniformemente a $d_P$, lo que prueba su continuidad uniforme. Los órdenes estrictos de símbolos agotan la ley de muestreo casi seguramente, por lo que
+
+$$
+\sum_{P\in\mathcal P_{k,l}}d_P(W)=1.\tag{9.1}
+$$
+
+Para un cuadrado finito, el muestreo con reemplazo da primero la estadística auxiliar $\widehat t(P,L)$ siguiente. La coincidencia de índices de filas, índices de columnas o intervalos de símbolos explica el error uniforme indicado.
+
+$$
+\widehat t(P,L)=\frac{k!l!\,c_P(L)}{n^{k+l}},\qquad
+|d_P(W_L)-\widehat t(P,L)|\le\frac{k!l!(k^2+l^2+(kl)^2)}n.\tag{9.2}
+$$
+
+Para $n\ge\max(k,l)$ y $n>0$, la relación con (2.5) es exacta:
+
+$$
+\widehat t(P,L)=\beta_n t(P,L),\qquad
+\beta_n=\frac{(n)_k(n)_l}{n^{k+l}}\longrightarrow1.\tag{9.3}
+$$
+
+Aquí $(n)_k$ es el factorial descendente. Como ambas densidades están acotadas y $\beta_n\to1$, (9.2)--(9.3) dan un error uniforme de embedding tendiente a cero para la estadística binomial definida directamente.
+
+Aplicamos contracción al vector continuo finito $T$. La compacidad y la semicontinuidad inferior implican que el ínfimo en cada fibra no vacía se alcanza, con valor posiblemente infinito. En un vector $z$ de tasa finita, la semicontinuidad inferior da una caja cerrada pequeña donde la tasa contraída es al menos $\mathcal J(z)-\eta/4$. Una caja abierta menor que contiene un testigo minimizador da la cota inferior. Elegimos los radios dejando holgura entre estas cajas antes de aumentar $n$. El error finito uniforme coloca entonces la caja matricial directa entre las cajas correspondientes del embedding. Combinar las dos cotas de probabilidad con (1.1), reduciendo las asignaciones de error, prueba (2.8) y la positividad.
+
+Si la fibra tiene costo infinito, el mismo argumento de entornos funciona para todo piso finito de tasa. Si es vacía, $z$ queda fuera de la imagen compacta de $T$; un entorno pequeño es disjunto de esa imagen. El error finito uniforme hace que su versión matricial sea eventualmente vacía. Esto prueba el teorema 2.2, incluidos ambos casos excepcionales. $\square$
+
+## 10. Conexiones con factorizaciones y construcciones CDR
+
+Una 1-factorización etiquetada de $K_{n,n}$ es una familia $(F_z)_{z\in[n]}$ de matchings perfectos que particionan sus aristas, con clases de vértices y etiquetas de colores ordenadas. Ponemos $L(x,y)=z$ cuando $(x,y)\in F_z$. Ser un matching perfecto significa que cada fila y columna contiene cada etiqueta una vez. Recíprocamente, las fibras de un cuadrado latino dan esos matchings. Ambas composiciones son la identidad y conservan todos los órdenes.
+
+**Corolario 10.1 (factorizaciones bipartitas).** Si $\mathcal I(W)<\infty$, entonces para todos $r,\eta>0$ existen $0<\rho\le r$ y $N>0$ tales que, para $n\ge N$, el número $F_n(W,\rho)$ de estas factorizaciones cuyo Latinon asociado está a distancia menor que $\rho$ de $W$ satisface
+
+$$
+e^{n^2(\log n-2+\operatorname{Ent}(W)-\eta)}\le F_n(W,\rho)
+\le e^{n^2(\log n-2+\operatorname{Ent}(W)+\eta)}.\tag{10.1}
+$$
+
+La versión con patrones finitos tiene exactamente la tasa (2.6) y la normalización (2.5). *Demostración.* Restringimos la biyección a la bola o caja de patrones correspondiente y usamos la forma local del teorema 2.1 o el teorema 2.2. $\square$
+
+A continuación fijamos una construcción de Wilson. Sea $G$ un sistema triple de Steiner sobre un conjunto finito fijo de índices de grupos. Orientamos crecientemente cada bloque. Cada grupo reserva $m$ vértices de cada uno de los tres colores $A,B,C$. Para cada triple orientado de grupos y cada par ordenado de colores de filas y columnas, insertamos un cuadrado latino de orden $m$; prescribimos su color de símbolos mediante
+
+$$
+\tau=\begin{pmatrix}B&A&C\\A&C&B\\C&B&A\end{pmatrix},\qquad
+q=9|\mathcal O(G)|.\tag{10.2}
+$$
+
+Cada celda da el triple formado por su vértice de fila, su vértice de columna y el vértice de símbolo elegido. Sea $P(\Lambda)$ la unión de estos triples para la familia de cuadrados locales $(\Lambda_s)_{s\in J}$, donde $|J|=q$. Las filas y columnas de $\tau$ son permutaciones y cada triple de colores resultante usa exactamente dos colores. La unicidad latina y la unicidad de pares en $G$ prueban tres hechos: $P(\Lambda)$ es un packing de triángulos bicoloreados; su conjunto de pares cubiertos es independiente de $\Lambda$; y un par local fijo fila-columna recupera su símbolo.
+
+Supongamos que un sistema estrictamente 3-bicoloreado $S_0$ contiene $P(\Lambda^0)$. Esta hipótesis de plantilla completada es explícita. Las desigualdades que afirman que las clases tienen tamaño suficiente para reservar los grupos no la implican por sí solas. Ponemos
+
+$$
+\mathcal R_0=S_0\setminus P(\Lambda^0),\qquad S_\Lambda=\mathcal R_0\cup P(\Lambda).\tag{10.3}
+$$
+
+**Lema 10.2 (sustitución y conteo exacto).** Todo $S_\Lambda$ es un sistema triple de Steiner estrictamente 3-bicoloreado, la aplicación $\Lambda\mapsto S_\Lambda$ es inyectiva y, para familias finitas arbitrarias $\mathcal A_s\subseteq\mathcal L_m$,
+
+$$
+\left|\{S_\Lambda:\Lambda_s\in\mathcal A_s\ (s\in J)\}\right|
+=\prod_{s\in J}|\mathcal A_s|.\tag{10.4}
+$$
+
+*Demostración.* Los pares cubiertos por el packing retirado quedan cubiertos exactamente una vez por el nuevo packing, que tiene la misma huella de pares. Ningún par así aparece en $\mathcal R_0$. Cada otro par conserva su único bloque en $\mathcal R_0$. Todos los bloques siguen siendo bicoloreados. Si dos sistemas finales coinciden, el bloque único de un par local fijo fila-columna tiene el mismo vértice de símbolo. Las tres partes locales son disjuntas y sus numeraciones son inyectivas, de modo que coinciden las entradas de los cuadrados locales. Esto prueba la inyectividad y después la identidad producto. $\square$
+
+**Proposición 10.3 (Latinons locales prescritos en realizaciones CDR).** Fijemos $G$ y Latinons de tasa finita $(W_s)_{s\in J}$. Para todos $r,\eta>0$ existen radios $0<\rho_s\le r$ y $N>0$ tales que, para cada $m\ge N$ y cada plantilla completada anterior, ponemos
+
+$$
+\mathcal A_s=\{L\in\mathcal L_m:\delta(W_L,W_s)<\rho_s\},\qquad
+\mathcal H_m=m^2\sum_{s\in J}(\log m-2+\operatorname{Ent}(W_s)).\tag{10.5}
+$$
+
+La familia construida $\mathcal C(\mathcal A)=\{S_\Lambda:\Lambda_s\in\mathcal A_s\}$ satisface
+
+$$
+e^{\mathcal H_m-q\eta m^2}\le|\mathcal C(\mathcal A)|\le e^{\mathcal H_m+q\eta m^2}.\tag{10.6}
+$$
+
+El umbral es independiente del sistema base y de su residuo. Toda realización tiene exactamente los mismos seis conteos de tipos de bloques por multiconjuntos de colores que $S_0$. Toda configuración fija de bloques contenida en $\mathcal R_0$ se conserva.
+
+*Demostración.* Aplicamos el conteo local bilateral por separado a cada $W_s$ y tomamos el máximo de los umbrales, que son un número finito. Multiplicamos y usamos (10.4). El tipo de un bloque local solo depende de su posición en (10.2), no de su índice de símbolo; cada posición contribuye $m^2$ bloques de ese tipo. Por tanto, la sustitución conserva cada conteo de tipos. El residuo queda literalmente igual. $\square$
+
+A lo largo de una sucesión de plantillas completadas, elegimos radios que tienden a cero suficientemente despacio aplicando la proposición con $r=\eta=1/k$ y umbrales crecientes. Entonces $\log|\mathcal C(\mathcal A)|=\mathcal H_m+o(m^2)$. El número de posiciones permanece fijo. La cota superior se refiere a esta familia de residuo fijo; permitir completaciones arbitrarias puede aumentar el conteo.
+
+Esto conecta directamente con los resultados de tipos exactos y abundancia de [5,6]: la sustitución conserva su vector de tipos y cualquier configuración seleccionada que ya esté en el residuo. Un conteo CDR global de segundo orden requeriría controlar la entropía de todos los residuos y completaciones. La proposición 10.3 aporta la contribución local y no afirma ese conteo adicional.
+
+## 11. Formalización y reproducibilidad
+
+El snapshot de fuentes Lean, el documento formal complementario bilingüe y la auditoría interna acompañan este preprint en el repositorio indicado en la portada. El companion relaciona los resultados numerados con las declaraciones formales y da el registro central de 23 pasos y los ocho pasos de aplicaciones. La entrada canónica `LatinonFormalization` importa la cadena principal de conteo de patrones y el ensamblaje de aplicaciones.
+
+El proyecto congelado se reconstruyó con Lean 4.35.0 y el ecosistema Mathlib fijado: compilaron los 309 objetivos explícitos de módulos locales, de los cuales 298 pertenecen a la clausura de imports de la entrada canónica. La reconstrucción comenzó sin objetos del proyecto y reutilizó solo cachés de dependencias externas fijadas. Las ocho consultas seleccionadas de `ReviewAxioms`, junto con las tres consultas adicionales de semicontinuidad inferior, compacidad y subniveles compactos de tasa, informaron únicamente `propext`, `Classical.choice` y `Quot.sound`. Los hashes de fuentes, configuración, objetos y logs vinculan esta evidencia con el freeze entregado. Preparar esta edición no modificó las fuentes matemáticas Lean ni volvió a ejecutar Lean.
+
+Las fuentes portátiles están en `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`. Se incluyen instrucciones de reproducción y verificadores ejecutables del paquete. La auditoría interna cubre la reconstrucción registrada, la correspondencia de enunciados, argumentos escritos seleccionados, la consistencia bilingüe y la integridad de artefactos. Su alcance es distinto de la revisión por pares de una revista y de una auditoría exhaustiva de prioridad. La proposición 2.3 da la identificación escrita con el modelo GHHS publicado; no es una declaración Lean adicional.
+
+Se utilizaron herramientas de IA para asistir la redacción, el desarrollo de pruebas, la traducción y la validación. El autor es responsable de las afirmaciones matemáticas y del texto entregado.
+
+## Apéndice. Las estimaciones logarítmicas finitas
+
+Para completar la exposición, la estimación escalar utilizada en los argumentos de permanentes puede escribirse sin notación asintótica. Condicionando en la etiqueta finita de prioridad $t\in\{0,\ldots,n-1\}$ de una fila, su masa media de referencia restante es a lo sumo $m/n+(n-t)/n$. La propia columna emparejada explica el término $m/n$; cada otro propietario es posterior con probabilidad a lo sumo $(n-t)/n$. Jensen y la desigualdad de revelado ponderado reducen el logaritmo del permanente a la suma siguiente:
+
+$$
+\log\operatorname{per}(B)\le\sum_{k=1}^n\log\frac{m+k}{n}
+\le\log((m+n)!)-n\log n.\tag{A.1}
+$$
+
+Para $N\ge1$, integrar el logaritmo creciente da $\log(N!)\le(N+1)\log N-N+1$. Aplicamos esto con $N=m+n$ y usamos $\log(m+n)\le\log n+m/n$. Después de cancelar, el lado derecho de (A.1) es a lo sumo
+
+$$
+-n+(m+1)\log n+\frac{m(m+1)}n+1\le-n+E_m(n).\tag{A.2}
+$$
+
+Para la estimación de dos propietarios, sean $u_t=(K-t)/K$ y $0\le s\le K^{-2}$. La desigualdad elemental $s+u_t^2\le(K^{-1}+u_t)^2$ y la estimación anterior con $n=K,m=1$ dan
+
+$$
+\frac1K\sum_{t=0}^{K-1}\log(s+u_t^2)
+\le-2+\frac{2E_1(K)}K.\tag{A.3}
+$$
+
+Estas son desigualdades finitas. El único uso asintótico es que $E_m(n)/n\to0$ para $m$ fijo y $E_1(K)/K\to0$.
+
+## Referencias
+
+[1] F. Garbe, R. Hancock, J. Hladký and M. Sharifzadeh. *Limits of Latin squares*. Discrete Analysis 2023:8, 66 pp. [doi:10.19086/da.83253](https://doi.org/10.19086/da.83253). [arXiv:2010.07854](https://arxiv.org/abs/2010.07854).
+
+[2] M. Kwan, K. Petrova and M. Sawhney. *Parities in random Latin squares*. Preprint, 2025. [arXiv:2509.13125](https://arxiv.org/abs/2509.13125).
+
+[3] M. Kwan, A. Sah and M. Sawhney. *Large deviations in random Latin squares*. Preprint, 2021. [arXiv:2106.11932](https://arxiv.org/abs/2106.11932).
+
+[4] L. Gurvits. *Van der Waerden/Schrijver--Valiant like conjectures and stable (aka hyperbolic) homogeneous polynomials: one theorem for all*. Electronic Journal of Combinatorics 15 (2008), R66. [doi:10.37236/790](https://doi.org/10.37236/790).
+
+[5] J. P. Traverso Gianini. *The exact block-type spectrum in the Colbourn--Dinitz--Rosa problem*. Preprint, 2026. [doi:10.5281/zenodo.23987251](https://doi.org/10.5281/zenodo.23987251).
+
+[6] J. P. Traverso Gianini. *Prescribed block types and abundance in bicolored Steiner triple systems*. Preprint, 2026. [doi:10.5281/zenodo.24201563](https://doi.org/10.5281/zenodo.24201563). [CDR series repository](https://github.com/jtraverso/cdr-steiner-preprints).
+
+[7] J. Radhakrishnan. *An entropy proof of Bregman's theorem*. Journal of Combinatorial Theory, Series A 77 (1997), 161--164. [doi:10.1006/jcta.1996.2727](https://doi.org/10.1006/jcta.1996.2727).
+
+[8] N. Linial and Z. Luria. *An upper bound on the number of high-dimensional permutations*. Combinatorica 34 (2014), 471--486. [doi:10.1007/s00493-011-2842-8](https://doi.org/10.1007/s00493-011-2842-8). [arXiv:1106.0649](https://arxiv.org/abs/1106.0649).
+
+[9] R. Kenyon, D. Král', C. Radin and P. Winkler. *Permutations with fixed pattern densities*. Random Structures & Algorithms 56 (2020), 220--250. [doi:10.1002/rsa.20882](https://doi.org/10.1002/rsa.20882). [arXiv:1506.02340](https://arxiv.org/abs/1506.02340).

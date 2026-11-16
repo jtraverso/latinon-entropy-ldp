@@ -1,0 +1,60 @@
+⚠ [1998/2042] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1999/2042] Replayed WeightedLogSum
+warning: WeightedLogSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedLogSum.lean:94:0: 'LatinonEntropy.weighted_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3143/3191] Replayed FiniteAverages
+warning: FiniteAverages.lean: imports `Mathlib.Logic.Equiv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteAverages.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteAverages.lean:93:0: 'LatinonEntropy.finiteMean_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteAverages.lean:94:0: 'LatinonEntropy.finiteMean_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3223/3276] Replayed MeasurableAlignmentWeights
+warning: MeasurableAlignmentWeights.lean: imports `Mathlib.Dynamics.Ergodic.MeasurePreserving` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MeasurableAlignmentWeights.lean: imports `Mathlib.MeasureTheory.Measure.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: MeasurableAlignmentWeights.lean:112:0: 'LatinonEntropy.MeasurableFinitePartition.sum_real_inter' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MeasurableAlignmentWeights.lean:113:0: 'LatinonEntropy.MeasurableFinitePartition.sum_real_inter_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: MeasurableAlignmentWeights.lean:114:0: 'LatinonEntropy.MeasurableFinitePartition.pullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MeasurableAlignmentWeights.lean:115:0: 'LatinonEntropy.alignedPartitionWeight_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MeasurableAlignmentWeights.lean:116:0: 'LatinonEntropy.alignedPartitionWeight_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MeasurableAlignmentWeights.lean:117:0: 'LatinonEntropy.alignedPartitionWeight_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MeasurableAlignmentWeights.lean:118:0: 'LatinonEntropy.aligned_partition_weights_stochastic_and_means' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3420/3449] Replayed LatinonMeasureSpace
+warning: LatinonMeasureSpace.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LatinonMeasureSpace.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinonMeasureSpace.lean:70:0: 'LatinonEntropy.LatinonMeasure.xy_uniform_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonMeasureSpace.lean:71:0: 'LatinonEntropy.LatinonMeasure.xz_uniform_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonMeasureSpace.lean:72:0: 'LatinonEntropy.LatinonMeasure.yz_uniform_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonMeasureSpace.lean:73:0: 'LatinonEntropy.uniformLatinonMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3664/3675] Replayed LatinonSymbolCompression
+warning: LatinonSymbolCompression.lean: imports `Mathlib.MeasureTheory.Measure.Decomposition.IntegralRNDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinonSymbolCompression.lean:82:0: 'LatinonEntropy.latinon_xy_preserving' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:83:0: 'LatinonEntropy.latinonSymbolSlice_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:84:0: 'LatinonEntropy.latinonSymbolSlice_ac' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:85:0: 'LatinonEntropy.latinonSymbolCompression_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:86:0: 'LatinonEntropy.latinonSymbolCompression_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:87:0: 'LatinonEntropy.latinonSymbolCompression_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:88:0: 'LatinonEntropy.latinonSymbolSlice_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonSymbolCompression.lean:89:0: 'LatinonEntropy.latinonSymbolCompression_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3685/3685] Built LatinonWeakMarginalCompactness (55s)
+warning: LatinonWeakMarginalCompactness.lean: imports `Mathlib.MeasureTheory.Measure.Prokhorov` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LatinonWeakMarginalCompactness.lean: imports `Mathlib.MeasureTheory.Measure.LevyProkhorovMetric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinonWeakMarginalCompactness.lean:85:0: 'LatinonEntropy.latinon_xz_preserving' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonWeakMarginalCompactness.lean:86:0: 'LatinonEntropy.latinon_yz_preserving' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonWeakMarginalCompactness.lean:87:0: 'LatinonEntropy.uniformPairProbabilitySet_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonWeakMarginalCompactness.lean:88:0: 'LatinonEntropy.uniformPairProbabilitySet_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonWeakMarginalCompactness.lean:89:0: 'LatinonEntropy.latinonProbability_mem_uniformPairProbabilitySet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LatinonWeakMarginalCompactness.lean:90:0: 'LatinonEntropy.exists_weak_subsequence_uniform_pair_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3685 jobs).

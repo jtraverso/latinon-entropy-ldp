@@ -1,0 +1,603 @@
+# Entropy and large deviations for Latin squares
+
+Juan Pablo Traverso Gianini
+
+Preprint 1.0 — 16 November 2026.
+
+Repository: https://github.com/jtraverso/latinon-entropy-ldp.
+
+## Abstract
+
+We prove a large deviation principle for uniform labeled Latin squares in the full Latinon cut distance, including the row and column orders. The speed is the square of the order and the good rate function is relative entropy with respect to the uniform measure on the cube. The lower bound follows from a row-by-row construction that tracks a positive bounded tristochastic profile. Its deterministic input is a transportation correction with controlled support, bounded entries and a linear bound in the total margin defect. Permanental estimates control the discrepancy between a corrected matrix and its permutation marginals; a stopped process then gives the entropy loss of two units per cell. A finite-partition entropy bound gives the upper estimate. We deduce local bilateral counting for every finite family of order patterns, using the usual binomial normalization. We also obtain counting statements for labeled bipartite factorizations and for completed CDR constructions with distinguished Latin blocks, a fixed residue and unchanged block-type counts.
+
+## 1. The counting problem
+
+A labeled Latin square of order $n$ is a map $L:[n]^2\to[n]$ whose rows and columns are bijections. All three copies of $[n]$ retain their natural orders. Let $\mathcal L_n$ be the set of these squares. All logarithms are natural. The classical estimate is
+
+$$
+\log|\mathcal L_n|=n^2(\log n-2)+o(n^2).\tag{1.1}
+$$
+
+The question is how this count changes when the square must follow a spatial profile or have prescribed pattern densities. Garbe, Hancock, Hladký and Sharifzadeh developed the limit theory of Latin squares [1]. Their Section 12.2 asks for entropy-based counting tools. We work in their ordered setting and use the convention that entropy is nonpositive: it is the negative of Kullback--Leibler divergence. This convention will be explicit in every counting formula.
+
+The row-permanent proof of the lower bound in (1.1) is classical; see, for example, [2, Section 2.1]. In an unrestricted Latin rectangle, the remaining column-symbol graph is regular, and van der Waerden counts its perfect matchings. Tracking a nonuniform profile requires a different step: the natural hazard matrix is close to doubly stochastic only in aggregate. The correction lemma below turns that aggregate information into a matrix whose permanent can be used without losing the second-order constant.
+
+The main conclusions are the full-space large deviation principle and its finite-pattern counting consequence. Section 10 gives both applications mentioned in the abstract: Corollary 10.1 transfers the count through the Latin square--bipartite factorization bijection, and Lemma 10.2 and Proposition 10.3 give the replacement and product count for a completed CDR construction from the author's earlier work [5,6]. Its scope is a family with fixed residue; it does not count all bicolored Steiner triple systems with prescribed types.
+
+The revealing arguments have specific antecedents. Radhakrishnan's entropy proof of Brègman's theorem [7] supplies the row-revealing method, and Linial--Luria [8] use the two availability constraints that produce the Latin-square loss of two. We write their weighted steps explicitly in Sections 5 and 7. The nearest limit-theory comparison is the permuton entropy LDP formulated in Kenyon--Král'--Radin--Winkler [9, Theorem 1], where it is attributed to Trashorras; its speed is $n$, whereas ours is $n^2$. Convergence of a uniform Latin square to the uniform Latinon was already proved in [1, Theorem 12.2], using Kwan--Sudakov. Our contribution concerns the exponential counts near nonuniform profiles and their finite-pattern constraints.
+
+## 2. Latinons, entropy and the main theorems
+
+Write $I=[0,1]$ and let $\lambda$ denote Lebesgue measure. We use a measure representation $W=(\nu,f)$ of a Latinon: $\nu$ is a probability measure on $I^3$, every two-coordinate marginal is $\lambda^2$, and $f:I\to I$ preserves measure. Disintegration with respect to the first two coordinates gives the conditional symbol kernel. Put $O_f(x,x')=\mathbf1[f(x)<f(x')]$.
+
+The full cut distance $\delta$ is the infimum over independent measure-preserving measurable bijections $\phi,\psi$ of the following sum. The distribution term tests measurable row and column sets and symbol intervals. Relabeling the measure uses the inverses of $\phi,\psi$.
+
+$$
+\|O_f-O_{g\circ\phi}\|_\square+
+\|O_f-O_{g\circ\psi}\|_\square+
+\sup_{S,T,J}|\nu(S\times T\times J)-\mu^{\phi,\psi}(S\times T\times J)|.\tag{2.1}
+$$
+
+This is a pseudometric on representations. Compactness and the adjective “good” below can equivalently be read on its metric quotient. Distance zero is not equality of representatives. Define the extended rate and entropy by
+
+$$
+\mathcal I(W)=\operatorname{KL}(\nu\Vert\lambda^3)\in[0,\infty],
+\qquad \operatorname{Ent}(W)=-\mathcal I(W).\tag{2.2}
+$$
+
+If $\nu$ has density $q$, this gives $\operatorname{Ent}(W)=-\int q\log q$, allowing the value $-\infty$. Singular measures have infinite rate. Let $W_L$ denote the grid embedding of a finite square, with its row and column orders.
+
+**Theorem 2.1 (full-space large deviations).** For a uniform $L\in\mathcal L_n$, the laws of $W_L$ satisfy a large deviation principle at speed $n^2$ with good rate $\mathcal I$. More explicitly, if $F$ is closed, $t\in\mathbb R$ and $\mathcal I(W)\ge\max(t,0)$ on $F$, then for every $\eta>0$, eventually
+
+$$
+\mathbb P(W_L\in F)\le\exp\{n^2(-t+\eta)\}.\tag{2.3}
+$$
+
+If $G$ is open, $t\ge0$ and some $W\in G$ has $\mathcal I(W)\le t$, then for every $\eta>0$, eventually
+
+$$
+\mathbb P(W_L\in G)\ge\exp\{-n^2(t+\eta)\}.\tag{2.4}
+$$
+
+The rate is lower semicontinuous and its sublevel sets are compact. Finite thresholds in (2.3) cover the infinite-rate case without assigning a real value to infinity.
+
+An order pattern $P$ of shape $k\times l$ assigns distinct ranks $1,\ldots,kl$ to its positions. Write $\mathcal P_{k,l}$ for the set of these patterns. Its density $d_P(W)$ is the probability of obtaining those ranks by choosing row and column coordinates, ordering them using $f$, and sampling the symbols conditionally independently from the kernel. Let $c_P(L)$ count increasing choices of $k$ rows and $l$ columns with that strict pattern. Set
+
+$$
+t(P,L)=\frac{c_P(L)}{\binom nk\binom nl}.\tag{2.5}
+$$
+
+**Theorem 2.2 (local pattern counting).** Fix a finite family $(P_j)_{j\in J}$ and write
+
+$$
+T(W)=(d_{P_j}(W))_{j\in J},\qquad
+\mathcal J(z)=\inf\{\mathcal I(W):T(W)=z\}.\tag{2.6}
+$$
+
+The infimum over an empty fiber is infinity. If $\mathcal J(z)<\infty$, then for every $r,\eta>0$ there are $0<\rho\le r$ and $N>0$ such that, for every $n\ge N$, the family
+
+$$
+\mathcal A_n(z,\rho)=\{L\in\mathcal L_n:|t(P_j,L)-z_j|\le\rho\ (j\in J)\}\tag{2.7}
+$$
+
+is nonempty and satisfies
+
+$$
+\left|\frac{\log|\mathcal A_n(z,\rho)|}{n^2}-(\log n-2)+\mathcal J(z)\right|\le\eta.\tag{2.8}
+$$
+
+If $\mathcal J(z)=\infty$, every finite penalty $A\in\mathbb R$ can replace $\mathcal J(z)$ in the upper exponential bound, after choosing a sufficiently small positive radius. If the fiber is empty, an arbitrarily small such box is empty for all sufficiently large orders.
+
+The radius is chosen before $n$ and may depend on $z,r,\eta$. The theorem does not assert the value $\mathcal J(z)$ for an arbitrary fixed radius. The patterns here have distinct symbols. Intercalates, studied in [3], have repeated symbols and are not among these patterns.
+
+**Remark on the radius.** The neighborhood in the proof is chosen at the particular target $z$: its upper bound uses lower semicontinuity of $\mathcal J$, and its lower bound uses a minimizing witness in that fiber. Neither step supplies a common radius for all targets. We retain this pointwise conclusion; no assertion that uniformity always fails is needed. A uniform version would require an additional quantitative argument controlling these choices over the target family.
+
+**Proposition 2.3 (identification with the GHHS model).** On the standard atomless ground space $I$, the measure representation in this section and the kernel representation of [1, Definition 3.5] identify the same Latinons, up to null sets. This identification preserves the distance (2.1), the pattern densities and the signed entropy (2.2). In particular it induces an isometry of the zero-distance quotients.
+
+*Proof.* Write $K(x,y)$ for the conditional symbol kernel. Given a GHHS Latinon $(K,f)$, integrate this kernel over its first two coordinates to define a measure. Conversely, a measure with first-two-coordinate marginal $\lambda^2$ admits a probability-kernel disintegration on this standard Borel space. These two operations are inverse up to null sets, as described in [1, Definition 3.16 and Sections 3.2.2--3.2.3]:
+
+$$
+\nu_K(S\times T\times J)=\int_{S\times T}K(x,y)(J)\,d\lambda^2(x,y).
+\tag{2.9}
+$$
+
+The other two uniform pair marginals mean that, for almost every fixed row, averaging the symbol kernel over columns gives $\lambda$, and likewise for a fixed column. To obtain a common exceptional null set, first test intervals with rational endpoints and then use the uniqueness of measures. Pushing the column coordinate through $f$ gives first marginal $\lambda$ because $f$ preserves measure, and second marginal $\lambda$ by that row identity. This is exactly the row-permuton requirement of [1, Definition 3.5]; the column condition follows in the same way. Conversely, in each row-permuton condition take the first test set to be the whole interval. Its second marginal says that the symbol average in that row is uniform. Integrating over arbitrary row sets recovers the row-symbol pair marginal; the column condition gives the column-symbol marginal. Kernel integration already gives the row-column marginal. Thus a single order map is part of both definitions, not an extra restriction imposed here.
+
+It remains to compare the relabeling conventions. For measure-preserving measurable bijections $\phi,\psi$, define the kernel relabeling by composition. A change of variables gives
+
+$$
+\begin{aligned}
+K^{\phi,\psi}(x,y)&=K(\phi(x),\psi(y)),\\
+\nu_{K^{\phi,\psi}}&=(\phi^{-1}\times\psi^{-1}\times\mathrm{id})_\#\nu_K,\\
+\nu_{K^{\phi,\psi}}(S\times T\times J)
+&=\int_{S\times T}K(\phi(x),\psi(y))(J)\,d\lambda^2.
+\end{aligned}\tag{2.10}
+$$
+
+Consequently the distribution term in (2.1) is the distribution-valued cut norm of [1, Definition 4.1], for each alignment separately. The two order terms are also identical to those in [1, Definition 4.3]. Taking the same infimum gives equality of distances. Symbols are not relabeled in either definition. Closed, open and half-open symbol intervals give the same tests here because the symbol marginal gives zero mass to endpoints. Changes on null row or column sets also leave all tests unchanged. This permits the usual identification of standard atomless ground spaces modulo null sets.
+
+Both pattern definitions use the same row and column sampling, the same ordering by $f$, and conditionally independent samples from $K$; hence their probabilities agree. If $\nu_K$ has density $q$, disintegration gives the conditional density $q(x,y,\cdot)$ almost everywhere. Integrating $-q\log q$ gives the signed entropy in (2.2), with infinite relative entropy interpreted as entropy $-\infty$. This proves the proposition. $\square$
+
+## 3. A uniform finite profile theorem
+
+A tristochastic profile is a tensor $p=(p_{xyz})_{x,y,z\in[n]}$ with all line sums one. Its entropy and cut family are
+
+$$
+H(p)=-\sum_{x,y,z}p_{xyz}\log p_{xyz},\qquad
+\sum_zp_{xyz}=\sum_yp_{xyz}=\sum_xp_{xyz}=1,\tag{3.1}
+$$
+
+$$
+\mathcal L(p,\rho)=\left\{L\in\mathcal L_n:
+\left|\sum_{I\times U\times V}(\mathbf1[L(x,y)=z]-p_{xyz})\right|\le\rho n^2
+\quad\forall I,U,V\subseteq[n]\right\}.\tag{3.2}
+$$
+
+**Theorem 3.1 (uniform finite lower bound).** Given $a>0$, $b\in\mathbb R$ and $\rho,\eta>0$, there is $N>0$ such that, for every $n\ge N$ and every tristochastic $p$ satisfying $a/n\le p_{xyz}\le b/n$,
+
+$$
+\varnothing\ne\mathcal L(p,\rho),\qquad |\mathcal L(p,\rho)|\ge\exp\{H(p)-(2+\eta)n^2\}.\tag{3.3}
+$$
+
+The quantifier over profiles follows the order threshold. In particular the profile may vary with $n$. If these bounds admit no tristochastic tensor the corresponding assertion is vacuous; no hidden assumption on $b$ is needed. We prove the theorem in Sections 4--6. All constants there depend on $a,b$ and on a fixed positive main-range parameter, never on the individual profile.
+
+## 4. Transportation correction on a regular support
+
+For a matrix $M$, let $D(M)$ be the sum of the absolute row and column margin defects. Norms of matrices in this section are unnormalized sums of absolute entries.
+
+**Lemma 4.1 (correction).** Let $n>0$, $\varepsilon>0$, $0<\alpha\le1$ and $0<a\le c$. Suppose $A$ is a zero-one matrix with all row and column sums equal to $d\ge\varepsilon n$. Put
+
+$$
+\ell=\min(a/2,1/4),\qquad C=\max(c,16/(\alpha\varepsilon)),
+\qquad\theta=\frac{\alpha\varepsilon}{64C}.\tag{4.1}
+$$
+
+Assume that every pair of subsets satisfies
+
+$$
+A(S,T):=\sum_{S\times T}A_{yz}\ge\alpha|S||T|-\theta n^2.\tag{4.2}
+$$
+
+If $M$ vanishes off $A$ and its entries on $A$ lie in $[a/n,c/n]$, there is a doubly stochastic $Q$, zero off $A$, with
+
+$$
+\frac\ell n\le Q_{yz}\le\frac Cn\quad(A_{yz}=1),\qquad
+\|Q-M\|_1\le3D(M).\tag{4.3}
+$$
+
+*Proof.* We give the finite transportation argument, including the diameter and potential construction. Its only inputs are the hypotheses of the lemma.
+
+**Feasibility and minimization.** Regularity gives all margins of $A/d$ equal to one. Since $d\le n$, $\ell\le1/4$ and $d\ge\varepsilon n$, its nonzero entries lie between $1/n$ and $1/(\varepsilon n)$, hence in the box in (4.3). Here $C\varepsilon\ge16$ follows from (4.1) and $\alpha\le1$. The feasible transportation polytope is therefore nonempty and compact. Fix a minimizer of the continuous function $\|Q-M\|_1$ on it.
+
+**Expansion of the residual graph.** Work at scale $B=nQ$, whose row and column sums are $n$. A forward edge $y\to z$ means $B_{yz}<CA_{yz}$; a backward edge $z\to y$ means $\ell A_{yz}<B_{yz}$. Let $F(y)$ be the forward neighbors of a row, let $B^-(y)=\{z:\ell A_{yz}<B_{yz}\}$ be the columns whose backward arcs enter row $y$, and let $B^-(T)$ be the rows reached backwards from columns $T$.
+
+Summing $A_{yz}\le\mathbf1[z\in F(y)]+B_{yz}/C$ gives $d\le |F(y)|+n/C$, hence the first bound below. To get the second, put $U=B^-(T)$. Rows outside $U$ contribute at most $\ell|T|$ each to the mass entering $T$, and each row in $U$ contributes at most its total mass $n$. Thus $n|T|\le n|U|+\ell n|T|$. Finally $n\le\ell n+C|B^-(y)|$, since entries outside $B^-(y)$ are at most $\ell$ and all entries are at most $C$. These give
+
+$$
+|F(y)|\ge\varepsilon n/2,\qquad
+|B^-(T)|\ge(1-\ell)|T|,\qquad |B^-(y)|\ge n/(4C).\tag{4.4}
+$$
+
+If $|S|\ge\varepsilon n/4$, fewer than $n/(4C)$ columns can be missed by the forward neighborhood $F(S)$. Indeed, on a missed rectangle $S\times T$ all entries are upper-saturated. The column sums of $B$ therefore imply $CA(S,T)\le n|T|$. If also $|T|\ge n/(4C)$, (4.2) instead gives
+
+$$
+CA(S,T)\ge C\alpha|S||T|-\frac{\alpha\varepsilon n^2}{64}
+\ge\frac{3C\alpha\varepsilon}{16}n|T|\ge3n|T|,\tag{4.5}
+$$
+
+a contradiction. Starting at a row $y$, the set $S=B^-(F(y))$ has size at least $\varepsilon n/4$. Its forward neighborhood intersects the backward neighborhood of any target row by (4.4). Thus any row reaches any row in four steps. Every column has a forward predecessor and a backward successor, by regularity and the row and column masses. Adding at most two edges proves directed diameter at most six.
+
+**Optimality and a bounded potential.** Give residual edges their one-sided derivative costs for $\|Q-M\|_1$. A forward edge has cost $-1$ if $Q_{yz}<M_{yz}$ and $+1$ otherwise; a backward edge has cost $-1$ if $Q_{yz}>M_{yz}$ and $+1$ otherwise. These costs are in $\{-1,1\}$.
+
+At a minimizer every closed residual walk has nonnegative cost. Indeed, count its forward and backward traversals at every entry and subtract them to get a circulation. A sufficiently small positive step along this circulation preserves all margins and box bounds: choose it below every used positive residual slack divided by the relevant multiplicity, and below every distance to a distinct breakpoint $M_{yz}$ divided by the net multiplicity. At an entry different from $M_{yz}$ the objective is linear along the step. At equality both arc costs are $+1$, and $|a-b|\le a+b$ bounds the objective increment for the two traversal counts. Summing gives an increment at most the step times the walk cost. A negative-cost closed walk would contradict minimality.
+
+Fix a root and let $\pi(v)$ be the infimum of path costs from it to a vertex $v$. A return path of length at most six has cost at most six, so absence of negative closed walks bounds each infimum below. If $c(u,v)$ denotes the cost of a residual edge $u\to v$, appending it gives $\pi(v)\le\pi(u)+c(u,v)$. Applying this along paths of length at most six in both directions shows $|\pi(v)-\pi(u)|\le6$. Subtracting the midpoint of the largest and smallest values puts every potential in $[-3,3]$ without changing any edge inequality.
+
+Write $u_y,v_z$ for the shifted row and column potentials and $\Delta=Q-M$. The bounds on $M$ put it inside the same box. Thus $\Delta_{yz}>0$ guarantees a backward residual edge of cost $-1$, and $\Delta_{yz}<0$ guarantees a forward edge of cost $-1$. Their potential inequalities give $v_z-u_y\ge1$ and $v_z-u_y\le-1$, respectively. Multiplying by the corresponding sign of $\Delta_{yz}$ and summing yields
+
+$$
+\begin{aligned}
+\|\Delta\|_1&\le\sum_{y,z}\Delta_{yz}(v_z-u_y)\\
+&=\sum_zv_z\sum_y\Delta_{yz}-\sum_yu_y\sum_z\Delta_{yz}\le3D(M).
+\end{aligned}\tag{4.6}
+$$
+
+This proves (4.3). Positivity of $\ell$ also gives exact support. The proof supplies the feasible witness, optimizer, residual diameter and potentials; none is an additional hypothesis. $\square$
+
+## 5. Permanental laws and their marginal error
+
+We use a weighted form of the entropy bound for a variable with restricted support. Let $X$ take values in a finite set, let $\mathcal F$ record the information already revealed, and let $A$ be an $\mathcal F$-measurable set containing $X$ almost surely. Fix nonnegative reference weights $r(a)$, positive wherever a positive conditional probability is possible, and write $r(A)=\sum_{a\in A}r(a)$. Normalize them on $A$. For a conditional law $p$, Jensen applied to $\log$ gives $\sum_{p(a)>0}p(a)\log(r(a)/(p(a)r(A)))\le0$. Expanding and averaging over the revealed information yields
+
+$$
+H(X\mid\mathcal F)\le
+\mathbb E[-\log r(X)]+\mathbb E[\log r(A)].\tag{5.0}
+$$
+
+The first term is the reference cost of the value actually chosen. The second records how much reference mass remains available. Applying (5.0) to each coordinate in a reveal order and summing uses exactly the entropy chain rule. Zero-probability values can be omitted throughout. This is the weighted step behind the revealing proofs below; the underlying entropy method is due to Radhakrishnan [7], and its two-owner extension follows the Linial--Luria argument [8].
+
+For a nonnegative doubly stochastic matrix $Q$, let $\mu_Q$ assign weight proportional to $\prod_yQ_{y,\sigma(y)}$ to a permutation $\sigma$, and write $m_Q$ for its marginal matrix. Van der Waerden, in the form proved by Gurvits [4], implies
+
+$$
+\operatorname{per}(Q)\ge n!/n^n\ge e^{-n}.\tag{5.1}
+$$
+
+**Lemma 5.1 (capped permanent).** If a nonnegative matrix $B$ has row sums one and entries at most $m/n$, with integer $m\ge0$ and $n>0$, then
+
+$$
+\operatorname{per}(B)\le e^{-n+E_m(n)},\qquad
+E_m(n)=(m+1)\log n+m(m+1)+1.\tag{5.2}
+$$
+
+*Proof.* If the permanent is zero there is nothing to prove. Otherwise sample a permutation $\sigma$ with probability proportional to $\prod_iB_{i,\sigma(i)}$. Every used entry is positive. Taking logarithms of that probability and averaging gives $\log\operatorname{per}(B)=H(\sigma)+\mathbb E\sum_i\log B_{i,\sigma(i)}$.
+
+Assign each row an independent uniform label $\lambda_i\in\{0,\ldots,n-1\}$, independently of $\sigma$, and reveal rows in increasing lexicographic order of $(\lambda_i,i)$. When row $i$ is reached, let $S_i$ be the sum of its reference weights over columns not used by an earlier row. Apply (5.0) with reference weights $B_{ij}$ and then sum over rows. The reference costs cancel in the preceding identity, leaving $\log\operatorname{per}(B)\le\sum_i\mathbb E\log S_i$.
+
+Now fix the entire permutation and the label $\lambda_i=t$. The column $\sigma(i)$ is always available. Any other column has a unique owner row; it can remain available only if that owner's label is at least $t$, an event of probability at most $u_t=(n-t)/n$. Thus
+
+$$
+\mathbb E[S_i\mid\sigma,\lambda_i=t]
+\le B_{i,\sigma(i)}+u_t\sum_{j\ne\sigma(i)}B_{ij}
+\le m/n+u_t.\tag{5.2a}
+$$
+
+The actual matched column makes $S_i$ positive. Jensen therefore bounds its conditional expected logarithm by $\log(m/n+u_t)$. Each label has probability $1/n$, so summing over the $n$ rows cancels this factor. Reindexing by $k=n-t$ gives $\log\operatorname{per}(B)\le\sum_{k=1}^n\log((m+k)/n)$. The elementary factorial estimate (A.1)--(A.2), proved in the appendix, bounds this sum by $-n+E_m(n)$. Exponentiating proves (5.2). $\square$
+
+This is a Brègman-type estimate; we do not assert priority for the capped permanent principle. The explicit logarithmic error is sufficient here. No continuous Soules bound is an unproved input to this argument.
+
+**Lemma 5.2 (permanental comparison).** Suppose $Q_{yz}\le c/n$ and choose an integer $m\ge e^2c$. For $|g_{yz}|\le1$ and $|s|\le1$, put $Z_g(\sigma)=\sum_yg(y,\sigma(y))$. Then
+
+$$
+\log\mathbb E_{\mu_Q}e^{s(Z_g-\langle Q,g\rangle)}
+\le ns^2/2+E_m(n).\tag{5.3}
+$$
+
+If $E_m(n)\le n/2$, then
+
+$$
+\|m_Q-Q\|_1\le\sqrt{2nE_m(n)}.\tag{5.4}
+$$
+
+Under the same size condition, recentering at the actual marginal gives
+
+$$
+\log\mathbb E_{\mu_Q}e^{s(Z_g-\langle m_Q,g\rangle)}
+\le ns^2+2E_m(n),\qquad |s|\le1.\tag{5.5}
+$$
+
+*Proof.* The uncentered moment generating function is the permanent of $Q\circ e^{sg}$ divided by $\operatorname{per}(Q)$. Normalize each row of the numerator by its row sum $\rho_y$. Its normalized entries are at most $e^{2|s|}c/n\le m/n$. Apply (5.2) to that matrix and (5.1) to the denominator. Hoeffding's inequality for the row distribution gives $\log\rho_y\le s\sum_zQ_{yz}g_{yz}+s^2/2$, proving (5.3).
+
+Take $g=\operatorname{sign}(m_Q-Q)$. Jensen and (5.3) give $s\|m_Q-Q\|_1\le ns^2/2+E_m(n)$ for positive $s\le1$. Choose $s=\sqrt{2E_m(n)/n}$ to obtain (5.4). For (5.5), apply (5.3) to both signs and use the same bias estimate; the inequality $|s|\sqrt{2nE}\le ns^2/2+E$ pays the change of center. $\square$
+
+If $0<\kappa\le1$ and the nonzero entries of $Q$ lie in $[\kappa/n,1/(\kappa n)]$, write $H(Q)=-\sum_{y,z}Q_{yz}\log Q_{yz}$, with $0\log0=0$. Its permutation entropy satisfies
+
+$$
+H(\mu_Q)\ge H(Q)-n-G\|m_Q-Q\|_1,\qquad G=2|\log\kappa|.\tag{5.6}
+$$
+
+Indeed $H(\mu_Q)=\sum m_Q\log(1/Q)+\log\operatorname{per}(Q)$. In comparing the first sum with $H(Q)$, the constant $\log n$ cancels because both matrices have total mass $n$. The remaining logarithms are bounded by $G$. This cancellation prevents an unnecessary factor $\log n$ in the row error.
+
+## 6. Following the profile row by row
+
+Index time by $t=0,\ldots,n-1$. The deterministic remaining mass, hazard and random availability are
+
+$$
+R_t(y,z)=\sum_{s\ge t}p_{syz},\qquad h_t=p_t/R_t,\qquad
+A_t(y,z)=1-\sum_{s<t}\mathbf1[\sigma_s(y)=z].\tag{6.1}
+$$
+
+The matrix $A_t$ is $(n-t)$-regular on every valid prefix. Fix $0<\varepsilon<1$. In the main range $n-t\ge\varepsilon n$, $R_t\ge a\varepsilon$ and $a/n\le h_t\le c/n$, where $c=b/(a\varepsilon)$.
+
+Here is a precise choice of guards. Put $c_0=\max(a,c)$ and apply the correction constants (4.1) with $\alpha=\min(1,a\varepsilon/2)$ and upper input $c_0$; call the resulting upper box constant $C$ and cut tolerance $\gamma=\alpha\varepsilon/(64C)$. These are fixed positive constants. At time $t$, require $A_t(S,T)\ge\alpha|S||T|-\gamma n^2$ for every row-column cut. Also require the sum of the previous active drift norms to be at most $\gamma n^2/4$. Before the first guard failure, apply Lemma 4.1 to $M_t=A_t\circ h_t$ and choose the row from $\mu_{Q_t}$. After the first failure use $A_t/(n-t)$. This fallback is doubly stochastic and supported on available pairs, so every positive-weight prefix remains a Latin rectangle and every full positive-weight history is a Latin square. The failure flag is absorbing.
+
+Here are the estimates that close the process. Write $E=E_m(n)$, choosing $m$ at least $e^2$ times the fixed correction upper bound. At an active step the drift $e_t=m_{Q_t}-M_t$ satisfies $\|e_t\|_1\le\sqrt{2nE}+3D(M_t)$. The centered error is $\xi_t=\mathbf1[\sigma_t(y)=z]-m_{Q_t}(y,z)$. Before stopping, availability obeys
+
+$$
+A_{t+1}-R_{t+1}=(1-h_t)(A_t-R_t)-\xi_t-e_t.\tag{6.2}
+$$
+
+For estimates after the stopping time, use an auxiliary availability defined by this recursion with killed noise and drift. It agrees with the actual availability while the process is active. One does not assert that (6.2) with killed errors describes the actual fallback process. Unrolling the auxiliary recursion introduces the deterministic coefficients
+
+$$
+K_{s,t}(y,z)=\prod_{s<u<t}(1-h_u(y,z))\in[0,1].\tag{6.3}
+$$
+
+To estimate a row margin at time $t$, multiply the errors at earlier times by $K_{s,t}h_t$. These weights are at most $c/n$. Each centered row increment is a bounded function of a single chosen symbol, so its conditional variance is at most $(c/n)^2$. Orthogonality of martingale differences bounds the sum of expected absolute row errors by $c\sqrt n$. The same argument treats columns. Let $D_t$ be the expected total margin defect of the auxiliary candidate. Summing the drift contributions yields
+
+$$
+D_t\le2c\sqrt n+\frac{2c}{n}\sum_{s<t}(\sqrt{2nE}+3D_s),\qquad
+D_t\le(2c\sqrt n+2c\sqrt{2nE})e^{6c}.\tag{6.4}
+$$
+
+The second inequality is finite Gronwall. Denote its right side by $S_n$. The total expected stopped drift up to any main time is at most $n(\sqrt{2nE}+3S_n)$. Since the accumulated drift is nondecreasing, a single application of Markov at the last main time bounds the probability of ever crossing the budget by $4(\sqrt{2nE}+3S_n)/(\gamma n)$; no union over times is needed for this part.
+
+For a fixed cut and terminal time, the coefficients in (6.3) times its cut indicator have absolute value at most one. At each row (5.5) bounds the centered conditional MGF. Killing the increment by the indicator that the prefix is still active preserves the same bound: on inactive prefixes the increment is zero, and that indicator is known before the row is sampled. Iteration over at most $n$ rows gives log MGF at most $n^2s^2+2nE$. Chernoff with $s=\gamma/4$ at threshold $\gamma n^2/2$, and then with the opposite sign, gives $2\exp(2nE-\gamma^2n^2/16)$.
+
+Consider now the first failing prefix. Auxiliary and actual availability still agree there, because all preceding transitions were active. A cut-guard failure implies a fluid-minus-availability cut deficit greater than $\gamma n^2$, since $R_t\ge a\varepsilon\ge\alpha$. If the budget is at most $\gamma n^2/4$ and every centered cut noise is at most $\gamma n^2/2$, (6.2)--(6.3) bound that deficit by $3\gamma n^2/4$, a contradiction. Thus every first failure is included in a budget failure or a centered cut-noise failure. A union over the at most $n4^n$ cuts and times bounds the main-range guard-failure probability $q_n$ by
+
+$$
+q_n\le\frac{4(\sqrt{2nE}+3S_n)}{\gamma n}
++2n4^n\exp(2nE-\gamma^2n^2/16),\qquad q_n\log n\longrightarrow0.
+\tag{6.4'}
+$$
+
+For the final profile test one uses the same conditional estimate with an extra selected set of row times. There are at most $8^n$ triples of subsets. The response coefficients remain bounded and deterministic. The accumulated drift has the same bound; the last $\varepsilon n$ rows contribute at most $O(\varepsilon n^2)$ to the cut error. First choose $\varepsilon$ small compared with the required radius, then let $n$ grow. The bad-square probability $b_n$ satisfies $b_n\log n\to0$.
+
+**Entropy comparison on a main row.** The chain rule applies to the finite law of full histories, including zero-weight transitions. Let $\widetilde A_t$ be the stopped auxiliary availability above. Let $S_n$ denote the right side of (6.4), put $U_n=\sqrt{2nE}$, and choose $\kappa$ in (5.6) small enough for the fixed correction box. Both the candidate and corrected nonzero entries then lie in that box. Let $q_n$ bound the probability that the history has already stopped at any main time; the guard estimates give $q_n\log n\to0$. Define
+
+$$
+w_t=h_t\log(1/h_t),\qquad
+\mathcal F_t(B)=\sum_{y,z}B_{yz}w_t(y,z),\qquad
+0\le w_t\le W_n:=\frac cn(\log n+|\log a|).\tag{6.4a}
+$$
+
+On an active history, binary availability gives $H(M_t)=\mathcal F_t(A_t)$. The derivative of $-u\log u$ on the common entry box is bounded in absolute value by $\log n+G+1$. The correction bound and (5.6) therefore give row entropy at least $\mathcal F_t(A_t)-n-GU_n-3(\log n+G+1)D(M_t)$.
+
+To average this inequality, first replace $A_t$ by $\widetilde A_t$, which agrees on active histories. Its entries lie in $[0,1]$, including after stopping, so its linear entropy lies between zero and $n^2W_n$. On stopped histories the actual row entropy is nonnegative; discarding them costs at most $n^2W_nq_n$. In the expectation of $\mathcal F_t(R_t)-\mathcal F_t(\widetilde A_t)$, the killed noise has mean zero by (6.2)--(6.3). The drift costs at most $W_nt(U_n+3S_n)$. Using $t\le n$ and the expected defect bound gives
+
+$$
+\begin{aligned}
+\mathbb E\,H(\sigma_t\mid\mathrm{past})&\ge\mathcal F_t(R_t)-n-\mathcal E_n,\\
+\mathcal E_n&=GU_n+3(\log n+G+1)S_n\\
+&\quad+W_nn(U_n+3S_n)+n^2W_nq_n=o(n).
+\end{aligned}\tag{6.4b}
+$$
+
+The restriction to active histories can be checked directly. Let $E_t$ be the event that the prefix is active. On $E_t$ the auxiliary availability equals $A_t$; everywhere it lies in $[0,1]$, because after stopping it is multiplied entrywise by $1-h_t$. Therefore
+
+$$
+\begin{aligned}
+\mathbb E\mathcal F_t(\widetilde A_t)
+&=\mathbb E[\mathbf1_{E_t}\mathcal F_t(A_t)]
++\mathbb E[\mathbf1_{E_t^c}\mathcal F_t(\widetilde A_t)]\\
+&\le\mathbb E[\mathbf1_{E_t}\mathcal F_t(A_t)]+n^2W_nq_n.
+\end{aligned}\tag{6.4c}
+$$
+
+This is the probability-times-entropy loss. We do not condition a martingale difference on the whole event $E_t$ and then declare it centered. Centering is used in the unrestricted expectation of the predictably killed recursion; (6.4c) pays separately for restricting to active histories. In (6.4b), the entropy inside the expectation means the entropy of the conditional row law at the realized prefix.
+
+Every term is uniform over the profiles in Theorem 3.1: $U_n,S_n=O(\sqrt{n\log n})$, $W_n=O(\log n/n)$ and $q_n\log n\to0$. Thus summing the row errors costs $o(n^2)$. No expectation identity for the actual availability after fallback is required. The deterministic fluid sum is
+
+$$
+\sum_{t,y,z}p_{tyz}\log\frac{R_t(y,z)}{p_{tyz}}
+=H(p)+\sum_{y,z}\sum_t p_{tyz}\log R_t(y,z)\ge H(p)-n^2.\tag{6.5}
+$$
+
+For each $y,z$, the terms $p_{tyz}$ partition the unit interval and $R_t$ is the right endpoint of the corresponding interval. Since $\log$ is increasing, its right-endpoint sum is at least $\int_0^1\log u\,du=-1$. One can also avoid the improper integral: set $\Phi(u)=u\log u-u$, with $\Phi(0)=0$. The inequality $\Phi(u)-\Phi(v)\le(u-v)\log u$ for $0\le v<u$ follows from $\log x\le x-1$ when $v>0$, and directly when $v=0$. Apply it with $u=R_t$ and $v=R_{t+1}$ and telescope from $R_0=1$ to $R_n=0$. The sum is at least $\Phi(1)-\Phi(0)=-1$. This proves (6.5) by a finite argument. The permanent loss in (5.6) contributes another $n$ per row.
+
+In a tail row with remaining degree $k$, the uniform available matrix has every nonzero entry $1/k$. Its permanental law is uniform on the available perfect matchings, so (5.1) gives entropy at least $n\log k-n$. For each column, the weights $p_{tyz}$ sum to one; Jensen bounds its fluid term by $\log\sum_zR_t(y,z)=\log k$. Summing gives $\mathcal F_t(R_t)\le n\log k$, so the tail has the same loss $n$ per row. If integer rounding of the main cutoff leaves a boundary row, nonnegative entropy and the crude fluid bound $n\log n$ cost at most one extra $n\log n=o(n^2)$. Combining the finite chain rule, (6.4b) and (6.5) yields
+
+$$
+H(X)\ge H(p)-2n^2-o(n^2).\tag{6.6}
+$$
+
+The ambient history space has size at most $n^{n^2}$. Splitting entropy according to the good event gives $H(X)\le\log2+(1-b_n)\log|\mathrm{Good}|+b_n n^2\log n$, and hence
+
+$$
+\log|\mathrm{Good}|\ge H(X)-b_n n^2\log n-\log2.\tag{6.7}
+$$
+
+Reading the rows chronologically is injective on complete Latin histories. Thus (6.6)--(6.7) prove (3.3). Every finite estimate used a constant depending only on the fixed bounds and tolerances, which proves the uniform order of quantifiers. $\square$
+
+## 7. The upper entropy estimate
+
+The upper bound must retain the same second-order constant. Let row, column and symbol labels partition $[n]$ into finitely many fibers. For a nonempty family $\mathcal S\subseteq\mathcal L_n$, let $v_b$ be the product volume of a block and let $q_b$ be its expected occupied mass divided by $n^2$, under the uniform law on $\mathcal S$. Then $\sum_bq_b=\sum_bv_b=1$ and define
+
+$$
+H_{\mathrm{coarse}}(\mathcal S)=\sum_bq_b\log(v_b/q_b).\tag{7.1}
+$$
+
+Zero masses contribute zero; only nonempty fibers are needed.
+
+**Lemma 7.1 (block counting).** If every symbol fiber has at least $K^2$ elements, with $K>0$ integral, then
+
+$$
+\log|\mathcal S|\le n^2\left(\log n-2+H_{\mathrm{coarse}}(\mathcal S)
++\frac{2E_1(K)}K\right).\tag{7.2}
+$$
+
+*Proof.* First take any finite law on Latin squares, writing $L$ for its random square and $r_v(s)=\mathbb P(L_v=s)$ for the symbol marginal at a cell $v$. Suppose every marginal is at most $K^{-2}$. Give cells independent uniform labels $\lambda_v\in\{0,\ldots,K-1\}$, independently of $L$, and break ties by a fixed cell enumeration.
+
+At cell $v=(i,j)$, a candidate symbol $s$ is available only if it has not appeared in a previously revealed cell of row $i$ or column $j$. Let $A_v$ be this available set and $\mathcal R_v=\sum_{s\in A_v}r_v(s)$ its reference mass. Apply (5.0) with these marginal reference weights. Summing its first term over cells gives the marginal entropy; summing the left side is the entropy chain rule. Therefore
+
+$$
+H(L)\le-\sum_{v,s}r_v(s)\log r_v(s)
++\sum_v\mathbb E\log\mathcal R_v.\tag{7.3}
+$$
+
+Fix the entire square $L$ and the current label $\lambda_v=t$. If $s\ne L_v$, Latin uniqueness gives two owner cells: the unique occurrence of $s$ in row $i$, and its unique occurrence in column $j$. Neither is $v$, and they are distinct from one another. Their labels are independent after this conditioning. Each owner can remain unrevealed only if its label is at least $t$, which has probability $u_t=(K-t)/K$. The probability that both survive is thus at most $u_t^2$. The actual symbol $L_v$ is always available. It follows that
+
+$$
+\mathbb E[\mathcal R_v\mid L,\lambda_v=t]
+\le r_v(L_v)+(1-r_v(L_v))u_t^2
+\le K^{-2}+u_t^2.\tag{7.3a}
+$$
+
+The reference mass is positive almost surely, since the actual symbol has positive marginal. Jensen and averaging over $t$ bound $\mathbb E\log\mathcal R_v$ by the left side of (A.3), with $s=K^{-2}$. Thus each of the $n^2$ cells contributes at most $-2+2E_1(K)/K$ to the last sum in (7.3). This proves the capped-law estimate, with the factor two coming precisely from the two independent owner labels.
+
+For the given family $\mathcal S$, independently choose a uniform permutation inside each symbol fiber and apply the resulting symbol permutation to a uniform member of $\mathcal S$. Conditional on the chosen permutation its entropy is $\log|\mathcal S|$, so the mixture has at least this entropy by concavity. Within a symbol fiber its marginal at a fixed cell is the probability of that fiber divided by its size. Since each size is at least $K^2$, the marginal cap holds. The mixture also preserves every original mean block mass, so the preceding capped-law estimate applies with the required coarse table.
+
+For clarity, that table bounds the remaining marginal entropy as follows. A block has $n^3v_b$ cell-symbol positions carrying total marginal mass $n^2q_b$. Concavity of $-u\log u$ makes its entropy largest when that mass is equally distributed over those positions. Its contribution is at most $n^2q_b\log(nv_b/q_b)$, with a zero-mass block contributing zero. Summing gives $n^2\log n+n^2H_{\mathrm{coarse}}(\mathcal S)$. Together with (7.3) this is (7.2). No invariance of the original family under symbol permutations was used. $\square$
+
+Fix a finite partition before sending $n$ to infinity. All its positive symbol fibers then have size tending to infinity, while $2E_1(K)/K\to0$. Finite rounding of row and column alignment weights turns a full-distance ball into a union of discretely labeled families whose mean block tables are close to the prescribed observed masses. Continuity of the finite table entropy, with the actual block volumes, applies to each family. The number of labelings is at most exponential in $n$ for a fixed partition, hence has logarithm $o(n^2)$. Empty families are handled in the exponential form, avoiding $\log0$. These observations yield a local upper count with the finite-partition divergence as penalty.
+
+Here is the finite rounding step in that last deduction. Fix row and column partitions with $r$ and $s$ parts and a symbol partition into intervals. An alignment of a grid-embedded square gives, for each finite row $x$, probabilities $\alpha_{i,x}$ of belonging to row part $i$; these sum to one. Similarly obtain column probabilities $\beta_{j,y}$. Their sums over rows and columns are the prescribed part measures times $n$. Choose each row label independently from its probabilities, and each column label independently in the same way. The expected block counts are exactly the fractional counts from the aligned measure, apart from symbol-cell boundary errors. Each symbol interval has at most two boundary symbol cells, affecting at most $2n$ entries because a symbol occurs once in each row.
+
+For a fixed block, its count is a sum of $n^2$ indicators. Two indicators with different rows and columns are independent; only $O(n^3)$ ordered pairs can share a random row or column label. Each covariance is bounded by one, so the count has variance $O(n^3)$. Part-size counts have variance $O(n)$. Chebyshev and a union over the fixed finite collection of blocks and parts give a labeling with block errors at most $\zeta n^2$ and part-size errors at most $\zeta n$, for any fixed $\zeta>0$ and all sufficiently large $n$.
+
+There are only $r^ns^n$ possible row-column labelings, so passing to their union costs $O(n)$ in the logarithmic count. For each fixed labeling, take the subfamily whose block counts meet the required bounds. Its mean block table meets the same bounds, and its actual part volumes are close to the prescribed positive volumes. Lemma 7.1 applies to that subfamily. Continuity of finite-table entropy in masses and positive volumes gives the desired local entropy penalty. This explains both the rounding and why its counting cost is negligible on the scale $n^2$.
+
+## 8. From finite profiles to the full-space principle
+
+We record separately the analytic ingredients of the passage to Latinons. The compactness and pattern-continuity framework is the one of [1, Theorems 3.13 and 4.7]; the formal development also supplies these properties for the representation (2.1).
+
+**Lower bound at a fixed center.** A profile $p$ defines a grid density $np_{xyz}$ on cells of side $1/n$. Its line sums give all three uniform two-coordinate marginals. The subset cut bound (3.2) extends to fractional weights by the layer-cake identity, with no extra constant. It consequently controls arbitrary measurable row and column sets and the required symbol intervals.
+
+For a fixed bounded positive density, construct its cell-averaged profiles for every sufficiently large order. Jensen gives $H(p)/n^2-\log n\ge\operatorname{Ent}(W)$. A measure-preserving order map is approximated by interval permutations at all large orders. Relabeling the finite tensor by those permutations preserves its line sums and entropy; pulling the grid measure back cancels that relabeling. Both order terms in (2.1) are therefore small. The uniformity in Theorem 3.1 is essential, since these profiles depend on $n$.
+
+For a finite-rate center, take conditional expectations on increasingly fine product grids and mix with a small amount of the uniform measure. Conditional expectation preserves every two-coordinate marginal and does not increase relative entropy. Mixing gives a positive lower density bound, preserves the margins and again does not increase the rate. Product-grid conditional expectations approximate an integrable density in $L^1$; the order map is kept and approximated as above. Applying the bounded-density result inside a smaller ball proves the lower local count at every finite-rate center.
+
+**Upper bound and semicontinuity.** Relative entropy is recovered from finite dyadic observations, including its infinite values:
+
+$$
+\mathcal I(W)=\sup_{q\ge0}\sum_{B\in\mathcal D_q^3}
+\nu(B)\log\frac{\nu(B)}{\lambda^3(B)}.\tag{8.1}
+$$
+
+We justify (8.1) in the singular case as well. For probability measures $\nu,\mu$ on the cube put $\Psi_{\nu,\mu}(g)=\int g\,d\nu-\log\int e^g\,d\mu$, where $\mathcal B_b(I^3)$ denotes the bounded Borel functions and $g\in\mathcal B_b(I^3)$. First,
+$$
+\operatorname{KL}(\nu\Vert\mu)=\sup_{g\in\mathcal B_b(I^3)}\Psi_{\nu,\mu}(g).
+\tag{8.2}
+$$
+If $\nu=q\mu$ has finite divergence, Gibbs applied to $e^g\mu/\int e^g\,d\mu$ bounds each $\Psi$ from above. Infinite divergence makes that upper inequality immediate. For the reverse, truncate $\log q$ to $[-N,N]$, using $-N$ at zeros. The integrals against $\nu$ tend to $\int q\log q\,d\mu$, possibly infinity: the positive parts increase, while the negative parts are dominated by $-q\log q\le1/e$ on $q\le1$. The exponentials tend to $q$ and are bounded by $1+q$, so their integrals tend to one. If absolute continuity fails, take a $\mu$-null set $A$ with $\nu(A)>0$ and use $g=t\mathbf1_A$; then $\Psi=t\nu(A)$ is unbounded. This proves (8.2) in all cases.
+
+On a finite partition, finite Gibbs identifies the mass-table divergence with the supremum of $\Psi$ over functions constant on its cells. The reverse inequality follows by choosing logarithmic mass ratios on positive cells and sending the values on zero-mass cells to minus infinity.
+
+Set $\mu=\lambda^3$ and $\rho=(\nu+\mu)/2$. Every bounded measurable $g$ can be approximated in $L^1(\rho)$ by dyadic step functions with the same uniform bound. To see this, sets approximable in $\rho$-measure by finite unions of dyadic boxes form a sigma-algebra: complements and finite unions are immediate, and countable unions reduce to finite ones by finiteness of $\rho$. This class contains the dyadic generating algebra, hence every Borel set. Approximate simple functions and clip to the bound on $g$. Both integrals in $\Psi$ then converge, since the exponential is Lipschitz on a bounded interval. Thus dyadic step functions suffice in (8.2). The finite-partition identity now gives (8.1), with no density hypothesis.
+
+To turn a fixed observation into a neighborhood estimate, choose a finite product partition with positive cell volumes $v_b$. For $V$ close to $W$, choose an alignment whose cost is close to (2.1). Transport the row and column sets of this partition through that alignment. Every resulting mass differs from the mass at $W$ by at most the distribution part of the alignment cost. The reference volumes remain $v_b$, since the alignment preserves product measure. Finite observation therefore bounds $\mathcal I(V)$ below by the divergence of this nearby finite table. The table divergence is continuous in the masses, including zero masses, because $v_b>0$ and $u\log u$ extends continuously at zero. Thus every strict finite rate floor below the observed cost at $W$ remains a lower floor in a sufficiently small full-distance neighborhood. Taking the supremum in (8.1) proves lower semicontinuity, including at infinite-rate centers. Lemma 7.1 and the finite rounding above give the matching local counting upper bound.
+
+**Compactness and its cited input.** We use [1, Theorem 3.13] as a published compactness theorem. Given a sequence of our measure representations, Proposition 2.3 gives GHHS kernel representations on a standard atomless ground space. The cited theorem supplies a left-convergent subsequence and a limiting Latinon. By [1, Theorem 4.7], that subsequence converges in the GHHS cut distance. Proposition 2.3 identifies that distance with (2.1), including both order terms. Thus every sequence in the zero-distance quotient has a convergent subsequence. The quotient is a metric space, so sequential compactness implies compactness. Every open set of the original pseudometric space is saturated under zero distance; the same compactness therefore gives the finite subcovers used below. Lower semicontinuity makes every rate sublevel closed, hence compact. This proves the good-rate assertion from the explicitly cited compactness theorem.
+
+Cover a closed set by finitely many of its local upper neighborhoods and sum the upper probabilities after (1.1). This proves (2.3). For an open set, take a ball around a finite-rate witness contained in that set and use its local lower count, again normalized by (1.1), to obtain (2.4). Lower semicontinuity and compactness make the rate good. This proves Theorem 2.1. $\square$
+
+## 9. Order patterns and finite normalization
+
+We give the continuity and finite-transfer details because the normalization in (2.5) matters. Compress symbols into $q$ equal intervals. The event that no two of the $kl$ sampled symbols enter the same interval is a finite union of colored-kernel events. Each has a product integral, with order factors for rows and columns. Telescoping the edge factors and applying the signed weighted cut inequality bounds its change under (2.1).
+
+For two distinct cells, their sampled symbols are independent uniform variables before the row and column coordinates are ordered. If the cells share a row, condition on that row and use the row-symbol marginal; the column case is identical. If they share neither, use independent coordinates. A union bound over cell pairs gives a collision error at most $k!l!(kl)^2/q$, including the ordering normalization. It is uniform over all Latinons, including singular ones. The finite colored-kernel polynomials therefore converge uniformly to $d_P$, proving uniform continuity. Strict symbol orders exhaust the sampling law almost surely, so
+
+$$
+\sum_{P\in\mathcal P_{k,l}}d_P(W)=1.\tag{9.1}
+$$
+
+For a finite square, sampling with replacement first gives the auxiliary statistic $\widehat t(P,L)$ below. Coinciding row indices, column indices or symbol intervals account for the displayed uniform error.
+
+$$
+\widehat t(P,L)=\frac{k!l!\,c_P(L)}{n^{k+l}},\qquad
+|d_P(W_L)-\widehat t(P,L)|\le\frac{k!l!(k^2+l^2+(kl)^2)}n.\tag{9.2}
+$$
+
+For $n\ge\max(k,l)$ and $n>0$, the relation to (2.5) is exact:
+
+$$
+\widehat t(P,L)=\beta_n t(P,L),\qquad
+\beta_n=\frac{(n)_k(n)_l}{n^{k+l}}\longrightarrow1.\tag{9.3}
+$$
+
+Here $(n)_k$ is the falling factorial. Since both densities are bounded and $\beta_n\to1$, (9.2)--(9.3) give a uniform embedding error tending to zero for the directly defined binomial statistic.
+
+Apply contraction to the continuous finite vector $T$. Compactness and lower semicontinuity imply that the infimum in each nonempty fiber is attained, with value possibly infinite. At a finite-rate vector $z$, lower semicontinuity supplies a small closed box on which the contracted rate is at least $\mathcal J(z)-\eta/4$. A smaller open box containing a minimizing witness supplies the lower bound. Choose the radii with room between these boxes before increasing $n$. The uniform finite error then places the direct matrix box between the corresponding embedding boxes. Combining the two probability bounds with (1.1), and reducing the error allocations, proves (2.8) and positivity.
+
+If the fiber has infinite cost, the same neighborhood argument works for every finite rate floor. If it is empty, $z$ lies outside the compact image of $T$; a small neighborhood is disjoint from that image. The uniform finite error makes its matrix version eventually empty. This proves Theorem 2.2, including both exceptional cases. $\square$
+
+## 10. Connections with factorizations and CDR constructions
+
+A labeled 1-factorization of $K_{n,n}$ is a family $(F_z)_{z\in[n]}$ of perfect matchings partitioning its edges, with ordered vertex classes and ordered color labels. Set $L(x,y)=z$ when $(x,y)\in F_z$. Perfect matching means that every row and column contains every label once. Conversely the fibers of a Latin square give these matchings. Both compositions are identities and preserve all orders.
+
+**Corollary 10.1 (bipartite factorizations).** If $\mathcal I(W)<\infty$, then for every $r,\eta>0$ there are $0<\rho\le r$ and $N>0$ such that, for $n\ge N$, the number $F_n(W,\rho)$ of these factorizations with associated Latinon at distance less than $\rho$ from $W$ satisfies
+
+$$
+e^{n^2(\log n-2+\operatorname{Ent}(W)-\eta)}\le F_n(W,\rho)
+\le e^{n^2(\log n-2+\operatorname{Ent}(W)+\eta)}.\tag{10.1}
+$$
+
+The finite-pattern version has exactly the rate (2.6) and normalization (2.5). *Proof.* Restrict the bijection to the relevant ball or pattern box and use the local form of Theorem 2.1 or Theorem 2.2. $\square$
+
+We next fix a Wilson construction. Let $G$ be a Steiner triple system on a fixed finite set of group indices. Orient each block increasingly. Each group reserves $m$ vertices of each of three colors $A,B,C$. For each oriented group triple and each ordered pair of row and column colors, insert a Latin square of order $m$; prescribe its symbol color by
+
+$$
+\tau=\begin{pmatrix}B&A&C\\A&C&B\\C&B&A\end{pmatrix},\qquad
+q=9|\mathcal O(G)|.\tag{10.2}
+$$
+
+Each cell gives the triple consisting of its row vertex, column vertex and chosen symbol vertex. Let $P(\Lambda)$ be the union of these triples for the local square family $(\Lambda_s)_{s\in J}$, where $|J|=q$. The rows and columns of $\tau$ are permutations, and each resulting color triple uses exactly two colors. Latin uniqueness and pair uniqueness in $G$ prove three facts: $P(\Lambda)$ is a bicolored triangle packing; its covered pair set is independent of $\Lambda$; and a fixed local row-column pair recovers its symbol.
+
+Assume a strict three-bicolored system $S_0$ contains $P(\Lambda^0)$. This completed-template hypothesis is explicit. The inequalities asserting that the color classes are large enough to reserve the groups do not alone imply it. Set
+
+$$
+\mathcal R_0=S_0\setminus P(\Lambda^0),\qquad S_\Lambda=\mathcal R_0\cup P(\Lambda).\tag{10.3}
+$$
+
+**Lemma 10.2 (replacement and exact counting).** Every $S_\Lambda$ is a strict three-bicolored Steiner triple system, the map $\Lambda\mapsto S_\Lambda$ is injective, and for arbitrary finite families $\mathcal A_s\subseteq\mathcal L_m$,
+
+$$
+\left|\{S_\Lambda:\Lambda_s\in\mathcal A_s\ (s\in J)\}\right|
+=\prod_{s\in J}|\mathcal A_s|.\tag{10.4}
+$$
+
+*Proof.* Pairs covered by the removed packing are covered exactly once by the new packing, which has the same pair footprint. No such pair occurs in $\mathcal R_0$. Every other pair retains its unique block in $\mathcal R_0$. All blocks remain bicolored. If two final systems agree, the unique block at a fixed local row-column pair has the same symbol vertex. The three local parts are disjoint and their numberings injective, so the local square entries agree. This proves injectivity and then the product identity. $\square$
+
+**Proposition 10.3 (prescribed local Latinons in CDR realizations).** Fix $G$ and finite-rate Latinons $(W_s)_{s\in J}$. For every $r,\eta>0$ there are radii $0<\rho_s\le r$ and $N>0$ such that, for every $m\ge N$ and every completed template as above, put
+
+$$
+\mathcal A_s=\{L\in\mathcal L_m:\delta(W_L,W_s)<\rho_s\},\qquad
+\mathcal H_m=m^2\sum_{s\in J}(\log m-2+\operatorname{Ent}(W_s)).\tag{10.5}
+$$
+
+The constructed family $\mathcal C(\mathcal A)=\{S_\Lambda:\Lambda_s\in\mathcal A_s\}$ satisfies
+
+$$
+e^{\mathcal H_m-q\eta m^2}\le|\mathcal C(\mathcal A)|\le e^{\mathcal H_m+q\eta m^2}.\tag{10.6}
+$$
+
+The threshold is independent of the base system and its residue. Every realization has exactly the same six color-multiset block-type counts as $S_0$. Any fixed block configuration lying in $\mathcal R_0$ is retained.
+
+*Proof.* Apply the bilateral local count separately to each $W_s$, then take the maximum of the finitely many thresholds. Multiply and use (10.4). The type of a local block depends only on its slot in (10.2), not on its symbol index; every slot contributes $m^2$ blocks of that type. Replacement therefore preserves every type count. The residue is literally unchanged. $\square$
+
+Along a sequence of completed templates, choose the radii tending to zero sufficiently slowly by applying the proposition with $r=\eta=1/k$ and increasing thresholds. Then $\log|\mathcal C(\mathcal A)|=\mathcal H_m+o(m^2)$. The number of slots remains fixed. The upper bound concerns this fixed-residue family, whereas allowing arbitrary completions can increase the count.
+
+This makes a direct connection with the exact-type and abundance results in [5,6]: the replacement preserves their type vector and any selected configuration already in the residue. A global second-order CDR count would require controlling the entropy of all residues and completions. Proposition 10.3 supplies the local contribution and makes no claim about that additional count.
+
+## 11. Formalization and reproducibility
+
+The Lean source snapshot, bilingual formal companion and internal audit accompany this preprint in the repository listed on the title page. The companion maps the numbered results to formal declarations and gives the 23-step core ledger and eight application steps. The canonical entry `LatinonFormalization` imports the principal pattern-counting chain and the applications assembly.
+
+The frozen project was reconstructed with Lean 4.35.0 and the pinned Mathlib ecosystem: all 309 explicit local module targets compiled, of which 298 lie in the canonical entry's import closure. The reconstruction began without project objects and reused only pinned external dependency caches. The eight selected queries in `ReviewAxioms`, together with the three additional queries for lower semicontinuity, compactness and compact rate sublevels, reported only `propext`, `Classical.choice` and `Quot.sound`. Source, configuration, object and log hashes bind this evidence to the delivered freeze. Preparing this edition did not change the mathematical Lean sources or rerun Lean.
+
+The portable sources are in `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`. Reproduction instructions and executable package verifiers are included. The internal audit covers the recorded reconstruction, statement correspondence, targeted written arguments, bilingual consistency and artifact integrity. Its scope is distinct from journal peer review and an exhaustive priority audit. Proposition 2.3 supplies the written identification with the published GHHS model; it is not an additional Lean declaration.
+
+AI tools assisted with drafting, proof development, translation and validation. The author is responsible for the mathematical claims and the delivered text.
+
+## Appendix. The finite logarithmic estimates
+
+For completeness, the scalar estimate used in the permanent arguments can be written without asymptotic notation. Conditional on a row's finite priority label $t\in\{0,\ldots,n-1\}$, its mean remaining reference mass is at most $m/n+(n-t)/n$. The matched column itself accounts for $m/n$; every other owner is later with probability at most $(n-t)/n$. Jensen and the weighted revealing inequality reduce the logarithm of the permanent to the following sum:
+
+$$
+\log\operatorname{per}(B)\le\sum_{k=1}^n\log\frac{m+k}{n}
+\le\log((m+n)!)-n\log n.\tag{A.1}
+$$
+
+For $N\ge1$, integration of the increasing logarithm gives $\log(N!)\le(N+1)\log N-N+1$. Apply this with $N=m+n$ and use $\log(m+n)\le\log n+m/n$. After cancellation, the right side of (A.1) is at most
+
+$$
+-n+(m+1)\log n+\frac{m(m+1)}n+1\le-n+E_m(n).\tag{A.2}
+$$
+
+For the two-owner estimate, let $u_t=(K-t)/K$ and $0\le s\le K^{-2}$. The elementary inequality $s+u_t^2\le(K^{-1}+u_t)^2$ and the preceding estimate with $n=K,m=1$ give
+
+$$
+\frac1K\sum_{t=0}^{K-1}\log(s+u_t^2)
+\le-2+\frac{2E_1(K)}K.\tag{A.3}
+$$
+
+These are finite inequalities. The only asymptotic use is that $E_m(n)/n\to0$ for fixed $m$, and $E_1(K)/K\to0$.
+
+## References
+
+[1] F. Garbe, R. Hancock, J. Hladký and M. Sharifzadeh. *Limits of Latin squares*. Discrete Analysis 2023:8, 66 pp. [doi:10.19086/da.83253](https://doi.org/10.19086/da.83253). [arXiv:2010.07854](https://arxiv.org/abs/2010.07854).
+
+[2] M. Kwan, K. Petrova and M. Sawhney. *Parities in random Latin squares*. Preprint, 2025. [arXiv:2509.13125](https://arxiv.org/abs/2509.13125).
+
+[3] M. Kwan, A. Sah and M. Sawhney. *Large deviations in random Latin squares*. Preprint, 2021. [arXiv:2106.11932](https://arxiv.org/abs/2106.11932).
+
+[4] L. Gurvits. *Van der Waerden/Schrijver--Valiant like conjectures and stable (aka hyperbolic) homogeneous polynomials: one theorem for all*. Electronic Journal of Combinatorics 15 (2008), R66. [doi:10.37236/790](https://doi.org/10.37236/790).
+
+[5] J. P. Traverso Gianini. *The exact block-type spectrum in the Colbourn--Dinitz--Rosa problem*. Preprint, 2026. [doi:10.5281/zenodo.23987251](https://doi.org/10.5281/zenodo.23987251).
+
+[6] J. P. Traverso Gianini. *Prescribed block types and abundance in bicolored Steiner triple systems*. Preprint, 2026. [doi:10.5281/zenodo.24201563](https://doi.org/10.5281/zenodo.24201563). [CDR series repository](https://github.com/jtraverso/cdr-steiner-preprints).
+
+[7] J. Radhakrishnan. *An entropy proof of Bregman's theorem*. Journal of Combinatorial Theory, Series A 77 (1997), 161--164. [doi:10.1006/jcta.1996.2727](https://doi.org/10.1006/jcta.1996.2727).
+
+[8] N. Linial and Z. Luria. *An upper bound on the number of high-dimensional permutations*. Combinatorica 34 (2014), 471--486. [doi:10.1007/s00493-011-2842-8](https://doi.org/10.1007/s00493-011-2842-8). [arXiv:1106.0649](https://arxiv.org/abs/1106.0649).
+
+[9] R. Kenyon, D. Král', C. Radin and P. Winkler. *Permutations with fixed pattern densities*. Random Structures & Algorithms 56 (2020), 220--250. [doi:10.1002/rsa.20882](https://doi.org/10.1002/rsa.20882). [arXiv:1506.02340](https://arxiv.org/abs/1506.02340).

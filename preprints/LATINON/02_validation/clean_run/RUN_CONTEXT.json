@@ -1,0 +1,8 @@
+{
+  "source_commit": "7b603942c8d078db6c0a5c8729df7012b7786db8",
+  "started_utc": "2026-11-15T17:41:56.903803+00:00",
+  "project_objects_initially_absent": true,
+  "external_cache_policy": "Only the nine pinned Mathlib ecosystem packages;no project objects restored",
+  "one_project_target_at_a_time": true,
+  "platform": "win32"
+}

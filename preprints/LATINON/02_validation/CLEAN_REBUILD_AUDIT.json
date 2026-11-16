@@ -1,0 +1,135 @@
+{
+  "status": "PASS_SOURCE_BOUND_CLEAN_RECONSTRUCTION",
+  "completed_utc": "2026-11-16T08:34:11.488681+00:00",
+  "source_freeze_commit": "7b603942c8d078db6c0a5c8729df7012b7786db8",
+  "local_module_targets": 309,
+  "initial_project_object_count": 0,
+  "project_objects_restored": false,
+  "external_cache_policy": "Only the nine pinned Mathlib ecosystem packages;no project objects restored",
+  "one_project_target_at_a_time": true,
+  "lean_version": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "external_package_commits": {
+    "mathlib": {
+      "commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "tracked_source_tree_clean": true
+    },
+    "plausible": {
+      "commit": "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+      "tracked_source_tree_clean": true
+    },
+    "LeanSearchClient": {
+      "commit": "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+      "tracked_source_tree_clean": true
+    },
+    "importGraph": {
+      "commit": "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+      "tracked_source_tree_clean": true
+    },
+    "proofwidgets": {
+      "commit": "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+      "tracked_source_tree_clean": true
+    },
+    "aesop": {
+      "commit": "4a174c490d8707121c4a9290800489f105d85e07",
+      "tracked_source_tree_clean": true
+    },
+    "Qq": {
+      "commit": "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+      "tracked_source_tree_clean": true
+    },
+    "batteries": {
+      "commit": "66e469188fe07963e5cf666c7d4433f45b8131c5",
+      "tracked_source_tree_clean": true
+    },
+    "Cli": {
+      "commit": "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+      "tracked_source_tree_clean": true
+    }
+  },
+  "source_config_before_after_identical": true,
+  "frozen_git_blob_bytes_match": true,
+  "source_before_sha256": "7c878bd95f82dc766228680143bd46062dcb61a72eccdafa39fb1ea13b21b52c",
+  "source_after_sha256": "7c878bd95f82dc766228680143bd46062dcb61a72eccdafa39fb1ea13b21b52c",
+  "completed_objects_log_sha256": "9357d191a4ad31e448b9891d2bf9bb501da6d6d5960989a14e5da2e1f76b3be2",
+  "endpoint_queries": {
+    "LatinonEntropy.correction_lemma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.finite_latin_tensor_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.closed_uniform_latinon_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.open_uniform_latinon_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.finite_rate_standard_pattern_log_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.finite_rate_factorization_entropy_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.wilson_distinguished_latinon_blocks_entropy_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LatinonEntropy.wilson_completed_exact_type_count_eq_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "endpoint_query_log": "preprints/LATINON/02_validation/clean_run/309_ReviewAxioms_1.log",
+  "good_rate_queries": {
+    "LatinonEntropy.latinon_rate_lowerSemicontinuous": {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "module": "LatinonFullDyadicKL",
+      "log": "preprints/LATINON/02_validation/clean_run/262_LatinonFullDyadicKL_1.log",
+      "log_sha256": "c3b196c5ee9cb3fad0337a76db7a9b786a91544a521b18dc3292a9aa93b3df1e"
+    },
+    "LatinonEntropy.latinon_full_cut_compact": {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "module": "LatinonBridge.LatinonCompactness",
+      "log": "preprints/LATINON/02_validation/clean_run/104_LatinonBridge_LatinonCompactness_1.log",
+      "log_sha256": "02fc707f61e1b91539c10891e98b0e28af2a01ee4679bd0710f54c91757a34ee"
+    },
+    "LatinonEntropy.latinon_rate_sublevels_compact": {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "module": "LatinonBridge.LatinonGlobalDeviations",
+      "log": "preprints/LATINON/02_validation/clean_run/277_LatinonBridge_LatinonGlobalDeviations_1.log",
+      "log_sha256": "cfe7141332256ab57213876cfd11a08ef700737952e4312e14eff975a8ab8d91"
+    }
+  },
+  "endpoint_query_log_sha256": "d41a42c722deeb1aaf7baa43cdca707526cbb9c8fc0091f99e93b153d2884945",
+  "unique_printed_axiom_declarations": 993,
+  "all_printed_axioms_standard": true,
+  "own_source_warning_count": 280,
+  "warning_policy": "Module-system compatibility and linter warnings are retained; no error, project axiom or sorryAx accepted",
+  "scope": "Fresh selected project reconstruction, reusing only pinned external ecosystem caches; not a Mathlib rebuild or external peer review"
+}

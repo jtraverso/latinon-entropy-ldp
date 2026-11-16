@@ -1,0 +1,27 @@
+⚠ [1992/1997] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1993/1997] Replayed ResidualPotential
+warning: ResidualPotential.lean: imports `Mathlib.Data.Fintype.Lattice` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ResidualPotential.lean: imports `Mathlib.Topology.Order.Compact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ResidualPotential.lean: imports `Mathlib.Tactic.FunProp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: ResidualPotential.lean:145:0: 'LatinonEntropy.exists_bounded_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualPotential.lean:146:0: 'LatinonEntropy.correction_cost_of_residual_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1994/1997] Replayed CorrectionOptimizer
+info: CorrectionOptimizer.lean:38:0: 'LatinonEntropy.exists_box_correction_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1995/1997] Replayed ResidualOptimality
+info: ResidualOptimality.lean:63:0: 'LatinonEntropy.abs_step_le_residual_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualOptimality.lean:64:0: 'LatinonEntropy.nonnegative_residual_cost_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1996/1997] Replayed SmallResidualStep
+info: SmallResidualStep.lean:141:0: 'LatinonEntropy.exists_common_residual_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SmallResidualStep.lean:142:0: 'LatinonEntropy.residual_circulation_cost_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1997/1997] Built ResidualWalks (37s)
+info: ResidualWalks.lean:203:0: 'LatinonEntropy.residual_walk_multiplicities' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualWalks.lean:204:0: 'LatinonEntropy.residual_closed_walk_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1997 jobs).

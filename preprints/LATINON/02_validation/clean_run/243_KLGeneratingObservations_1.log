@@ -1,0 +1,7 @@
+⚠ [3123/3123] Built KLGeneratingObservations (43s)
+warning: KLGeneratingObservations.lean: imports `Mathlib.InformationTheory.KullbackLeibler.DataProcessing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: KLGeneratingObservations.lean: imports `Mathlib.MeasureTheory.Function.ConditionalExpectation.RadonNikodym` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: KLGeneratingObservations.lean: imports `Mathlib.Probability.Martingale.Convergence` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: KLGeneratingObservations.lean:70:0: 'LatinonEntropy.klDiv_map_eq_condExp_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KLGeneratingObservations.lean:71:0: 'LatinonEntropy.klDiv_eq_iSup_generating_maps_of_ac' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3123 jobs).

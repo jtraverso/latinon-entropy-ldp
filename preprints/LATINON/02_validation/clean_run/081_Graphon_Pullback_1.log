@@ -1,0 +1,114 @@
+⚠ [2738/2744] Replayed Graphon.Basic
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2739/2744] Replayed Graphon.Step
+warning: Graphon\Step.lean: imports `Mathlib.Order.Partition.Finpartition` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.Combinatorics.SimpleGraph.Density` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Function.Floor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Step.lean:120:0: automatically included section variable(s) unused in theorem `Graphon.trivialPartition_card`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Step.lean:183:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/Step.lean:194:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [2743/2744] Replayed Graphon.HomDensity
+warning: Graphon\HomDensity.lean: imports `Mathlib.Combinatorics.SimpleGraph.Maps` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.Combinatorics.SimpleGraph.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.MeasureTheory.Constructions.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\HomDensity.lean: imports `Mathlib.Probability.Independence.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/HomDensity.lean:80:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_eq_integral`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:88:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_congr_decRel`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:101:0: automatically included section variable(s) unused in theorem `Graphon.homDensity_bot`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:117:0: automatically included section variable(s) unused in theorem `Graphon.edge_out_ne`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:134:0: automatically included section variable(s) unused in theorem `Graphon.graphonEval_mem_Icc_ae`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/HomDensity.lean:448:25: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:450:25: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/HomDensity.lean:453:39: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:470:80: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Graphon/HomDensity.lean:474:23: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Graphon/HomDensity.lean:470:44: This simp argument is unused:
+  Subtype.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Equiv.ofInjective_apply, Set.mem_range_self, dif_pos, f.right_inv_of_invOfMemRange]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2744/2744] Built Graphon.Pullback (160s)
+warning: Graphon\Pullback.lean: imports `Mathlib.Dynamics.Ergodic.MeasurePreserving` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Pullback.lean:56:0: automatically included section variable(s) unused in theorem `SymmKernel.measurePreserving_prodMap_self`:
+  [IsProbabilityMeasure ν]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure ν] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Pullback.lean:248:0: automatically included section variable(s) unused in theorem `Graphon.measurable_piMap`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Pullback.lean:252:0: automatically included section variable(s) unused in theorem `Graphon.measurePreserving_piMap`:
+  [IsProbabilityMeasure μ]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (2744 jobs).

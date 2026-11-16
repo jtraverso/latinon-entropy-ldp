@@ -1,0 +1,15 @@
+⚠ [1993/1995] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1995/1995] Built PermanentalLaw (143s)
+warning: PermanentalLaw.lean: imports `Mathlib.LinearAlgebra.Matrix.Permanent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: PermanentalLaw.lean:169:0: 'LatinonEntropy.permanentMarginal_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:170:0: 'LatinonEntropy.permanentLaw_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:171:0: 'LatinonEntropy.tilted_permanent_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1995 jobs).

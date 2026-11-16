@@ -1,0 +1,6 @@
+⚠ [2623/2623] Built OrderAssignmentCost (170s)
+warning: OrderAssignmentCost.lean: imports `Mathlib.Analysis.Convex.Birkhoff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: OrderAssignmentCost.lean: imports `Mathlib.Analysis.Convex.Jensen` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: OrderAssignmentCost.lean:33:0: 'LatinonEntropy.matrixAssignmentCost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: OrderAssignmentCost.lean:34:0: 'LatinonEntropy.exists_permutation_cost_le_fractional' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2623 jobs).

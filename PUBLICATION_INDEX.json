@@ -1,0 +1,17 @@
+{
+  "edition": "1.0",
+  "date": "2026-11-16",
+  "repository": "https://github.com/jtraverso/latinon-entropy-ldp",
+  "license": "CC-BY-4.0",
+  "distribution": "Preprint edition",
+  "papers": [
+    {
+      "title": "Entropy and large deviations for Latin squares",
+      "title_es": "Entropía y grandes desviaciones para cuadrados latinos",
+      "directory": "preprints/LATINON",
+      "version": "1.0",
+      "doi": null,
+      "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/v1.0"
+    }
+  ]
+}

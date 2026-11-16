@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Finite regressions for written identities; not a numerical proof of asymptotic or analytic theorems",
+  "script_sha256": "56eecd0671b5375b0f4132a1aa40077f7c938de245c581239e6ca6597cd9a6b8",
+  "checks": {
+    "finite_label_logarithm_bound": 1300,
+    "repeated_arc_one_sided_cost": 384,
+    "fluid_right_endpoint_direction": 600,
+    "permanental_entropy_and_mgf_identity": 120,
+    "exact_binomial_bridge_instances": 11735,
+    "latin_square_enumeration": {
+      "1": 1,
+      "2": 2,
+      "3": 12,
+      "4": 576
+    },
+    "wilson_local_families_with_identical_pair_footprint": 512,
+    "wilson_type_vector": {
+      "(0, 2, 2)": 12,
+      "(0, 0, 1)": 12,
+      "(1, 1, 2)": 12
+    }
+  }
+}

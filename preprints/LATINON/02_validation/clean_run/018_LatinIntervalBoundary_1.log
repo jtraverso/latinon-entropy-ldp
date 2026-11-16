@@ -1,0 +1,50 @@
+⚠ [1998/2026] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1999/2026] Replayed WeightedLogSum
+warning: WeightedLogSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedLogSum.lean:94:0: 'LatinonEntropy.weighted_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3139/3157] Replayed FiniteAverages
+warning: FiniteAverages.lean: imports `Mathlib.Logic.Equiv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteAverages.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteAverages.lean:93:0: 'LatinonEntropy.finiteMean_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteAverages.lean:94:0: 'LatinonEntropy.finiteMean_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3308/3317] Replayed WeightedJensen
+info: WeightedJensen.lean:59:0: 'LatinonEntropy.finite_exp_jensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: WeightedJensen.lean:60:0: 'LatinonEntropy.quadratic_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3309/3317] Replayed LatinAvailability
+warning: LatinAvailability.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LatinAvailability.lean: imports `Mathlib.Data.Finset.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinAvailability.lean:139:0: 'LatinonEntropy.availability_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:140:0: 'LatinonEntropy.availability_col' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:141:0: 'LatinonEntropy.availability_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3310/3317] Replayed HistoryLatinArray
+warning: HistoryLatinArray.lean: imports `Mathlib.Data.Fintype.EquivFin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: HistoryLatinArray.lean:59:0: 'LatinonEntropy.historyArray_column_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryLatinArray.lean:60:0: 'LatinonEntropy.historyToLatinArray_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3314/3317] Replayed SymbolIntervalWeights
+warning: SymbolIntervalWeights.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3315/3317] Replayed SymbolFloorCuts
+warning: SymbolFloorCuts.lean: imports `Mathlib.Algebra.Order.Floor.Semiring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3316/3317] Replayed SymbolIntervalClasses
+warning: SymbolIntervalClasses.lean: imports `Mathlib.Order.Interval.Finset.Nat` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: SymbolIntervalClasses.lean:128:0: 'LatinonEntropy.symbolIntervalWeight_eq_indicator_off_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: SymbolIntervalClasses.lean:129:0: 'LatinonEntropy.symbolIntervalClass_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:130:0: 'LatinonEntropy.symbolIntervalClass_card_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:131:0: 'LatinonEntropy.symbolIntervalClass_proportion_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:132:0: 'LatinonEntropy.exists_symbolIntervalClass_size_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SymbolIntervalClasses.lean:133:0: 'LatinonEntropy.symbolIntervalWeight_indicator_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3317/3317] Built LatinIntervalBoundary (112s)
+info: LatinIntervalBoundary.lean:101:0: 'LatinonEntropy.latin_row_nat_symbol_sum_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinIntervalBoundary.lean:102:0: 'LatinonEntropy.latin_boundary_symbol_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinIntervalBoundary.lean:103:0: 'LatinonEntropy.latin_interval_boundary_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinIntervalBoundary.lean:104:0: 'LatinonEntropy.latin_interval_boundary_error_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3317 jobs).

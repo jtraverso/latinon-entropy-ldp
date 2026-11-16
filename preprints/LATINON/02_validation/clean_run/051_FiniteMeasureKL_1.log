@@ -1,0 +1,13 @@
+⚠ [3118/3118] Built FiniteMeasureKL (172s)
+warning: FiniteMeasureKL.lean: imports `Mathlib.InformationTheory.KullbackLeibler.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteMeasureKL.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.SumMeasure` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteMeasureKL.lean: imports `Mathlib.MeasureTheory.Integral.Lebesgue.Countable` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteMeasureKL.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteMeasureKL.lean:94:0: 'LatinonEntropy.finite_measure_ac_of_positive_reference' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:95:0: 'LatinonEntropy.finite_rnDeriv_eq_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:96:0: 'LatinonEntropy.finite_measure_real_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:97:0: 'LatinonEntropy.finite_kl_ne_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:98:0: 'LatinonEntropy.finite_kl_toReal_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:99:0: 'LatinonEntropy.finite_kl_eq_ofReal_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteMeasureKL.lean:100:0: 'LatinonEntropy.finite_probability_kl_eq_neg_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3118 jobs).

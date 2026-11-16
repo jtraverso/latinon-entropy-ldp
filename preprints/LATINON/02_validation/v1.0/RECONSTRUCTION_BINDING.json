@@ -1,0 +1,10 @@
+{
+  "status": "PASS_RETAINED_RECONSTRUCTION_BINDING",
+  "compiled_modules": 309,
+  "canonical_import_closure": 298,
+  "endpoint_queries": 8,
+  "additional_good_rate_queries": 3,
+  "lean_source_archive_sha256": "83332812574e022ceff8bcdf5c334616279b298cd8dab91b266173efdbdd1981",
+  "fresh_lean_build_in_this_edition": false,
+  "scope": "Read-only source-archive and original log verification; no new Lean execution"
+}

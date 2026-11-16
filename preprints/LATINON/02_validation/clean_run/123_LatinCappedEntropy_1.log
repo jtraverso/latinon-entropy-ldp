@@ -1,0 +1,85 @@
+⚠ [1997/2018] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1998/2018] Replayed WeightedLogSum
+warning: WeightedLogSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedLogSum.lean:94:0: 'LatinonEntropy.weighted_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3139/3166] Replayed PermanentalLaw
+warning: PermanentalLaw.lean: imports `Mathlib.LinearAlgebra.Matrix.Permanent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: PermanentalLaw.lean:169:0: 'LatinonEntropy.permanentMarginal_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:170:0: 'LatinonEntropy.permanentLaw_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:171:0: 'LatinonEntropy.tilted_permanent_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3140/3167] Replayed FiniteAverages
+warning: FiniteAverages.lean: imports `Mathlib.Logic.Equiv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteAverages.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteAverages.lean:93:0: 'LatinonEntropy.finiteMean_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteAverages.lean:94:0: 'LatinonEntropy.finiteMean_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3141/3167] Replayed WeightedChain
+warning: WeightedChain.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedChain.lean:189:0: 'LatinonEntropy.weighted_chain_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3142/3167] Replayed PermanentReveal
+info: PermanentReveal.lean:153:0: 'LatinonEntropy.log_permanent_weighted_reveal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentReveal.lean:154:0: 'LatinonEntropy.log_permanent_remaining_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3148/3170] Replayed WeightedJensen
+info: WeightedJensen.lean:59:0: 'LatinonEntropy.finite_exp_jensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: WeightedJensen.lean:60:0: 'LatinonEntropy.quadratic_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3149/3170] Replayed LatinAvailability
+warning: LatinAvailability.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LatinAvailability.lean: imports `Mathlib.Data.Finset.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinAvailability.lean:139:0: 'LatinonEntropy.availability_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:140:0: 'LatinonEntropy.availability_col' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:141:0: 'LatinonEntropy.availability_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3150/3170] Replayed HistoryLatinArray
+warning: HistoryLatinArray.lean: imports `Mathlib.Data.Fintype.EquivFin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: HistoryLatinArray.lean:59:0: 'LatinonEntropy.historyArray_column_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryLatinArray.lean:60:0: 'LatinonEntropy.historyToLatinArray_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3151/3170] Replayed FiniteLabelPairs
+info: FiniteLabelPairs.lean:35:0: 'LatinonEntropy.finiteMean_distinct_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3152/3170] Replayed LabelAveraging
+info: LabelAveraging.lean:123:0: 'LatinonEntropy.conditional_remaining_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3153/3170] Replayed FiniteLabelThresholds
+info: FiniteLabelThresholds.lean:28:0: 'LatinonEntropy.finiteMean_two_label_thresholds' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3154/3170] Replayed FinitePriorityKey
+warning: FinitePriorityKey.lean: imports `Mathlib.Data.Fintype.EquivFin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FinitePriorityKey.lean:32:0: 'LatinonEntropy.finitePriorityKey_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FinitePriorityKey.lean:33:0: 'LatinonEntropy.label_le_of_finitePriorityKey_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3159/3176] Replayed LatinRevealAvailability
+info: LatinRevealAvailability.lean:61:0: 'LatinonEntropy.latin_reveal_symbol_orders' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3160/3176] Replayed LatinWeightedReveal
+info: LatinWeightedReveal.lean:62:0: 'LatinonEntropy.latin_weighted_revealing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3161/3176] Replayed LatinBlockingCells
+info: LatinBlockingCells.lean:36:0: 'LatinonEntropy.latin_alternative_blockers' depends on axioms: [Classical.choice, Quot.sound]
+ℹ [3162/3176] Replayed LatinConditionalLabels
+info: LatinConditionalLabels.lean:99:0: 'LatinonEntropy.latin_alternative_conditional_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinConditionalLabels.lean:100:0: 'LatinonEntropy.latin_conditional_remaining_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3167/3187] Replayed LatinFamilyMarginals
+info: LatinFamilyMarginals.lean:75:0: 'LatinonEntropy.latinFamilyMarginal_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinFamilyMarginals.lean:76:0: 'LatinonEntropy.latinFamilyMarginal_self_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinFamilyMarginals.lean:77:0: 'LatinonEntropy.latin_reference_entropy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3562/3567] Replayed PermanentCapScalar
+warning: PermanentCapScalar.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Sum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: PermanentCapScalar.lean:81:0: 'LatinonEntropy.finite_label_cap_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3563/3567] Replayed PermanentAsymptotics
+info: PermanentAsymptotics.lean:36:0: 'LatinonEntropy.eventually_permanentCapError_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3564/3567] Replayed LatinLabelCap
+info: LatinLabelCap.lean:43:0: 'LatinonEntropy.finite_label_quadratic_cap_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinLabelCap.lean:44:0: 'LatinonEntropy.latin_label_cap_error_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3565/3567] Replayed LatinRemainingLog
+info: LatinRemainingLog.lean:61:0: 'LatinonEntropy.latin_remaining_reference_ge_actual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinRemainingLog.lean:62:0: 'LatinonEntropy.latin_conditional_remaining_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinRemainingLog.lean:63:0: 'LatinonEntropy.latin_finite_priority_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3566/3567] Replayed LatinMarginalRevealing
+info: LatinMarginalRevealing.lean:38:0: 'LatinonEntropy.latin_marginal_revealing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3567/3567] Built LatinCappedEntropy (158s)
+info: LatinCappedEntropy.lean:86:0: 'LatinonEntropy.latin_priority_log_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinCappedEntropy.lean:87:0: 'LatinonEntropy.latin_capped_marginal_entropy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinCappedEntropy.lean:88:0: 'LatinonEntropy.exists_uniform_latin_marginal_entropy_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (3567 jobs).

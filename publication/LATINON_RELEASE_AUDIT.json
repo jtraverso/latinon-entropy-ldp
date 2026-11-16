@@ -1,0 +1,72 @@
+{
+  "status": "PASS_INTERNAL_RELEASE_AUDIT",
+  "editorial_verdict": "EDITORIALLY_READY",
+  "version": "1.0",
+  "completed_utc": "2026-11-16T09:58:30.002726+00:00",
+  "scope": "Internal edition preparation, source binding, semantic and rendered-artifact checks; not independent peer review or public-access certification",
+  "compiled_modules": 309,
+  "canonical_import_closure": 298,
+  "endpoint_queries": 8,
+  "additional_good_rate_queries": 3,
+  "lean_source_archive_sha256": "83332812574e022ceff8bcdf5c334616279b298cd8dab91b266173efdbdd1981",
+  "fresh_lean_build_in_this_edition": false,
+  "documents": 4,
+  "rendered_pages": 50,
+  "parity": [
+    {
+      "pair": "latinon",
+      "status": "PASS",
+      "display_formulas": 57,
+      "inline_formulas": 551,
+      "formal_identifiers": 6
+    },
+    {
+      "pair": "formal_companion",
+      "status": "PASS",
+      "display_formulas": 0,
+      "inline_formulas": 0,
+      "formal_identifiers": 76
+    }
+  ],
+  "checks": {
+    "retained_source_bound_reconstruction": "PASS",
+    "source_only_lean_freeze": "PASS",
+    "eight_endpoint_and_three_good_rate_axiom_queries": "PASS",
+    "protected_mathematical_content": "PASS",
+    "targeted_written_proof_review": "PASS",
+    "scoped_bibliography_review": "PASS",
+    "bilingual_parity": "PASS",
+    "source_tex_pdf_binding": "PASS",
+    "all_rendered_pages": "PASS",
+    "cdr_structure_and_layout": "PASS",
+    "metadata_and_license": "PASS"
+  },
+  "mathematical_sources_changed": false,
+  "cdr_standard_commit": "d12d980f8c86d8795e9faa0c6bb274ee936c7c8e",
+  "evidence": {
+    "preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json": "fb1207440e08fdd8a7adc1b77c6d4af523d535dce993c22cf7607d4bd25504b7",
+    "preprints/LATINON/02_validation/SOURCE_AUDIT.json": "ba9a34099a5660e2667045cdb79575dd984241b9cdb9ade259bd15f739892746",
+    "preprints/LATINON/02_validation/FINITE_REGRESSIONS.json": "1c31696ce31c0e3b30d70de3fda02bb71b9b797e9d014230f3cb6447ef1f5aed",
+    "publication/PROOF_LEDGER.json": "f09e74ff3b9dfd73e5952616c746d2da5efc57acca1fcd23676bd18053ae14c3",
+    "publication/audit/PROTECTED_CONTRACT_AUDIT.json": "61a9e4fea34ea0164b9b68165565c802ed7225a90315d03ffd1c426be8d61370",
+    "publication/audit/SOURCE_SNAPSHOT.json": "7c878bd95f82dc766228680143bd46062dcb61a72eccdafa39fb1ea13b21b52c",
+    "publication/audit/PRINTED_PROOFS.md": "0510901d8736f1f1fad488a07b0c3de6697e5064aaf6eacd26a9c473c6d018f1",
+    "publication/audit/LITERATURE_REVIEW.md": "bc28a0ea17d504d758a21c016b59c7d327d630f5ac9f96c073719e84ae5c4d2a",
+    "publication/audit/EDITORIAL_REPORT.md": "c41cbafe390acd5563c6d2d8bb7d79418becce6b09ad4aba72adbfb66002773b",
+    "preprints/LATINON/02_validation/v1.0/FREEZE.json": "851da66bf6ac38dc361787c9465867dd6cf87a9cb14385039d10d8a7e17b02c2",
+    "preprints/LATINON/02_validation/v1.0/PROTECTED_BASELINE.json": "a54afe34724c7dbb0d837da03bc0fc0146b78648eb5b65cace681cea83c5295d",
+    "preprints/LATINON/02_validation/v1.0/SEMANTIC_DIFF.json": "8f7907e6b56adbbd4a0a2e693e9d46874e86af7d83d78ffef1eda338f5ed9432",
+    "preprints/LATINON/02_validation/v1.0/RECONSTRUCTION_BINDING.json": "2e159192d1e3abe8a315884e3b3991d053476ff8d84d63b88d27ea0d2a7f396c",
+    "preprints/LATINON/02_validation/v1.0/PROVENANCE.json": "c913cb2914b2a77c7987616dd91441b1e7a61a4fda480ed7b45281bde8697bc4",
+    "preprints/LATINON/02_validation/v1.0/CDR_STRUCTURE_COMPARISON.json": "8a806be6276303d4d1c408704e15db02588303ffa4eb9483d1bca4c5f46f5b38",
+    "preprints/LATINON/02_validation/v1.0/TYPESETTING.json": "97f27f5f04b2af45f1a6f1410cdf5aa0f478df852caa57804a9d7f2b451dcfef",
+    "preprints/LATINON/02_validation/v1.0/DOCUMENT_AUDIT.json": "c49952b6ebd318cb649cbf60566b6eef89fc6496117723b34308b353e55d4ba0",
+    "preprints/LATINON/02_validation/v1.0/VISUAL_REVIEW.json": "572adf9256137cd081fb957d6af4425db9223ad5712297cde7625753f2888631"
+  },
+  "limitations": [
+    "Pinned external Mathlib ecosystem caches reused, not rebuilt",
+    "Targeted internal written review, not independent review of all analytic providers",
+    "Scoped literature search, not exhaustive priority certification",
+    "CDR application assumes a completed base and counts a fixed-residue family"
+  ]
+}

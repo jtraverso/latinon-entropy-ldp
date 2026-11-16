@@ -1,0 +1,9 @@
+.lake/
+**/.lake/
+**/__pycache__/
+**/*.olean
+**/*.ilean
+**/*.aux
+**/*.out
+tmp/
+lean/

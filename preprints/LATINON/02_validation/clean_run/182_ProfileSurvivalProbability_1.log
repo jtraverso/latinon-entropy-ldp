@@ -1,0 +1,192 @@
+⚠ [1991/2042] Replayed FiniteCore
+warning: FiniteCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Algebra.Order.BigOperators.Group.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteCore.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteCore.lean:183:0: 'LatinonEntropy.correction_cost_unit_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:184:0: 'LatinonEntropy.finite_gibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCore.lean:185:0: 'LatinonEntropy.block_entropy_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1992/2042] Replayed WeightedLogSum
+warning: WeightedLogSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Piecewise` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedLogSum.lean:94:0: 'LatinonEntropy.weighted_log_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3138/3160] Replayed FiniteAverages
+warning: FiniteAverages.lean: imports `Mathlib.Logic.Equiv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteAverages.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteAverages.lean:93:0: 'LatinonEntropy.finiteMean_log_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteAverages.lean:94:0: 'LatinonEntropy.finiteMean_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3139/3160] Replayed WeightedJensen
+info: WeightedJensen.lean:59:0: 'LatinonEntropy.finite_exp_jensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: WeightedJensen.lean:60:0: 'LatinonEntropy.quadratic_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3140/3160] Replayed FiniteHistory
+info: FiniteHistory.lean:117:0: 'LatinonEntropy.historyWeight_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteHistory.lean:118:0: 'LatinonEntropy.historyExpectation_tower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3141/3160] Replayed HistoryMartingale
+info: HistoryMartingale.lean:94:0: 'LatinonEntropy.history_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryMartingale.lean:95:0: 'LatinonEntropy.history_pathSum_second_moment_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3143/3160] Replayed FluidStability
+warning: FluidStability.lean: imports `Mathlib.Analysis.ODE.DiscreteGronwall` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FluidStability.lean:66:0: 'LatinonEntropy.fluid_defect_telescope' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FluidStability.lean:67:0: 'LatinonEntropy.defect_gronwall' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3144/3160] Replayed HistoryPropagation
+info: HistoryPropagation.lean:71:0: 'LatinonEntropy.history_defect_at_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3145/3160] Replayed HistoryExpectationTools
+info: HistoryExpectationTools.lean:63:0: 'LatinonEntropy.history_predictable_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryExpectationTools.lean:64:0: 'LatinonEntropy.history_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3146/3160] Replayed HistoryAbsoluteBounds
+info: HistoryAbsoluteBounds.lean:63:0: 'LatinonEntropy.pathSum_abs_le_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryAbsoluteBounds.lean:64:0: 'LatinonEntropy.historyExpectation_mono_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3147/3160] Replayed LatinAvailability
+warning: LatinAvailability.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: LatinAvailability.lean: imports `Mathlib.Data.Finset.Card` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinAvailability.lean:139:0: 'LatinonEntropy.availability_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:140:0: 'LatinonEntropy.availability_col' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinAvailability.lean:141:0: 'LatinonEntropy.availability_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3148/3160] Replayed StoppedAvailability
+info: StoppedAvailability.lean:79:0: 'LatinonEntropy.historyLive_stays_stopped' does not depend on any axioms
+info: StoppedAvailability.lean:80:0: 'LatinonEntropy.stopped_fluid_defect_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3149/3160] Replayed StoppedBudget
+info: StoppedBudget.lean:59:0: 'LatinonEntropy.stopped_budget_eq_of_past' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: StoppedBudget.lean:60:0: 'LatinonEntropy.budgeted_first_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3150/3160] Replayed HistoryPrefixes
+info: HistoryPrefixes.lean:107:0: 'LatinonEntropy.history_first_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryPrefixes.lean:108:0: 'LatinonEntropy.stoppedAvailability_eq_pastLive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryPrefixes.lean:109:0: 'LatinonEntropy.pathSum_truncate_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3151/3160] Replayed ProfileFluid
+info: ProfileFluid.lean:176:0: 'LatinonEntropy.PositiveLatinProfile.fluid_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileFluid.lean:177:0: 'LatinonEntropy.PositiveLatinProfile.hazard_main_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3152/3160] Replayed WeightedChain
+warning: WeightedChain.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: WeightedChain.lean:189:0: 'LatinonEntropy.weighted_chain_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3154/3160] Replayed PermanentalLaw
+warning: PermanentalLaw.lean: imports `Mathlib.LinearAlgebra.Matrix.Permanent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: PermanentalLaw.lean:169:0: 'LatinonEntropy.permanentMarginal_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:170:0: 'LatinonEntropy.permanentLaw_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalLaw.lean:171:0: 'LatinonEntropy.tilted_permanent_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3155/3160] Replayed PermanentReveal
+info: PermanentReveal.lean:153:0: 'LatinonEntropy.log_permanent_weighted_reveal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentReveal.lean:154:0: 'LatinonEntropy.log_permanent_remaining_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3156/3160] Replayed LabelAveraging
+info: LabelAveraging.lean:123:0: 'LatinonEntropy.conditional_remaining_mean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3554/3569] Replayed TiltNormalization
+info: TiltNormalization.lean:107:0: 'LatinonEntropy.normalizedTilt_entry_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TiltNormalization.lean:108:0: 'LatinonEntropy.tilted_permanent_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3564/3601] Replayed PermanentCapScalar
+warning: PermanentCapScalar.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Sum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: PermanentCapScalar.lean:81:0: 'LatinonEntropy.finite_label_cap_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3565/3601] Replayed PermanentCap
+info: PermanentCap.lean:88:0: 'LatinonEntropy.log_permanent_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentCap.lean:89:0: 'LatinonEntropy.permanent_le_exp_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3852/3853] Replayed FiniteHoeffding
+warning: FiniteHoeffding.lean: imports `Mathlib.Probability.Moments.SubGaussian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteHoeffding.lean: imports `Mathlib.Probability.ProbabilityMassFunction.Integrals` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteHoeffding.lean:54:0: 'LatinonEntropy.finite_centered_hoeffding' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteHoeffding.lean:55:0: 'LatinonEntropy.finite_log_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9068/9108] Replayed ResidualPotential
+warning: ResidualPotential.lean: imports `Mathlib.Data.Fintype.Lattice` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ResidualPotential.lean: imports `Mathlib.Topology.Order.Compact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ResidualPotential.lean: imports `Mathlib.Tactic.FunProp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: ResidualPotential.lean:145:0: 'LatinonEntropy.exists_bounded_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualPotential.lean:146:0: 'LatinonEntropy.correction_cost_of_residual_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9069/9108] Replayed CorrectionOptimizer
+info: CorrectionOptimizer.lean:38:0: 'LatinonEntropy.exists_box_correction_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9070/9108] Replayed ResidualOptimality
+info: ResidualOptimality.lean:63:0: 'LatinonEntropy.abs_step_le_residual_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualOptimality.lean:64:0: 'LatinonEntropy.nonnegative_residual_cost_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9071/9108] Replayed SmallResidualStep
+info: SmallResidualStep.lean:141:0: 'LatinonEntropy.exists_common_residual_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SmallResidualStep.lean:142:0: 'LatinonEntropy.residual_circulation_cost_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9072/9108] Replayed ResidualWalks
+info: ResidualWalks.lean:203:0: 'LatinonEntropy.residual_walk_multiplicities' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ResidualWalks.lean:204:0: 'LatinonEntropy.residual_closed_walk_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9073/9108] Replayed HistoryNoise
+info: HistoryNoise.lean:99:0: 'LatinonEntropy.killed_centered_path_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9074/9108] Replayed FiniteChernoff
+info: FiniteChernoff.lean:78:0: 'LatinonEntropy.finite_chernoff_two_sided' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9075/9108] Replayed FiniteDefectGronwall
+info: FiniteDefectGronwall.lean:48:0: 'LatinonEntropy.finite_defect_gronwall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteDefectGronwall.lean:49:0: 'LatinonEntropy.total_coordinate_noise_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9077/9112] Replayed BoxCorrection
+info: BoxCorrection.lean:41:0: 'LatinonEntropy.exists_box_correction_of_residual_diameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9079/9112] Replayed ResidualDiameter
+info: ResidualDiameter.lean:234:0: 'LatinonEntropy.ScaledResidualData.diameter_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9080/9112] Replayed QuasirandomCorrection
+info: QuasirandomCorrection.lean:203:0: 'LatinonEntropy.quasirandom_box_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: QuasirandomCorrection.lean:204:0: 'LatinonEntropy.correction_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9081/9112] Replayed HistoryLocality
+info: HistoryLocality.lean:29:0: 'LatinonEntropy.pathSum_local_to_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9089/9112] Replayed PermanentalConcentration
+info: PermanentalConcentration.lean:94:0: 'LatinonEntropy.doubly_stochastic_permanent_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentalConcentration.lean:95:0: 'LatinonEntropy.permanental_log_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9090/9112] Replayed LatinRowPolicy
+info: LatinRowPolicy.lean:141:0: 'LatinonEntropy.fallbackRowPolicy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinRowPolicy.lean:142:0: 'LatinonEntropy.LatinRowPolicy.probability_valid_histories' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinRowPolicy.lean:143:0: 'LatinonEntropy.LatinRowPolicy.completed_history_covers' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9091/9112] Replayed CorrectedRowPolicy
+info: CorrectedRowPolicy.lean:105:0: 'LatinonEntropy.correctable_history_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CorrectedRowPolicy.lean:106:0: 'LatinonEntropy.correctedRowPolicy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CorrectedRowPolicy.lean:107:0: 'LatinonEntropy.correctedRowPolicy_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9092/9112] Replayed ProfileRowGuard
+info: ProfileRowGuard.lean:83:0: 'LatinonEntropy.correctable_profile_history' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileRowGuard.lean:84:0: 'LatinonEntropy.actual_profile_fluid_defect_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileRowGuard.lean:85:0: 'LatinonEntropy.profile_auxiliary_row_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9093/9112] Replayed ProfilePropagation
+info: ProfilePropagation.lean:117:0: 'LatinonEntropy.profile_cell_propagation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfilePropagation.lean:118:0: 'LatinonEntropy.profile_row_propagation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfilePropagation.lean:119:0: 'LatinonEntropy.profile_col_propagation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9094/9112] Replayed PermanentCoordinateValues
+info: PermanentCoordinateValues.lean:82:0: 'LatinonEntropy.killed_row_noise_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: PermanentCoordinateValues.lean:83:0: 'LatinonEntropy.killed_col_noise_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9095/9112] Replayed ProfileCoordinateNoise
+info: ProfileCoordinateNoise.lean:56:0: 'LatinonEntropy.profile_row_noise_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileCoordinateNoise.lean:57:0: 'LatinonEntropy.profile_col_noise_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9096/9112] Replayed PermanentalMarginals
+info: PermanentalMarginals.lean:73:0: 'LatinonEntropy.permanental_marginal_l1_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9097/9112] Replayed PermanentalTails
+info: PermanentalTails.lean:31:0: 'LatinonEntropy.permanental_deviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9098/9112] Replayed PermanentalRecentering
+info: PermanentalRecentering.lean:72:0: 'LatinonEntropy.permanental_recentered_log_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9099/9112] Replayed StoppedRowPolicy
+info: StoppedRowPolicy.lean:112:0: 'LatinonEntropy.stoppedRowPolicy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: StoppedRowPolicy.lean:113:0: 'LatinonEntropy.killed_history_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: StoppedRowPolicy.lean:114:0: 'LatinonEntropy.killed_history_mean_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9100/9112] Replayed HistoryTails
+info: HistoryTails.lean:67:0: 'LatinonEntropy.history_deviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryTails.lean:68:0: 'LatinonEntropy.killed_history_deviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9101/9112] Replayed LatinStoppedProcess
+info: LatinStoppedProcess.lean:108:0: 'LatinonEntropy.latinStoppedProcess_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinStoppedProcess.lean:109:0: 'LatinonEntropy.latinStoppedProcess_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinStoppedProcess.lean:110:0: 'LatinonEntropy.latinStoppedProcess_deviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinStoppedProcess.lean:111:0: 'LatinonEntropy.latinStopped_first_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinStoppedProcess.lean:112:0: 'LatinonEntropy.proposedRowDrift_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9102/9112] Replayed ProfileProcess
+info: ProfileProcess.lean:147:0: 'LatinonEntropy.profileActualDriftCost_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileProcess.lean:148:0: 'LatinonEntropy.expected_profile_budget_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileProcess.lean:149:0: 'LatinonEntropy.profile_budget_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9103/9112] Replayed ProfileMarginEstimates
+info: ProfileMarginEstimates.lean:155:0: 'LatinonEntropy.expected_profile_row_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileMarginEstimates.lean:156:0: 'LatinonEntropy.expected_profile_col_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9104/9112] Replayed ProfileExpectedRecurrence
+info: ProfileExpectedRecurrence.lean:132:0: 'LatinonEntropy.expected_profile_margin_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileExpectedRecurrence.lean:133:0: 'LatinonEntropy.profile_expected_defect_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9105/9112] Replayed ProfileDefectStability
+info: ProfileDefectStability.lean:106:0: 'LatinonEntropy.profile_expected_defect_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileDefectStability.lean:107:0: 'LatinonEntropy.expected_profile_budget_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileDefectStability.lean:108:0: 'LatinonEntropy.profile_budget_markov_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9106/9112] Replayed HistoryTruncation
+info: HistoryTruncation.lean:84:0: 'LatinonEntropy.history_truncated_cost_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: HistoryTruncation.lean:85:0: 'LatinonEntropy.profile_full_history_budget_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9107/9112] Replayed ProfileCutFailure
+info: ProfileCutFailure.lean:78:0: 'LatinonEntropy.profile_first_failure_cut_or_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9108/9112] Replayed ProfileCutNoise
+info: ProfileCutNoise.lean:99:0: 'LatinonEntropy.profile_simultaneous_cut_noise' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9109/9112] Replayed ProfileCutPropagation
+info: ProfileCutPropagation.lean:89:0: 'LatinonEntropy.profile_cut_defect_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProfileCutPropagation.lean:90:0: 'LatinonEntropy.profile_cut_drift_path_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9110/9112] Replayed ProfileCutNoiseValue
+info: ProfileCutNoiseValue.lean:69:0: 'LatinonEntropy.profile_cut_noise_prefix_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9111/9112] Replayed ProfileSurvivalEvent
+info: ProfileSurvivalEvent.lean:77:0: 'LatinonEntropy.profile_main_failure_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9112/9112] Built ProfileSurvivalProbability (80s)
+info: ProfileSurvivalProbability.lean:112:0: 'LatinonEntropy.profile_main_survival_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9112 jobs).

@@ -1,0 +1,8 @@
+⚠ [9047/9047] Built LatinOrderPatterns (78s)
+warning: LatinOrderPatterns.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinOrderPatterns.lean:72:0: 'LatinonEntropy.mem_orderPatternRealizations_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinOrderPatterns.lean:73:0: 'LatinonEntropy.orderPatternRealizations_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinOrderPatterns.lean:74:0: 'LatinonEntropy.isOpen_orderPatternRealizations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinOrderPatterns.lean:75:0: 'LatinonEntropy.measurableSet_orderPatternRealizations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinOrderPatterns.lean:76:0: 'LatinonEntropy.orderPatternRealizations_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9047 jobs).

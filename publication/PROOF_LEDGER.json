@@ -1,0 +1,372 @@
+{
+  "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION",
+  "core_steps": [
+    {
+      "step": 1,
+      "title": "Modelo y distancia completa",
+      "depends_on": [],
+      "declaration": "LatinonEntropy.LatinonMeasure",
+      "source": "lean/LatinonMeasureSpace.lean",
+      "line": 16,
+      "source_sha256": "8e92ccd9f202624de20e3f00027c022c90174279b52258db28ed0d43153daea1",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 2,
+      "title": "Corrección determinista",
+      "depends_on": [],
+      "declaration": "LatinonEntropy.correction_lemma",
+      "source": "lean/QuasirandomCorrection.lean",
+      "line": 143,
+      "source_sha256": "2bf069db83af03798acebfe38e24ba5d6fcbd24ec138599d8923e34f8ea067f0",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 3,
+      "title": "Permanentes y marginales",
+      "depends_on": [],
+      "declaration": "LatinonEntropy.permanental_marginal_l1_le",
+      "source": "lean/PermanentalMarginals.lean",
+      "line": 34,
+      "source_sha256": "51083d4b14bd8315c127cd97c197166cc8acf6415b2f5ade3d925214739d7690",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 4,
+      "title": "Proceso latino y parada",
+      "depends_on": [
+        2,
+        3
+      ],
+      "declaration": "LatinonEntropy.profileProcessPolicy",
+      "source": "lean/ProfileProcess.lean",
+      "line": 16,
+      "source_sha256": "cee733e7f3e0b547969bfcefbc277309e46226c57ef2ede6ac49e9ff6ff23c8f",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 5,
+      "title": "Recurrencia del defecto",
+      "depends_on": [
+        4
+      ],
+      "declaration": "LatinonEntropy.profile_expected_defect_recurrence",
+      "source": "lean/ProfileExpectedRecurrence.lean",
+      "line": 107,
+      "source_sha256": "ac0580d40968dd76ba7fec7e10075ddcd92962c5be5b484a178a3a27bcdb101a",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 6,
+      "title": "Estabilidad por Gronwall",
+      "depends_on": [
+        5
+      ],
+      "declaration": "LatinonEntropy.profile_expected_defect_uniform",
+      "source": "lean/ProfileDefectStability.lean",
+      "line": 38,
+      "source_sha256": "ffb6089238c86a89e81748dcf4a3210fae8e2b3bd5e3c87d9e72b51281ddce61",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 7,
+      "title": "Supervivencia uniforme",
+      "depends_on": [
+        6
+      ],
+      "declaration": "LatinonEntropy.eventually_uniform_profile_survival",
+      "source": "lean/UniformProfileSurvival.lean",
+      "line": 26,
+      "source_sha256": "63d642fdbe9987805c1c80947455e40446b1a500430d614fe725ca76c8620839",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 8,
+      "title": "Cercanía uniforme en cortes",
+      "depends_on": [
+        7
+      ],
+      "declaration": "LatinonEntropy.eventually_uniform_profile_closeness",
+      "source": "lean/UniformProfileCloseness.lean",
+      "line": 42,
+      "source_sha256": "50116602dc82052ecc5916afb2cf70047d6e67a3506c356e6bf51cd67a6c43e6",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 9,
+      "title": "Entropía del proceso completo",
+      "depends_on": [
+        6,
+        7
+      ],
+      "declaration": "LatinonEntropy.profile_history_entropy_lower",
+      "source": "lean/ProfileTotalEntropy.lean",
+      "line": 44,
+      "source_sha256": "a509113572bd6d29b821e2486e4830d50428f6a1f91f33f5bf94895eb91eea2c",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 10,
+      "title": "Conteo inferior de tensores",
+      "depends_on": [
+        8,
+        9
+      ],
+      "declaration": "LatinonEntropy.finite_latin_tensor_lower_bound",
+      "source": "lean/LatinTensorLowerBound.lean",
+      "line": 51,
+      "source_sha256": "382313326a202f120a0a9f5b1d1447ce34d39ac363be0516518ca6fef094cdaf",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 11,
+      "title": "Puente tensor-Latinon",
+      "depends_on": [
+        1,
+        10
+      ],
+      "declaration": "LatinonEntropy.finite_latin_grid_metric_ball_lower_bound",
+      "source": "lean/LatinGridBallLowerBound.lean",
+      "line": 42,
+      "source_sha256": "e595993e38e44b2da6580c43d2239d8910c69469fe43d13bd2214ed33b7c8661",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 12,
+      "title": "Cota superior de particiones",
+      "depends_on": [
+        1
+      ],
+      "declaration": "LatinonEntropy.exists_latinon_partition_ball_count_upper",
+      "source": "lean/LatinonPartitionLocalUpper.lean",
+      "line": 100,
+      "source_sha256": "8cbc3eb634fc99259ddcd5b892c41ecc8b7041663912ca6862e7d6aa990f9d0c",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 13,
+      "title": "Tasa KL extendida",
+      "depends_on": [
+        12
+      ],
+      "declaration": "LatinonEntropy.latinon_rate_eq_iSup_dyadic",
+      "source": "lean/LatinonFullDyadicKL.lean",
+      "line": 13,
+      "source_sha256": "25f0f4fb8bba112a38797664b6632cf9de9b046bb9541174cce70541e8533883",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 14,
+      "title": "Centro fijo y orden",
+      "depends_on": [
+        11,
+        13
+      ],
+      "declaration": "LatinonEntropy.exists_bounded_latinon_profile_approximation",
+      "source": "lean/BoundedLatinonFixedTarget.lean",
+      "line": 25,
+      "source_sha256": "daf185711893c2b6bb1a6546e583c5f9ac2523a974430f8a869e0a0f6a54ab28",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 15,
+      "title": "Regularización y entropía local",
+      "depends_on": [
+        14
+      ],
+      "declaration": "LatinonEntropy.finite_rate_latinon_entropy_count",
+      "source": "lean/LatinonRegularization.lean",
+      "line": 341,
+      "source_sha256": "2b55611e6bf6efb69b2937e5224e78617392824fce6a0306860f1897310e6313",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 16,
+      "title": "Compacidad de la distancia completa",
+      "depends_on": [
+        1
+      ],
+      "declaration": "LatinonEntropy.latinon_full_cut_compact",
+      "source": "lean/LatinonBridge/LatinonCompactness.lean",
+      "line": 60,
+      "source_sha256": "604f0cfef737cde366df680212797ca796d3627fe532d5065fcc159ccc581e4c",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 17,
+      "title": "LDP global",
+      "depends_on": [
+        13,
+        15,
+        16
+      ],
+      "declaration": "LatinonEntropy.closed_uniform_latinon_upper",
+      "source": "lean/LatinonBridge/LatinonGlobalDeviations.lean",
+      "line": 20,
+      "source_sha256": "e64b185d14f79743a6d1e004ca8837fe3b76a2c3071f6d285d43626d56d394e2",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 18,
+      "title": "Contracción y observables",
+      "depends_on": [
+        17
+      ],
+      "declaration": "LatinonEntropy.latinonContractedRate_attained",
+      "source": "lean/LatinonBridge/Contraction.lean",
+      "line": 23,
+      "source_sha256": "96aa0a43c514f8e119763918a4077c3f3ed670e1c2630e7d6043ca7ece3e21ea",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 19,
+      "title": "Densidades,continuidad y normalización",
+      "depends_on": [
+        1
+      ],
+      "declaration": "LatinonEntropy.sum_latinonPatternDensity",
+      "source": "lean/LatinonC7Closure.lean",
+      "line": 1535,
+      "source_sha256": "6829226125c62f46295e762b94b04301f81a5660dbfbb51c3299066992cabbd2",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 20,
+      "title": "Puente finito de coordenadas",
+      "depends_on": [
+        19
+      ],
+      "declaration": "LatinonEntropy.finite_matrix_pattern_embedding_error",
+      "source": "lean/LatinonC7Closure.lean",
+      "line": 1700,
+      "source_sha256": "6829226125c62f46295e762b94b04301f81a5660dbfbb51c3299066992cabbd2",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 21,
+      "title": "Normalización binomial",
+      "depends_on": [
+        20
+      ],
+      "declaration": "LatinonEntropy.standard_pattern_profile_uniform_error",
+      "source": "lean/LatinonStandardPatternDensity.lean",
+      "line": 77,
+      "source_sha256": "e6ca4d8e08aa559924b6ed045b889efbfb5cd18ec430c86decfd3285c45d577f",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 22,
+      "title": "Conteo con restricciones cerradas",
+      "depends_on": [
+        18,
+        21
+      ],
+      "declaration": "LatinonEntropy.finite_rate_standard_pattern_entropy_count",
+      "source": "lean/LatinonStandardPatternEntropy.lean",
+      "line": 25,
+      "source_sha256": "cbbf324e681b3de7719967e3dc18017158af1ad3414458cbf5f180d5dff47198",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    },
+    {
+      "step": 23,
+      "title": "Fórmula logarítmica y fibra vacía",
+      "depends_on": [
+        22,
+        16
+      ],
+      "declaration": "LatinonEntropy.finite_rate_standard_pattern_log_count",
+      "source": "lean/LatinonPatternConjecture.lean",
+      "line": 12,
+      "source_sha256": "8dc684dfd131d14aeeab2ba036cf553763e74b79de78123b42d6bf6a3418afad",
+      "status": "PASS_CURRENT_SOURCE_RECONSTRUCTION"
+    }
+  ],
+  "application_steps": [
+    {
+      "id": "A1",
+      "description": "Bijección con factores bipartitos y conteo local",
+      "declaration_leaf": "finite_rate_factorization_entropy_count",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 739,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A2",
+      "description": "Patrones finitos con normalización binomial",
+      "declaration_leaf": "finite_rate_factorization_pattern_log_count",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 751,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A3",
+      "description": "Sustitución de un packing conservando sus pares",
+      "declaration_leaf": "replaceSteinerPacking_bicoloured",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 828,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A4",
+      "description": "Plantilla concreta de Wilson: todas sus condiciones probadas",
+      "declaration_leaf": "wilsonLatinBlockTemplate",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 1019,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A5",
+      "description": "Inyección y cardinalidad exacta del producto",
+      "declaration_leaf": "card_restrictedRealizations",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 944,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A6",
+      "description": "Ambas cotas entrópicas en la familia CDR construida",
+      "declaration_leaf": "wilson_distinguished_latinon_blocks_entropy_count",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 1290,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A7",
+      "description": "Conteos exactos de tipos iguales al sistema base",
+      "declaration_leaf": "wilson_completed_exact_type_count_eq_base",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 1096,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    },
+    {
+      "id": "A8",
+      "description": "Configuraciones fijadas en el residuo",
+      "declaration_leaf": "residual_subset_completed",
+      "compiled_source": "LatinonSeriesApplications.lean",
+      "line": 885,
+      "compiled_source_sha256": "5d8187398b0bbd03cd31a0cba62ff2a15ea03b7365187e1c931c2ccbf0e7b4ce",
+      "certificate": "series_applications_verification.json",
+      "certificate_sha256": "655ef6bbcfe6179d048eaff9a21e73feb320ac5d92e93d056f55eee2b8762a46"
+    }
+  ],
+  "current_clean_audit": "preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json",
+  "current_clean_audit_sha256": "fb1207440e08fdd8a7adc1b77c6d4af523d535dce993c22cf7607d4bd25504b7",
+  "canonical_entry": "lean/LatinonFormalization.lean",
+  "source_freeze_commit": "7b603942c8d078db6c0a5c8729df7012b7786db8",
+  "historical_ledgers_preserved_unchanged": true,
+  "scope": "Current compilation of the selected dependency chain; independent external review remains separate"
+}

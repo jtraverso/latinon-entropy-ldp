@@ -1,0 +1,5 @@
+⚠ [3081/3081] Built DensityMassComparison (39s)
+warning: DensityMassComparison.lean: imports `Mathlib.MeasureTheory.Measure.Decomposition.IntegralRNDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: DensityMassComparison.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Set` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: DensityMassComparison.lean:28:0: 'LatinonEntropy.abs_mass_sub_density_integral_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3081 jobs).

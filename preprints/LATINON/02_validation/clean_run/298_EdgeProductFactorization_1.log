@@ -1,0 +1,12 @@
+⚠ [9047/9047] Built EdgeProductFactorization (73s)
+warning: EdgeProductFactorization.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: EdgeProductFactorization.lean:110:0: 'LatinonEntropy.noOppositeEdges_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:111:0: 'LatinonEntropy.noOppositeEdges_erased_separate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:112:0: 'LatinonEntropy.measurable_kernelGraphProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:113:0: 'LatinonEntropy.kernelGraphProduct_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:114:0: 'LatinonEntropy.measurable_edgeProductLeft' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:115:0: 'LatinonEntropy.measurable_edgeProductRight' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:116:0: 'LatinonEntropy.edgeProductLeft_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:117:0: 'LatinonEntropy.edgeProductRight_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: EdgeProductFactorization.lean:118:0: 'LatinonEntropy.kernelGraphProduct_separate' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9047 jobs).

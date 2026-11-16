@@ -1,0 +1,21 @@
+⚠ [2706/2708] Replayed Graphon.Basic
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [2707/2708] Replayed LatinonBridge.BipartiteKernel
+info: LatinonBridge/BipartiteKernel.lean:84:0: 'LatinonEntropy.bipartiteValue_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:85:0: 'LatinonEntropy.bipartiteValue_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:86:0: 'LatinonEntropy.bipartiteValue_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:87:0: 'LatinonEntropy.bipartiteGraphon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:88:0: 'LatinonEntropy.bipartiteValue_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2708/2708] Built LatinonBridge.BlockIntegrals (150s)
+warning: LatinonBridge\BlockIntegrals.lean: imports `Mathlib.MeasureTheory.Integral.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: LatinonBridge/BlockIntegrals.lean:62:0: 'LatinonEntropy.binaryTagMeasure_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:63:0: 'LatinonEntropy.binaryTagMeasure_real_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:64:0: 'LatinonEntropy.ae_bipartite_tag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:65:0: 'LatinonEntropy.bipartite_setIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BlockIntegrals.lean:66:0: 'LatinonEntropy.bipartite_blockIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2708 jobs).

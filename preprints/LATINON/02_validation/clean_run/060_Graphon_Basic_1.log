@@ -1,0 +1,8 @@
+⚠ [2706/2706] Built Graphon.Basic (105s)
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (2706 jobs).

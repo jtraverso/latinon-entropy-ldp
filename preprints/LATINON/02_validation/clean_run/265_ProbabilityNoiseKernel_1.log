@@ -1,0 +1,7 @@
+⚠ [3123/3123] Built ProbabilityNoiseKernel (40s)
+warning: ProbabilityNoiseKernel.lean: imports `Mathlib.InformationTheory.KullbackLeibler.DataProcessing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: ProbabilityNoiseKernel.lean:62:0: 'LatinonEntropy.probabilityNoiseKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProbabilityNoiseKernel.lean:63:0: 'LatinonEntropy.probabilityNoiseKernel_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProbabilityNoiseKernel.lean:64:0: 'LatinonEntropy.probabilityNoiseKernel_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ProbabilityNoiseKernel.lean:65:0: 'LatinonEntropy.klDiv_probability_noise_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3123 jobs).

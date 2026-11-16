@@ -1,0 +1,6 @@
+⚠ [2694/2694] Built SignedWeightedIntegral (37s)
+warning: SignedWeightedIntegral.lean: imports `Mathlib.MeasureTheory.Integral.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: SignedWeightedIntegral.lean:60:0: 'LatinonEntropy.integrable_unit_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SignedWeightedIntegral.lean:61:0: 'LatinonEntropy.integral_unit_weight_le_of_set_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SignedWeightedIntegral.lean:62:0: 'LatinonEntropy.abs_integral_unit_weight_le_of_set_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2694 jobs).

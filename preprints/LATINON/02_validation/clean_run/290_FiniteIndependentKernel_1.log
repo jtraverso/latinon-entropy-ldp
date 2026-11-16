@@ -1,0 +1,9 @@
+⚠ [1912/1912] Built FiniteIndependentKernel (29s)
+warning: FiniteIndependentKernel.lean: imports `Mathlib.Probability.Kernel.Composition.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: FiniteIndependentKernel.lean: imports `Mathlib.MeasureTheory.Constructions.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: FiniteIndependentKernel.lean:51:0: 'LatinonEntropy.finiteIndependentKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteIndependentKernel.lean:52:0: 'LatinonEntropy.finiteIndependentKernel_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteIndependentKernel.lean:53:0: 'LatinonEntropy.finiteIndependentKernel_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteIndependentKernel.lean:54:0: 'LatinonEntropy.finiteIndependentKernel_rectangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteIndependentKernel.lean:55:0: 'LatinonEntropy.measurable_finiteIndependentKernel_event' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1912 jobs).

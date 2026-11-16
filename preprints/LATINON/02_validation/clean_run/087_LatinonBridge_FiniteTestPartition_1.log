@@ -1,0 +1,32 @@
+⚠ [2714/2716] Replayed Graphon.Basic
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2715/2716] Replayed Graphon.Step
+warning: Graphon\Step.lean: imports `Mathlib.Order.Partition.Finpartition` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.Combinatorics.SimpleGraph.Density` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Integral.Bochner.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Step.lean: imports `Mathlib.MeasureTheory.Function.Floor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon/Step.lean:120:0: automatically included section variable(s) unused in theorem `Graphon.trivialPartition_card`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Graphon/Step.lean:183:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: Graphon/Step.lean:194:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+ℹ [2716/2716] Built LatinonBridge.FiniteTestPartition (164s)
+info: LatinonBridge/FiniteTestPartition.lean:69:0: 'LatinonEntropy.finiteTestSignature_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/FiniteTestPartition.lean:70:0: 'LatinonEntropy.finiteTestPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/FiniteTestPartition.lean:71:0: 'LatinonEntropy.finiteTestPartition_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/FiniteTestPartition.lean:72:0: 'LatinonEntropy.finiteTestPartition_decides' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2716 jobs).

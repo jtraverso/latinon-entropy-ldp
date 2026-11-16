@@ -1,0 +1,14 @@
+⚠ [2706/2707] Replayed Graphon.Basic
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Function.AEEqFun` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Topology.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Measure.Lebesgue.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.MeasureTheory.Constructions.UnitInterval` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Graphon\Basic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [2707/2707] Built LatinonBridge.BipartiteKernel (103s)
+info: LatinonBridge/BipartiteKernel.lean:84:0: 'LatinonEntropy.bipartiteValue_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:85:0: 'LatinonEntropy.bipartiteValue_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:86:0: 'LatinonEntropy.bipartiteValue_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:87:0: 'LatinonEntropy.bipartiteGraphon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LatinonBridge/BipartiteKernel.lean:88:0: 'LatinonEntropy.bipartiteValue_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2707 jobs).

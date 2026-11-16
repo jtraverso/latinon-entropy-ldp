@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Entropy and large deviations for Latin squares"
+type: article
+version: "1.0"
+date-released: 2026-11-16
+url: https://github.com/jtraverso/latinon-entropy-ldp
+repository-code: https://github.com/jtraverso/latinon-entropy-ldp
+authors:
+  - family-names: Traverso Gianini
+    given-names: Juan Pablo
+    orcid: https://orcid.org/0009-0003-6068-4096
+license: CC-BY-4.0
+abstract: >-
+  A large deviation principle for uniform labeled Latin squares in the full
+  ordered Latinon distance, finite-pattern counting, and applications to
+  bipartite factorizations and completed CDR constructions. Preprint 1.0.
