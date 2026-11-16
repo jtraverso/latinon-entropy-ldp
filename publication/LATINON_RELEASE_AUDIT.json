@@ -2,7 +2,7 @@
   "status": "PASS_INTERNAL_RELEASE_AUDIT",
   "editorial_verdict": "EDITORIALLY_READY",
   "version": "1.0",
-  "completed_utc": "2026-11-16T14:18:44.190148+00:00",
+  "completed_utc": "2026-11-16T15:00:40.235992+00:00",
   "scope": "Internal edition preparation, source binding, semantic and rendered-artifact checks; not independent peer review or public-access certification",
   "compiled_modules": 310,
   "canonical_import_closure": 299,
@@ -12,14 +12,14 @@
   "verification_mode": "original clean reconstruction plus incremental cached build",
   "fresh_clean_reconstruction_in_this_revision": false,
   "documents": 4,
-  "rendered_pages": 52,
+  "rendered_pages": 53,
   "parity": [
     {
       "pair": "latinon",
       "status": "PASS",
       "display_formulas": 57,
-      "inline_formulas": 579,
-      "formal_identifiers": 6
+      "inline_formulas": 581,
+      "formal_identifiers": 7
     },
     {
       "pair": "formal_companion",
@@ -57,17 +57,18 @@
     "publication/audit/EDITORIAL_REPORT.md": "6dbb09dda9568b9f86cb4177b5cd68d597e8128b880f1044bab92db98248c315",
     "preprints/LATINON/02_validation/v1.0/FREEZE.json": "b2717bac325c59d16cf2665b43144e6a9901fa072f781290f14e8008e5d350fd",
     "preprints/LATINON/02_validation/v1.0/PROTECTED_BASELINE.json": "a54afe34724c7dbb0d837da03bc0fc0146b78648eb5b65cace681cea83c5295d",
-    "preprints/LATINON/02_validation/v1.0/SEMANTIC_DIFF.json": "1ab49cb29652cb028a2d1b3a19f2261ec9acd12e63e8ec84bcdbdac6ec04ae95",
+    "preprints/LATINON/02_validation/v1.0/SEMANTIC_DIFF.json": "573aec14e8740b03907b17e91076a22e1b0e4f97a15a0f145f97821872603699",
     "preprints/LATINON/02_validation/v1.0/RECONSTRUCTION_BINDING.json": "42fc419112e5593b3b00bb0bd1f8df46a5988bcf5a705fb12a03df346dfa0c9f",
     "preprints/LATINON/02_validation/v1.0/PROVENANCE.json": "48d3ea6ec22c6e3816484098cda031171b9da50293d2b630a8b0d84c44d2405d",
     "preprints/LATINON/02_validation/v1.0/CDR_STRUCTURE_COMPARISON.json": "2d90800c9f6d9875aea821d7aed8e78d31aff805ae42241c44366566fb0201ed",
-    "preprints/LATINON/02_validation/v1.0/TYPESETTING.json": "ba194d5a602a3437c93fcd0a117b867d8cabcb41c21974a4c562bd6b241d6041",
-    "preprints/LATINON/02_validation/v1.0/DOCUMENT_AUDIT.json": "89d760d309cc655a75e57b9e259cc136db3a51e2c866c379f5f4f9e3ebfa592b",
-    "preprints/LATINON/02_validation/v1.0/VISUAL_REVIEW.json": "8efba1650a62e8c460fb33e720696a7ff2e6272f1c86fab89e6413c3c8c8d02d",
-    "preprints/LATINON/02_validation/v1.0/EDITORIAL_REVISION.json": "dacda311cf9582c550e83949327f1b06ea2456066f9eb3c2d090f794d3923413",
+    "preprints/LATINON/02_validation/v1.0/TYPESETTING.json": "eb77f9cec3738d32585b927743a4e581b902a0aa7081c58ac9fe5d4022e5a8d9",
+    "preprints/LATINON/02_validation/v1.0/DOCUMENT_AUDIT.json": "f3762e992d3cdb5d67c79be75882819fb39fc5c931fee3a9709d9ce3b15b94a7",
+    "preprints/LATINON/02_validation/v1.0/VISUAL_REVIEW.json": "3767f384c67796953171c56b4f6fb9347ad4168af0c610ec4748c385ebaa28e3",
+    "preprints/LATINON/02_validation/v1.0/EDITORIAL_REVISION.json": "8355aaa65bddd066882f6ffdc79b647251e9a0349623316d6a54f71ca819de82",
     "publication/audit/REVISION_REVIEW.md": "b10ce191992e2748eba5d2a04d1a06e7383065459c3d5e5749e055efcfa0f0a1",
     "publication/audit/CONSTANTS_ASSESSMENT.md": "71af532051352635cc9817e55cfbbda70b6508412334218aa40a262d621ff365",
-    "preprints/LATINON/02_validation/v1.0/BASELINE_FREEZE.json": "e395348b4751bd29cf8c7b0f34d0372204716af5b661fcd2186083f4abc85201"
+    "preprints/LATINON/02_validation/v1.0/BASELINE_FREEZE.json": "e395348b4751bd29cf8c7b0f34d0372204716af5b661fcd2186083f4abc85201",
+    "publication/audit/FINAL_EDITORIAL_REVIEW.md": "6f5e871d7bf4e47dbd46aae423e6625500ca680bc1b0f1a944e281fac536bc0f"
   },
   "limitations": [
     "Pinned external Mathlib ecosystem caches reused, not rebuilt",

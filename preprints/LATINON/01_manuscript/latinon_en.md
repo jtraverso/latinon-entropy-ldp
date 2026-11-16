@@ -30,7 +30,7 @@ The main conclusions are the full-space large deviation principle and its finite
 
 Write $I=[0,1]$ and let $\lambda$ denote Lebesgue measure. We use a measure representation $W=(\nu,f)$ of a Latinon: $\nu$ is a probability measure on $I^3$, every two-coordinate marginal is $\lambda^2$, and $f:I\to I$ preserves measure. Disintegration with respect to the first two coordinates gives the conditional symbol kernel. Put $O_f(x,x')=\mathbf1[f(x)<f(x')]$.
 
-The full cut distance $\delta$ is the infimum over independent measure-preserving measurable bijections $\phi,\psi$ of the following sum. The distribution term tests measurable row and column sets and symbol intervals. Relabeling the measure uses the inverses of $\phi,\psi$.
+The full cut distance $\delta$ is the infimum, over independent measure-preserving measurable bijections $\phi,\psi:I\to I$, of
 
 $$
 \|O_f-O_{g\circ\phi}\|_\square+
@@ -38,7 +38,7 @@ $$
 \sup_{S,T,J}|\nu(S\times T\times J)-\mu^{\phi,\psi}(S\times T\times J)|.\tag{2.1}
 $$
 
-This is a pseudometric on representations. Compactness and the adjective “good” below can equivalently be read on its metric quotient. Distance zero is not equality of representatives. Define the extended rate and entropy by
+where the supremum is over measurable sets $S,T\subseteq I$ and intervals $J\subseteq I$, and $\mu^{\phi,\psi}=(\phi^{-1}\times\psi^{-1}\times\mathrm{id})_\#\mu$. Distance zero identifies equivalent representations, so $\delta$ defines a pseudometric; compactness and goodness of the rate function are understood on the induced metric quotient. Define the extended rate and entropy by
 
 $$
 \mathcal I(W)=\operatorname{KL}(\nu\Vert\lambda^3)\in[0,\infty],
@@ -88,11 +88,11 @@ $$
 
 If $\mathcal J(z)=\infty$, every finite penalty $A\in\mathbb R$ can replace $\mathcal J(z)$ in the upper exponential bound, after choosing a sufficiently small positive radius. If the fiber is empty, an arbitrarily small such box is empty for all sufficiently large orders.
 
-The radius is chosen before $n$ and may depend on $z,r,\eta$. The theorem does not assert the value $\mathcal J(z)$ for an arbitrary fixed radius. The patterns here have distinct symbols. Intercalates, studied in [3], have repeated symbols and are not among these patterns.
+The radius is fixed before $n$ and may depend on $z,r,\eta$; the theorem makes no claim about the count at an arbitrary fixed radius. Since order patterns have pairwise distinct symbols, configurations with repeated symbols, such as the intercalates studied in [3], lie outside this class.
 
 **Remark on the radius.** The neighborhood is chosen at the target $z$: lower semicontinuity of $\mathcal J$ gives the upper bound, and a minimizing witness in that fiber gives the lower bound. Both choices depend on the target. The resulting radius is pointwise; uniformity over a family of targets would require quantitative control of these choices.
 
-The pattern class $\mathcal P_{k,l}$ is exactly $\mathcal R(k,l)$ in [1, Remark 3.2], and (2.5) is the normalization in [1, Definition 3.3]. Definition 3.7 there is the same ordered sampling probability as $d_P$. Section 9 controls the finite-to-Latinon embedding error, not a difference between the two finite normalizations. In [1, Section 12.2] the displayed entropy has the opposite sign to (2.2); the comparison with Conjecture 12.4 uses the negative sign. Thus its variational value is $-\mathcal J(z)$ when the rate is finite.
+The pattern class $\mathcal P_{k,l}$ is exactly $\mathcal R(k,l)$ in [1, Remark 3.2], and (2.5) is the normalization in [1, Definition 3.3]. Definition 3.7 there is the same ordered sampling probability as $d_P$. Section 9 bounds the error between the finite statistic with this normalization and the density in the associated Latinon. In [1, Section 12.2] the displayed entropy has the opposite sign to (2.2); the comparison with Conjecture 12.4 uses the negative sign. Thus its variational value is $-\mathcal J(z)$ when the rate is finite.
 
 **Proposition 2.3 (identification with the GHHS model).** On the standard atomless ground space $I$, the measure representation in this section and the kernel representation of [1, Definition 3.5] identify the same Latinons, up to null sets. This identification preserves the distance (2.1), the pattern densities and the signed entropy (2.2). In particular it induces an isometry of the zero-distance quotients.
 
@@ -103,7 +103,7 @@ $$
 \tag{2.9}
 $$
 
-The other two uniform pair marginals mean that, for almost every fixed row, averaging the symbol kernel over columns gives $\lambda$, and likewise for a fixed column. To obtain a common exceptional null set, first test intervals with rational endpoints and then use the uniqueness of measures. Pushing the column coordinate through $f$ gives first marginal $\lambda$ because $f$ preserves measure, and second marginal $\lambda$ by that row identity. This is exactly the row-permuton requirement of [1, Definition 3.5]; the column condition follows in the same way. Conversely, in each row-permuton condition take the first test set to be the whole interval. Its second marginal says that the symbol average in that row is uniform. Integrating over arbitrary row sets recovers the row-symbol pair marginal; the column condition gives the column-symbol marginal. Kernel integration already gives the row-column marginal. Thus a single order map is part of both definitions, not an extra restriction imposed here.
+The other two uniform pair marginals mean that, for almost every fixed row, averaging the symbol kernel over columns gives $\lambda$, and likewise for a fixed column. To obtain a common exceptional null set, first test intervals with rational endpoints and then use the uniqueness of measures. Pushing the column coordinate through $f$ gives first marginal $\lambda$ because $f$ preserves measure, and second marginal $\lambda$ by that row identity. This is exactly the row-permuton requirement of [1, Definition 3.5]; the column condition follows in the same way. Conversely, in each row-permuton condition take the first test set to be the whole interval. Its second marginal says that the symbol average in that row is uniform. Integrating over arbitrary row sets recovers the row-symbol pair marginal; the column condition gives the column-symbol marginal. Kernel integration already gives the row-column marginal. Thus both definitions incorporate a single order map.
 
 It remains to compare the relabeling conventions. For measure-preserving measurable bijections $\phi,\psi$, define the kernel relabeling by composition. A change of variables gives
 
@@ -167,7 +167,7 @@ $$
 \|Q-M\|_1\le3D(M).\tag{4.3}
 $$
 
-*Proof.* We give the finite transportation argument, including the diameter and potential construction. Its only inputs are the hypotheses of the lemma.
+*Proof.* We construct the corrected matrix by a transportation argument on the residual network and bound its cost using a vertex potential.
 
 **Feasibility and minimization.** Regularity gives all margins of $A/d$ equal to one. Since $d\le n$, $\ell\le1/4$ and $d\ge\varepsilon n$, its nonzero entries lie between $1/n$ and $1/(\varepsilon n)$, hence in the box in (4.3). Here $C\varepsilon\ge16$ follows from (4.1) and $\alpha\le1$. The feasible transportation polytope is therefore nonempty and compact. Fix a minimizer of the continuous function $\|Q-M\|_1$ on it.
 
@@ -204,9 +204,9 @@ $$
 \end{aligned}\tag{4.6}
 $$
 
-This proves (4.3). Positivity of $\ell$ also gives exact support. $\square$
+This establishes (4.3), and positivity of $\ell$ ensures exact support. $\square$
 
-The correction coefficient can be reduced to $5/2$ under the same hypotheses. Apply the row-to-row four-step argument to the transposed matrices and reverse the resulting paths: columns also reach columns in four steps. A path between opposite sides needs at most one additional edge, so the diameter is at most five. The potential then has oscillation at most five and can be centered in $[-5/2,5/2]$; (4.6) gives $\|Q-M\|_1\le(5/2)D(M)$. This refinement is formalized in the delivered freeze. The estimates below retain the valid coefficient 3, so their constants and the main theorem statements are unchanged.
+The correction coefficient can be reduced to $5/2$ under the same hypotheses. Apply the row-to-row four-step argument to the transposed matrices and reverse the resulting paths: columns also reach columns in four steps. A path between opposite sides needs at most one additional edge, so the diameter is at most five. The potential then has oscillation at most five and can be centered in $[-5/2,5/2]$; (4.6) gives $\|Q-M\|_1\le(5/2)D(M)$. The accompanying Lean formalization includes this sharper bound; we use coefficient 3 in the subsequent estimates.
 
 ## 5. Permanental laws and their marginal error
 
@@ -217,7 +217,7 @@ H(X\mid\mathcal F)\le
 \mathbb E[-\log r(X)]+\mathbb E[\log r(A)].\tag{5.0}
 $$
 
-The first term is the reference cost of the value actually chosen. The second records how much reference mass remains available. Applying (5.0) to each coordinate in a reveal order and summing uses exactly the entropy chain rule. Zero-probability values can be omitted throughout. This is the weighted step behind the revealing proofs below; the underlying entropy method is due to Radhakrishnan [7], and its two-owner extension follows the Linial--Luria argument [8].
+The two terms measure the reference cost of the realized outcome and the reference mass still available. Applying (5.0) along a reveal order and summing combines these costs through the entropy chain rule, with zero-probability outcomes omitted. This is the weighted step behind the revealing proofs below; the underlying entropy method is due to Radhakrishnan [7], and its two-owner extension follows the Linial--Luria argument [8].
 
 For a nonnegative doubly stochastic matrix $Q$, let $\mu_Q$ assign weight proportional to $\prod_yQ_{y,\sigma(y)}$ to a permutation $\sigma$, and write $m_Q$ for its marginal matrix. Van der Waerden, in the form proved by Gurvits [4], implies
 
@@ -312,7 +312,7 @@ D_t\le2c\sqrt n+\frac{2c}{n}\sum_{s<t}(\sqrt{2nE}+3D_s),\qquad
 D_t\le(2c\sqrt n+2c\sqrt{2nE})e^{6c}.\tag{6.4}
 $$
 
-The second inequality is finite Gronwall. Denote its right side by $S_n$. The total expected stopped drift up to any main time is at most $n(\sqrt{2nE}+3S_n)$. Since the accumulated drift is nondecreasing, a single application of Markov at the last main time bounds the probability of ever crossing the budget by $4(\sqrt{2nE}+3S_n)/(\gamma n)$; no union over times is needed for this part.
+The second inequality follows from a discrete Gronwall bound. Denote its right side by $S_n$. The total expected stopped drift up to any main time is at most $n(\sqrt{2nE}+3S_n)$. Since the accumulated drift is nondecreasing, a single application of Markov at the last main time bounds the probability of ever crossing the budget by $4(\sqrt{2nE}+3S_n)/(\gamma n)$; no union over times is needed for this part.
 
 For a fixed cut and terminal time, the coefficients in (6.3) times its cut indicator have absolute value at most one. At each row (5.5) bounds the centered conditional MGF. Killing the increment by the indicator that the prefix is still active preserves the same bound: on inactive prefixes the increment is zero, and that indicator is known before the row is sampled. Iteration over at most $n$ rows gives log MGF at most $n^2s^2+2nE$. Chernoff with $s=\gamma/4$ at threshold $\gamma n^2/2$, and then with the opposite sign, gives $2\exp(2nE-\gamma^2n^2/16)$.
 
@@ -346,6 +346,8 @@ $$
 \end{aligned}\tag{6.4b}
 $$
 
+In (6.4b), the entropy inside the expectation means the entropy of the conditional row law at the realized prefix.
+
 The restriction to active histories can be checked directly. Let $E_t$ be the event that the prefix is active. On $E_t$ the auxiliary availability equals $A_t$; everywhere it lies in $[0,1]$, because after stopping it is multiplied entrywise by $1-h_t$. Therefore
 
 $$
@@ -357,9 +359,9 @@ $$
 \end{aligned}\tag{6.4c}
 $$
 
-Centering is applied to the unrestricted expectation of the predictably killed recursion. Restriction to the active event $E_t$ is then accounted for separately by (6.4c). In (6.4b), the entropy inside the expectation means the entropy of the conditional row law at the realized prefix.
+Centering is applied to the unrestricted expectation of the predictably killed recursion. Restriction to the active event $E_t$ is then accounted for separately by (6.4c).
 
-Every term is uniform over the profiles in Theorem 3.1: $U_n,S_n=O(\sqrt{n\log n})$, $W_n=O(\log n/n)$ and $q_n\log n\to0$. Thus summing the row errors costs $o(n^2)$. No expectation identity for the actual availability after fallback is required. The deterministic fluid sum is
+Every term is uniform over the profiles in Theorem 3.1: $U_n,S_n=O(\sqrt{n\log n})$, $W_n=O(\log n/n)$ and $q_n\log n\to0$. Thus summing the row errors costs $o(n^2)$. These estimates close the argument without tracking expected availability after the fallback rule is triggered. The deterministic fluid sum is
 
 $$
 \sum_{t,y,z}p_{tyz}\log\frac{R_t(y,z)}{p_{tyz}}
@@ -451,7 +453,7 @@ The choices in this passage are made in the order of Table 1. Fix a center $W$, 
 | Density bounds and finite cut tolerance | Inputs of Theorem 3.1 | Give one threshold for all subsequent profiles |
 | Order and cell averages | All previous choices | Control the grid and order errors |
 
-Table: Order of choices in the passage from a finite-rate Latinon to finite profiles. The table records dependencies; it supplies no uniform threshold over all centers.
+Table: Order of choices in the passage from a finite-rate Latinon to finite profiles. The table records parameter dependencies for a fixed center.
 
 **Upper bound and semicontinuity.** Relative entropy is recovered from finite dyadic observations, including its infinite values:
 
@@ -473,9 +475,9 @@ Set $\mu=\lambda^3$ and $\rho=(\nu+\mu)/2$. Every bounded measurable $g$ can be 
 
 To turn a fixed observation into a neighborhood estimate, choose a finite product partition with positive cell volumes $v_b$. For $V$ close to $W$, choose an alignment whose cost is close to (2.1). Transport the row and column sets of this partition through that alignment. Every resulting mass differs from the mass at $W$ by at most the distribution part of the alignment cost. The reference volumes remain $v_b$, since the alignment preserves product measure. Finite observation therefore bounds $\mathcal I(V)$ below by the divergence of this nearby finite table. The table divergence is continuous in the masses, including zero masses, because $v_b>0$ and $u\log u$ extends continuously at zero. Thus every strict finite rate floor below the observed cost at $W$ remains a lower floor in a sufficiently small full-distance neighborhood. Taking the supremum in (8.1) proves lower semicontinuity, including at infinite-rate centers. Lemma 7.1 and the finite rounding above give the matching local counting upper bound.
 
-For the local counting upper bound, choose the finite observation first. Continuity of its table entropy gives a tolerance on the observed masses and positive volumes. Choose the full-distance radius and the rounding tolerance small enough that their combined errors lie within this tolerance; then increase the order to absorb symbol-boundary errors and the logarithmic cost of the finitely many labelings. Every subfamily in Section 7 has a mean table satisfying the same tolerance, so its estimate survives the union. This is the passage from the finite table to a full-distance neighborhood.
+For the local counting upper bound, choose the finite observation first. Continuity of its table entropy gives a tolerance on the observed masses and positive volumes. Choose the full-distance radius and the rounding tolerance small enough that their combined errors lie within this tolerance; then increase the order to absorb symbol-boundary errors and the logarithmic cost of the finitely many labelings. Every subfamily in Section 7 has a mean table satisfying the same tolerance, so its estimate survives the union.
 
-**Compactness and its cited input.** We use [1, Theorem 3.13] as a published compactness theorem. Given a sequence of our measure representations, Proposition 2.3 gives GHHS kernel representations on a standard atomless ground space. Apply that theorem with the fixed standard atomless ground space used here; it supplies a left-convergent subsequence and a limiting Latinon on that space. Thus the limit is already on the domain of Proposition 2.3. By [1, Theorem 4.7], that subsequence converges in the GHHS cut distance. Proposition 2.3 identifies that distance with (2.1), including both order terms. Thus every sequence in the zero-distance quotient has a convergent subsequence. The quotient is a metric space, so sequential compactness implies compactness. Every open set of the original pseudometric space is saturated under zero distance; the same compactness therefore gives the finite subcovers used below. The rate is constant on zero-distance classes: a constant sequence at either representative converges to the other, so lower semicontinuity in both directions gives equality. It therefore descends to the metric quotient, where every rate sublevel is closed and hence compact. This proves the good-rate assertion from the explicitly cited compactness theorem.
+**Compactness and its cited input.** We use [1, Theorem 3.13] as a published compactness theorem. Given a sequence of our measure representations, Proposition 2.3 gives GHHS kernel representations on a standard atomless ground space. Apply that theorem with the fixed standard atomless ground space used here; it supplies a left-convergent subsequence and a limiting Latinon on that space. Thus the limit is already on the domain of Proposition 2.3. By [1, Theorem 4.7], that subsequence converges in the GHHS cut distance. Proposition 2.3 identifies that distance with (2.1), including both order terms. Thus every sequence in the zero-distance quotient has a convergent subsequence. The quotient is a metric space, so sequential compactness implies compactness. Every open set of the original pseudometric space is saturated under zero distance; the same compactness therefore gives the finite subcovers used below. The rate is constant on zero-distance classes: a constant sequence at either representative converges to the other, so lower semicontinuity in both directions gives equality. It therefore descends to the metric quotient, where every rate sublevel is closed and hence compact. Together with lower semicontinuity, this compactness establishes that the rate function is good.
 
 Cover a closed set by finitely many of its local upper neighborhoods and sum the upper probabilities after (1.1). This proves (2.3). For an open set, take a ball around a finite-rate witness contained in that set and use its local lower count, again normalized by (1.1), to obtain (2.4). Lower semicontinuity and compactness make the rate good. This proves Theorem 2.1. $\square$
 
@@ -531,7 +533,7 @@ $$
 
 Each cell gives the triple consisting of its row vertex, column vertex and chosen symbol vertex. Let $P(\Lambda)$ be the union of these triples for the local square family $(\Lambda_s)_{s\in J}$, where $|J|=q$. The rows and columns of $\tau$ are permutations, and each resulting color triple uses exactly two colors. Latin uniqueness and pair uniqueness in $G$ prove three facts: $P(\Lambda)$ is a bicolored triangle packing; its covered pair set is independent of $\Lambda$; and a fixed local row-column pair recovers its symbol.
 
-Assume a strict three-bicolored system $S_0$ contains $P(\Lambda^0)$. This completed-template hypothesis is explicit. The inequalities asserting that the color classes are large enough to reserve the groups do not alone imply it. Set
+Suppose that $P(\Lambda^0)$ extends to a strict three-bicolored Steiner triple system $S_0$. This is an explicit hypothesis, stronger than the color-class size inequalities needed to reserve the groups. Set
 
 $$
 \mathcal R_0=S_0\setminus P(\Lambda^0),\qquad S_\Lambda=\mathcal R_0\cup P(\Lambda).\tag{10.3}
@@ -559,7 +561,7 @@ $$
 e^{\mathcal H_m-q\eta m^2}\le|\mathcal C(\mathcal A)|\le e^{\mathcal H_m+q\eta m^2}.\tag{10.6}
 $$
 
-The threshold is independent of the base system and its residue. Every realization has exactly the same six color-multiset block-type counts as $S_0$. Any fixed block configuration lying in $\mathcal R_0$ is retained.
+The threshold is independent of the base system and its residue, while every realization preserves both the six-entry color-multiset block-type vector of $S_0$ and any fixed block configuration contained in $\mathcal R_0$.
 
 *Proof.* Apply the bilateral local count separately to each $W_s$, then take the maximum of the finitely many thresholds. Multiply and use (10.4). The type of a local block depends only on its slot in (10.2), not on its symbol index; every slot contributes $m^2$ blocks of that type. Replacement therefore preserves every type count. The residue is literally unchanged. $\square$
 
@@ -571,7 +573,7 @@ This makes a direct connection with the exact-type and abundance results in [5,6
 
 The Lean source snapshot, bilingual formal companion and internal audit accompany this preprint in the repository listed on the title page. The companion maps the numbered results to formal declarations and gives the 23-step core ledger and eight application steps. The canonical entry `LatinonFormalization` imports the principal pattern-counting chain and the applications assembly.
 
-The baseline reconstruction compiled all 309 explicit local targets with Lean 4.35.0 and the pinned Mathlib ecosystem. The current freeze adds the strengthened correction module and updates the canonical entry and axiom queries. An incremental build with the existing caches checked the 310-target library, including 299 modules in the canonical import closure. All twelve queries in `ReviewAxioms` reported only `propext`, `Classical.choice` and `Quot.sound`. The package retains both the baseline clean reconstruction and the source-bound incremental evidence, with their distinct source snapshots and hashes.
+The accompanying Lean 4.35.0 development compiles all 310 local module targets against the pinned Mathlib ecosystem; 299 lie in the canonical import closure of `LatinonFormalization`. All twelve axiom-audit queries in `ReviewAxioms` report only the standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`. Verification comprised a complete reconstruction followed by a cached incremental check incorporating the sharper correction lemma. The repository preserves the corresponding source snapshots, hashes and verification logs; the companion gives the scope of each check.
 
 The portable sources are in `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`. Reproduction instructions and executable package verifiers are included. The internal audit covers the recorded reconstruction, statement correspondence, targeted written arguments, bilingual consistency and artifact integrity. Its scope is distinct from journal peer review and an exhaustive priority audit. Proposition 2.3 supplies the written identification with the published GHHS model; it is not an additional Lean declaration.
 

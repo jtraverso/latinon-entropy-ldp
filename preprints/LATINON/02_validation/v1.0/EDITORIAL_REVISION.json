@@ -434,6 +434,234 @@
       "before": "La prueba mediante permanentes de filas de la cota inferior en (1.1) es clásica; véase, por ejemplo, [2, sección 2.1].",
       "after": "La estimación (1.1) es clásica: [1, sección 12.2] remite a van Lint y Wilson, *A Course in Combinatorics*. Su argumento inferior mediante permanentes de filas se presenta también en [2, sección 2.1].",
       "reason": "REFERENCE_FORMAT: classical attribution through checked GHHS reference"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The full cut distance $\\delta$ is the infimum over independent measure-preserving measurable bijections $\\phi,\\psi$ of the following sum. The distribution term tests measurable row and column sets and symbol intervals. Relabeling the measure uses the inverses of $\\phi,\\psi$.",
+      "after": "The full cut distance $\\delta$ is the infimum, over independent measure-preserving measurable bijections $\\phi,\\psi:I\\to I$, of",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La distancia de corte completa $\\delta$ es el ínfimo, sobre biyecciones medibles que preservan la medida $\\phi,\\psi$ independientes, de la suma siguiente. El término de distribución prueba conjuntos medibles de filas y columnas e intervalos de símbolos. El reetiquetado de la medida utiliza las inversas de $\\phi,\\psi$.",
+      "after": "La distancia de corte completa $\\delta$ es el ínfimo, sobre biyecciones medibles independientes que preservan la medida $\\phi,\\psi:I\\to I$, de",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "This is a pseudometric on representations. Compactness and the adjective “good” below can equivalently be read on its metric quotient. Distance zero is not equality of representatives. Define the extended rate and entropy by",
+      "after": "where the supremum is over measurable sets $S,T\\subseteq I$ and intervals $J\\subseteq I$, and $\\mu^{\\phi,\\psi}=(\\phi^{-1}\\times\\psi^{-1}\\times\\mathrm{id})_\\#\\mu$. Distance zero identifies equivalent representations, so $\\delta$ defines a pseudometric; compactness and goodness of the rate function are understood on the induced metric quotient. Define the extended rate and entropy by",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Se trata de una pseudométrica sobre representaciones. La compacidad y el calificativo «buena» que aparece más abajo pueden leerse equivalentemente en su cociente métrico. Distancia cero no significa igualdad de representantes. Definimos la tasa y la entropía extendidas por",
+      "after": "donde el supremo recorre conjuntos medibles $S,T\\subseteq I$ e intervalos $J\\subseteq I$, y $\\mu^{\\phi,\\psi}=(\\phi^{-1}\\times\\psi^{-1}\\times\\mathrm{id})_\\#\\mu$. La distancia cero identifica representaciones equivalentes, de modo que $\\delta$ define una pseudométrica; la compacidad y la bondad de la función de tasa se entienden en el cociente métrico inducido. Definimos la tasa y la entropía extendidas por",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The radius is chosen before $n$ and may depend on $z,r,\\eta$. The theorem does not assert the value $\\mathcal J(z)$ for an arbitrary fixed radius. The patterns here have distinct symbols. Intercalates, studied in [3], have repeated symbols and are not among these patterns.",
+      "after": "The radius is fixed before $n$ and may depend on $z,r,\\eta$; the theorem makes no claim about the count at an arbitrary fixed radius. Since order patterns have pairwise distinct symbols, configurations with repeated symbols, such as the intercalates studied in [3], lie outside this class.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "El radio se elige antes de $n$ y puede depender de $z,r,\\eta$. El teorema no afirma el valor $\\mathcal J(z)$ para un radio fijo arbitrario. Los patrones utilizados tienen símbolos distintos. Los intercalados, estudiados en [3], tienen símbolos repetidos y no pertenecen a esta familia de patrones.",
+      "after": "El radio se fija antes de $n$ y puede depender de $z,r,\\eta$; el teorema no afirma un conteo para un radio fijo arbitrario. Como los patrones de orden tienen símbolos distintos dos a dos, las configuraciones con símbolos repetidos, como los intercalados estudiados en [3], quedan fuera de esta clase.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "Section 9 controls the finite-to-Latinon embedding error, not a difference between the two finite normalizations.",
+      "after": "Section 9 bounds the error between the finite statistic with this normalization and the density in the associated Latinon.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La sección 9 controla el error del embedding finito en Latinons, no una diferencia entre las dos normalizaciones finitas.",
+      "after": "La sección 9 acota el error entre la estadística finita con esta normalización y la densidad en el Latinon asociado.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "Thus a single order map is part of both definitions, not an extra restriction imposed here.",
+      "after": "Thus both definitions incorporate a single order map.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Por tanto, un solo mapa de orden forma parte de ambas definiciones y no es una restricción adicional impuesta aquí.",
+      "after": "Por tanto, ambas definiciones incorporan un solo mapa de orden.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The table records dependencies; it supplies no uniform threshold over all centers.",
+      "after": "The table records parameter dependencies for a fixed center.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La tabla registra dependencias; no proporciona un umbral uniforme sobre todos los centros.",
+      "after": "La tabla registra las dependencias entre parámetros para un centro fijo.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "This proves the good-rate assertion from the explicitly cited compactness theorem.",
+      "after": "Together with lower semicontinuity, this compactness establishes that the rate function is good.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Esto prueba la afirmación de tasa buena a partir del teorema de compacidad citado explícitamente.",
+      "after": "Junto con la semicontinuidad inferior, esta compacidad establece que la función de tasa es buena.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "We give the finite transportation argument, including the diameter and potential construction. Its only inputs are the hypotheses of the lemma.",
+      "after": "We construct the corrected matrix by a transportation argument on the residual network and bound its cost using a vertex potential.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Damos el argumento finito de transporte, incluidas las construcciones del diámetro y del potencial. Sus únicos ingredientes son las hipótesis del lema.",
+      "after": "Construimos la matriz corregida mediante un argumento de transporte en la red residual y acotamos su costo mediante un potencial de vértices.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "This proves (4.3). Positivity of $\\ell$ also gives exact support.",
+      "after": "This establishes (4.3), and positivity of $\\ell$ ensures exact support.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Esto prueba (4.3). La positividad de $\\ell$ da además el soporte exacto.",
+      "after": "Esto establece (4.3), y la positividad de $\\ell$ asegura el soporte exacto.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "This refinement is formalized in the delivered freeze. The estimates below retain the valid coefficient 3, so their constants and the main theorem statements are unchanged.",
+      "after": "The accompanying Lean formalization includes this sharper bound; we use coefficient 3 in the subsequent estimates.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Esta mejora está formalizada en el freeze entregado. Las estimaciones posteriores conservan el coeficiente válido 3, de modo que sus constantes y los enunciados principales no cambian.",
+      "after": "La formalización Lean que acompaña al artículo incluye esta cota más fina; utilizamos el coeficiente 3 en las estimaciones posteriores.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The first term is the reference cost of the value actually chosen. The second records how much reference mass remains available. Applying (5.0) to each coordinate in a reveal order and summing uses exactly the entropy chain rule. Zero-probability values can be omitted throughout.",
+      "after": "The two terms measure the reference cost of the realized outcome and the reference mass still available. Applying (5.0) along a reveal order and summing combines these costs through the entropy chain rule, with zero-probability outcomes omitted.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "El primer término es el costo de referencia del valor realmente elegido. El segundo registra cuánta masa de referencia queda disponible. Aplicar (5.0) a cada coordenada en un orden de revelado y sumar usa exactamente la regla de la cadena de entropía. Los valores de probabilidad cero pueden omitirse en todo momento.",
+      "after": "Los dos términos miden el costo de referencia del resultado realizado y la masa de referencia aún disponible. Aplicar (5.0) siguiendo un orden de revelado y sumar combina estos costos mediante la regla de la cadena de entropía, omitiendo los resultados de probabilidad cero.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The second inequality is finite Gronwall.",
+      "after": "The second inequality follows from a discrete Gronwall bound.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La segunda desigualdad es Gronwall finito.",
+      "after": "La segunda desigualdad se obtiene mediante una cota discreta de Gronwall.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "No expectation identity for the actual availability after fallback is required.",
+      "after": "These estimates close the argument without tracking expected availability after the fallback rule is triggered.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "No se requiere una identidad de esperanzas para la disponibilidad real después del respaldo.",
+      "after": "Estas estimaciones cierran el argumento sin seguir la disponibilidad esperada una vez activada la regla de respaldo.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": " This is the passage from the finite table to a full-distance neighborhood.",
+      "after": "",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": " Este es el paso de la tabla finita a un entorno de la distancia completa.",
+      "after": "",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "Assume a strict three-bicolored system $S_0$ contains $P(\\Lambda^0)$. This completed-template hypothesis is explicit. The inequalities asserting that the color classes are large enough to reserve the groups do not alone imply it. Set",
+      "after": "Suppose that $P(\\Lambda^0)$ extends to a strict three-bicolored Steiner triple system $S_0$. This is an explicit hypothesis, stronger than the color-class size inequalities needed to reserve the groups. Set",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "Supongamos que un sistema estrictamente 3-bicoloreado $S_0$ contiene $P(\\Lambda^0)$. Esta hipótesis de plantilla completada es explícita. Las desigualdades que afirman que las clases tienen tamaño suficiente para reservar los grupos no la implican por sí solas. Ponemos",
+      "after": "Supongamos que $P(\\Lambda^0)$ se extiende a un sistema triple de Steiner estrictamente 3-bicoloreado $S_0$. Esta es una hipótesis explícita, más fuerte que las desigualdades de tamaños de clases necesarias para reservar los grupos. Ponemos",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The threshold is independent of the base system and its residue. Every realization has exactly the same six color-multiset block-type counts as $S_0$. Any fixed block configuration lying in $\\mathcal R_0$ is retained.",
+      "after": "The threshold is independent of the base system and its residue, while every realization preserves both the six-entry color-multiset block-type vector of $S_0$ and any fixed block configuration contained in $\\mathcal R_0$.",
+      "reason": "CLARITY: final human-reader revision; mathematical scope preserved"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "El umbral es independiente del sistema base y de su residuo. Toda realización tiene exactamente los mismos seis conteos de tipos de bloques por multiconjuntos de colores que $S_0$. Toda configuración fija de bloques contenida en $\\mathcal R_0$ se conserva.",
+      "after": "El umbral es independiente del sistema base y de su residuo, y cada realización conserva tanto el vector de seis conteos de tipos de bloques por multiconjuntos de colores de $S_0$ como toda configuración fija de bloques contenida en $\\mathcal R_0$.",
+      "reason": "CLARITY: synchronized final human-reader revision"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": " In (6.4b), the entropy inside the expectation means the entropy of the conditional row law at the realized prefix.",
+      "after": "",
+      "reason": "STRUCTURAL_FORM: move conditional-entropy explanation immediately after (6.4b)"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The restriction to active histories can be checked directly.",
+      "after": "In (6.4b), the entropy inside the expectation means the entropy of the conditional row law at the realized prefix.\n\nThe restriction to active histories can be checked directly.",
+      "reason": "STRUCTURAL_FORM: explanation precedes active-history restriction"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": " En (6.4b), la entropía dentro de la esperanza significa la entropía de la ley condicional de fila en el prefijo realizado.",
+      "after": "",
+      "reason": "STRUCTURAL_FORM: move conditional-entropy explanation immediately after (6.4b)"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La restricción a historias activas se comprueba directamente.",
+      "after": "En (6.4b), la entropía dentro de la esperanza significa la entropía de la ley condicional de fila en el prefijo realizado.\n\nLa restricción a historias activas se comprueba directamente.",
+      "reason": "STRUCTURAL_FORM: explanation precedes active-history restriction"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_en.md",
+      "before": "The baseline reconstruction compiled all 309 explicit local targets with Lean 4.35.0 and the pinned Mathlib ecosystem. The current freeze adds the strengthened correction module and updates the canonical entry and axiom queries. An incremental build with the existing caches checked the 310-target library, including 299 modules in the canonical import closure. All twelve queries in `ReviewAxioms` reported only `propext`, `Classical.choice` and `Quot.sound`. The package retains both the baseline clean reconstruction and the source-bound incremental evidence, with their distinct source snapshots and hashes.",
+      "after": "The accompanying Lean 4.35.0 development compiles all 310 local module targets against the pinned Mathlib ecosystem; 299 lie in the canonical import closure of `LatinonFormalization`. All twelve axiom-audit queries in `ReviewAxioms` report only the standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`. Verification comprised a complete reconstruction followed by a cached incremental check incorporating the sharper correction lemma. The repository preserves the corresponding source snapshots, hashes and verification logs; the companion gives the scope of each check.",
+      "reason": "CLARITY: audited final state; complete reconstruction plus incremental verification"
+    },
+    {
+      "source": "preprints/LATINON/01_manuscript/latinon_es.md",
+      "before": "La reconstrucción de base compiló los 309 objetivos locales explícitos con Lean 4.35.0 y el ecosistema Mathlib fijado. El freeze actual añade el módulo de corrección reforzada y actualiza la entrada canónica y las consultas de axiomas. Un build incremental con las cachés existentes comprobó la biblioteca de 310 objetivos, incluidos 299 módulos en la clausura de imports canónica. Las doce consultas de `ReviewAxioms` informaron únicamente `propext`, `Classical.choice` y `Quot.sound`. El paquete conserva tanto la reconstrucción limpia de base como la evidencia incremental vinculada a las fuentes, con sus instantáneas y hashes diferenciados.",
+      "after": "El desarrollo Lean 4.35.0 que acompaña al artículo compila los 310 objetivos locales de módulos con el ecosistema Mathlib fijado; 299 pertenecen a la clausura de imports canónica de `LatinonFormalization`. Las doce consultas de auditoría de axiomas en `ReviewAxioms` informan únicamente los axiomas fundacionales estándar `propext`, `Classical.choice` y `Quot.sound`. La verificación comprendió una reconstrucción completa seguida de una comprobación incremental con caché que incorpora el lema de corrección más fino. El repositorio conserva las instantáneas de fuentes, hashes y logs de verificación correspondientes; el companion especifica el alcance de cada comprobación.",
+      "reason": "CLARITY: audited final state; complete reconstruction plus incremental verification"
     }
   ],
   "original_text": {
@@ -443,8 +671,8 @@
     "preprints/LATINON/05_formalization/formal_companion_es.md": "# Documento formal complementario: entropía y grandes desviaciones para cuadrados latinos\n\nJuan Pablo Traverso Gianini\n\nPreprint 1.0 — 16 de noviembre de 2026.\n\nRepositorio: https://github.com/jtraverso/latinon-entropy-ldp.\n\n## 1. Alcance e interfaz matemática\n\nEste documento registra cómo se representan en Lean los enunciados del manuscrito. Es una guía de las fuentes y evidencias entregadas, no un reemplazo de las demostraciones escritas. El modelo tiene tres márgenes uniformes de dos coordenadas y conserva el mapa de orden que preserva la medida. Su distancia tiene dos términos de orden y un término de distribución que prueba intervalos de símbolos. La entropía relativa toma valores en los reales no negativos extendidos. Su conversión a un número real solo se justifica después de una hipótesis de tasa finita.\n\nLos enunciados formales son los contratos protegidos del registro de auditoría. El resultado superior usa `ENNReal.ofReal t`; este es el piso no estricto max(t,0) del manuscrito. El resultado inferior requiere un costo testigo finito no negativo. Ninguno presupone una ley sobre una colección auxiliar: ambos se refieren al transporte de la ley uniforme finita real de cuadrados latinos.\n\n## 2. Correspondencia de enunciados principales\n\n**Theorem 2.1 / Teorema 2.1**\n\n`LatinonEntropy.closed_uniform_latinon_upper`\n\nFuente: `lean/LatinonBridge/LatinonGlobalDeviations.lean`, línea 20.\n\n`LatinonEntropy.open_uniform_latinon_lower`\n\nFuente: `lean/LatinonBridge/LatinonGlobalDeviations.lean`, línea 46.\n\n**Theorem 2.2 / Teorema 2.2**\n\n`LatinonEntropy.finite_rate_standard_pattern_log_count`\n\nFuente: `lean/LatinonPatternConjecture.lean`, línea 12.\n\n`LatinonEntropy.empty_standard_pattern_fiber_eventually_zero`\n\nFuente: `lean/LatinonPatternConjecture.lean`, línea 42.\n\n**Theorem 3.1 / Teorema 3.1**\n\n`LatinonEntropy.finite_latin_tensor_lower_bound`\n\nFuente: `lean/LatinTensorLowerBound.lean`, línea 51.\n\n**Lemma 4.1 / Lema 4.1**\n\n`LatinonEntropy.correction_lemma`\n\nFuente: `lean/QuasirandomCorrection.lean`, línea 143.\n\nLa proposición 2.3 es la identificación escrita con las representaciones y la definición de distancia de corte publicadas por GHHS. Su prueba mediante desintegración y cambio de variables está en el manuscrito; no se presenta como una declaración Lean nueva. La fuente formal usa la representación por medidas, transportes inversos de coordenadas y dos términos de orden. La notación del manuscrito no renombra ninguna declaración Lean.\n\n**Tasa buena en el teorema 2.1**\n\n`LatinonEntropy.latinon_rate_lowerSemicontinuous`\n\nFuente: `lean/LatinonFullDyadicKL.lean`, línea 42.\n\n`LatinonEntropy.latinon_full_cut_compact`\n\nFuente: `lean/LatinonBridge/LatinonCompactness.lean`, línea 60.\n\n`LatinonEntropy.latinon_rate_sublevels_compact`\n\nFuente: `lean/LatinonBridge/LatinonGlobalDeviations.lean`, línea 15.\n\nEstas tres propiedades tienen sus propias consultas de axiomas en los módulos de fuentes. El informe de reconstrucción completada registra sus tres salidas exitosas por separado de las ocho consultas seleccionadas de resultados finales en `ReviewAxioms.lean`. Las once informaron solo los axiomas fundacionales estándar. Véase `preprints/LATINON/02_validation/CLEAN_REBUILD_AUDIT.json`.\n\nEl teorema finito de tensores cuantifica el umbral de orden antes del perfil. El teorema de corrección no tiene hipótesis de diámetro residual ni certificados de potenciales. El lema 4.1 conserva sus constantes explícitas de caja y el coeficiente lineal 3.\n\nEl argumento de diámetro seis también aparece internamente como `LatinonEntropy.ScaledResidualData.diameter_six` en `lean/ResidualDiameter.lean`. Su ausencia de las hipótesis de `correction_lemma` significa que se deduce internamente, no que solo exista en papel. Se revisa el lema 4.1 como prueba escrita por separado de su correspondencia con ese argumento de fuentes.\n\n## 3. Registro de dependencias\n\nEl registro central tiene 23 pasos. La lista siguiente da la declaración y las dependencias en cada paso. La correspondencia actual con las fuentes compiladas está en `publication/PROOF_LEDGER.json`. Los certificados originales ligados a fuentes que se conservan dentro del archivo Lean son evidencia histórica; el informe de reconstrucción completada certifica la selección entregada.\n\n**1. Modelo y distancia completa.**\n\n`LatinonEntropy.LatinonMeasure`\n\nDependencias en el registro: ninguna.\n\n**2. Corrección determinista.**\n\n`LatinonEntropy.correction_lemma`\n\nDependencias en el registro: ninguna.\n\n**3. Permanentes y marginales.**\n\n`LatinonEntropy.permanental_marginal_l1_le`\n\nDependencias en el registro: ninguna.\n\n**4. Proceso latino y parada.**\n\n`LatinonEntropy.profileProcessPolicy`\n\nDependencias en el registro: 2, 3.\n\n**5. Recurrencia del defecto.**\n\n`LatinonEntropy.profile_expected_defect_recurrence`\n\nDependencias en el registro: 4.\n\n**6. Estabilidad por Gronwall.**\n\n`LatinonEntropy.profile_expected_defect_uniform`\n\nDependencias en el registro: 5.\n\n**7. Supervivencia uniforme.**\n\n`LatinonEntropy.eventually_uniform_profile_survival`\n\nDependencias en el registro: 6.\n\n**8. Cercanía uniforme en cortes.**\n\n`LatinonEntropy.eventually_uniform_profile_closeness`\n\nDependencias en el registro: 7.\n\n**9. Entropía del proceso completo.**\n\n`LatinonEntropy.profile_history_entropy_lower`\n\nDependencias en el registro: 6, 7.\n\n**10. Conteo inferior de tensores.**\n\n`LatinonEntropy.finite_latin_tensor_lower_bound`\n\nDependencias en el registro: 8, 9.\n\n**11. Puente tensor-Latinon.**\n\n`LatinonEntropy.finite_latin_grid_metric_ball_lower_bound`\n\nDependencias en el registro: 1, 10.\n\n**12. Cota superior de particiones.**\n\n`LatinonEntropy.exists_latinon_partition_ball_count_upper`\n\nDependencias en el registro: 1.\n\n**13. Tasa KL extendida.**\n\n`LatinonEntropy.latinon_rate_eq_iSup_dyadic`\n\nDependencias en el registro: 12.\n\n**14. Centro fijo y orden.**\n\n`LatinonEntropy.exists_bounded_latinon_profile_approximation`\n\nDependencias en el registro: 11, 13.\n\n**15. Regularización y entropía local.**\n\n`LatinonEntropy.finite_rate_latinon_entropy_count`\n\nDependencias en el registro: 14.\n\n**16. Compacidad de la distancia completa.**\n\n`LatinonEntropy.latinon_full_cut_compact`\n\nDependencias en el registro: 1.\n\n**17. LDP global.**\n\n`LatinonEntropy.closed_uniform_latinon_upper`\n\nDependencias en el registro: 13, 15, 16.\n\n**18. Contracción y observables.**\n\n`LatinonEntropy.latinonContractedRate_attained`\n\nDependencias en el registro: 17.\n\n**19. Densidades,continuidad y normalización.**\n\n`LatinonEntropy.sum_latinonPatternDensity`\n\nDependencias en el registro: 1.\n\n**20. Puente finito de coordenadas.**\n\n`LatinonEntropy.finite_matrix_pattern_embedding_error`\n\nDependencias en el registro: 19.\n\n**21. Normalización binomial.**\n\n`LatinonEntropy.standard_pattern_profile_uniform_error`\n\nDependencias en el registro: 20.\n\n**22. Conteo con restricciones cerradas.**\n\n`LatinonEntropy.finite_rate_standard_pattern_entropy_count`\n\nDependencias en el registro: 18, 21.\n\n**23. Fórmula logarítmica y fibra vacía.**\n\n`LatinonEntropy.finite_rate_standard_pattern_log_count`\n\nDependencias en el registro: 22, 16.\n\n## 4. Aplicaciones y ensamblajes de fuentes\n\nEl ensamblaje de aplicaciones es `LatinonSeriesApplications.lean`. Contiene las definiciones CDR finitas y el argumento de huella de pares de Wilson, seguido de la correspondencia de factorizaciones, la sustitución de packings, los productos de entropía local y la conservación exacta de tipos. Sus ocho entradas originales se conservan en `lean/evidence/applications`. El ensamblaje central de patrones conserva de forma análoga sus 18 entradas en `lean/evidence/proof-inputs`. Conservar una entrada no afirma que se compile como módulo independiente: los objetivos de compilación son los módulos ensamblados.\n\n**A1.** `finite_rate_factorization_entropy_count`\n\n**A2.** `finite_rate_factorization_pattern_log_count`\n\n**A3.** `replaceSteinerPacking_bicoloured`\n\n**A4.** `wilsonLatinBlockTemplate`\n\n**A5.** `card_restrictedRealizations`\n\n**A6.** `wilson_distinguished_latinon_blocks_entropy_count`\n\n**A7.** `wilson_completed_exact_type_count_eq_base`\n\n**A8.** `residual_subset_completed`\n\nLos resultados CDR cuantifican un sistema base ya completado que contiene el packing distinguido. No deducen la existencia de esa base a partir de solas desigualdades de tamaños de clases. Las familias finales son conjuntos reales de bloques, no copias marcadas. Los cuadrados locales se recuperan de pares fijos fila-columna, por lo que su conteo producto no tiene pérdida de multiplicidad. Los conteos de tipos se refieren a multiconjuntos de colores y coinciden con los de la base; se conservan las configuraciones fijas del residuo, sin afirmar que su número total quede igual.\n\n## 5. Herramientas, imports y reconstrucción\n\nEl proyecto entregado fija Lean 4.35.0 y Mathlib en el commit `56a005855ea17e0b0958f73ec801ae140b0a1679`. Su manifiesto fija otros ocho repositorios del ecosistema. La configuración declara 309 raíces de módulos locales, incluidas la entrada canónica y el módulo de consulta de axiomas. La entrada canónica importa la cadena principal mediante el ensamblaje de aplicaciones. El manifiesto de fuentes registra cada módulo seleccionado y su hash. Esta edición no afirma compatibilidad con el snapshot anterior 4.35.0-rc3.\n\nExtraiga el archivo de fuentes de `preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip`; contiene el directorio de proyecto `lean/` y sus licencias de origen. Instale la herramienta fijada, obtenga los paquetes externos fijados y sus cachés y ejecute desde el proyecto extraído `lake build LatinonFormalization` y `lake env lean ReviewAxioms.lean`, secuencialmente. El primer comando construye la biblioteca configurada de 309 objetivos. La reconstrucción registrada compiló en cambio un objetivo local explícito a la vez. Se conservan sus hashes de fuentes y configuración, los 309 hashes de objetos y los logs de módulos. No se restauró ningún objeto del proyecto; se declara la reutilización de cachés externas.\n\nLos 309 objetivos locales terminaron correctamente el 16 de noviembre de 2026. Las ocho consultas de resultados finales y las tres de tasa buena contienen solo `propext`, `Classical.choice` y `Quot.sound`, sin axiomas matemáticos del proyecto ni `sorryAx`. El verificador de la edición comprueba sus logs conservados contra el archivo y los hashes congelados de fuentes. No ejecuta Lean ni reconstruye paquetes externos.\n\n## 6. Procedencia y límites de la revisión\n\nEl identificador del freeze de fuentes es `7b603942c8d078db6c0a5c8729df7012b7786db8`. Sus 309 archivos de módulos y tres archivos de configuración y herramienta tienen los mismos bytes que en la reconstrucción completada. El archivo de fuentes no cambia en esta edición. `preprints/LATINON/02_validation/v1.0/FREEZE.json` registra su SHA-256 y hashes de entradas. Desde la raíz del repositorio, `python scripts/verify_repository.py` comprueba el paquete sin necesitar acceso al repositorio de desarrollo ni a sus objetos Git.\n\nNueve módulos de grafones provienen del proyecto de Cameron Freer en el commit `9f7be59fa754d260a544b4cfd83d6a5b94f7552e`. El archivo de procedencia conservado enumera los metadatos blueprint retirados y los cambios de compatibilidad. La selección CDR finita proviene de `jtraverso/cdr-palomar-kernel` en el commit `5d1e6fe301e5fc01c92f6145aa34fddfe9c2bd10`. Las definiciones básicas son idénticas byte a byte; se enumeran los cambios de compatibilidad de Wilson y de representación de matrices latinas. Esta selección no importa la antigua biblioteca de existencia por absorción.\n\nLa auditoría interna sigue el protocolo del Paper III de CDR en el commit `d12d980f8c86d8795e9faa0c6bb274ee936c7c8e` de la serie. Separa reconstrucción, axiomas, enunciados protegidos, revisión dirigida de pruebas escritas, paridad bilingüe, documentos renderizados e integridad de archivos. La auditoría de la edición es `publication/LATINON_RELEASE_AUDIT.json`. Es una comprobación interna de preparación, no revisión independiente por pares ni certificación exhaustiva de prioridad."
   },
   "source_sha256": {
-    "preprints/LATINON/01_manuscript/latinon_en.md": "754d105fb1b4c6ef6f47c28ccd56b9d72d54105590c2ece027fcf536be4ccffe",
-    "preprints/LATINON/01_manuscript/latinon_es.md": "c8c7f900b24f7448e5a41bc40cc5ed1d1d79df31e43e4b39252daeb6cbd1b72c",
+    "preprints/LATINON/01_manuscript/latinon_en.md": "26a007c708bc677e7b5eaaed1c90b5bd11ace931b8b169df87fb569015a244d1",
+    "preprints/LATINON/01_manuscript/latinon_es.md": "e779b63c4cd7bd9aad43b1bdadcf6a2c85e635c97f51197d1aa5e8d1f9e342d1",
     "preprints/LATINON/05_formalization/formal_companion_en.md": "6adc6851a1a6305c77de6363d8ac8943996856d9af3e542218f22ba68abba8d8",
     "preprints/LATINON/05_formalization/formal_companion_es.md": "00c471df68aeb160a1b752f780b4b11b7b720b556e0ff7684c0555cb1ee7495f"
   },

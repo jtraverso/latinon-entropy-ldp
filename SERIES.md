@@ -25,5 +25,5 @@ in `publication/`, following the CDR series convention. Archives and checksum
 sidecars are named per paper. Verifiers and CI record which paper they cover.
 
 Edition 1.0 contains only Latinon. Repository visibility is an access setting,
-separate from the edition bytes and its internal audit. Public circulation
-follows the author's final audit decision. There is no DOI or journal claim.
+separate from the edition bytes and its internal audit. Each public edition carries its own
+source archive, verification evidence and citation. There is no DOI or journal claim.

@@ -1,6 +1,7 @@
 """Read-only verification of the complete archive and edition; no network."""
 from pathlib import Path
-import hashlib,json,zipfile
+import hashlib,json,zipfile,sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 from verify_repository import ROOT,check,read,digest
 
 if __name__=='__main__':

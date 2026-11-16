@@ -62,14 +62,14 @@ Las conclusiones principales son el principio de grandes desviaciones en el espa
 
 Escribimos \(I=[0,1]\) y denotamos por \(\lambda\) la medida de Lebesgue. Usamos la representación por medidas \(W=(\nu,f)\) de un Latinon: \(\nu\) es una medida de probabilidad en \(I^3\), cada margen de dos coordenadas es \(\lambda^2\) y \(f:I\to I\) preserva la medida. La desintegración respecto de las dos primeras coordenadas da el núcleo condicional de símbolos. Ponemos \(O_f(x,x')=\mathbf1[f(x)<f(x')]\).
 
-La distancia de corte completa \(\delta\) es el ínfimo, sobre biyecciones medibles que preservan la medida \(\phi,\psi\) independientes, de la suma siguiente. El término de distribución prueba conjuntos medibles de filas y columnas e intervalos de símbolos. El reetiquetado de la medida utiliza las inversas de \(\phi,\psi\).
+La distancia de corte completa \(\delta\) es el ínfimo, sobre biyecciones medibles independientes que preservan la medida \(\phi,\psi:I\to I\), de
 
 \nopagebreak[4]
 \[\|O_f-O_{g\circ\phi}\|_\square+
 \|O_f-O_{g\circ\psi}\|_\square+
 \sup_{S,T,J}|\nu(S\times T\times J)-\mu^{\phi,\psi}(S\times T\times J)|.\tag{2.1}\]
 
-Se trata de una pseudométrica sobre representaciones. La compacidad y el calificativo «buena» que aparece más abajo pueden leerse equivalentemente en su cociente métrico. Distancia cero no significa igualdad de representantes. Definimos la tasa y la entropía extendidas por
+donde el supremo recorre conjuntos medibles \(S,T\subseteq I\) e intervalos \(J\subseteq I\), y \(\mu^{\phi,\psi}=(\phi^{-1}\times\psi^{-1}\times\mathrm{id})_\#\mu\). La distancia cero identifica representaciones equivalentes, de modo que \(\delta\) define una pseudométrica; la compacidad y la bondad de la función de tasa se entienden en el cociente métrico inducido. Definimos la tasa y la entropía extendidas por
 
 \nopagebreak[4]
 \[\mathcal I(W)=\operatorname{KL}(\nu\Vert\lambda^3)\in[0,\infty],
@@ -112,11 +112,11 @@ es no vacía y satisface
 
 Si \(\mathcal J(z)=\infty\), cualquier penalización finita \(A\in\mathbb R\) puede reemplazar a \(\mathcal J(z)\) en la cota exponencial superior, después de elegir un radio positivo suficientemente pequeño. Si la fibra es vacía, una caja así, arbitrariamente pequeña, es vacía para todos los órdenes suficientemente grandes.
 
-El radio se elige antes de \(n\) y puede depender de \(z,r,\eta\). El teorema no afirma el valor \(\mathcal J(z)\) para un radio fijo arbitrario. Los patrones utilizados tienen símbolos distintos. Los intercalados, estudiados en {[}3{]}, tienen símbolos repetidos y no pertenecen a esta familia de patrones.
+El radio se fija antes de \(n\) y puede depender de \(z,r,\eta\); el teorema no afirma un conteo para un radio fijo arbitrario. Como los patrones de orden tienen símbolos distintos dos a dos, las configuraciones con símbolos repetidos, como los intercalados estudiados en {[}3{]}, quedan fuera de esta clase.
 
 \textbf{Observación sobre el radio.} El entorno se elige en el objetivo \(z\): la semicontinuidad inferior de \(\mathcal J\) da la cota superior y un testigo minimizador en esa fibra da la cota inferior. Ambas elecciones dependen del objetivo. El radio resultante es puntual; la uniformidad sobre una familia de objetivos requeriría control cuantitativo de estas elecciones.
 
-La clase de patrones \(\mathcal P_{k,l}\) es exactamente \(\mathcal R(k,l)\) de {[}1, observación 3.2{]}, y (2.5) es la normalización de {[}1, definición 3.3{]}. Su definición 3.7 es la misma probabilidad de muestreo ordenado que \(d_P\). La sección 9 controla el error del embedding finito en Latinons, no una diferencia entre las dos normalizaciones finitas. En {[}1, sección 12.2{]} la entropía mostrada tiene signo opuesto al de (2.2); la comparación con la conjetura 12.4 utiliza el signo negativo. Por tanto, su valor variacional es \(-\mathcal J(z)\) cuando la tasa es finita.
+La clase de patrones \(\mathcal P_{k,l}\) es exactamente \(\mathcal R(k,l)\) de {[}1, observación 3.2{]}, y (2.5) es la normalización de {[}1, definición 3.3{]}. Su definición 3.7 es la misma probabilidad de muestreo ordenado que \(d_P\). La sección 9 acota el error entre la estadística finita con esta normalización y la densidad en el Latinon asociado. En {[}1, sección 12.2{]} la entropía mostrada tiene signo opuesto al de (2.2); la comparación con la conjetura 12.4 utiliza el signo negativo. Por tanto, su valor variacional es \(-\mathcal J(z)\) cuando la tasa es finita.
 
 \Needspace{7\baselineskip}\textbf{Proposición 2.3 (identificación con el modelo GHHS).} En el espacio base estándar sin átomos \(I\), la representación por medidas de esta sección y la representación por núcleos de {[}1, definición 3.5{]} identifican los mismos Latinons, salvo conjuntos nulos. Esta identificación conserva la distancia (2.1), las densidades de patrones y la entropía con signo (2.2). En particular induce una isometría de los cocientes por distancia cero.
 
@@ -126,7 +126,7 @@ La clase de patrones \(\mathcal P_{k,l}\) es exactamente \(\mathcal R(k,l)\) de 
 \[\nu_K(S\times T\times J)=\int_{S\times T}K(x,y)(J)\,d\lambda^2(x,y).
 \tag{2.9}\]
 
-Los otros dos márgenes uniformes de pares significan que, para casi toda fila fija, promediar el núcleo de símbolos sobre las columnas da \(\lambda\), y análogamente para una columna fija. Para obtener un conjunto nulo excepcional común, probamos primero intervalos de extremos racionales y usamos después la unicidad de medidas. Transportar la coordenada de columnas mediante \(f\) da primer margen \(\lambda\) porque \(f\) preserva la medida, y segundo margen \(\lambda\) por esa identidad de fila. Esta es exactamente la condición de permutón de fila de {[}1, definición 3.5{]}; la condición de columna se sigue del mismo modo. Recíprocamente, en cada condición de permutón por fila tomamos como primer conjunto de prueba todo el intervalo. Su segundo margen dice que el promedio de símbolos en esa fila es uniforme. Integrar sobre conjuntos arbitrarios de filas recupera el margen fila-símbolo; la condición por columna da el margen columna-símbolo. La integración del núcleo ya da el margen fila-columna. Por tanto, un solo mapa de orden forma parte de ambas definiciones y no es una restricción adicional impuesta aquí.
+Los otros dos márgenes uniformes de pares significan que, para casi toda fila fija, promediar el núcleo de símbolos sobre las columnas da \(\lambda\), y análogamente para una columna fija. Para obtener un conjunto nulo excepcional común, probamos primero intervalos de extremos racionales y usamos después la unicidad de medidas. Transportar la coordenada de columnas mediante \(f\) da primer margen \(\lambda\) porque \(f\) preserva la medida, y segundo margen \(\lambda\) por esa identidad de fila. Esta es exactamente la condición de permutón de fila de {[}1, definición 3.5{]}; la condición de columna se sigue del mismo modo. Recíprocamente, en cada condición de permutón por fila tomamos como primer conjunto de prueba todo el intervalo. Su segundo margen dice que el promedio de símbolos en esa fila es uniforme. Integrar sobre conjuntos arbitrarios de filas recupera el margen fila-símbolo; la condición por columna da el margen columna-símbolo. La integración del núcleo ya da el margen fila-columna. Por tanto, ambas definiciones incorporan un solo mapa de orden.
 
 Queda comparar las convenciones de reetiquetado. Para biyecciones medibles que preservan la medida \(\phi,\psi\), definimos el reetiquetado del núcleo por composición. Un cambio de variables da
 
@@ -183,7 +183,7 @@ Si \(M\) se anula fuera de \(A\) y sus entradas en \(A\) están en \([a/n,c/n]\)
 \[\frac\ell n\le Q_{yz}\le\frac Cn\quad(A_{yz}=1),\qquad
 \|Q-M\|_1\le3D(M).\tag{4.3}\]
 
-\emph{Demostración.} Damos el argumento finito de transporte, incluidas las construcciones del diámetro y del potencial. Sus únicos ingredientes son las hipótesis del lema.
+\emph{Demostración.} Construimos la matriz corregida mediante un argumento de transporte en la red residual y acotamos su costo mediante un potencial de vértices.
 
 \textbf{Factibilidad y minimización.} La regularidad da todos los márgenes de \(A/d\) iguales a uno. Como \(d\le n\), \(\ell\le1/4\) y \(d\ge\varepsilon n\), sus entradas no nulas están entre \(1/n\) y \(1/(\varepsilon n)\) y, por tanto, en la caja de (4.3). Aquí \(C\varepsilon\ge16\) se sigue de (4.1) y \(\alpha\le1\). El politopo de transporte factible es entonces no vacío y compacto. Fijamos un minimizador de la función continua \(\|Q-M\|_1\) en él.
 
@@ -217,9 +217,9 @@ Sean \(u_y,v_z\) los potenciales trasladados de filas y columnas y \(\Delta=Q-M\
 &=\sum_zv_z\sum_y\Delta_{yz}-\sum_yu_y\sum_z\Delta_{yz}\le3D(M).
 \end{aligned}\tag{4.6}\]
 
-Esto prueba (4.3). La positividad de \(\ell\) da además el soporte exacto. \(\square\)
+Esto establece (4.3), y la positividad de \(\ell\) asegura el soporte exacto. \(\square\)
 
-El coeficiente de corrección puede reducirse a \(5/2\) bajo las mismas hipótesis. Aplicamos el argumento de cuatro pasos entre filas a las matrices transpuestas e invertimos los caminos resultantes: las columnas también se alcanzan en cuatro pasos. Un camino entre lados opuestos requiere a lo sumo una arista adicional, por lo que el diámetro es a lo sumo cinco. El potencial tiene entonces oscilación a lo sumo cinco y puede centrarse en \([-5/2,5/2]\); (4.6) da \(\|Q-M\|_1\le(5/2)D(M)\). Esta mejora está formalizada en el freeze entregado. Las estimaciones posteriores conservan el coeficiente válido 3, de modo que sus constantes y los enunciados principales no cambian.
+El coeficiente de corrección puede reducirse a \(5/2\) bajo las mismas hipótesis. Aplicamos el argumento de cuatro pasos entre filas a las matrices transpuestas e invertimos los caminos resultantes: las columnas también se alcanzan en cuatro pasos. Un camino entre lados opuestos requiere a lo sumo una arista adicional, por lo que el diámetro es a lo sumo cinco. El potencial tiene entonces oscilación a lo sumo cinco y puede centrarse en \([-5/2,5/2]\); (4.6) da \(\|Q-M\|_1\le(5/2)D(M)\). La formalización Lean que acompaña al artículo incluye esta cota más fina; utilizamos el coeficiente 3 en las estimaciones posteriores.
 
 \subsection{5. Leyes permanentales y error de sus marginales}\label{leyes-permanentales-y-error-de-sus-marginales}
 
@@ -229,7 +229,7 @@ Usamos una forma ponderada de la cota de entropía para una variable con soporte
 \[H(X\mid\mathcal F)\le
 \mathbb E[-\log r(X)]+\mathbb E[\log r(A)].\tag{5.0}\]
 
-El primer término es el costo de referencia del valor realmente elegido. El segundo registra cuánta masa de referencia queda disponible. Aplicar (5.0) a cada coordenada en un orden de revelado y sumar usa exactamente la regla de la cadena de entropía. Los valores de probabilidad cero pueden omitirse en todo momento. Este es el paso ponderado de las pruebas de revelado siguientes; el método entrópico de base se debe a Radhakrishnan {[}7{]} y su extensión con dos propietarios sigue el argumento de Linial--Luria {[}8{]}.
+Los dos términos miden el costo de referencia del resultado realizado y la masa de referencia aún disponible. Aplicar (5.0) siguiendo un orden de revelado y sumar combina estos costos mediante la regla de la cadena de entropía, omitiendo los resultados de probabilidad cero. Este es el paso ponderado de las pruebas de revelado siguientes; el método entrópico de base se debe a Radhakrishnan {[}7{]} y su extensión con dos propietarios sigue el argumento de Linial--Luria {[}8{]}.
 
 Para una matriz doblemente estocástica no negativa \(Q\), sea \(\mu_Q\) la ley que asigna peso proporcional a \(\prod_yQ_{y,\sigma(y)}\) a cada permutación \(\sigma\), y sea \(m_Q\) su matriz de marginales. Van der Waerden, en la forma demostrada por Gurvits {[}4{]}, implica
 
@@ -313,7 +313,7 @@ Para estimar un margen de fila en el tiempo \(t\), multiplicamos los errores ant
 \[D_t\le2c\sqrt n+\frac{2c}{n}\sum_{s<t}(\sqrt{2nE}+3D_s),\qquad
 D_t\le(2c\sqrt n+2c\sqrt{2nE})e^{6c}.\tag{6.4}\]
 
-La segunda desigualdad es Gronwall finito. Denotamos su lado derecho por \(S_n\). La deriva parada esperada total hasta cualquier tiempo principal es a lo sumo \(n(\sqrt{2nE}+3S_n)\). Como la deriva acumulada es no decreciente, una sola aplicación de Markov en el último tiempo principal acota la probabilidad de cruzar alguna vez el presupuesto por \(4(\sqrt{2nE}+3S_n)/(\gamma n)\); para esta parte no hace falta una unión sobre tiempos.
+La segunda desigualdad se obtiene mediante una cota discreta de Gronwall. Denotamos su lado derecho por \(S_n\). La deriva parada esperada total hasta cualquier tiempo principal es a lo sumo \(n(\sqrt{2nE}+3S_n)\). Como la deriva acumulada es no decreciente, una sola aplicación de Markov en el último tiempo principal acota la probabilidad de cruzar alguna vez el presupuesto por \(4(\sqrt{2nE}+3S_n)/(\gamma n)\); para esta parte no hace falta una unión sobre tiempos.
 
 Para un corte y tiempo terminal fijos, los coeficientes de (6.3) multiplicados por su indicador de corte tienen valor absoluto a lo sumo uno. En cada fila (5.5) acota la MGF condicional centrada. Anular el incremento mediante el indicador de que el prefijo sigue activo conserva la misma cota: en prefijos inactivos el incremento es cero y ese indicador se conoce antes de muestrear la fila. Iterar sobre a lo sumo \(n\) filas da log MGF a lo sumo \(n^2s^2+2nE\). Chernoff con \(s=\gamma/4\) en el umbral \(\gamma n^2/2\), y después con el signo opuesto, da \(2\exp(2nE-\gamma^2n^2/16)\).
 
@@ -344,6 +344,8 @@ Para promediar esta desigualdad, reemplazamos primero \(A_t\) por \(\widetilde A
 &\quad+W_nn(U_n+3S_n)+n^2W_nq_n=o(n).
 \end{aligned}\tag{6.4b}\]
 
+En (6.4b), la entropía dentro de la esperanza significa la entropía de la ley condicional de fila en el prefijo realizado.
+
 La restricción a historias activas se comprueba directamente. Sea \(E_t\) el evento de que el prefijo está activo. En \(E_t\) la disponibilidad auxiliar coincide con \(A_t\); en todas partes está en \([0,1]\), pues después de la parada se multiplica entrada a entrada por \(1-h_t\). Por tanto,
 
 \nopagebreak[4]
@@ -354,9 +356,9 @@ La restricción a historias activas se comprueba directamente. Sea \(E_t\) el ev
 &\le\mathbb E[\mathbf1_{E_t}\mathcal F_t(A_t)]+n^2W_nq_n.
 \end{aligned}\tag{6.4c}\]
 
-El centrado se aplica a la esperanza no restringida de la recurrencia anulada de forma predecible. La restricción al evento activo \(E_t\) se contabiliza después por separado mediante (6.4c). En (6.4b), la entropía dentro de la esperanza significa la entropía de la ley condicional de fila en el prefijo realizado.
+El centrado se aplica a la esperanza no restringida de la recurrencia anulada de forma predecible. La restricción al evento activo \(E_t\) se contabiliza después por separado mediante (6.4c).
 
-Cada término es uniforme sobre los perfiles del teorema 3.1: \(U_n,S_n=O(\sqrt{n\log n})\), \(W_n=O(\log n/n)\) y \(q_n\log n\to0\). Por tanto, sumar los errores de fila cuesta \(o(n^2)\). No se requiere una identidad de esperanzas para la disponibilidad real después del respaldo. La suma determinista del fluido es
+Cada término es uniforme sobre los perfiles del teorema 3.1: \(U_n,S_n=O(\sqrt{n\log n})\), \(W_n=O(\log n/n)\) y \(q_n\log n\to0\). Por tanto, sumar los errores de fila cuesta \(o(n^2)\). Estas estimaciones cierran el argumento sin seguir la disponibilidad esperada una vez activada la regla de respaldo. La suma determinista del fluido es
 
 \nopagebreak[4]
 \[\sum_{t,y,z}p_{tyz}\log\frac{R_t(y,z)}{p_{tyz}}
@@ -438,7 +440,7 @@ Las elecciones de este paso siguen el orden de la tabla 1. Fijamos un centro \(W
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\caption{Orden de elecciones en el paso de un Latinon de tasa finita a perfiles finitos. La tabla registra dependencias; no proporciona un umbral uniforme sobre todos los centros.}\tabularnewline
+\caption{Orden de elecciones en el paso de un Latinon de tasa finita a perfiles finitos. La tabla registra las dependencias entre parámetros para un centro fijo.}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Elección
@@ -482,9 +484,9 @@ Ponemos \(\mu=\lambda^3\) y \(\rho=(\nu+\mu)/2\). Toda \(g\) medible acotada se 
 
 Para convertir una observación fija en una estimación de entorno, elegimos una partición producto finita con volúmenes positivos de celdas \(v_b\). Para \(V\) cercano a \(W\), elegimos un alineamiento cuyo costo esté cerca de (2.1). Transportamos por él los conjuntos de filas y columnas de la partición. Cada masa resultante difiere de la masa en \(W\) a lo sumo por la parte de distribución del costo de alineamiento. Los volúmenes de referencia siguen siendo \(v_b\), pues el alineamiento preserva la medida producto. La observación finita acota entonces \(\mathcal I(V)\) inferiormente por la divergencia de esta tabla finita cercana. La divergencia de la tabla es continua en las masas, incluidas masas cero, porque \(v_b>0\) y \(u\log u\) se extiende continuamente en cero. Así, todo piso finito estricto de tasa por debajo del costo observado en \(W\) sigue siendo un piso inferior en un entorno suficientemente pequeño de la distancia completa. Tomar el supremo en (8.1) prueba la semicontinuidad inferior, incluso en centros de tasa infinita. El lema 7.1 y el redondeo finito anterior dan la cota superior local de conteo correspondiente.
 
-Para la cota superior local de conteo, elegimos primero la observación finita. La continuidad de su entropía de tabla da una tolerancia sobre las masas observadas y los volúmenes positivos. Elegimos el radio de distancia completa y la tolerancia de redondeo lo bastante pequeños para que sus errores combinados queden dentro de esa tolerancia; después aumentamos el orden para absorber los errores de frontera de símbolos y el costo logarítmico de los etiquetados finitos. Cada subfamilia de la sección 7 tiene una tabla media con la misma tolerancia, por lo que su estimación se conserva al tomar la unión. Este es el paso de la tabla finita a un entorno de la distancia completa.
+Para la cota superior local de conteo, elegimos primero la observación finita. La continuidad de su entropía de tabla da una tolerancia sobre las masas observadas y los volúmenes positivos. Elegimos el radio de distancia completa y la tolerancia de redondeo lo bastante pequeños para que sus errores combinados queden dentro de esa tolerancia; después aumentamos el orden para absorber los errores de frontera de símbolos y el costo logarítmico de los etiquetados finitos. Cada subfamilia de la sección 7 tiene una tabla media con la misma tolerancia, por lo que su estimación se conserva al tomar la unión.
 
-\textbf{Compacidad y el resultado citado.} Usamos {[}1, teorema 3.13{]} como teorema publicado de compacidad. Dada una sucesión de nuestras representaciones por medidas, la proposición 2.3 da representaciones por núcleos GHHS en un espacio base estándar sin átomos. Aplicamos ese teorema con el espacio base estándar sin átomos fijo utilizado aquí; proporciona una subsucesión convergente por patrones y un Latinon límite en ese espacio. Así, el límite ya pertenece al dominio de la proposición 2.3. Por {[}1, teorema 4.7{]}, esa subsucesión converge en la distancia de corte GHHS. La proposición 2.3 identifica esa distancia con (2.1), incluidos ambos términos de orden. Así, toda sucesión en el cociente por distancia cero tiene una subsucesión convergente. El cociente es un espacio métrico, de modo que compacidad secuencial implica compacidad. Todo abierto del espacio pseudométrico original está saturado por distancia cero; la misma compacidad da entonces los subrecubrimientos finitos utilizados a continuación. La tasa es constante en las clases de distancia cero: una sucesión constante en cualquiera de los representantes converge al otro, de modo que la semicontinuidad inferior en ambos sentidos da igualdad. Por tanto, desciende al cociente métrico, donde todo subnivel de tasa es cerrado y, en consecuencia, compacto. Esto prueba la afirmación de tasa buena a partir del teorema de compacidad citado explícitamente.
+\textbf{Compacidad y el resultado citado.} Usamos {[}1, teorema 3.13{]} como teorema publicado de compacidad. Dada una sucesión de nuestras representaciones por medidas, la proposición 2.3 da representaciones por núcleos GHHS en un espacio base estándar sin átomos. Aplicamos ese teorema con el espacio base estándar sin átomos fijo utilizado aquí; proporciona una subsucesión convergente por patrones y un Latinon límite en ese espacio. Así, el límite ya pertenece al dominio de la proposición 2.3. Por {[}1, teorema 4.7{]}, esa subsucesión converge en la distancia de corte GHHS. La proposición 2.3 identifica esa distancia con (2.1), incluidos ambos términos de orden. Así, toda sucesión en el cociente por distancia cero tiene una subsucesión convergente. El cociente es un espacio métrico, de modo que compacidad secuencial implica compacidad. Todo abierto del espacio pseudométrico original está saturado por distancia cero; la misma compacidad da entonces los subrecubrimientos finitos utilizados a continuación. La tasa es constante en las clases de distancia cero: una sucesión constante en cualquiera de los representantes converge al otro, de modo que la semicontinuidad inferior en ambos sentidos da igualdad. Por tanto, desciende al cociente métrico, donde todo subnivel de tasa es cerrado y, en consecuencia, compacto. Junto con la semicontinuidad inferior, esta compacidad establece que la función de tasa es buena.
 
 Cubrimos un cerrado por un número finito de sus entornos superiores locales y sumamos las probabilidades superiores después de (1.1). Esto prueba (2.3). Para un abierto, tomamos una bola alrededor de un testigo de tasa finita contenida en él y usamos su conteo local inferior, normalizado nuevamente por (1.1), para obtener (2.4). La semicontinuidad inferior y la compacidad hacen buena la tasa. Esto prueba el teorema 2.1. \(\square\)
 
@@ -535,7 +537,7 @@ q=9|\mathcal O(G)|.\tag{10.2}\]
 
 Cada celda da el triple formado por su vértice de fila, su vértice de columna y el vértice de símbolo elegido. Sea \(P(\Lambda)\) la unión de estos triples para la familia de cuadrados locales \((\Lambda_s)_{s\in J}\), donde \(|J|=q\). Las filas y columnas de \(\tau\) son permutaciones y cada triple de colores resultante usa exactamente dos colores. La unicidad latina y la unicidad de pares en \(G\) prueban tres hechos: \(P(\Lambda)\) es un packing de triángulos bicoloreados; su conjunto de pares cubiertos es independiente de \(\Lambda\); y un par local fijo fila-columna recupera su símbolo.
 
-Supongamos que un sistema estrictamente 3-bicoloreado \(S_0\) contiene \(P(\Lambda^0)\). Esta hipótesis de plantilla completada es explícita. Las desigualdades que afirman que las clases tienen tamaño suficiente para reservar los grupos no la implican por sí solas. Ponemos
+Supongamos que \(P(\Lambda^0)\) se extiende a un sistema triple de Steiner estrictamente 3-bicoloreado \(S_0\). Esta es una hipótesis explícita, más fuerte que las desigualdades de tamaños de clases necesarias para reservar los grupos. Ponemos
 
 \nopagebreak[4]
 \[\mathcal R_0=S_0\setminus P(\Lambda^0),\qquad S_\Lambda=\mathcal R_0\cup P(\Lambda).\tag{10.3}\]
@@ -559,7 +561,7 @@ La familia construida \(\mathcal C(\mathcal A)=\{S_\Lambda:\Lambda_s\in\mathcal 
 \nopagebreak[4]
 \[e^{\mathcal H_m-q\eta m^2}\le|\mathcal C(\mathcal A)|\le e^{\mathcal H_m+q\eta m^2}.\tag{10.6}\]
 
-El umbral es independiente del sistema base y de su residuo. Toda realización tiene exactamente los mismos seis conteos de tipos de bloques por multiconjuntos de colores que \(S_0\). Toda configuración fija de bloques contenida en \(\mathcal R_0\) se conserva.
+El umbral es independiente del sistema base y de su residuo, y cada realización conserva tanto el vector de seis conteos de tipos de bloques por multiconjuntos de colores de \(S_0\) como toda configuración fija de bloques contenida en \(\mathcal R_0\).
 
 \emph{Demostración.} Aplicamos el conteo local bilateral por separado a cada \(W_s\) y tomamos el máximo de los umbrales, que son un número finito. Multiplicamos y usamos (10.4). El tipo de un bloque local solo depende de su posición en (10.2), no de su índice de símbolo; cada posición contribuye \(m^2\) bloques de ese tipo. Por tanto, la sustitución conserva cada conteo de tipos. El residuo queda literalmente igual. \(\square\)
 
@@ -571,7 +573,7 @@ Esto conecta directamente con los resultados de tipos exactos y abundancia de {[
 
 El snapshot de fuentes Lean, el documento formal complementario bilingüe y la auditoría interna acompañan este preprint en el repositorio indicado en la portada. El companion relaciona los resultados numerados con las declaraciones formales y da el registro central de 23 pasos y los ocho pasos de aplicaciones. La entrada canónica \path{LatinonFormalization} importa la cadena principal de conteo de patrones y el ensamblaje de aplicaciones.
 
-La reconstrucción de base compiló los 309 objetivos locales explícitos con Lean 4.35.0 y el ecosistema Mathlib fijado. El freeze actual añade el módulo de corrección reforzada y actualiza la entrada canónica y las consultas de axiomas. Un build incremental con las cachés existentes comprobó la biblioteca de 310 objetivos, incluidos 299 módulos en la clausura de imports canónica. Las doce consultas de \path{ReviewAxioms} informaron únicamente \path{propext}, \path{Classical.choice} y \path{Quot.sound}. El paquete conserva tanto la reconstrucción limpia de base como la evidencia incremental vinculada a las fuentes, con sus instantáneas y hashes diferenciados.
+El desarrollo Lean 4.35.0 que acompaña al artículo compila los 310 objetivos locales de módulos con el ecosistema Mathlib fijado; 299 pertenecen a la clausura de imports canónica de \path{LatinonFormalization}. Las doce consultas de auditoría de axiomas en \path{ReviewAxioms} informan únicamente los axiomas fundacionales estándar \path{propext}, \path{Classical.choice} y \path{Quot.sound}. La verificación comprendió una reconstrucción completa seguida de una comprobación incremental con caché que incorpora el lema de corrección más fino. El repositorio conserva las instantáneas de fuentes, hashes y logs de verificación correspondientes; el companion especifica el alcance de cada comprobación.
 
 Las fuentes portátiles están en \path{preprints/LATINON/05_formalization/Latinon_Lean_v1.0.zip}. Se incluyen instrucciones de reproducción y verificadores ejecutables del paquete. La auditoría interna cubre la reconstrucción registrada, la correspondencia de enunciados, argumentos escritos seleccionados, la consistencia bilingüe y la integridad de artefactos. Su alcance es distinto de la revisión por pares de una revista y de una auditoría exhaustiva de prioridad. La proposición 2.3 da la identificación escrita con el modelo GHHS publicado; no es una declaración Lean adicional.
 

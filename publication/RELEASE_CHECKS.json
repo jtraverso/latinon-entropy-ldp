@@ -3,7 +3,7 @@
   "version": "1.0",
   "documents": 4,
   "release_audit": "publication/LATINON_RELEASE_AUDIT.json",
-  "release_audit_sha256": "35a3647920dc8c3ead6833a3d5ad4d70bef166a99b21ae6b7a5811da77640dcd",
+  "release_audit_sha256": "eee3ce789b0cd0f89ea448262c56c41c11224b314e9e239b120b8b76816e568c",
   "source_lean_freeze_updated_with_incremental_evidence": true,
   "visibility_is_an_operational_setting": true
 }

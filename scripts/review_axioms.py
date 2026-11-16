@@ -1,5 +1,7 @@
 """One read-only entry point to all twelve source-bound recorded axiom checks."""
-import json
+import json,sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 from verify_repository import P, check_evidence, read
 
 def main():
