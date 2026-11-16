@@ -12,6 +12,10 @@ material derive from the author's earlier CDR project. Their exact source cuts
 and compatibility changes are recorded inside `lean/evidence/` in the archive.
 The external Mathlib ecosystem is pinned but is not bundled as a copied library.
 
+The research note GHHSBRIDGE, preprint 1.0, uses the same license. Its Lean
+source archive (Apache 2.0) depends on the Latinon sources and pinned Mathlib.
+Its DOI 10.5281/zenodo.24293531 is reserved; the deposit is not published.
+
 AI tools assisted drafting, proof development, translation and validation.
 They are not authors or independent reviewers. The author is responsible for
 the mathematical claims. Internal audit results certify only their stated

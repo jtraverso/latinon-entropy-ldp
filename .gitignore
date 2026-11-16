@@ -7,3 +7,4 @@
 **/*.out
 tmp/
 lean/
+!preprints/GHHSBRIDGE/02_validation/lean/

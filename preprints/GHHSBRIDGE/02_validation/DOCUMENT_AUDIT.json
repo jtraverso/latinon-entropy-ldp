@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "problems": [],
+  "sources": {
+    "en": {
+      "path": "01_manuscript/ghhsbridge_en.md",
+      "sha256": "0fdbf5254a2634deb042a193c422fdee27b62448a0722e56f473acfe6af40425"
+    },
+    "es": {
+      "path": "01_manuscript/ghhsbridge_es.md",
+      "sha256": "e179d8b236a61ba9d5eb40b032692977182267ac160627941ada501b522020bf"
+    }
+  },
+  "parity": {
+    "sections": 11,
+    "section_numbers": 7,
+    "results": 8,
+    "proofs": 8,
+    "qed": 8,
+    "tags": 11,
+    "display": 12,
+    "code": 44,
+    "table_rows": 21,
+    "references": 4,
+    "citations": 4,
+    "code_blocks": 0
+  },
+  "numbered_results": [
+    "2.1",
+    "3.1",
+    "4.1",
+    "5.1",
+    "5.2",
+    "6.1",
+    "6.2",
+    "6.3"
+  ],
+  "equation_tags": [
+    "2.1",
+    "2.2",
+    "3.1",
+    "3.2",
+    "3.3",
+    "4.1",
+    "5.1",
+    "5.2",
+    "6.1",
+    "6.2",
+    "6.3"
+  ],
+  "identifiers_checked_against_sources": [
+    "Conjecture",
+    "Defs",
+    "Distance",
+    "Entropy",
+    "GHHSLatinon",
+    "GHHSLatinon.toLatinonMeasure",
+    "IsPermuton",
+    "OfMeasure",
+    "Patterns",
+    "ToMeasure",
+    "colMeasure",
+    "ghhsConjecture_12_4",
+    "ghhsConjecture_12_4_bot",
+    "ghhsConjecture_12_4_bot'",
+    "ghhsCount",
+    "ghhsCutDistance",
+    "ghhsCutDistance_congr_ae",
+    "ghhsCutDistance_eq",
+    "ghhsEntSup",
+    "ghhsEntSup_eq",
+    "ghhsEntropy",
+    "ghhsEntropy_eq",
+    "ghhsFiniteDensity",
+    "ghhsPatternDensity",
+    "ghhsPatternDensity_eq",
+    "ghhsRate",
+    "ghhsRate_eq",
+    "graphonCut",
+    "kernelCut",
+    "klDiv_compProd_right_eq_lintegral",
+    "ofLatinonMeasure",
+    "ofLatinonMeasure_toLatinonMeasure_kernel",
+    "orderGraphon",
+    "relabelKernel",
+    "rowMeasure",
+    "toLatinonMeasure_eq_of_ae",
+    "toLatinonMeasure_ofLatinonMeasure"
+  ],
+  "pdf": {
+    "en": {
+      "pdf": "01_manuscript/ghhsbridge_en.pdf",
+      "sha256": "330be7e4222aa01661a592ed34fb5279fe900c5b3c43b28aa2798bfc2a365a9d",
+      "pages": 7,
+      "identifiers_split_by_layout": [],
+      "links": [
+        "https://arxiv.org/abs/2010.07854",
+        "https://doi.org/10.1145/3372885.3373824",
+        "https://doi.org/10.19086/da.83253",
+        "https://doi.org/10.5281/zenodo.24293531",
+        "https://github.com/jtraverso/certo-math",
+        "https://github.com/jtraverso/latinon-entropy-ldp",
+        "https://orcid.org/0009-0003-6068-4096",
+        "mailto:jtraverso@gmail.com"
+      ],
+      "rendered_pages": 7,
+      "render_dpi": 110
+    },
+    "es": {
+      "pdf": "01_manuscript/ghhsbridge_es.pdf",
+      "sha256": "b2c539b67dd6273516df87c5b600e19f922fd64ea3f9533704ef96af28bc7028",
+      "pages": 7,
+      "identifiers_split_by_layout": [],
+      "links": [
+        "https://arxiv.org/abs/2010.07854",
+        "https://doi.org/10.1145/3372885.3373824",
+        "https://doi.org/10.19086/da.83253",
+        "https://doi.org/10.5281/zenodo.24293531",
+        "https://github.com/jtraverso/certo-math",
+        "https://github.com/jtraverso/latinon-entropy-ldp",
+        "https://orcid.org/0009-0003-6068-4096",
+        "mailto:jtraverso@gmail.com"
+      ],
+      "rendered_pages": 7,
+      "render_dpi": 110
+    }
+  }
+}

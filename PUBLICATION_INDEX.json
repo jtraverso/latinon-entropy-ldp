@@ -16,6 +16,19 @@
       "sequence": 1,
       "doi_status": "reserved_not_published",
       "alphaxiv": "https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations"
+    },
+    {
+      "title": "The kernel and measure representations of Latinons agree: a Lean formalization",
+      "title_es": "Las representaciones por núcleos y por medidas de los Latinons coinciden: una formalización en Lean",
+      "directory": "preprints/GHHSBRIDGE",
+      "version": "1.0",
+      "doi": "10.5281/zenodo.24293531",
+      "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/ghhsbridge-v1.0",
+      "id": "GHHSBRIDGE",
+      "sequence": 2,
+      "kind": "research_note",
+      "depends_on": ["LATINON"],
+      "doi_status": "reserved_not_published"
     }
   ],
   "series": {

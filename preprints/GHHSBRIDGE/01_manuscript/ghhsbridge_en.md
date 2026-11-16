@@ -1,0 +1,241 @@
+# The kernel and measure representations of Latinons agree: a Lean formalization
+
+Juan Pablo Traverso Gianini
+
+Preprint 1.0 — 16 November 2026.
+
+DOI: https://doi.org/10.5281/zenodo.24293531.
+
+Repository: https://github.com/jtraverso/latinon-entropy-ldp.
+
+## Abstract
+
+In [2], we established a counting theorem for Latin squares with prescribed pattern densities as a confirmation of Conjecture 12.4 of Garbe, Hancock, Hladký and Sharifzadeh [1]. However, whereas [1] formulates Latinons via Markov kernels, the Lean formalization in [2] works with measure representations on the unit cube, leaving the equivalence between the two frameworks proved only on paper. Here we formalize this equivalence in Lean—showing that both representations yield the same Latinons, cut distance, pattern densities and entropy—thereby completing the Lean proof of Conjecture 12.4 with the definitions of [1] on the ground space $[0,1]$ (with entropy taken as the negative of relative entropy).
+
+## 1. Introduction
+
+Garbe, Hancock, Hladký and Sharifzadeh [1] introduced Latinons, the limit objects of Latin squares, and conjectured that the entropy of a Latinon determines how many Latin squares lie close to it. Their Conjecture 12.4 makes this precise for squares with prescribed pattern densities. In [2] we proved a counting theorem of exactly this form [2, Theorem 2.2] and stated that it confirms the conjecture.
+
+Between that theorem and the conjecture there is a difference of language. In [1] a Latinon is a kernel: it assigns to each pair of a row and a column a probability distribution on the symbols. In [2] a Latinon is a measure on the unit cube whose two-dimensional marginals are uniform. The theorems of [2] are proved, and checked in Lean, for measures. That they say the same thing about kernels is the content of [2, Proposition 2.3], which was proved on paper but not in Lean. The formalization in [2] thus stops just short of the conjecture as originally stated.
+
+Here we bridge that gap: we show that kernel and measure Latinons are in canonical correspondence up to null sets (Section 2) and that this correspondence preserves the cut distance (Section 3), pattern densities (Section 4) and entropy (Section 5). Conjecture 12.4 is formulated in terms of these quantities alone, so it follows from [2, Theorem 2.2]; in Section 6 we state it with the definitions of [1]. Every result is proved in Lean, and Section 7 lists the corresponding declarations.
+
+Following [2], we adopt two conventions throughout. First, we fix the ground space $I=[0,1]$ equipped with Lebesgue measure $\lambda$; although [1] allows any separable atomless probability space, every such space is isomorphic to $(I,\lambda)$ modulo null sets [1, Section 2.3] (an isomorphism we take as background rather than formalizing). Second, we define entropy as the negative of relative entropy, reversing the sign of the integral $\int g\log g$ printed in [1, Section 12.2], which would otherwise predict more Latin squares near a non-uniform Latinon than exist in total.
+
+## 2. Kernels and measures
+
+A kernel becomes a measure by integration, and a measure becomes a kernel by conditioning on the row and the column. We show that these two operations turn Latinons of one kind into Latinons of the other, and that each undoes the other.
+
+A measure Latinon, as in [2], is a pair $(\nu,f)$ where $\nu$ is a probability measure on $(I\times I)\times I$ whose three two-coordinate marginals equal $\lambda^2$, and $f:I\to I$ preserves $\lambda$. The coordinates are row, column and symbol, and $f$ gives the order of rows and columns.
+
+A kernel Latinon, as in [1, Definition 3.5], is a pair $(K,f)$ where $K$ is a Markov kernel from $I\times I$ to $I$, $f:I\to I$ preserves $\lambda$, and the following row and column conditions hold. For a row $x$ let $\mu^1_x$ be the image of $\lambda\otimes K(x,\cdot)$ under $(y,z)\mapsto(f(y),z)$, and for a column $y$ let $\mu^2_y$ be the image of $\lambda\otimes K(\cdot,y)$ under $(x,z)\mapsto(f(x),z)$, so that
+
+$$
+\mu^1_x(S\times T)=\int_{f^{-1}(S)}K(x,y)(T)\,dy,\qquad
+\mu^2_y(S\times T)=\int_{f^{-1}(S)}K(x,y)(T)\,dx.\tag{2.1}
+$$
+
+The conditions are that $\mu^1_x$ is a permuton for almost every $x$ and $\mu^2_y$ is a permuton for almost every $y$; that is, both marginals of these measures equal $\lambda$.
+
+A kernel $K$ defines the measure
+
+$$
+\nu_K=\lambda^2\otimes K,\qquad
+\nu_K(S\times T\times U)=\int_{S\times T}K(x,y)(U)\,d\lambda^2(x,y),\tag{2.2}
+$$
+
+and a measure $\nu$ on the cube with row–column marginal $\lambda^2$ defines by disintegration a kernel $K_\nu$, the conditional distribution of the symbol given the row and the column, which satisfies $\lambda^2\otimes K_\nu=\nu$.
+
+**Theorem 2.1 (equivalence of the two descriptions).** Let $(K,f)$ be a kernel Latinon and $(\nu,f)$ a measure Latinon.
+
+(a) $(\nu_K,f)$ is a measure Latinon.
+
+(b) $(K_\nu,f)$ is a kernel Latinon.
+
+(c) Passing from $\nu$ to its kernel and back returns $\nu$.
+
+(d) Passing from $K$ to its measure and back returns a kernel that agrees with $K$ for $\lambda^2$-almost every $(x,y)$. Kernel Latinons with the same order map whose kernels agree $\lambda^2$-almost everywhere have the same measure.
+
+Measure Latinons thus correspond to kernel Latinons up to null sets, which is how Latinons are identified in [1].
+
+*Proof.* The row condition states that the kernel averages to $\lambda$ along almost every row, whereas uniformity of the row–symbol marginal expresses the integrated version of this identity.
+
+*(a)* The row–column marginal of $\nu_K$ is $\lambda^2$ because each $K(x,y)$ is a probability measure. By (2.1) with $S=I$, the second marginal of $\mu^1_x$ is $U\mapsto\int K(x,y)(U)\,dy$, and the row condition says that it equals $\lambda(U)$ for almost every $x$. Integrating over a set $S$ of rows and using (2.2) gives $\nu_K(S\times I\times U)=\lambda(S)\lambda(U)$. The column–symbol marginal is obtained in the same way.
+
+*(b)* The first marginal of $\mu^1_x$ is the image of $\lambda$ under $f$, which is $\lambda$. For the second, let $R(x)=\int K_\nu(x,y)\,dy$ be the average of the kernel along the row $x$. By (2.2) and the uniform row–symbol marginal of $\nu$,
+
+$$
+(\lambda\otimes R)(S\times U)=\nu(S\times I\times U)=\lambda(S)\lambda(U),
+$$
+
+so $\lambda\otimes R=\lambda\otimes\lambda$. A measure on $I^2$ determines its conditional distributions up to a null set, hence $R(x)=\lambda$ for almost every $x$. This is the row condition, and the column condition follows in the same way.
+
+*(c)* This is the identity $\lambda^2\otimes K_\nu=\nu$.
+
+*(d)* Both $K$ and $K_{\nu_K}$ are conditional distributions of $\nu_K$ given the row and the column, so they agree almost everywhere. Kernels that agree almost everywhere have the same integral (2.2). $\square$
+
+Whereas [2] deduced the quantifier swap in (b)—from "for every $U$, for almost every $x$" to "for almost every $x$, for every $U$"—by testing on rational-endpoint intervals, it is cleaner in Lean to bundle the row averages into the Markov kernel $R$ and appeal to the almost-everywhere uniqueness of conditional distributions.
+
+## 3. The cut distance
+
+Both [1] and [2] define the cut distance by taking the infimum, over all measure-preserving relabellings of the rows and columns, of the discrepancy between the order maps together with the box-wise discrepancy of the symbol distributions. The sole formal difference is that [1] expresses the symbol discrepancy via kernels while [2] expresses it via measures—two quantities that coincide by (2.2).
+
+For a bounded measurable $X:I^2\to\mathbb R$ let $\|X\|_\square=\sup_{S,T}|\int_{S\times T}X|$ over measurable $S,T\subseteq I$ [1, Section 2.4.1]. For an order map $f$ let $O^f(x,y)=\mathbf 1[f(x)<f(y)]$ [1, Definition 4.2]. For kernels $K,K'$ let
+
+$$
+\|K-K'\|_{\boxtimes}=\sup_{S,T,V}\left|\int_{S\times T}\bigl(K(x,y)(V)-K'(x,y)(V)\bigr)\,dx\,dy\right|,\tag{3.1}
+$$
+
+where $V$ ranges over the intervals of $I$ [1, Definition 4.1]. A relabelling is a pair of measurable bijections $\phi,\psi:I\to I$ that preserve $\lambda$ and have measurable inverses; it acts by $K^{\phi,\psi}(x,y)=K(\phi(x),\psi(y))$. The cut distance of [1, Definition 4.3] between $L_1=(K,f)$ and $L_2=(K',g)$ is
+
+$$
+\delta_{\boxtimes}(L_1,L_2)=\inf_{\phi,\psi}\Bigl(\|O^f-O^{g\circ\phi}\|_\square+\|O^f-O^{g\circ\psi}\|_\square+\|K-K'^{\phi,\psi}\|_{\boxtimes}\Bigr).\tag{3.2}
+$$
+
+Let $\delta$ be the distance (2.1) of [2] between measure Latinons.
+
+**Theorem 3.1 (distance).** For kernel Latinons $L_1=(K,f)$ and $L_2=(K',g)$, $\delta_{\boxtimes}(L_1,L_2)=\delta\bigl((\nu_K,f),(\nu_{K'},g)\bigr)$. In particular $\delta_{\boxtimes}$ does not change when a kernel is modified on a $\lambda^2$-null set.
+
+*Proof.* Fix a relabelling $(\phi,\psi)$. The integral of $O^f$ over $S\times T$ is $\lambda^2((S\times T)\cap\{f(x)<f(y)\})$, which is how [2] writes the order terms. For the symbol term, (2.2) gives $\int_{S\times T}K(x,y)(V)=\nu_K(S\times T\times V)$, and since $\phi\times\psi$ preserves $\lambda^2$, a change of variables gives
+
+$$
+\int_{S\times T}K'(\phi(x),\psi(y))(V)\,dx\,dy=\nu_{K'}\bigl(\phi(S)\times\psi(T)\times V\bigr).\tag{3.3}
+$$
+
+The right-hand side is the relabelled measure of [2] evaluated on $S\times T\times V$. So the three terms agree for every relabelling, and the infima agree. The last assertion follows from Theorem 2.1(d). $\square$
+
+## 4. Pattern densities
+
+The density of a pattern is the probability of seeing it when $k$ rows and $\ell$ columns are chosen at random and each of the $k\ell$ cells receives a symbol drawn from the kernel. In [1] symbols are drawn from the prescribed kernel $K$, whereas in [2] they are drawn from the disintegrated kernel $K_\nu$; by Theorem 2.1, the two agree $\lambda^2$-almost everywhere, which suffices because each cell $(x_i,y_j)$ of a random configuration is uniformly distributed on $I^2$.
+
+A pattern $A\in\mathcal R(k,\ell)$ is a $k\times\ell$ matrix of distinct ranks, and $\mathcal R_A([0,1])$ is the set of real matrices with the same relative order [1, Section 3]. Write $I^k_{<f}$ for the $k$-tuples $x$ with $f(x_1)<\dots<f(x_k)$. The density of [1, Definition 3.7] is
+
+$$
+t(A,(K,f))=k!\,\ell!\int_{x\in I^k_{<f}}\int_{y\in I^\ell_{<f}}\Bigl(\bigotimes_{(i,j)}K(x_i,y_j)\Bigr)\bigl(\mathcal R_A([0,1])\bigr)\,dy\,dx,\tag{4.1}
+$$
+
+and the density $d_A(\nu,f)$ of [2] is the same expression with $K_\nu$ in place of $K$.
+
+**Theorem 4.1 (pattern densities).** For a kernel Latinon $(K,f)$ and every pattern $A$, $t(A,(K,f))=d_A(\nu_K,f)$.
+
+*Proof.* By Theorem 2.1(d), $K$ and $K_{\nu_K}$ agree outside a $\lambda^2$-null set $N$. For each cell $(i,j)$, the point $(x_i,y_j)$ of a random configuration $(x,y)$ is distributed according to $\lambda^2$, so it lies in $N$ with probability zero. There are finitely many cells, so for almost every configuration all the factors in (4.1) are the same for the two kernels, and the integrals coincide. $\square$
+
+## 5. Entropy
+
+In [1] the entropy of a Latinon is computed cell by cell: one takes the entropy of the symbol distribution $K(x,y)$ and averages over rows and columns. In [2] it is the entropy of the measure $\nu$ on the cube. The two agree by the chain rule for relative entropy.
+
+Let $\operatorname{KL}$ denote relative entropy, with values in $[0,\infty]$. If a probability measure $\mu$ on $I$ has a density $g$ with respect to $\lambda$, then $\operatorname{KL}(\mu\Vert\lambda)=\int g\log g\,d\lambda$, which may be infinite; if it has no density, $\operatorname{KL}(\mu\Vert\lambda)=\infty$. For a kernel Latinon $L=(K,f)$ put
+
+$$
+\mathcal I_{\boxtimes}(L)=\int_{I^2}\operatorname{KL}\bigl(K(x,y)\Vert\lambda\bigr)\,d\lambda^2(x,y)\in[0,\infty],\qquad
+\operatorname{Ent}_{\boxtimes}(L)=-\mathcal I_{\boxtimes}(L).\tag{5.1}
+$$
+
+When the kernel has densities $g(x,y,\cdot)$, the first quantity is the integral $\int g\log g$ over the cube that appears in [1, Section 12.2]. The entropy of a measure Latinon in [2] is $\operatorname{Ent}(\nu,f)=-\operatorname{KL}(\nu\Vert\lambda^3)$.
+
+**Lemma 5.1 (conditional chain rule).** Let $\mu$ be a finite measure on a measurable space $X$, and let $\kappa,\eta$ be Markov kernels from $X$ to a measurable space $Y$. Suppose that $X$ is countable or that $Y$ is countably generated. Then
+
+$$
+\operatorname{KL}(\mu\otimes\kappa\Vert\mu\otimes\eta)=\int_X\operatorname{KL}(\kappa(a)\Vert\eta(a))\,d\mu(a)\tag{5.2}
+$$
+
+in $[0,\infty]$, the integral being a lower Lebesgue integral.
+
+*Proof.* Suppose first that $\kappa(a)$ has a density with respect to $\eta(a)$ for $\mu$-almost every $a$. Under the hypothesis on the spaces these densities can be chosen as one jointly measurable function $\rho(a,b)$, and $\rho$ is then a density of $\mu\otimes\kappa$ with respect to $\mu\otimes\eta$. Relative entropy is the integral of $\varphi(\rho)$ against the reference measure, where $\varphi(t)=t\log t-t+1\ge0$, and (5.2) is Tonelli's theorem for $\varphi(\rho)$.
+
+Otherwise the set of points $a$ at which $\kappa(a)$ has no density with respect to $\eta(a)$ is measurable and has positive $\mu$-measure. The integrand in (5.2) is $\infty$ on this set, so the right-hand side is $\infty$. The left-hand side is $\infty$ as well, because $\mu\otimes\kappa$ then has no density with respect to $\mu\otimes\eta$. $\square$
+
+Although Lemma 5.1 is standard, the version of Mathlib [3] used here provides only the unconditional chain rule and lists the conditional form as still to be done; we therefore include a proof. Formulating (5.2) via lower Lebesgue integrals of nonnegative functions avoids any auxiliary integrability hypotheses.
+
+**Theorem 5.2 (entropy).** For a kernel Latinon $L=(K,f)$, $\mathcal I_{\boxtimes}(L)=\operatorname{KL}(\nu_K\Vert\lambda^3)$. Hence $\operatorname{Ent}_{\boxtimes}(L)=\operatorname{Ent}(\nu_K,f)$, including when both are $-\infty$.
+
+*Proof.* Apply Lemma 5.1 with $\mu=\lambda^2$, $\kappa=K$ and $\eta$ the constant kernel with value $\lambda$, for which $\mu\otimes\kappa=\nu_K$ and $\mu\otimes\eta=\lambda^3$. $\square$
+
+## 6. Conjecture 12.4
+
+Conjecture 12.4 of [1] reads as follows. Let $A_i$ be finitely many patterns and $a_i\in[0,1]$, and let $\alpha$ be the supremum of the entropy over all Latinons $L$ with $t(A_i,L)=a_i$ for each $i$. Then for each $\varepsilon>0$ there exist $\delta>0$ and $n_0$ such that, for each $n>n_0$, the number $N$ of Latin squares of order $n$ whose densities satisfy $t(A_i,\cdot)=a_i\pm\delta$ for each $i$ satisfies
+
+$$
+\frac1{n^2}\log\frac{N}{(n/e^2)^{n^2}}=\alpha\pm\varepsilon.\tag{6.1}
+$$
+
+By Sections 2–5, every quantity in this statement agrees under the kernel-to-measure correspondence, translating Conjecture 12.4 directly into [2, Theorem 2.2]. Because [1] does not specify how to interpret (6.1) when $\alpha=-\infty$ (when no Latinon has the prescribed densities, or all of them have entropy $-\infty$), we read the left-hand side as diverging to $-\infty$ and state this degenerate regime separately in Theorem 6.3.
+
+Let $(A_j)_{j\in J}$ be a finite family of patterns and $a\in\mathbb R^J$. Let $\alpha$ be the supremum of $\operatorname{Ent}_{\boxtimes}(L)$ over the kernel Latinons $L$ with $t(A_j,L)=a_j$ for every $j$, which is $-\infty$ if there are none. Let $N_n(\delta)$ be the number of Latin squares $Q$ of order $n$ with $|t(A_j,Q)-a_j|\le\delta$ for every $j$, where $t(A_j,Q)$ is the density of [1, Definition 3.3], which is also the one used in [2]. Finally let $\mathcal J(a)$ be the infimum of $\operatorname{KL}(\nu\Vert\lambda^3)$ over the measure Latinons with pattern densities $a$, as in [2, (2.6)].
+
+**Lemma 6.1.** $\alpha=-\mathcal J(a)$.
+
+*Proof.* By Theorems 4.1 and 5.2 a kernel Latinon with densities $a$ gives a measure Latinon with densities $a$ and the same entropy, so $\alpha\le-\mathcal J(a)$. Conversely, if some measure Latinon has densities $a$, the infimum $\mathcal J(a)$ is attained [2, Section 2], and by Theorem 2.1 the minimizer comes from a kernel Latinon with the same densities and entropy $-\mathcal J(a)$. If none has densities $a$, both sides are $-\infty$. $\square$
+
+**Theorem 6.2 (Conjecture 12.4, finite case).** Suppose $\alpha>-\infty$. For every $\varepsilon>0$ there are $\delta>0$ and $n_0$ such that, for every $n\ge n_0$, $N_n(\delta)>0$ and
+
+$$
+\left|\frac1{n^2}\log\frac{N_n(\delta)}{(n/e^2)^{n^2}}-\alpha\right|\le\varepsilon.\tag{6.2}
+$$
+
+*Proof.* By Lemma 6.1, $\mathcal J(a)$ is finite and equals $-\alpha$. Theorem 2.2 of [2] gives $\delta$ and $n_0$ with $N_n(\delta)>0$ and $|n^{-2}\log N_n(\delta)-(\log n-2)+\mathcal J(a)|\le\varepsilon$ for $n\ge n_0$. This is (6.2), because $n^{-2}\log\bigl(N/(n/e^2)^{n^2}\bigr)=n^{-2}\log N-(\log n-2)$. $\square$
+
+**Theorem 6.3 (Conjecture 12.4, case $\alpha=-\infty$).** Suppose $\alpha=-\infty$. For every $t\in\mathbb R$ there are $\delta>0$ and $n_0$ such that, for every $n\ge n_0$,
+
+$$
+N_n(\delta)\le\exp\bigl\{n^2(\log n-2-t)\bigr\}.\tag{6.3}
+$$
+
+In other words, for $n\ge n_0$ either $N_n(\delta)=0$ or the left-hand side of (6.1) is at most $-t$.
+
+*Proof.* By Lemma 6.1, $\mathcal J(a)=\infty$. If no measure Latinon has densities $a$, Theorem 2.2 of [2] shows that $N_n(\delta)=0$ for a suitable $\delta$ and all large $n$. Otherwise its upper bound for infinite rate gives (6.3). $\square$
+
+## 7. The Lean development
+
+All results in this note are formalized in Lean 4.35.0 across seven modules rooted at `GHHSBridge`, extending the formalization of [2] (`Latinon_Lean_v1.0.zip`) against a pinned commit of Mathlib [3] (recorded in the repository). The development is completely free of `sorry` and custom axioms, with all main declarations verified against only the standard foundational axioms `propext`, `Classical.choice` and `Quot.sound`. The sources, the build log and the axiom report are in `preprints/GHHSBRIDGE` in the repository listed on the title page.
+
+The numbered results correspond to the following declarations, all in the namespace `GHHSBridge`.
+
+| Result | Lean declaration | Module |
+|------|------------------|------|
+| Theorem 2.1(a) | `GHHSLatinon.toLatinonMeasure` | `ToMeasure` |
+| Theorem 2.1(b) | `ofLatinonMeasure` | `OfMeasure` |
+| Theorem 2.1(c) | `toLatinonMeasure_ofLatinonMeasure` | `OfMeasure` |
+| Theorem 2.1(d) | `ofLatinonMeasure_toLatinonMeasure_kernel`, `toLatinonMeasure_eq_of_ae` | `OfMeasure`, `Distance` |
+| Theorem 3.1 | `ghhsCutDistance_eq`, `ghhsCutDistance_congr_ae` | `Distance` |
+| Theorem 4.1 | `ghhsPatternDensity_eq` | `Patterns` |
+| Lemma 5.1 | `klDiv_compProd_right_eq_lintegral` | `Entropy` |
+| Theorem 5.2 | `ghhsRate_eq`, `ghhsEntropy_eq` | `Entropy` |
+| Lemma 6.1 | `ghhsEntSup_eq` | `Conjecture` |
+| Theorem 6.2 | `ghhsConjecture_12_4` | `Conjecture` |
+| Theorem 6.3 | `ghhsConjecture_12_4_bot`, `ghhsConjecture_12_4_bot'` | `Conjecture` |
+
+The definitions of [1] are written in Lean as follows.
+
+| Definition of [1] | Lean definition | Module |
+|---------------|------------------|------|
+| Definition 3.5 (Latinon) | `GHHSLatinon`, `rowMeasure`, `colMeasure`, `IsPermuton` | `Defs` |
+| Section 2.4.1 (cut norm, relabelling) | `graphonCut`, `relabelKernel` | `Distance` |
+| Definitions 4.1, 4.2 | `kernelCut`, `orderGraphon` | `Distance` |
+| Definition 4.3 (cut distance) | `ghhsCutDistance` | `Distance` |
+| Definition 3.7 (densities) | `ghhsPatternDensity` | `Patterns` |
+| Section 12.2 (entropy) | `ghhsRate`, `ghhsEntropy` | `Entropy` |
+| Definition 3.3 (finite densities) | `ghhsFiniteDensity` | `Conjecture` |
+| Conjecture 12.4 (supremum, count) | `ghhsEntSup`, `ghhsCount` | `Conjecture` |
+
+## Acknowledgments
+
+The author is deeply grateful to his wife María Paz and his children Lucas, Juan Cristóbal, Francisca, Raimundo and Benjamín for their love, patience and support.
+
+## Use of artificial intelligence and computational tools
+
+Claude, by Anthropic, and ChatGPT/Codex, by OpenAI, were used to explore and check arguments and to prepare the manuscript.
+
+Certo [4] was used in the work of [2] on which this note builds, where it produced an exact rational certificate for a constant of the transportation correction. No computation is a premise of the results of this note, which rest on the written proofs and on the Lean development.
+
+The author remains responsible for the arguments, citations, code and presentation. No AI system is listed as an author.
+
+## References
+
+[1] F. Garbe, R. Hancock, J. Hladký and M. Sharifzadeh. *Limits of Latin squares*. Discrete Analysis 2023:8, 66 pp. [doi:10.19086/da.83253](https://doi.org/10.19086/da.83253). [arXiv:2010.07854](https://arxiv.org/abs/2010.07854).
+
+[2] J. P. Traverso Gianini. *Entropy and large deviations for Latin squares*. Preprint 1.0, 16 November 2026. <https://github.com/jtraverso/latinon-entropy-ldp>.
+
+[3] The mathlib Community. *The Lean mathematical library*. Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020), 367–381. [doi:10.1145/3372885.3373824](https://doi.org/10.1145/3372885.3373824).
+
+[4] J. P. Traverso Gianini. Certo. Software. <https://github.com/jtraverso/certo-math>.

@@ -1,0 +1,160 @@
+{
+  "paper_id": "GHHSBRIDGE",
+  "edition": "1.0",
+  "date": "2026-11-16",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_archive": {
+    "path": "05_formalization/GHHSBridge_Lean_v1.0.zip",
+    "sha256": "0d57b90aaacc593d51742c2ebeb17dccbcf6152c9711a36bfa04b9d2b53ab025",
+    "files": 15
+  },
+  "modules": [
+    "Conjecture",
+    "Defs",
+    "Distance",
+    "Entropy",
+    "OfMeasure",
+    "Patterns",
+    "ToMeasure"
+  ],
+  "module_lines_total": 1046,
+  "root": {
+    "file": "GHHSBridge.lean",
+    "imports": [
+      "GHHSBridge.Defs",
+      "GHHSBridge.ToMeasure",
+      "GHHSBridge.OfMeasure",
+      "GHHSBridge.Distance",
+      "GHHSBridge.Patterns",
+      "GHHSBridge.Entropy",
+      "GHHSBridge.Conjecture"
+    ]
+  },
+  "static_checks": {
+    "GHHSBridge/Conjecture.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 177
+    },
+    "GHHSBridge/Defs.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 87
+    },
+    "GHHSBridge/Distance.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 207
+    },
+    "GHHSBridge/Entropy.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 136
+    },
+    "GHHSBridge/OfMeasure.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 212
+    },
+    "GHHSBridge/Patterns.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 109
+    },
+    "GHHSBridge/ToMeasure.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 118
+    },
+    "GHHSBridge.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 7
+    },
+    "ReviewAxioms.lean": {
+      "sorry": 0,
+      "axiom_declarations": 0,
+      "native_decide": 0,
+      "implemented_by": 0,
+      "unsafe": 0,
+      "lines": 20
+    }
+  },
+  "dependency": {
+    "archive": "Latinon_Lean_v1.0.zip",
+    "sha256": "567ac3561332351313d176018f5d41e475f88bfbd031cf05dad6b448635cfe81",
+    "files_compared": 367,
+    "identical": 366,
+    "differing": [
+      "lean/source_manifest.json"
+    ],
+    "note": "The differing file is a generated manifest. The tree used for the build was not rebuilt in this run."
+  },
+  "build": {
+    "command": "lake build GHHSBridge",
+    "log": "02_validation/lean/build_GHHSBridge.log",
+    "log_sha256": "cc905a3e077fd2101ac84650949364b6faf1468c3ef6f72ba9770af238a7326e",
+    "jobs": 9352,
+    "targets_compiled_in_this_run": [
+      "GHHSBridge.Defs",
+      "GHHSBridge.ToMeasure",
+      "GHHSBridge.OfMeasure",
+      "GHHSBridge.Distance",
+      "GHHSBridge.Patterns",
+      "GHHSBridge.Entropy",
+      "GHHSBridge.Conjecture",
+      "GHHSBridge"
+    ],
+    "dependency_targets_compiled_in_this_run": [],
+    "note": "All other jobs were replayed from existing compiled objects of the Latinon sources and Mathlib."
+  },
+  "axioms": {
+    "command": "lake env lean ReviewAxioms.lean",
+    "log": "02_validation/lean/review_axioms.log",
+    "log_sha256": "c51ded1fb294bc26d265a9c07ccdefe43464e161c8c3fe5fc9f3fec22a9c9177",
+    "queries": [
+      "GHHSBridge.GHHSLatinon.toLatinonMeasure",
+      "GHHSBridge.ofLatinonMeasure",
+      "GHHSBridge.toLatinonMeasure_ofLatinonMeasure",
+      "GHHSBridge.ofLatinonMeasure_toLatinonMeasure_kernel",
+      "GHHSBridge.ghhsCutDistance_eq",
+      "GHHSBridge.ghhsPatternDensity_eq",
+      "GHHSBridge.klDiv_compProd_right_eq_lintegral",
+      "GHHSBridge.ghhsEntropy_eq",
+      "GHHSBridge.ghhsEntSup_eq",
+      "GHHSBridge.ghhsConjecture_12_4",
+      "GHHSBridge.ghhsConjecture_12_4_bot",
+      "GHHSBridge.ghhsConjecture_12_4_bot'"
+    ],
+    "axioms_reported": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  }
+}
