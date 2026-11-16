@@ -64,6 +64,8 @@ the two descriptions give the same Latinons, cut distance, pattern densities and
 entropy, and so completes the Lean proof of their Conjecture 12.4 with their
 definitions on the ground space [0,1] (entropy taken as minus relative entropy).
 
+Read the research note on [alphaXiv](https://www.alphaxiv.org/abs/2611.latinons-kernel-measure-lean-formalization).
+
 | Document | English | Español |
 | --- | --- | --- |
 | Research note | [PDF](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.pdf) · [Markdown](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.md) · [TeX](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_en.tex) | [PDF](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.pdf) · [Markdown](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.md) · [TeX](preprints/GHHSBRIDGE/01_manuscript/ghhsbridge_es.tex) |
