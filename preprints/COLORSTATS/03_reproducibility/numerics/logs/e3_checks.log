@@ -1,0 +1,13 @@
+(1) triangle lattice of G(m,p): expect rank(span)=|E| and torsion (Z/2)^(m-1) + Z/3
+   m=8 |E|=23 rank=23 torsion=[2, 2, 2, 2, 2, 2, 6]
+   m=9 |E|=29 rank=29 torsion=[2, 2, 2, 2, 2, 2, 2, 6]
+   m=10 |E|=30 rank=29 torsion=[2, 2, 2, 2, 2, 2, 2, 6]
+(2) exact seed LP on G(m,p), all triangles: max min-weight relative to 1/(p^2 m)
+   m=20 p=0.70: min/base=0.681
+   m=30 p=0.70: min/base=0.700
+   m=40 p=0.60: min/base=0.655
+(3) two-step K4 averaging: ||I - A Phi_tilde||_inf on G(m,p) (needs < 1)
+   m=12 p=0.8: ||E||_inf=0.372, ||Phi_tilde||*m=14.59
+   m=16 p=0.8: ||E||_inf=0.636, ||Phi_tilde||*m=18.23
+   m=20 p=0.8: ||E||_inf=0.411, ||Phi_tilde||*m=15.32
+   m=24 p=0.8: ||E||_inf=0.503, ||Phi_tilde||*m=18.06

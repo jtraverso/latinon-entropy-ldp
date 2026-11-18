@@ -1,0 +1,25 @@
+note: Running TeX ...
+note: Rerunning TeX because "color_stats_es.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `color_stats_es.log` (33.623046875 KiB)
+note: Writing `color_stats_es.pdf` (387.912109375 KiB)
+note: Skipped writing 1 intermediate files (use --keep-intermediates to keep them)
+
+warning: color_stats_es.tex:263: Overfull \hbox (1.57854pt too wide) in paragraph at lines 263--263
+warning: color_stats_es.tex:764: Underfull \hbox (badness 3503) in paragraph at lines 763--764
+warning: color_stats_es.tex:1191: Underfull \hbox (badness 10000) in paragraph at lines 1190--1191
+warning: color_stats_es.tex:1396: Underfull \hbox (badness 4229) in paragraph at lines 1395--1396
+warning: color_stats_es.tex:1644: Underfull \hbox (badness 5359) in paragraph at lines 1642--1644
+warning: color_stats_es.tex:2134: Underfull \hbox (badness 1215) in paragraph at lines 2133--2134
+warning: color_stats_es.tex:2142: Underfull \hbox (badness 3780) in paragraph at lines 2141--2142
+warning: color_stats_es.tex:2166: Underfull \hbox (badness 1454) in paragraph at lines 2165--2166
+warning: color_stats_es.tex:263: Overfull \hbox (1.57854pt too wide) in paragraph at lines 263--263
+warning: color_stats_es.tex:764: Underfull \hbox (badness 3503) in paragraph at lines 763--764
+warning: color_stats_es.tex:1191: Underfull \hbox (badness 10000) in paragraph at lines 1190--1191
+warning: color_stats_es.tex:1396: Underfull \hbox (badness 4229) in paragraph at lines 1395--1396
+warning: color_stats_es.tex:1644: Underfull \hbox (badness 5359) in paragraph at lines 1642--1644
+warning: color_stats_es.tex:2134: Underfull \hbox (badness 1215) in paragraph at lines 2133--2134
+warning: color_stats_es.tex:2142: Underfull \hbox (badness 3780) in paragraph at lines 2141--2142
+warning: color_stats_es.tex:2166: Underfull \hbox (badness 1454) in paragraph at lines 2165--2166
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+warning: Object @figure.1 already defined.

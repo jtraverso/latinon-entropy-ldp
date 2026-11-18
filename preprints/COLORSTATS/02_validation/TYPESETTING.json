@@ -1,0 +1,56 @@
+{
+  "status": "PASS_COMPILATION",
+  "run": "20261118T003931Z",
+  "documents": [
+    {
+      "language": "en",
+      "source": "01_manuscript/color_stats_en.md",
+      "source_sha256": "b5f8ab23dcba2098011b54f7c5d310e4a1905ef1572a6d04c95929a3c7b86aff",
+      "tex": "01_manuscript/color_stats_en.tex",
+      "tex_sha256": "6b5d55410d0f53e532958bc775a507c60cb0cd2670d5995fae8d289cc6d846cf",
+      "pdf": "01_manuscript/color_stats_en.pdf",
+      "pdf_sha256": "73591fa939570ae1f3433638f9ffea56567234dea8180cfaf54a366094e5ecc1",
+      "passes": [
+        {
+          "path": "02_validation/typesetting/color_stats_en_20261118T003804Z_pass1.log",
+          "sha256": "5fef9cdf04c111853c629ec2ab602bcfaad0a0af1701f8cabb97a0238b646dbc"
+        },
+        {
+          "path": "02_validation/typesetting/color_stats_en_20261118T003804Z_pass2.log",
+          "sha256": "5fef9cdf04c111853c629ec2ab602bcfaad0a0af1701f8cabb97a0238b646dbc"
+        }
+      ],
+      "final_log": "02_validation/typesetting/color_stats_en_20261118T003804Z.log",
+      "final_log_sha256": "09b9dd781bade23dab2c20f9adcfb2eac1371738c3b0dbe9b342c85840f3e401",
+      "overfull_boxes": 1,
+      "undefined_references": 0,
+      "font_warnings": 0,
+      "missing_characters": 0
+    },
+    {
+      "language": "es",
+      "source": "01_manuscript/color_stats_es.md",
+      "source_sha256": "cde8b7a51d6cbbeabfb9eba8aa1898d7e17183a8154e39a9d8768f22f388e6f3",
+      "tex": "01_manuscript/color_stats_es.tex",
+      "tex_sha256": "ba6901cfc5d666173180f17479af2407a8b48721a8753c5f532f6d46a0314f2b",
+      "pdf": "01_manuscript/color_stats_es.pdf",
+      "pdf_sha256": "1015f520062edc5a72138a2a59a2a8c55508eb3df1ae8998c6ae54751236471c",
+      "passes": [
+        {
+          "path": "02_validation/typesetting/color_stats_es_20261118T003931Z_pass1.log",
+          "sha256": "43ab5a354f0487c1e9e37d711d2eb98eae7c0f9c203ce6742ac4d664fdddf03f"
+        },
+        {
+          "path": "02_validation/typesetting/color_stats_es_20261118T003931Z_pass2.log",
+          "sha256": "43ab5a354f0487c1e9e37d711d2eb98eae7c0f9c203ce6742ac4d664fdddf03f"
+        }
+      ],
+      "final_log": "02_validation/typesetting/color_stats_es_20261118T003931Z.log",
+      "final_log_sha256": "e79e9e1bbbaaa74cde100032c78b84d762adbd43edbc66c599901158940c5cb4",
+      "overfull_boxes": 1,
+      "undefined_references": 0,
+      "font_warnings": 0,
+      "missing_characters": 0
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Test A: K[U] minus sparse D, balance zero
+  m=24 k=3 |D|=33 maxdeg=4 tri=922 edges=243: min=0.0667 max=0.1429 base=0.0714 lo/base=0.933 hi/base=2.000
+  m=36 k=3 |D|=54 maxdeg=4 tri=3627 edges=576: min=0.0435 max=0.0909 base=0.0455 lo/base=0.957 hi/base=2.000
+  m=48 k=3 |D|=78 maxdeg=4 tri=9276 edges=1050: min=0.0312 max=0.0667 base=0.0333 lo/base=0.938 hi/base=2.000
+  m=60 k=3 |D|=105 maxdeg=4 tri=18957 edges=1665: min=0.0263 max=0.0526 base=0.0263 lo/base=1.000 hi/base=2.000
+Test B: random density p, #cross = 2 #internal
+  n=42 p=0.7: INFEASIBLE (tri=2253, edges=573)
+  n=60 p=0.7: INFEASIBLE (tri=7061, edges=1197)
+  n=60 p=0.5: INFEASIBLE (tri=2543, edges=855)
+  n=84 p=0.5: INFEASIBLE (tri=7310, edges=1701)

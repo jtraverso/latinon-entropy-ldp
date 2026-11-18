@@ -1,0 +1,21 @@
+{
+ "status": "PASS",
+ "checks": {
+  "display_formulas": true,
+  "inline_formulas_total": true,
+  "paragraph_blocks": true,
+  "inline_formulas_per_paragraph": true,
+  "citations": true,
+  "headings": true,
+  "statements": true,
+  "tables_figures": true,
+  "references_identical": true
+ },
+ "counts": {
+  "display_formulas": 94,
+  "inline_formulas": 3467,
+  "statements": 54
+ },
+ "en_sha256": "b5f8ab23dcba2098011b54f7c5d310e4a1905ef1572a6d04c95929a3c7b86aff",
+ "es_sha256": "cde8b7a51d6cbbeabfb9eba8aa1898d7e17183a8154e39a9d8768f22f388e6f3"
+}

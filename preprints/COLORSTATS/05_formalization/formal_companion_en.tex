@@ -1,0 +1,303 @@
+% Adapted from the author's public Erdos Paper IV v1.23 series_template.tex.
+% Layout provenance is recorded in 02_validation; the Markdown is semantic authority.
+\documentclass[english,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{Consolas}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb}
+\providecommand{\mathscr}{\mathcal}
+\usepackage[english]{babel}
+\usepackage{microtype,parskip}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor,xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{7\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{6\baselineskip}}{}{}
+\urlstyle{same}
+
+\usepackage{graphicx}
+\providecommand{\pandocbounded}[1]{#1}
+
+\usepackage{float}
+
+\clubpenalty=10000\widowpenalty=10000\sloppy
+\usepackage{newunicodechar}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∌}{\ensuremath{\not\ni}}
+\newunicodechar{∣}{\ensuremath{\mid}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⊠}{\ensuremath{\boxtimes}}
+\newunicodechar{⌈}{\ensuremath{\lceil}}
+\newunicodechar{⌉}{\ensuremath{\rceil}}
+\newunicodechar{𝒯}{\ensuremath{\mathcal{T}}}
+\newunicodechar{⇐}{\ensuremath{\Leftarrow}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{′}{\ensuremath{^{\prime}}}
+\hypersetup{pdftitle={Formal companion: counting Steiner triple systems and Latin squares with prescribed color statistics},pdfauthor={Juan Pablo Traverso Gianini},pdflang={en},colorlinks=true,linkcolor=blue,urlcolor=blue}
+\title{Formal companion: counting Steiner triple systems and Latin squares with prescribed color statistics}
+\author{Juan Pablo Traverso Gianini\\\small Independent researcher, Santiago, Chile\\\small \href{https://orcid.org/0009-0003-6068-4096}{ORCID: 0009-0003-6068-4096}}
+\date{}\begin{document}\raggedbottom\maketitle
+\begin{center}
+\textbf{Preprint 1.0 --- 17 November 2026.}\\
+DOI: \url{https://doi.org/10.5281/zenodo.24308221}.\\
+Repository: \url{https://github.com/jtraverso/latinon-entropy-ldp}.
+\end{center}
+
+\subsection{1. Scope}\label{scope}
+
+This companion records which statements of the manuscript have Lean counterparts, what each Lean declaration proves, and where its form differs from the written statement. It is a guide to the delivered source \path{ColorStats_Lean_v1.0.zip} and its logs, not a substitute for the written proofs. Statement numbers are those of the current manuscript.
+
+The formalization covers the upper bounds of the main theorems and the finite algebra of Sections 5.8--5.10:
+
+\begin{itemize}
+\tightlist
+\item
+  the upper bound (1.1) of Theorem 1.1, with explicit constant;
+\item
+  Proposition 1.3, with an explicit error;
+\item
+  the typed Linial--Luria bound of Section 4.2 for all block types, which gives the upper halves of Theorems 1.2 and 1.5, and its analogues for 1-factorizations (upper half of Theorem 1.7) and for typical graphs (upper half of Theorem 1.9(a));
+\item
+  Lemmas 5.12, 5.13, 5.14, 5.16, 5.17, 5.18, 5.19 and 5.20;
+\item
+  three conditional implications between main results (Section 6 below).
+\end{itemize}
+
+It does not cover the lower bounds. In particular the following are \textbf{not} formalized: the lower half (1.2) of Theorem 1.1; the lower bounds of Theorems 1.2, 1.5, 1.7 and 1.9(a); Theorem 1.9(b); Theorem 1.10; Corollaries 1.4, 1.6 and 1.8; Corollary 1.11 except as a consequence of Theorem 1.10. None of the machinery of Sections 5.1--5.7 and 6 (random coloring, the matching theorem of Glock, Joos, Kim, Kühn and Lichev, cleanup, cover-down, completion with T and T⁺, exchanges, bookkeeping) is formalized here, and neither are Lemmas 2.1 (except as an internal step, see Section 3), 3.1, 4.1, 4.2, 5.1--5.11, 5.8′, 5.21, Remarks 4.3, 5.15, 5.22, or the lemmas of Section 6. For those results the formalization contains at most a Lean statement (Section 7).
+
+Every proved declaration listed in Section 3 was checked with \texttt{\#print\ axioms}; all reported axiom sets are contained in \path{propext}, \path{Classical.choice} and \path{Quot.sound} (Section 8). This says that the listed declarations are proved in Lean from those axioms; it says nothing about results that are only stated.
+
+\subsection{2. Conventions and notation}\label{conventions-and-notation}
+
+\textbf{Names.} Lean identifiers keep the British spelling of the project (\path{ColourStats}, \path{colour_first_Phi}, \path{colour_load}); the paper writes ``color''. In Lean, \path{Phi} denotes both the rate and the right inverses:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lean
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+rate \texttt{Φ(t)} (all types) & \texttt{ColourStats.Phi\ lab\ t} (\path{Challenge.lean}) \\
+rate \texttt{Φ(t)} (bicolored, Prop. 1.3) & \texttt{ColourStats.Prop13.Phi\ c\ t} \\
+rate of Theorem 1.7 & \texttt{ColourStats.Statements.Phi1F\ lab\ col\ t} \\
+rate \texttt{Φ\_G(t)} & \texttt{ColourStats.Statements.PhiG\ G\ lab\ t} \\
+right inverse \texttt{Ψ} of Lemma 5.13 & the triangle value \texttt{y\ x\ u\ v\ +\ y\ x\ u\ w\ +\ y\ x\ v\ w} (\path{TriangleInverse.y}) \\
+right inverse \texttt{Ψ} of Lemma 5.16 & \texttt{ColourStats.E2Inverse.Phi\ xV\ xC} \\
+\texttt{Ψ₁}, \texttt{𝒯} of Lemma 5.19 & \texttt{E3Gadget.Phi₁}, \path{E3Gadget.Tmap}; on the host, \path{Host519.Phiop}, \path{Host519.Top} \\
+\texttt{Ψ̃}, \texttt{Ψ} of Lemma 5.19 & the operator built in \path{E3Assembly.right_inverse_of_estimates}; the \texttt{Φ} asserted by \path{lemma_5_19_exists} \\
+\texttt{N\_τ}, \texttt{e\_π}, \path{c_X}, \texttt{m\_π(τ)} & \path{numTriples}, \path{numPairs}, \path{classSize}, \path{mult} \\
+\texttt{N\^{}all\_t}, \texttt{N\^{}\{1F\}\_t}, \path{\#dec_t(G)}, \path{\#LS(M)} & \path{countAll}, \path{count1F}, \path{countDecomp}, \path{numLS} \\
+\end{longtable}
+}
+
+\textbf{Logarithm of zero.} Lean sets \texttt{log\ 0\ =\ 0}. A statement \texttt{log\ N\ ≤\ Φ\ +\ εn²} with \texttt{N\ =\ 0} then asserts \texttt{Φ\ +\ εn²\ ≥\ 0}, which the paper does not claim. Each upper bound is therefore proved in two forms: an exponential form \texttt{N\ ≤\ exp(Φ\ +\ εn²)}, which is the faithful one, and the logarithmic form of the paper's statement, proved for all \texttt{N\ ≥\ 0} by showing separately that the right side is nonnegative under the hypotheses.
+
+\textbf{Asymptotic statements.} \texttt{o(n²)} is expressed as: for every \texttt{ε\ \textgreater{}\ 0} there is \texttt{n₀} such that for all \texttt{n\ ≥\ n₀}, all partitions and all type vectors satisfying the hypotheses, the bound holds with \texttt{εn²}. Since \texttt{n₀} is chosen before the partition and \path{t}, the bounds are uniform as in the paper.
+
+\textbf{Draft numbering in the sources.} \path{README.md}, the docstrings of \path{Challenge.lean} and \path{Statements.lean}, and \path{docs/ROADMAP_ES.md} refer to draft 6 (14 November 2026) and its former title. The statement numbers used there coincide with the current manuscript. The sources were frozen without edits.
+
+\subsection{3. Statement correspondence}\label{statement-correspondence}
+
+All modules are under \path{lean/ColourStats/}; line numbers refer to the frozen source.
+
+\subsubsection{3.1 Main results (upper bounds)}\label{main-results-upper-bounds}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lean declaration (module:line)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What is proved; difference of form
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Theorem 1.1, upper bound (1.1) & \path{ColourStats.LatinUpper.theorem_1_1_upper} (\path{LatinUpper.lean:569}), proving \path{LatinUpper.Theorem_1_1_upper} & For fixed \texttt{a,\ b,\ c} and \texttt{δ₀,\ ζ\ \textgreater{}\ 0}: \texttt{log\ \#LS(M)\ ≤\ n²(log\ n\ −\ 2\ −\ TC(Q))\ +\ K\ n\ log²\ n} with \texttt{K\ =\ 8c}, \texttt{n\ ≥\ max(3,\ ⌈e\^{}\{2+a+b\}⌉)}, for all partitions with classes \texttt{≥\ δ₀n} and outlines with \texttt{M/n²\ ≥\ ζ}. Same as (1.1) and as the first conjunct of \path{Statements.Theorem_1_1}; holds also when \texttt{\#LS(M)\ =\ 0} (right side shown nonnegative). \\
+Proposition 1.3 & \path{ColourStats.prop_1_3_bicol} (\path{Prop13Bridge.lean:130}); \path{ColourStats.Prop13.prop_1_3} (\path{Prop13.lean:147}); exact identity \path{Prop13.prop_1_3_exact} (\path{Prop13.lean:100}); \path{ColourStats.Phi_bicolTypes} (\path{Prop13Bridge.lean:84}) & \texttt{\textbar{}Φ(t)\ −\ (n²/6)(log\ n\ −\ 2\ −\ D(Q‖P₀))\textbar{}\ ≤\ (n/6)\textbar{}log\ n\ −\ 2\textbar{}\ +\ n}, assuming \texttt{c\_X\ ≥\ 2}, \texttt{t\_XY\ \textgreater{}\ 0}, the row identities of (1.3) and \texttt{3Σ\ c\_X(c\_X−1)\ =\ n(n−1)}. Explicit error instead of \texttt{O(n\ log\ n)}, under weaker hypotheses. \\
+(4.3) and (5.2): typed Linial--Luria bound & \path{ColourStats.TypedSTS.typed_upper} (\path{TypedFinal.lean:137}) & If \texttt{N\^{}all\_t\ \textgreater{}\ 0} and every class has \texttt{≥\ c₁\ +\ 2} points (\texttt{c₁\ ≥\ 1}): \texttt{log\ N\^{}all\_t\ ≤\ Φ(t)\ +\ n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\})}, for every type vector \path{t}, all block types. Form \texttt{Φ(t)}, not the normalized \texttt{D(Q‖P)} form; error \texttt{O(n\^{}\{7/4\})} (Section 4). \\
+Theorem 1.5, upper half (and Theorem 1.2, upper half) & \path{ColourStats.TypedSTS.theorem_1_5_upper_exp} (\path{TypedThm.lean:90}); \path{ColourStats.UpperLog.theorem_1_5_upper} (\path{UpperLog.lean:104}), proving \path{Challenge.Theorem_1_5_upper}; \path{TypedSTS.upper_log} (\path{TypedThm.lean:123}) & Exponential form \texttt{N\^{}all\_t\ ≤\ exp(Φ(t)\ +\ εn²)} for every \path{t} (no pair identities, no congruence on \path{n}), with explicit \texttt{n₀}; logarithmic form exactly as in \path{Theorem_1_5_upper}, including \texttt{N\ =\ 0}. Theorem 1.2: instance \texttt{t\ :=\ bicolTypes\ t} (no separate declaration). \\
+Theorem 1.7, upper half; (5.3) & \path{ColourStats.Typed1F.typed_upper_1F} (\path{Typed1FMain.lean:160}); \path{Typed1F.theorem_1_7_upper_exp} (\path{Typed1FMain.lean:315}); \path{ColourStats.UpperLog.theorem_1_7_upper} (\path{UpperLog.lean:135}), proving \path{Statements.Theorem_1_7_upper} & \texttt{log\ N\^{}\{1F\}\_t\ ≤\ Φ(t)\ +\ n²((log\ n\ +\ 4)/n\ +\ 7\ h₁\^{}\{−1/4\})} when every color class has \texttt{≥\ h₁\ +\ 1} colors; exponential form for every \path{t} (only color classes \texttt{≥\ δ₀n} needed); logarithmic form as stated. \\
+Theorem 1.9(a), upper half; (5.4) & \path{ColourStats.TypedG.typed_upper_G} (\path{TypedGFinal.lean:140}); \path{TypedG.theorem_1_9a_upper_exp} (\path{TypedGThm.lean:47}); \path{ColourStats.TypedG.theorem_1_9a_upper} (\path{UpperLog.lean:193}), proving \path{Statements.Theorem_1_9a_upper} & For \texttt{(η,\ 5)}-typical \path{G} with \texttt{η\ ≤\ 1/3} and every edge having \texttt{≥\ c₁} common neighbors in every class: \texttt{log\ \#dec\_t(G)\ ≤\ Φ\_G(t)\ +\ n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\}\ +\ η)}; exponential form under \path{TypHyp} (the hypotheses of Theorem 1.9) for every \path{t}; logarithmic form as stated. The pair identities (1.6) and triangle-divisibility are not used. \\
+Nonnegativity of the rates (for \texttt{log\ 0}) & \path{UpperLog.Phi_nonneg} (\path{UpperLog.lean:69}), \path{UpperLog.Phi1F_nonneg} (\path{UpperLog.lean:120}), \path{TypedG.PhiG_nonneg} (\path{UpperLog.lean:159}), \path{LatinUpper.TC_le} (\path{LatinUpper.lean:133}) & \texttt{Φ\ ≥\ 0} under the identities and class sizes \texttt{≥\ 26} (resp. color classes \texttt{≥\ 8}, \texttt{≥\ 24} common neighbors); \texttt{TC(Q)\ ≤\ a\ +\ b}. Not paper statements. \\
+\end{longtable}
+}
+
+Supporting declarations of Section 4.1: \path{Bregman.bregman} (\path{Bregman.lean:191}, Bregman's theorem \texttt{log\ \#PM(A)\ ≤\ Σ\_i\ log(\textbar{}A\_i\textbar{}!)/\textbar{}A\_i\textbar{}}, proved by Radhakrishnan's entropy argument), \path{Bregman.sum_rank} (\path{Bregman.lean:107}), \path{LatinUpper.bregman_sum_le} (\path{:75}), \path{LatinUpper.log_card_Patt_le} (\path{:232}, the pattern count), \path{LatinUpper.log_LSset_le} (\path{:368}, the chain-rule bound), \path{LatinUpper.TC_identity} (\path{:162}). The margin identities of Lemma 2.1 for actual Latin squares are proved internally (\path{LatinUpper.margin_rc}, \path{LatinUpper.margin_s}, lines 497 and 518).
+
+Supporting declarations of Section 4.2: \path{TypedChain.chain_typed} (\path{TypedChain2.lean:160}, the chain rule in counting form, with the class of the third point revealed separately), \path{TypedChain.cond_le} (\path{TypedChain.lean:255}, conditioning reduces entropy), \path{TypedSTS.good_of_mem} (\path{TypedSTS.lean:293}, the six pairs of Step 5), \path{TypedSTS.point_sum_le} (\path{TypedBox.lean:235}), \path{TypedSTS.pair_bound} (\path{TypedPair.lean:212}), \path{TypedSTS.typed_raw_bound} (\path{TypedAssembly.lean:53}), \path{TypedSTS.typed_agg_bound} (\path{TypedAggregate.lean:198}, Step 4), \path{TypedSTS.term_le} (\path{TypedAnalytic.lean:89}, Steps 5--6), \path{TypedSTS.Mstat_eq} (\path{TypedStats.lean:69}); for 1-factorizations \path{Typed1F.good_of_mem} (\path{Typed1F.lean:120}), \path{Typed1F.raw_bound} (\path{Typed1FAgg.lean:174}); for typical graphs \path{TypedG.good_of_memG} (\path{TypedG.lean:208}), \path{TypedG.typed_agg_boundG} (\path{TypedGAgg.lean:207}), \path{TypedG.MstatG_eq} (\path{TypedGStats.lean:146}), \path{TypedG.sum_cnb} (\path{TypedGStats.lean:268}). The random order \texttt{λ\_e\ ∈\ {[}0,\ 1{]}} of the paper is replaced by labels in \texttt{Fin\ L} averaged uniformly; the integrals of Steps 5--6 become finite sums, which is where the \texttt{log\ n\ /\ n} and \texttt{c₁\^{}\{−1/4\}} terms of the error come from.
+
+\subsubsection{3.2 Lemmas of Section 5}\label{lemmas-of-section-5}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lean declaration (module:line)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What is proved; difference of form
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Lemma 5.12 & \path{ColourFirst.compl_mul_typeNum} (\path{ColourFirst.lean:99}); \path{ColourFirst.apex_eq} (\path{:130}), \path{ColourFirst.apex_indep} (\path{:157}); \path{ColourFirst.sum_P} (\path{:168}); \path{ColourFirst.entropy_identity} (\path{:189}), \path{ColourFirst.entropy_identity_one} (\path{:274}); \path{ColourStats.card_type} (\path{TypeCount.lean:53}), \path{ColourStats.numTriples_eq} (\path{:96}), \path{ColourStats.colour_first_Phi} (\path{:109}) & The double count \texttt{w(τ,π)e\_π\ =\ m\_π(τ)N\^{}O\_τ}; (a) \texttt{D\_τ} independent of the apex (classes of size \texttt{≥\ 2}, \texttt{ν\ \textgreater{}\ 0}); (b) the entropy identity for positive \texttt{ν,\ t\textquotesingle{}} (classes of size \texttt{≥\ 3}), without the pair identities, which only make \texttt{P(·\textbar{}π)} a probability (\path{sum_P}); with \texttt{ν\ ≡\ 1}, \texttt{t\textquotesingle{}\ =\ t}, the right side is \texttt{Φ(t)}. \\
+Lemma 5.13 & \path{TriangleInverse.apply_inverse} (\path{TriangleInverse.lean:78}), \path{TriangleInverse.inverse_bound} (\path{:95}) & \texttt{AΨx\ =\ x} for symmetric \path{x} with zero diagonal and \texttt{m\ ≥\ 5} (paper: \texttt{m\ ≥\ 6}); \texttt{‖Ψx‖\_∞\ ≤\ 24‖x‖\_∞/m} for \texttt{m\ ≥\ 8}. Same formulas \path{S}, \path{Y}, \path{y}. \\
+Lemma 5.14 & \path{ColourStats.hub_pairPreserving} (\path{PaschHub.lean:237}), \path{ColourStats.hub_unique} (\path{:115}), \path{ColourStats.hub_basis} (\path{:266}); \path{ColourStats.finrank_Lam} (\path{PaschRank.lean:187}), \path{ColourStats.card_avoid} (\path{:84}), \path{ColourStats.hub_eq_pasch} (\path{:253}), \path{ColourStats.pasch_same_pairs} (\path{:211}) & The hub vectors lie in \texttt{Λ}; every \texttt{d\ ∈\ Λ} equals \texttt{Σ\_\{σ\ ∌\ o\}\ d\_σ\ b\_σ}, and \path{d} vanishing off the types containing \path{o} is zero; \texttt{rank\ Λ\ =\ C(k+1,\ 3)}; \texttt{b\_σ} is the type change of the Pasch switch from \texttt{\{013,\ 024,\ 125,\ 345\}} to \texttt{\{012,\ 034,\ 135,\ 245\}}, both families covering the same twelve pairs. As in the paper. \\
+Lemma 5.16 & \path{E2Inverse.pair_load} (\path{E2Inverse.lean:101}), \path{E2Inverse.colour_load} (\path{:134}), \path{E2Inverse.inverse_bound} (\path{:154}) & \texttt{AΨx\ =\ x} for balanced \path{x} (pair loads use balance; color loads need only zero diagonal); \texttt{\textbar{}Ψx\textbar{}\ ≤\ 13(1\ +\ m/h)‖x‖/min(m,\ h)} for \texttt{m\ ≥\ 3}, \texttt{h\ ≥\ 1}. The paper's ``\path{K} absolute'' is \texttt{K\ =\ 13}; the value 9 obtained in the written proof for \texttt{m\ ≥\ 4} is not formalized. \\
+Lemma 5.17 & \path{E2Lattice.mem_span_of_rich} (\path{E2Lattice.lean:206}); dual form \path{E2Lattice.sum_eq_zero_of_rich} (\path{:58}) & For \texttt{H\ ⊂\ K\_m\ ∨\ C\_h} given by a graph \path{G} on the vertices and a set \path{EC} of vertex--color pairs, satisfying \path{Rich} (three colors have a common vertex neighbor; two vertices, not necessarily distinct, adjacent to colors \texttt{c,\ c\textquotesingle{}} have a common vertex neighbor adjacent to \texttt{c,\ c\textquotesingle{}}; every vertex edge lies in a triangle with a color), balanced at every vertex and with even color degrees: \texttt{1\_\{E(H)\}} lies in the ℤ-span of the triangles \texttt{\{u,\ v,\ c\}} of \path{H}. The richness hypotheses are exactly those of the current Lemma 5.17. Lean's conclusion is an integer combination of triangles, as in the paper. \\
+Lemma 5.18 & \path{E2Swap.swapVec_inLambda} (\path{E2Swap.lean:81}), \path{E2Swap.inLambda_unique} (\path{:111}), \path{E2Swap.inLambda_repr} (\path{:187}), \path{E2Swap.finrank_Lam2} (\path{E2SwapRank.lean:170}) & Swap vectors lie in \texttt{Λ}; the \texttt{C(k,2)(ℓ−1)} swaps on classes \texttt{(o,\ o,\ Y,\ Z)} between \texttt{ω} and \texttt{Γ} form a basis with coefficients the free coordinates \texttt{d(π,\ Γ)}, \texttt{π\ ∌\ o}; \texttt{rank\ Λ\ =\ C(k,2)(ℓ−1)}. This is the explicit basis after the proof of Lemma 5.18. The type change of a swap is defined at the level of type vectors, not derived from a concrete 1-factorization; the first proof (via \path{L_even}) and the counts ``four by four'', ``eight signed units'' are not formalized. \\
+Lemma 5.19 & \path{Host519.lemma_5_19_exists} (\path{Lemma519.lean:202}); explicit version \path{Host519.Hyp.lemma_5_19} (\path{Lemma519.lean:182}) & For every \texttt{δ₀\ ∈\ (0,\ 1{]}}, \texttt{d₀\ \textgreater{}\ 0} there are \texttt{η₀\ \textgreater{}\ 0}, \texttt{m₀}, \path{K} such that every \texttt{(η,\ 5)}-typical graph with \texttt{0\ ≤\ η\ ≤\ η₀}, \texttt{m\ ≥\ m₀} vertices, classes \texttt{≥\ δ₀m} and densities in \texttt{{[}d₀,\ 1{]}} has a continuous linear right inverse \texttt{Φ} (paper: \texttt{Ψ}) of \path{A} with \texttt{‖Φ‖\_\{∞→∞\}\ ≤\ K/m}. Constants depend on \texttt{δ₀,\ d₀} only (paper: also on \path{k}). The explicit version gives \texttt{‖Φ‖\ ≤\ 2(108/p\ +\ 108/p²\ +\ 4/(δ₀³d₀³))/m} with \texttt{p\ =\ pconst\ δ₀\ d₀}, under \texttt{eps1\ +\ 4η/(δ₀²d₀)\ ≤\ 1/2}. \\
+Lemma 5.19, pieces & \path{E3Gadget.gadget_identity} (\path{E3Gadget.lean:56}), \texttt{E3Gadget.apply\_Phi₁} (\path{:78}), \path{Host519.mulVec_gadget} (\path{Host519.lean:115}), \texttt{Host519.A\_comp\_Phi₁} (\path{:178}), \path{Host519.Hyp.norm_Phiop_le} (\path{Phi519.lean:142}), \path{Host519.Hyp.abs_K2_sub_disjoint} (\path{K2519.lean:139}), \texttt{Host519.Hyp.norm\_E₁\_le} (\path{Lemma519.lean:95}), \path{PairMap.pairMap_surjective} (\path{PairMap.lean:83}), \path{Weighting.idealLoad_weight} (\path{Weighting.lean:73}), \path{Weighting.load_weight_error} (\path{WeightingError.lean:46}), \path{Typical.load_estimate} (\path{Typical.lean:81}), \path{Counting.card_edgesIn_commonIn} (\path{Counting.lean:162}), \path{Neumann.exists_right_inverse} (\path{Neumann.lean:31}), \path{E3Assembly.right_inverse_of_estimates} (\path{E3Assembly.lean:39}), \path{E3Assembly.opNorm_le_of_rowSum} (\path{:90}) & The \texttt{K₄} gadget identity \texttt{Ag(e,f)\ =\ 1\_e\ −\ 1\_f}; \texttt{AΨ₁\ =\ I\ −\ 𝒯}; \texttt{‖Ψ₁‖\ ≤\ 108/(pm)}; the two-step kernel \texttt{Π₂} is within \texttt{19η/M} of uniform on disjoint pairs; \texttt{‖𝒯²\ −\ σ\ ⊗\ u‖\ ≤\ eps1}; the pair map is onto; the weighting \path{W} and its load error; the Neumann step; assembly from the four estimates. These follow the steps of the written proof. \\
+Lemma 5.20 & \path{E3Lattice.isPhysical_of_rich} (\path{E3Lattice.lean:204}); dual form \path{E3Lattice.sum_eq_zero_of_rich} (\path{:65}) & If \path{G} is \path{Rich} (every two edges have a common \texttt{⊠}-partner; every three vertices, not necessarily distinct, have a common neighbor; two common neighbors of two distinct vertices are joined by a path inside their common neighborhood), all degrees are even and \texttt{3\ ∣\ e(G)}, then \texttt{1\_\{E(G)\}} lies in the corpus triangle lattice (\path{TypedTriangle.IsPhysical}, all triangles allowed). Same hypotheses and conclusion (an integer combination of triangles) as the paper. \\
+\end{longtable}
+}
+
+\subsection{4. Differences between the Lean results and the written statements}\label{differences-between-the-lean-results-and-the-written-statements}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Error of the upper bounds.} The Lean bounds have error \texttt{n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\})} with \texttt{c₁\ ≈\ δ₀n}, that is \texttt{O(n\^{}\{7/4\})} (and \texttt{n²((log\ n\ +\ 4)/n\ +\ 7\ h₁\^{}\{−1/4\})} for 1-factorizations). The manuscript proves \texttt{O(n\^{}\{3/2\})} in writing (§4.2 Step 5; §5.11, used in Theorem 1.10). The formalization establishes the \texttt{o(n²)} statements of Theorems 1.2, 1.5, 1.7 and 1.9(a) (upper halves) with this explicit \texttt{O(n\^{}\{7/4\})} error (plus \texttt{ηn²} for Theorem 1.9(a)), not the \texttt{O(n\^{}\{3/2\})} error. An error \texttt{O(n\^{}\{2−c\})} with \texttt{c\ =\ 1/4} (\texttt{c\ =\ min(1/4,\ c₀)} for Theorem 1.9) can be read off the explicit bounds, but no Lean declaration states the polynomial form.
+\item
+  \textbf{Lemma 5.17.} The current statement of Lemma 5.17 lists the richness conditions under which Lean proves the lemma, and they coincide with Lean's \path{E2Lattice.Rich}. The earlier discrepancy (a hypothesis that, read literally, forced \texttt{H\ =\ K\_m\ ∨\ C\_h}) no longer exists. The conclusions of Lemmas 5.17 and 5.20 (integer combinations of triangles) also agree with Lean; no difference remains.
+\item
+  \textbf{\texttt{log\ 0\ =\ 0}.} The logarithmic Lean statements are stronger than the paper when the count is zero (Section 2). The extra content is proved. The exponential forms carry exactly the paper's content.
+\item
+  \textbf{Exponential and logarithmic forms.} \path{theorem_1_5_upper_exp}, \path{theorem_1_7_upper_exp} and \path{theorem_1_9a_upper_exp} state \texttt{N\ ≤\ exp(Φ\ +\ εn²)} for every type vector; \path{upper_log} and the three \path{UpperLog} theorems give \texttt{log\ N\ ≤\ Φ\ +\ εn²}, the last three for all \texttt{N\ ≥\ 0}.
+\item
+  \textbf{Proposition 1.3.} Lean gives the explicit error \texttt{(n/6)\textbar{}log\ n\ −\ 2\textbar{}\ +\ n} and needs only the row identities of (1.3) and the admissibility identity, not the full hypotheses of Theorem 1.2.
+\item
+  \textbf{Normalized forms.} The upper bounds are proved in the form \texttt{Φ(t)}. The normalized form \texttt{(n²/6)(log\ n\ −\ 2\ −\ D(Q‖P))} of Theorem 1.5 and (5.2), and \texttt{C(n,2)(log\ n\ −\ 2\ −\ D(Q‖P))} of Theorem 1.7 and (5.3), are not formalized; the normalization is formalized only for the bicolored rate (Proposition 1.3).
+\item
+  \textbf{Theorem 1.1.} The upper bound (1.1) is proved as stated, with \texttt{K\ =\ 8c}, but by a different route than Lemmas 4.1--4.2: one chain-rule argument over the class pattern and then the symbols, with Bregman's theorem proved in the project. Lemmas 4.1, 4.2 and Remark 4.3 are not formalized as statements.
+\item
+  \textbf{Minor differences of hypotheses} (Lemma 5.12 classes of size \texttt{≥\ 3}; Lemma 5.13 \texttt{m\ ≥\ 5}; Lemma 5.16 \texttt{K\ =\ 13}; Lemma 5.19 constants independent of \path{k}; Lemma 5.18 at the level of type vectors) are listed in Section 3 and in \path{MAPPING_NOTES.md}.
+\end{enumerate}
+
+\subsection{5. Theorem 1.2 and the bicolored count}\label{theorem-1.2-and-the-bicolored-count}
+
+\texttt{countAll\ lab\ (bicolTypes\ t)} counts Steiner triple systems with exactly \path{t_XY} blocks of type \path{XXY} for \texttt{X\ ≠\ Y} and no block of another type, that is, bicolored systems with type matrix \path{t}. The upper half of Theorem 1.2 is the instance \texttt{t\ :=\ bicolTypes\ t} of \path{theorem_1_5_upper_exp}, and \path{Phi_bicolTypes} identifies \texttt{Φ(bicolTypes\ t)} with the bicolored rate of Proposition 1.3. There is no separate declaration of the upper half of Theorem 1.2.
+
+\subsection{6. Conditional implications}\label{conditional-implications}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Implication
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lean declaration (module:line)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Content
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Corollary 1.11 ⇐ Theorem 1.10 for Theorem 1.9(a) & \path{ColourStats.Statements.corollary_1_11_of} (\path{Cor111.lean:266}), with \path{Statements.completionEquiv} (\path{Cor111.lean:103}) and \path{Statements.triDivisible_leave} (\path{Cor111.lean:237}) & \texttt{Theorem\_1\_10\_typical\ →\ Corollary\_1\_11}. Completions of a partial system \path{Q} with type vector \path{t} are in bijection with the triangle decompositions of \texttt{K\_n\ −\ L\_Q} with type vector \texttt{t\ −\ t(Q)}, and \texttt{K\_n\ −\ L\_Q} is triangle-divisible for \texttt{n\ ≡\ 1,\ 3\ (mod\ 6)}. \\
+Theorem 1.5 ⇐ Theorem 1.9(a) & \path{ColourStats.Statements.theorem_1_5_of} (\path{Thm15From19.lean:113}) & \texttt{Theorem\_1\_9a\ →\ Theorem\_1\_5}, applying Theorem 1.9(a) to \texttt{G\ =\ K\_n}. \\
+Theorem 1.1 ⇐ its lower half & \path{ColourStats.LatinUpper.theorem_1_1_of_lower} (\path{LatinUpper.lean:704}) & The lower bound (1.2), as a hypothesis, together with \path{theorem_1_1_upper} gives \path{Statements.Theorem_1_1}. \\
+\end{longtable}
+}
+
+The hypotheses of these implications are not proved in Lean.
+
+\subsection{7. Statements only}\label{statements-only}
+
+Two files contain Lean statements (as \path{Prop} definitions) with no proof:
+
+\begin{itemize}
+\tightlist
+\item
+  \path{Challenge.lean}: \path{Theorem_1_2}, \path{Theorem_1_5}, \path{Theorem_1_5_upper} (the last is proved in \path{UpperLog.lean}).
+\item
+  \path{Statements.lean}: \path{Theorem_1_1} (upper conjunct proved; full statement proved only from the lower half), \path{Corollary_1_4}, \path{Corollary_1_6}, \path{Theorem_1_7}, \path{Theorem_1_7_upper} (proved), \path{Corollary_1_8}, \path{Theorem_1_9a}, \path{Theorem_1_9a_upper} (proved), \path{Theorem_1_9b}, \path{Theorem_1_10} (with parts \path{Theorem_1_10_latin}, \path{_bicol}, \path{_all}, \path{_oneFact}, \path{_typical}) and \path{Corollary_1_11}.
+\end{itemize}
+
+They record the reading chosen for each statement: the lower half of Theorem 1.1 assumes the margin identities (\path{OutlineMargins}), as in the current manuscript; the large-deviation principles are stated through counts (\path{CountLDP}), which for a rate continuous on a compact feasible set is the pair of standard bounds. Two of them differ from the current manuscript:
+
+\begin{itemize}
+\tightlist
+\item
+  \path{Theorem_1_10} covers the lower half of Theorem 1.1 and Theorems 1.2, 1.5, 1.7 and 1.9(a), but not Theorem 1.9(b) nor the ball statement for Corollaries 1.6 and 1.8. Its docstring says that the corollary claim does not specify the neighborhoods; the current manuscript does specify them (closed balls centered in \path{F_n}), so that comment is out of date.
+\item
+  \path{Theorem_1_5} and \path{Theorem_1_7} state only the equality with \texttt{Φ(t)}, not the normalized form.
+\end{itemize}
+
+\subsection{8. Build and axiom results}\label{build-and-axiom-results}
+
+Toolchain \path{leanprover/lean4:v4.35.0-rc3}; Mathlib \path{c55e6e786f49471c72fbddbec5415808896aec1e}; corpus \path{cdr_prescribed_bicolorings} 0.3.0, byte-identical in source to \path{CDRIII_Lean_v1.0.zip} (details in \path{lean/DEPENDENCIES.md}). The library \path{ColourStats} has 57 modules (the root \path{ColourStats.lean} and 56 modules under \path{ColourStats/}), with 63 source files in the archive.
+
+\textbf{Build of the project directory (17 November 2026).} \texttt{lake\ build\ -\/-no-build\ ColourStats} reported all targets up to date (9030 jobs), so nothing upstream needed rebuilding. \texttt{lake\ build\ ColourStats} then completed with exit code 0, ``Build completed successfully (9030 jobs)'', in 25 seconds. This run replayed the existing build outputs, whose traces match the current sources; it did not recompile any module. Log: \path{logs/build_ColourStats.log}.
+
+\textbf{Build from the archive (17 November 2026).} To check that the archive is complete and compiles from source, \path{ColorStats_Lean_v1.0.zip} was extracted into a fresh directory placed so that the relative corpus path resolves. There \texttt{lake\ build\ -\/-no-build\ ColourStats} listed only \path{ColourStats.*} modules as out of date. A first \texttt{lake\ build\ ColourStats} with Lake's default parallelism ran out of memory (\path{std::bad_alloc} in eleven simultaneous Lean processes; log \path{logs/rebuild_from_archive_attempt1_oom.log}). The second run, with \path{LEAN_NUM_THREADS=1}, compiled all 57 \path{ColourStats} modules from source, replayed the corpus and Mathlib, and finished with ``Build completed successfully (9030 jobs)'', exit code 0, in 2362 seconds. Log: \path{logs/rebuild_from_archive.log}. The temporary directory was removed afterwards.
+
+\textbf{Axioms.} \texttt{lake\ env\ lean\ checks/Axioms.lean} ran 89 \texttt{\#print\ axioms} queries (455 seconds, exit code 0). Every query reports exactly \texttt{{[}propext,\ Classical.choice,\ Quot.sound{]}}; no query reports \path{sorryAx} and no source file contains \path{sorry}, \path{admit} or a user \path{axiom}. Log: \path{logs/axioms.log}. The same 89 queries, run against the modules compiled from the archive, gave the same result (exit code 0, 74 seconds; \path{logs/axioms_from_archive.log}).
+
+\textbf{Archive.} \path{ColorStats_Lean_v1.0.zip}, SHA-256 \path{5091a807b3929336f74ea3cfb2d0f62a43c09ce44194c02cf9b78b71d907cd47}, 205061 bytes, 65 files under \path{lean/} (63 source files, \path{DEPENDENCIES.md}, \path{source_manifest.json}).
+
+The 89 queries cover every declaration named in Sections 3 and 6 except the internal lemmas \path{LatinUpper.margin_rc}, \path{LatinUpper.margin_s}, \path{UpperLog.Phi1F_nonneg} and \path{LatinUpper.TC_le}, which are used in the proofs of queried theorems (\path{theorem_1_1_upper}, \path{theorem_1_7_upper}) and hence covered by their queries.
+
+\subsection{9. Rebuilding}\label{rebuilding}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Extract \path{ColorStats_Lean_v1.0.zip}; the project is the folder \path{lean/}. Check the files against \path{lean/source_manifest.json}.
+\item
+  Install \path{leanprover/lean4:v4.35.0-rc3}.
+\item
+  Obtain the corpus (the Lean source of \path{CDRIII_Lean_v1.0.zip}, DOI 10.5281/zenodo.24201563) and its Mathlib at the pinned revision. Either place the corpus at \path{../cdr-clean-20261113/snapshot/lean} relative to the project, or edit the corpus \path{path} and \path{packagesDir} in \path{lakefile.toml}. Neither the corpus nor Mathlib is bundled.
+\item
+  From \path{lean/}, run sequentially:
+
+\begin{verbatim}
+lake build --no-build ColourStats   # only ColourStats.* should be out of date
+lake build ColourStats
+lake env lean checks/Axioms.lean
+\end{verbatim}
+
+  On a machine with limited memory, set \path{LEAN_NUM_THREADS=1} for the build, so that Lake compiles one module at a time.
+\end{enumerate}
+
+\subsection{10. Provenance}\label{provenance}
+
+The project directory \texttt{C:\textbackslash{}nw\textbackslash{}colour-stats-lean} is not under version control. The archive was made from it on 17 November 2026 without editing any file. \path{FREEZE.json} binds the archive, the hashes of its entries and the logs. The corpus snapshot was produced by the clean reconstruction of CDR III from source commit \path{8756b2ef2dbe56002617a86e97e1b16a790ae069}; of its 1307 modules, 13 lie in the import closure of \path{ColourStats} (\path{lean/DEPENDENCIES.md}).
+
+\end{document}

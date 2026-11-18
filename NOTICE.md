@@ -16,6 +16,11 @@ The research note GHHSBRIDGE, preprint 1.0, uses the same license. Its Lean
 source archive (Apache 2.0) depends on the Latinon sources and pinned Mathlib.
 Its DOI 10.5281/zenodo.24293531 is reserved; the deposit is not published.
 
+Paper II, COLORSTATS, preprint 1.0, uses the same license. Its Lean source archive
+(Apache 2.0) depends on the Lean sources of the CDR III preprint and on pinned
+Mathlib, neither of which is bundled. Its DOI 10.5281/zenodo.24308221 is reserved; the
+deposit is not published.
+
 AI tools assisted drafting, proof development, translation and validation.
 They are not authors or independent reviewers. The author is responsible for
 the mathematical claims. Internal audit results certify only their stated

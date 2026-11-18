@@ -20,6 +20,13 @@ and the Zenodo reservation; its integrity folder holds the package manifest.
 The note has no separate formal companion: the correspondence between numbered
 results and Lean declarations is Section 7 of the note.
 
+Paper II, `preprints/COLORSTATS/`, uses the same five parts. Its validation folder
+holds the audit records of the review rounds (`02_validation/audit/`), the release
+audit, proof ledger and review guide (`02_validation/release/`), the bilingual parity
+record, the typesetting records and the Zenodo reservation; its formalization folder
+holds the source-only Lean freeze with its record and logs, the mapping notes and
+the bilingual formal companion.
+
 `publication/` contains the Latinon edition audit, proof ledger, source/provenance
 checks and bibliography review. `scripts/` contains document tools and
 read-only verifiers. `archives/` contains the complete package of each paper and its

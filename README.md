@@ -6,7 +6,7 @@ A series of independently versioned preprints with bilingual manuscripts, Lean
 source freezes and per-paper audit records. The catalogue contains the article
 **Entropy and large deviations for Latin squares**, preprint 1.0, and the research
 note **The kernel and measure representations of Latinons agree: a Lean
-formalization**, preprint 1.0. See [Series catalogue and publication policy](SERIES.md).
+formalization**, preprint 1.0, and Paper II, **Counting Steiner triple systems and Latin squares with prescribed color statistics**, preprint 1.0. See [Series catalogue and publication policy](SERIES.md).
 
 Read the preprint on [alphaXiv](https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations).
 
@@ -82,6 +82,37 @@ python scripts/verify_ghhsbridge.py
 
 Reserved DOI https://doi.org/10.5281/zenodo.24293531 (deposit not yet published) ·
 [Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/ghhsbridge-v1.0).
+
+## Paper II: Counting Steiner triple systems and Latin squares with prescribed color statistics
+
+Paper I counts Latin squares near a limit object. Paper II determines the
+asymptotic number of Steiner triple systems, 1-factorizations and Latin squares
+with exactly prescribed color statistics, with the rate given by relative
+entropy, and deduces large-deviation principles for the type statistics of
+random Steiner triple systems and 1-factorizations.
+
+Read Paper II on [alphaXiv](https://www.alphaxiv.org/abs/2611.steiner-latin-squares-color-statistics).
+
+| Document | English | Español |
+| --- | --- | --- |
+| Manuscript | [PDF](preprints/COLORSTATS/01_manuscript/color_stats_en.pdf) · [Markdown](preprints/COLORSTATS/01_manuscript/color_stats_en.md) · [TeX](preprints/COLORSTATS/01_manuscript/color_stats_en.tex) | [PDF](preprints/COLORSTATS/01_manuscript/color_stats_es.pdf) · [Markdown](preprints/COLORSTATS/01_manuscript/color_stats_es.md) · [TeX](preprints/COLORSTATS/01_manuscript/color_stats_es.tex) |
+| Formal companion | [PDF](preprints/COLORSTATS/05_formalization/formal_companion_en.pdf) · [Markdown](preprints/COLORSTATS/05_formalization/formal_companion_en.md) | [PDF](preprints/COLORSTATS/05_formalization/formal_companion_es.pdf) · [Markdown](preprints/COLORSTATS/05_formalization/formal_companion_es.md) |
+
+[Paper directory](preprints/COLORSTATS/README.md) ·
+[Lean source freeze](preprints/COLORSTATS/05_formalization/ColorStats_Lean_v1.0.zip) ·
+[Freeze record](preprints/COLORSTATS/05_formalization/FREEZE.json) ·
+[Review guide](preprints/COLORSTATS/02_validation/release/REVIEW_GUIDE.md).
+Its Lean freeze (57 modules) covers the upper bounds of the main theorems and the
+finite algebra of Sections 5.8–5.10; 89 axiom queries report only `propext`,
+`Classical.choice` and `Quot.sound`. The lower bounds are proved only in the
+paper. Read-only check:
+
+```text
+python scripts/verify_colorstats.py
+```
+
+Reserved DOI https://doi.org/10.5281/zenodo.24308221 (deposit not yet published) ·
+[Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/colorstats-v1.0).
 
 ## Licenses and status
 

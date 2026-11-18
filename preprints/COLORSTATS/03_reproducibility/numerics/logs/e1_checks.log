@@ -1,0 +1,17 @@
+(1) A Phi x = x for all triangles of K_m: (max error, max|psi| m/||x||)
+   m=6 (np.float64(8.881784197001252e-16), np.float64(3.244643483657358))
+   m=9 (np.float64(2.220446049250313e-16), np.float64(2.622868982742688))
+   m=14 (np.float64(8.881784197001252e-16), np.float64(2.194971389952512))
+   m=20 (np.float64(8.881784197001252e-16), np.float64(2.5051943616553762))
+(2) hub basis b_sigma (o = last class), integral, and Pasch certificates (sign, colouring of points 0..5):
+   sigma=(0, 0, 0), k=2: b = {(0, 0, 0): 1, (0, 0, 1): -3, (0, 1, 1): 3, (1, 1, 1): -1}
+      certificate: [(1, (0, 0, 0, 1, 1, 1))]
+   sigma=(0, 0, 1), k=3: b = {(0, 0, 1): 1, (0, 0, 2): -1, (0, 1, 2): -2, (0, 2, 2): 2, (1, 2, 2): 1, (2, 2, 2): -1}
+      certificate: [(1, (0, 0, 1, 2, 2, 2))]
+   sigma=(0, 1, 2), k=4: b = {(0, 1, 2): 1, (0, 1, 3): -1, (0, 2, 3): -1, (0, 3, 3): 1, (1, 2, 3): -1, (1, 3, 3): 1, (2, 3, 3): 1, (3, 3, 3): -1}
+      certificate: [(1, (0, 1, 2, 3, 3, 3))]
+(3) colour-first identity for all types: (max relative spread of the three degrees, H + sum t(log D - 2) - Phi)
+   k=1 (0, 1351.1421806077049)
+   k=2 (0.4218218540846772, 5738.210191644494)
+   k=3 (0.352505243004416, 27683.59829888757)
+   k=4 (0.7496542033579876, 35857.895997148196)

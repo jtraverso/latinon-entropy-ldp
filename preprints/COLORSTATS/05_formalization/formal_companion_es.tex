@@ -1,0 +1,303 @@
+% Adapted from the author's public Erdos Paper IV v1.23 series_template.tex.
+% Layout provenance is recorded in 02_validation; the Markdown is semantic authority.
+\documentclass[spanish,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{Consolas}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb}
+\providecommand{\mathscr}{\mathcal}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage{microtype,parskip}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor,xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{7\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{6\baselineskip}}{}{}
+\urlstyle{same}
+
+\usepackage{graphicx}
+\providecommand{\pandocbounded}[1]{#1}
+
+\usepackage{float}
+
+\clubpenalty=10000\widowpenalty=10000\sloppy
+\usepackage{newunicodechar}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∌}{\ensuremath{\not\ni}}
+\newunicodechar{∣}{\ensuremath{\mid}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⊠}{\ensuremath{\boxtimes}}
+\newunicodechar{⌈}{\ensuremath{\lceil}}
+\newunicodechar{⌉}{\ensuremath{\rceil}}
+\newunicodechar{𝒯}{\ensuremath{\mathcal{T}}}
+\newunicodechar{⇐}{\ensuremath{\Leftarrow}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{′}{\ensuremath{^{\prime}}}
+\hypersetup{pdftitle={Documento formal complementario: conteo de sistemas triples de Steiner y cuadrados latinos con estadísticas de color prescritas},pdfauthor={Juan Pablo Traverso Gianini},pdflang={es},colorlinks=true,linkcolor=blue,urlcolor=blue}
+\title{Documento formal complementario: conteo de sistemas triples de Steiner y cuadrados latinos con estadísticas de color prescritas}
+\author{Juan Pablo Traverso Gianini\\\small Investigador independiente, Santiago, Chile\\\small \href{https://orcid.org/0009-0003-6068-4096}{ORCID: 0009-0003-6068-4096}}
+\date{}\begin{document}\raggedbottom\maketitle
+\begin{center}
+\textbf{Preprint 1.0 --- 17 de noviembre de 2026.}\\
+DOI: \url{https://doi.org/10.5281/zenodo.24308221}.\\
+Repositorio: \url{https://github.com/jtraverso/latinon-entropy-ldp}.
+\end{center}
+
+\subsection{1. Alcance}\label{alcance}
+
+Este documento registra qué enunciados del manuscrito tienen contrapartida en Lean, qué demuestra cada declaración Lean y en qué se aparta su forma del enunciado escrito. Es una guía de la fuente entregada \path{ColorStats_Lean_v1.0.zip} y de sus logs, no un sustituto de las demostraciones escritas. La numeración de los enunciados es la del manuscrito actual.
+
+La formalización abarca las cotas superiores de los teoremas principales y el álgebra finita de las secciones 5.8--5.10:
+
+\begin{itemize}
+\tightlist
+\item
+  la cota superior (1.1) del teorema 1.1, con constante explícita;
+\item
+  la proposición 1.3, con un error explícito;
+\item
+  la cota de Linial--Luria por tipos de la sección 4.2 para todos los tipos de bloque, que da las mitades superiores de los teoremas 1.2 y 1.5, y sus análogos para 1-factorizaciones (mitad superior del teorema 1.7) y para grafos escalonados típicos (mitad superior del teorema 1.9(a));
+\item
+  los lemas 5.12, 5.13, 5.14, 5.16, 5.17, 5.18, 5.19 y 5.20;
+\item
+  tres implicaciones condicionales entre resultados principales (sección 6 de este documento).
+\end{itemize}
+
+No abarca las cotas inferiores. En particular, \textbf{no} están formalizados: la mitad inferior (1.2) del teorema 1.1; las cotas inferiores de los teoremas 1.2, 1.5, 1.7 y 1.9(a); el teorema 1.9(b); el teorema 1.10; los corolarios 1.4, 1.6 y 1.8; el corolario 1.11, salvo como consecuencia del teorema 1.10. Tampoco se formaliza aquí nada de la maquinaria de las secciones 5.1--5.7 y 6 (coloración aleatoria, el teorema de emparejamientos de Glock, Joos, Kim, Kühn y Lichev, limpieza, cobertura descendente, completación con T y T⁺, intercambios, contabilidad), ni los lemas 2.1 (salvo como paso interno; véase la sección 3), 3.1, 4.1, 4.2, 5.1--5.11, 5.8′, 5.21, las observaciones 4.3, 5.15, 5.22 o los lemas de la sección 6. Para esos resultados, la formalización contiene a lo sumo un enunciado Lean (sección 7).
+
+Cada declaración demostrada que se enumera en la sección 3 se comprobó con \texttt{\#print\ axioms}; todos los conjuntos de axiomas informados están contenidos en \path{propext}, \path{Classical.choice} y \path{Quot.sound} (sección 8). Esto indica que las declaraciones enumeradas están demostradas en Lean a partir de esos axiomas; no dice nada sobre los resultados que solo están enunciados.
+
+\subsection{2. Convenciones y notación}\label{convenciones-y-notaciuxf3n}
+
+\textbf{Nombres.} Los identificadores Lean conservan la grafía británica del proyecto (\path{ColourStats}, \path{colour_first_Phi}, \path{colour_load}), mientras que el paper escribe «color». En Lean, \path{Phi} designa tanto la tasa como las inversas por la derecha:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lean
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+tasa \texttt{Φ(t)} (todos los tipos) & \texttt{ColourStats.Phi\ lab\ t} (\path{Challenge.lean}) \\
+tasa \texttt{Φ(t)} (bicoloreada, proposición 1.3) & \texttt{ColourStats.Prop13.Phi\ c\ t} \\
+tasa del teorema 1.7 & \texttt{ColourStats.Statements.Phi1F\ lab\ col\ t} \\
+tasa \texttt{Φ\_G(t)} & \texttt{ColourStats.Statements.PhiG\ G\ lab\ t} \\
+inversa por la derecha \texttt{Ψ} del lema 5.13 & el valor por triángulo \texttt{y\ x\ u\ v\ +\ y\ x\ u\ w\ +\ y\ x\ v\ w} (\path{TriangleInverse.y}) \\
+inversa por la derecha \texttt{Ψ} del lema 5.16 & \texttt{ColourStats.E2Inverse.Phi\ xV\ xC} \\
+\texttt{Ψ₁}, \texttt{𝒯} del lema 5.19 & \texttt{E3Gadget.Phi₁}, \path{E3Gadget.Tmap}; sobre el grafo, \path{Host519.Phiop}, \path{Host519.Top} \\
+\texttt{Ψ̃}, \texttt{Ψ} del lema 5.19 & el operador construido en \path{E3Assembly.right_inverse_of_estimates}; la \texttt{Φ} cuya existencia afirma \path{lemma_5_19_exists} \\
+\texttt{N\_τ}, \texttt{e\_π}, \path{c_X}, \texttt{m\_π(τ)} & \path{numTriples}, \path{numPairs}, \path{classSize}, \path{mult} \\
+\texttt{N\^{}all\_t}, \texttt{N\^{}\{1F\}\_t}, \path{\#dec_t(G)}, \path{\#LS(M)} & \path{countAll}, \path{count1F}, \path{countDecomp}, \path{numLS} \\
+\end{longtable}
+}
+
+\textbf{Logaritmo de cero.} Lean fija \texttt{log\ 0\ =\ 0}. Un enunciado \texttt{log\ N\ ≤\ Φ\ +\ εn²} con \texttt{N\ =\ 0} afirma entonces \texttt{Φ\ +\ εn²\ ≥\ 0}, algo que el paper no sostiene. Por eso cada cota superior se demuestra de dos formas: una forma exponencial \texttt{N\ ≤\ exp(Φ\ +\ εn²)}, que es la fiel, y la forma logarítmica del enunciado del paper, demostrada para todo \texttt{N\ ≥\ 0} probando por separado que el lado derecho es no negativo bajo las hipótesis.
+
+\textbf{Enunciados asintóticos.} \texttt{o(n²)} se expresa así: para todo \texttt{ε\ \textgreater{}\ 0} existe \texttt{n₀} tal que, para todo \texttt{n\ ≥\ n₀}, toda partición y todo vector de tipos que cumplan las hipótesis, la cota vale con \texttt{εn²}. Como \texttt{n₀} se elige antes que la partición y que \path{t}, las cotas son uniformes, como en el paper.
+
+\textbf{Numeración de borrador en las fuentes.} \path{README.md}, los docstrings de \path{Challenge.lean} y \path{Statements.lean}, y \path{docs/ROADMAP_ES.md} remiten al borrador 6 (14 de noviembre de 2026) y a su título anterior. La numeración de enunciados que usan allí coincide con la del manuscrito actual. Las fuentes se congelaron sin modificaciones.
+
+\subsection{3. Correspondencia de enunciados}\label{correspondencia-de-enunciados}
+
+Todos los módulos están bajo \path{lean/ColourStats/}; los números de línea remiten a la fuente congelada.
+
+\subsubsection{3.1 Resultados principales (cotas superiores)}\label{resultados-principales-cotas-superiores}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Declaración Lean (módulo:línea)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Qué se demuestra; diferencia de forma
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Teorema 1.1, cota superior (1.1) & \path{ColourStats.LatinUpper.theorem_1_1_upper} (\path{LatinUpper.lean:569}), que demuestra \path{LatinUpper.Theorem_1_1_upper} & Para \texttt{a,\ b,\ c} y \texttt{δ₀,\ ζ\ \textgreater{}\ 0} fijos: \texttt{log\ \#LS(M)\ ≤\ n²(log\ n\ −\ 2\ −\ TC(Q))\ +\ K\ n\ log²\ n} con \texttt{K\ =\ 8c}, \texttt{n\ ≥\ max(3,\ ⌈e\^{}\{2+a+b\}⌉)}, para toda partición con clases \texttt{≥\ δ₀n} y toda tabla agregada con \texttt{M/n²\ ≥\ ζ}. Coincide con (1.1) y con la primera componente de la conjunción \path{Statements.Theorem_1_1}; vale también cuando \texttt{\#LS(M)\ =\ 0} (se demuestra que el lado derecho es no negativo). \\
+Proposición 1.3 & \path{ColourStats.prop_1_3_bicol} (\path{Prop13Bridge.lean:130}); \path{ColourStats.Prop13.prop_1_3} (\path{Prop13.lean:147}); identidad exacta \path{Prop13.prop_1_3_exact} (\path{Prop13.lean:100}); \path{ColourStats.Phi_bicolTypes} (\path{Prop13Bridge.lean:84}) & \texttt{\textbar{}Φ(t)\ −\ (n²/6)(log\ n\ −\ 2\ −\ D(Q‖P₀))\textbar{}\ ≤\ (n/6)\textbar{}log\ n\ −\ 2\textbar{}\ +\ n}, suponiendo \texttt{c\_X\ ≥\ 2}, \texttt{t\_XY\ \textgreater{}\ 0}, las identidades de fila de (1.3) y \texttt{3Σ\ c\_X(c\_X−1)\ =\ n(n−1)}. Error explícito en lugar de \texttt{O(n\ log\ n)}, con hipótesis más débiles. \\
+(4.3) y (5.2): cota de Linial--Luria por tipos & \path{ColourStats.TypedSTS.typed_upper} (\path{TypedFinal.lean:137}) & Si \texttt{N\^{}all\_t\ \textgreater{}\ 0} y cada clase tiene \texttt{≥\ c₁\ +\ 2} puntos (\texttt{c₁\ ≥\ 1}): \texttt{log\ N\^{}all\_t\ ≤\ Φ(t)\ +\ n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\})}, para todo vector de tipos \path{t} y todos los tipos de bloque. Forma \texttt{Φ(t)}, no la forma normalizada con \texttt{D(Q‖P)}; error \texttt{O(n\^{}\{7/4\})} (sección 4). \\
+Teorema 1.5, mitad superior (y teorema 1.2, mitad superior) & \path{ColourStats.TypedSTS.theorem_1_5_upper_exp} (\path{TypedThm.lean:90}); \path{ColourStats.UpperLog.theorem_1_5_upper} (\path{UpperLog.lean:104}), que demuestra \path{Challenge.Theorem_1_5_upper}; \path{TypedSTS.upper_log} (\path{TypedThm.lean:123}) & Forma exponencial \texttt{N\^{}all\_t\ ≤\ exp(Φ(t)\ +\ εn²)} para todo \path{t} (sin identidades de pares ni congruencia sobre \path{n}), con \texttt{n₀} explícito; forma logarítmica exactamente como en \path{Theorem_1_5_upper}, incluido \texttt{N\ =\ 0}. Teorema 1.2: instancia \texttt{t\ :=\ bicolTypes\ t} (sin declaración propia). \\
+Teorema 1.7, mitad superior; (5.3) & \path{ColourStats.Typed1F.typed_upper_1F} (\path{Typed1FMain.lean:160}); \path{Typed1F.theorem_1_7_upper_exp} (\path{Typed1FMain.lean:315}); \path{ColourStats.UpperLog.theorem_1_7_upper} (\path{UpperLog.lean:135}), que demuestra \path{Statements.Theorem_1_7_upper} & \texttt{log\ N\^{}\{1F\}\_t\ ≤\ Φ(t)\ +\ n²((log\ n\ +\ 4)/n\ +\ 7\ h₁\^{}\{−1/4\})} cuando cada clase de color tiene \texttt{≥\ h₁\ +\ 1} colores; forma exponencial para todo \path{t} (solo se necesitan clases de color \texttt{≥\ δ₀n}); forma logarítmica tal como está enunciada. \\
+Teorema 1.9(a), mitad superior; (5.4) & \path{ColourStats.TypedG.typed_upper_G} (\path{TypedGFinal.lean:140}); \path{TypedG.theorem_1_9a_upper_exp} (\path{TypedGThm.lean:47}); \path{ColourStats.TypedG.theorem_1_9a_upper} (\path{UpperLog.lean:193}), que demuestra \path{Statements.Theorem_1_9a_upper} & Para \path{G} \texttt{(η,\ 5)}-típico con \texttt{η\ ≤\ 1/3} y en el que cada arista tiene \texttt{≥\ c₁} vecinos comunes en cada clase: \texttt{log\ \#dec\_t(G)\ ≤\ Φ\_G(t)\ +\ n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\}\ +\ η)}; forma exponencial bajo \path{TypHyp} (las hipótesis del teorema 1.9) para todo \path{t}; forma logarítmica tal como está enunciada. No se usan las identidades de pares (1.6) ni la triángulo-divisibilidad. \\
+No negatividad de las tasas (para \texttt{log\ 0}) & \path{UpperLog.Phi_nonneg} (\path{UpperLog.lean:69}), \path{UpperLog.Phi1F_nonneg} (\path{UpperLog.lean:120}), \path{TypedG.PhiG_nonneg} (\path{UpperLog.lean:159}), \path{LatinUpper.TC_le} (\path{LatinUpper.lean:133}) & \texttt{Φ\ ≥\ 0} bajo las identidades y con clases de tamaño \texttt{≥\ 26} (resp. clases de color \texttt{≥\ 8}, \texttt{≥\ 24} vecinos comunes); \texttt{TC(Q)\ ≤\ a\ +\ b}. No son enunciados del paper. \\
+\end{longtable}
+}
+
+Declaraciones auxiliares de la sección 4.1: \path{Bregman.bregman} (\path{Bregman.lean:191}, el teorema de Bregman \texttt{log\ \#PM(A)\ ≤\ Σ\_i\ log(\textbar{}A\_i\textbar{}!)/\textbar{}A\_i\textbar{}}, demostrado mediante el argumento de entropía de Radhakrishnan), \path{Bregman.sum_rank} (\path{Bregman.lean:107}), \path{LatinUpper.bregman_sum_le} (\path{:75}), \path{LatinUpper.log_card_Patt_le} (\path{:232}, el conteo de patrones), \path{LatinUpper.log_LSset_le} (\path{:368}, la cota por regla de la cadena), \path{LatinUpper.TC_identity} (\path{:162}). Las identidades de márgenes del lema 2.1 para cuadrados latinos concretos se demuestran internamente (\path{LatinUpper.margin_rc}, \path{LatinUpper.margin_s}, líneas 497 y 518).
+
+Declaraciones auxiliares de la sección 4.2: \path{TypedChain.chain_typed} (\path{TypedChain2.lean:160}, la regla de la cadena en forma de conteo, con la clase del tercer punto revelada por separado), \path{TypedChain.cond_le} (\path{TypedChain.lean:255}, condicionar reduce la entropía), \path{TypedSTS.good_of_mem} (\path{TypedSTS.lean:293}, los seis pares del paso 5), \path{TypedSTS.point_sum_le} (\path{TypedBox.lean:235}), \path{TypedSTS.pair_bound} (\path{TypedPair.lean:212}), \path{TypedSTS.typed_raw_bound} (\path{TypedAssembly.lean:53}), \path{TypedSTS.typed_agg_bound} (\path{TypedAggregate.lean:198}, paso 4), \path{TypedSTS.term_le} (\path{TypedAnalytic.lean:89}, pasos 5--6), \path{TypedSTS.Mstat_eq} (\path{TypedStats.lean:69}); para 1-factorizaciones, \path{Typed1F.good_of_mem} (\path{Typed1F.lean:120}), \path{Typed1F.raw_bound} (\path{Typed1FAgg.lean:174}); para grafos escalonados típicos, \path{TypedG.good_of_memG} (\path{TypedG.lean:208}), \path{TypedG.typed_agg_boundG} (\path{TypedGAgg.lean:207}), \path{TypedG.MstatG_eq} (\path{TypedGStats.lean:146}), \path{TypedG.sum_cnb} (\path{TypedGStats.lean:268}). El orden aleatorio \texttt{λ\_e\ ∈\ {[}0,\ 1{]}} del paper se sustituye por etiquetas en \texttt{Fin\ L} promediadas uniformemente; las integrales de los pasos 5--6 se convierten en sumas finitas, y de ahí provienen los términos \texttt{log\ n\ /\ n} y \texttt{c₁\^{}\{−1/4\}} del error.
+
+\subsubsection{3.2 Lemas de la sección 5}\label{lemas-de-la-secciuxf3n-5}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Paper
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Declaración Lean (módulo:línea)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Qué se demuestra; diferencia de forma
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Lema 5.12 & \path{ColourFirst.compl_mul_typeNum} (\path{ColourFirst.lean:99}); \path{ColourFirst.apex_eq} (\path{:130}), \path{ColourFirst.apex_indep} (\path{:157}); \path{ColourFirst.sum_P} (\path{:168}); \path{ColourFirst.entropy_identity} (\path{:189}), \path{ColourFirst.entropy_identity_one} (\path{:274}); \path{ColourStats.card_type} (\path{TypeCount.lean:53}), \path{ColourStats.numTriples_eq} (\path{:96}), \path{ColourStats.colour_first_Phi} (\path{:109}) & El doble conteo \texttt{w(τ,π)e\_π\ =\ m\_π(τ)N\^{}O\_τ}; (a) \texttt{D\_τ} no depende del ápice (clases de tamaño \texttt{≥\ 2}, \texttt{ν\ \textgreater{}\ 0}); (b) la identidad de entropía para \texttt{ν,\ t\textquotesingle{}} positivos (clases de tamaño \texttt{≥\ 3}), sin las identidades de pares, que solo sirven para que \texttt{P(·\textbar{}π)} sea una probabilidad (\path{sum_P}); con \texttt{ν\ ≡\ 1}, \texttt{t\textquotesingle{}\ =\ t}, el lado derecho es \texttt{Φ(t)}. \\
+Lema 5.13 & \path{TriangleInverse.apply_inverse} (\path{TriangleInverse.lean:78}), \path{TriangleInverse.inverse_bound} (\path{:95}) & \texttt{AΨx\ =\ x} para \path{x} simétrico con diagonal nula y \texttt{m\ ≥\ 5} (paper: \texttt{m\ ≥\ 6}); \texttt{‖Ψx‖\_∞\ ≤\ 24‖x‖\_∞/m} para \texttt{m\ ≥\ 8}. Las mismas fórmulas \path{S}, \path{Y}, \path{y}. \\
+Lema 5.14 & \path{ColourStats.hub_pairPreserving} (\path{PaschHub.lean:237}), \path{ColourStats.hub_unique} (\path{:115}), \path{ColourStats.hub_basis} (\path{:266}); \path{ColourStats.finrank_Lam} (\path{PaschRank.lean:187}), \path{ColourStats.card_avoid} (\path{:84}), \path{ColourStats.hub_eq_pasch} (\path{:253}), \path{ColourStats.pasch_same_pairs} (\path{:211}) & Los vectores pivote están en \texttt{Λ}; todo \texttt{d\ ∈\ Λ} es igual a \texttt{Σ\_\{σ\ ∌\ o\}\ d\_σ\ b\_σ}, y un \path{d} que se anula fuera de los tipos que contienen \path{o} es nulo; \texttt{rank\ Λ\ =\ C(k+1,\ 3)}; \texttt{b\_σ} es el cambio de tipos de el intercambio de Pasch de \texttt{\{013,\ 024,\ 125,\ 345\}} a \texttt{\{012,\ 034,\ 135,\ 245\}}, y ambas familias cubren los mismos doce pares. Como en el paper. \\
+Lema 5.16 & \path{E2Inverse.pair_load} (\path{E2Inverse.lean:101}), \path{E2Inverse.colour_load} (\path{:134}), \path{E2Inverse.inverse_bound} (\path{:154}) & \texttt{AΨx\ =\ x} para \path{x} balanceado (las cargas de pares usan el balance; las cargas de colores solo necesitan diagonal nula); \texttt{\textbar{}Ψx\textbar{}\ ≤\ 13(1\ +\ m/h)‖x‖/min(m,\ h)} para \texttt{m\ ≥\ 3}, \texttt{h\ ≥\ 1}. La constante «\path{K} absoluta» del paper es \texttt{K\ =\ 13}; el valor 9 que da la demostración escrita para \texttt{m\ ≥\ 4} no está formalizado. \\
+Lema 5.17 & \path{E2Lattice.mem_span_of_rich} (\path{E2Lattice.lean:206}); forma dual \path{E2Lattice.sum_eq_zero_of_rich} (\path{:58}) & Para \texttt{H\ ⊂\ K\_m\ ∨\ C\_h} dado por un grafo \path{G} sobre los vértices y un conjunto \path{EC} de pares vértice--color, que satisface \path{Rich} (tres colores tienen un vecino común que es un vértice; dos vértices, no necesariamente distintos, adyacentes a los colores \texttt{c,\ c\textquotesingle{}} tienen un vecino común que es un vértice y es adyacente a \texttt{c,\ c\textquotesingle{}}; toda arista entre vértices está en un triángulo con un color), balanceado en cada vértice y con grados de color pares: \texttt{1\_\{E(H)\}} está en el ℤ-span de los triángulos \texttt{\{u,\ v,\ c\}} de \path{H}. Las hipótesis de riqueza son exactamente las del lema 5.17 actual. La conclusión de Lean es una combinación entera de triángulos, como en el paper. \\
+Lema 5.18 & \path{E2Swap.swapVec_inLambda} (\path{E2Swap.lean:81}), \path{E2Swap.inLambda_unique} (\path{:111}), \path{E2Swap.inLambda_repr} (\path{:187}), \path{E2Swap.finrank_Lam2} (\path{E2SwapRank.lean:170}) & Los vectores de trueque están en \texttt{Λ}; los \texttt{C(k,2)(ℓ−1)} trueques sobre las clases \texttt{(o,\ o,\ Y,\ Z)} entre \texttt{ω} y \texttt{Γ} forman una base cuyos coeficientes son las coordenadas libres \texttt{d(π,\ Γ)}, \texttt{π\ ∌\ o}; \texttt{rank\ Λ\ =\ C(k,2)(ℓ−1)}. Es la base explícita que sigue a la demostración del lema 5.18. El cambio de tipos de un trueque se define al nivel de los vectores de tipos, no se deduce de una 1-factorización concreta; la primera demostración (vía \path{L_even}) y los conteos «cuatro por cuatro» y «ocho unidades con signo» no están formalizados. \\
+Lema 5.19 & \path{Host519.lemma_5_19_exists} (\path{Lemma519.lean:202}); versión explícita \path{Host519.Hyp.lemma_5_19} (\path{Lemma519.lean:182}) & Para todo \texttt{δ₀\ ∈\ (0,\ 1{]}}, \texttt{d₀\ \textgreater{}\ 0} existen \texttt{η₀\ \textgreater{}\ 0}, \texttt{m₀}, \path{K} tales que todo grafo \texttt{(η,\ 5)}-típico con \texttt{0\ ≤\ η\ ≤\ η₀}, \texttt{m\ ≥\ m₀} vértices, clases \texttt{≥\ δ₀m} y densidades en \texttt{{[}d₀,\ 1{]}} tiene una inversa por la derecha lineal y continua \texttt{Φ} (paper: \texttt{Ψ}) de \path{A} con \texttt{‖Φ‖\_\{∞→∞\}\ ≤\ K/m}. Las constantes dependen solo de \texttt{δ₀,\ d₀} (paper: también de \path{k}). La versión explícita da \texttt{‖Φ‖\ ≤\ 2(108/p\ +\ 108/p²\ +\ 4/(δ₀³d₀³))/m} con \texttt{p\ =\ pconst\ δ₀\ d₀}, bajo \texttt{eps1\ +\ 4η/(δ₀²d₀)\ ≤\ 1/2}. \\
+Lema 5.19, piezas & \path{E3Gadget.gadget_identity} (\path{E3Gadget.lean:56}), \texttt{E3Gadget.apply\_Phi₁} (\path{:78}), \path{Host519.mulVec_gadget} (\path{Host519.lean:115}), \texttt{Host519.A\_comp\_Phi₁} (\path{:178}), \path{Host519.Hyp.norm_Phiop_le} (\path{Phi519.lean:142}), \path{Host519.Hyp.abs_K2_sub_disjoint} (\path{K2519.lean:139}), \texttt{Host519.Hyp.norm\_E₁\_le} (\path{Lemma519.lean:95}), \path{PairMap.pairMap_surjective} (\path{PairMap.lean:83}), \path{Weighting.idealLoad_weight} (\path{Weighting.lean:73}), \path{Weighting.load_weight_error} (\path{WeightingError.lean:46}), \path{Typical.load_estimate} (\path{Typical.lean:81}), \path{Counting.card_edgesIn_commonIn} (\path{Counting.lean:162}), \path{Neumann.exists_right_inverse} (\path{Neumann.lean:31}), \path{E3Assembly.right_inverse_of_estimates} (\path{E3Assembly.lean:39}), \path{E3Assembly.opNorm_le_of_rowSum} (\path{:90}) & La identidad del dispositivo \texttt{K₄}, \texttt{Ag(e,f)\ =\ 1\_e\ −\ 1\_f}; \texttt{AΨ₁\ =\ I\ −\ 𝒯}; \texttt{‖Ψ₁‖\ ≤\ 108/(pm)}; el núcleo de dos pasos \texttt{Π₂} está a menos de \texttt{19η/M} del uniforme sobre pares disjuntos; \texttt{‖𝒯²\ −\ σ\ ⊗\ u‖\ ≤\ eps1}; la aplicación de pares es sobreyectiva; la ponderación \path{W} y su error de carga; el paso de Neumann; el ensamblaje a partir de las cuatro estimaciones. Siguen los pasos de la demostración escrita. \\
+Lema 5.20 & \path{E3Lattice.isPhysical_of_rich} (\path{E3Lattice.lean:204}); forma dual \path{E3Lattice.sum_eq_zero_of_rich} (\path{:65}) & Si \path{G} es \path{Rich} (cada dos aristas tienen un \texttt{⊠}-compañero común; cada tres vértices, no necesariamente distintos, tienen un vecino común; dos vecinos comunes de dos vértices distintos están unidos por un camino dentro de su vecindario común), todos los grados son pares y \texttt{3\ ∣\ e(G)}, entonces \texttt{1\_\{E(G)\}} está en el retículo de triángulos del corpus (\path{TypedTriangle.IsPhysical}, con todos los triángulos permitidos). Las mismas hipótesis y la misma conclusión (una combinación entera de triángulos) que el paper. \\
+\end{longtable}
+}
+
+\subsection{4. Diferencias entre los resultados en Lean y los enunciados escritos}\label{diferencias-entre-los-resultados-en-lean-y-los-enunciados-escritos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Error de las cotas superiores.} Las cotas en Lean tienen error \texttt{n²((5\ log\ n\ +\ 16)/n\ +\ 8\ c₁\^{}\{−1/4\})} con \texttt{c₁\ ≈\ δ₀n}, es decir, \texttt{O(n\^{}\{7/4\})} (y \texttt{n²((log\ n\ +\ 4)/n\ +\ 7\ h₁\^{}\{−1/4\})} para 1-factorizaciones). El manuscrito demuestra por escrito \texttt{O(n\^{}\{3/2\})} (§4.2, paso 5; §5.11, usado en el teorema 1.10). La formalización establece los enunciados \texttt{o(n²)} de los teoremas 1.2, 1.5, 1.7 y 1.9(a) (mitades superiores) con este error explícito \texttt{O(n\^{}\{7/4\})} (más \texttt{ηn²} en el teorema 1.9(a)), no con el error \texttt{O(n\^{}\{3/2\})}. De las cotas explícitas puede leerse un error \texttt{O(n\^{}\{2−c\})} con \texttt{c\ =\ 1/4} (\texttt{c\ =\ min(1/4,\ c₀)} para el teorema 1.9), pero ninguna declaración Lean enuncia la forma polinomial.
+\item
+  \textbf{Lema 5.17.} El enunciado actual del lema 5.17 enumera las condiciones de riqueza bajo las cuales Lean demuestra el lema, y coinciden con \path{E2Lattice.Rich} de Lean. La discrepancia anterior (una hipótesis que, leída literalmente, forzaba \texttt{H\ =\ K\_m\ ∨\ C\_h}) ya no existe. Las conclusiones de los lemas 5.17 y 5.20 (combinaciones enteras de triángulos) también coinciden con Lean; no queda ninguna diferencia.
+\item
+  \textbf{\texttt{log\ 0\ =\ 0}.} Los enunciados logarítmicos de Lean son más fuertes que el paper cuando el conteo es cero (sección 2). El contenido adicional está demostrado. Las formas exponenciales recogen exactamente el contenido del paper.
+\item
+  \textbf{Formas exponencial y logarítmica.} \path{theorem_1_5_upper_exp}, \path{theorem_1_7_upper_exp} y \path{theorem_1_9a_upper_exp} enuncian \texttt{N\ ≤\ exp(Φ\ +\ εn²)} para todo vector de tipos; \path{upper_log} y los tres teoremas de \path{UpperLog} dan \texttt{log\ N\ ≤\ Φ\ +\ εn²}, los tres últimos para todo \texttt{N\ ≥\ 0}.
+\item
+  \textbf{Proposición 1.3.} Lean da el error explícito \texttt{(n/6)\textbar{}log\ n\ −\ 2\textbar{}\ +\ n} y solo necesita las identidades de fila de (1.3) y la identidad de admisibilidad, no todas las hipótesis del teorema 1.2.
+\item
+  \textbf{Formas normalizadas.} Las cotas superiores se demuestran en la forma \texttt{Φ(t)}. La forma normalizada \texttt{(n²/6)(log\ n\ −\ 2\ −\ D(Q‖P))} del teorema 1.5 y de (5.2), y la forma \texttt{C(n,2)(log\ n\ −\ 2\ −\ D(Q‖P))} del teorema 1.7 y de (5.3), no están formalizadas; la normalización solo se formaliza para la tasa bicoloreada (proposición 1.3).
+\item
+  \textbf{Teorema 1.1.} La cota superior (1.1) se demuestra tal como está enunciada, con \texttt{K\ =\ 8c}, pero por una vía distinta de la de los lemas 4.1--4.2: un único argumento de regla de la cadena, primero sobre el patrón de clases y luego sobre los símbolos, con el teorema de Bregman demostrado dentro del proyecto. Los lemas 4.1 y 4.2 y la observación 4.3 no están formalizados como enunciados.
+\item
+  \textbf{Diferencias menores de hipótesis} (lema 5.12, clases de tamaño \texttt{≥\ 3}; lema 5.13, \texttt{m\ ≥\ 5}; lema 5.16, \texttt{K\ =\ 13}; lema 5.19, constantes independientes de \path{k}; lema 5.18, al nivel de los vectores de tipos): se detallan en la sección 3 y en \path{MAPPING_NOTES.md}.
+\end{enumerate}
+
+\subsection{5. El teorema 1.2 y el conteo bicoloreado}\label{el-teorema-1.2-y-el-conteo-bicoloreado}
+
+\texttt{countAll\ lab\ (bicolTypes\ t)} cuenta los sistemas triples de Steiner con exactamente \path{t_XY} bloques de tipo \path{XXY} para \texttt{X\ ≠\ Y} y ningún bloque de otro tipo, es decir, los sistemas bicoloreados con matriz de tipos \path{t}. La mitad superior del teorema 1.2 es la instancia \texttt{t\ :=\ bicolTypes\ t} de \path{theorem_1_5_upper_exp}, y \path{Phi_bicolTypes} identifica \texttt{Φ(bicolTypes\ t)} con la tasa bicoloreada de la proposición 1.3. No hay una declaración propia para la mitad superior del teorema 1.2.
+
+\subsection{6. Implicaciones condicionales}\label{implicaciones-condicionales}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Implicación
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Declaración Lean (módulo:línea)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contenido
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Corolario 1.11 ⇐ teorema 1.10 para el teorema 1.9(a) & \path{ColourStats.Statements.corollary_1_11_of} (\path{Cor111.lean:266}), con \path{Statements.completionEquiv} (\path{Cor111.lean:103}) y \path{Statements.triDivisible_leave} (\path{Cor111.lean:237}) & \texttt{Theorem\_1\_10\_typical\ →\ Corollary\_1\_11}. Las completaciones de un sistema parcial \path{Q} con vector de tipos \path{t} están en biyección con las descomposiciones en triángulos de \texttt{K\_n\ −\ L\_Q} con vector de tipos \texttt{t\ −\ t(Q)}, y \texttt{K\_n\ −\ L\_Q} es triángulo-divisible para \texttt{n\ ≡\ 1,\ 3\ (mod\ 6)}. \\
+Teorema 1.5 ⇐ teorema 1.9(a) & \path{ColourStats.Statements.theorem_1_5_of} (\path{Thm15From19.lean:113}) & \texttt{Theorem\_1\_9a\ →\ Theorem\_1\_5}, aplicando el teorema 1.9(a) a \texttt{G\ =\ K\_n}. \\
+Teorema 1.1 ⇐ su mitad inferior & \path{ColourStats.LatinUpper.theorem_1_1_of_lower} (\path{LatinUpper.lean:704}) & La cota inferior (1.2), tomada como hipótesis, junto con \path{theorem_1_1_upper} da \path{Statements.Theorem_1_1}. \\
+\end{longtable}
+}
+
+Las hipótesis de estas implicaciones no están demostradas en Lean.
+
+\subsection{7. Solo enunciados}\label{solo-enunciados}
+
+Dos archivos contienen enunciados Lean (como definiciones de tipo \path{Prop}) sin demostración:
+
+\begin{itemize}
+\tightlist
+\item
+  \path{Challenge.lean}: \path{Theorem_1_2}, \path{Theorem_1_5}, \path{Theorem_1_5_upper} (este último se demuestra en \path{UpperLog.lean}).
+\item
+  \path{Statements.lean}: \path{Theorem_1_1} (la componente superior está demostrada; el enunciado completo solo se demuestra a partir de la mitad inferior), \path{Corollary_1_4}, \path{Corollary_1_6}, \path{Theorem_1_7}, \path{Theorem_1_7_upper} (demostrado), \path{Corollary_1_8}, \path{Theorem_1_9a}, \path{Theorem_1_9a_upper} (demostrado), \path{Theorem_1_9b}, \path{Theorem_1_10} (con las partes \path{Theorem_1_10_latin}, \path{_bicol}, \path{_all}, \path{_oneFact}, \path{_typical}) y \path{Corollary_1_11}.
+\end{itemize}
+
+Estos enunciados fijan la lectura elegida para cada resultado: la mitad inferior del teorema 1.1 supone las identidades de márgenes (\path{OutlineMargins}), como en el manuscrito actual; los principios de grandes desviaciones se enuncian mediante conteos (\path{CountLDP}), lo que, para una tasa continua sobre un conjunto factible compacto, equivale al par de cotas estándar. Dos de ellos difieren del manuscrito actual:
+
+\begin{itemize}
+\tightlist
+\item
+  \path{Theorem_1_10} abarca la mitad inferior del teorema 1.1 y los teoremas 1.2, 1.5, 1.7 y 1.9(a), pero no el teorema 1.9(b) ni el enunciado sobre bolas de los corolarios 1.6 y 1.8. Su docstring dice que el enunciado de los corolarios no especifica los entornos; el manuscrito actual sí los especifica (bolas cerradas con centro en \path{F_n}), de modo que ese comentario está desactualizado.
+\item
+  \path{Theorem_1_5} y \path{Theorem_1_7} enuncian solo la igualdad con \texttt{Φ(t)}, no la forma normalizada.
+\end{itemize}
+
+\subsection{8. Resultados de compilación y de axiomas}\label{resultados-de-compilaciuxf3n-y-de-axiomas}
+
+Toolchain \path{leanprover/lean4:v4.35.0-rc3}; Mathlib \path{c55e6e786f49471c72fbddbec5415808896aec1e}; corpus \path{cdr_prescribed_bicolorings} 0.3.0, idéntico byte a byte en sus fuentes a \path{CDRIII_Lean_v1.0.zip} (detalles en \path{lean/DEPENDENCIES.md}). La biblioteca \path{ColourStats} tiene 57 módulos (la raíz \path{ColourStats.lean} y 56 módulos bajo \path{ColourStats/}), con 63 archivos fuente en el archivo comprimido.
+
+\textbf{Compilación en el directorio del proyecto (17 de noviembre de 2026).} \texttt{lake\ build\ -\/-no-build\ ColourStats} informó que todos los objetivos estaban al día (9030 jobs), de modo que no hacía falta recompilar nada de lo anterior. Después, \texttt{lake\ build\ ColourStats} terminó con código de salida 0, ``Build completed successfully (9030 jobs)'', en 25 segundos. Esta ejecución reutilizó los resultados de compilación existentes, cuyas trazas coinciden con las fuentes actuales; no recompiló ningún módulo. Log: \path{logs/build_ColourStats.log}.
+
+\textbf{Compilación desde el archivo comprimido (17 de noviembre de 2026).} Para comprobar que el archivo está completo y compila desde las fuentes, \path{ColorStats_Lean_v1.0.zip} se extrajo en un directorio nuevo, situado de modo que la ruta relativa al corpus se resolviera. Allí, \texttt{lake\ build\ -\/-no-build\ ColourStats} solo listó como desactualizados módulos \path{ColourStats.*}. Un primer \texttt{lake\ build\ ColourStats} con el paralelismo por defecto de Lake se quedó sin memoria (\path{std::bad_alloc} en once procesos Lean simultáneos; log \path{logs/rebuild_from_archive_attempt1_oom.log}). La segunda ejecución, con \path{LEAN_NUM_THREADS=1}, compiló desde las fuentes los 57 módulos de \path{ColourStats}, reutilizó el corpus y Mathlib, y terminó con ``Build completed successfully (9030 jobs)'', código de salida 0, en 2362 segundos. Log: \path{logs/rebuild_from_archive.log}. El directorio temporal se eliminó después.
+
+\textbf{Axiomas.} \texttt{lake\ env\ lean\ checks/Axioms.lean} ejecutó 89 consultas \texttt{\#print\ axioms} (455 segundos, código de salida 0). Cada consulta informa exactamente \texttt{{[}propext,\ Classical.choice,\ Quot.sound{]}}; ninguna consulta informa \path{sorryAx} y ningún archivo fuente contiene \path{sorry}, \path{admit} ni un \path{axiom} de usuario. Log: \path{logs/axioms.log}. Las mismas 89 consultas, ejecutadas sobre los módulos compilados desde el archivo comprimido, dieron el mismo resultado (código de salida 0, 74 segundos; \path{logs/axioms_from_archive.log}).
+
+\textbf{Archivo comprimido.} \path{ColorStats_Lean_v1.0.zip}, SHA-256 \path{5091a807b3929336f74ea3cfb2d0f62a43c09ce44194c02cf9b78b71d907cd47}, 205061 bytes, 65 archivos bajo \path{lean/} (63 archivos fuente, \path{DEPENDENCIES.md}, \path{source_manifest.json}).
+
+Las 89 consultas cubren todas las declaraciones nombradas en las secciones 3 y 6, salvo los lemas internos \path{LatinUpper.margin_rc}, \path{LatinUpper.margin_s}, \path{UpperLog.Phi1F_nonneg} y \path{LatinUpper.TC_le}, que se usan en las demostraciones de teoremas consultados (\path{theorem_1_1_upper}, \path{theorem_1_7_upper}) y quedan cubiertos por esas consultas.
+
+\subsection{9. Reconstrucción}\label{reconstrucciuxf3n}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Extraiga \path{ColorStats_Lean_v1.0.zip}; el proyecto es la carpeta \path{lean/}. Compruebe los archivos con \path{lean/source_manifest.json}.
+\item
+  Instale \path{leanprover/lean4:v4.35.0-rc3}.
+\item
+  Obtenga el corpus (la fuente Lean de \path{CDRIII_Lean_v1.0.zip}, DOI 10.5281/zenodo.24201563) y su Mathlib en la revisión fijada. Coloque el corpus en \path{../cdr-clean-20261113/snapshot/lean} respecto del proyecto, o bien modifique \path{path} y \path{packagesDir} del corpus en \path{lakefile.toml}. Ni el corpus ni Mathlib se incluyen en el paquete.
+\item
+  Desde \path{lean/}, ejecute secuencialmente:
+
+\begin{verbatim}
+lake build --no-build ColourStats   # only ColourStats.* should be out of date
+lake build ColourStats
+lake env lean checks/Axioms.lean
+\end{verbatim}
+
+  En una máquina con poca memoria, fije \path{LEAN_NUM_THREADS=1} para la compilación, de modo que Lake compile un módulo cada vez.
+\end{enumerate}
+
+\subsection{10. Procedencia}\label{procedencia}
+
+El directorio del proyecto \texttt{C:\textbackslash{}nw\textbackslash{}colour-stats-lean} no está bajo control de versiones. El archivo comprimido se generó a partir de él el 17 de noviembre de 2026 sin modificar ningún archivo. \path{FREEZE.json} vincula el archivo comprimido, los hashes de sus entradas y los logs. La instantánea del corpus se obtuvo de la reconstrucción limpia de CDR III a partir del commit de fuentes \path{8756b2ef2dbe56002617a86e97e1b16a790ae069}; de sus 1307 módulos, 13 están en la clausura de imports de \path{ColourStats} (\path{lean/DEPENDENCIES.md}).
+
+\end{document}
