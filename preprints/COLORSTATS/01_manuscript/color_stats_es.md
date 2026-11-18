@@ -1,0 +1,1757 @@
+# Conteo de sistemas triples de Steiner y cuadrados latinos con estadísticas de color prescritas
+
+Juan Pablo Traverso Gianini
+
+Paper II. Entropía combinatoria y conteo.
+
+Preprint 1.0 — 17 de noviembre de 2026.
+
+DOI: https://doi.org/10.5281/zenodo.24308221.
+
+Repositorio: https://github.com/jtraverso/latinon-entropy-ldp.
+
+---
+
+## Resumen
+
+El Paper I de esta serie demuestra un principio de grandes desviaciones para cuadrados latinos uniformemente aleatorios en la distancia de corte de Latinons, que cuenta los cuadrados cercanos a un objeto límite prescrito [1]; una nota de investigación verifica en Lean que su marco coincide con el modelo de núcleos de Garbe, Hancock, Hladký y Sharifzadeh [2]. En este paper, el segundo de la serie, pasamos de los entornos a las estadísticas exactas y determinamos el número asintótico de sistemas triples de Steiner, 1-factorizaciones y cuadrados latinos con estadísticas de color prescritas.
+
+Para sistemas triples de Steiner sobre $n$ puntos repartidos en $k\ge3$ clases de tamaño lineal, fijar conteos factibles de todos los tipos de bloque bicoloreados, cada uno de orden $n^2$, produce $\exp\bigl(\frac{n^2}{6}(\log n-2-D(Q\Vert P_0))+o(n^2)\bigr)$ sistemas etiquetados, donde $D(Q\Vert P_0)$ es la entropía relativa de la distribución de tipos objetivo $Q$ respecto de la ley de tipos $P_0$ de una terna uniformemente aleatoria bajo una coloración aleatoria independiente con las proporciones de las clases. En particular, siempre que existan sistemas bicoloreados con tres clases, su número total es $((2/3+o(1))\,n/e^2)^{n^2/6}$. Al suprimir la restricción de bicoloración, la fórmula se extiende a tipos de bloque arbitrarios, con la ley de tipos completa $P$ en lugar de $P_0$, y da lugar a un principio de grandes desviaciones con tasa $D(Q\Vert P)$ para las estadísticas de tipos de un sistema triple de Steiner uniformemente aleatorio; lo mismo vale para las 1-factorizaciones de $K_n$.
+
+Para cuadrados latinos cuyas filas, columnas y símbolos se reparten en un número acotado de clases, la *tabla agregada* registra cuántas celdas caen en cada terna de clases. El número de cuadrados que realizan una tabla agregada dada, con todas sus entradas de orden $n^2$, es $\exp(n^2(\log n-2-\mathrm{TC})+o(n^2))$, donde $\mathrm{TC}$ es la correlación total de la tabla agregada normalizada. A diferencia de los conteos del Paper I, que valen en un entorno de un objeto límite, este conteo vale para una tabla agregada exacta, y su cota superior tiene error $O(n\log^2 n)$.
+
+Las cotas superiores provienen de argumentos de entropía. Las inferiores combinan una coloración aleatoria de los pares por tipo de bloque con el teorema de emparejamientos libres de conflictos en hipergrafos de Glock, Joos, Kim, Kühn y Lichev, y llevan el grafo residual a un vórtice pequeño mediante una cobertura descendente basada en emparejamientos pseudoaleatorios de hipergrafos. Dentro del vórtice, un teorema de absorción de triángulos tipados, junto con intercambios reservados, completa la descomposición y hace exactos todos los conteos de bloques.
+
+MSC 2020: 05B07, 05B15, 05A16, 60F10.
+Palabras clave: cuadrados latinos; sistemas triples de Steiner; enumeración; entropía; grandes
+desviaciones; diseños.
+
+---
+
+## 1. Introducción
+
+### 1.1 Antecedentes
+
+Es clásico que hay $((1+o(1))\,n/e^2)^{n^2}$ cuadrados latinos de orden $n$: la cota superior proviene del teorema de Bregman [3] y la inferior, de la cota de van der Waerden para el permanente [4, 5]. Asimismo, hay $((1+o(1))\,n/e^2)^{n^2/6}$ sistemas triples de Steiner de orden $n$: la cota superior se debe a Linial y Luria [6] y la inferior, a Keevash [7].
+
+Ambas fórmulas dicen que un diseño aleatorio se comporta, a escala exponencial, como una sucesión de elecciones locales independientes. La pregunta es ahora cuántos diseños tienen una *estadística gruesa* prescrita: se fija una partición del conjunto base en un número finito de clases y se registra cómo se distribuyen los bloques entre los tipos de clases. Este paper responde la pregunta al nivel del término $n^2$ para dos estadísticas: la matriz de tipos de bloque de un sistema triple de Steiner bicoloreado respecto de una partición de sus puntos, y la tabla agregada de un cuadrado latino respecto de particiones de sus filas, columnas y símbolos.
+
+Las secciones 1.2 y 1.3 enuncian nuestros principales resultados de enumeración y los principios de grandes desviaciones que se derivan de ellos: para cuadrados latinos con una tabla agregada dada (teorema 1.1), sistemas triples de Steiner bicoloreados y sin restricción (teoremas 1.2 y 1.5, corolario 1.6), 1-factorizaciones de $K_n$ (teorema 1.7, corolario 1.8) y descomposiciones en triángulos de grafos escalonados típicos y densos (teorema 1.9), junto con términos de error polinomiales y una aplicación a las completaciones (teorema 1.10, corolario 1.11). La sección 1.4 compara estos resultados con trabajos previos, y la sección 1.5 presenta el plan de las demostraciones.
+
+### 1.2 Resultados para cuadrados latinos
+
+Repartimos las filas en clases $R_1,\dots,R_a$, las columnas en $C_1,\dots,C_b$ y los símbolos en $S_1,\dots,S_c$, con $|R_i|=\rho_i n$, $|C_j|=\gamma_j n$ y $|S_l|=\sigma_l n$. La *tabla agregada* (*outline*) de un cuadrado latino $L$ es el arreglo
+
+$$
+M(i,j,l)=\#\{(r,c): r\in R_i,\ c\in C_j,\ L(r,c)\in S_l\}.
+$$
+
+Escribimos $Q=M/n^2$ y vemos $Q$ como la ley de una terna aleatoria $(R,C,S)$ de clases. La *correlación total* de $Q$ es
+
+$$
+\mathrm{TC}(Q)=H(R)+H(C)+H(S)-H(R,C,S).
+$$
+
+Es no negativa y se anula exactamente cuando $Q$ es una medida producto.
+
+**Teorema 1.1.** Sean $a,b,c$ y $\delta_0,\zeta>0$ fijos. Supongamos que $\rho_i,\gamma_j,\sigma_l\ge\delta_0$ y $Q(i,j,l)\ge\zeta$ para todos $i,j,l$. Entonces el número de cuadrados latinos de orden $n$ con tabla agregada $M$ satisface
+
+$$
+\log\#\mathrm{LS}(M)\le n^2\bigl(\log n-2-\mathrm{TC}(Q)\bigr)+O(n\log^2 n),\tag{1.1}
+$$
+
+uniformemente en las particiones y en $M$. Además, si $M$ satisface las identidades de márgenes del lema 2.1,
+
+$$
+\sum_l M(i,j,l)=|R_i||C_j|,\qquad \sum_j M(i,j,l)=|R_i||S_l|,\qquad \sum_i M(i,j,l)=|C_j||S_l|,
+$$
+
+entonces
+
+$$
+\log\#\mathrm{LS}(M)\ge n^2\bigl(\log n-2-\mathrm{TC}(Q)\bigr)-o(n^2).\tag{1.2}
+$$
+
+Por el lema 2.1, toda tabla agregada de un cuadrado latino satisface estas identidades de márgenes, de modo que $\#\mathrm{LS}(M)=0$ siempre que fallen; la cota superior (1.1), en cambio, no requiere ninguna hipótesis sobre los márgenes. La cota superior (1.1) se demuestra en la sección 4 y la cota inferior (1.2) en la sección 6.
+
+Cuando todas las clases son unitarias, la tabla agregada es el propio cuadrado latino. El teorema 1.1 trata el régimen opuesto, en el que el número de clases permanece fijo. La observación 7.3 explica por qué esta hipótesis no puede eliminarse sin más.
+
+### 1.3 Resultados para sistemas triples de Steiner
+
+Supongamos que el conjunto de puntos $[n]$ está repartido en $k\ge3$ clases, con $|X|=c_X$ para cada clase $X$. Un sistema triple de Steiner es *bicoloreado* respecto de la partición si cada bloque corta exactamente dos clases. Entonces cada bloque tiene un tipo $XXY$ con $X\ne Y$. Para una matriz $t=(t_{XY})_{X\ne Y}$, sea $N_t$ el número de sistemas triples de Steiner bicoloreados etiquetados con exactamente $t_{XY}$ bloques de tipo $XXY$ para todos $X\ne Y$. Contar los pares dentro de las clases y entre clases da dos condiciones necesarias:
+
+$$
+2(t_{XY}+t_{YX})=c_Xc_Y,\qquad \sum_{Y\ne X}t_{XY}=\binom{c_X}{2}.\tag{1.3}
+$$
+
+Decimos que la partición es *admisible* si $n$ es impar, todo producto $c_Xc_Y$ es par y $3\sum_X c_X(c_X-1)=n(n-1)$. Definimos $N_{XY}=\binom{c_X}{2}c_Y$ y
+
+$$
+\Phi(t)=\sum_{X\ne Y}t_{XY}\Bigl(\log\frac{N_{XY}}{t_{XY}}-2\Bigr).
+$$
+
+**Teorema 1.2.** Sean fijos $k\ge3$, $\delta_0>0$ y $\zeta>0$. Consideremos una partición admisible con $c_X\ge\delta_0 n$ para cada clase, y una matriz $t$ que satisface (1.3) con $t_{XY}\ge\zeta n^2$ para todos $X\ne Y$. Entonces
+
+$$
+\log N_t=\Phi(t)+o(n^2),
+$$
+
+uniformemente en la partición y en $t$.
+
+La tasa admite una forma normalizada. Pongamos $\gamma_X=c_X/n$ y $Q_{XY}=6t_{XY}/n^2$. Sea $P_0$ la ley del tipo de una terna uniformemente aleatoria cuando cada punto recibe la clase $X$ de manera independiente con probabilidad $\gamma_X$, restringida a los tipos bicoloreados. Así, $P_0(XXY)=3\gamma_X^2\gamma_Y$.
+
+**Proposición 1.3.** Bajo las hipótesis del teorema 1.2,
+
+$$
+\Phi(t)=\frac{n^2}{6}\bigl(\log n-2-D(Q\Vert P_0)\bigr)+O(n\log n),
+$$
+
+donde $D(Q\Vert P_0)=\sum_{X\ne Y}Q_{XY}\log(Q_{XY}/P_0(XXY))$.
+
+Aquí $P_0$ es una medida de subprobabilidad: no asigna masa ni a las ternas monocromáticas ni a las ternas arcoíris. Por tanto, para un vector de probabilidad $Q$ sobre los tipos bicoloreados, $D(Q\Vert P_0)\ge-\log P_0(\text{bicoloreado})$, con igualdad exactamente cuando $Q$ es proporcional a $P_0$; la matriz normalizada $6t/n^2$ tiene masa $(n-1)/n$, así que para ella esto vale salvo un error $O(1/n)$.
+
+**Corolario 1.4.** Sea $k=3$ y consideremos particiones admisibles con todas las clases de tamaño $n/3+O(\sqrt n)$. Entonces el número de sistemas triples de Steiner etiquetados que son bicoloreados respecto de la partición es
+
+$$
+\Bigl(\bigl(\tfrac23+o(1)\bigr)\frac{n}{e^2}\Bigr)^{n^2/6}.
+$$
+
+La admisibilidad da $\sum_X(c_X-n/3)^2=2n/3$, de modo que toda partición admisible en tres clases tiene tamaños $n/3+O(\sqrt n)$. Tales particiones existen para infinitos valores de $n$: para $n=u^2$ con $u\equiv3,5\pmod 6$, basta tomar los tamaños $(u^2+u)/3$, $(u^2+u)/3$, $(u^2-2u)/3$.
+
+Con tres clases, la fracción $2/3$ es la probabilidad de que una coloración uniforme independiente haga bicoloreada una terna dada. Por eso el conteo se comporta como si los $n^2/6$ bloques fueran bicoloreados de manera independiente. Para $k\ge4$ esta heurística falla: el mínimo de $D(Q\Vert P_0)$ sobre los $Q$ factibles es estrictamente mayor que $-\log P_0(\text{bicoloreado})$. En el límite, la igualdad obligaría a que $Q$ fuera proporcional a $P_0$; la primera identidad de (1.3) haría entonces que $\gamma_X+\gamma_Y$ no dependiera de $X\ne Y$, con lo que todas las clases serían iguales, mientras que la admisibilidad da $\sum_X\gamma_X^2=1/3+O(1/n)$, lo cual, con clases iguales, obliga a que $k=3$. Por ejemplo, para cuatro clases con proporciones $(0.47,\,0.2886,\,0.1207,\,0.1207)$, donde las tres últimas se eligen de modo que $\sum_X\gamma_X^2=1/3$, una minimización numérica da $0.634$ frente a $0.501$ (observación 7.2).
+
+**Todos los tipos de bloque.** Al suprimir la condición de bicoloración se obtienen las estadísticas de tipos completas de un sistema triple de Steiner respecto de una partición. Ahora un *tipo* es cualquier multiconjunto $\tau$ de tres clases. Escribimos $m_\pi(\tau)$ para el número de pares de clase $\pi$ en una terna de tipo $\tau$, y ponemos $e_\pi=c_Xc_Y$ para $\pi=\{X,Y\}$ con $X\ne Y$, y $e_\pi=\binom{c_X}{2}$ para $\pi=\{X,X\}$. Contar pares da las condiciones necesarias
+
+$$
+\sum_\tau m_\pi(\tau)\,t_\tau=e_\pi\qquad\text{para todo par de clases }\pi.\tag{1.4}
+$$
+
+Sea $N^{\mathrm{all}}_t$ el número de sistemas triples de Steiner sobre $[n]$ con exactamente $t_\tau$ bloques de cada tipo $\tau$, sea $N_\tau$ el número de ternas de tipo $\tau$, y extendamos $\Phi$ a todos los tipos mediante $\Phi(t)=\sum_\tau t_\tau(\log(N_\tau/t_\tau)-2)$. Sea $P$ la ley del tipo no ordenado de tres clases independientes con ley $\gamma$; es una medida de probabilidad sobre todos los tipos.
+
+**Teorema 1.5.** Sean fijos $k\ge1$, $\delta_0>0$ y $\zeta>0$. Sea $n\equiv1,3\pmod 6$, y consideremos una partición de $[n]$ en $k$ clases con $c_X\ge\delta_0 n$ y un vector $t$ que satisface (1.4) con $t_\tau\ge\zeta n^2$ para todo tipo $\tau$. Entonces
+
+$$
+\log N^{\mathrm{all}}_t=\Phi(t)+o(n^2)=\frac{n^2}{6}\bigl(\log n-2-D(Q\Vert P)\bigr)+o(n^2),
+$$
+
+uniformemente en la partición y en $t$, donde $Q_\tau=6t_\tau/n^2$. La cota superior vale para todo $t$ que satisfaga (1.4).
+
+Para un vector fijo $\gamma$ de proporciones de clases, sea $F_\gamma$ el conjunto de los vectores de probabilidad $Q$ sobre los tipos con $\sum_\tau m_\pi(\tau)Q_\tau=3w_\pi$ para todo $\pi$. Aquí $w_\pi=2\gamma_X\gamma_Y$ para $\pi=\{X,Y\}$ con $X\ne Y$ y $w_\pi=\gamma_X^2$ para $\pi=\{X,X\}$, que es la ley de clases de un par uniformemente aleatorio. $P$ está en el interior relativo de $F_\gamma$.
+
+**Corolario 1.6 (grandes desviaciones de las estadísticas de tipos).** Sea $\gamma$ fijo con entradas positivas, y sean particiones de $[n]$ con $c_X/n\to\gamma_X$. Sea $Q_n$ el vector de tipos normalizado de un sistema triple de Steiner uniformemente aleatorio sobre $[n]$, con $n\equiv1,3\pmod 6$. Entonces $Q_n$ satisface un principio de grandes desviaciones con velocidad $n^2/6$ y función de tasa $I(Q)=D(Q\Vert P)$ en $F_\gamma$, e $I=\infty$ fuera de $F_\gamma$. En particular, $Q_n\to P$ en probabilidad.
+
+Así pues, al nivel de las estadísticas gruesas de tipos, un sistema triple de Steiner uniformemente aleatorio se comporta como $n^2/6$ ternas independientes, sujetas solo a las restricciones de pares (1.4). Condicionar a la bicoloración cambia el panorama: para $k\ge4$ el minimizador de $D(Q\Vert P_0)$ no es proporcional a $P_0$ (observación 7.2), porque el condicionamiento interactúa con las restricciones de pares.
+
+**1-factorizaciones.** Sea $n$ par. Una 1-factorización de $K_n$ con colores etiquetados es una coloración propia de sus aristas con los $n-1$ colores de $C=[n-1]$. Repartimos los vértices en $k$ clases $X$, de tamaños $c_X$, y los colores en $\ell$ clases $\Gamma$, de tamaños $h_\Gamma$. Una arista entre las clases $X$ e $Y$ con color en $\Gamma$ tiene *tipo* $(XY,\Gamma)$, y $t(XY,\Gamma)$ es el número de aristas de ese tipo. Contar los pares de vértices y los pares (vértice, color) da
+
+$$
+\sum_\Gamma t(XY,\Gamma)=e_{XY},\qquad \sum_Y\bigl(1+[X=Y]\bigr)\,t(XY,\Gamma)=c_Xh_\Gamma.\tag{1.5}
+$$
+
+Pongamos $N_{(XY,\Gamma)}=e_{XY}h_\Gamma$, extendamos $\Phi$ con la misma fórmula, sea $w_{XY}$ la ley de clases de un par uniforme, y pongamos $\eta_\Gamma=h_\Gamma/(n-1)$ y $P(XY,\Gamma)=w_{XY}\eta_\Gamma$.
+
+**Teorema 1.7.** Sean fijos $k,\ell\ge1$, $\delta_0>0$ y $\zeta>0$. Sea $n$ par, con $c_X\ge\delta_0 n$ y $h_\Gamma\ge\delta_0 n$, y sea $t$ un vector que satisface (1.5) con $t(XY,\Gamma)\ge\zeta n^2$ para todo tipo. Entonces el número $N^{1\mathrm F}_t$ de 1-factorizaciones de $K_n$ con vector de tipos $t$ satisface
+
+$$
+\log N^{1\mathrm F}_t=\Phi(t)+o(n^2)=\binom n2\bigl(\log n-2-D(Q\Vert P)\bigr)+o(n^2),
+$$
+
+uniformemente, con $Q=t/\binom n2$. La cota superior vale para todo $t$ que satisfaga (1.5).
+
+**Corolario 1.8.** Sean $\gamma$ y $\eta$ fijos con entradas positivas, y sean particiones con $c_X/n\to\gamma_X$ y $h_\Gamma/n\to\eta_\Gamma$. Para una 1-factorización uniformemente aleatoria de $K_n$, el vector de tipos normalizado satisface un principio de grandes desviaciones con velocidad $\binom n2$. La tasa es $D(Q\Vert P)$ en el conjunto de los $Q$ compatibles con (1.5), e $\infty$ en el resto. En particular, las clases de colores son asintóticamente independientes de las clases de los extremos.
+
+**Grafos escalonados típicos.** El mismo método cuenta las descomposiciones en triángulos de grafos densos que parecen aleatorios entre las clases y dentro de ellas. Sea $G$ un grafo sobre $[n]$ con $k$ clases. Decimos que $G$ es $(\eta,h)$-*típico con densidades* $(d_{XY})$ si, para todo conjunto $S$ de a lo sumo $h$ vértices y toda clase $Z$, el vecindario común de $S$ tiene $(1\pm\eta)\prod_{s\in S}d_{\mathrm{cl}(s)Z}\,|Z|$ vértices en $Z$. $G$ es *triángulo-divisible* si todo grado es par y $3\mid e(G)$. Para un vector de tipos $t$, las identidades de pares de $G$ son
+
+$$
+\sum_\tau m_\pi(\tau)\,t_\tau=e_\pi(G)\qquad\text{para todo par de clases }\pi,\tag{1.6}
+$$
+
+donde $e_\pi(G)$ es el número de aristas de $G$ de clase $\pi$. Sean $N_\tau(G)$ el número de triángulos de tipo $\tau$ en $G$ y $\Phi_G(t)=\sum_\tau t_\tau(\log(N_\tau(G)/t_\tau)-2)$.
+
+**Teorema 1.9.** Sean fijos $k\ge1$ y $c_0,\delta_0,d_0,\zeta>0$. Sea $G$ un grafo triángulo-divisible sobre $[n]$ con clases de tamaño al menos $\delta_0 n$, que es $(n^{-c_0},5)$-típico con densidades $d_{XY}\ge d_0$.
+
+- (a) Para todo $t$ que satisface (1.6) con $t_\tau\ge\zeta n^2$, el número de descomposiciones en triángulos de $G$ con vector de tipos $t$ es $\exp(\Phi_G(t)+o(n^2))$. La cota superior vale para todo $t$ que satisfaga (1.6).
+- (b) Si algún $t\ge0$ real que satisface (1.6) tiene todas sus entradas al menos $\zeta n^2$, entonces el número de descomposiciones en triángulos de $G$ es $\exp(\max\Phi_G+o(n^2))$, donde el máximo se toma sobre los $t\ge0$ reales que satisfacen (1.6).
+
+Para $k=1$ y densidad $d$, (b) da $((1+o(1))\,d^2n/e^2)^{e(G)/3}$. Este caso de densidad única también se sigue de resultados conocidos: la cota superior, de una adaptación de la cota de Luria para emparejamientos perfectos en hipergrafos regulares con codegrados pequeños [8, teorema 3.1], aplicada al hipergrafo de triángulos de $G$; y la cota inferior, del método de Keevash, el *nibble* [7, teorema 2.8] seguido de la completación [7, teorema 2.1], tal como lo lleva a cabo Kwan [9, teorema 3.2]. Para $G=K_n-L_{\mathcal Q}$ con $\mathcal Q$ un sistema parcial cuasialeatorio, ambas cotas se deben a Kwan [9, teoremas 3.1 y 3.2], con error polinomial.
+
+Para $G=K_n$ con $k$ clases, (a) es el teorema 1.5. Como muestran las condiciones de Lagrange, el maximizador de (b) tiene la forma producto $Q^*(\tau)\propto N_\tau(G)\prod_{\pi\subset\tau}x_\pi$, con un peso $x_\pi$ por cada par de clases.
+
+**Términos de error y completaciones.** El teorema 1.10 afina los términos de error de los teoremas anteriores, y el corolario 1.11 lo aplica a las completaciones de sistemas parciales.
+
+**Teorema 1.10 (términos de error polinomiales).** En los teoremas 1.1, 1.2, 1.5, 1.7 y 1.9, los términos $o(n^2)$ pueden reemplazarse por $O(n^{2-c})$, donde $c>0$ depende solo de los parámetros fijos. Los corolarios tienen el mismo error para bolas, siempre que se usen las proporciones efectivas. Sea $F_n$ el conjunto de los vectores $6t/n^2$ con $t\ge0$ real que satisface (1.4), y sea $P_n$ la ley $P$ calculada con $\gamma_X=c_X/n$; para 1-factorizaciones se usan $t/\binom n2$, (1.5) y $\eta_\Gamma=h_\Gamma/(n-1)$. Sean fijos $r>0$ y $\zeta>0$, y sea $B$ una bola cerrada de radio $r$ cuyo centro está en $F_n$ y tal que todo punto de $B\cap F_n$ tiene todas sus entradas al menos $\zeta$. Entonces
+
+$$
+\mathbb P(Q_n\in B)=\exp\Bigl(-\frac{n^2}{6}\min_{B\cap F_n}D(\cdot\Vert P_n)+O(n^{2-c})\Bigr),
+$$
+
+con $\binom n2$ en lugar de $n^2/6$ para 1-factorizaciones. El centro puede depender de $n$, y $D$ viene dada por la fórmula del teorema 1.5 también en $F_n$; para sistemas triples de Steiner, los vectores de $F_n$ tienen masa total $(n-1)/n$. La condición sobre el centro es necesaria: una bola que corta $F_n$ en un único punto que no es un vector de tipos normalizado tiene probabilidad $0$.
+
+**Corolario 1.11 (conteo de completaciones).** Sea $\mathcal Q$ un sistema triple de Steiner parcial sobre $[n]$, con $n\equiv1,3\pmod 6$, y sea $L_{\mathcal Q}$ el conjunto de pares que cubre. Supongamos que $G=K_n-L_{\mathcal Q}$ satisface las hipótesis del teorema 1.9 para una partición de $[n]$. Sea $t$ un vector de tipos tal que $t-t(\mathcal Q)$ satisface (1.6) para $G$ y tiene todas sus entradas al menos $\zeta n^2$. Entonces el número de sistemas triples de Steiner que contienen $\mathcal Q$ y tienen vector de tipos $t$ es $\exp(\Phi_G(t-t(\mathcal Q))+O(n^{2-c}))$.
+
+*Demostración.* Las completaciones de $\mathcal Q$ son las descomposiciones en triángulos de $G$. Todo grado de $G$ es $n-1-2\deg_{\mathcal Q}(v)$, que es par, y $e(G)=\binom n2-3|\mathcal Q|\equiv0\pmod 3$. Basta aplicar el teorema 1.9(a) y el teorema 1.10. $\square$
+
+Para $k=1$, el corolario 1.11 es el conteo de completaciones de Kwan [9, §3], que necesita que el grafo residual sea cuasialeatorio; el corolario añade las estadísticas de tipos. Es también un análogo enumerativo del teorema de completación [10, teorema 1.1], que extiende sistemas parciales dispersos a sistemas bicoloreados con conteos de tipos prescritos. En lugar de la dispersión de $\mathcal Q$, exige que el grafo residual sea típico y que todo tipo de bloque, incluidos los monocromáticos y los arcoíris, tenga orden $n^2$, de modo que no cuenta las completaciones bicoloreadas de [10, teorema 1.1]. Para un $\mathcal Q$ disperso arbitrario, el grafo residual puede tener codegrados que varían a escala constante, y el presente método no da el conteo con precisión $o(n^2)$ (sección 8).
+
+La tabla 1 reúne los resultados de conteo. Los teoremas dan las hipótesis exactas: clases de tamaño lineal y conteos prescritos de orden $n^2$ (entradas de $Q$ al menos $\zeta$ en el teorema 1.1).
+
+| Resultado | Objetos | Conteos prescritos | Logaritmo del conteo | Error |
+|--------|------------|-----------|------------------------|---------|
+| Teor. 1.1 | Cuadrados latinos | Tabla agregada $M$ | $n^2(\log n-2-\mathrm{TC}(Q))$ | $O(n\log^2 n)$, $o(n^2)$ |
+| Teor. 1.2 | STS bicoloreados | Bloques de tipo $XXY$ | $\Phi(t)$ | $o(n^2)$ |
+| Teor. 1.5 | STS | Bloques de tipo $\tau$ | $\tfrac{n^2}{6}(\log n-2-D(Q\Vert P))$ | $o(n^2)$ |
+| Teor. 1.7 | 1-factorizaciones | Aristas de tipo $(XY,\Gamma)$ | $\tbinom n2(\log n-2-D(Q\Vert P))$ | $o(n^2)$ |
+| Teor. 1.9 | Descomposiciones de $G$ | Triángulos de tipo $\tau$ | $\Phi_G(t)$ | $o(n^2)$ |
+| Cor. 1.11 | STS que contienen $\mathcal Q$ | Bloques de tipo $\tau$ | $\Phi_G(t-t(\mathcal Q))$ | $O(n^{2-c})$ |
+
+Table: Los resultados de conteo de la sección 1 (STS: sistemas triples de Steiner). Para el teorema 1.1, los errores son los de las cotas superior e inferior; por la proposición 1.3, $\Phi(t)=\tfrac{n^2}{6}(\log n-2-D(Q\Vert P_0))+O(n\log n)$. El teorema 1.10 reemplaza cada $o(n^2)$ por $O(n^{2-c})$, y los corolarios 1.6 y 1.8 dan principios de grandes desviaciones con tasa $D(Q\Vert P)$.
+
+### 1.4 Relación con trabajos previos
+
+**Kwan–Sudakov.** Linial y Luria [11] muestran que, en un cuadrado latino aleatorio, toda caja que no contiene ninguna entrada tiene volumen $O(n^2\log^2 n)$, y conjeturan una cota de discrepancia sobre todas las cajas. En un cuadrado latino, las celdas que contienen un símbolo de un conjunto fijo $S$ forman un grafo bipartito $|S|$-regular. La demostración de [12, proposición 15] de Kwan y Sudakov usa esto para factorizar el conteo en dos factores: patrones de clases de colores y 1-factorizaciones; para dos clases de símbolos, es el lema 4.1 más abajo. Su teorema 2 acota la discrepancia de un cuadrado latino aleatorio sobre todas las cajas. Se trata de un enunciado de concentración para la tabla agregada, mientras que el teorema 1.1 da el costo exponencial de las desviaciones lineales.
+
+**Latinons.** Garbe, Hancock, Hladký y Sharifzadeh [13] desarrollan una teoría de límites para cuadrados latinos. Sus objetos límite son los *Latinons*, para los que definen una entropía. Con la convención de signo $\mathrm{Ent}(W)=-\int g\log g$, donde $g$ es la densidad de $W$, predicen que aproximadamente $(e^{\mathrm{Ent}(W)}n/e^2)^{n^2}$ cuadrados latinos están cerca de un Latinon $W$ ([13, §12.2]; conjetura 12.4 en la versión arXiv v3, numerada 12.5 en la v2). Esta predicción se demuestra en [1], el Paper I de esta serie; la nota de investigación [2] verifica en Lean que la representación por medidas de los Latinons que allí se usa coincide con el modelo de núcleos de [13]. Los cuadrados latinos uniformemente aleatorios satisfacen un principio de grandes desviaciones en la distancia de corte completa de Latinons, con velocidad $n^2$ y tasa de entropía relativa ([1, teorema 2.1]). El número de cuadrados cuyas densidades de patrones de orden, en número finito, caen en una caja pequeña alrededor de un objetivo $z$ es $\exp(n^2(\log n-2-J(z))+o(n^2))$ ([1, teorema 2.2]). El radio de la caja se elige después del objetivo, de modo que el conteo es para un entorno y no para valores exactos de la estadística. La demostración de [1] es un argumento de entropía fila por fila con permanentes y no usa absorción. Su único conteo de sistemas triples de Steiner es para una familia con un residuo fijo ([1, proposición 10.3]); los teoremas 1.2 y 1.5 cuentan todos los sistemas con tipos dados.
+
+El teorema 1.1 cuenta los cuadrados con exactamente una tabla agregada prescrita para una partición fija, y dos de sus partes se deducen de [1]. Aplicado a la familia de cuadrados con tabla agregada $M$, [1, lema 7.1] da (1.1) con error $O(n^{3/2}\log n)$: su entropía gruesa es $-\mathrm{TC}(Q)$ cuando se cumplen las identidades de márgenes. La sección 4.1 afina el error a $O(n\log^2 n)$ mediante el teorema de Bregman. Para los cuadrados cuya tabla agregada está a distancia a lo sumo $\rho n^2$ de $M$, la cota inferior (1.2) se sigue de [1, teorema 3.1] aplicado al perfil escalonado $p(x,y,z)=Q(i,j,l)/(\rho_i\gamma_j\sigma_l n)$, cuya entropía es $n^2(\log n-\mathrm{TC}(Q))$; esta deducción es nuestra y no está enunciada en [1]. Lo que añade el teorema 1.1 es la cota inferior para la fibra exacta, construida en la sección 6 mediante el esquema de vórtice y absorción que también trata los sistemas triples de Steiner.
+
+Las dos estadísticas están relacionadas, pero ninguna determina a la otra. Para el Latinon escalonado con densidad constante en cada bloque de una partición con tabla agregada $Q$, un cálculo directo da $\mathrm{Ent}=-\mathrm{TC}(Q)$, y entre los Latinons con esa tabla agregada por bloques el Latinon escalonado maximiza la entropía. La tabla agregada depende de una partición de las filas, columnas y símbolos, y las densidades de patrones de orden de [1] dependen de su orden, de modo que ninguna de las dos estadísticas determina a la otra.
+
+**Sistemas triples de Steiner.** Keevash [7] determinó el número de sistemas triples de Steiner a primer orden en la base. Gishboliner, Glock y Sgueglia [14] demuestran que toda $r$-coloración de las ternas, para $r\ge3$, admite un sistema triple de Steiner de discrepancia $\Omega(n^2)$. Nuestro contexto es el caso particular de las coloraciones inducidas por una partición de los vértices. Ahí, el teorema 1.2 da el número de sistemas con cada estadística de tipos, que es una pregunta distinta.
+
+Las bicoloraciones de sistemas triples de Steiner fueron estudiadas por Colbourn, Dinitz y Rosa [15] y por autores posteriores. En la serie [16, 17, 10], el tercer paper demuestra, bajo las mismas hipótesis que el teorema 1.2, que $\log N_t=(1/6+o(1))\,n^2\log n$, y advierte que no identifica el término siguiente, de orden $n^2$. El teorema 1.2 identifica ese término. Aparte de [10], no encontramos ninguna enumeración asintótica en esa literatura.
+
+**Herramientas de completación.** Las cotas inferiores completan sus construcciones con los teoremas de absorción T y $T^+$ de [18] para triángulos etiquetados (apéndice A), con los intercambios de [10, §4] y con el teorema de emparejamientos pseudoaleatorios de Ehard, Glock y Joos [19]. Los teoremas T y $T^+$ están formalizados en Lean en [18], y el teorema de [19] en [20].
+
+**Métodos.** Varias enumeraciones recientes siguen el mismo patrón: una cota superior por entropía, más una construcción aleatoria que realiza la entropía máxima y se completa mediante absorción o métodos algebraicos. Son ejemplos el conteo de Simkin de configuraciones de $n$ reinas [21], con Bowtell y Keevash [22], las cotas para sudokus de Luria [8, corolario 3.2] y de Mahdian y Mahmoodian [23], y el conteo de Keevash de cuadrados sudoku [24, teorema 2.7]. Nuestras demostraciones se ajustan a este patrón.
+
+**Diseños y 1-factorizaciones aleatorios.** Kwan [9] mostró cómo transferir a un sistema triple de Steiner uniformemente aleatorio las propiedades que valen con probabilidad muy alta en un proceso aleatorio de triángulos. Ferber y Kwan [25] muestran de este modo que un sistema triple de Steiner aleatorio se descompone en piezas cuasialeatorias por arriba; sumar las piezas sobre una partición, lo que deducimos de [25, lema 3.5], da la ley de los grandes números $Q_n\to P$ del corolario 1.6, pero no su tasa.
+
+Kwan, Sah y Sawhney [26] estudian las grandes desviaciones del número de intercalados en un cuadrado latino aleatorio, y Kwan y Pham [27] estudian colas inferiores en el punto crítico, incluidos los sistemas triples de Steiner sin configuraciones de Pasch. Esas estadísticas no son lineales en los bloques; las nuestras sí.
+
+El número de 1-factorizaciones de $K_n$ es $((1+o(1))\,n/e^2)^{n^2/2}$: la cota superior se debe a Kahn–Lovász y a Linial–Luria [6], y la inferior a Ferber, Jain y Sudakov [28]. El caso $k=\ell=1$ del teorema 1.7 da otra demostración de esta última. Dai, Divoux y Kelly [29] demuestran cotas superiores por entropía para hipergrafos con grados irregulares, sin cotas inferiores que las igualen. Hasta donde sabemos, los teoremas 1.1 y 1.2 y el corolario 1.4 no han aparecido antes.
+
+### 1.5 Esbozo de las demostraciones
+
+Las cotas superiores son argumentos de entropía (sección 4). Para cuadrados latinos factorizamos el conteo sobre los patrones de clases, como en [12]. Cada grafo de clase aporta su número de 1-factorizaciones ordenadas, que se estima con las cotas de Bregman y de van der Waerden. Los patrones se acotan con un coeficiente multinomial en cada bloque. Para sistemas triples, aplicamos el argumento de Linial–Luria y, en cada paso, revelamos además la clase del tercer punto.
+
+La cota inferior para sistemas triples (sección 5) consta de siete pasos; la figura 1, en la sección 5.1, muestra cómo usan el conjunto de vértices.
+
+1. **Vórtice y reservas.** Se fija un conjunto $U$ de aproximadamente $n^{1-\delta'/4}$ puntos y se apartan grafos aleatorios dispersos: $F$ para la cobertura descendente (*cover-down*), $R$ para la limpieza y $R'$ entre $O=[n]\setminus U$ y $U$.
+2. **Colorear los pares dentro de $O$ según el tipo de bloque**, de manera independiente, con probabilidades ajustadas para que cada 3-grafo tipado sea casi regular.
+3. **Contar emparejamientos casi perfectos** en cada 3-grafo tipado con el teorema de Glock, Joos, Kim, Kühn y Lichev [30].
+4. **Recuperar la tasa.** La entropía de la coloración más los conteos de emparejamientos es igual a $\Phi(t)$ salvo $O(n^{2-\delta'/4}\log n)$ (lema 5.2).
+5. **Limpiar** los vértices con grado residual grande, usando $R$.
+6. **Cobertura descendente:** cubrir cada par restante que tenga un punto en $O$ mediante bloques con uno o dos puntos en $U$ (lema 5.6).
+7. **Completar dentro de $U$** con $T^+$ de [18], y hacer exactos los conteos de tipos con intercambios reservados (lema 5.10).
+
+La sección 5.8 adapta este esquema a todos los tipos de bloque (teorema 1.5). Allí el retículo de completación proviene del lema 5.20, y los intercambios son intercambios de Pasch (lema 5.14). La sección 5.9 lo aplica al grafo etiquetado $K_n\vee C$, cuyas descomposiciones en triángulos son las 1-factorizaciones de $K_n$ (teorema 1.7). La sección 5.10 extiende el método a grafos escalonados típicos y densos (teorema 1.9). Allí el vórtice ya no es completo, de modo que la semilla proviene de una inversa construida con dispositivos $K_4$ (lema 5.19), y el retículo, de un argumento directo (lema 5.20).
+
+La sección 6 lleva a cabo el argumento análogo para cuadrados latinos, vistos como descomposiciones en triángulos de $K_{n,n,n}$. El teorema T se aplica a grafos etiquetados, así que el caso tripartito solo necesita sus propios lemas de inversa, semilla y retículo (lemas 6.3–6.5), la condición de bisagra y los intercambios de intercalados (lema 6.6).
+
+La tabla 2 recoge, para cada uno de los cinco contextos, el grafo y tres ingredientes de la completación dentro del vórtice: una inversa por la derecha acotada de la aplicación de incidencia arista–triángulo, que da la semilla exacta; un lema de retículo, que da el certificado entero; y los intercambios que hacen exactos los conteos de tipos.
+
+| Contexto | Grafo | Secciones | Inversa por la derecha | Retículo | Intercambios |
+|------------|---------|-------|---------|---------|-------------|
+| Sistemas bicoloreados (teorema 1.2) | $K_n$, tipos bicoloreados | 5.1–5.7 | Lema 5.7 | Lema 5.9 | Intercambios de nueve puntos de [10, §4.1] |
+| Todos los tipos de bloque (teorema 1.5) | $K_n$, todos los tipos | 5.8 | Lema 5.13 | Lema 5.20 | Intercambios de Pasch (lema 5.14) |
+| 1-factorizaciones (teorema 1.7) | $K_n\vee C$ | 5.9 | Lema 5.16 | Lema 5.17 | Trueques alternantes (lema 5.18) |
+| Grafos escalonados típicos (teorema 1.9) | $G$ típico | 5.10 | Lema 5.19 | Lema 5.20 | Intercambios de Pasch (lema 5.14) |
+| Cuadrados latinos (teorema 1.1) | $K_{n,n,n}$ | 6 | Lema 6.3 | Lema 6.5 | Intercalados (lema 6.6) |
+
+Table: Los cinco contextos del esquema de vórtice y los lemas que proporcionan la completación dentro del vórtice en cada uno.
+
+### 1.6 Notación
+
+Los logaritmos son naturales. $H$ denota la entropía de Shannon y $D$ la entropía relativa. $\binom m2=m(m-1)/2$. Para un tipo ordenado $\tau=(X,Y)$, un bloque de tipo $\tau$ tiene dos puntos en $X$ y uno en $Y$. Las constantes ocultas en $O(\cdot)$ y $o(\cdot)$ dependen solo de los parámetros fijos (los números de clases, $\delta_0$, $\zeta$ y, cuando aparecen, $c_0$, $d_0$ y $r$).
+
+---
+
+## 2. Dos identidades de entropía
+
+Necesitamos dos identidades para las tasas: la independencia dos a dos de las tablas agregadas latinas (lema 2.1) y la forma normalizada de la tasa de Steiner de la proposición 1.3 (lema 2.2).
+
+**Lema 2.1 (independencia dos a dos de las tablas agregadas latinas).** Para todo cuadrado latino y toda elección de particiones, $\sum_l M(i,j,l)=|R_i||C_j|$, $\sum_j M(i,j,l)=|R_i||S_l|$ y $\sum_i M(i,j,l)=|C_j||S_l|$. En consecuencia, bajo $Q$, cada par entre $R$, $C$ y $S$ es independiente, y $\mathrm{TC}(Q)=I(S;R,C)$.
+
+*Demostración.* Cada celda de $R_i\times C_j$ contiene exactamente un símbolo, y cada fila de $R_i$ contiene cada símbolo de $S_l$ exactamente una vez. Las columnas se tratan igual que las filas, por simetría. Como $R$ y $C$ son independientes, $H(R,C)=H(R)+H(C)$, y por tanto $\mathrm{TC}=H(S)+H(R,C)-H(R,C,S)=I(S;R,C)$. $\square$
+
+**Lema 2.2 (la tasa de los STS en forma normalizada).** La proposición 1.3 se cumple.
+
+*Demostración.* Escribimos $N_{XY}=(c_X(c_X-1)/2)\,c_Y=(n^3/2)\gamma_X^2\gamma_Y(1+O(1/n))$. Entonces
+
+$$
+\log\frac{N_{XY}}{t_{XY}}=\log\frac{n^3\gamma_X^2\gamma_Y}{2t_{XY}}+O(1/n)=\log n+\log\frac{P_0(XXY)}{Q_{XY}}+O(1/n),
+$$
+
+porque $2t_{XY}=n^2Q_{XY}/3$ y $P_0(XXY)=3\gamma_X^2\gamma_Y$. Por (1.3), $\sum_{X\ne Y}t_{XY}=\sum_X\binom{c_X}{2}$, y la admisibilidad da $\sum_X\binom{c_X}{2}=n(n-1)/6=n^2/6+O(n)$. Sumando, $\Phi(t)=(n^2/6)(\log n-2-D(Q\Vert P_0))+O(n\log n)$. $\square$
+
+---
+
+## 3. La minimización para k = 3
+
+Para tres clases de tamaños casi iguales calculamos el mínimo de $D(Q\Vert P_0)$ sobre las matrices factibles y deducimos el corolario 1.4 del teorema 1.2.
+
+**Lema 3.1.** Sea $k=3$ y supongamos que todas las clases tienen tamaño $n/3+O(\sqrt n)$. Sobre las matrices $t$ que satisfacen (1.3), el mínimo de $D(Q\Vert P_0)$ es $\log(3/2)+o(1)$. Se alcanza, salvo $o(1)$, en $t_{XY}=n^2/36$ para todos $X\ne Y$.
+
+*Demostración.* Llamemos $X,Y,Z$ a las clases. Tras normalizar, (1.3) se escribe $Q_{XY}+Q_{YX}=1/3+o(1)$ y $Q_{XY}+Q_{XZ}=1/3+o(1)$. En el límite, las soluciones forman la familia uniparamétrica
+
+$$
+Q_{XY}=Q_{YZ}=Q_{ZX}=s,\qquad Q_{YX}=Q_{ZY}=Q_{XZ}=\tfrac13-s,\qquad s\in[0,\tfrac13],
+$$
+
+y $P_0\equiv1/9$ en los seis tipos. Entonces $D(s)=3[s\log(9s)+(1/3-s)\log(9(1/3-s))]$. Esta función es estrictamente convexa y simétrica respecto de $s=1/6$, donde vale $\log(3/2)$. Como $D$ es continua y el conjunto de restricciones converge, el mínimo para $n$ finito es $\log(3/2)+o(1)$. $\square$
+
+*Demostración del corolario 1.4, dado el teorema 1.2.* El número de matrices $t$ que satisfacen (1.3) es polinomial en $n$.
+
+Para la cota superior, recordemos que la cota superior (4.3) de más abajo vale para todo $t$, sin ninguna cota inferior sobre $t_{XY}$. Sumando sobre $t$ y aplicando los lemas 2.2 y 3.1 se obtiene a lo sumo $\exp((n^2/6)(\log n-2-\log(3/2))+o(n^2))$.
+
+Para la cota inferior, llamemos $X,Y,Z$ a las clases y pongamos
+
+$$
+\begin{aligned}
+&t_{XY}=\lfloor c_Xc_Y/4\rfloor,\qquad t_{YX}=\tfrac12c_Xc_Y-t_{XY},\qquad t_{XZ}=\tbinom{c_X}{2}-t_{XY},\\
+&t_{ZX}=\tfrac12c_Xc_Z-t_{XZ},\qquad t_{YZ}=\tbinom{c_Y}{2}-t_{YX},\qquad t_{ZY}=\tfrac12c_Yc_Z-t_{YZ}.
+\end{aligned}
+$$
+
+Son enteros, porque todo producto $c_Xc_Y$ es par, y satisfacen todas las ecuaciones de (1.3) salvo, posiblemente, $t_{ZX}+t_{ZY}=\binom{c_Z}{2}$. Los dos miembros de esa ecuación difieren en $\frac12\sum_{X<Y}c_Xc_Y-\sum_X\binom{c_X}{2}$, que se anula por la condición de admisibilidad $3\sum_Xc_X(c_X-1)=n(n-1)$. Cada entrada es $n^2/36+O(n^{3/2})$, así que $t_{XY}\ge n^2/40$ para $n$ grande y el teorema 1.2 se aplica; por el lema 2.2 y la continuidad de $D$, $D(Q\Vert P_0)=\log(3/2)+o(1)$ en este $t$.
+
+Por último, $(n^2/6)(\log n-2-\log(3/2))=(n^2/6)\log((2/3)\,n/e^2)$. $\square$
+
+---
+
+## 4. Cotas superiores
+
+Las dos cotas superiores son argumentos de entropía: (1.1) para cuadrados latinos con tabla agregada $M$, y (4.3) para sistemas triples de Steiner bicoloreados con matriz de tipos $t$, que es la cota superior del teorema 1.2.
+
+### 4.1 Cuadrados latinos
+
+Para cuadrados latinos, la cota superior se reduce a dos conteos: el de los patrones de clases de las celdas y el de las 1-factorizaciones del grafo bipartito de cada clase de símbolos. Un *patrón* compatible con $M$ es una aplicación $P$ de las celdas en las clases de símbolos tal que:
+
+- cada fila contiene exactamente $|S_l|$ celdas de clase $l$;
+- cada columna contiene exactamente $|S_l|$ celdas de clase $l$;
+- cada bloque $R_i\times C_j$ contiene exactamente $M(i,j,l)$ celdas de clase $l$.
+
+Dado un patrón $P$, sea $G_l(P)$ el grafo bipartito fila–columna de las celdas de clase $l$; es $\sigma_l n$-regular. Para un grafo bipartito regular $G$, sea $F(G)$ el número de 1-factorizaciones ordenadas de $G$, es decir, de descomposiciones en emparejamientos perfectos etiquetados por los elementos de un conjunto fijo de tamaño $\deg G$.
+
+**Lema 4.1 (factorización; cf. la demostración de [12, proposición 15]).**
+
+$$
+\#\mathrm{LS}(M)=\sum_{P\text{ compatible con }M}\ \prod_l F(G_l(P)).
+$$
+
+*Demostración.* Un cuadrado latino con tabla agregada $M$ determina su patrón de clases $P$. Dado $P$, el cuadrado queda determinado al elegir, para cada $l$, qué símbolo de $S_l$ ocupa cada celda de $G_l(P)$. Cada fila y cada columna debe contener cada símbolo de $S_l$ exactamente una vez. Así, las celdas de cada símbolo forman un emparejamiento perfecto de $G_l(P)$, y la elección es una 1-factorización ordenada etiquetada por $S_l$. Elecciones distintas dan cuadrados distintos. $\square$
+
+**Lema 4.2.** Sea $d\ge2$ y sea $G$ un grafo bipartito $d$-regular con $n+n$ vértices. Entonces
+
+$$
+n(d\log d-2d)-O(n\log d)\le\log F(G)\le n(d\log d-2d)+O(n\log^2 d).
+$$
+
+*Demostración.* Se quitan emparejamientos perfectos de uno en uno. Tras quitar $j$ emparejamientos, el grafo restante es $(d-j)$-regular. Por el teorema de Bregman tiene a lo sumo $((d-j)!)^{n/(d-j)}$ emparejamientos perfectos, y por el teorema de Egorychev–Falikman tiene al menos $((d-j)/e)^n$. Multiplicando sobre $j$ y aplicando la fórmula de Stirling se obtienen las dos cotas. $\square$
+
+*Demostración de (1.1).* Podemos suponer $\#\mathrm{LS}(M)>0$; entonces $M$ satisface las identidades de márgenes por el lema 2.1. Acotamos primero el número de patrones. Un patrón restringido al bloque $R_i\times C_j$ es una coloración de $|R_i||C_j|$ celdas con conteos de colores prescritos $M(i,j,\cdot)$. Por tanto
+
+$$
+\#\text{patrones}\le\prod_{i,j}\binom{|R_i||C_j|}{M(i,j,\cdot)}\le\exp\Big(\sum_{i,j}|R_i||C_j|\,H\Big(\frac{M(i,j,\cdot)}{|R_i||C_j|}\Big)\Big)=\exp\big(n^2H(S\mid R,C)\big),
+$$
+
+ya que $|R_i||C_j|=n^2Q(i,j)$ por el lema 2.1. Por los lemas 4.1 y 4.2 con $d_l=\sigma_l n$,
+
+$$
+\begin{aligned}
+\log\#\mathrm{LS}(M)&\le n^2H(S\mid R,C)+\sum_l n\big(\sigma_l n\log(\sigma_l n)-2\sigma_l n\big)+O(n\log^2 n)\\
+&=n^2\big(\log n-2-H(S)+H(S\mid R,C)\big)+O(n\log^2 n)\\
+&=n^2\big(\log n-2-I(S;R,C)\big)+O(n\log^2 n),
+\end{aligned}
+$$
+
+e $I(S;R,C)=\mathrm{TC}(Q)$ por el lema 2.1. $\square$
+
+La cota (1.1), con el error más débil $O(n^{3/2}\log n)$, se sigue también de [1, lema 7.1], aplicado a la familia de cuadrados con tabla agregada $M$. La factorización anterior y el teorema de Bregman dan el error $O(n\log^2 n)$.
+
+**Observación 4.3.** El mismo cálculo con la cota inferior del lema 4.2 muestra que (1.2) es equivalente a
+
+$$
+\log\#\text{patrones}(M)\ge n^2H(S\mid R,C)-o(n^2).\tag{4.1}
+$$
+
+Construir patrones compatibles directamente es difícil, porque todos los márgenes de filas y columnas deben ser exactos; la sección 6 demuestra en cambio (1.2), y por ende (4.1), mediante descomposiciones de $K_{n,n,n}$ en triángulos.
+
+### 4.2 Sistemas triples de Steiner: una cota de Linial–Luria por tipos
+
+Acotamos $N_t$ revelando el tercer punto de cada par en un orden aleatorio, como en [6], y registrando la clase de ese punto por separado del punto mismo.
+
+Sea $\mathcal S_t$ el conjunto de sistemas bicoloreados con matriz de tipos $t$, de modo que $|\mathcal S_t|=N_t$, y sea $S$ uniforme en $\mathcal S_t$. Para un par $e=\{x,y\}$, denotamos por $z_e$ el tercer punto del bloque que contiene a $e$, y por $C_e$ la clase de $z_e$. El sistema $S$ está determinado por $(z_e)_e$, así que $\log N_t=H((z_e)_e)$.
+
+Sean $(\lambda_e)$ variables aleatorias independientes, uniformes en $[0,1]$ e independientes de $S$, y revelemos los $z_e$ en orden creciente de $\lambda_e$. Por la regla de la cadena,
+
+$$
+\log N_t=\sum_e\mathbb E\,H(z_e\mid\mathrm{past}_e),\tag{4.2}
+$$
+
+donde $\mathrm{past}_e$ es la $\sigma$-álgebra generada por $(\lambda_f)_f$ y los valores $z_f$ con $\lambda_f<\lambda_e$. Sea $F_e$ el suceso de que $e$ preceda a los otros dos pares de su bloque. Los pasos 1–3 acotan un único término de (4.2) por una entropía de clases y un logaritmo esperado; los pasos 4 y 5 suman estas dos partes sobre los pares; los pasos 6 y 7 las combinan e identifican el resultado con $\Phi(t)$.
+
+**Paso 1.** El suceso $F_e$ está determinado por $\mathrm{past}_e$, y en $F_e^c$ el valor $z_e$ está determinado por $\mathrm{past}_e$. Por tanto $H(z_e\mid\mathrm{past}_e)=\mathbb E[\mathbf 1_{F_e}H(z_e\mid\mathrm{past}_e)]$.
+
+**Paso 2.** Dado $\lambda_e=\lambda$, el suceso $F_e$ tiene probabilidad $(1-\lambda)^2$, cualquiera que sea $S$. Así, $F_e$ es independiente de $S$ dado $\lambda_e$.
+
+**Paso 3.** En $F_e$, la regla de la cadena da
+
+$$
+H(z_e\mid\mathrm{past}_e)\le H(C_e\mid\lambda_e,F_e)+\mathbb E\big[\log A_e(C_e)\mid\lambda_e,F_e,C_e\big],
+$$
+
+donde $A_e(c)$ es el número de puntos $z$ de clase $c$ tales que ni $\{x,z\}$ ni $\{y,z\}$ están en un bloque ya revelado. Usamos que condicionar reduce la entropía y que $z_e$ es uno de estos puntos.
+
+**Paso 4 (entropía de clases).** Por el paso 2, la ley de $C_e$ dado $(\lambda_e,F_e)$ es su ley $p_e$ bajo $S$. Para un par de clases $\{A,B\}$, sea $E_{AB}$ el conjunto de pares de esa clase. Cada par está en exactamente un bloque, así que el promedio $q_{AB}$ de $p_e$ sobre $e\in E_{AB}$ queda fijado por $t$. Los términos $\log\gamma_c$ de abajo provienen de la estimación de $\log A_e(c)$ en el paso 5. Por la concavidad de la entropía y la linealidad del segundo término en $p_e$,
+
+$$
+\sum_{e\in E_{AB}}\Big[H(p_e)+\sum_c p_e(c)\log\gamma_c\Big]\le|E_{AB}|\Big[H(q_{AB})+\sum_c q_{AB}(c)\log\gamma_c\Big]=-|E_{AB}|\,D(q_{AB}\Vert\gamma).
+$$
+
+**Paso 5 (conteo de candidatos).** Para $z\ne z_e$ en la clase $c$, los pares $\{x,z\}$ e $\{y,z\}$ están en dos bloques distintos, ambos diferentes del bloque de $e$. Dado $\lambda_e=\lambda$, ambos bloques están sin revelar con probabilidad $(1-\lambda)^6$. Esto es independiente de $F_e$, pues los pares que intervienen son disjuntos del bloque de $e$. Por la desigualdad de Jensen,
+
+$$
+\mathbb E\log A_e(c)\le\log(1+\gamma_c n(1-\lambda)^6)=\log(\gamma_c n)+6\log(1-\lambda)+\log\Big(1+\frac{1}{\gamma_c n(1-\lambda)^6}\Big).
+$$
+
+Integrado contra $(1-\lambda)^2\,d\lambda$, el último término es $O((\gamma_c n)^{-1/2})$, mediante la sustitución $1-\lambda=(\gamma_c n)^{-1/6}v$; sumado sobre los pares, aporta $O(n^{3/2})$.
+
+**Paso 6.** Al combinar los pasos 1–5 en (4.2), cada par contribuye con peso $\int_0^1(1-\lambda)^2\,d\lambda=1/3$. Hay $n(n-1)/2$ pares y $b_n=n(n-1)/6$ bloques. Usando $\int_0^1(1-\lambda)^2\cdot6\log(1-\lambda)\,d\lambda=-2/3$, se obtiene
+
+$$
+\log N_t\le b_n(\log n-2)-b_n\sum_{A,B}Q(A,B)\,D(q_{AB}\Vert\gamma)+o(n^2),
+$$
+
+donde $Q(A,B)$ es la ley de las clases de un par uniforme. Ordenar el par de forma uniformemente aleatoria no cambia estas cantidades: un par ordenado uniforme $(x,y)$ junto con su tercer punto $z_e$ es un bloque uniforme de $S$ con sus tres puntos en orden uniformemente aleatorio, de modo que la ley conjunta $Q_{ABC}$ de las tres clases es intercambiable, y la información mutua de abajo es la misma para el par ordenado y para el no ordenado. La ley de la clase de $z_e$, para un par uniforme $e$, es exactamente $\gamma$: es la clase de un punto uniforme de un bloque uniforme, y cada punto está en $(n-1)/2$ bloques. Por tanto, la divergencia promediada es igual a $I(C;A,B)$, la información mutua bajo la ley conjunta $Q_{ABC}$ de un par uniforme y su tercer punto.
+
+**Paso 7.** Tenemos $Q(A,B)=\gamma_A\gamma_B+O(1/n)$, y todas las clases tienen tamaño lineal, así que $I(C;A,B)=D(Q_{ABC}\Vert\gamma\otimes\gamma\otimes\gamma)+O(1/n)$. Tanto $Q_{ABC}$ como $\gamma^{\otimes3}$ son intercambiables, de modo que la divergencia coincide con la divergencia entre las leyes inducidas del tipo no ordenado, que son $(n/(n-1))Q$ y $P_0$; el factor modifica $D$ en $O(1/n)$. Por consiguiente
+
+$$
+\log N_t\le\frac{n^2}{6}\big(\log n-2-D(Q\Vert P_0)\big)+o(n^2)=\Phi(t)+o(n^2).\tag{4.3}
+$$
+
+La cota vale para todo $t$ que satisfaga (1.3), sin ninguna cota inferior sobre $t_{XY}$. $\square$
+
+---
+
+## 5. Cota inferior para sistemas triples de Steiner
+
+Las secciones 5.1–5.7 demuestran la cota inferior del teorema 1.2, que junto con (4.3) demuestra el teorema. Las secciones 5.8–5.11 demuestran los teoremas 1.5, 1.7, 1.9 y 1.10. En toda esta sección se cumplen las hipótesis del teorema 1.2. Las constantes escritas $\zeta'$ son positivas y dependen solo de $k$, $\delta_0$ y $\zeta$.
+
+### 5.1 Estrategia y parámetros
+
+Fijamos un conjunto pequeño de vértices $U$, el *vórtice*, de tamaño $m\approx n^{1-\delta'/4}$, y ponemos $O=[n]\setminus U$. La demostración consta de cuatro etapas.
+
+1. **Contar dentro de $O$.** Se colorean los pares dentro de $O$ según el tipo de bloque y se cuentan los emparejamientos casi perfectos de los 3-grafos tipados resultantes (sección 5.3). Esto produce la tasa $\Phi(t)$.
+2. **Limpiar** los pocos vértices de $O$ con grado residual grande, usando una reserva dispersa $R$ dentro de $O$ (sección 5.4).
+3. **Cobertura descendente:** cubrir cada par restante que tenga un extremo en $O$ mediante bloques con uno o dos puntos en $U$ (sección 5.5).
+4. **Completar dentro de $U$** con el teorema de absorción $T^+$ de [18], y hacer exactos los conteos de tipos con intercambios reservados (sección 5.6).
+
+La figura 1 muestra las cuatro etapas y los conjuntos que usan.
+
+```{=latex}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\small,>=stealth]
+  \draw[thick] (0,0) rectangle (11.6,4.8);
+  \node[anchor=north west] at (0.1,4.75) {$[n]$};
+  \node at (3.0,4.2) {$O=[n]\setminus U$};
+  \node[align=center,text width=4.2cm] at (3.0,3.0) {1. conteo de emparejamientos tipados con coloración previa};
+  \node[align=center,text width=4.2cm] at (3.0,1.5) {2. limpieza con la reserva $R$};
+  \draw[thick,fill=black!6] (7.9,0.3) rectangle (11.3,4.5);
+  \node[font=\footnotesize] at (9.6,4.15) {vórtice $U$, $|U|=m$};
+  \node[align=center] at (9.6,2.9) {4. completación\\por $T^+$};
+  \node[align=center,text width=3.0cm,font=\footnotesize] at (9.6,1.4) {los intercambios $E_X$ hacen exactos los conteos de tipos};
+  \draw[->,thick] (5.6,2.3) -- (7.8,2.3);
+  \node[font=\footnotesize,align=center] at (6.7,3.0) {3. cobertura\\descendente};
+  \node[font=\footnotesize,align=center] at (6.7,1.85) {$F$ y $R'$};
+\end{tikzpicture}
+\caption{Esquema de la construcción de la cota inferior de la sección 5 (no está a escala). El vórtice tiene $m\approx n^{1-\delta'/4}$ puntos.}
+\end{figure}
+```
+
+Solo se cuenta la etapa 1. Las demás etapas afectan a $O(n^{2-\delta'/4})$ pares, lo que cuesta $O(n^{2-\delta'/4}\log n)$ en el logaritmo. El vórtice tiene tamaño polinomial, pero tiende a infinito, de modo que el teorema T se aplica dentro de él con constantes fijas.
+
+**Constantes.** Las constantes se eligen en el orden que sigue. Tres de ellas, $\gamma_S$, $\lambda$ y $c_\rho$, son mínimos de varios términos, y registramos dónde se usa cada uno de esos términos.
+
+1. **$C_0$, $K_c$, $C_1$, $B$ y $\gamma_S$.** Tomamos $K_c$ del lema 5.7, y $C_0$ y $C_1$ de los lemas 5.8 y 5.10, para semillas con margen $\zeta/4$ en $U$; aquí $C_1$ es la constante de $\sigma\le C_1\Delta/m$ en la demostración del lema 5.10. Tomamos $B$ del lema 5.8$'$. El grafo del vórtice $G_U$ cumplirá $\Delta(K[U]\setminus G_U)\le\gamma_S m$, y $\gamma_S$ es el mínimo de los valores siguientes, uno por cada uso de esa cota.
+   - $1/(4K_cC_0(C_1+2C_0))$, para el lema 5.8. Como $C_0\ge1$, también da $4K_c\Delta\le m$.
+   - $\zeta/(8B(K_cC_1+(K_c+1)C_0))$, para el lema 5.8$'$.
+   - $\delta_0/8$, para H3 y H4 a través de [10, apéndice B.4]. Cada clase de $U$ tiene $u_Y\ge\delta_0m-1$ puntos, así que para $m$ grande dos raíces tienen al menos $u_Y-2(\Delta+1)\ge(\delta_0/2)m$ vecinos comunes en cada clase, y hay al menos $(\delta_0m-4\Delta-6)^2\ge\delta_0^2m^2/5$ bisagras sobre seis vértices. Este valor da también $\delta(G_U)\ge(1-\gamma_S)m-1\ge7m/8-1$, como usa la sección 5.8.
+   - $\delta_0/(2(k+4))$, para el lema 5.9: así, cualesquiera $k+4$ puntos de $U$ tienen al menos $u_Y-(k+4)(\Delta+1)\ge(\delta_0/2)m-k-5>0$ vecinos comunes en cada clase $U_Y$.
+   - $d_0^5\delta_0\eta_1/20$, para la sección 5.10, donde $\eta_1$ es el menor entre el $\eta_0$ del lema 5.19 y la cota sobre $\eta'$ exigida allí en H1. Entonces $\eta'\le10\gamma_S/(d_0^5\delta_0)+2\eta+m^{-1/3}\le\eta_1$ para $n$ grande.
+
+2. **$\theta_0$, $\lambda$ y $\eta_T$.** Ponemos $\theta_0:=(\delta_0/2)\min\{\delta_0,\zeta/2\}$, la proporción de cada modalidad de bloque en un punto en el paso 4 de la cobertura descendente (lema 5.6). Con $J=\binom{k-1}{2}$, elegimos
+
+   $$
+   \lambda\le\min\Big\{\frac{\gamma_S}{36},\ \frac{\delta_0}{18(J+1)},\ \frac{\theta_0\delta_0}{200},\ \sqrt{\frac{\zeta}{40(J+B)}}\Big\},
+   $$
+
+   y ponemos $\eta_T=\lambda^2/256$. Los cuatro términos se usan así.
+   - $\gamma_S/36$ da $\Delta(E_X)\le9\lambda m\le\gamma_S m/4$ en la cota de $\Delta(D\cup E_X)$ de más abajo.
+   - $\delta_0/(18(J+1))$ es el presupuesto de vértices de los depósitos de intercambio [10, §4.1]: cada coordenada independiente usa sus propios depósitos, de modo que la unión de las huellas tiene grado máximo a lo sumo $9p_X$.
+   - $\theta_0\delta_0/200$ acota las exclusiones causadas por $E_X$ en los pasos 4 y 5 del lema 5.6; implica $\lambda\le\theta_0/72$.
+   - $\sqrt{\zeta/(40(J+B))}$ mantiene el residuo centrado del lema 5.10 dentro de su margen: las mitades altas contienen a lo sumo $9Jp_X^2$ bloques de cada tipo, y el desplazamiento $s_i/2\le p_X^2/2$ se extiende con entradas de a lo sumo $Bp_X^2/2$.
+
+   En las secciones 5.8–5.10 y 6, $J$ y $B$ son los de la sección correspondiente.
+
+3. **$\alpha$, $C$ y $h$.** Las cotas de la sección 5.6 dan H1, H3 y H4 del teorema T con $C=2C_0$, $\alpha=\delta_0^2/5$ y $h=6$.
+
+4. **$c_\rho$.** Elegimos
+
+   $$
+   c_\rho\le\min\{\gamma_S/12,\ \zeta/100,\ \theta_0/8\}.
+   $$
+
+   El término $\gamma_S/12$ da la cota de $\Delta(D)$ de más abajo. El término $\theta_0/8$ se usa en los pasos 4 y 5 del lema 5.6, y $\zeta/100$ en la sección 5.7.
+
+   La sección 5.10 añade $c_\rho\le d_0^3\theta_0/32$, $\lambda\le\min\{d_0^3\theta_0/300,\,d_0^5\theta_0\delta_0/100\}$ y $\lambda\le c(k,\delta_0,d_0)$, y la sección 6.4 añade $\lambda\le\delta_0/200$. Estas condiciones dependen solo de $k$, $d_0$, $\delta_0$ y $\theta_0$, que se fijan antes que $\lambda$ y $c_\rho$, así que no hay circularidad.
+
+5. **$\varepsilon_G$, $\theta$ y $\delta'$.** Tomamos $\varepsilon_G\in(0,\min\{\varepsilon_0,1/4\})$, donde $\varepsilon_0$ lo da [30, teorema 3.5] para uniformidad 3 y parámetro de conflicto 2. Ponemos $\theta=\varepsilon_G^3/2$ y $\delta'=\theta/20$.
+
+La tabla 3 resume este orden.
+
+| Orden | Constantes | Elegidas a partir de | Usadas para |
+|---|----------|----------|--------------|
+| 1 | $C_0$, $K_c$, $C_1$, $B$, $\gamma_S$ | $k$, $\delta_0$, $\zeta$ (y $d_0$ en la sección 5.10) | Semillas (lemas 5.8, 5.8$'$), H3 y H4, lema 5.9, grafos típicos |
+| 2 | $\theta_0$, $\lambda$, $\eta_T$ | $\delta_0$, $\zeta$, $\gamma_S$, $J$, $B$ (y $k$, $d_0$ en la sección 5.10) | Huellas y depósitos de intercambio, exclusiones en el lema 5.6, centrado en el lema 5.10 |
+| 3 | $\alpha$, $C$, $h$ | $C_0$, $\delta_0$ | H1, H3 y H4 del teorema T |
+| 4 | $c_\rho$ | $\gamma_S$, $\zeta$, $\theta_0$ (y $k$, $d_0$ en la sección 5.10) | Densidad de $R'$: $\Delta(D)$, pasos 4 y 5 del lema 5.6, sección 5.7 |
+| 5 | $\varepsilon_G$, $\theta$, $\delta'$ | [30, teorema 3.5] (y $c_0$ en la sección 5.10) | Conteo de emparejamientos, limpieza, tamaño del vórtice |
+| — | $\kappa$, $u_X$, $m$, $\rho$, $p$, $d^*$, $p_X$ | Todo lo anterior y $n$ | Vórtice y reservas |
+
+Table: Orden de elección de las constantes de la sección 5. Cada fila depende solo de las hipótesis y de las filas que están por encima de ella.
+
+**Parámetros que dependen de $n$.** Ponemos $\kappa=n^{-\delta'/4}$; $u_X=\lfloor\kappa c_X\rfloor$ para cada clase $X$; $m=\sum_Xu_X$; $\rho=c_\rho\kappa$; $p=n^{-\delta'}$; $d^*=\lfloor m^{1/4}\rfloor$, tomado impar; y un primo $p_X\in[\lambda m/4,\lambda m]$.
+
+**La cota de $\Delta(D\cup E_X)$.** Aquí $D$ es el conjunto de aristas dentro de $U$ del empaquetamiento de la cobertura descendente (lema 5.6), y $E_X$ es el grafo de huellas de intercambio de la sección 5.2. Con las elecciones anteriores, $\Delta(D)\le3\rho n\le3c_\rho(m+k)\le(\gamma_S/4)(m+k)$, usando $\kappa n\le m+k$, y $\Delta(E_X)\le9\lambda m\le\gamma_S m/4$. En consecuencia, $\Delta(D\cup E_X)\le\gamma_S m/2+\gamma_S k/4\le\gamma_S m$ para $m\ge k$. En la sección 6 rigen las mismas reglas con $J=(a-1)(b-1)(c-1)$, $\Delta(D)\le3c_\rho(m+1)$ y $\Delta(E_X)\le6\lambda m$.
+
+### 5.2 El vórtice y las reservas
+
+Fijamos ahora el vórtice, las huellas de intercambio, el grafo de la cobertura descendente y dos reservas; el lema 5.1 enumera las propiedades de estos objetos que usan las etapas posteriores.
+
+Fijamos $U$ con $|U\cap X|=u_X$ para cada clase $X$, y ponemos $O=[n]\setminus U$ y $o_X=c_X-u_X$. Decimos que un par $\{x,x'\}\subset O$ es *compatible con* una clase $Y$ si la terna $\{x,x',w\}$ es bicoloreada para $w\in Y$. Es decir, o bien $x,x'$ están en una misma clase $X\ne Y$, o bien uno de ellos está en $Y$ y el otro en una clase $X\ne Y$.
+
+Fijamos $E_X$, $F$ y $R'$ de manera independiente, y después $R$ dado $F$.
+
+- **Huellas de intercambio $E_X\subset K[U]$.** Para cada una de las $J$ coordenadas independientes de las secciones 5.1 y 5.6, colocamos $p_X^2$ copias del intercambio de nueve puntos de [10, §4.1] dentro de $U$, con conjuntos de pares disjuntos dos a dos y depósitos de puntos separados para coordenadas distintas [10, §4.1]. Su unión tiene grado máximo a lo sumo $9p_X\le9\lambda m$.
+- **El grafo de la cobertura descendente $F=\bigsqcup_YF_Y\subset K[O]$.** Una arista entre $O\cap X$ y $O\cap Y$ ($X\ne Y$) se coloca en $F_Y$ con probabilidad
+
+  $$
+  q^Y_{XY}=\frac{2(1-\kappa)(1-\rho)\,u_Y\,t_{YX}}{c_Y\,o_X\,o_Y},
+  $$
+
+  y en $F_X$ con probabilidad $q^X_{YX}$. Una arista dentro de $O\cap X$ se coloca en $F_Y$ ($Y\ne X$) con probabilidad
+
+  $$
+  q^Y_{XX}=\frac{(1-\kappa)(1-\rho)\,u_Y\,t_{XY}}{c_Y\binom{o_X}{2}}.
+  $$
+
+  Para cada arista estos sucesos son disjuntos, y todas las probabilidades son $O(\kappa)$. Toda arista de $F_Y$ es compatible con $Y$.
+- **La reserva de limpieza $R\subset K[O]\setminus F$**, binomial con densidad $p$.
+- **La reserva de la cobertura descendente $R'\subset K[O,U]$**, binomial con densidad $\rho$.
+
+Para $x\in O\cap X$ y cada clase $Y$, el grado esperado de $x$ en $F_Y$ es $(1-\rho)u_Y(1+O(1/(\kappa n)))$. En efecto, por (1.3), para $X=Y$ la esperanza es $(1-\kappa)(1-\rho)u_Y(c_Y-1)/o_Y$, y para $X\ne Y$ es $(1-\kappa)(1-\rho)u_Yc_X/o_X$. En ambos casos el cociente $(c-1)/o$ o $c/o$ es $(1-\kappa)^{-1}(1+O(1/(\kappa n)))$. Los bloques construidos sobre $F_Y$ en la sección 5.5 tienen las mismas proporciones de tipos que $t$.
+
+Cada arista de $K[O]$ cae, con independencia de las demás aristas, en exactamente uno de los grafos $F_Y$ ($Y$ una clase), $R$ y el *grafo de disponibilidad* $A=K[O]\setminus(F\cup R)$. Una arista de clase $\pi$ está en $A$ con probabilidad $\nu_\pi$, definida en la sección 5.3.
+
+**Lema 5.1.** Con probabilidad $1-o(1)$ se cumple lo siguiente para todos $x\ne y$ en $O$, todos $w\ne w'$ en $U$ y todas las clases $Y$.
+
+- **F1.** $\deg_{F_Y}(x)=(1-\rho)u_Y\pm\sqrt{\kappa n}\log n$.
+- **F2.** $|N_{R'}(x)\cap U_Y|=\rho u_Y\pm\sqrt{\rho u_Y}\log n$, $|N_{R'}(x)\cap N_{R'}(y)\cap U_Y|=\rho^2u_Y\pm\sqrt{\rho^2u_Y}\log n$ y $|N_{R'}(w)\cap N_{R'}(w')|=\rho^2|O|\pm\sqrt{\rho^2n}\log n$.
+- **F3.** $\deg_{R'}(w)=\rho|O|\pm\sqrt{\rho n}\log n$ y $|N_{F_Y}(x)\cap N_{R'}(w)|=\rho\deg_{F_Y}(x)\pm\sqrt{\rho\kappa n}\log n$.
+- **F4.** $|N_{R'}(x)\cap N_{E_X}(w)|\le9\rho\lambda m+\sqrt{\rho m}\log n$.
+- **F5.** $e_F(S,T)\le|S||T|/4$ para $S,T\subset O$ disjuntos con $|S|,|T|\ge s_2:=n^{1/2+\delta'}$.
+- **F6.** $\deg_A(x,O\cap Z)=\nu_\pi|O\cap Z|\pm\sqrt n\log n$ para cada clase $Z$, donde $\pi$ es el par de clases de $x$ y $Z$.
+- **R1.** Para a lo sumo tres raíces y un vértice adicional $y$ de una clase prescrita, el número de vértices $y$ cuyas aristas a las raíces están en grafos prescritos entre $F_Y$, $R$ y $A$ está dentro de un factor $1\pm n^{-1/3}$ de su esperanza, salvo que esa esperanza sea 0.
+- **R2.** $e_R(S,T)\ge p|S||T|/2$ para $S,T$ disjuntos con $|S|,|T|\ge s_2$.
+- **R3.** Para $|T|\ge s_0/2$, donde $s_0:=20C_Ln^{1-\theta+2\delta'}$ con $C_L$ la constante del corolario 5.3, menos de $s':=2n^{2\delta'}$ vértices $u$ tienen $\deg_R(u,T)<p|T|/2$.
+
+*Demostración.* F1–F4 se siguen de cotas de Chernoff [31] y de una cota de la unión sobre $n^{O(1)}$ sucesos, ya que cada conteo es una suma de indicadoras independientes con media de orden al menos $n^{1-3\delta'/4}$. En F3 y F4 el grafo $R'$ es independiente de $F$ y de $E_X$, que se fijan primero. F4 es una cota de Chernoff de cola superior. F6 es una cota de Chernoff, ya que $A$ tiene aristas independientes.
+
+F5 es una cota de Chernoff para cada par $(S,T)$: como $F$ tiene probabilidades de arista $O(\kappa)$, el suceso $e_F(S,T)\ge|S||T|/4$ tiene probabilidad $\exp(-\Omega(|S||T|))$. La cota de la unión sobre a lo sumo $4^n$ pares funciona porque $s_2^2=n^{1+2\delta'}\gg n$.
+
+R1 es una cota de Chernoff: para $y$ distintos las indicadoras dependen de aristas disjuntas, y toda esperanza no nula es al menos $c\cdot n\cdot\min(p,\kappa)^3\ge n^{1-4\delta'}$ para $n$ grande. R2 se sigue de F5, ya que entonces $\mathbb E\,e_R(S,T)\ge(3/4)p|S||T|$, junto con una cota de Chernoff y una cota de la unión.
+
+Para R3, fijamos $T$ con $|T|=t\ge s_0$. Como $R$ vive en $K[O]\setminus F$, observamos primero que menos de $n^{2\delta'}$ vértices $u$ tienen $\deg_F(u,T)\ge t/4$. En efecto, para un conjunto $Z$ de $n^{2\delta'}$ vértices, tras descartar las a lo sumo $n^{4\delta'}$ aristas dentro de $Z$, que $Z$ y $T$ pueden compartir, se tiene $\mathbb P(e_F(Z,T)\ge|Z|t/4)\le2^{-|Z|t/5}$, y la unión sobre las $\exp((t+|Z|)\log n)$ elecciones de $(Z,T)$ es $o(1)$. Para los demás vértices, $\mathbb E\deg_R(u,T)\ge(3/4)pt$. Para un conjunto $Z$ de $n^{2\delta'}$ de tales vértices, todos ellos tienen $\deg_R(u,T)<pt/2$ con probabilidad $\exp(-\Omega(pt\,n^{2\delta'}))$, tras descartar las a lo sumo $n^{4\delta'}$ aristas dentro de $Z$. La unión sobre las mismas elecciones es $o(1)$, porque $p\,n^{2\delta'}=n^{\delta'}\gg\log n$. En consecuencia, menos de $2n^{2\delta'}=s'$ vértices $u$ tienen $\deg_R(u,T)<pt/2$. $\square$
+
+Fijamos $E_X$, $F$, $R$ y $R'$ con estas propiedades.
+
+### 5.3 Conteo con coloración previa dentro de O
+
+La etapa 1 colorea al azar las aristas disponibles de $K[O]$ según el tipo de bloque y, para cada coloración buena, cuenta los emparejamientos casi perfectos de los 3-grafos tipados resultantes. Las probabilidades de los colores quedan fijadas por una matriz de tipos objetivo $t'$, y el lema 5.2 muestra que el conteo reproduce $\Phi(t)$.
+
+Una arista de $K[O]$ con etiquetas $\{X,X\}$ es *disponible*, es decir, no está en $F\cup R$, con probabilidad
+
+$$
+\nu_{XX}=(1-p)\Big(1-\sum_{Y\ne X}q^Y_{XX}\Big).
+$$
+
+Una arista con etiquetas $\{X,Y\}$ es disponible con probabilidad
+
+$$
+\nu_{XY}=(1-p)\big(1-q^X_{YX}-q^Y_{XY}\big).
+$$
+
+Todas ellas son $1-O(\kappa+p)$.
+
+Las dos familias de ecuaciones de (5.1) son compatibles solo si $\sum_X\binom{o_X}{2}\nu_{XX}=\frac12\sum_{X<Y}o_Xo_Y\nu_{XY}$. Para las clases mismas esta es la identidad de admisibilidad, pero tras el redondeo $u_X=\lfloor\kappa c_X\rfloor$ los dos lados difieren en $O(n)$. Por eso multiplicamos cada $\nu_{XX}$ por el factor común $\varphi=1+O(1/n)$ que los iguala, y mantenemos la notación $\nu_{XX}$; el valor reescalado sigue siendo menor que $1$, pues $\nu_{XX}\le1-p$ y $p\gg1/n$. Cada estimación posterior en la que aparece $\nu_{XX}$ admite un error relativo de orden al menos $n^{-1/3}$, o un error aditivo $O(n\log n)$ en el logaritmo, así que este factor queda absorbido.
+
+**El objetivo de la etapa 1.** Fijamos una matriz no negativa $t'$ con
+
+$$
+\sum_{Y\ne X}t'_{XY}=\binom{o_X}{2}\nu_{XX},\qquad2(t'_{XY}+t'_{YX})=o_Xo_Y\nu_{XY},\tag{5.1}
+$$
+
+y $t'_{XY}=(1-\kappa)^2t_{XY}(1+O(\kappa))$. Sus $J$ coordenadas libres se fijan en la sección 5.7. Ponemos
+
+$$
+\beta_{XY}=\frac{t'_{XY}}{\binom{o_X}{2}\nu_{XX}},\qquad a_{XY}=\frac{2t'_{XY}}{o_Xo_Y\nu_{XY}}.
+$$
+
+Por (5.1), $\sum_Y\beta_{XY}=1$ y $a_{XY}+a_{YX}=1$. Sea $\mu$ la medida producto sobre las coloraciones $\chi$ de las aristas disponibles:
+
+- una arista disponible dentro de $X$ recibe el color $(X,Y)$ con probabilidad $\beta_{XY}$;
+- una arista disponible entre $X$ e $Y$ recibe $(X,Y)$ con probabilidad $a_{XY}$, y $(Y,X)$ en caso contrario.
+
+Para $\tau=(X,Y)$, el 3-grafo $H_\tau(\chi)$ tiene por vértices las aristas de color $\tau$, y por aristas los triángulos $\{x,x',y\}$, con $x,x'\in X$ e $y\in Y$, cuyas tres aristas tienen color $\tau$. Un emparejamiento en $H_\tau(\chi)$ es, por tanto, un conjunto de bloques de tipo $XXY$ disjuntos en aristas dentro de $O$.
+
+**Grados.** Por R1 para el grafo de disponibilidad $A$, en esperanza sobre $\chi$:
+
+- una arista $\{x,x'\}$ de color $\tau$ está en $o_Y\nu_{XY}^2a_{XY}^2(1\pm n^{-1/3})$ triángulos de $H_\tau(\chi)$;
+- una arista $\{x,y\}$ de color $\tau$ está en $(o_X-1)\nu_{XX}\nu_{XY}\beta_{XY}a_{XY}(1\pm n^{-1/3})$.
+
+Como
+
+$$
+(o_X-1)\nu_{XX}\beta_{XY}=\frac{2t'_{XY}}{o_X}=o_Y\nu_{XY}a_{XY},
+$$
+
+ambas cantidades son iguales a $D_\tau(1\pm n^{-1/3})$ con
+
+$$
+D_\tau=o_Y\nu_{XY}^2a_{XY}^2=\Theta(n).
+$$
+
+Ponemos $\gamma'=2\delta'$. Una coloración $\chi$ es *buena* si satisface las condiciones G1–G4 siguientes. G1 y G2 dan las hipótesis del teorema de emparejamientos, G3 controla el grafo residual en un vértice durante la limpieza de la sección 5.4, y G4 convierte la medida del conjunto de coloraciones buenas en una cota inferior para su número.
+
+- **G1.** Todo vértice de todo $H_\tau(\chi)$ tiene grado $D_\tau(1\pm n^{-1/4})$.
+- **G2.** El color $\tau$ se usa en $3t'_\tau\pm n^{1+\gamma'}$ aristas.
+- **G3.** Para todo $v\in O\cap X$ y todo $Y\ne X$, el *desbalance* $\iota_Y(v)$ es a lo sumo $n^{1/2+\gamma'}$ en valor absoluto. Se trata del número de aristas disponibles de color $(X,Y)$ dentro de $X$ en $v$, menos el número de aristas disponibles de color $(X,Y)$ de $v$ a $Y$. Sus esperanzas coinciden, por la identidad anterior, salvo el error en los grados disponibles, que es $\sqrt n\log n$ por F6.
+- **G4.** $|\log(1/\mu(\chi))-H(\mu)|\le n^{1+\gamma'}$.
+
+Cada condición falla con probabilidad $o(1)$, por cotas de Chernoff y de Hoeffding junto con F6 y R1. Para G4, escribimos $\log(1/\mu(\chi))=\sum_e\log(1/\mu_e(\chi(e)))$, una suma de a lo sumo $n^2$ términos independientes, uno por arista disponible, con media $H(\mu)$. Toda probabilidad de color es al menos $\zeta$ para $n$ grande: $t'_{XY}\ge(\zeta/2)n^2$, así que $\beta_{XY}=t'_{XY}/(\binom{o_X}{2}\nu_{XX})\ge2t'_{XY}/n^2\ge\zeta$, y análogamente $a_{XY}\ge\zeta$ y $1-a_{XY}=a_{YX}\ge\zeta$. De ello se deduce que cada término está en $[0,\log(1/\zeta)]$, y la desigualdad de Hoeffding [32] da
+
+$$
+\mu\big(|\log(1/\mu(\chi))-H(\mu)|>n^{1+\gamma'}\big)\le2\exp\big(-2n^{2\gamma'}/\log^2(1/\zeta)\big)=o(1).
+$$
+
+Por tanto $\mu(\mathrm{Good})\ge1/2$, donde $\mathrm{Good}$ es el conjunto de coloraciones buenas. Toda $\chi$ buena tiene $\mu(\chi)\le e^{-H(\mu)+n^{1+\gamma'}}$, así que $1/2\le\mu(\mathrm{Good})\le|\mathrm{Good}|\,e^{-H(\mu)+n^{1+\gamma'}}$, es decir,
+
+$$
+|\mathrm{Good}|\ge\tfrac12\exp\big(H(\mu)-n^{1+\gamma'}\big).
+$$
+
+La cota inferior usa solo la mitad $\log(1/\mu(\chi))\ge H(\mu)-n^{1+\gamma'}$ de G4; la otra mitad se obtiene de la misma desigualdad. Lo mismo vale en las secciones 5.8–5.10. Allí cada probabilidad de color es un conteo de tipos de al menos $(\zeta/2)n^2$, por una multiplicidad acotada, dividido por un conteo de pares de a lo sumo $n^2$, por un factor de disponibilidad $1+O(\kappa+p)$. Se sigue que cada probabilidad es al menos $\zeta/4$ para $n$ grande, y Hoeffding se aplica con $\log(4/\zeta)$ en lugar de $\log(1/\zeta)$.
+
+El lema siguiente muestra que la entropía de $\mu$ y los conteos logarítmicos de emparejamientos $t'_\tau(\log D_\tau-2)$ suman la tasa $\Phi(t)$.
+
+**Lema 5.2 (identidad de coloración previa).**
+
+$$
+H(\mu)+\sum_\tau t'_\tau(\log D_\tau-2)=\Phi(t)-O(n^{2-\delta'/4}\log n).
+$$
+
+*Demostración.* Por cotas de Chernoff para el número de aristas disponibles de cada par de clases,
+
+$$
+H(\mu)=(1\pm n^{-1/3})\Big[\sum_X\binom{o_X}{2}\nu_{XX}H(\beta_{X\cdot})+\sum_{X<Y}o_Xo_Y\nu_{XY}H(a_{XY})\Big].
+$$
+
+Como $\binom{o_X}{2}\nu_{XX}\beta_{XY}=t'_{XY}$, la primera suma es $-\sum t'_{XY}\log\beta_{XY}$. Como $o_Xo_Y\nu_{XY}a_{XY}=2t'_{XY}$, la segunda es $-\sum2t'_{XY}\log a_{XY}$. Al sumar $\sum t'_{XY}(\log(o_Y\nu_{XY}^2a_{XY}^2)-2)$, los términos en $a$ se cancelan y $o_Y\nu_{XY}^2/\beta_{XY}=N^O_{XY}\nu_{XX}\nu_{XY}^2/t'_{XY}$. Esto da
+
+$$
+H(\mu)+\sum_\tau t'_\tau(\log D_\tau-2)=\sum_{X\ne Y}t'_{XY}\Big(\log\frac{N^O_{XY}}{t'_{XY}}-2\Big)+\sum_{X\ne Y}t'_{XY}\log(\nu_{XX}\nu_{XY}^2),
+$$
+
+donde $N^O_{XY}=\binom{o_X}{2}o_Y$. La última suma es $O((\kappa+p)n^2)$. Como $N^O/t'=(1-\kappa)(N/t)(1+O(\kappa))$ y $t'=(1-\kappa)^2t(1+O(\kappa))$, la primera suma es $\Phi(t)-O(\kappa n^2\log n)$. Por último, $\kappa n^2\log n=n^{2-\delta'/4}\log n$. $\square$
+
+**Conteos de emparejamientos.** Fijamos una $\chi$ buena y un color $\tau$. Aplicamos [30, teorema 3.5] con $k=3$, $\ell=2$, un sistema de conflictos vacío y $d=d_\tau:=\Delta(H_\tau(\chi))$. Sus hipótesis se cumplen:
+
+- $(1-d^{-\varepsilon_G})d\le\delta(H_\tau)\le\Delta(H_\tau)\le d$, por G1, ya que $\varepsilon_G<1/4$;
+- $\Delta_2(H_\tau)\le1\le d^{1-\varepsilon_G}$, ya que dos aristas están en a lo sumo un triángulo común;
+- $|V(H_\tau)|\le n^2\le\exp(d^{\varepsilon_G^3})$;
+- el sistema de conflictos vacío es trivialmente $(d,2,2,\varepsilon_G)$-acotado.
+
+El teorema da un conjunto $\mathcal M_\tau(\chi)$ de al menos $((1-d^{-\varepsilon_G^4})d/e^2)^{m_\tau}$ emparejamientos de tamaño $m_\tau=(1-d^{-\varepsilon_G^3})|V(H_\tau)|/3=t'_\tau(1\pm O(n^{-\varepsilon_G^3}))$, por G2. Por tanto
+
+$$
+\sum_\tau\log|\mathcal M_\tau(\chi)|\ge\sum_\tau t'_\tau(\log D_\tau-2)-O(n^{2-\varepsilon_G^4}\log n).
+$$
+
+Junto con la cota inferior para $|\mathrm{Good}|$ y el lema 5.2, esto da el conteo de la etapa 1.
+
+**Corolario 5.3.** $\sum_{\chi\in\mathrm{Good}}\prod_\tau|\mathcal M_\tau(\chi)|\ge\exp(\Phi(t)-o(n^2))$. Para cada tal $(\chi,M)$, el conjunto $L_0$ de aristas disponibles no cubiertas por $M$ tiene $|L_0|\le C_Ln^{2-\varepsilon_G^3}$.
+
+*Demostración.* La primera cota se sigue de la cota para $|\mathrm{Good}|$, de los conteos de emparejamientos y del lema 5.2. Cada emparejamiento de $\mathcal M_\tau(\chi)$ deja sin cubrir $d_\tau^{-\varepsilon_G^3}|V(H_\tau)|$ vértices de $H_\tau$, y $d_\tau\ge D_\tau/2\ge\zeta^2\delta_0n/8$. Por tanto $|L_0|\le C_Ln^{2-\varepsilon_G^3}$ con $C_L=k^2(8/(\zeta^2\delta_0))^{\varepsilon_G^3}$. $\square$
+
+### 5.4 Limpieza
+
+La etapa 2 cubre las aristas residuales en los pocos vértices donde el grafo residual $L_0$ de la etapa 1 es denso, usando bloques con una o dos aristas en la reserva $R$. Después, todo vértice tiene grado residual pequeño; el lema 5.4 enuncia las cotas.
+
+Fijamos una $\chi$ buena y $M\in\prod_\tau\mathcal M_\tau(\chi)$, y sea $L_0$ como en el corolario 5.3. Todos los vértices que siguen están en $O$, y el paso 3 elige su punto $w$ en $O$.
+
+Un vértice es *malo* si su grado en $L_0$ excede $n^{1-\theta}$. Sea $\mathrm{Bad}$ el conjunto de vértices malos; entonces $|\mathrm{Bad}|\le2|L_0|/n^{1-\theta}\le2C_Ln^{1-\theta}$.
+
+Para $v\in\mathrm{Bad}\cap X$ e $Y\ne X$, consideramos los siguientes $L_0$-vecinos de $v$ fuera de $\mathrm{Bad}$:
+
+- $A_Y(v)$: los vecinos $u\in X$ con $vu$ de color $(X,Y)$;
+- $B_Y(v)$: los vecinos $w\in Y$ con $vw$ de color $(X,Y)$;
+- $C_Y(v)$: los vecinos $w\in Y$ con $vw$ de color $(Y,X)$.
+
+Todo triángulo de $M_{(X,Y)}$ que pasa por $v$ usa una arista de color $(X,Y)$ dentro de $X$ y una de $v$ a $Y$. Por tanto, $|A_Y(v)|-|B_Y(v)|$ difiere de $\iota_Y(v)$ en a lo sumo $|\mathrm{Bad}|$. El grafo residual está localmente balanceado por color, con independencia de $M$.
+
+**Construcción.** Procesamos en orden los vértices de $\mathrm{Bad}$, manteniendo el conjunto $W\subseteq R$ de aristas de la reserva ya usadas. Para $v$:
+
+1. Se busca un emparejamiento en $(R\setminus W)[A_Y(v),B_Y(v)]$. Cada par emparejado $u,w$ da el bloque $\{v,u,w\}$ de tipo $XXY$.
+2. Se busca un emparejamiento en $(R\setminus W)[C_Y(v)]$. Cada par emparejado $w,w'$ da el bloque $\{v,w,w'\}$ de tipo $YYX$.
+3. Cada $L_0$-arista restante $vu$, incluidas las aristas a otros vértices malos, se cubre con un bloque $\{v,u,w\}$ con $vw,uw\in R\setminus W$. Se elige $w\notin\mathrm{Bad}$ uniformemente entre los vecinos comunes de clase compatible; por R1 hay al menos $p^2\delta_0n/4$ de ellos.
+4. Las listas de tamaño menor que $s_0$ pasan directamente al paso 3.
+
+Un bloque del paso 1 o del paso 2 cubre dos $L_0$-aristas en $v$ y usa una arista de la reserva alejada de $v$; un bloque del paso 3 cubre una $L_0$-arista en $v$ y usa dos aristas de la reserva, una de ellas en $v$. La afirmación A acota lo que los pasos 1 y 2 dejan para el paso 3, y la afirmación B acota las aristas de la reserva que el paso 3 usa en $v$.
+
+**Afirmación A.** Si $|A_Y(v)|,|B_Y(v)|\ge s_0$, el paso 1 deja sin emparejar a lo sumo $|\iota_Y(v)|+|\mathrm{Bad}|+s_2+s'$ puntos de cada lista. Si $|C_Y(v)|\ge2s_0$, el paso 2 deja sin emparejar a lo sumo $n^{1/2+\gamma'}+s_2+s'$ puntos de cada mitad, ya que las mitades aleatorias difieren en tamaño en $O(\sqrt n\log n)$, de modo que cada una tiene al menos $(1-o(1))s_0$ puntos. Las listas más cortas pasan directamente al paso 3.
+
+*Demostración para el paso 1, por el teorema de Hall.* Sea $A'$ el conjunto $A_Y(v)$ sin los menos de $s'$ vértices mal conectados a $B_Y(v)$ que proporciona R3.
+
+Acotamos primero el grado de $W$ fuera de los vértices malos: en todo momento, $\Delta_W(u)\le(2C_L+o(1))n^{1-\theta}$ para todo $u\notin\mathrm{Bad}$. En efecto, cada vértice malo $v$ usa directamente a lo sumo una arista de la reserva en $u$, para la $L_0$-arista $vu$ (en el paso 1, 2 o 3), y con alta probabilidad la carga del paso 3 en cualquier $w$ es $O(n^{1-\theta-\delta'}+\log^2n)$. En cuanto a la carga, el paso 3 hace a lo sumo $2|L_0|\le2C_Ln^{2-2\theta}$ elecciones, cada una de las cuales elige un $w$ dado con probabilidad a lo sumo $4/(p^2\delta_0n)$, así que la desigualdad de Freedman [33] da una carga de a lo sumo $16C_Ln^{1-2\theta+2\delta'}/\delta_0+\log^2n$, y $\theta=20\delta'>3\delta'$.
+
+Comprobamos ahora la condición de Hall para un conjunto $S\subseteq A'$.
+
+- Si $|S|\le\sigma:=5C_Ln^{1-\theta+\delta'}$, todo $u\in S$ tiene grado hacia $B_Y(v)$ en $R\setminus W$ al menos $p|B_Y(v)|/2-\Delta_W\ge ps_0/2-(2C_L+o(1))n^{1-\theta}\ge\sigma\ge|S|$, ya que $|B_Y(v)|\ge s_0$. Para el caso $|S|>\sigma$ de abajo, $p|S|/2>(5C_L/2)n^{1-\theta}>\Delta_W$.
+- Si $|S|>\sigma$, sea $T=B_Y(v)\setminus N(S)$. Si $|T|\ge s_2$, entonces R2 da $e_R(S,T)\ge p|S||T|/2>|T|\Delta_W\ge e_W(S,T)$, en contradicción con $e_{R\setminus W}(S,T)=0$. Por tanto $|T|<s_2$.
+
+En consecuencia, la deficiencia de Hall de $A'$ es a lo sumo $\max\{0,|A'|-|B_Y(v)|\}+s_2$. De ahí que queden sin emparejar a lo sumo $(|A_Y(v)|-|B_Y(v)|)^++s_2+s'$ puntos de $A_Y(v)$ y a lo sumo $(|B_Y(v)|-|A_Y(v)|)^++s_2+s'$ puntos de $B_Y(v)$. El paso 2 se reduce al paso 1 partiendo $C_Y(v)$ al azar en dos mitades; las listas $C_Y(v)$ con menos de $2s_0$ puntos pasan directamente al paso 3. $\square$
+
+**Afirmación B.** Cada vértice malo $v$ tiene en sí mismo a lo sumo $3(k-1)(2s_0+n^{1/2+\gamma'}+|\mathrm{Bad}|+s_2+s')+2|\mathrm{Bad}|\le C'n^{1-\theta+2\delta'}$ aristas de $W$: una por cada $L_0$-arista cubierta por su propio paso 3, y a lo sumo una por cada otro vértice malo. Esto es mucho menor que $p^2n$. Sus propios pasos 1 y 2 no usan aristas de la reserva en $v$.
+
+El resultado es un empaquetamiento $P_c$ de bloques de los tipos permitidos con $|P_c|\le C_Ln^{2-\theta}$. Después de quitarlo:
+
+- todo vértice tiene $L_0$-grado a lo sumo $n^{1-\theta}$;
+- $W$ tiene grado a lo sumo $(2C_L+o(1))n^{1-\theta}$ fuera de $\mathrm{Bad}$ y a lo sumo $C'n^{1-\theta+2\delta'}$ en $\mathrm{Bad}$.
+
+Las aristas de $K[O]\setminus F$ que quedan tras las etapas 1 y 2 forman el conjunto $L$ que recibe la cobertura descendente de la sección 5.5.
+
+**Lema 5.4.** Sea $L$ el conjunto de aristas de $K[O]\setminus F$ no cubiertas por $M\cup P_c$. Entonces
+
+$$
+\Delta(L)\le2n^{1-\delta'},\qquad|L|\le n^{2-\delta'}.
+$$
+
+Los grafos $F$ y $R'$ quedan intactos.
+
+*Demostración.* $L$ consta de $R\setminus W$ y de las $L_0$-aristas no cubiertas por $P_c$. El primero tiene grado máximo $(1+o(1))pn$ por R1, y las segundas a lo sumo $n^{1-\theta}$. Como $\delta'<\theta$, esto da la cota del grado. Además, $|L|\le|O|\,\Delta(L)/2\le n^{2-\delta'}$. $\square$
+
+### 5.5 Cobertura descendente
+
+La cobertura descendente cubre cada par con un extremo en $O$ que las etapas anteriores dejaron sin cubrir, usando bloques bicoloreados con uno o dos puntos en $U$. Para $x\in O\cap X$, un bloque $\{x,w,w'\}$ con $w,w'\in U$ es bicoloreado exactamente cuando las clases de $w$ y $w'$ son $\{X,Y\}$ o $\{Y,Y\}$ para algún $Y\ne X$. El lema siguiente acota el tamaño de cada clase; el paso 3 de la demostración del lema 5.6 lo usa para mostrar que los puntos de $U$ que quedan en $x$ no están mayoritariamente en la clase de $x$.
+
+**Lema 5.5 (clases acotadas).** Para toda clase $X$, $c_X\le(n+1)/2-\zeta n$.
+
+*Demostración.* En un punto de $X$ hay $c_X-1=\sum_Y2t_{XY}/c_X$ pares dentro de $X$, y $n-c_X=\sum_{Y\ne X}2(t_{XY}+t_{YX})/c_X\ge c_X-1+2\zeta n$ pares hacia otras clases, ya que $t_{YX}\ge\zeta n^2$ y $c_X\le n$. Por tanto $2c_X\le n+1-2\zeta n$. $\square$
+
+**Lema 5.6 (cobertura descendente).** Existe un empaquetamiento $P$ de bloques bicoloreados, cada uno con uno o dos puntos en $U$, que cubre exactamente una vez cada arista de $F\cup L\cup K[O,U]$ y ninguna otra arista con un punto en $O$. El conjunto $D$ de sus aristas dentro de $U$ es disjunto de $E_X$ y satisface $\Delta(D)\le3\rho n$. Los conteos de tipos de sus bloques del paso 1 están determinados salvo un error $m^{2-1/1000}$; los bloques del paso 2 se cuentan en la sección 5.7. Tiene a lo sumo $\rho nm(1+o(1))$ bloques con dos puntos en $U$.
+
+*Demostración.* Construimos $P$ en cinco pasos. El paso 1 cubre casi todo $F$ con bloques con un punto en $U$, y el paso 2 cubre de forma voraz los pares restantes dentro de $O$, a través de la reserva $R'$. Tras estos dos pasos, todo par dentro de $O$ está cubierto, y los pares sin cubrir en un punto $x\in O$ unen $x$ con un conjunto $S_x\subset U$. El paso 3 registra las propiedades de $S_x$ que usan los pasos posteriores. El paso 4 cubre casi todos los pares $xw$ con $w\in S_x$ mediante bloques con dos puntos en $U$, y el paso 5 cubre los pocos pares que quedan intercambiando bloques del paso 4.
+
+Los pasos 1 y 4 se apoyan en el teorema de emparejamientos pseudoaleatorios de Ehard, Glock y Joos [19, teorema 1.2], formalizado en [20]. Para un 3-grafo $H$ con grado máximo a lo sumo $\Delta$, codegrados a lo sumo $\Delta^{1/2}$ y $|H|\le\exp(\Delta^{1/810000})$, el teorema da un emparejamiento $M\subseteq H$ tal que cada una de a lo sumo $\exp(\Delta^{1/810000})$ funciones de peso no negativas prescritas $w$ con $\max w\cdot\Delta^{3/2}\le w(H)$ satisface
+
+$$
+w(M)=(1\pm\Delta^{-1/900})\,w(H)/\Delta.
+$$
+
+Lo usamos dos veces, con codegrados a lo sumo 1 y una cantidad polinomial de pesos. Cada función de peso de abajo es la indicadora de un conjunto de aristas de $H$, de modo que el emparejamiento contiene una proporción $(1\pm\Delta^{-1/900})/\Delta$ de cada conjunto prescrito.
+
+*Paso 1: bloques con un punto en $U$.* Este paso cubre casi todas las aristas de $F$, junto con aristas entre $O$ y $U$ fuera de $R'$. Para cada clase $Y$, sea $H_Y$ el 3-grafo cuyos vértices son las aristas de $F_Y$ y las aristas $xw$ con $x\in O$, $w\in U_Y$ y $xw\notin R'$. Sus aristas son las ternas $\{xx',xw,x'w\}$ con $xx'\in F_Y$, $w\in U_Y$ y $xw,x'w\notin R'$. Cada una de ellas es un bloque bicoloreado, porque $F_Y$ es compatible con $Y$. Por F1–F3, todo vértice tiene grado $(1-\rho)^2u_Y\pm O(\sqrt{\kappa n}\log n)$. Tomamos como $\Delta$ el grado máximo, y usamos las funciones de peso dadas por las aristas que pasan por un vértice $x\in O$, las aristas que pasan por un vértice $w\in U_Y$, y las aristas de cada tipo de etiqueta. El emparejamiento resultante $M_Y$ deja, en cada $x\in O$, a lo sumo $m^{1-1/1000}$ aristas de $F_Y$ sin cubrir y a lo sumo $m^{1-1/1000}$ aristas $xw\notin R'$ sin cubrir, y, en cada $w\in U_Y$, a lo sumo $nm^{-1/1000}=o(\rho^2n)$ aristas $xw\notin R'$ sin cubrir. Sea $L_1$ el conjunto de aristas de $F$ sin cubrir. Este paso no usa ninguna arista de $R'$. Los pesos de tipo de etiqueta tienen $w(H_Y)/\Delta=O(nm)$, así que los conteos de tipos de los bloques del paso 1 están determinados salvo $O(nm^{1-1/900})\le m^{2-1/1000}$, porque $m=(1+o(1))n^{1-\delta'/4}$ y $\delta'=\varepsilon_G^3/40<4/9001$.
+
+*Paso 2: pares restantes dentro de $O$.* Este paso cubre las aristas de $L\cup L_1$, que tienen grado máximo pequeño, mediante bloques cuyas dos aristas hacia $U$ están en $R'$. Cada arista $xx'\in L\cup L_1$ se cubre de forma voraz con un bloque $\{x,x',w\}$ con $xw,x'w\in R'$ no usadas y $w$ en una clase compatible con $xx'$. Por F2 y el lema 5.4 hay al menos $\rho^2u_Y/4$ candidatos, ya que $\rho^2u_Y\gg\Delta(L\cup L_1)$, y elegimos $w$ uniformemente entre ellos. Por la desigualdad de Freedman [33] (formalizada en [20]), cada $w\in U$ pierde entonces $o(\rho n)$ aristas de $R'$. La carga es $O(n^{1-\delta'}/\kappa^2)$, que es $o(\rho n)$ pero del orden de $\rho^2n$; los pasos posteriores solo necesitan $o(\rho n)$. Cada $x\in O$ pierde a lo sumo $3n^{1-\delta'}$.
+
+*Paso 3: los conjuntos $S_x$.* Para $x\in O$, sea $S_x\subset U$ el conjunto de los $w$ con $xw$ aún sin cubrir. Por F2 y las cotas de los pasos 1 y 2, $|S_x\cap U_Y|=\rho u_Y(1\pm o(1))$ para todo $Y$, y $|S_x\cap S_{x'}|=\rho^2m(1\pm o(1))$ para todos $x\ne x'$. Además, $|S_x|$ es par, porque todo grado en $K_n$ menos un empaquetamiento es par y todas las aristas de $x$ dentro de $O$ están cubiertas. Por el lema 5.5, $|S_x\cap X|\le(1/2-\zeta/2)|S_x|$ para $x\in X$. Por tanto, $S_x$ tiene un emparejamiento perfecto en pares permitidos. El paso 4 usa los tamaños de los conjuntos $S_x\cap U_Y$ y la cota de $|S_x\cap X|$ para agrupar los puntos de $S_x$; los pasos 4 y 5 usan las intersecciones, y el paso 5 usa la paridad.
+
+*Paso 4: bloques con dos puntos en $U$.* Este paso cubre casi todos los pares $xw$ con $w\in S_x$, de nuevo con el teorema de [19]. Su emparejamiento debe además dejar en cada punto $x$ muchos bloques de cada modalidad, y dispersar sus aristas dentro de $U$, porque el paso 5 intercambia estos bloques. Para $x\in X$, particionamos $S_x$ al azar en *grupos bipartitos*, cada uno formado por un conjunto de $d^*$ puntos de $X\cap U$ y un conjunto de $d^*$ puntos de $Y\cap U$ para algún $Y\ne X$, y *grupos internos*, cada uno formado por $d^*+1$ puntos de una clase $Y\ne X$.
+
+Los números de grupos se fijan como sigue. Escribimos $s=|S_x|$ y $S_x^Y=S_x\cap U_Y$. Para cada $Y\ne X$ ponemos $a_Y=|S_x^X|\cdot|S_x^Y|/\sum_{Y'\ne X}|S_x^{Y'}|$. Hay $\lfloor a_Y/d^*\rfloor$ grupos bipartitos con clases $X$ e $Y$, y los puntos restantes de $S_x^Y$ forman $\lfloor(|S_x^Y|-d^*\lfloor a_Y/d^*\rfloor)/(d^*+1)\rfloor$ grupos internos. Como $|S_x^X|\le(1/2-\zeta/2)s$, tenemos $a_Y\le|S_x^Y|$, así que esto es posible, y a lo sumo $2k(d^*+1)$ puntos de $S_x$ quedan sin agrupar. Como la partición es uniformemente aleatoria, una cota de Chernoff sobre las particiones independientes muestra que cada $w\in U$ queda sin agrupar en $O(d^*\rho n/s)=O(d^*/\kappa)=o(s)$ puntos $x$. Por el paso 3, $|S_x^Y|\ge\delta_0s(1-o(1))$ para toda clase $Y$. Por tanto $a_Y\ge\delta_0^2s(1-o(1))$. Los puntos de $S_x^Y$ que quedan para los grupos internos son al menos $|S_x^Y|-a_Y\ge\zeta|S_x^Y|\ge\zeta\delta_0s(1-o(1))$, porque $\sum_{Y'\ne X}|S_x^{Y'}|-|S_x^X|=s-2|S_x^X|\ge\zeta s$. Estas dos cotas inferiores proporcionan los bloques de cada modalidad contados al final de este paso.
+
+Sea $H'$ el 3-grafo cuyos vértices son las aristas $xw$ con $w$ agrupado en $x$, y las aristas de $K[U]\setminus E_X$. Sus aristas son las ternas $\{xw,xw',ww'\}$ con $w,w'$ en un mismo grupo de $x$, en lados opuestos si el grupo es bipartito. Como los vértices dentro de $U$ evitan $E_X$, también lo evitan los bloques de este paso; el costo es una pequeña pérdida en los grados. Todo vértice $xw$ tiene grado $d^*-e_x(w)$, donde $e_x(w)$ es el número de compañeros $w'$ de $w$ en su grupo con $ww'\in E_X$. Por F4 y una cota de Chernoff sobre el agrupamiento, $e_x(w)\le10\lambda d^*/\delta_0$ para todos $x$ y $w$, ya que los compañeros de $w$ forman un subconjunto uniforme de $S_x\cap U_B$ de tamaño a lo sumo $d^*+1$, donde $U_B$ es la clase de los compañeros, y $|S_x\cap U_B|\ge\rho\delta_0m(1-o(1))$. Por Chernoff sobre los agrupamientos independientes, todo vértice $ww'$ tiene grado a lo sumo $(c_\rho/\delta_0+o(1))d^*\le d^*/2$: un $w'$ fijo está en el grupo de $w$ en $x$ con probabilidad a lo sumo $(d^*+1)/|S_x\cap U_B|\approx d^*/(\rho u_B)$, y $|\{x:w,w'\in S_x\}|\le\rho^2|O|(1+o(1))$. Aquí $c_\rho\le\theta_0/8\le\delta_0/2$.
+
+Aplicamos [19] con $\Delta=d^*$ y las cuatro familias de funciones de peso siguientes:
+
+1. para cada $x$, las aristas en $x$;
+2. para cada par $(x,w)$, las aristas $\{x'w,x'z,wz\}$ con $x'\ne x$ y $z\in S_x$;
+3. para cada $w\in U$, las aristas que contienen un vértice de la forma $x'w$;
+4. para cada par $x\ne x'$, las aristas en $x'$ con un punto en $S_x$.
+
+La primera familia acota los puntos sin cubrir en $x$, la tercera y la cuarta acotan los puntos sin cubrir en otros puntos $x'$, y la segunda controla las aristas del emparejamiento dentro de $U$. Sea $M'$ el emparejamiento resultante.
+
+Como los grados de $H'$ se quedan cortos respecto de $d^*$ en $e_x(w)$, la primera familia muestra que $M'$ deja sin cubrir a lo sumo
+
+$$
+\sum_w e_x(w)/d^*+(d^*)^{-1/900}|S_x|+2k(d^*+1)\le(10\lambda/\delta_0+o(1))s
+$$
+
+puntos de $S_x$. Del mismo modo, por la tercera familia, para cada $w$ los puntos $x'$ en los que $w$ queda sin cubrir son a lo sumo $(10\lambda/\delta_0+o(1))\rho n$, y por la cuarta familia a lo sumo $(10\lambda/\delta_0+o(1))|S_x\cap S_{x'}|$ puntos sin cubrir de $x'$ están en $S_x$. Como $10\lambda/\delta_0\le\theta_0/20$, para toda clase $Y\ne X$ al menos $\theta_0s$ bloques $\{x,z,z'\}$ de $M'$ tienen $z\in X$ y $z'\in Y$, y al menos $\theta_0s$ tienen $z,z'\in Y$, donde $\theta_0=(\delta_0/2)\min\{\delta_0,\zeta/2\}$ es la constante de la sección 5.1.
+
+Por la desigualdad de Hoeffding, la segunda familia tiene peso total $(1+o(1))\rho^2nd^*$. El conjunto $D_1$ de aristas de $M'$ dentro de $U$ satisface
+
+$$
+|N_{D_1}(w)\cap S_x|\le(1+o(1))c_\rho|S_x|\qquad\text{para todo }x\text{ y }w.
+$$
+
+Llamamos a esta la cota de dispersión; el paso 5 la usa.
+
+*Paso 5: reparación.* Este paso cubre los puntos de cada $S_x$ que $M'$ dejó sin cubrir. Agrupamos por pares los puntos sin cubrir de $S_x$, que son en número par. Para un par $w,w'$, elegimos un bloque $\{x,z,z'\}$ de $M'$ en $x$, no usado por una reparación anterior, tal que $\{x,w,z\}$ y $\{x,w',z'\}$ sean bicoloreados y $wz,w'z'\notin D\cup E_X$, uniformemente entre tales bloques. Reemplazamos $\{x,z,z'\}$ por $\{x,w,z\}$ y $\{x,w',z'\}$; el par $zz'$ vuelve al grafo residual dentro de $U$. Mostramos primero que al menos $\theta_0s$ bloques en $x$ son elegibles para el par $w,w'$, es decir, dan dos bloques bicoloreados, y después que al menos $(3\theta_0/8)s$ de ellos sobreviven a las exclusiones, de modo que la elección siempre es posible.
+
+*Bloques elegibles.* Sean $w\in U_A$ y $w'\in U_{A'}$, con $x\in X$. Un bloque con $z\in X$ y $z'\in Y$ sirve con $z$ emparejado con $w$ si $A\ne X$ y $A'\in\{X,Y\}$, y con $z$ emparejado con $w'$ si $A'\ne X$ y $A\in\{X,Y\}$. Un bloque con $z,z'\in Y$ sirve si $A,A'\in\{X,Y\}$. Así:
+
+- si $A=A'=X$, sirve todo bloque interno;
+- si $A=X$ y $A'=B\ne X$ (o al revés), sirven los bloques internos de clase $B$ y los bloques bipartitos de clases $X,B$;
+- si $A,A'\ne X$, sirven los bloques bipartitos de clases $X,A$.
+
+En todos los casos, al menos $\theta_0s$ bloques son elegibles antes de las exclusiones, por el paso 4.
+
+*Exclusiones.* Un bloque queda excluido si $wz$ o $w'z'$ está en $D\cup E_X$, o si fue usado por una reparación anterior en $x$. Acotamos las exclusiones causadas por $D_1$, por $E_X$, por las reparaciones anteriores en $x$ y por las aristas que las reparaciones en otros puntos añaden a $D$.
+
+Por la cota de dispersión del paso 4, $D_1$ excluye a lo sumo $2(1+o(1))c_\rho s\le(1/4+o(1))\theta_0s$ bloques, ya que $c_\rho\le\theta_0/8$. Como $S_x\subset N_{R'}(x)$ salvo $O(m^{1-1/1000})$ puntos, F4 acota las exclusiones por $E_X$ por $2(9\rho\lambda m+o(s))\le(1/4+o(1))\theta_0s$, ya que $s=\rho m(1+o(1))$ y $\lambda\le\theta_0/72$. Las reparaciones anteriores en $x$ son a lo sumo $(5\lambda/\delta_0+o(1))s$.
+
+Las reparaciones en otros puntos $x'$ añaden aristas $wz$ con $z\in S_x$ de dos maneras. Acotamos ambas bajo la hipótesis de que en cada punto quedan al menos $(3\theta_0/8)s$ bloques elegibles; las cotas resultantes mantienen esta hipótesis. Primero, $w$ puede estar sin cubrir en $x'$. Por la tercera familia de pesos, esto ocurre para a lo sumo $(10\lambda/\delta_0+o(1))\rho n+O(d^*/\kappa)$ puntos $x'$. Entonces $z$ es un punto de un bloque elegible uniforme, y está en $S_x$ con probabilidad a lo sumo $|S_x\cap S_{x'}|/((3\theta_0/8)s)\approx8\rho/(3\theta_0)$. Esto da a lo sumo $(8\rho/(3\theta_0))(10\lambda/\delta_0)\rho n+o(s)\le(10\lambda/(3\delta_0)+o(1))s$ aristas en $w$, ya que $\rho^2n\le c_\rho s(1+o(1))$ y $c_\rho\le\theta_0/8$. Segundo, $w$ puede estar en el bloque elegido en $x'$. Esto afecta solo a los $x'$ con $w\in S_{x'}$ y, para cada punto sin cubrir de $x'$ en $S_x$, ocurre con probabilidad a lo sumo $8/(3\theta_0s)$, así que la cuarta familia da la misma cota. Las mismas dos cotas valen en $w'$, y un bloque queda excluido por una arista en cualquiera de los dos puntos. La desigualdad de Freedman hace que estas cotas valgan para todo $(w,x)$.
+
+Por tanto quedan al menos $(\theta_0/2-(55/3)\lambda/\delta_0-o(1))s\ge(3\theta_0/8)s$ bloques, porque $\lambda\le\theta_0\delta_0/200$, y la reparación tiene éxito.
+
+Cada reparación añade dos aristas a $D$ y quita una. Así, $\Delta(D)\le2\rho n+o(\rho n)\le3\rho n$. $\square$
+
+### 5.6 Completación dentro de U
+
+Tras la cobertura descendente, todo par no cubierto está dentro de $U$. Descomponemos estos pares en triángulos bicoloreados mediante el teorema de absorción $T^+$, de modo que, junto con los bloques ya colocados, haya exactamente $t_{XY}$ bloques de cada tipo $XXY$. Sea $P_{\mathrm{all}}=M\cup P_c\cup P$ el empaquetamiento construido hasta ahora, y sea $G_U=K_n\setminus\bigcup P_{\mathrm{all}}$ menos las huellas $E_X$. Toda arista de $G_U$ está dentro de $U$, y $\Delta(K[U]\setminus G_U)\le\Delta(D\cup E_X)\le\gamma_Sm$ por la elección de $c_\rho$ y $\lambda$. Para el teorema de absorción $T$ etiquetamos cada punto con su clase y permitimos los tipos bicoloreados. El apéndice A enuncia $T$ y $T^+$.
+
+El lema 5.10 verifica las hipótesis de $T^+$ sobre $G_U$. Los lemas 5.7 y 5.8 dan una semilla exacta sobre un grafo que difiere de $K[U]$ en un grafo de grado máximo pequeño, el lema 5.8$'$ hace exactas las masas de tipo de la semilla y el lema 5.9 proporciona la condición de retículo.
+
+**Lema 5.7 (inversa por la derecha acotada, [10, lema B.1]).** Sea $\ell(r)$ la suma de $r$ sobre las aristas cruzadas menos el doble de su suma sobre las aristas internas. Sean $k\ge3$ y $A$ la aplicación de incidencia entre las aristas y los triángulos bicoloreados de $K[U]$. Entonces $A$ tiene una inversa por la derecha lineal $\Psi$ sobre $\{\ell=0\}$ con $\|\Psi r\|_\infty\le K_c\|r\|_\infty/m$, donde $K_c=\binom{k-1}{2}\cdot400R^6(1+4R^2)$ y $R=2/\delta_0$.
+
+*Demostración.* [10, lema B.1] requiere que cada clase tenga al menos $c^*\ge4$ puntos y que el orden sea a lo sumo $Rc^*$. Aquí cada clase de $U$ tiene $u_Y\ge\delta_0m-1\ge\delta_0m/2$ puntos para $m$ grande, así que $c^*=\delta_0m/2$ y $R=2/\delta_0$ sirven. $\square$
+
+**Lema 5.8 (semilla exacta).** Sean $D'\subset K[U]$ de grado máximo $\Delta$ y $G'=K[U]\setminus D'$, con $\ell(\mathbf 1_{E(G')})=0$. Sea $\mu_0$ una ponderación de los triángulos bicoloreados de $K[U]$ con $1/(C_0m)\le\mu_0\le C_0/m$ y $\|A\mu_0-1\|_\infty\le\sigma$. Supongamos que
+
+$$
+4K_c\Delta\le m\qquad\text{y}\qquad4K_cC_0(\sigma+2C_0\Delta/m)\le1.
+$$
+
+Entonces $G'$ tiene una semilla exacta $\mu$, con $A\mu=1$ sobre $E(G')$ y $1/(2C_0m)\le\mu\le2C_0/m$ sobre sus triángulos bicoloreados. Además, toda prueba $w$ con $0\le w\le1$ satisface $|\sum\mu w-\sum\mu_0w|\le K_c\sigma m^2+(K_c+1)C_0\Delta m$.
+
+*Demostración.* Diremos que un triángulo es malo si contiene una arista de $D'$, y bueno en caso contrario; sean $g$ y $b$ las restricciones a los triángulos buenos y a los malos. Sea $r_0=\mathbf 1_{E(G')}-Ag\mu_0$. Este vector se anula sobre $D'$ y cumple $\ell(r_0)=0$. Además, $\|r_0\|\le\sigma+2C_0\Delta/m$, pues una arista superviviente está en a lo sumo $2\Delta$ triángulos malos.
+
+El operador $R_0=Ab\Psi$ preserva el espacio de los vectores con $\ell=0$ que se anulan sobre $D'$, y en él tiene norma a lo sumo $2\Delta K_c/m\le1/2$. $R_0$ preserva la anulación sobre $D'$ porque $A\Psi x=x$ y los triángulos buenos evitan $D'$. Sean $x=\sum_{s\ge0}R_0^sr_0$ y $\psi=\Psi x$. Entonces $Ag\psi=r_0$ y $\|\psi\|\le2K_c\|r_0\|/m\le1/(2C_0m)$. En consecuencia, $\mu=g(\mu_0+\psi)$ sirve. La cota de masa cuenta los a lo sumo $m^3/6$ pesos modificados y los a lo sumo $\Delta m^2/2$ triángulos eliminados. $\square$
+
+Este es [10, lema B.2] con dos cambios: basta con que $\mu_0$ sea aproximadamente exacta, y $D'$ no tiene por qué ser una unión de triángulos.
+
+El lema 5.8 desplaza las masas de tipo hasta en $K_c\sigma m^2+(K_c+1)C_0\Delta m$, una fracción constante de $m^2$, ya que $\Delta$ es una fracción constante de $m$. La reserva de intercambios solo absorbe errores del orden de $\lambda^2m^2$, con $\lambda\le\gamma_S/36$. Por tanto, las masas de la semilla deben hacerse exactas antes de aplicar $T^+$. Este es el argumento del cubo de [10, §3.3], que enunciamos con la generalidad que aquí se necesita.
+
+Un *cambio que preserva pares* es un cambio del vector de tipos que deja intacta cada identidad de pares. Fijemos $J$ coordenadas independientes $I$ y cambios que preservan pares $b_1,\dots,b_J$ con $(b_j)_i=[i=j]$ para $i\in I$, y sea $B=\max_\varepsilon\|\sum_j\varepsilon_jb_j\|_\infty$ sobre $\varepsilon\in\{\pm1\}^J$. Para los tipos bicoloreados, las circulaciones sobre los triángulos $oXY$ de $K_k$ ($X,Y\ne o$) dan $B\le k$. Para las tablas agregadas latinas, los tensores alternantes del lema 6.6 con esquina $(1,1,1)$ dan $B\le(a-1)(b-1)(c-1)$. En general, las identidades de pares determinan linealmente las coordenadas dependientes a partir de las libres, de modo que $b_j$ puede tomarse como el cambio real que preserva pares con coordenadas libres $e_j$; sus entradas están acotadas en función de $k$ y $\ell$. En la sección 5.9 se dispone de vectores enteros: con coordenadas libres $d(\pi,\Gamma)$ para pares de clases $\pi\not\ni o$ y clases de color $\Gamma\ne\omega$, los trueques simples del lema 5.18 tienen coordenadas unitarias (véase lo que sigue a su demostración), de modo que $B$ depende solo de $k$ y $\ell$.
+
+**Lema 5.8$'$ (masas exactas).** Sean $G'$ un grafo sobre $U$ y $r$ un vector de tipos que satisface las identidades de pares de $G'$. Sea $0\le E<\rho_c$. Supongamos que para cada esquina $r^\varepsilon=r+\rho_c\sum_j\varepsilon_jb_j$ ($\varepsilon\in\{\pm1\}^J$) existe una semilla exacta $\mu^\varepsilon$ sobre $G'$ con $1/(Cm)\le\mu^\varepsilon\le C/m$ sobre sus triángulos permitidos y $|M_i(\mu^\varepsilon)-r^\varepsilon_i|\le E$ para todo $i\in I$, donde $M_i(\mu)$ es la masa del tipo $i$. Entonces alguna combinación convexa $\mu$ de las $\mu^\varepsilon$ es una semilla exacta sobre $G'$ con las mismas cotas y con $M(\mu)=r$.
+
+*Demostración.* Sea $P$ la envolvente convexa de los vectores $(M_i(\mu^\varepsilon))_{i\in I}$. Supongamos que $(r_i)_{i\in I}\notin P$. Entonces un funcional no nulo $f$ lo separa: $f\cdot r>f\cdot M(\mu^\varepsilon)$ para todo $\varepsilon$. Tomemos $\varepsilon_j=\operatorname{sign}f_j$, con cualquiera de los dos signos cuando $f_j=0$. Entonces $f\cdot M(\mu^\varepsilon)\ge f\cdot r^\varepsilon-E\sum_j|f_j|=f\cdot r+(\rho_c-E)\sum_j|f_j|>f\cdot r$, una contradicción. Así, $r=\sum\theta_\varepsilon M(\mu^\varepsilon)$ sobre $I$ para ciertos pesos convexos $\theta$. Sea $\mu=\sum\theta_\varepsilon\mu^\varepsilon$. Es exacta, ya que $A\mu=\sum\theta_\varepsilon A\mu^\varepsilon$, y satisface las mismas cotas. Para cada par de clases $\pi$, el vector de masas de una semilla exacta sobre $G'$ satisface $\sum_\tau m_\pi(\tau)M_\tau(\mu)=e_\pi(G')$, porque cada triángulo de tipo $\tau$ contiene $m_\pi(\tau)$ aristas de clase $\pi$ y cada arista tiene carga 1. Por tanto, $M(\mu)$ y $r$ satisfacen las mismas identidades de pares y coinciden sobre $I$. Las identidades de pares determinan las coordenadas restantes a partir de las de $I$, luego $M(\mu)=r$. $\square$
+
+Para usar el lema, los objetivos en las esquinas deben seguir dando semillas válidas. Un cambio que preserva pares no altera las cargas de la ponderación $\mu_0$ del grafo completo, porque en $K[U]$ toda arista de clase $\pi$ está en $m_\pi(\tau)N_\tau/e_\pi$ triángulos de tipo $\tau$. Si $r\ge(\zeta/2)m^2$ entrada a entrada y $B\rho_c\le(\zeta/4)m^2$, toda esquina tiene entradas de al menos $(\zeta/4)m^2$, de modo que su ponderación satisface las cotas del lema 5.8 con $C_0$ para el margen $\zeta/4$. Con $\rho_c=2E$ (no hace falta nada si $E=0$) y $E=K_c\sigma m^2+(K_c+1)C_0\Delta m\le(K_cC_1+(K_c+1)C_0)\gamma_Sm^2$, la condición $B\rho_c\le(\zeta/4)m^2$ se cumple por la elección de $\gamma_S$ en la sección 5.1.
+
+**Lema 5.9 (retículo).** Sea $H$ un grafo sobre $U$ tal que, para cada clase $Y$, todo conjunto de a lo sumo $k+4$ puntos de $U$ tiene un vecino común en $U_Y$ fuera del conjunto. Supongamos que:
+
+- (a) todo grado de $H$ es par;
+- (b) $e_H(U_X,U_Y)$ es par para todos $X\ne Y$;
+- (c) $\ell(\mathbf 1_{E(H)})=0$.
+
+Entonces $\mathbf 1_{E(H)}$ es una combinación entera de triángulos bicoloreados de $H$.
+
+*Demostración.* Trabajamos en el cociente de $\mathbb Z^{E(H)}$ por los triángulos bicoloreados. El argumento de [10, lema B.3] elige sus puntos auxiliares en clases prescritas; por eso la hipótesis pide un vecino común en cada clase. Hasta su suma final, ese argumento solo usa esta hipótesis. Proporciona una función $\varepsilon$ sobre $U$ con $2\varepsilon=0$ y elementos $\beta_{XY}$ con $2\beta_{XY}=\gamma$ para todos $X\ne Y$. Toda arista cruzada $uv$ entre $U_X$ y $U_Y$ tiene imagen $\beta_{XY}+\varepsilon(u)+\varepsilon(v)$, y toda arista interna tiene imagen $-\gamma+\varepsilon(u)+\varepsilon(v)$. Al sumar sobre $E(H)$, la parte en $\varepsilon$ es $\sum_v\deg_H(v)\varepsilon(v)=0$ por (a). Por (b), el resto es
+
+$$
+\Bigl(\sum_{X<Y}e_H(U_X,U_Y)/2-\sum_Xe_H(U_X)\Bigr)\gamma=\bigl(\ell(\mathbf 1_{E(H)})/2\bigr)\gamma,
+$$
+
+que se anula por (c). $\square$
+
+[10, lema B.3] concluye de otro modo: suma una función sobre todos los pares del grafo completo, usando sus condiciones de divisibilidad, que $n$ es impar y que los pares eliminados forman un empaquetamiento permitido. Sumar sobre $E(H)$ con (a)–(c) evita las tres cosas. Esto importa porque $G_U$ no es $K[U]$ menos un empaquetamiento permitido: las aristas $D$ provienen de bloques con un punto fuera de $U$, y las huellas $E_X$ se eliminan.
+
+Las condiciones (a)–(c) se cumplen para $K_n$, por admisibilidad. Eliminar un triángulo bicoloreado las preserva. En consecuencia, se cumplen automáticamente para $G_U\cup E_X$, y no se necesita ninguna condición aritmética sobre los tamaños $u_X$.
+
+**Lema 5.10 (completación).** Pongamos cada intercambio retenido en su mitad alta. En cada coordenada independiente $i$, sean $\pi_i$ el número de bloques de $P_{\mathrm{all}}$, $B_i$ el número de bloques de las mitades altas y $s_i$ el número de copias retenidas. Siguiendo [10, (4.1)], sea $r$ el vector de tipos con
+
+$$
+r_i=t_i-\pi_i-B_i+s_i/2
+$$
+
+en las coordenadas independientes, extendido mediante las identidades de pares de $G_U$. Supongamos que $r_{XY}\ge(\zeta/2)m^2$ para todos $X\ne Y$. Entonces $G_U\cup E_X$ admite una descomposición en triángulos bicoloreados que, junto con $P_{\mathrm{all}}$, tiene exactamente $t_{XY}$ bloques de tipo $XXY$.
+
+*Demostración.* Verificamos las hipótesis de $T^+$ sobre $G_U$ (apéndice A) con constantes que dependen solo de $k$, $\delta_0$ y $\zeta$.
+
+- **H1.** Sea $\mu_0$ la ponderación con peso $r_{XY}/(\binom{u_X}{2}u_Y)$ en cada triángulo de tipo $XXY$. Como $G_U$ es $K_n$ menos un empaquetamiento, restringido a $U$, las identidades de pares de $r$ se cumplen sobre $G_U$. Por ello cada arista de $K[U]$ tiene carga $1+O(\Delta/m)$: una arista cruzada tiene carga $2(r_{XY}+r_{YX})/(u_Xu_Y)$, que difiere de 1 por las aristas cruzadas de $K[U]\setminus G_U$. Esto da $\sigma\le C_1\Delta/m$. Cada bloque de tipo $XXY$ usa un par interno de $U_X$, así que $r_{XY}\le\binom{u_X}{2}$ y $\mu_0\le1/u_Y\le2/(\delta_0m)$. En las esquinas $r^\varepsilon$ que se usan más abajo, $r^\varepsilon_{XY}\le\binom{u_X}{2}+(\zeta/4)m^2$, así que $\mu_0^\varepsilon=O(1/(\delta_0^3m))$; la constante $C_0$ de la sección 5.1, tomada para el margen $\zeta/4$, cubre esto. El lema 5.8, aplicado en las esquinas de un cubo de radio $\rho_c=2E$ alrededor de $r$, da semillas exactas con masas a distancia a lo sumo $E$ de las esquinas. El lema 5.8$'$ da entonces una semilla exacta $\mu$ con $1/(2C_0m)\le\mu\le2C_0/m$ y masas de tipo exactamente iguales a $r$. Se sigue que H1 se cumple con $C=2C_0$.
+- **H2.** El lema 5.9 se aplica a $G_U$: las huellas $E_X$ son uniones de triángulos bicoloreados (cada mitad de un intercambio lo es), así que (a)–(c) pasan de $G_U\cup E_X$ a $G_U$.
+- **H3 y H4.** Se siguen de [10, apéndice B.4], ya que $\Delta(K[U]\setminus G_U)\le\gamma_Sm$.
+
+$T^+$ con tolerancia $\eta_T$ y los $J$ indicadores de tipo como pruebas da una descomposición de $G_U$ cuyos conteos de tipos están a distancia a lo sumo $\eta_Tm^2\le s_i/4$ de $r$ en las coordenadas independientes. Ningún bloque de $P_{\mathrm{all}}$ usa una arista de $E_X$, así que se retienen todas las copias y $s_i=p_X^2$. Como las masas de la semilla son exactamente $r$, este es el único error: $s_i=p_X^2\ge\lambda^2m^2/16$, luego $s_i/4\ge\lambda^2m^2/64\ge\eta_Tm^2$ con $\eta_T=\lambda^2/256$. Al añadir $P_{\mathrm{all}}$, el entero $z_i=N_i+B_i-t_i$ queda por tanto entre $s_i/4$ y $3s_i/4$, donde $N_i$ es el conteo en la coordenada $i$ de la descomposición junto con $P_{\mathrm{all}}$. Cambiar exactamente $z_i$ copias a su mitad baja [10, §4.3] da conteo $t_i$ en cada coordenada independiente; las huellas no cambian, así que los cambios no interfieren entre sí. Las identidades de pares fijan las entradas restantes. $\square$
+
+### 5.7 Contabilidad de tipos y ensamblaje
+
+Falta comprobar la hipótesis $r_{XY}\ge(\zeta/2)m^2$ del lema 5.10, con lo que se completa la demostración del teorema 1.2. Los bloques de $P_{\mathrm{all}}$ tienen los siguientes tipos.
+
+- **Etapa 1:** $t'$ salvo $O(n^{2-\varepsilon_G^3})$.
+- **Limpieza:** a lo sumo $C_Ln^{2-\theta}$ bloques.
+- **Cobertura descendente con un punto en $U$:** conocidos salvo $m^{2-1/1000}$ (lema 5.6).
+- **Cobertura descendente con dos puntos en $U$, y bloques del paso 2:** a lo sumo $\rho nm(1+o(1))+n^{2-\delta'}+knm^{1-1/1000}\le(c_\rho+o(1))m^2\le(\zeta/100+o(1))m^2$ bloques de tipos desconocidos, ya que $nm^{1-1/1000}=o(m^2)$ para $\delta'<4/1001$.
+
+Elegimos las $J$ coordenadas libres de $t'$ de modo que el residuo previsto sea al menos $\kappa^2t$ entrada a entrada; dicho residuo es $\kappa^2t(1+O(c_\rho))$. Esto es posible: para cada par de clases $\pi$, los pares que quedan para el residuo previsto (dentro de $U$, en $R'$, y los que dejan $R$ y el paso 1) son $(\kappa^2+2\rho\kappa)e_\pi+o(\rho\kappa n^2)$. Así, $(\kappa^2+2\rho\kappa)t$ satisface sus identidades de pares salvo $o(c_\rho m^2)$, y las coordenadas libres pueden elegirse con todas las entradas al menos $\kappa^2t$. El vector de centrado del lema 5.10 tiene entradas de a lo sumo $(9J+B)\lambda^2m^2\le(\zeta/4)m^2$, ya que $\lambda\le\sqrt{\zeta/(40(J+B))}$ (sección 5.1). Entonces el $r$ real satisface $r_{XY}\ge\zeta m^2-(\zeta/100+o(1))m^2-(\zeta/4)m^2\ge(\zeta/2)m^2$. Por tanto, el lema 5.10 se aplica. Los bloques de tipo desconocido no usan la reserva de intercambios: el residuo $r$ se calcula después de colocarlos.
+
+**Preimágenes.** Dado un sistema final $S$, elegir los bloques de $S$ que no están en $M$ cuesta $\exp(O(\kappa n^2\log(1/\kappa)))=e^{o(n^2)}$. La coloración $\chi$ queda determinada en las aristas cubiertas por $M$; en las $O(\kappa n^2+n^{2-\delta'})$ aristas restantes hay $e^{o(n^2)}$ elecciones. Los conjuntos $U$, $E_X$, $F$, $R$ y $R'$ están fijos. Por tanto, por el corolario 5.3,
+
+$$
+N_t\ge\sum_{\chi\in\mathrm{Good}}\prod_\tau|\mathcal M_\tau(\chi)|\cdot e^{-o(n^2)}\ge e^{\Phi(t)-o(n^2)}.
+$$
+
+Junto con (4.3), esto demuestra el teorema 1.2. $\square$
+
+**Observación 5.11.** Completar dentro de un vórtice pequeño con $T^+$ evita repartir el grafo residual exactamente por tipos, así como la contabilidad de divisibilidad que exigiría un teorema de completación partito sobre una reserva dispersa. Tampoco impone ninguna cota inferior a $\delta_0$ más allá de $\delta_0>0$.
+
+### 5.8 Todos los tipos de bloques: demostración del teorema 1.5
+
+Para demostrar el teorema 1.5 permitimos todo tipo $\tau$, es decir, todo multiconjunto de tres clases, y no solo las ternas bicoloreadas, y modificamos el argumento de las secciones 5.1–5.7 como sigue. En toda esta subsección se suponen las hipótesis del teorema 1.5. Escribimos $m_\pi(\tau)$ para el número de pares de clase $\pi$ en una terna de tipo $\tau$, y $m_X(\tau)$ para el número de puntos de clase $X$.
+
+**Cota superior.** El argumento de la sección 4.2 nunca usa que los bloques sean bicoloreados. Para todo vector de tipos $t$,
+
+$$
+\log N^{\mathrm{all}}_t\le\frac{n^2}{6}\bigl(\log n-2-D(Q\Vert P)\bigr)+o(n^2),
+\tag{5.2}
+$$
+
+donde $P$ es la ley del tipo no ordenado de tres clases independientes con ley $\gamma$. El paso 7 se aplica sin cambios, y ahora $P$ es una medida de probabilidad.
+
+**Lema 5.12 (identidad de coloración previa para todos los tipos).** Sea $O$ un conjunto de vértices con tamaños de clase $o_X$. Para cada par de clases $\pi$, sea $e_\pi$ igual a $o_Xo_Y$ si $\pi=\{X,Y\}$ con $X\ne Y$, y a $\binom{o_X}{2}$ si $\pi=\{X,X\}$. Sean $\nu_\pi\in(0,1]$ densidades de disponibilidad, y sea $t'>0$ tal que $\sum_\tau m_\pi(\tau)t'_\tau=\nu_\pi e_\pi$ para todo $\pi$. Coloreamos cada par disponible de clase $\pi$, de forma independiente, con el tipo $\tau$ con probabilidad
+
+$$
+P(\tau\mid\pi)=\frac{m_\pi(\tau)\,t'_\tau}{\nu_\pi e_\pi}.
+$$
+
+Para un tipo $\tau$ y un par $\pi_1$ de $\tau$, escribimos $\pi_2$ y $\pi_3$ para los otros dos pares de $\tau$. Sea $w(\tau,\pi_1)$ el número de puntos que completan un par de clase $\pi_1$ a una terna de tipo $\tau$. Sea
+
+$$
+D_\tau=w(\tau,\pi_1)\cdot\nu_{\pi_2}P(\tau\mid\pi_2)\cdot\nu_{\pi_3}P(\tau\mid\pi_3).
+$$
+
+(a) $D_\tau$ no depende de la elección de $\pi_1$.
+
+(b) Si $N^O_\tau$ denota el número de ternas de tipo $\tau$ en $O$,
+
+$$
+\sum_\pi\nu_\pi e_\pi H(P(\cdot\mid\pi))+\sum_\tau t'_\tau(\log D_\tau-2)
+=\sum_\tau t'_\tau\Bigl(\log\frac{N^O_\tau}{t'_\tau}-2\Bigr)+\sum_\tau t'_\tau\log(\nu_{\pi_1}\nu_{\pi_2}\nu_{\pi_3}).
+$$
+
+*Demostración.* (a) Como $\nu_\pi P(\tau\mid\pi)=m_\pi(\tau)t'_\tau/e_\pi$, tenemos $D_\tau=w(\tau,\pi_1)\,m_{\pi_2}(\tau)\,m_{\pi_3}(\tau)\,t_\tau'^2/(e_{\pi_2}e_{\pi_3})$. Comprobamos las tres formas posibles.
+
+- $\tau=XYZ$ con clases distintas: $D_\tau=t'^2/(o_Xo_Yo_Z)$ para toda elección de $\pi_1$.
+- $\tau=XXY$: desde $\pi_1=XX$, $D_\tau=o_Y\cdot(2t'/(o_Xo_Y))^2=4t'^2/(o_X^2o_Y)$. Desde $\pi_1=XY$, $D_\tau=(o_X-1)\cdot(t'/\binom{o_X}{2})\cdot(2t'/(o_Xo_Y))=4t'^2/(o_X^2o_Y)$.
+- $\tau=XXX$: los tres pares tienen la misma clase.
+
+(b) La primera suma es igual a $-\sum_\tau t'_\tau\sum_{i=1}^{3}\log P(\tau\mid\pi_i)$. Para cada $\tau$,
+
+$$
+\log D_\tau-\sum_i\log P(\tau\mid\pi_i)=\log\frac{w(\tau,\pi_1)\,e_{\pi_1}}{m_{\pi_1}(\tau)\,t'_\tau}+\log(\nu_{\pi_1}\nu_{\pi_2}\nu_{\pi_3}),
+$$
+
+y $w(\tau,\pi_1)e_{\pi_1}/m_{\pi_1}(\tau)=N^O_\tau$. En efecto, toda terna de tipo $\tau$ contiene $m_{\pi_1}(\tau)$ pares de clase $\pi_1$, y cada uno de esos pares tiene $w(\tau,\pi_1)$ completaciones. $\square$
+
+Con $\nu\equiv1$ y $t'=t$, la parte (b) da $H(\mu)+\sum_\tau t_\tau(\log D_\tau-2)=\Phi(t)$. Esto sustituye al lema 5.2, cuya demostración vale sin cambios, con el error $O(n^{2-\delta'/4}\log n)$.
+
+**3-grafos tipados y conteo de emparejamientos.** Para cada $\tau$, el 3-grafo $H_\tau(\chi)$ tiene como vértices los pares coloreados con $\tau$ y como aristas las ternas de tipo $\tau$ cuyos tres pares están coloreados con $\tau$. Por (a) y R1 es $D_\tau(1\pm n^{-1/3})$-regular, y sus codegrados son a lo sumo 1. El teorema de [30] se aplica exactamente como en la sección 5.3.
+
+**Limpieza.** Sean $v$ un vértice malo en la clase $X$ y $\tau$ un tipo que contiene a $X$. Escribimos $\tau=\{X,B,C\}$, donde $\{B,C\}$ es el par de clases de los otros dos puntos.
+
+- Si $B\ne C$, los $L_0$-vecinos de $v$ en $B$ y en $C$ coloreados con $\tau$ forman dos listas. Sus tamaños esperados coinciden, porque $\nu_{XB}P(\tau\mid XB)(o_B-[B=X])=(1+[B=X])\,m_{XB}(\tau)\,t'_\tau/o_X$, y la expresión análoga para $C$ es igual (una comprobación directa de las tres formas). Así, la condición G3 se cumple para todo $\tau$, y la afirmación A se aplica al par de listas.
+- Si $B=C$, hay una sola lista, que se divide al azar en dos mitades como en el paso 2 de la sección 5.4.
+
+La afirmación B se cumple con $3(k-1)$ sustituido por $3\binom{k+1}{2}$, y el lema 5.4, sin cambios. El paso 3 puede usar cualquier tipo.
+
+**Cobertura descendente.** Para cada clase $Y$, el grafo $F_Y$ contiene aristas de todo par de clases $\{A,B\}$, y toda terna $\{x,x',w\}$ con $w\in U_Y$ está permitida. Una arista de clase $\{A,B\}$ entra en $F_Y$ con probabilidad
+
+$$
+q^Y_{AB}=\frac{\lambda_Y\,m_Y(\tau)\,t_\tau}{e^O_{AB}},\qquad\tau=\{A,B,Y\},\qquad\lambda_Y=\frac{(1-\kappa)(1-\rho)\,u_Y}{c_Y}.
+$$
+
+Contando los pares ordenados $(a,y)$ con $a\in A$ e $y\in Y$ se obtiene
+
+$$
+\sum_B(1+[A=B])\,m_Y(\{A,B,Y\})\,t_{ABY}=c_A(c_Y-[A=Y]).
+$$
+
+Por ejemplo, para $\tau=AAY$ el número de tales pares ordenados en un bloque es $m_Am_Y=2=(1+1)m_Y(\tau)$. Por tanto, todo $x\in O\cap A$ tiene $F_Y$-grado esperado $\lambda_Yc_A(c_Y-[A=Y])/o_A=(1-\rho)u_Y(1+O(1/(\kappa n)))$.
+
+Los bloques con un punto en $U$ tienen entonces conteos de tipos $3\kappa t_\tau(1+O(\kappa))$, que son proporcionales a $t$. El lema 5.6 se cumple con las siguientes simplificaciones:
+
+- en el paso 2 es admisible cualquier $w$ con $xw,x'w\in R'$;
+- en el paso 3 se permite todo apareamiento de $S_x$, así que no se necesita el lema 5.5;
+- en el paso 4 solo se usan grupos internos de tamaño $d^*+1$;
+- en el paso 5 todo bloque es elegible.
+
+**Completación dentro de $U$.**
+
+*H1.* Usamos la siguiente inversa.
+
+**Lema 5.13 (inversa para todos los triángulos).** Sea $A$ la aplicación de incidencia de los triángulos de $K_m$ en sus aristas, con $m\ge6$. Para un vector $x$ sobre las aristas, sean $X(u)=\sum_vx(uv)$, $S=\sum_uX(u)/(3m-6)$, $Y(u)=(X(u)-S)/(2m-6)$ y
+
+$$
+y(uv)=\frac{x(uv)-Y(u)-Y(v)}{m-4},\qquad(\Psi x)(T)=\sum_{e\subset T}y(e).
+$$
+
+Entonces $A\Psi x=x$ para todo $x$, y $\|\Psi x\|_\infty\le24\|x\|_\infty/m$ para $m\ge8$.
+
+*Demostración.* Tenemos $(A\Psi x)(uv)=\sum_w(y(uv)+y(uw)+y(vw))=(m-4)y(uv)+Y'(u)+Y'(v)$, donde $Y'(u)=\sum_wy(uw)$. Sumando la definición de $y$ sobre $v\ne u$ se obtiene $(m-4)Y'(u)=X(u)-(m-1)Y(u)-\sum_{v\ne u}Y(v)$. Las definiciones de $S$ y de $Y$ dan $\sum_uY(u)=S$. Se obtiene $(m-4)Y'(u)=X(u)-(m-2)Y(u)-S=(m-4)Y(u)$, es decir, $Y'=Y$. Por tanto, $(A\Psi x)(uv)=x(uv)$.
+
+Para las normas, sea $m\ge8$. Entonces $|X|\le(m-1)\|x\|$ y $|S|\le m(m-1)\|x\|/(3m-6)\le m\|x\|/2$; además, $|Y|\le(3m/2)\|x\|/(2m-6)\le3\|x\|/2$ y $|y|\le4\|x\|/(m-4)$. En consecuencia, $\|\Psi x\|\le12\|x\|/(m-4)\le24\|x\|/m$. $\square$
+
+Una comprobación numérica da $A\Psi x=x$ con un error menor que $10^{-15}$, y $m\|\Psi\|_{\infty\to\infty}=10.5$, $9.0$, $8.17$, $7.78$ para $m=6,9,14,20$. El lema 5.8 se cumple con la $\Psi$ del lema 5.13 y $K_c=24$. La constante $\gamma_S$ de la sección 5.1 se calcula con $\max(K_c,24)$. Como $A$ es sobreyectiva, no se necesita la condición $\ell(\mathbf 1_{E(G')})=0$. La semilla base es $\mu_0(T)=r_\tau/N^U_\tau$ sobre los triángulos de tipo $\tau$. Su carga sobre un par de clase $\pi$ es
+
+$$
+\sum_\tau m_\pi(\tau)\,r_\tau/e^U_\pi=1-O(\Delta/m),
+$$
+
+porque los pares restantes de clase $\pi$ en $U$ son exactamente $\sum_\tau m_\pi(\tau)r_\tau$.
+
+*H2.* El grafo $G_U$ es $K_n$ menos una familia de triángulos disjuntos en aristas y menos las huellas de Pasch $E_X$. En consecuencia, todo grado de $G_U$ es par, y $e(G_U)\equiv\binom{n}{2}\equiv0\pmod 3$ para $n\equiv1,3\pmod 6$. Además, $\delta(G_U)\ge(1-\gamma_S)m-1\ge7m/8-1$, ya que $\gamma_S\le\delta_0/8$. Entonces cuatro vértices cualesquiera tienen al menos $m/2-4$ vecinos comunes, y cinco cualesquiera al menos $3m/8-5$, de modo que $G_U$ satisface las hipótesis del lema 5.20, con caminos de longitud 2 dentro de los vecindarios comunes. El lema 5.20 expresa $\mathbf 1_{E(G_U)}$ como combinación entera de triángulos de $G_U$, todos ellos permitidos. El teorema de Delcourt y Postle sobre la conjetura de Nash-Williams para grafos grandes [34, teorema 1.8], formalizado en [35], daría una descomposición completa, pero aquí basta este certificado reticular.
+
+*H3 y H4.* Son como en el lema 5.10. Los puntos $p$ y $q$ de la bisagra octaédrica pueden tener cualquier clase.
+
+*Intercambios.*
+
+**Lema 5.14 (base de Pasch con pivote).** Fijemos una clase $o$. Los cambios de los conteos de tipos que preservan pares forman el retículo
+
+$$
+\Lambda=\Bigl\{d\in\mathbb Z^{\mathrm{types}}:\sum_\tau m_\pi(\tau)d_\tau=0\text{ para todo }\pi\Bigr\}.
+$$
+
+Para un tipo $\sigma$ que no contiene a $o$, sea $b_\sigma$ el cambio que produce el intercambio de una configuración de Pasch cuyos puntos $0,1,2$ tienen las clases de $\sigma$ y cuyos puntos $3,4,5$ tienen clase $o$. La configuración pasa de los bloques $\{013,024,125,345\}$ a $\{012,034,135,245\}$. Entonces los vectores $b_\sigma$ ($\sigma\not\ni o$) forman una $\mathbb Z$-base de $\Lambda$, y $\operatorname{rank}\Lambda=\binom{k+1}{3}$.
+
+*Demostración.* Escribamos $\sigma=\{\sigma_0,\sigma_1,\sigma_2\}$. Los bloques $012$, $034$, $135$, $245$ tienen tipos $\sigma$, $\sigma_0oo$, $\sigma_1oo$ y $\sigma_2oo$; los bloques $013$, $024$, $125$, $345$ tienen tipos $\sigma_0\sigma_1o$, $\sigma_0\sigma_2o$, $\sigma_1\sigma_2o$ y $ooo$. Así,
+
+$$
+b_\sigma=\mathbf 1_\sigma+\sum_i\mathbf 1_{\sigma_ioo}-\sum_{i<j}\mathbf 1_{\sigma_i\sigma_jo}-\mathbf 1_{ooo},
+$$
+
+que está en $\Lambda$ porque ambas familias cubren los mismos doce pares. Sea $d\in\Lambda$ nulo en todo tipo que evita $o$. Las ecuaciones de los siguientes pares dan, sucesivamente:
+
+- para un par $\{A,B\}$ con $A,B\ne o$, solo el tipo $ABo$ contiene a ambos, así que $d_{ABo}=0$;
+- para un par $\{A,o\}$, entonces $2d_{Aoo}=0$;
+- para el par $\{o,o\}$, entonces $3d_{ooo}=0$.
+
+Luego $d=0$, de donde todo $d\in\Lambda$ es igual a $\sum_\sigma d_\sigma b_\sigma$, ya que la diferencia está en $\Lambda$ y se anula fuera de los tipos que contienen a $o$. Los $b_\sigma$ son independientes porque $b_\sigma$ tiene coordenada 1 en $\sigma$ y 0 en los demás tipos que evitan $o$. $\square$
+
+Se colocan dentro de $U$ copias de los $\binom{k+1}{3}$ intercambios pivote, con huellas disjuntas. Se usa la construcción por rectas de [10, §4.1] con seis posiciones de puntos, lo que da $p_X^2$ copias por $\sigma$ y $\Delta(E_X)\le5p_X$. $T^+$ se aplica con los indicadores de los tipos que evitan $o$ como pruebas. Estas coordenadas determinan todo el vector de tipos, por la demostración del lema 5.14. Cambiar el número necesario de copias hace exactos los conteos, como en el lema 5.10.
+
+**Contabilidad.** La sección 5.7 se aplica con todos los tipos. El objetivo de la etapa 1 es $t'=(1-\kappa)^3t(1+O(\kappa))$, con coordenadas libres elegidas de modo que el residuo previsto en $U$ sea al menos $\kappa^2t$ entrada a entrada; dicho residuo es $\kappa^2t(1+O(c_\rho))$. La pérdida de entropía es $\Phi(t)-\Phi_O(t')=O(\kappa n^2\log n)=O(n^{2-\delta'/4}\log n)$, donde $\Phi_O$ es $\Phi$ calculada con $N^O_\tau$. Esto demuestra la cota inferior $\log N^{\mathrm{all}}_t\ge\Phi(t)-o(n^2)$. Junto con (5.2) y la normalización que sigue, demuestra el teorema 1.5.
+
+**Normalización.** Con $t_\tau=(n^2/6)Q_\tau$ y $N_\tau=(n^3/6)P(\tau)(1+O(1/n))$, obtenemos $\log(N_\tau/t_\tau)=\log n+\log(P(\tau)/Q_\tau)+O(1/n)$. Por tanto, $\Phi(t)=(n^2/6)(\log n-2-D(Q\Vert P))+O(n\log n)$.
+
+**Demostración del corolario 1.6.** Sea $\mathcal I_n$ el conjunto de los vectores de tipos enteros que satisfacen (1.4). Es no vacío, ya que existen sistemas triples de Steiner para $n\equiv1,3\pmod 6$, y es un trasladado de $\Lambda$. Por el lema 5.14, todo punto real factible está a distancia $O(1)$ de $\mathcal I_n$, porque los $b_\sigma$ tienen entradas de a lo sumo 3.
+
+- *Conteo total.* El teorema 1.5 con $k=1$, junto con (5.2), da $\log\#\mathrm{STS}(n)=(n^2/6)(\log n-2)+o(n^2)$.
+- *Cota superior.* Para cualquier conjunto $A$ de vectores de tipos normalizados, (5.2) y el tamaño polinomial de $\mathcal I_n$ dan $\mathbb P(Q_n\in A)\le\exp\bigl(-(n^2/6)\inf D(Q\Vert P_n)+o(n^2)\bigr)$. Aquí $P_n$ es la $P$ de (5.2) calculada con las proporciones $c_X/n$, y el ínfimo se toma sobre los $Q\in A$ a distancia a lo sumo $O(1/n)+\max_X|c_X/n-\gamma_X|$ de $F_\gamma$. Como $P$ tiene entradas positivas y $P_n\to P$, se tiene $D(\cdot\Vert P_n)\to D(\cdot\Vert P)$ uniformemente. Para $A$ cerrado, la compacidad y la semicontinuidad inferior de $D(\cdot\Vert P)$ convierten este ínfimo en el ínfimo sobre $A\cap F_\gamma$.
+- *Cota inferior.* Sean $A$ abierto en $\mathbb R^{\mathrm{types}}$ y $Q\in A\cap F_\gamma$. Para $0<s\le1$, $Q_s=(1-s)Q+sP$ está en $F_\gamma$ y tiene entradas positivas, y $D(Q_s\Vert P)\le(1-s)D(Q\Vert P)$ por convexidad; además, $Q_s\in A$ para $s$ pequeño. Podemos suponer, pues, que $Q$ tiene entradas positivas. Como $6e_\pi/n^2\to3w_\pi$ y la aplicación de vectores de tipos a conteos de pares es sobreyectiva con una inversa por la derecha acotada, existen $Q^{(n)}\in F_n$ (teorema 1.10) con $Q^{(n)}\to Q$. Por el lema 5.14, algún $t\in\mathcal I_n$ cumple $|t-(n^2/6)Q^{(n)}|=O(1)$, así que $6t/n^2\in A$ para $n$ grande, y dividir la cota inferior del teorema 1.5 en $t$ por $\#\mathrm{STS}(n)$ da la cota inferior correspondiente.
+
+La uniformidad en la partición se hereda del teorema 1.5. $\square$
+
+**Observación 5.15 (una clase).** Para $k=1$ hay un único tipo, $t$ está forzado y no hay intercambios. El teorema 1.5 dice entonces que $\log\#\mathrm{STS}(n)\ge(n^2/6)(\log n-2)-o(n^2)$. Esta es la cota inferior de Keevash [7], quien ya obtiene un error $O(n^{2-a})$. Aquí se obtiene mediante el teorema de emparejamientos de [30] y el teorema de absorción T aplicado dentro de un vórtice.
+
+### 5.9 1-factorizaciones: demostración del teorema 1.7
+
+Demostramos el teorema 1.7 viendo las 1-factorizaciones de $K_n$ como descomposiciones en triángulos de un grafo etiquetado y adaptando la construcción de las secciones 5.1–5.8. Sean $n$ par y $C=[n-1]$ un conjunto de colores. El grafo etiquetado
+
+$$
+G_n=K_n\vee C
+$$
+
+tiene todos los pares de $[n]$ y todos los pares $(v,c)$, y ningún par de colores. Una 1-factorización de $K_n$ con colores etiquetados es una descomposición de $G_n$ en triángulos $\{u,v,c\}$. El triángulo $\{u,v,c\}$ significa que $uv$ tiene color $c$. El tipo de ese triángulo es $(XY,\Gamma)$, donde $X$ e $Y$ son las clases de $u$ y $v$ y $\Gamma$ es la clase de $c$. Solo se permiten estos tipos; los triángulos de $K_n$ no. Con $e_{XY}$ como en (1.4), las identidades de pares son (1.5).
+
+**Cota superior.** Aplicamos el argumento de la sección 4.2 a $G_n$. El grafo tiene $\binom{n}{2}$ pares $uv$ y $n(n-1)$ pares $vc$, tres por triángulo. El tercer punto de $uv$ es su color, y el tercer punto de $vc$ es su compañero. Los conjuntos de candidatos del paso 5 son los colores $c\in\Gamma$ con $uc$ y $vc$ no revelados, y los vértices $v\in Y$ con $uv$ y $vc$ no revelados. Ambos tienen tamaño lineal.
+
+La clase de color de un par uniforme $uv$ tiene exactamente ley $\eta$, pues cada color cubre $n/2$ pares. La clase del compañero de un par uniforme $vc$ tiene ley $\gamma$, salvo $O(1/n)$. Con peso $1/3$ por par del grafo etiquetado, la divergencia promediada es, por tanto,
+
+$$
+\tfrac13D(Q_{XY\Gamma}\Vert\gamma\otimes\gamma\otimes\eta)+\tfrac23D(Q_{X\Gamma Y}\Vert\gamma\otimes\eta\otimes\gamma)=D(Q_{XY\Gamma}\Vert\gamma\otimes\gamma\otimes\eta).
+$$
+
+Por intercambiabilidad en $(X,Y)$, esto es $D(Q\Vert P)$ con $P(XY,\Gamma)=w_{XY}\eta_\Gamma$. Así,
+
+$$
+\log N^{\mathrm{1F}}_t\le\binom{n}{2}\bigl(\log n-2-D(Q\Vert P)\bigr)+o(n^2)
+\tag{5.3}
+$$
+
+para todo $t$ que satisfaga (1.5). Con una sola clase de puntos y una sola clase de colores, esta es la cota de Linial–Luria para 1-factorizaciones [6, teorema 1.2], que está formalizada en [36].
+
+**Identidad de coloración previa.** Coloreamos cada par del grafo etiquetado con el tipo de su triángulo:
+
+- un par $uv$ de clase $XY$ recibe la clase de color $\Gamma$ con probabilidad $t(XY,\Gamma)/e_{XY}$;
+- un par $vc$ de clase $(X,\Gamma)$ recibe la clase de compañero $Y$ con probabilidad $(1+[X=Y])\,t(XY,\Gamma)/(c_Xh_\Gamma)$.
+
+Los tres valores de $D_\tau$ para $\tau=(XY,\Gamma)$, calculados desde los tres pares de un triángulo de ese tipo, coinciden: valen $t^2/(c_Xc_Yh_\Gamma)$ para $X\ne Y$ y $4t^2/(c_X^2h_\Gamma)$ para $X=Y$. En cada caso $w(\tau,\pi)e_\pi/m_\pi(\tau)=N_\tau=e_{XY}h_\Gamma$, así que la demostración del lema 5.12 da $H(\mu)+\sum t(\log D-2)=\Phi(t)$.
+
+Dentro de $O$, el objetivo $t'$ satisface $\sum_\Gamma t'(XY,\Gamma)=\nu_{XY}e^O_{XY}$ y $\sum_Y(1+[X=Y])\,t'(XY,\Gamma)=\nu_{X\Gamma}o_Xh'_\Gamma$. Estas ecuaciones solo son compatibles si $\sum_\Gamma\nu_{X\Gamma}o_Xh'_\Gamma=\sum_Y(1+[X=Y])\,\nu_{XY}e^O_{XY}$ para toda clase de vértices $X$, y tras el redondeo los dos lados difieren en $O(n)$. Como en la sección 5.3, multiplicamos $\nu_{X\Gamma}$, para todo $\Gamma$, por el factor $\varphi_X=1+O(1/n)$ que los iguala, y mantenemos la notación; como allí, los valores reescalados siguen siendo menores que $1$, pues $\nu_{X\Gamma}\le1-p$.
+
+El teorema de [30] y la limpieza se aplican como antes. En un vértice de $[n]$, las dos listas de un tipo son sus vecinos en $[n]$ y en $C$, y sus tamaños esperados coinciden. En un color $c\in\Gamma$, las listas de un tipo $(XY,\Gamma)$ son sus vecinos en $X$ y en $Y$, y sus tamaños esperados coinciden; para $X=Y$ hay una sola lista, que se divide al azar como en el paso 2 de la sección 5.4.
+
+**Cobertura descendente.** El vórtice es $U=U_V\cup U_C$, con $\lfloor\kappa c_X\rfloor$ vértices en cada clase $X$ y $\lfloor\kappa h_\Gamma\rfloor$ colores en cada clase $\Gamma$. Un bloque con un punto en $U$ tiene una de estas dos formas:
+
+- (i) $\{x,y,w\}$ con $w\in U_C$, que cubre un par $xy$ dentro de $O$;
+- (ii) $\{x,c,w\}$ con $w\in U_V$, $x\in O_V$ y $c\in O_C$, que cubre un par $xc$ dentro de $O$.
+
+Las reservas son:
+
+- $F^{C,\Gamma}$: pares $xy$ de clase $XY$, cada uno con probabilidad $\lambda_\Gamma t(XY,\Gamma)/e^O_{XY}$;
+- $F^{V,Y}$: pares $xc$ de clase $(X,\Gamma)$, cada uno con probabilidad $\lambda_Y(1+[X=Y])\,t(XY,\Gamma)/(o_Xh'_\Gamma)$.
+
+Aquí $\lambda_\Gamma=(1-\kappa)(1-\rho)|U_C\cap\Gamma|/h_\Gamma$, $\lambda_Y=(1-\kappa)(1-\rho)|U_V\cap Y|/c_Y$ y $h'_\Gamma=|O_C\cap\Gamma|$. Por (1.5), todo vértice de $O_V$ y todo color de $O_C$ tiene el grado de reserva esperado requerido, salvo un factor $1+O(1/(\kappa n))$.
+
+Los pasos 1 y 2 del lema 5.6 no cambian. En los pasos 3–5:
+
+- para $x\in O_V$, los conjuntos residuales $S^V_x\subset U_V$ y $S^C_x\subset U_C$ tienen el mismo tamaño, porque todo vértice de $[n]$ está balanceado en $G_n$ menos triángulos. Se emparejan en grupos bipartitos;
+- para $c\in O_C$, el conjunto residual $S_c\subset U_V$ tiene tamaño par, porque los grados de los colores son pares. Se empareja en grupos internos;
+- no hay restricción de tipo.
+
+**Completación dentro de $U$.**
+
+**Lema 5.16 (inversa sobre vectores balanceados).** Un vector $x$ sobre los pares de $K_m\vee C_h$ es *balanceado* si $X_V(u):=\sum_vx(uv)$ es igual a $\sum_cx(uc)$ para todo $u$. Para $x$ balanceado, sean:
+
+- $W_\Sigma=\sum_{uv}x(uv)$ y $Z(c)=\sum_ux(uc)$;
+- $\xi(c)=(Z(c)-2W_\Sigma/h)/(2m-2)$;
+- $y(uv)=x(uv)/h$ e $y(uc)=(x(uc)-X_V(u)/h-\xi(c))/(m-2)$;
+- $(\Psi x)(u,v,c)=y(uv)+y(uc)+y(vc)$.
+
+Entonces $A\Psi x=x$, y $\|\Psi x\|\le K(1+m/h)\|x\|/\min(m,h)$ con $K$ una constante absoluta.
+
+*Demostración.* Para cualquier $y$, $(AA^{\mathsf T}y)(uv)=h\,y(uv)+Y_C(u)+Y_C(v)$ y $(AA^{\mathsf T}y)(uc)=(m-2)y(uc)+Y_V(u)+Z_y(c)$. Con $y$ como se ha definido:
+
+- $Y_V(u)=X_V(u)/h$;
+- $Y_C(u)=(X_C(u)-X_V(u)-\sum_c\xi(c))/(m-2)=0$, por el balance y porque $\sum_cZ(c)=2W_\Sigma$;
+- $Z_y(c)=\xi(c)$, por la definición de $\xi$.
+
+Sustituyendo se obtiene $AA^{\mathsf T}y=x$, y $\Psi x=A^{\mathsf T}y$. Como $|X_V|\le m\|x\|$, $|W_\Sigma|\le m^2\|x\|/2$ y $|Z|\le m\|x\|$, obtenemos $|\xi|\le(1+m/h)\|x\|$, $|y(uv)|\le\|x\|/h$ y $|y(uc)|\le2(1+m/h)\|x\|/(m-2)$, así que $\|\Psi x\|\le9(1+m/h)\|x\|/\min(m,h)$ para $m\ge4$. $\square$
+
+El lema 5.8 se cumple con esta inversa sobre vectores balanceados, con $K_c=K(1+m/h)m/\min(m,h)$, que está acotada en función de las proporciones de clase porque $m$ y $h$ son proporcionales. La constante $\gamma_S$ de la sección 5.1 se calcula con este $K_c$ y con la $B$ de los trueques simples del lema 5.18, que cambian el vector de tipos en vectores enteros con a lo sumo ocho unidades con signo.
+
+**Lema 5.17 (retículo).** Sea $H\subset K_m\vee C_h$ *rico*: tres colores cualesquiera tienen un vecino común que es un vértice; dos vértices cualesquiera, no necesariamente distintos, adyacentes a dos colores $c,c'$ tienen un vecino común que es un vértice y que también es adyacente a $c$ y a $c'$; y toda arista $uv$ entre vértices está en un triángulo con un color. Supongamos que $H$ está balanceado en cada vértice y tiene grado par en cada color. Entonces $\mathbf 1_{E(H)}$ es una combinación entera de triángulos de $H$.
+
+*Demostración.* En el cociente por los triángulos, sea $\psi$ la imagen de una arista.
+
+- Los triángulos $\{u,u',c\}$ y $\{u,u',c'\}$ dan $\psi(uc)-\psi(uc')=-(\psi(u'c)-\psi(u'c'))$. Usando un tercer vértice, la diferencia $d(c,c'):=\psi(uc)-\psi(uc')$ no depende de $u$, y $2d=0$.
+- Fijemos un color $c_0$. Por la primera condición, $c$, $c'$ y $c_0$ tienen un vecino común que es un vértice, así que $d(c,c')=d(c,c_0)-d(c',c_0)$.
+- Por tanto, $\psi(uc)=a(u)+b(c)$ con $2b=0$, y $\psi(uv)=-a(u)-a(v)$.
+- Al sumar sobre $E(H)$ se obtiene $\sum_ua(u)(\deg_C(u)-\deg_V(u))+\sum_cb(c)\deg(c)=0$, por el balance y por paridad. $\square$
+
+Un cálculo de la forma normal de Smith da exactamente la torsión prevista $(\mathbb Z/2)^{h-1}$. El grafo $G_U$ está balanceado y tiene grados de color pares, ya que $G_n$ cumple ambas cosas y eliminar triángulos preserva las dos propiedades.
+
+*H3 y H4.* H3 solo concierne a pares $vv'$ y a pares $vc$. Para H4 con un par compartido $uv$, elegimos $p,q\in[n]$ nuevos como en [10, apéndice B.4]. Para triángulos $\{u,c,v\}$ y $\{u,c,v'\}$ que comparten $uc$, elegimos $p\in[n]$ y $q\in C$, y ponemos $E_h=\{uq,pc,pq,pv,pv',qv,qv'\}$. Entonces $E_h\cup\{uv,cv\}$ se descompone como $\{uqv,pcv,pqv'\}$, y $E_h\cup\{uv',cv'\}$ como $\{uqv',pcv',pqv\}$.
+
+**Lema 5.18 (trueques alternantes).** Un trueque alternante toma pares $u_1u_2$ y $u_3u_4$ de color $c$ y pares $u_2u_3$ y $u_4u_1$ de color $c'$, e intercambia los dos colores. Sustituye cuatro triángulos por cuatro triángulos sobre los mismos pares, de modo que el vector de tipos cambia en a lo sumo ocho unidades con signo. Estos trueques generan el retículo $\Lambda$ de los cambios de los conteos de tipos que preservan pares, que tiene rango $\binom{k}{2}(\ell-1)$.
+
+*Demostración.* Fijemos una clase de color $\omega$. Las coordenadas libres son $d(XY,\Gamma)$ con $X\ne Y$ y $\Gamma\ne\omega$. Las demás coordenadas quedan determinadas, en este orden:
+
+- $d(XY,\omega)$, por la identidad de los pares $uv$;
+- $d(XX,\Gamma)=-\frac12\sum_{Y\ne X}d(XY,\Gamma)$, por la identidad de los pares $vc$;
+- $d(XX,\omega)$, por la identidad de los pares $uv$.
+
+Por tanto, $\Lambda\cong L_{\mathrm{even}}^{\ell-1}$, donde $L_{\mathrm{even}}$ es el retículo de los vectores enteros sobre las aristas de $K_k$ con suma par en cada vértice. En la copia $\Gamma$, los trueques con colores en $\Gamma$ y en $\omega$ producen:
+
+- $\pm2e_{XY}$, a partir de las clases $(X,X,Y,Y)$;
+- triángulos con signo $\pm(e_{YZ}-e_{XY}-e_{XZ})$, a partir de las clases $(X,X,Y,Z)$;
+- 4-ciclos alternantes, a partir de cuatro clases distintas.
+
+Los vectores $2e$ y los triángulos generan $L_{\mathrm{even}}$, ya que los triángulos generan el espacio de ciclos de $K_k$ módulo 2. $\square$
+
+Una elección más sencilla de coordenadas da una base explícita. Fijemos una clase $o$ y una clase de color $\omega$, y tomemos como coordenadas libres $d(\pi,\Gamma)$ para pares de clases $\pi\not\ni o$ (incluido $\pi=YY$) y $\Gamma\ne\omega$. Para $\pi=\{Y,Z\}$, el trueque simple sobre las clases $(o,o,Y,Z)$ entre los colores $\omega$ y $\Gamma$ tiene coordenada 1 en $(\pi,\Gamma)$ y 0 en las demás coordenadas libres. Por tanto, estos $\binom{k}{2}(\ell-1)$ trueques forman una $\mathbb Z$-base de $\Lambda$, y los coeficientes de $z\in\Lambda$ son sus coordenadas libres. No se necesitan dispositivos compuestos, y el cambio centrado de [10, §4.3] se aplica con estos trueques.
+
+Las copias de los trueques simples se colocan dentro de $U$ del mismo modo que los intercambios pivote en la sección 5.8. Una copia tiene cuatro vértices y dos colores, y cada uno de sus seis puntos tiene grado 4 en su huella. La construcción por rectas de [10, §4.1] con seis posiciones de puntos da $p_X^2$ copias por coordenada, con huellas disjuntas, y $\Delta(E_X)\le5p_X$. Cada trueque usa dos vértices de $U_o$ y un color de $U_C\cap\omega$. Con $J=\binom{k}{2}(\ell-1)$ coordenadas, los depósitos ocupan a lo sumo $2Jp_X\le2J\lambda m$ vértices de $U_o$ y $Jp_X$ colores de $U_C\cap\omega$, menos de una novena parte de cada uno cuando $\lambda\le\delta_0/(18(J+1))$, como en la sección 5.1 (aquí $m=|U_V|$). Los depósitos en las demás clases $U_Y$ y $U_C\cap\Gamma$ son menores. Como $\Delta(D\cup E_X)\le\gamma_Sm\le m/8$, $G_U$ es rico en el sentido del lema 5.17: tres colores tienen como vecinos comunes todos los vértices de $U_V$ salvo a lo sumo $3\gamma_Sm$; dos vértices y dos colores, todos salvo a lo sumo $4\gamma_Sm+2$; y una arista $uv$ está en un triángulo con todos los colores salvo a lo sumo $2\gamma_Sm$.
+
+**Contabilidad y corolario 1.8.** Son como en las secciones 5.7 y 5.8. En la demostración del corolario 1.6, la sobreyectividad se sustituye por el hecho de que los conteos de pares normalizados de (1.5) y sus límites están en la imagen de la aplicación de tipos a pares, delimitada por las $k$ relaciones de balance, sobre la cual dicha aplicación tiene una inversa por la derecha acotada. Para $k=\ell=1$, el teorema 1.7 y (5.3) dan $\log\#\mathrm{1F}(K_n)=\binom{n}{2}(\log n-2)+o(n^2)$, lo que proporciona el conteo total para el corolario. Este conteo total es el teorema de Ferber, Jain y Sudakov [28] junto con [6]. $\square$
+
+### 5.10 Grafos escalonados típicos: demostración del teorema 1.9
+
+Llevamos a cabo la construcción del vórtice de las secciones 5.1–5.8 dentro del grafo típico $G$ del teorema 1.9 y describimos las modificaciones que exige la tipicidad. Se cumplen las hipótesis del teorema 1.9, y todos los tipos están permitidos.
+
+Escribimos $w_G(\tau,\pi)$ para el número de puntos que completan una arista fija de clase $\pi$ a un triángulo de tipo $\tau$ en $G$. Por tipicidad,
+
+$$
+w_G(\tau,\pi)=(1\pm2\eta)\,d_{\pi_2}d_{\pi_3}\,w(\tau,\pi),\qquad\text{con }\eta=n^{-c_0},
+$$
+
+donde $\pi_2$ y $\pi_3$ son los otros dos pares de $\tau$. Además,
+
+$$
+N_\tau(G)=(1\pm2\eta)\,w_G(\tau,\pi)\,e_\pi(G)/m_\pi(\tau).
+$$
+
+**Cota superior.** Aplicamos el argumento de la sección 4.2 a las aristas de $G$. En el paso 5, los candidatos para un par $e$ de clase $\pi$ y tercera clase $C$ son, en esperanza, $w_G((\pi,C),\pi)(1-\lambda)^6$. Como en la sección 5.8, la concavidad y la identidad $w_G(\tau,\pi)e_\pi(G)/m_\pi(\tau)=N_\tau(G)(1\pm2\eta)$ dan
+
+$$
+\log\#\mathrm{dec}_t(G)\le\Phi_G(t)+o(n^2)\qquad\text{para todo $t$ que satisfaga (1.6).}\tag{5.4}
+$$
+
+**Conteo con coloración previa.** Coloreamos cada arista disponible de clase $\pi$ con el tipo $\tau$ con probabilidad $m_\pi(\tau)t'_\tau/(\nu_\pi e_\pi(G))$. El grado $D_\tau$ calculado desde $\pi_1$ es
+
+$$
+w_G(\tau,\pi_1)\,\frac{m_{\pi_2}m_{\pi_3}t'^2}{e_{\pi_2}(G)\,e_{\pi_3}(G)}
+=(1\pm4\eta)\,w(\tau,\pi_1)\,\frac{m_{\pi_2}m_{\pi_3}t'^2}{e_{\pi_2}e_{\pi_3}},
+$$
+
+porque las densidades se cancelan. Por el lema 5.12(a), no depende de $\pi_1$. El lema 5.12(b), con $N_\tau(G)$ en lugar de $N^O_\tau$, da la tasa $\Phi_G(t)$ salvo $O(\eta n^2\log n)$. El teorema de [30] se aplica en cuanto $\varepsilon_G\le c_0/2$, ya que los errores de grado son $O(n^{-c_0})$.
+
+**Limpieza.** La reserva $R$ es ahora un subgrafo binomial de $G$. Primero comprobamos que la condición R2 sigue cumpliéndose, con $s_2=n^{1-c_0/4}$. Después describimos los tres cambios que la limpieza necesita en $G$: en F5, en G3 y en R3. Como $\varepsilon_G\le c_0/2$ y $\varepsilon_G<1/4$, se tiene $\delta'=\varepsilon_G^3/40<c_0/8$.
+
+*Condición R2.* Para $S$ dentro de una sola clase $X$ y toda clase $Z$, la tipicidad de los codegrados da
+
+$$
+\sum_{t\in O\cap Z}\bigl(\deg_G(t,S)-d_{XZ}|S|\bigr)^2=O\bigl((\eta+|S|^{-1})|S|^2n\bigr).
+$$
+
+Por Cauchy–Schwarz, $e_G(S,T)\ge d_0|S||T|/2$ cuando $S$ y $T$ están contenidos cada uno en una sola clase y tienen al menos $s_2/(2k)$ puntos. Dividimos $S$ y $T$ generales por clases y descartamos los trozos con menos de $s_2/(2k)$ puntos, que contienen menos de la mitad de cada conjunto. Esto da $e_G(S,T)\ge d_0|S||T|/8$ para $|S|,|T|\ge s_2$, y una cota de Chernoff da entonces la cota para $R$.
+
+*El umbral en F5.* F5 se usa con umbral $d_0|S||T|/32$, de modo que R2 se cumpla tras eliminar $F$, en la forma $e_R(S,T)\ge pd_0|S||T|/16$. La misma cola de Chernoff lo demuestra, ya que $F$ tiene densidad $O(\kappa)$.
+
+*El desbalance en G3.* El desbalance esperado en G3 es $O(\eta n)=O(n^{1-c_0})$ en lugar de $0$, porque los grados de $G$ hacia una clase varían en un factor $1\pm\eta$.
+
+*La forma de R3.* R3 se cumple en la forma $\deg_R(u,T)\ge pd_0|T|/4$ salvo para $O(n^{1-c_0})+2s'$ vértices, por el segundo momento de los conteos de tipicidad. En su demostración, los vértices descartados por $F$ son aquellos con $\deg_F(u,T)\ge d_0|T|/8$, por la misma cola de Chernoff que para F5.
+
+Estas perturbaciones, y $s_2=n^{1-c_0/4}$, son $O(n^{1-c_0/4})\ll n^{1-\theta}$, porque $\theta=\varepsilon_G^3/2<\varepsilon_G/32\le c_0/64$. Así, las afirmaciones A y B se cumplen con $\sigma=(40/d_0)C_Ln^{1-\theta+\delta'}$ y $s_0=(200/d_0^2)C_Ln^{1-\theta+2\delta'}$.
+
+**Cobertura descendente.** En el lema 5.6 cambian los pasos 1, 4 y 5.
+
+*Paso 1.* El grafo $F_Y\subset G[O]$ contiene cada arista de clase $\{A,B\}$ con probabilidad $\lambda_Y m_Y(\tau)t_\tau/e^O_{AB}(G)$, donde $\tau=\{A,B,Y\}$, con $\lambda_Y$ y $m_Y(\tau)$ como en la sección 5.8. El 3-grafo $H_Y$ del paso 1 conserva cada terna candidata $\{xx',xw,x'w\}$ con probabilidad
+
+$$
+\theta_{AB}=\min_{A',B'}\frac{d_{A'Y}\,d_{B'Y}}{d_{AY}\,d_{BY}}.
+$$
+
+Esto iguala todos los grados de vértices salvo $(1\pm O(\eta+m^{-1/3}))$, y la cota sobre los $F$-grados no cambia. En consecuencia, el teorema de [19] en el paso 1 deja $O((\eta+m^{-1/900})m)$ aristas no cubiertas en cada vértice de $O$ y $O((\eta+m^{-1/900})n)$ en cada vértice de $U$, en lugar de $m^{1-1/1000}$, y los tipos de un punto se conocen salvo $O((\eta+m^{-1/900})nm)$ en lugar de $m^{2-1/1000}$. Las tres cotas bastan. Primero, $O((\eta+m^{-1/900})m)\ll\rho^2m$ porque $c_0>\delta'/2$ y $\delta'<4/1801$. Segundo, el conteo en un vértice de $U$ es $o(\rho^2n)$, que es lo que usa la cota de codegrado del paso 4, porque $c_0>\delta'/2$ y $\delta'<4/1801$. Tercero, $O((\eta+m^{-1/900})nm)\ll m^2$ porque $c_0>\delta'/4$ y $\delta'<4/9001$. Las condiciones sobre $c_0$ se siguen de $\delta'<c_0/8$.
+
+*Paso 4.* En el paso 4 los pares deben ser aristas de $G$, así que los tamaños de los grupos dependen de las densidades. Los grupos bipartitos entre las clases $B_1$ y $B_2$ tienen tamaño $\lceil d^*/d_{B_1B_2}\rceil$ en cada lado, y los grupos internos en la clase $B$ tienen tamaño $\lceil d^*/d_{BB}\rceil+1$, de modo que los $A$-grados en $H'$ son $d^*(1\pm O((d^*)^{-1/2}\log n))$. Esto usa $|N_{R'}(x)\cap N_G(w)\cap U_B|=\rho d_{XB}d_{AB}|U_B|(1\pm o(1))$ para $x\in X$ y $w\in U_A$, que es una cota de Chernoff, ya que $R'$ es independiente de $G$ y de $U$.
+
+*Paso 5: bloques elegibles.* En el paso 5 las aristas de reparación $wz$ y $w'z'$ deben ser aristas de $G$, así que contamos los bloques elegibles con nuevas funciones de peso. Añadimos a la aplicación de [19], para cada $x$, cada par $(w,w')$ y cada modalidad de bloque, la familia de pesos de las aristas $\{xz,xz',zz'\}$ de esa modalidad con $z\in N_G(w)$ y $z'\in N_G(w')$. Hay a lo sumo $k^2nm^2$ de ellas. Por tipicidad para cinco vértices, sus pesos son al menos $d_0^2/2$ veces el peso de la modalidad. Se sigue que al menos $(d_0^2/2)\theta_0s$ bloques son elegibles.
+
+*Paso 5: exclusiones por $D_1$ y $E_X$.* Estas exclusiones están acotadas en función de $\rho m$, mientras que los bloques elegibles se cuentan en función de $s=|S_x|=\rho m\bar d_x(1+o(1))$, con $\bar d_x\ge d_0$. Las aristas $D_1$ excluyen a lo sumo $2(1+o(1))c_\rho\rho m\le(d_0^2\theta_0/16)s$ bloques, y $E_X$ a lo sumo $2\cdot9\lambda\rho m(1+o(1))\le(d_0^2\theta_0/16)s$, cuando $c_\rho\le d_0^3\theta_0/32$ y $\lambda\le\min\{d_0^3\theta_0/300,\,d_0^5\theta_0\delta_0/100\}$. Imponemos estas dos condiciones en esta sección. En consecuencia, quedan $(3/8)d_0^2\theta_0s-o(s)$ bloques elegibles antes de las reparaciones.
+
+*Paso 5: exclusiones por reparaciones.* La cota sobre $e_x(w)$ cambia con los tamaños de grupo del paso 4. Los grupos tienen tamaño aproximado $d^*/d_{B_1B_2}$ y $|S_x\cap U_B|\ge\rho d_0\delta_0m(1-o(1))$, así que $e_x(w)\le10\lambda d^*/(d_0^2\delta_0)$. Las cotas de reparación del lema 5.6, con $(3/16)d_0^2\theta_0s$ en lugar de $(3\theta_0/8)s$ y contando ambos puntos, excluyen entonces a lo sumo $(5\lambda/(d_0^2\delta_0)+20\lambda/(3d_0^3\delta_0)+o(1))s\le(0.12\,d_0^2\theta_0+o(1))s$ bloques. Por tanto, quedan al menos $(3/16)d_0^2\theta_0s$ bloques elegibles. El resto del lema 5.6 no cambia.
+
+**Completación dentro de $U$.** Elegimos $U$ uniformemente al azar entre los conjuntos con los tamaños de clase de la sección 5.2. Entonces $G[U]$ es $(2\eta+m^{-1/3},5)$-típico. El grafo $G_U$ difiere de $G[U]$ en $D\cup E_X$, cuyo grado máximo es a lo sumo $\gamma_Sm$. Así, $G_U$ es $(\eta',5)$-típico con $\eta'\le10\gamma_S/(d_0^5\delta_0)+2\eta+m^{-1/3}$.
+
+**Lema 5.19 (inversa sobre grafos típicos).** Sea $H$ un grafo $(\eta,5)$-típico sobre $m$ vértices con $k$ clases, todas de tamaño al menos $\delta_0m$, y densidades $d_{XY}$ con $d_0\le d_{XY}\le1$. Sea $A$ su aplicación de incidencia arista–triángulo. Si $\eta\le\eta_0(k,\delta_0,d_0)$ y $m\ge m_0$, entonces $A$ tiene una inversa por la derecha lineal $\Psi$ sobre $\mathbb R^{E(H)}$ con $\|\Psi\|_{\infty\to\infty}\le K/m$, donde $K=K(k,\delta_0,d_0)$.
+
+*Demostración.* Escribimos $e\boxtimes f$ si $e$ y $f$ son aristas disjuntas cuyos cuatro extremos generan un $K_4$ en $H$. Para $e=ab$ y $f=xy$ con $e\boxtimes f$, sea
+
+$$
+g(e,f)=\tfrac12\bigl(\mathbf 1_{abx}+\mathbf 1_{aby}-\mathbf 1_{axy}-\mathbf 1_{bxy}\bigr),\qquad\text{de modo que}\quad A\,g(e,f)=\mathbf 1_e-\mathbf 1_f.
+$$
+
+Fijemos un par de clases de referencia $\pi_0$. Sean $P_e$ el conjunto de las $f$ de clase $\pi_0$ con $e\boxtimes f$, y $\nu_e$ la ley uniforme sobre $P_e$. Por tipicidad para conjuntos de tres vértices, $|P_e|=(1\pm O(\eta))p_{\pi(e)}m^2$ con $p_\pi\ge p(k,\delta_0,d_0)>0$. Sean
+
+$$
+(\mathcal Tr)(f)=\sum_e r(e)\,\nu_e(f),\qquad \Psi_1r=\sum_e r(e)\sum_f\nu_e(f)\,g(e,f).
+$$
+
+Entonces $A\Psi_1r=r-\mathcal Tr$, y por tanto $r=A\Psi_1r+A\Psi_1(\mathcal Tr)+\mathcal T^2r$.
+
+*Dos pasos hacen $\mathcal T^2r$ casi constante.* Tenemos $\mathcal T^2r(f)=\sum_e r(e)\Pi_2(e,f)$, donde $\Pi_2(e,f)=\sum_g\nu_e(g)\nu_g(f)$. Tomemos $e$ disjunta de $f$. Entonces las aristas $g$ con $e\boxtimes g$ y $g\boxtimes f$ son las aristas de clase $\pi_0$ dentro del vecindario común de los cuatro extremos. Por tipicidad para conjuntos de cuatro y cinco vértices hay $(1\pm O(\eta))q_{\pi(e)}m^2$ de ellas, con $q_{\pi(e)}$ independiente de $f$. Como $\sum_f\Pi_2(e,f)=1$, esto da $\Pi_2(e,f)=(1\pm O(\eta))/|E_{\pi_0}|$. Las $O(m)$ aristas $e$ que tocan $f$ contribuyen $O(\|r\|/m)$. Por tanto,
+
+$$
+\mathcal T^2r=\frac{\sigma(r)}{|E_{\pi_0}|}\,\mathbf 1_{\pi_0}+E_1r,\qquad \sigma(r)=\sum_e r(e),\qquad \|E_1r\|\le K_1(\eta+1/m)\|r\|.
+$$
+
+*Vectores constantes sobre una clase.* La aplicación de los pesos de tipos $(w_\tau)$ a las cargas por clase, $(w_\tau)\mapsto\bigl(\sum_\tau w_\tau d_{\pi_2}d_{\pi_3}w(\tau,\pi)\bigr)_\pi$, es sobreyectiva. Tras la sustitución $w'_\tau=w_\tau\prod_{\pi\subset\tau}d_\pi$, se convierte en la aplicación de pares del grafo completo, escalada por $1/d_\pi$ en la fila $\pi$, y esa aplicación tiene rango completo por filas. Elegimos una preimagen fija de $c\cdot\mathbf 1_{\pi_0}$. La ponderación $W_c$ que pone $w_\tau$ en cada triángulo de tipo $\tau$ de $H$ satisface $AW_c=c\cdot\mathbf 1_{\pi_0}+E_2$, con $\|E_2\|\le K_2\eta|c|$ y $|w_\tau|\le K_3|c|/m$.
+
+*Serie de Neumann.* Sea $\tilde\Psi r=\Psi_1r+\Psi_1\mathcal Tr+W_{\sigma(r)/|E_{\pi_0}|}$. Entonces $A\tilde\Psi=I-\mathcal E$ con $\|\mathcal E\|\le K_4(\eta+1/m)\le1/2$, y $\Psi=\tilde\Psi\sum_{j\ge0}\mathcal E^j$ es una inversa por la derecha exacta.
+
+*Normas.*
+
+- Un triángulo está en el soporte de $g(e,f)$ solo si contiene $e$ y un extremo de $f$, o contiene $f$ y un extremo de $e$. Por tanto, $|\Psi_1r(T)|$ es a lo sumo $O(m)\cdot\|r\|/\min|P_e|=O(\|r\|/m)$.
+- $\|\mathcal Tr\|=O(\|r\|)$, así que $\|\Psi_1\mathcal Tr\|=O(\|r\|/m)$.
+- Los pesos de $W$ son $O(\|r\|/m)$.
+
+Por tanto, $\|\Psi\|\le K/m$. $\square$
+
+La cota superior $d_{XY}\le1$ no cuesta nada. Para $\eta<1$, la tipicidad para un solo vértice da $d_{XY}\le1/(1-\eta)$, y sustituir cada $d_{XY}$ por $\min(d_{XY},1)$ cambia cada producto sobre a lo sumo cinco vértices en un factor de $[1,(1-\eta)^{-5}]$. El grafo sigue siendo, por tanto, $(O(\eta),5)$-típico con densidades en $[\min(d_0,1),1]$.
+
+*H1.* Sea $\mu_0(T)=r_\tau/N_\tau(G_U)$ sobre los triángulos de tipo $\tau$. Las identidades de pares residuales se cumplen sobre $G_U$, así que toda arista tiene carga $1\pm O(\eta')$. Entonces $\mu=\mu_0+\Psi(1-A\mu_0)$ es exacta. Su corrección es $O(\eta'/m)$, que es menor que $\min\mu_0/2$ en cuanto $\eta'$ es pequeño comparado con $\zeta d_0^3/K$. La misma corrección en las esquinas de un cubo de radio $2E$ alrededor de $r$, donde $E=O(\eta'm^2)$ acota su cambio de masa, da semillas exactas; las esquinas conservan el margen $\zeta/4$ en cuanto $\eta'$ es pequeño comparado con $\zeta/B$. El lema 5.8$'$ hace entonces que las masas sean exactamente $r$.
+
+**Lema 5.20 (retículo de triángulos de grafos ricos).** Sea $H$ un grafo en el que cada dos aristas tienen un $\boxtimes$-compañero común, cada tres vértices, no necesariamente distintos, tienen un vecino común, y dos vecinos comunes cualesquiera de dos vértices distintos están unidos por un camino dentro de su vecindario común. Si todo grado de $H$ es par y $3\mid e(H)$, entonces $\mathbf 1_{E(H)}$ es una combinación entera de triángulos de $H$.
+
+*Demostración.* En el cociente por los triángulos, sea $\psi$ la imagen de una arista.
+
+1. $2g(e,f)$ es entero, así que $2\psi(e)=2\psi(f)$ siempre que $e\boxtimes f$. A través de compañeros comunes, $2\psi\equiv2c$ es constante. Un triángulo da entonces $6c=0$.
+2. Sea $\tilde\delta(e)=\psi(e)-4c$. Entonces $2\tilde\delta=0$, y $\tilde\delta$ suma cero en cada triángulo.
+3. Fijemos $o$. Sea $\varphi(o)=0$. Sea $\varphi(u)=\tilde\delta(ou)$ para $u\in N(o)$. Para cualquier otro $u$, sea $\varphi(u)=\tilde\delta(uw)+\varphi(w)$ para un vecino común $w$ de $u$ y $o$. Esto está bien definido: si $w$ y $w'$ son adyacentes, los triángulos $uww'$ y $oww'$ dan $\tilde\delta(uw)+\varphi(w)=\tilde\delta(uw')+\varphi(w')$; en general, se sigue un camino dentro de $N(o)\cap N(u)$. Toda arista satisface entonces $\tilde\delta(uv)=\varphi(u)+\varphi(v)$, usando un vecino común de $u$, $v$ y $o$.
+4. Por tanto, $\sum_{E(H)}\psi=4c\cdot e(H)+\sum_u\deg(u)\varphi(u)=0$, porque $3\mid e(H)$, $6c=0$, todo grado es par y $2\varphi=0$. $\square$
+
+Las hipótesis de riqueza del lema 5.20 se siguen de la tipicidad, y $G_U$ es triángulo-divisible porque $G$ lo es.
+
+**H3, H4 e intercambios.** H3 se sigue de la tipicidad, ya que toda etiqueta está permitida. Para H4, las bisagras octaédricas de [10, apéndice B.4] existen de $\Theta(m^2)$ maneras por tipicidad. Para los intercambios, el lema 5.14 no cambia. Las copias de Pasch pivote con clases prescritas son $\Theta(m^6)$ en $G[U]$. Una selección voraz da $p_X^2$ copias por $\sigma$ con huellas disjuntas y a lo sumo $2\lambda m$ copias por cada vértice. Un punto de una copia de Pasch tiene cuatro vecinos en su huella, así que $\Delta(E_X)\le8\lambda m\le9\lambda m$, como supone la sección 5.1. Cada copia colocada bloquea $O(m^4)$ copias a través de pares compartidos. Las copias colocadas usan a lo sumo $6Jp_X^2\le6J\lambda^2m^2$ posiciones de vértice, así que a lo sumo $3J\lambda m$ vértices quedan saturados, y estos bloquean $O(J\lambda m^6)$ copias. Así, quedan disponibles $\Theta(m^6)-O(J\lambda m^6)$ copias, cantidad positiva cuando $\lambda\le c(k,\delta_0,d_0)$; imponemos esta condición en esta sección.
+
+**La parte (a)** se sigue entonces como en las secciones 5.7–5.8, añadiendo el error $O(\eta n^2\log n)$ a la entropía.
+
+**Lema 5.21 (maximizador interior).** Sea $\mathcal K$ el politopo de los $t\ge0$ reales que satisfacen (1.6). Supongamos que contiene un punto $t^0$ con $t^0_\tau\ge\zeta n^2$ para todo $\tau$. Entonces todo maximizador $t^*$ de $\Phi_G$ en $\mathcal K$ cumple $t^*_\tau\ge\zeta'n^2$, con $\zeta'=\zeta'(k,\delta_0,d_0,\zeta)$.
+
+*Demostración.* Normalizamos por $n^2$. Sea $x_{\min}$ la menor entrada de $t^*/n^2$, alcanzada en $\tau_0$, y movámonos desde $t^*$ hacia $t^0$. La derivada direccional del término de entropía en $\tau_0$ es al menos $(\zeta-x_{\min})(\log(1/x_{\min})-C')$, con $C'=C'(k,\delta_0,d_0)$; los términos $\log n$ se cancelan porque ambos puntos tienen masa total $e(G)/3$. Las derivadas en los demás tipos están acotadas inferiormente por $-C(k,\delta_0,d_0,\zeta)$. Así, para $x_{\min}<x_0(k,\delta_0,d_0,\zeta)$ el movimiento aumenta $\Phi_G$, lo que contradice la maximalidad. $\square$
+
+**Parte (b).** Por (5.4) y el número polinomial de $t$ enteros, $\log\#\mathrm{dec}(G)\le\max_{\mathcal K}\Phi_G+o(n^2)$. Para la cota inferior, realizamos la etapa 1 con el objetivo real $t^*$ del lema 5.21, después la limpieza y la cobertura descendente, y completamos dentro de $U$ solo con el teorema T. No se necesita control de tipos, así que se prescinde de los intercambios y de $T^+$. Todas las constantes de la sección 5.1 se calculan con el margen $\zeta'=\zeta'(k,\delta_0,d_0,\zeta)$ de $t^*$ dado por el lema 5.21 en lugar de $\zeta$: $c_\rho\le\zeta'/100$, $C_0$ para el margen $\zeta'/4$, y probabilidades de color de al menos $\zeta'/4$ en G4. El lema 5.8$'$ no se usa, ya que H1 proviene solo del lema 5.19. Sin intercambios no hay centrado: el residuo $r=t^*-(\text{tipos colocados})$ satisface las identidades de pares de $G_U$ y es al menos $(\zeta'/2)m^2$. El conteo de preimágenes de la sección 5.7 da $\log\#\mathrm{dec}(G)\ge\Phi_G(t^*)-o(n^2)$. $\square$
+
+### 5.11 Términos de error polinomiales y efectividad: demostración del teorema 1.10
+
+Demostramos el teorema 1.10 enumerando todas las pérdidas en las cotas inferiores y verificando las restricciones sobre la fracción del vórtice $\kappa=n^{-\delta'/4}$; cerramos con una observación sobre la efectividad.
+
+**Pérdidas en el logaritmo.**
+
+- Pares no contados (vórtice, reservas, cobertura descendente): $O(\kappa n^2\log n)=O(n^{2-\delta'/4}\log n)$.
+- Factores de disponibilidad en el lema 5.2: $O((\kappa+p)n^2)$.
+- Tipicidad, G1 y G4: $O(n^{2-1/4}+n^{1+\gamma'})$.
+- Teorema de emparejamientos [30]: $O(n^{2-\varepsilon_G^4}\log n)$, procedente del tamaño del emparejamiento y del factor $(1-d^{-\varepsilon_G^4})$.
+- Limpieza: $|P_c|\log n=O(n^{2-\theta}\log n)$.
+- Preimágenes: $O(\kappa n^2\log(1/\kappa)+n^{2-\delta'}\log n)$.
+- En el teorema 1.9: $O(n^{2-c_0}\log n)$, procedente de la tipicidad de $G$.
+
+**Restricciones sobre $\kappa$.** La cobertura descendente necesita lo siguiente.
+
+- $\rho^2u_Y\gg\Delta(L\cup L_1)$ en el paso 2, es decir, $\kappa^3n\gg n^{1-\delta'}$. Esto se cumple porque $3\delta'/4<\delta'$.
+- Una carga por vértice $o(\rho n)$ en el paso 2. La carga es $O(n^{2-\delta'}/(\rho\kappa n))=O(n^{1-\delta'}/\kappa^2)$, y $n^{1-\delta'}/\kappa^2\ll\kappa n$ se cumple porque $3\delta'/4<\delta'$.
+- En el paso 3, las perturbaciones $3n^{1-\delta'}+m^{1-1/1000}$ deben ser $o(\rho u)$. Esto se cumple porque $\delta'<4/1001$.
+- En el paso 3, $|S_x\cap S_{x'}|=\rho^2m(1\pm o(1))$ requiere $m^{1-1/1000}=o(\rho^2m)$, es decir, $\delta'<4/2001$.
+- En el paso 5, los términos de error de [19] en la dispersión de la reparación son $O(\rho^2n\,m^{-1/3600})=o(s)$, sin condición alguna sobre $\delta'$, porque la cuarta familia de pesos acota los puntos no cubiertos de $x'$ en $S_x$ en relación con $|S_x\cap S_{x'}|$.
+- El lema 5.6 deja a lo sumo $m^{1-1/1000}$ aristas no cubiertas en cada vértice de $O$ y a lo sumo $nm^{-1/1000}=o(\rho^2n)$ en cada vértice de $U$, lo que requiere $\delta'<4/2001$. Fija los tipos de un punto salvo $m^{2-1/1000}$, lo que requiere $nm^{1-1/900}\le m^{2-1/1000}$, es decir, $\delta'<4/9001\approx4.44\cdot10^{-4}$; $\delta'=\varepsilon_G^3/40<3.91\cdot10^{-4}$ lo satisface. El exponente $1/900$ es el de [19]; con otra constante allí, esta cota cambia.
+
+El objetivo residual en $U$ es $\kappa^2t\ge\zeta m^2$, exactamente como antes.
+
+Las cotas superiores de los teoremas 1.2, 1.5 y 1.7 tienen error $O(n^{3/2})$: en el paso 5 de la sección 4.2, la corrección $\log(1+1/(\gamma n(1-\lambda)^6))$, integrada contra $(1-\lambda)^2$, es $O(n^{-1/2})$ por par, como en [6]. En el teorema 1.9, la cota superior pierde además $O(\eta n^2)=O(n^{2-c_0})$ por la tipicidad de $G$. En el teorema 1.1 el error es $O(n\log^2n)$.
+
+En consecuencia, todos los teoremas valen con error $O(n^{2-c})$, donde $c$ es el menor de $\delta'/4$, $\theta$, $\varepsilon_G^4$ y $c_0$, menos un margen arbitrariamente pequeño.
+
+**Los corolarios.** Demostramos el enunciado sobre bolas del corolario 1.6. La demostración del corolario 1.8 es la misma tras sustituir (1.4), $n^2/6$, $6t/n^2$, el teorema 1.5 con $k=1$ y el lema 5.14 por (1.5), $\binom n2$, $t/\binom n2$, el teorema 1.7 con $k=\ell=1$ y la base explícita de trueques posterior al lema 5.18, respectivamente. En ese contexto, $N_\tau=(n-1)\binom n2P_n(\tau)$ y $\sum_\tau t_\tau=\binom n2$, las entradas de $t$ son al menos $\zeta\binom n2/2$, y el conjunto de vectores de tipos enteros es no vacío porque existen 1-factorizaciones.
+
+Para todo $t$ entero que satisfaga (1.4), con $Q=6t/n^2$,
+
+$$
+\Phi(t)=\frac{n^2}{6}\bigl(\log n-2-D(Q\Vert P_n)\bigr)+O(n\log n),
+$$
+
+pues $N_\tau=\binom n3P_n(\tau)(1+O(1/n))$ para todo tipo y $\sum_\tau t_\tau=n(n-1)/6$. Con $k=1$, el teorema 1.5 con el término de error del teorema 1.10 da $\log\#\mathrm{STS}(n)=(n^2/6)(\log n-2)+O(n^{2-c})$.
+
+- *Cota superior.* Todo vector de tipos normalizado está en $F_n$. Sumando la cota superior del teorema 1.5, con error $O(n^{3/2})$, sobre la cantidad polinomial de $t$ enteros con $6t/n^2\in B$, se obtiene $\mathbb P(Q_n\in B)\le\exp\bigl(-(n^2/6)\min_{B\cap F_n}D(\cdot\Vert P_n)+O(n^{2-c})\bigr)$.
+- *Cota inferior.* El conjunto $B\cap F_n$ es compacto y convexo. Sea $Q^*$ un minimizador de $D(\cdot\Vert P_n)$ en él, sea $Q_0$ el centro de $B$ y pongamos $Q'=(1-1/n)Q^*+Q_0/n$. Entonces $Q'\in F_n$, toda entrada de $Q'$ es al menos $\zeta$, y la bola de radio $r/n$ alrededor de $Q'$ está contenida en $B$. Por el lema 5.14, algún $t$ entero que satisface (1.4) cumple $|t-(n^2/6)Q'|=O(1)$, de modo que $|6t/n^2-Q'|=O(n^{-2})\le r/n$ para $n$ grande. Así, $6t/n^2\in B$, y toda entrada de $t$ es al menos $\zeta n^2/12$. Sobre los vectores con entradas al menos $\zeta/2$, $D(\cdot\Vert P_n)$ es lipschitziana con una constante que depende solo de $k$, $\zeta$ y $\delta_0$, y $|6t/n^2-Q^*|=O(1/n)$, de modo que $D(6t/n^2\Vert P_n)\le D(Q^*\Vert P_n)+O(1/n)$. Dividir la cota de los teoremas 1.5 y 1.10 en $t$ por el conteo total da $\mathbb P(Q_n=6t/n^2)\ge\exp\bigl(-(n^2/6)D(Q^*\Vert P_n)-O(n^{2-c})\bigr)$. $\square$
+
+**Observación 5.22 (efectividad).** El umbral del teorema T es una función torre explícita, consignada en [18]. Las desigualdades de concentración son explícitas. Los umbrales restantes son los de [30, teorema 3.5] y [19, teorema 1.2], que son efectivos pero no se enuncian explícitamente. Con valores explícitos para esos dos, todos los teoremas anteriores valen para $n\ge n_0$, con $n_0$ una torre explícita en los parámetros fijos. No interviene ningún ingrediente aritmético ni de tipo Siegel, a diferencia de [10, teorema 1.4].
+
+---
+
+## 6. Cota inferior para cuadrados latinos
+
+Demostramos la cota inferior (1.2) viendo un cuadrado latino como una descomposición en triángulos del grafo tripartito completo $K_{n,n,n}$ y adaptando el esquema de vórtice de la sección 5. En este grafo cada bloque corta una vez a cada una de las tres partes y toda terna transversal de clases está permitida. Dentro del vórtice, la condición $\ell=0$ se reemplaza por el balance en cada vértice, y los intercambios de nueve puntos, por intercambios de intercalados.
+
+### 6.1 Contexto y parámetros
+
+En el contexto latino, los puntos se reparten en tres partes, y un tipo es una terna de clases, una de cada parte.
+
+Sean $V_1$, $V_2$, $V_3$ tres copias disjuntas de $[n]$, para filas, columnas y símbolos. Un cuadrado latino de orden $n$ es lo mismo que una descomposición del grafo tripartito completo $K_{n,n,n}$ en triángulos: la celda $(r,c)$ con entrada $s$ corresponde al triángulo $\{r,c,s\}$. Las clases $R_i$, $C_j$ y $S_l$ particionan $V_1$, $V_2$ y $V_3$. Un triángulo $\{r,c,s\}$ tiene *tipo* $(i,j,l)$ si $r\in R_i$, $c\in C_j$ y $s\in S_l$. En consecuencia, $\#\mathrm{LS}(M)$ es el número de descomposiciones de $K_{n,n,n}$ en triángulos con exactamente $M(i,j,l)$ triángulos de cada tipo.
+
+Por el lema 2.1, las leyes condicionales
+
+$$
+\pi_{RC}(l\mid i,j)=\frac{Q(i,j,l)}{\rho_i\gamma_j},\qquad
+\pi_{RS}(j\mid i,l)=\frac{Q(i,j,l)}{\rho_i\sigma_l},\qquad
+\pi_{CS}(i\mid j,l)=\frac{Q(i,j,l)}{\gamma_j\sigma_l}
+$$
+
+son vectores de probabilidad, y cada entrada es al menos $\zeta$.
+
+**Grafo etiquetado.** El teorema T se aplica a cualquier grafo cuyos vértices llevan etiquetas, con un conjunto prescrito de ternas de etiquetas permitidas (apéndice A). Aquí cada vértice se etiqueta con su parte y su clase, y toda terna transversal de etiquetas $(R_i,C_j,S_l)$ está permitida. Como $Q\ge\zeta$, todos los tipos aparecen.
+
+**Parámetros.** Son los de la sección 5.1, con tres cambios: $J=(a-1)(b-1)(c-1)$; $K_c=7$ (lema 6.3); y el vórtice tiene exactamente $m=\lfloor\kappa n\rfloor$ puntos en cada parte. Los términos de la sección 5.1 en los que aparece $k$ no se usan.
+
+### 6.2 El vórtice y las reservas
+
+El vórtice y las reservas son los de la sección 5.2, adaptados a las tres partes. El vórtice tiene el mismo número $m$ de puntos en cada parte, porque el lema 6.3 lo necesita, y toda arista de reserva une dos partes distintas.
+
+Elegimos $U_R\subset V_1$, $U_C\subset V_2$ y $U_S\subset V_3$, de tamaño $m$ cada uno, con $|U_R\cap R_i|=u^R_i$, donde los enteros $u^R_i$ difieren de $\kappa|R_i|$ en a lo sumo $a$ y suman $m$ (se redondea hacia abajo y luego se añaden las unidades que faltan a las clases más grandes), y análogamente en las otras partes. Ponemos $O_R=V_1\setminus U_R$ y definimos $O_C$ y $O_S$ del mismo modo. Fijamos lo siguiente, de manera independiente.
+
+- **Huellas de intercambio $E_X$.** Son intercambios de intercalados dentro de $U$, descritos en el lema 6.6. Hay $p_X^2$ copias por coordenada independiente, con huellas disjuntas dos a dos, y $\Delta(E_X)\le 6p_X$.
+- **Grafos de cobertura descendente.** $F^S\subset K[O_R,O_C]$ se reserva para los bloques cuyo punto en $U$ está en $U_S$; $F^R\subset K[O_C,O_S]$ y $F^C\subset K[O_R,O_S]$ se definen del mismo modo. Una arista $rc$ con $r\in R_i$ y $c\in C_j$ se coloca en $F^S_l$, la parte reservada a los símbolos de clase $l$, con probabilidad
+
+  $$
+  \frac{(1-\rho)\,|U_S\cap S_l|\,Q(i,j,l)}{(1-\kappa)\,\rho_i\gamma_j\sigma_l\,n}.
+  $$
+
+  Las otras dos familias se definen simétricamente. Así, todo vértice de $O_R$ tiene grado esperado $(1-\rho)|U_S\cap S_l|(1+O(1/n))$ en $F^S_l$, y lo mismo ocurre en las otras partes.
+- **La reserva de limpieza $R$**, dentro de $K[O_R,O_C,O_S]\setminus F$, binomial con densidad $p$.
+- **La reserva de cobertura descendente $R'\subset K[O,U]$**, que contiene solo aristas entre partes distintas, binomial con densidad $\rho$.
+
+Vale el análogo del lema 5.1, con la misma demostración.
+
+### 6.3 Conteo con coloración previa dentro de O
+
+Como en la sección 5.3, coloreamos las aristas disponibles dentro de $O$ y contamos emparejamientos en 3-grafos tipados. En el contexto latino, una arista une dos de las tres partes y su color es una clase de la tercera, de modo que el color completa el tipo de la arista.
+
+Una arista es *disponible* si está en $K[O_R,O_C,O_S]$ y no en $F\cup R$. Describimos la coloración con las leyes $\pi$ de la sección 6.1. En la medida real, cada ley condicional se repondera por las densidades de disponibilidad $\nu$ de las tres aristas de un tipo, exactamente como en la sección 5.3, y los tamaños de las clases son los de $O$. El objetivo de la etapa 1 es una tabla agregada $M'$ sobre $O_R\times O_C\times O_S$ con las marginales ajustadas por disponibilidad y $M'=(1-\kappa)^2M(1+O(\kappa))$; sus $J$ coordenadas libres se fijan en la sección 6.6. A diferencia de (5.1), estas marginales son consistentes sin corrección: $\sum_jo^C_j\nu^{RC}_{ij}$ es igual a
+
+$$
+(1-p)\Bigl[n-m-\frac{1-\rho}{1-\kappa}\Bigl(m-\frac{1}{\rho_in}\sum_{j,l}\frac{Q(i,j,l)\,u^C_ju^S_l}{\gamma_j\sigma_l}\Bigr)\Bigr],
+$$
+
+expresión simétrica en columnas y símbolos y, por tanto, igual a $\sum_lo^S_l\nu^{RS}_{il}$; lo mismo ocurre en las otras partes. Los tres grados de una arista de un tipo dado siguen coincidiendo, y cada identidad de más abajo cambia en un término aditivo $O((\kappa+p)n^2)+O(\kappa n^2\log n)=O(n^{2-\delta'/4}\log n)$.
+
+Sea $\mu$ la medida producto sobre las coloraciones $\chi$ de las aristas disponibles de $K[O_R,O_C,O_S]$:
+
+- una arista RC $\{r,c\}$ con $r\in R_i$, $c\in C_j$ recibe una clase de símbolos $l$ con probabilidad $\pi_{RC}(l\mid i,j)$;
+- una arista RS $\{r,s\}$ con $r\in R_i$, $s\in S_l$ recibe una clase de columnas $j$ con probabilidad $\pi_{RS}(j\mid i,l)$;
+- una arista CS $\{c,s\}$ con $c\in C_j$, $s\in S_l$ recibe una clase de filas $i$ con probabilidad $\pi_{CS}(i\mid j,l)$.
+
+En cada caso el color completa el tipo: la arista coloreada tiene tipo $\tau=(i,j,l)$. Para cada $\tau$, sea $H_\tau(\chi)$ el 3-grafo cuyos vértices son las aristas de tipo $\tau$. Sus aristas son los triángulos $\{r,c,s\}$ de tipo $\tau$ cuyas tres aristas tienen todas tipo $\tau$. Los emparejamientos de $H_\tau(\chi)$ son empaquetamientos de triángulos de tipo $\tau$, y los conjuntos de vértices de los $H_\tau(\chi)$ son disjuntos.
+
+Explícitamente, la medida real usa las leyes reponderadas $\pi'_{RC}(l\mid i,j)=M'(i,j,l)/(\nu^{RC}_{ij}o^R_io^C_j)$, donde $\nu^{RC}_{ij}$ es la densidad de disponibilidad de los pares entre $R_i$ y $C_j$, y análogamente $\pi'_{RS}$ y $\pi'_{CS}$.
+
+**Grados.** Sean $r\in R_i$ y $c\in C_j$, y supongamos que $rc$ tiene tipo $\tau$. Los triángulos de $H_\tau(\chi)$ que pasan por $rc$ corresponden a los $s\in O_S\cap S_l$ con $rs$, $cs$ disponibles, $rs$ de color $j$ y $cs$ de color $i$. Por R1, su número esperado es
+
+$$
+o^S_l\,\nu^{RS}_{il}\,\nu^{CS}_{jl}\,\pi'_{RS}(j\mid i,l)\,\pi'_{CS}(i\mid j,l)\,(1\pm n^{-1/3})=D'_\tau(1\pm n^{-1/3}),\qquad
+D'_\tau:=\frac{M'(i,j,l)^2}{o^R_io^C_jo^S_l}.
+$$
+
+Lo mismo vale para las aristas RS y CS. Con
+
+$$
+D_\tau:=\frac{n\,Q(i,j,l)^2}{\rho_i\gamma_j\sigma_l},
+$$
+
+se tiene $\log D'_\tau=\log D_\tau+O(\kappa)$ y, como $Q\ge\zeta$, $D_\tau=\Theta(n)$.
+
+**Lema 6.1 (identidad de coloración previa para tablas agregadas latinas).**
+
+$$
+\begin{aligned}
+&n^2\bigl[H(S\mid R,C)+H(C\mid R,S)+H(R\mid C,S)\bigr]+\sum_{i,j,l}M(i,j,l)\bigl(\log D_{(i,j,l)}-2\bigr)\\
+&\qquad=n^2\bigl(\log n-2-\mathrm{TC}(Q)\bigr).
+\end{aligned}
+$$
+
+*Demostración.* Escribimos $\sum M(\log D-2)=n^2\sum Q\,\bigl(\log n+2\log Q-\log(\rho_i\gamma_j\sigma_l)-2\bigr)$. Esto es igual a $n^2\bigl(\log n-2-2H(R,C,S)+H(R)+H(C)+H(S)\bigr)$. Por el lema 2.1,
+
+$$
+H(S\mid R,C)+H(C\mid R,S)+H(R\mid C,S)=3H(R,C,S)-2H(R)-2H(C)-2H(S).
+$$
+
+Sumando las dos expresiones se obtiene $n^2\bigl(\log n-2+H(R,C,S)-H(R)-H(C)-H(S)\bigr)$, que es $n^2(\log n-2-\mathrm{TC})$. $\square$
+
+Una coloración es *buena* si satisface lo siguiente.
+
+- **G1.** Todo vértice de cada $H_\tau(\chi)$ tiene grado $D'_\tau(1\pm n^{-1/4})$.
+- **G2.** Cada una de las tres familias de aristas de tipo $\tau$ tiene $M'(i,j,l)\pm n^{1+\gamma'}$ elementos.
+- **G3.** En cada vértice y para cada tipo $\tau$ que pasa por él, los dos números de aristas incidentes de tipo $\tau$ (uno por cada una de las otras dos partes) difieren en a lo sumo $n^{1/2+\gamma'}$. Por ejemplo, para $r\in R_i$, son el número de aristas RC $\{r,c\}$ con $c\in C_j$ y color $l$, y el número de aristas RS $\{r,s\}$ con $s\in S_l$ y color $j$.
+- **G4.** $\bigl|\log(1/\mu(\chi))-H(\mu)\bigr|\le n^{1+\gamma'}$.
+
+Para G3, recordemos que la coloración usa las leyes reponderadas $\pi'$. Para $r\in R_i$, ambas esperanzas valen entonces $M'(i,j,l)/o^R_i$, salvo las fluctuaciones de los grados disponibles, que son $O(\sqrt n\log n)$ por F6 y su análogo latino. Para G4, toda probabilidad de color es al menos $\zeta/2$ para $n$ grande: las leyes $\pi$ de la sección 6.1 tienen entradas al menos $\zeta$, y la reponderación por disponibilidad las modifica en un factor $1+O(\kappa+p)$. Por tanto, los sumandos de $\log(1/\mu(\chi))$ están en $[0,\log(2/\zeta)]$, y la desigualdad de Hoeffding se aplica como en la sección 5.3. En consecuencia, $\mu(\mathrm{Good})\ge1/2$, $|\mathrm{Good}|\ge\frac12\exp(H(\mu)-n^{1+\gamma'})$ y, por el lema 2.1,
+
+$$
+H(\mu)=(1+O(\kappa+p))\,n^2\bigl[H(S\mid R,C)+H(C\mid R,S)+H(R\mid C,S)\bigr].
+$$
+
+Fijemos una $\chi$ buena y un tipo $\tau$. Aplicamos [30, teorema 3.5] a $H_\tau(\chi)$ con $k=3$, $\ell=2$ y sin conflictos. Las hipótesis se verifican como en la sección 5.3:
+
+- $\Delta_2\le1$, pues dos aristas de $K_{n,n,n}$ están en a lo sumo un triángulo común;
+- $|V(H_\tau)|\le3n^2$;
+- G1 da la casi regularidad.
+
+Obtenemos un conjunto $\mathcal M_\tau(\chi)$ de al menos $\bigl((1-d^{-\varepsilon_G^4})\,d/e^2\bigr)^{m_\tau}$ emparejamientos, con $d=\Delta(H_\tau(\chi))$ y $m_\tau=M'(i,j,l)(1\pm2n^{-\varepsilon_G^3})$. Por tanto,
+
+$$
+\sum_\tau\log|\mathcal M_\tau(\chi)|\ge\sum_\tau M'(i,j,l)\bigl(\log D'_\tau-2\bigr)-O\bigl(n^{2-\varepsilon_G^4}\log n\bigr).
+$$
+
+Como $\log D'_\tau=\log D_\tau+O(\kappa)$, volver a $D_\tau$ cuesta $O(\kappa n^2)$. Como $M'=(1-\kappa)^2M(1+O(\kappa))$, sustituir aquí $M'$ por $M$ cuesta $O(\kappa n^2\log n)$.
+
+**Corolario 6.2.** $\displaystyle\sum_{\chi\in\mathrm{Good}}\prod_\tau|\mathcal M_\tau(\chi)|\ge\exp\bigl(n^2(\log n-2-\mathrm{TC}(Q))-o(n^2)\bigr)$.
+
+*Demostración.* Se combinan $|\mathrm{Good}|\ge e^{H(\mu)-o(n^2)}$ (como en la sección 5.3), la cota anterior y el lema 6.1. $\square$
+
+Para una $\chi$ buena y $\mathcal N=(\mathcal N_\tau)\in\prod_\tau\mathcal M_\tau(\chi)$, sea $L_0$ el conjunto de aristas de $K[O_R,O_C,O_S]\setminus(F\cup R)$ no cubiertas por $\mathcal N$. Entonces $|L_0|\le C_Ln^{2-\varepsilon_G^3}$, con una constante $C_L$ obtenida como en el corolario 5.3.
+
+**Limpieza.** La limpieza sigue la sección 5.4. En el contexto latino, cada vértice malo tiene, para cada tipo, un único par de listas que emparejar. Fijemos una $\chi$ buena y $\mathcal N\in\prod_\tau\mathcal M_\tau(\chi)$.
+
+Un vértice es *malo* si su grado en $L_0$ supera $n^{1-\theta}$. Sea $\mathrm{Bad}$ el conjunto de vértices malos; entonces $|\mathrm{Bad}|\le2C_Ln^{1-\theta}$. Consideremos un vértice malo $v$. Por la simetría de las tres partes, tomamos $v=r\in R_i$. Para cada par $(j,l)$, definimos dos listas de vecinos de $r$ en $L_0$ fuera de $\mathrm{Bad}$:
+
+- $A_{jl}(r)$: los vértices $c\in C_j$ tales que $rc$ tiene color $l$;
+- $A'_{jl}(r)$: los vértices $s\in S_l$ tales que $rs$ tiene color $j$.
+
+Todo triángulo de $\mathcal N_{(i,j,l)}$ que pasa por $r$ usa una arista contada por cada lista. Por tanto, por G3, los tamaños de las dos listas difieren en a lo sumo $n^{1/2+\gamma'}+|\mathrm{Bad}|$.
+
+Procesamos los vértices malos en orden, llevando el registro del conjunto $W\subseteq R$ de aristas de reserva ya usadas. Para $r$:
+
+1. Encontramos un emparejamiento en $(R\setminus W)[A_{jl}(r),A'_{jl}(r)]$. Son aristas CS. Cada par emparejado $c$, $s$ da el triángulo $\{r,c,s\}$ de tipo $(i,j,l)$.
+2. Cubrimos cada arista de $L_0$ restante en $r$ con un triángulo cuyas otras dos aristas están en $R\setminus W$. Esto incluye los elementos de las listas que quedaron sin emparejar, las aristas hacia otros vértices malos y las listas de tamaño menor que $s_0$. Para una arista RC $\{r,c\}$, elegimos el símbolo $s\notin\mathrm{Bad}$ uniformemente entre los $(R\setminus W)$-vecinos comunes de $r$ y $c$ en $O_S$; por R1 hay al menos $p^2n/4$ de ellos. Las aristas RS se cubren con una columna de la misma manera. El triángulo resultante puede tener cualquier tipo. Esto es inocuo, porque todo tipo tiene $Q\ge\zeta$.
+
+Las afirmaciones A y B de la sección 5.4 valen sin cambios, con la misma demostración: el teorema de Hall vía R2 y R3 para el paso 1, y la elección aleatoria para el paso 2. El único cambio es que el factor $3(k-1)$ de la afirmación B pasa a ser $2\max\{ab,bc,ca\}$. En el paso 1 solo intervienen pares de listas de una misma forma, por lo que no hace falta la división usada en el paso 2 de la sección 5.4. El resultado es un empaquetamiento $P_c$ con $|P_c|\le C_Ln^{2-\theta}$.
+
+Como en el lema 5.4, las aristas $L$ de $K[O_R,O_C,O_S]\setminus F$ no cubiertas por $\mathcal N\cup P_c$ satisfacen $\Delta(L)\le3n^{1-\delta'}$ y $|L|\le4n^{2-\delta'}$, pues aquí $\deg_R(v)\le(2+o(1))pn$ y $|R|\le(3+o(1))pn^2$.
+
+### 6.4 Cobertura descendente
+
+El lema 5.6 vale para el grafo tripartito, en el que cada bloque corta una vez a cada parte, con los siguientes cambios.
+
+- El paso 1 usa los 3-grafos $H^S_l$ con aristas $\{rc,rw,cw\}$, donde $rc\in F^S_l$ y $w\in U_S\cap S_l$, y análogamente para las otras dos partes.
+- En el paso 4, para $r\in O_R$, el conjunto $Z_r$ de vecinos de $r$ en $U$ no cubiertos (el conjunto $S_x$ del paso 3, renombrado para evitar el choque con las clases de símbolos) se divide en $Z_r\cap U_C$ y $Z_r\cap U_S$. Ambos tienen el mismo tamaño, porque en $K_{n,n,n}$ menos un empaquetamiento todo vértice tiene el mismo grado hacia las otras dos partes. Solo se usan grupos bipartitos de tamaño $d^*\times d^*$.
+- No hay restricción de tipo, porque toda terna de clases está permitida.
+- En los pasos 4 y 5 todo bloque es elegible y $\Delta(E_X)\le6p_X$. Las cotas del paso 5 valen con $|Z_r|/4$ en lugar de $(3\theta_0/8)s$ cuando $\lambda\le\delta_0/200$.
+
+La conclusión es un empaquetamiento $P$ que cubre exactamente las aristas de $F\cup L\cup K[O,U]$ entre partes distintas. Sus aristas $D$ dentro de $U$ satisfacen $\Delta(D)\le3\rho n$.
+
+### 6.5 Completación dentro de U
+
+Dentro del vórtice, la condición $\ell=0$ de la sección 5.6 se sustituye por el balance en cada vértice, y los intercambios de nueve puntos, por intercambios de intercalados. Damos la inversa explícita (lema 6.3), la semilla (lema 6.4), el retículo (lema 6.5), las condiciones H3 y H4 y los intercambios (lema 6.6), y luego completamos como en el lema 5.10.
+
+Sea $G_U$ el grafo $K_{n,n,n}$ menos el empaquetamiento construido hasta ahora y menos $E_X$. Todas sus aristas están dentro de $U=U_R\cup U_C\cup U_S$, y $\Delta(K[U_R,U_C,U_S]\setminus G_U)\le\gamma_Sm$. Decimos que un vector $x$ sobre las aristas de $K[U_R,U_C,U_S]$ es *balanceado* si, en cada vértice, sus sumas sobre las aristas hacia las otras dos partes coinciden.
+
+**Lema 6.3 (inversa explícita).** Para $x$ balanceado, pongamos
+
+$$
+X(r)=\sum_c x(rc),\qquad Y(c)=\sum_r x(rc),\qquad Z(s)=\sum_r x(rs),\qquad W_\Sigma=\sum_{r,c}x(rc),
+$$
+
+$$
+(\Psi x)(r,c,s)=\frac{x(rc)+x(rs)+x(cs)}{m}-\frac{X(r)+Y(c)+Z(s)}{m^2}+\frac{W_\Sigma}{m^3}.
+$$
+
+Entonces $A\Psi x=x$ y $\|\Psi x\|_\infty\le7\|x\|_\infty/m$.
+
+*Demostración.* Consideremos una arista $rc$. El primer término contribuye $x(rc)+\bigl(\sum_s x(rs)+\sum_s x(cs)\bigr)/m=x(rc)+(X(r)+Y(c))/m$, por el balance en $r$ y en $c$. El segundo contribuye $-(X(r)+Y(c))/m-\sum_s Z(s)/m^2$, y $\sum_s Z(s)=W_\Sigma$. El tercero contribuye $W_\Sigma/m^2$. El total es $x(rc)$. Las aristas $rs$ y $cs$ son simétricas, ya que las tres partes de un vector balanceado tienen el mismo total $W_\Sigma$. Los tres términos tienen normas a lo sumo $3\|x\|/m$, $3\|x\|/m$ y $\|x\|/m$, respectivamente. $\square$
+
+**Lema 6.4 (semilla exacta).** El lema 5.8 vale para el grafo tripartito, con «balanceado» en lugar de $\ell=0$ y con la $\Psi$ del lema 6.3. La ponderación base es $\mu_0(T)=r(i,j,l)/(|U_R\cap R_i|\,|U_C\cap C_j|\,|U_S\cap S_l|)$ sobre los triángulos de tipo $(i,j,l)$, donde $r$ es la tabla agregada residual. Su carga sobre una arista entre $U_R\cap R_i$ y $U_C\cap C_j$ es $\sum_l r(i,j,l)/(|U_R\cap R_i|\,|U_C\cap C_j|)$, que es igual a $1-O(\Delta/m)$. En efecto, cada triángulo residual de tipo $(i,j,\cdot)$ usa exactamente una de esas aristas.
+
+*Demostración.* La demostración del lema 5.8 usa solo tres hechos, y todos valen aquí:
+
+- toda columna de $A$ es balanceada;
+- $\mathbf 1_{E(G_U)}$ es balanceado;
+- una arista superviviente está en a lo sumo $2\Delta$ triángulos malos. $\square$
+
+**Lema 6.5 (retículo).** Sea $H$ un grafo tripartito sobre $U$, con partes de tamaño $m$, en el que todo vértice tiene al menos $(1-\gamma)m$ vecinos en cada una de las otras partes, para algún $\gamma<1/4$. Entonces un vector entero sobre $E(H)$ es combinación entera de triángulos de $H$ si y solo si es balanceado. En particular, si $H$ es balanceado, $\mathbf 1_{E(H)}$ es combinación entera de triángulos de $H$.
+
+*Demostración.* Cualesquiera cuatro vértices, dos en una parte y dos en otra, tienen al menos $(1-4\gamma)m>0$ vecinos comunes en la parte restante. Trabajamos en el cociente por los triángulos, con $\psi$ la imagen de una arista.
+
+- Sean $r,r'\in U_R$ y $c,c'\in U_C$ con $rc,r'c,rc',r'c'\in E(H)$. Un vecino común $s$ de los cuatro da cuatro triángulos, y $\psi(rc)-\psi(r'c)=\psi(r's)-\psi(rs)=\psi(rc')-\psi(r'c')$.
+- Así, para $r,r'\in U_R$, la diferencia $\delta(r,r')=\psi(rc)-\psi(r'c)$ no depende de $c\in N(r)\cap N(r')\cap U_C$, un conjunto de al menos $(1-2\gamma)m>0$ vértices. Además, $\delta(r,r'')=\delta(r,r')+\delta(r',r'')$, usando $c\in N(r)\cap N(r')\cap N(r'')\cap U_C$, que es no vacío pues $3\gamma<1$. Fijamos $r_0$ y ponemos $g(r)=\delta(r,r_0)$. Para $c\in U_C$ elegimos cualquier $r_1\in N(c)$ y ponemos $h(c)=\psi(r_1c)-g(r_1)$. Esto no depende de $r_1$, y $\psi(rc)=g(r)+h(c)$ para toda arista $rc$. Del mismo modo, $\psi(rs)=g'(r)+k(s)$ y $\psi(cs)=h'(c)+k'(s)$.
+- Las relaciones de los triángulos fuerzan $g+g'\equiv\omega_R$, $h+h'\equiv\omega_C$ y $k+k'\equiv\omega_S$, con $\omega_R+\omega_C+\omega_S=0$: si $rcs$ y $r'cs$ son triángulos, entonces $(g+g')(r)=(g+g')(r')$, y cualesquiera $r,r'$ tienen tales $c,s$ pues $(1-3\gamma)m>0$.
+
+Todo triángulo es balanceado. Recíprocamente, para $x$ balanceado escribimos $x(v)$ para su suma común en $v$; la imagen de $x$ es
+
+$$
+\sum_r x(r)\,\omega_R+\sum_c x(c)\,\omega_C+\sum_s x(s)\,\omega_S=W_\Sigma(\omega_R+\omega_C+\omega_S)=0,
+$$
+
+donde $W_\Sigma$ es el total común de $x$ en las tres partes bipartitas. $\square$
+
+$G_U$ satisface la hipótesis de grado con $\gamma=\gamma_S\le\delta_0/8<1/4$, pues $\Delta(K[U_R,U_C,U_S]\setminus G_U)\le\gamma_Sm$.
+
+$G_U$ es balanceado, porque $K_{n,n,n}$ es balanceado, quitar un triángulo preserva el balance y $E_X$ es una unión de triángulos disjuntos en aristas.
+
+**H3 y H4.** Para H3, dos vértices en partes distintas de $U$ tienen al menos $|U_S\cap S_l|-2(\Delta+1)$ vecinos comunes en cada clase $S_l$ de la tercera parte. Para H4, sean $uva$ y $uvb$ triángulos con $u\in U_R$, $v\in U_C$ y $a,b\in U_S$. Elegimos $p\in U_R$ y $q\in U_C$ nuevos y ponemos $E_h=\{uq,pv,pq,pa,pb,qa,qb\}$. Entonces:
+
+- $E_h\cup\{ua,va\}$ se descompone como $\{uqa,pva,pqb\}$;
+- $E_h\cup\{ub,vb\}$ se descompone como $\{uqb,pvb,pqa\}$.
+
+Hay al menos $(m-4\Delta-5)^2$ bisagras como esta sobre seis vértices.
+
+**Lema 6.6 (intercambios de intercalados).** Sobre las filas $r_1,r_2$, las columnas $c_1,c_2$ y los símbolos $s_1,s_2$, las dos familias
+
+$$
+\{r_1c_1s_1,\ r_1c_2s_2,\ r_2c_1s_2,\ r_2c_2s_1\}\qquad\text{y}\qquad\{r_1c_1s_2,\ r_1c_2s_1,\ r_2c_1s_1,\ r_2c_2s_2\}
+$$
+
+cubren los mismos doce pares. Supongamos que $r_x\in R_{i_x}$, $c_y\in C_{j_y}$ y $s_z\in S_{l_z}$. Pasar de la primera familia a la segunda cambia la tabla agregada en
+
+$$
+\sum_{x,y,z\in\{1,2\}}(-1)^{x+y+z}\,\mathbf 1_{(i_x,j_y,l_z)}.
+$$
+
+Estos tensores alternantes generan los tensores con marginales por pares nulas, un espacio de dimensión $(a-1)(b-1)(c-1)$. En efecto, tomando $i_1=j_1=l_1=1$, los tensores con $i_2\ge2$, $j_2\ge2$ y $l_2\ge2$ forman una base. Las copias con huellas disjuntas se colocan dentro de $U$ mediante la construcción por rectas de [10, §4.1], con seis posiciones de puntos.
+
+**Completación.** Completamos como en el lema 5.10, con los siguientes ingredientes:
+
+- la semilla proviene del lema 6.4 en las esquinas de un cubo alrededor de la tabla agregada residual, con los tensores alternantes del lema 6.6 como cambios que preservan pares ($B\le(a-1)(b-1)(c-1)$), y el lema 5.8$'$ hace exactas sus masas;
+- la condición de retículo proviene del lema 6.5;
+- las condiciones de bisagra y de vecinos provienen de H3 y H4 anteriores;
+- $T^+$ se aplica con las $J$ coordenadas de la tabla agregada como funciones de prueba;
+- los intercambios de intercalados del lema 6.6 hacen exacta la tabla agregada.
+
+### 6.6 Ensamblaje
+
+La contabilidad de la sección 5.7 se aplica sin cambios; registramos la tabla agregada residual en $U$ y el conteo final. Fijamos las $J$ coordenadas libres de $M'$ como en la sección 5.7, de modo que el residuo previsto $M-M'-M^{(1)}$, donde $M^{(1)}$ es la tabla agregada esperada de los bloques de cobertura descendente del paso 1, sea al menos $\kappa^2M$ entrada a entrada; vale $\kappa^2M(1+O(c_\rho))$. El residuo real $r$ difiere de él en los bloques con dos puntos en $U$, de tipo desconocido: cada $v\in O$ aporta $\rho m(1+o(1))$ de ellos, lo que da $(3c_\rho+o(1))m^2\le(3\zeta/100+o(1))m^2$ en total. Los demás bloques de tipo desconocido y todos los términos de error añaden $o(m^2)$, y el vector de centrado tiene entradas a lo sumo $(\zeta/4)m^2$. Como $\kappa^2M\ge\zeta m^2$ entrada a entrada, $r\ge(\zeta/2)m^2$. Por el corolario 6.2 y por el conteo de preimágenes de la sección 5.7,
+
+$$
+\#\mathrm{LS}(M)\ge\exp\bigl(n^2(\log n-2-\mathrm{TC}(Q))-o(n^2)\bigr),
+$$
+
+que es (1.2). Junto con la sección 4.1, esto demuestra el teorema 1.1. $\square$
+
+**Observación 6.7.** Por la observación 4.3, la demostración anterior da también la cota de patrones (4.1), sin construir patrones directamente.
+
+---
+
+## 7. Observaciones
+
+**Observación 7.1 (concentración dentro de los sistemas bicoloreados).** Fijemos una partición admisible. Combinando el teorema 1.2 y (4.3) con la cantidad polinomial de matrices de tipos, se obtiene que, con probabilidad $1-o(1)$, la matriz de tipos de un sistema bicoloreado uniformemente aleatorio está a distancia $o(1)$ de los minimizadores de $D(Q\Vert P_0)$, y que la probabilidad de que la matriz de tipos sea igual a un $t$ dado con $t_{XY}\ge\zeta n^2$ es $\exp\bigl(-(n^2/6)(D(Q\Vert P_0)-\min D)+o(n^2)\bigr)$. Para sistemas sin condicionar, el enunciado correspondiente es el corolario 1.6.
+
+**Observación 7.2 (cuatro o más clases).** Para $k\ge4$, el mínimo de $D(Q\Vert P_0)$ bajo (1.3) es estrictamente mayor que $-\log P_0(\text{bicoloreado})$. La razón se da después del corolario 1.4. Para cuatro clases con proporciones $(0.47,\,0.2886,\,0.1207,\,0.1207)$, elegidas de modo que $\sum_X\gamma_X^2=1/3$, la minimización numérica da $0.634$ frente a $-\log P_0(\text{bicoloreado})=0.501$. Así, para $k\ge4$ el conteo no se comporta como si los bloques fueran bicoloreados de manera independiente: las restricciones (1.3) sobre los pares entre clases imponen correlaciones entre bloques.
+
+**Observación 7.3 (número acotado de clases).** En un cuadrado sudoku de orden $n=m^2$, cada caja contiene cada símbolo exactamente una vez. Tomando las filas de cajas y las columnas de cajas como clases de filas y de columnas, y los símbolos como clases unitarias, esto es un cuadrado latino con una tabla agregada prescrita. Esa tabla agregada es la típica, con $\mathrm{TC}=0$. Sin embargo, Mahdian y Mahmoodian demuestran que la fracción de cuadrados latinos que son cuadrados sudoku es $(1/e+o(1))^{n^2}$ [23, versión arXiv, teorema 5 y corolario 1]. Por tanto, el término $o(n^2)$ del teorema 1.1 no puede ser uniforme en el número de clases. Fijar exactamente unas $n^2$ entradas de la tabla agregada cuesta $\Theta(n^2)$ en total. Luria [8, corolario 3.2] y Berend [37] acotan superiormente el número de cuadrados sudoku, y Keevash [24, teorema 2.7] lo determina asintóticamente.
+
+---
+
+## 8. Problemas abiertos
+
+1. **Tipos de frontera.** Los teoremas 1.1, 1.2 y 1.5 exigen que todo tipo tenga un margen cuadrático positivo. Queda por extender los conteos a vectores de tipos con entradas nulas o sublineales, donde la completación en el vórtice no tiene un objetivo interior.
+2. **Bloques más grandes.** Determinar el número asintótico de sistemas $S(2,4,n)$ y de $t$-diseños generales con conteos prescritos de tipos de bloque, para los cuales la identidad de coloración previa del lema 5.2 tiene un análogo.
+3. **Umbrales efectivos y sistemas parciales arbitrarios.** Con constantes explícitas en [30] y [19], el umbral $n_0$ de la observación 5.22 pasa a ser una torre explícita. Por otro lado, queda por determinar el número de completaciones de un sistema parcial disperso arbitrario, cuyo grafo residual no tiene por qué ser típico (cf. corolario 1.11).
+4. **Conteos exactos de patrones.** La predicción entrópica de [13] se demuestra en [1] para entornos cuyo radio se elige después del objetivo. Queda por contar exactamente los cuadrados con densidades de patrones prescritas, o con un radio explícito en $n$. El teorema 1.1 lo hace solo para la tabla agregada de una partición fija.
+
+---
+
+## Apéndice A. Los teoremas de absorción T y $T^+$
+
+Enunciamos la forma de los teoremas de [18] que usamos.
+
+Sean $G$ un grafo finito sobre $V$ con $|V|=N$, $\lambda:V\to I$ un etiquetado y $\mathcal F$ un conjunto de multiconjuntos de tres etiquetas. Un triángulo de $G$ está *permitido* si su multiconjunto de etiquetas está en $\mathcal F$. Fijamos $\alpha>0$, $C\ge1$ y un entero $h\ge6$. Las cuatro condiciones son:
+
+- **H1 (semilla difusa exacta).** Existe $\mu$ sobre los triángulos permitidos con $1/(CN)\le\mu\le C/N$ y $\sum_{T\ni e}\mu(T)=1$ para toda arista $e$.
+- **H2 (retículo).** $\mathbf 1_{E(G)}$ es combinación entera de triángulos permitidos de $G$.
+- **H3 (vecinos comunes).** Para todos $u$, $v$ distintos y toda etiqueta $\ell$ con $\{\lambda(u),\lambda(v),\ell\}\in\mathcal F$, al menos $\alpha N$ vértices $w$ con $\lambda(w)=\ell$ son adyacentes a $u$ y a $v$.
+- **H4 (bisagras).** Para cualesquiera dos triángulos permitidos $uva$ y $uvb$ que comparten exactamente la arista $uv$, existe $i$ con $6\le i\le h$ tal que hay al menos $\alpha N^{i-4}$ conjuntos de aristas $E_h$ sobre exactamente $i$ vértices, disjuntos en aristas de ambos triángulos, tales que $E_h\cup\{ua,va\}$ y $E_h\cup\{ub,vb\}$ se descomponen ambos en triángulos permitidos.
+
+**Teorema T.** Para $I$, $\mathcal F$, $\alpha$, $C$ y $h$ fijos, existe $N_0$ tal que todo grafo etiquetado de orden $N\ge N_0$ que satisface H1–H4 tiene una descomposición en triángulos permitidos.
+
+**Teorema $T^+$.** Bajo las mismas hipótesis, fijemos además $\eta_T>0$ y $q\ge0$. Sean $(w_j)_{j\in\mathcal J}$ funciones sobre los triángulos permitidos con $|\mathcal J|\le N^q$ y $|w_j|\le1$. Entonces, para $N\ge N_0(\eta_T,q)$, existe una descomposición $\mathcal D$ que satisface, para todo $j$,
+
+$$
+\Bigl|\sum_{T\in\mathcal D}w_j(T)-\sum_T\mu(T)\,w_j(T)\Bigr|\le\eta_T N^2.
+$$
+
+El umbral $N_0$ se fija antes que el grafo, la semilla y la familia de prueba. Por [18], $N_0$ puede tomarse como una función torre explícita de $1/\alpha$ y $C$. Por eso T se aplica dentro del vórtice, con constantes que no dependen de $n$.
+
+## Apéndice B. Ingredientes tomados de [10]
+
+Los enunciados siguientes se toman de [10] (texto del preprint, apéndice B y §§3.3, 4.1–4.3), con las hipótesis tal como allí se enuncian. Cada ítem indica dónde las verificamos.
+
+- **[10, lema B.1].** Para $k\ge3$ clases, cada una de tamaño al menos $c^*\ge4$, sobre $N$ puntos con $N\le Rc^*$, la aplicación de incidencia de los triángulos permitidos de $K_N$ tiene una inversa lineal por la derecha sobre $\{\ell=0\}$ de norma a lo sumo $\binom{k-1}{2}\cdot400R^6(1+4R^2)/N$. Se usa en el lema 5.7 con $N=m$ y $R=2/\delta_0$.
+- **[10, lema B.2].** Semilla exacta tras eliminar un empaquetamiento permitido de grado máximo $\Delta$, con un cambio de masa $(4K_c+1)C_0\Delta n$. Se generaliza en el lema 5.8.
+- **[10, §3.3].** El argumento del cubo. Se enuncia y se demuestra como lema 5.8$'$.
+- **[10, lema B.3].** Si la partición satisface sus condiciones de divisibilidad, $H$ es el grafo completo menos un empaquetamiento permitido y todo conjunto de a lo sumo $k+4$ puntos tiene un vecino común en cada clase, entonces $\mathbf 1_{E(H)}$ es combinación entera de triángulos permitidos de $H$. Usamos la construcción de $\varepsilon$, $\beta$ y $\gamma$ de su demostración, que solo necesita la condición de vecinos; el lema 5.9 sustituye su suma final. La condición de vecinos se verifica en la sección 5.1.
+- **[10, apéndice B.4].** Dos raíces tienen al menos $c_i-2(\Delta+1)$ vecinos comunes en cada clase (H3), y dos triángulos permitidos que comparten una arista tienen al menos $(\delta N-4\Delta-5)^2$ bisagras octaédricas sobre seis vértices (H4). Se verifica en la sección 5.1.
+- **[10, §4.1].** $p^2$ copias del intercambio de nueve puntos por coordenada, con huellas de pares disjuntas y depósitos de puntos separados por coordenada, de modo que la unión tiene grado máximo a lo sumo $9p$; los depósitos caben cuando $18(J+1)\lambda\le\delta$. Se usa en la sección 5.2 con $p=p_X\le\lambda m$ y $\delta=\delta_0$.
+- **[10, (4.1) y §4.3].** El residuo centrado $r_i=t_i-\pi_i-B_i+s_i/2$ de [10, (4.1)] y el cambio de $z_i\in[s_i/4,3s_i/4]$ copias [10, §4.3]. Se usan en el lema 5.10.
+
+---
+
+## Verificación formal
+
+Las cotas superiores de los teoremas principales y el álgebra finita de las secciones 5.8–5.10 se han comprobado en Lean 4 con Mathlib. El documento formal complementario [38], disponible en inglés y español junto con el archivo de fuentes, asocia cada uno de estos resultados con su declaración en Lean y registra dónde el enunciado formal difiere en su forma del que aquí se imprime. La diferencia más visible está en el término de error: las cotas superiores tipadas formalizadas llevan $O(n^{7/4})$, más la pérdida $O(\eta n^2)$ debida a la tipicidad en el teorema 1.9(a), mientras que la sección 4.2 demuestra $O(n^{3/2})$. Están formalizadas en la forma con $\Phi(t)$, no en la forma normalizada con $D(Q\Vert P)$ de los teoremas 1.5 y 1.7. Las cotas inferiores, y con ellas los teoremas 1.9(b) y 1.10 y los corolarios 1.4, 1.6, 1.8 y 1.11, solo se demuestran en este paper. Las 89 consultas de axiomas del desarrollo muestran solo `propext`, `Classical.choice` y `Quot.sound`. El documento complementario describe la formalización y no sustituye las demostraciones dadas aquí. Los teoremas externos (los teoremas T y $T^+$ de [18] y los teoremas de emparejamientos de [19] y [30]) se usan con sus hipótesis declaradas.
+
+## Agradecimientos
+
+El autor agradece profundamente a su esposa María Paz y a sus hijos Lucas, Juan Cristóbal, Francisca, Raimundo y Benjamín su amor, paciencia y apoyo.
+
+## Uso de inteligencia artificial y herramientas computacionales
+
+Claude, de Anthropic, y ChatGPT/Codex, de OpenAI, se utilizaron para explorar y comprobar argumentos y para preparar el manuscrito.
+
+Certo [39] se utilizó para explorar casos finitos, comprobar identidades y evaluar construcciones candidatas. Estos cálculos orientaron el desarrollo de los argumentos; las comprobaciones finitas no se trataron como pruebas de enunciados universales.
+
+El autor es responsable de los argumentos, las citas, el código y la exposición. Ningún sistema de IA figura como autor.
+
+## Referencias
+
+[1] J. P. Traverso Gianini. *Entropy and large deviations for Latin squares*. Preprint 1.0, 16 November 2026, <https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/latinon-v1.0>; DOI 10.5281/zenodo.24284129 (reserved).
+
+[2] J. P. Traverso Gianini. *The kernel and measure representations of Latinons agree: a Lean formalization*. Research note, preprint 1.0, 16 November 2026, <https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/ghhsbridge-v1.0>; DOI 10.5281/zenodo.24293531 (reserved).
+
+[3] L. M. Brègman. *Some properties of nonnegative matrices and their permanents*. Dokl. Akad. Nauk SSSR 211 (1973), 27–30.
+
+[4] G. P. Egorychev. *The solution of van der Waerden's problem for permanents*. Adv. Math. 42 (1981), 299–305, [doi:10.1016/0001-8708(81)90044-X](https://doi.org/10.1016/0001-8708(81)90044-X).
+
+[5] D. I. Falikman. *Proof of the van der Waerden conjecture regarding the permanent of a doubly stochastic matrix*. Mat. Zametki 29 (1981), 931–938.
+
+[6] N. Linial and Z. Luria. *An upper bound on the number of Steiner triple systems*. Random Structures Algorithms 43(4) (2013), 399–406, [doi:10.1002/rsa.20487](https://doi.org/10.1002/rsa.20487).
+
+[7] P. Keevash. *Counting designs*. J. Eur. Math. Soc. 20(4) (2018), 903–927, [doi:10.4171/JEMS/779](https://doi.org/10.4171/JEMS/779).
+
+[8] Z. Luria. *New bounds on the number of $n$-queens configurations*. [arXiv:1705.05225](https://arxiv.org/abs/1705.05225).
+
+[9] M. Kwan. *Almost all Steiner triple systems have perfect matchings*. Proc. Lond. Math. Soc. (3) 121(6) (2020), 1468–1495, [doi:10.1112/plms.12373](https://doi.org/10.1112/plms.12373). [arXiv:1611.02246](https://arxiv.org/abs/1611.02246).
+
+[10] J. P. Traverso Gianini. *Prescribed block types and abundance in bicolored Steiner triple systems*. Preprint 1.0 (2026), [doi:10.5281/zenodo.24201563](https://doi.org/10.5281/zenodo.24201563).
+
+[11] N. Linial and Z. Luria. *Discrepancy of high-dimensional permutations*. Discrete Analysis 2016:11, [doi:10.19086/da.845](https://doi.org/10.19086/da.845). [arXiv:1512.04123](https://arxiv.org/abs/1512.04123).
+
+[12] M. Kwan and B. Sudakov. *Intercalates and discrepancy in random Latin squares*. Random Structures Algorithms 52(2) (2018), 181–196, [doi:10.1002/rsa.20742](https://doi.org/10.1002/rsa.20742).
+
+[13] F. Garbe, R. Hancock, J. Hladký and M. Sharifzadeh. *Limits of Latin squares*. Discrete Analysis 2023:8, 66 pp., [doi:10.19086/da.83253](https://doi.org/10.19086/da.83253), <https://discreteanalysisjournal.com/article/83253-limits-of-latin-squares>. [arXiv:2010.07854](https://arxiv.org/abs/2010.07854).
+
+[14] L. Gishboliner, S. Glock and A. Sgueglia. *Steiner triple systems with high discrepancy*. J. Combin. Des. 34(1) (2026), 5–14, [doi:10.1002/jcd.22004](https://doi.org/10.1002/jcd.22004). [arXiv:2503.23252](https://arxiv.org/abs/2503.23252).
+
+[15] C. J. Colbourn, J. H. Dinitz and A. Rosa. *Bicoloring Steiner triple systems*. Electron. J. Combin. 6 (1999), #R25, [doi:10.37236/1457](https://doi.org/10.37236/1457).
+
+[16] J. P. Traverso Gianini. *The exact block-type spectrum in the Colbourn–Dinitz–Rosa problem*. Preprint (2026), [doi:10.5281/zenodo.23987251](https://doi.org/10.5281/zenodo.23987251).
+
+[17] J. P. Traverso Gianini. *A proof of the Colbourn–Dinitz–Rosa conjecture*. Preprint (2026), [doi:10.5281/zenodo.23987256](https://doi.org/10.5281/zenodo.23987256).
+
+[18] J. P. Traverso Gianini. *Triangle decompositions III: Physical typed absorption and prescribed statistics*. Preprint (2026), [doi:10.5281/zenodo.23867836](https://doi.org/10.5281/zenodo.23867836).
+
+[19] S. Ehard, S. Glock and F. Joos. *Pseudorandom hypergraph matchings*. Combin. Probab. Comput. 29(6) (2020), 868–885, [doi:10.1017/S0963548320000280](https://doi.org/10.1017/S0963548320000280). [arXiv:1907.09946](https://arxiv.org/abs/1907.09946).
+
+[20] J. P. Traverso Gianini. *Pseudorandom hypergraph matchings (Ehard–Glock–Joos) in Lean 4*. <https://github.com/jtraverso/pseudorandom-hypergraph-matchings>.
+
+[21] M. Simkin. *The number of $n$-queens configurations*. Adv. Math. 427 (2023), 109127, [doi:10.1016/j.aim.2023.109127](https://doi.org/10.1016/j.aim.2023.109127).
+
+[22] C. Bowtell and P. Keevash. *The $n$-queens problem*. [arXiv:2109.08083](https://arxiv.org/abs/2109.08083).
+
+[23] M. Mahdian and E. S. Mahmoodian. *Sudoku rectangle completion*. Electron. Notes Discrete Math. 49 (2015), 747–755, [doi:10.1016/j.endm.2015.06.101](https://doi.org/10.1016/j.endm.2015.06.101). [arXiv:1704.08136](https://arxiv.org/abs/1704.08136).
+
+[24] P. Keevash. *Coloured and directed designs*. Building Bridges II, Bolyai Soc. Math. Stud. 28, Springer, 2019, 279–315, [doi:10.1007/978-3-662-59204-5_9](https://doi.org/10.1007/978-3-662-59204-5_9). [arXiv:1807.05770](https://arxiv.org/abs/1807.05770).
+
+[25] A. Ferber and M. Kwan. *Almost all Steiner triple systems are almost resolvable*. Forum Math. Sigma 8 (2020), e39, [doi:10.1017/fms.2020.29](https://doi.org/10.1017/fms.2020.29). [arXiv:1907.06744](https://arxiv.org/abs/1907.06744).
+
+[26] M. Kwan, A. Sah and M. Sawhney. *Large deviations in random Latin squares*. Bull. Lond. Math. Soc. 54(4) (2022), 1420–1438, [doi:10.1112/blms.12638](https://doi.org/10.1112/blms.12638). [arXiv:2106.11932](https://arxiv.org/abs/2106.11932).
+
+[27] M. Kwan and H. T. Pham. *Nonlinear lower-tail large deviations at criticality*. [arXiv:2610.10233](https://arxiv.org/abs/2610.10233).
+
+[28] A. Ferber, V. Jain and B. Sudakov. *Number of 1-factorizations of regular high-degree graphs*. Combinatorica 40(3) (2020), 315–344, [doi:10.1007/s00493-019-3970-y](https://doi.org/10.1007/s00493-019-3970-y). [arXiv:1803.10360](https://arxiv.org/abs/1803.10360).
+
+[29] T. Dai, A. Divoux and T. Kelly. *Entropy bounds for perfect matchings in bipartite hypergraphs*. Electron. J. Combin. 33(2) (2026), #P2.20, [doi:10.37236/14339](https://doi.org/10.37236/14339). [arXiv:2506.17652](https://arxiv.org/abs/2506.17652).
+
+[30] S. Glock, F. Joos, J. Kim, M. Kühn and L. Lichev. *Conflict-free hypergraph matchings*. J. Lond. Math. Soc. (2) 109(5) (2024), e12899, [doi:10.1112/jlms.12899](https://doi.org/10.1112/jlms.12899). [arXiv:2205.05564](https://arxiv.org/abs/2205.05564).
+
+[31] H. Chernoff. *A measure of asymptotic efficiency for tests of a hypothesis based on the sum of observations*. Ann. Math. Statist. 23 (1952), 493–507, [doi:10.1214/aoms/1177729330](https://doi.org/10.1214/aoms/1177729330).
+
+[32] W. Hoeffding. *Probability inequalities for sums of bounded random variables*. J. Amer. Statist. Assoc. 58 (1963), 13–30, [doi:10.1080/01621459.1963.10500830](https://doi.org/10.1080/01621459.1963.10500830).
+
+[33] D. A. Freedman. *On tail probabilities for martingales*. Ann. Probab. 3 (1975), 100–118, [doi:10.1214/aop/1176996452](https://doi.org/10.1214/aop/1176996452).
+
+[34] M. Delcourt and L. Postle. *A proof of Nash-Williams' conjecture*. [arXiv:2606.11178](https://arxiv.org/abs/2606.11178) (2026).
+
+[35] J. P. Traverso Gianini. *Triangle decompositions I: Formalizing the Nash–Williams theorem in Lean*. Preprint (2026), [doi:10.5281/zenodo.23428173](https://doi.org/10.5281/zenodo.23428173).
+
+[36] J. P. Traverso Gianini. *Counting Steiner triple systems in Lean 4: Wilson (1974) and Linial–Luria (2013)*. <https://github.com/jtraverso/counting-steiner-triple-systems>.
+
+[37] D. Berend. *On the number of Sudoku squares*. Discrete Math. 341(11) (2018), 3241–3248, [doi:10.1016/j.disc.2018.08.005](https://doi.org/10.1016/j.disc.2018.08.005).
+
+[38] J. P. Traverso Gianini. *Formal companion: counting Steiner triple systems and Latin squares with prescribed color statistics*. With Lean source archive, preprint 1.0, 17 November 2026, <https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/colorstats-v1.0>; DOI 10.5281/zenodo.24308221 (reserved).
+
+[39] J. P. Traverso Gianini. *Certo*. Software, <https://github.com/jtraverso/certo-math>.
+

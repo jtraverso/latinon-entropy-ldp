@@ -1,0 +1,23 @@
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+c found falsified original clause
+(8, 8, 8) 40 shift 0 : bipartite factor infeasible
+(8, 8, 8) 40 shift 1 : bipartite factor infeasible
+(8, 8, 8) 40 shift -1 : bipartite factor infeasible
+(8, 8, 8) 40 shift 3 : parity/neg in transport
+(10, 10, 10) 60 shift 0 : bipartite factor infeasible
+(10, 10, 10) 60 shift 1 : bipartite factor infeasible
+(10, 10, 10) 60 shift -1 : bipartite factor infeasible
+(10, 10, 10) 60 shift 3 : bipartite factor infeasible
+(12, 10, 8) 60 shift 0 : bipartite factor infeasible
+(12, 10, 8) 60 shift 1 : bipartite factor infeasible
+(12, 10, 8) 60 shift -1 : bipartite factor infeasible
+(12, 10, 8) 60 shift 3 : bipartite factor infeasible

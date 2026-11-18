@@ -1,0 +1,13 @@
+note: Running TeX ...
+note: Rerunning TeX because "color_stats_en.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `color_stats_en.pdf` (375.8271484375 KiB)
+note: Writing `color_stats_en.log` (32.12890625 KiB)
+note: Skipped writing 1 intermediate files (use --keep-intermediates to keep them)
+
+warning: color_stats_en.tex:763: Underfull \hbox (badness 1412) in paragraph at lines 762--763
+warning: color_stats_en.tex:1364: Overfull \hbox (2.20433pt too wide) in paragraph at lines 1363--1364
+warning: color_stats_en.tex:763: Underfull \hbox (badness 1412) in paragraph at lines 762--763
+warning: color_stats_en.tex:1364: Overfull \hbox (2.20433pt too wide) in paragraph at lines 1363--1364
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+warning: Object @figure.1 already defined.

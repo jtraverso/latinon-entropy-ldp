@@ -1,0 +1,31 @@
+{
+  "created": "2026-11-17",
+  "description": "Numerical checks of the colour-statistics paper (gate G6)",
+  "files": {
+    "logs/colourfirst.log": "eca047e61cd311caba9ac9258118ff37005062ed21a281992aa2a8447311cd72",
+    "logs/e1_checks.log": "5280022fe701a995a59cd99d61f7e65604426648c579024609ad0fcd9916061d",
+    "logs/e1_identity.log": "e2be52705a788ee175f8256c2c1baa35e7fcd057e92b342450fac756e44d500d",
+    "logs/e2_checks.log": "c5db5e492ae4fa02a34fb68f154acaab573e578a78319ab653b3753536f02b40",
+    "logs/e3_checks.log": "fe26f7974d1ff4bf08d51861bf02f5ce1afefc0bf99c24cfa54a1e909e78d24e",
+    "logs/h1_seed.log": "b49274938e661b84a5993f3afab4c0222b85d167c984f3471af0825c8bcda34a",
+    "logs/latin_identity.log": "025dae2cb4e8b13ac8f8c16ff8d40721be84de9b6e284410cb0fd8ecec57cef4",
+    "logs/latin_split.log": "911f18c150da444c210bac32acc174c50d24a64e3e812c920555952e8f1e5b00",
+    "logs/lemmaB.log": "86e10cff5702f7cbb2b012861af0db80093a40ce8da12934a3fa8a10186e6bef",
+    "logs/pasch_span.log": "ea276318559a9b5234bc0ba9d0d9e803096fb9633fea2403cc527f4487c29d22",
+    "logs/route3_checks.log": "483ff9552beeedd2c1bf2d4c80416e3911ded0493541eafbe57dcfce332403b0",
+    "logs/stsrate2.log": "581f0768dfcb957dda4c5ffe4ca27d131ec385b7286bd38e7af8af2210005256",
+    "README.md": "dc1da4a53ced962edeb588d64f8fca8519937d73d843b10d8ce5c3a1e54955e5",
+    "scripts/colourfirst.py": "58e60fad436f6a5472aef93a0d4656ca6634698f8acb6ea667f8e786b6eccde4",
+    "scripts/e1_checks.py": "8cd7759847db7c8e9b81c636808f395bfcf8467ff20b6be3d8e640887b5237f5",
+    "scripts/e1_identity.py": "9121306f2b9d71699d1b4ccd448243fab8fd55b847dce4a006dcbb33778d9f05",
+    "scripts/e2_checks.py": "7bebcd1d923b501e9bc0f9e10d433ed05f0a0b0a473d8effa5000d4fbf7c93b6",
+    "scripts/e3_checks.py": "213320e4f20b44892ae29ac7413033e29c3773da113cafbf15facea07a4df7ce",
+    "scripts/h1_seed.py": "243af80a41763381e1ba3fe6a88d8a56b5bfffffd6f00864579fc6271f957c2e",
+    "scripts/latin_identity.py": "8d323ab658052b14c2116e01e59ae301d18fbbe3981890177c41c32482e74a62",
+    "scripts/latin_split.py": "86368257c33f3abf4eb68a5345ad30bf2feebb380f627ebf25b91e438cdfc078",
+    "scripts/lemmaB.py": "3c2ca4ba70fece003360d977d0e7a2e5871c7314395927ad87b41725767ce97c",
+    "scripts/pasch_span.py": "b93cd0c984c6b3fa06dfcd19193fb18da13d69eb72c7b89119f62b06ddb1d877",
+    "scripts/route3_checks.py": "3b270885e71b15c51d312a2e0cec086c4cb795ae932438791b95a8712419beca",
+    "scripts/stsrate2.py": "b8d1b9469a6233410abd3bc288ef4de31ab9f6aa3087b125e69d6bfaace12d29"
+  }
+}

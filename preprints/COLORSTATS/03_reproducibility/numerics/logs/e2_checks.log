@@ -1,0 +1,20 @@
+(a) inverse on balanced vectors of K_m v C_h: (max error, max|psi| min(m,h)/||x||)
+   m=6 h=5 (np.float64(6.661338147750939e-16), np.float64(2.0554165083596354))
+   m=8 h=7 (np.float64(1.3322676295501878e-15), np.float64(1.969937510366671))
+   m=10 h=9 (np.float64(1.7763568394002505e-15), np.float64(2.144149570229055))
+   m=12 h=6 (np.float64(1.7763568394002505e-15), np.float64(1.2662261379615956))
+   m=7 h=14 (np.float64(1.3322676295501878e-15), np.float64(1.3107708065533343))
+(b) lattice: rank(span)+rank(balance) should be |E|; torsion (Z/2)^(h-1) from colour-vertex parities
+   5 4 {'edges': 28, 'rank_span': 23, 'rank_balance': 5, 'torsion': [2, 2, 2], 'expected_torsion_rank': 3}
+   6 5 {'edges': 42, 'rank_span': 36, 'rank_balance': 6, 'torsion': [2, 2, 2, 2], 'expected_torsion_rank': 4}
+(c) k=1 l=2 kernel rank 0, no swaps
+(c) k=2 l=2: kernel rank 1, swap rank 1, swap SNF divisors [1]
+(c) k=2 l=3: kernel rank 2, swap rank 2, swap SNF divisors [1]
+(c) k=3 l=2: kernel rank 3, swap rank 3, swap SNF divisors [1]
+(c) k=3 l=3: kernel rank 6, swap rank 6, swap SNF divisors [1]
+(d) colour-first identity for 1-factorization types: (degree spread, relative identity error)
+   k=1 l=1 (0, 0.0)
+   k=1 l=3 (0, 1.3770122320219667e-16)
+   k=2 l=2 (2.220446049250313e-16, 1.4880945195439014e-16)
+   k=3 l=2 (2.220446049250313e-16, 0.0)
+   k=2 l=3 (2.220446049250313e-16, -1.6759510228510115e-16)

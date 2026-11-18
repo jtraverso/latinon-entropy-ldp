@@ -15,7 +15,8 @@
       "id": "LATINON",
       "sequence": 1,
       "doi_status": "reserved_not_published",
-      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations"
+      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations",
+      "label": "Paper I"
     },
     {
       "title": "The kernel and measure representations of Latinons agree: a Lean formalization",
@@ -27,9 +28,29 @@
       "id": "GHHSBRIDGE",
       "sequence": 2,
       "kind": "research_note",
-      "depends_on": ["LATINON"],
+      "depends_on": [
+        "LATINON"
+      ],
       "doi_status": "reserved_not_published",
-      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latinons-kernel-measure-lean-formalization"
+      "alphaxiv": "https://www.alphaxiv.org/abs/2611.latinons-kernel-measure-lean-formalization",
+      "label": "Research note"
+    },
+    {
+      "title": "Counting Steiner triple systems and Latin squares with prescribed color statistics",
+      "title_es": "Conteo de sistemas triples de Steiner y cuadrados latinos con estadísticas de color prescritas",
+      "directory": "preprints/COLORSTATS",
+      "version": "1.0",
+      "doi": "10.5281/zenodo.24308221",
+      "github_release": "https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/colorstats-v1.0",
+      "id": "COLORSTATS",
+      "sequence": 3,
+      "label": "Paper II",
+      "cites": [
+        "LATINON",
+        "GHHSBRIDGE"
+      ],
+      "doi_status": "reserved_not_published",
+      "alphaxiv": "https://www.alphaxiv.org/abs/2611.steiner-latin-squares-color-statistics"
     }
   ],
   "series": {
