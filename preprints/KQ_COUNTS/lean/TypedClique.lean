@@ -1,5 +1,5 @@
 module
-public import TypedClique.R65.DivisibleRemainder
+public import TypedClique.R66.DivisibleUnion
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -29,3 +29,6 @@ public import TypedClique.R65.DivisibleRemainder
 #print axioms TypedClique.R64.consumed_reserve_cancels
 
 #print axioms TypedClique.R65.remainder_divisible_of_partition
+
+#print axioms TypedClique.R66.empty_divisible
+#print axioms TypedClique.R66.union_divisible
