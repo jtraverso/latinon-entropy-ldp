@@ -44,6 +44,15 @@ theorem clique_divisible
     · have hnot : ∀ e ∈ Q.powersetCard 2, v ∉ e := by
         intro e he heV
         exact hv ((Finset.mem_powersetCard.mp he).1 heV)
-      simp [hnot]
+      have hzero :
+          ((Q.powersetCard 2).filter (fun e => v ∈ e)) = ∅ := by
+        ext e
+        constructor
+        · intro he
+          exact False.elim ((hnot e (Finset.mem_filter.mp he).1)
+            (Finset.mem_filter.mp he).2)
+        · intro he
+          exact False.elim (Finset.not_mem_empty e he)
+      simp [hzero]
 
 end TypedClique.R67
