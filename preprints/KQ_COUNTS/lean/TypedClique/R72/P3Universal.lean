@@ -53,7 +53,7 @@ theorem universal_absorber_activated
     (hwhole : TypedClique.R65.IsPairDivisible q full)
     (hcover : ∀ P ∈ Ps,
       ∃ (used : Finset (Finset Vertex)) (Y : Finset (Finset Vertex)),
-        Y ⊆ X ∧
+        Y ⊆ X ∧ P ⊆ used ∧
         (∀ Q ∈ used, Q.card = q) ∧
         (∀ Q ∈ used, ∀ Q' ∈ used, Q ≠ Q' →
           Disjoint (Q.powersetCard 2) (Q'.powersetCard 2)) ∧
@@ -61,19 +61,27 @@ theorem universal_absorber_activated
         Disjoint (footprint used) (X \ Y))
     (hOmni : ∀ rem : Finset (Finset Vertex), rem ⊆ X →
       TypedClique.R69.IsPairSubsetDivisible q rem →
-        ∃ QA : Finset (Finset Vertex), footprint QA = A ∪ rem) :
+        ∃ QA : Finset (Finset Vertex),
+          (∀ Q ∈ QA, Q.card = q) ∧
+          (∀ Q ∈ QA, ∀ Q' ∈ QA, Q ≠ Q' →
+            Disjoint (Q.powersetCard 2) (Q'.powersetCard 2)) ∧
+          footprint QA = A ∪ rem) :
     ∀ P ∈ Ps,
       ∃ (used : Finset (Finset Vertex))
         (Y : Finset (Finset Vertex))
         (QA : Finset (Finset Vertex)),
-        Y ⊆ X ∧ footprint QA = A ∪ (X \ Y) := by
+        Y ⊆ X ∧ P ⊆ used ∧
+        (∀ Q ∈ QA, Q.card = q) ∧
+        (∀ Q ∈ QA, ∀ Q' ∈ QA, Q ≠ Q' →
+          Disjoint (Q.powersetCard 2) (Q'.powersetCard 2)) ∧
+        footprint QA = A ∪ (X \ Y) := by
   intro P hP
-  obtain ⟨used, Y, hYX, hsize, hpair, hpartition, hdisjoint⟩ :=
+  obtain ⟨used, Y, hYX, hPused, hsize, hpair, hpartition, hdisjoint⟩ :=
     hcover P hP
   have hrem := remnant_is_subset_divisible q used X Y full
     hsize hpair hpartition hdisjoint hwhole
-  obtain ⟨QA, hQA⟩ := hOmni (X \ Y) (Finset.sdiff_subset) hrem
-  exact ⟨used, Y, QA, hYX, hQA⟩
+  obtain ⟨QA, hQAq, hQAdisj, hQA⟩ := hOmni (X \ Y) (Finset.sdiff_subset) hrem
+  exact ⟨used, Y, QA, hYX, hPused, hQAq, hQAdisj, hQA⟩
 
 
 
