@@ -1,5 +1,5 @@
 module
-public import TypedClique.R63.UniversalCompletion
+public import TypedClique.R64.Preallocation
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -23,3 +23,7 @@ public import TypedClique.R63.UniversalCompletion
 
 #print axioms TypedClique.R63.universal_completion_card_bound
 #print axioms TypedClique.R63.universal_weighted_transfer
+
+#print axioms TypedClique.R64.horizon_gap_before_bank
+#print axioms TypedClique.R64.bank_defect_under_preallocated_budget
+#print axioms TypedClique.R64.consumed_reserve_cancels
