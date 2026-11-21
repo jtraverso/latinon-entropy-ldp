@@ -1,7 +1,8 @@
 /-
- R51.2: number of token assignments of each type.
- The R46.A fibers are injections from the blocks of a given type to
- its available labeled tokens. No probability is involved in this count.
+ R51.2: finite typewise token assignment counts.
+ Mathlib already proves that injective choices from Fin t to Fin a
+ are the falling factorial a.descFactorial t. The combined product is
+ a product of cardinalities, without asserting a geometric fiber equivalence.
 -/
 module
 public import TypedClique.R51.Bernoulli
@@ -11,17 +12,17 @@ namespace TypedClique.R51
 
 open Finset
 
-/-- For t blocks and a labeled tokens, the number of injective assignments
-is the descending factorial (a)_t, also when t > a (both sides zero). -/
+/-- Number of injective assignments of t labeled blocks to a labeled tokens. -/
 theorem token_fibre_card (t a : ℕ) :
     Fintype.card (Fin t ↪ Fin a) = a.descFactorial t := by
   classical
   simp
 
-/-- Independent token choices in finitely many types multiply their fiber counts. -/
+/-- Fiber cardinalities multiply when tokens are separated by a finite
+family of types. This is the multiplicative factor needed in R46.A. -/
 theorem typewise_token_fibre_card
     {I : Type*} [Fintype I] (t a : I → ℕ) :
-    Fintype.card (∀ i : I, Fin (t i) ↪ Fin (a i)) =
+    (∏ i : I, Fintype.card (Fin (t i) ↪ Fin (a i))) =
     ∏ i : I, (a i).descFactorial (t i) := by
   classical
   simp
