@@ -1,5 +1,5 @@
 module
-public import TypedClique.R67.CliqueDivisible
+public import TypedClique.R68.PackingDivisible
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -34,3 +34,5 @@ public import TypedClique.R67.CliqueDivisible
 #print axioms TypedClique.R66.union_divisible
 
 #print axioms TypedClique.R67.clique_divisible
+
+#print axioms TypedClique.R68.packing_divisible
