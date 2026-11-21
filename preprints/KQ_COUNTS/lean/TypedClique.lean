@@ -1,5 +1,5 @@
 module
-public import TypedClique.R72.P3Universal
+public import TypedClique.R73.ExpectedDegrees
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -45,3 +45,7 @@ public import TypedClique.R72.P3Universal
 #print axioms TypedClique.R72.recover_prefix_of_external_blocks
 #print axioms TypedClique.R72.universal_physical_completion_recovers
 #print axioms TypedClique.R72.universal_physical_completion_card
+
+#print axioms TypedClique.R73.token_weight_sum
+#print axioms TypedClique.R73.physical_expected_degree
+#print axioms TypedClique.R73.token_expected_degree
