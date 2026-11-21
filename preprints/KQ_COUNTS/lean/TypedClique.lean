@@ -1,5 +1,5 @@
 module
-public import TypedClique.R69.SubsetsDivisible
+public import TypedClique.R72.P3Universal
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -38,3 +38,6 @@ public import TypedClique.R69.SubsetsDivisible
 #print axioms TypedClique.R68.packing_divisible
 
 #print axioms TypedClique.R69.subset_divisible_iff_signature
+
+#print axioms TypedClique.R72.remnant_is_subset_divisible
+#print axioms TypedClique.R72.universal_absorber_activated
