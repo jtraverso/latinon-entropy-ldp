@@ -1,0 +1,27 @@
+name: Verify R50 typed-clique Lean adapters
+on:
+  pull_request:
+    paths:
+      - 'preprints/KQ_COUNTS/lean/**'
+      - '.github/workflows/verify-kq-r50-lean.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean-r50:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan (Lean version pinned in project)
+        shell: bash
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Download pinned Mathlib cache
+        working-directory: preprints/KQ_COUNTS/lean
+        run: lake exe cache get
+      - name: Build proof library and print axioms
+        working-directory: preprints/KQ_COUNTS/lean
+        run: lake build
