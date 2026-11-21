@@ -38,14 +38,14 @@ theorem subset_divisible_iff_signature (q : ℕ) (E : Finset (Finset Vertex)) :
       have hdvd : Nat.choose q 2 ∣ E.card := by
         simpa using he
       have hz : ((E.card : ℕ) : ZMod (Nat.choose q 2)) = 0 :=
-        (ZMod.natCast_eq_zero_iff).mpr hdvd
+        (ZMod.natCast_eq_zero_iff E.card (Nat.choose q 2)).mpr hdvd
       simpa using hz
     · intro v
       have he := h ({v} : Finset Vertex) (by simp)
       have hdvd : (q - 1) ∣ (E.filter fun e => v ∈ e).card := by
         simpa using he
       have hz : (((E.filter fun e => v ∈ e).card : ℕ) :
-          ZMod (q - 1)) = 0 := (ZMod.natCast_eq_zero_iff).mpr hdvd
+          ZMod (q - 1)) = 0 := (ZMod.natCast_eq_zero_iff (E.filter fun e => v ∈ e).card (q - 1)).mpr hdvd
       calc
         (∑ e ∈ E, if v ∈ e then (1 : ZMod (q - 1)) else 0) =
           ((E.filter fun e => v ∈ e).card : ZMod (q - 1)) := by
@@ -61,7 +61,7 @@ theorem subset_divisible_iff_signature (q : ℕ) (E : Finset (Finset Vertex)) :
       have hcountNat : ((E.card : ℕ) : ZMod (Nat.choose q 2)) = 0 := by
         simpa using hcount
       have hdvd : Nat.choose q 2 ∣ E.card :=
-        (ZMod.natCast_eq_zero_iff).mp hcountNat
+        (ZMod.natCast_eq_zero_iff E.card (Nat.choose q 2)).mp hcountNat
       simpa using hdvd
     · obtain ⟨v, hv⟩ := Finset.card_eq_one.mp hone
       subst S
@@ -69,7 +69,7 @@ theorem subset_divisible_iff_signature (q : ℕ) (E : Finset (Finset Vertex)) :
           ZMod (q - 1)) = 0 := by
         simpa [Finset.sum_filter] using hdeg v
       have hdvd : (q - 1) ∣ (E.filter fun e => v ∈ e).card :=
-        (ZMod.natCast_eq_zero_iff).mp hdegNat
+        (ZMod.natCast_eq_zero_iff (E.filter fun e => v ∈ e).card (q - 1)).mp hdegNat
       simpa using hdvd
 
 end TypedClique.R69
