@@ -1,5 +1,5 @@
 module
-public import TypedClique.R68.PackingDivisible
+public import TypedClique.R69.SubsetsDivisible
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -36,3 +36,5 @@ public import TypedClique.R68.PackingDivisible
 #print axioms TypedClique.R67.clique_divisible
 
 #print axioms TypedClique.R68.packing_divisible
+
+#print axioms TypedClique.R69.subset_divisible_iff_signature
