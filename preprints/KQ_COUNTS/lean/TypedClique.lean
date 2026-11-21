@@ -1,5 +1,5 @@
 module
-public import TypedClique.R53.InjectiveLift
+public import TypedClique.R54.Disjointness
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -18,3 +18,5 @@ public import TypedClique.R53.InjectiveLift
 #print axioms TypedClique.R53.pairFootprint_injective_of_two_le
 
 #print axioms TypedClique.R53.liftedSupport_injective_of_footprint
+
+#print axioms TypedClique.R54.liftedSupport_disjoint_iff
