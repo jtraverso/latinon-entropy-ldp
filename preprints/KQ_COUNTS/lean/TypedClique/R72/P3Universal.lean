@@ -75,4 +75,59 @@ theorem universal_absorber_activated
   obtain ⟨QA, hQA⟩ := hOmni (X \ Y) (Finset.sdiff_subset) hrem
   exact ⟨used, Y, QA, hYX, hQA⟩
 
+
+
+/-- Physical recovery retains exactly the input prefix: every block in P
+ is fully contained in J, whereas each new block has an edge outside J.
+ This condition is guaranteed by coverdown (touches X), absorber (touches
+ A or X), and bank swaps (touch B), when X,A,B are outside J. -/
+theorem recover_prefix_of_external_blocks
+    (J : Finset (Finset Vertex))
+    (P Out : Finset (Finset Vertex))
+    (hP : ∀ Q ∈ P, Q.powersetCard 2 ⊆ J)
+    (hOut : ∀ Q ∈ Out, ¬ Q.powersetCard 2 ⊆ J) :
+    ((P ∪ Out).filter fun Q => Q.powersetCard 2 ⊆ J) = P := by
+  ext Q
+  constructor
+  · intro h
+    have h' := Finset.mem_filter.mp h
+    rcases Finset.mem_union.mp h'.1 with hP' | hOut'
+    · exact hP'
+    · exact False.elim ((hOut Q hOut') h'.2)
+  · intro h
+    exact Finset.mem_filter.mpr
+      ⟨Finset.mem_union.mpr (Or.inl h), hP Q h⟩
+
+/-- Once every packing has an actual FULL design completed by only
+ external-footprint blocks, its physical recovery left inverse exists
+ uniformly over the entire family. No counting assumption is needed. -/
+theorem universal_physical_completion_recovers
+    (Ps Ds : Finset (Finset (Finset Vertex)))
+    (J : Finset (Finset Vertex))
+    (hcomplete : ∀ P ∈ Ps,
+      ∃ Out : Finset (Finset Vertex),
+        (P ∪ Out) ∈ Ds ∧
+        (∀ Q ∈ P, Q.powersetCard 2 ⊆ J) ∧
+        (∀ Q ∈ Out, ¬ Q.powersetCard 2 ⊆ J)) :
+    ∀ P ∈ Ps, ∃ D ∈ Ds,
+      (D.filter fun Q => Q.powersetCard 2 ⊆ J) = P := by
+  intro P hP
+  obtain ⟨Out, hD, hPin, hOut⟩ := hcomplete P hP
+  exact ⟨P ∪ Out, hD, recover_prefix_of_external_blocks J P Out hPin hOut⟩
+
+/-- The physical recovery supplied by P3 is exactly the precondition
+ of the finite cardinal transfer theorem R63. -/
+theorem universal_physical_completion_card
+    (Ps Ds : Finset (Finset (Finset Vertex)))
+    (J : Finset (Finset Vertex))
+    (hcomplete : ∀ P ∈ Ps,
+      ∃ Out : Finset (Finset Vertex),
+        (P ∪ Out) ∈ Ds ∧
+        (∀ Q ∈ P, Q.powersetCard 2 ⊆ J) ∧
+        (∀ Q ∈ Out, ¬ Q.powersetCard 2 ⊆ J)) :
+    Ps.card ≤ Ds.card := by
+  apply TypedClique.R63.universal_completion_card_bound
+    Ps Ds (fun D => D.filter fun Q => Q.powersetCard 2 ⊆ J)
+  exact universal_physical_completion_recovers Ps Ds J hcomplete
+
 end TypedClique.R72
