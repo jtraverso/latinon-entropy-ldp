@@ -26,7 +26,8 @@ theorem pairFootprint_injective_of_two_le
   constructor
   · intro hv
     have hcard : 1 < Fintype.card {u : V // u ∈ Q₁} := by
-      simpa using h₁
+      have h : 1 < Q₁.card := by omega
+      simpa using h
     obtain ⟨w, hne⟩ := Fintype.exists_ne_of_one_lt_card hcard ⟨v, hv⟩
     have hvw : v ≠ w.1 := by
       intro h
@@ -35,13 +36,18 @@ theorem pairFootprint_injective_of_two_le
     have hp : ({v, w.1} : Finset V) ∈ pairFootprint Q₁ := by
       apply Finset.mem_powersetCard.mpr
       constructor
-      · simp [hv, w.2]
+      · intro u hu
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hu
+        rcases hu with rfl | rfl
+        · exact hv
+        · exact w.property
       · exact Finset.card_pair hvw
     rw [heq] at hp
     exact ((Finset.mem_powersetCard.mp hp).1) (by simp)
   · intro hv
     have hcard : 1 < Fintype.card {u : V // u ∈ Q₂} := by
-      simpa using h₂
+      have h : 1 < Q₂.card := by omega
+      simpa using h
     obtain ⟨w, hne⟩ := Fintype.exists_ne_of_one_lt_card hcard ⟨v, hv⟩
     have hvw : v ≠ w.1 := by
       intro h
@@ -50,7 +56,11 @@ theorem pairFootprint_injective_of_two_le
     have hp : ({v, w.1} : Finset V) ∈ pairFootprint Q₂ := by
       apply Finset.mem_powersetCard.mpr
       constructor
-      · simp [hv, w.2]
+      · intro u hu
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hu
+        rcases hu with rfl | rfl
+        · exact hv
+        · exact w.property
       · exact Finset.card_pair hvw
     rw [← heq] at hp
     exact ((Finset.mem_powersetCard.mp hp).1) (by simp)
