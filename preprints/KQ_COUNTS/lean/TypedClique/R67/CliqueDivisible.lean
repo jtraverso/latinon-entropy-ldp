@@ -52,7 +52,7 @@ theorem clique_divisible
           exact False.elim ((hnot e (Finset.mem_filter.mp he).1)
             (Finset.mem_filter.mp he).2)
         · intro he
-          exact False.elim (Finset.not_mem_empty e he)
+          simp at he
       simp [hzero]
 
 end TypedClique.R67
