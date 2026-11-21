@@ -1,5 +1,5 @@
 module
-public import TypedClique.R64.Preallocation
+public import TypedClique.R65.DivisibleRemainder
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -27,3 +27,5 @@ public import TypedClique.R64.Preallocation
 #print axioms TypedClique.R64.horizon_gap_before_bank
 #print axioms TypedClique.R64.bank_defect_under_preallocated_budget
 #print axioms TypedClique.R64.consumed_reserve_cancels
+
+#print axioms TypedClique.R65.remainder_divisible_of_partition
