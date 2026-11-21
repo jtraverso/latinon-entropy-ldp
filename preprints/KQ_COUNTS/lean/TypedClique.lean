@@ -41,3 +41,7 @@ public import TypedClique.R72.P3Universal
 
 #print axioms TypedClique.R72.remnant_is_subset_divisible
 #print axioms TypedClique.R72.universal_absorber_activated
+
+#print axioms TypedClique.R72.recover_prefix_of_external_blocks
+#print axioms TypedClique.R72.universal_physical_completion_recovers
+#print axioms TypedClique.R72.universal_physical_completion_card
