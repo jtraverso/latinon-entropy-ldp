@@ -1,5 +1,5 @@
 module
-public import TypedClique.R53.Footprint
+public import TypedClique.R53.InjectiveLift
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -16,3 +16,5 @@ public import TypedClique.R53.Footprint
 #print axioms TypedClique.R52.matching_projects_to_packing
 
 #print axioms TypedClique.R53.pairFootprint_injective_of_two_le
+
+#print axioms TypedClique.R53.liftedSupport_injective_of_footprint
