@@ -18,22 +18,22 @@ variable (footprint : Block → Finset Pair) (color : Block → Color)
 variable (capacity : Color → ℕ)
 
 /-- One physical block with an allowed labeled token of its type. -/
-abbrev Candidate := (b : Block) × Fin (capacity (color b))
+abbrev Candidate := Σ b : Block, Fin (capacity (color b))
 
 /-- The lifted hyperedge uses all physical pairs plus one typed token. -/
 def liftedSupport (c : Candidate color capacity) :
-    Finset (Sum Pair ((i : Color) × Fin (capacity i))) :=
+    Finset (Sum Pair (Σ i : Color, Fin (capacity i))) :=
   (footprint c.1).image Sum.inl ∪ {Sum.inr ⟨color c.1, c.2⟩}
 
 theorem physical_pair_mem (c : Candidate color capacity) (e : Pair)
     (he : e ∈ footprint c.1) :
-    (Sum.inl e : Sum Pair ((i : Color) × Fin (capacity i))) ∈
+    (Sum.inl e : Sum Pair (Σ i : Color, Fin (capacity i))) ∈
       liftedSupport footprint color capacity c := by
   simp [liftedSupport, he]
 
 theorem typed_token_mem (c : Candidate color capacity) :
     (Sum.inr ⟨color c.1, c.2⟩ :
-      Sum Pair ((i : Color) × Fin (capacity i))) ∈
+      Sum Pair (Σ i : Color, Fin (capacity i))) ∈
       liftedSupport footprint color capacity c := by
   simp [liftedSupport]
 
@@ -52,7 +52,7 @@ theorem disjoint_implies_footprints {c d : Candidate color capacity}
 theorem disjoint_implies_distinct_tokens {c d : Candidate color capacity}
     (h : Disjoint (liftedSupport footprint color capacity c)
       (liftedSupport footprint color capacity d)) :
-    (⟨color c.1, c.2⟩ : (i : Color) × Fin (capacity i)) ≠
+    (⟨color c.1, c.2⟩ : Σ i : Color, Fin (capacity i)) ≠
       ⟨color d.1, d.2⟩ := by
   intro ht
   have htc := typed_token_mem footprint color capacity c
