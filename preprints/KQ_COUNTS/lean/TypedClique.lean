@@ -1,5 +1,5 @@
 module
-public import TypedClique.R73.ExpectedDegrees
+public import TypedClique.R73.PhysicalTokenFibres
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -49,3 +49,6 @@ public import TypedClique.R73.ExpectedDegrees
 #print axioms TypedClique.R73.token_weight_sum
 #print axioms TypedClique.R73.physical_expected_degree
 #print axioms TypedClique.R73.token_expected_degree
+
+#print axioms TypedClique.R73.physical_type_fibre_card
+#print axioms TypedClique.R73.physical_typewise_fibre_card
