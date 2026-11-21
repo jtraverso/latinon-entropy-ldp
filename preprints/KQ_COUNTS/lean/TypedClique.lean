@@ -1,5 +1,5 @@
 module
-public import TypedClique.R54.Disjointness
+public import TypedClique.R63.UniversalCompletion
 @[expose] public section
 #print axioms TypedClique.R50.recover_eq
 #print axioms TypedClique.R50.complete_injective
@@ -20,3 +20,6 @@ public import TypedClique.R54.Disjointness
 #print axioms TypedClique.R53.liftedSupport_injective_of_footprint
 
 #print axioms TypedClique.R54.liftedSupport_disjoint_iff
+
+#print axioms TypedClique.R63.universal_completion_card_bound
+#print axioms TypedClique.R63.universal_weighted_transfer
