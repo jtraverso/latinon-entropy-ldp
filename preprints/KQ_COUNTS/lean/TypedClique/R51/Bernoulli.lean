@@ -54,7 +54,7 @@ theorem sum_containing_eq_prod (p : Edge → ℝ) (M : Finset Edge) :
         (∏ e ∈ (Finset.univ : Finset Edge),
           if e ∈ M then p e else 1) =
         ∏ e ∈ M, if e ∈ M then p e else 1 := by
-      apply Finset.prod_subset (Finset.subset_univ M)
+      apply (Finset.prod_subset (Finset.subset_univ M) ?_).symm
       intro e he heM
       simp [heM]
     rw [hsubset]
