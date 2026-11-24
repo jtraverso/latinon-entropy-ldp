@@ -1,0 +1,13 @@
+{
+  "status": "PASS_LOCAL_SOURCE_FREEZE",
+  "canonical_entry": "Reconstructed",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "modules": 162,
+  "kernel_declarations": 1997,
+  "theorem_records": 1750,
+  "proof_records": 1750,
+  "distinct_theorem_names": 1741,
+  "verification": "Existing local incremental compilation evidence; new canonical checks, full declaration catalogue and independent full project kernel replay against cached dependencies.",
+  "source_comparison": "162/162 matched the enumeration certificate, the quota-rounding freeze, or the later LDP certificate.",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+}

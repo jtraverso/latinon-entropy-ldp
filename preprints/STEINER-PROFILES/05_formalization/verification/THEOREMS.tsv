@@ -1,0 +1,1751 @@
+module	declaration	axioms
+AffineCellCounts	KqR75.AffineCellCounts.baseline_unique	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.histogram_pair_invariant	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.active_subset	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.eq_tag_of_card_ge	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.shifted_excludes_top	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.lineColours.congr_simp	propext, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.top_difference	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.lineColours.eq_1	propext, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.active.eq_1	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.pair_colour_sum	propext, Classical.choice, Quot.sound
+AffineCellCounts	KqR75.AffineCellCounts.histogram.eq_1	propext, Classical.choice, Quot.sound
+BankBudget	KqR75.BankCapacity.capacity_rounding	propext, Classical.choice, Quot.sound
+BankBudget	KqR75.BankCapacity.block_card_of_marking	propext, Classical.choice, Quot.sound
+BankBudget	KqR75.BankCapacity.edge_card_of_degree	propext, Classical.choice, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.bounded_integer_correction._simp_1_2	propext, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.select_signed_copies._proof_1_2	propext, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.select_signed_copies._proof_1_3	propext, Classical.choice, Quot.sound
+BankCapacity	KqR75.BankCapacity.bounded_integer_correction	propext, Classical.choice, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.select_signed_copies._proof_1_4	propext, Classical.choice, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.select_signed_copies._proof_1_1	propext, Quot.sound
+BankCapacity	KqR75.BankCapacity.select_signed_copies	propext, Classical.choice, Quot.sound
+BankCapacity	_private.BankCapacity.0.KqR75.BankCapacity.bounded_integer_correction._simp_1_1	propext
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.histogram_indicator._simp_1_1	propext
+BankDefect	KqR75.ProfileBalance.histogram.congr_simp	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_1	propext
+BankDefect	KqR75.BankCapacity.completed_defect	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.defect_in_kernel._simp_1_3	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_3	propext
+BankDefect	KqR75.BankCapacity.load_indicator	propext, Classical.choice, Quot.sound
+BankDefect	KqR75.BankCapacity.histogram_indicator	propext, Classical.choice, Quot.sound
+BankDefect	KqR75.BankCapacity.prefix_defect	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_7	propext
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_2	propext
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_6	propext, Classical.choice, Quot.sound
+BankDefect	KqR75.ColouredCliques.pairMargin.congr_simp	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_4	propext
+BankDefect	KqR75.BankCapacity.defect_in_kernel	propext, Classical.choice, Quot.sound
+BankDefect	KqR75.BankCapacity.integerHistogram.congr_simp	propext, Classical.choice, Quot.sound
+BankDefect	_private.BankDefect.0.KqR75.BankCapacity.prefix_defect._simp_1_5	propext
+BankDesign	KqR75.PhysicalBank.correct_design_with_bank	propext, Classical.choice, Quot.sound
+BankDesign	KqR75.PhysicalBank.edgeMultiplicity.eq_1	propext, Classical.choice, Quot.sound
+BankDesign	KqR75.BankCapacity.integerHistogram.eq_1	propext, Classical.choice, Quot.sound
+BankDesign	_private.BankDesign.0.KqR75.PhysicalBank.histogram_union	propext, Classical.choice, Quot.sound
+BankDesign	_private.BankDesign.0.KqR75.PhysicalBank.disjoint_of_multiplicities._proof_1_1	propext, Classical.choice, Quot.sound
+BankDesign	_private.BankDesign.0.KqR75.PhysicalBank.multiplicity_union	propext, Classical.choice, Quot.sound
+BankDesign	_private.BankDesign.0.KqR75.PhysicalBank.correct_design_with_bank._proof_1_1	propext, Classical.choice, Quot.sound
+BankDesign	_private.BankDesign.0.KqR75.PhysicalBank.disjoint_of_multiplicities	propext, Classical.choice, Quot.sound
+BankHorizon	KqR75.BankCapacity.host_histogram_bounds	propext, Classical.choice, Quot.sound
+BankHorizon	_private.BankHorizon.0.KqR75.BankCapacity.prefix_histogram_bound._proof_1_2	propext, Classical.choice, Quot.sound
+BankHorizon	KqR75.BankCapacity.horizon_loss_bound	propext, Classical.choice, Quot.sound
+BankHorizon	KqR75.BankCapacity.prefix_histogram_bound	propext, Classical.choice, Quot.sound
+BankHorizon	_private.BankHorizon.0.KqR75.BankCapacity.prefix_histogram_bound._proof_1_1	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.saturated_card_mul_le	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.choose_vertices	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.place_bank._simp_1_5	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.place_bank._proof_1_6	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.usedNeighbors.match_1.eq_2	
+BankPlacement	KqR75.BankPlacement.place_indexed_bank	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.cellVertices.eq_1	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.mem_usedNeighbors	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.choose_embedding	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.total_useCount	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.useCount.congr_simp	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.place_indexed_bank._simp_1_2	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.usedNeighbors.eq_1	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.place_cell	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.usedNeighbors.eq_def	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.useCount.eq_1	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.choose_vertices._proof_1_1	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.usedNeighbors.eq_2	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.usedNeighbors.match_1.eq_1	
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.usedNeighbors_symm	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.usedNeighbors_card	propext, Classical.choice, Quot.sound
+BankPlacement	KqR75.BankPlacement.place_bank	propext, Classical.choice, Quot.sound
+BankPlacement	_private.BankPlacement.0.KqR75.BankPlacement.place_indexed_bank._simp_1_3	propext, Classical.choice, Quot.sound
+BankReserve	KqR75.PhysicalCompletion.eventually_basal_outside_reserve	propext, Classical.choice, Quot.sound
+BankReserve	_private.BankReserve.0.KqR75.PhysicalCompletion.eventually_basal_outside_reserve._simp_1_1	propext, Classical.choice, Quot.sound
+BankScales	KqR75.BankScales.eventually_place_copies	propext, Classical.choice, Quot.sound
+BankScales	KqR75.BankScales.eventually_parameters	propext, Classical.choice, Quot.sound
+BankSwitch	KqR75.PhysicalBank.switch_whole_bank	propext, Classical.choice, Quot.sound
+BankSwitch	_private.BankSwitch.0.KqR75.PhysicalBank.switch_whole_bank._simp_1_1	propext, Quot.sound
+BankSwitch	KqR75.PhysicalBank.basalBlocks.congr_simp	propext, Classical.choice, Quot.sound
+BasalBank	_private.BasalBank.0.KqR75.BasalBank.packing_and_degree._proof_1_2	propext, Classical.choice, Quot.sound
+BasalBank	_private.BasalBank.0.KqR75.BasalBank.packing_and_degree._proof_1_3	propext, Quot.sound
+BasalBank	KqR75.BasalBank.packing_and_degree	propext, Classical.choice, Quot.sound
+BasalBank	_private.BasalBank.0.KqR75.BasalBank.packing_and_degree._proof_1_1	propext, Classical.choice, Quot.sound
+Bilateral	_private.Bilateral.0.KqR75.PhysicalCompletion.eventually_designFibre_bilateral_of_omni._proof_1_1	propext, Quot.sound
+Bilateral	KqR75.PhysicalCompletion.eventually_designFibre_bilateral_of_omni	propext, Classical.choice, Quot.sound
+CliqueCodegrees	KqR75.CliqueCodegrees.codegree_le_complete	propext, Classical.choice, Quot.sound
+CliqueCodegrees	KqR75.CliqueCodegrees.codegree_eq_gram	propext, Classical.choice, Quot.sound
+CliqueCodegrees	_private.CliqueCodegrees.0.KqR75.CliqueCodegrees.normalizedGram_offdiag._proof_1_1	propext, Classical.choice, Quot.sound
+CliqueCodegrees	KqR75.CliqueCodegrees.history_codegree_le	propext, Classical.choice, Quot.sound
+CliqueCodegrees	KqR75.CliqueCodegrees.normalizedGram_offdiag	propext, Classical.choice, Quot.sound
+CliqueCodegrees	KqR75.CliqueCodegrees.history_codegree_rate	propext, Classical.choice, Quot.sound
+CliqueCodegrees	_private.CliqueCodegrees.0.KqR75.CliqueCodegrees.normalizedGram_offdiag._proof_1_2	propext, Classical.choice, Quot.sound
+CliqueCodegrees	_private.CliqueCodegrees.0.KqR75.CliqueCodegrees.normalizedGram_offdiag._proof_1_3	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_2	propext, Quot.sound
+CliqueGram	KqR75.CliqueGram.disjoint_ratio	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.edge_gram_entry._simp_1_2	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_3	propext, Quot.sound
+CliqueGram	KqR75.CliqueGram.incidence_row_sum	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.multiplicity_eq_choose._simp_1_2	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_12	propext
+CliqueGram	KqR75.CliqueGram.gram_entry	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.incidence_column_sum._simp_1_1	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.multiplicity_eq_zero._proof_1_1	propext, Classical.choice, Quot.sound
+CliqueGram	KqR75.CliqueGram.edge_gram_entry	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.vertex_gram._proof_1_3	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.adjacent_ratio._proof_1_1	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_10	propext
+CliqueGram	KqR75.CliqueGram.incidence.eq_1	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_5	propext, Quot.sound
+CliqueGram	KqR75.CliqueGram.adjacent_ratio	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.adjacent_ratio._proof_1_2	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.adjacent_ratio._proof_1_3	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.adjacent_ratio._proof_1_5	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.edge_gram_entry._simp_1_1	propext
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_13	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_6	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_1	propext, Quot.sound
+CliqueGram	KqR75.CliqueGram.multiplicity_eq_zero	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.incidence_column_sum._simp_1_2	propext, Classical.choice, Quot.sound
+CliqueGram	KqR75.CliqueGram.choose_ratio	propext, Classical.choice, Quot.sound
+CliqueGram	KqR75.CliqueGram.multiplicity.eq_1	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_11	propext
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_14	propext
+CliqueGram	KqR75.CliqueGram.multiplicity_eq_choose	propext, Classical.choice, Quot.sound
+CliqueGram	KqR75.CliqueGram.pair_gram_entry	propext, Classical.choice, Quot.sound
+CliqueGram	KqR75.CliqueGram.vertex_gram	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.adjacent_ratio._proof_1_4	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.gram_entry._simp_1_1	propext
+CliqueGram	KqR75.CliqueGram.multiplicity.congr_simp	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_7	propext, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.vertex_gram._simp_1_1	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_8	propext
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._simp_1_9	propext
+CliqueGram	KqR75.CliqueGram.incidence_column_sum	propext, Classical.choice, Quot.sound
+CliqueGram	_private.CliqueGram.0.KqR75.CliqueGram.disjoint_ratio._proof_1_4	propext, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.quadratic_intersections	propext, Classical.choice, Quot.sound
+CodegreeLoss	_private.CodegreeLoss.0.KqR75.CodegreeLoss.total_loss_le._simp_1_1	propext
+CodegreeLoss	KqR75.OverlapDrift.loss.eq_1	propext, Classical.choice, Quot.sound
+CodegreeLoss	_private.CodegreeLoss.0.KqR75.CodegreeLoss.loss_le_codegrees._simp_1_1	propext
+CodegreeLoss	KqR75.CodegreeLoss.loss_le_card_mul	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.loss_nonneg	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.overcount_nonneg	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.codegree.congr_simp	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.off_diagonal_intersections	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.square_loss_le	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.codegree_diag	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.overcount_le	propext, Classical.choice, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.loss_le_codegrees	propext, Classical.choice, Quot.sound
+CodegreeLoss	_private.CodegreeLoss.0.KqR75.CodegreeLoss.total_loss_le._simp_1_3	propext, Quot.sound
+CodegreeLoss	KqR75.CodegreeLoss.total_loss_le	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.fibre_card	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensions.congr_simp	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.card_partChoices	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.partChoices.congr_simp	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.seed_weight_lower._proof_1_1	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.extensionEquiv._simp_4	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_mass	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.fibre_pos	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.sum_profile	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.card_extensions_empty	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.fibre_bounds	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.part_mono	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensionEquiv._proof_9	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.card_clique_fibre._simp_1_2	propext
+ColouredCliques	KqR75.ColouredCliques.cliques.congr_simp	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.profile.eq_1	propext, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.extensionEquiv._simp_6	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.incidence_identity	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.cliqueType_eq	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensionEquiv._proof_2	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.cliqueType._proof_1	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.cliqueType._proof_2	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.cliqueType._proof_3	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensionEquiv._proof_1	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.fibre_bounds._proof_1_3	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.card_clique_fibre	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.card_extensions	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensions.eq_1	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ProfileWeights.incidenceCount.eq_1	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.incidence_card	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_weight_abs_le	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.part.eq_1	propext, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.cliques.eq_1	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.seed_weight_lower._proof_1_3	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.edge_fibre_pos	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.card_clique_fibre._simp_1_3	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.extensionEquiv._simp_3	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_load_zero	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_weight_lower	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.seed_weight_abs_le._proof_1_2	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_load	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.profile.congr_simp	propext, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.seed_load_eq_margin	propext, Classical.choice, Quot.sound
+ColouredCliques	KqR75.ColouredCliques.extensionEquiv._proof_10	propext, Classical.choice, Quot.sound
+ColouredCliques	_private.ColouredCliques.0.KqR75.ColouredCliques.seed_weight_abs_le._proof_1_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.middle_row_sum	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.inverseOperator_rows_le_four._simp_1_1	propext, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.normalizedGram_mul_inverse	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.operator_mul_inverse._proof_1_1	propext, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.inverseOperator_cols_le_four	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_9	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_10	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_12	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.inverseOperator_symmetric	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_1	propext, Quot.sound
+CompleteJohnson	KqR75.CliqueGram.pairIncidence.congr_simp	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.middle_nonneg	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.operator_mul_inverse	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.normalizedGram_inverse	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.operator.eq_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CliqueGram.incidence.congr_simp	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_15	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.inverseOperator_rows_le_four	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_8	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_14	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.normalizedGram_inverse_rows_le_four	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.inverseOperator_symmetric._simp_1_4	propext
+CompleteJohnson	KqR75.CompleteJohnson.middle.eq_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.normalizedGram_eq_operator	propext, Classical.choice, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_7	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.normalizedGram.eq_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.edge_card	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.operator._proof_1	propext
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.operator_mul_inverse._proof_1_3	propext, Quot.sound
+CompleteJohnson	_private.CompleteJohnson.0.KqR75.CompleteJohnson.normalizedGram_eq_operator._proof_1_13	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.CompleteJohnson.inverseOperator.eq_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.GeneralJohnson.s1.eq_1	propext, Classical.choice, Quot.sound
+CompleteJohnson	KqR75.GeneralJohnson.s2.eq_1	propext, Classical.choice, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.packing_bound	propext, Classical.choice, Quot.sound
+CompletionBudget	KqR75.PhysicalCompletion.completion_block_budget	propext, Classical.choice, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.packing_bound._proof_1_1	propext, Quot.sound
+CompletionBudget	KqR75.PhysicalCompletion.completion_type_budget	propext, Classical.choice, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.completion_block_budget._proof_1_1	propext, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.packing_bound._proof_1_2	propext, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.card_le_edges	propext, Classical.choice, Quot.sound
+CompletionBudget	_private.CompletionBudget.0.KqR75.PhysicalCompletion.completion_type_budget._simp_1_1	propext, Classical.choice, Quot.sound
+CompletionWithCapacity	_private.CompletionWithCapacity.0.KqR75.PhysicalCompletion.complete_with_capacity._proof_1	propext, Quot.sound
+CompletionWithCapacity	KqR75.PhysicalCompletion.complete_with_capacity._proof_4	propext, Classical.choice, Quot.sound
+CompletionWithCapacity	KqR75.PhysicalCompletion.complete_with_capacity._proof_2	propext, Quot.sound
+CompletionWithCapacity	_private.CompletionWithCapacity.0.KqR75.PhysicalCompletion.complete_with_capacity._proof_3	propext, Classical.choice, Quot.sound
+CompletionWithCapacity	KqR75.PhysicalCompletion.complete_with_capacity	propext, Classical.choice, Quot.sound
+CompletionWithCapacity	_private.CompletionWithCapacity.0.KqR75.PhysicalCompletion.complete_with_capacity._proof_1_1	propext, Quot.sound
+CorrectedCompletion	_private.CorrectedCompletion.0.KqR75.PhysicalCompletion.corrected_completion._simp_1_1	propext, Classical.choice, Quot.sound
+CorrectedCompletion	KqR75.PhysicalCompletion.corrected_completion	propext, Classical.choice, Quot.sound
+CoverAssembly	KqR75.CoverDown.cover_two_phases	propext, Classical.choice, Quot.sound
+CoverAssembly	_private.CoverAssembly.0.KqR75.CoverDown.cover_two_phases._proof_1_1	propext, Classical.choice, Quot.sound
+CoverAssembly	_private.CoverAssembly.0.KqR75.CoverDown.cover_two_phases._proof_1_2	propext, Classical.choice, Quot.sound
+CoverAssembly	_private.CoverAssembly.0.KqR75.CoverDown.cover_two_phases._proof_1_3	propext, Classical.choice, Quot.sound
+CoverAssembly	KqR75.CoverDown.potential.eq_1	propext, Classical.choice, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_lower_exponent._proof_1_2	propext, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.pair_lower_exponent	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.star_edge_exponent._proof_1_1	propext, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.star_candidate_scale	propext, Classical.choice, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.choose_two_add	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_vertex_exponent._proof_1_1	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_vertex_exponent._proof_1_2	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.star_edge_exponent._proof_1_2	propext, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.star_edge_exponent	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_lower_exponent._proof_1_1	propext, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.pair_candidate_scale	propext, Classical.choice, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.pair_vertex_exponent	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_edge_exponent._proof_1_2	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_candidate_scale._proof_1_1	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.choose_two_add._proof_1_1	propext, Quot.sound
+CoverBudgetScales	_private.CoverBudgetScales.0.KqR75.CoverDown.pair_edge_exponent._proof_1_1	propext, Quot.sound
+CoverBudgetScales	KqR75.CoverDown.pair_edge_exponent	propext, Quot.sound
+CoverChoices	_private.CoverChoices.0.KqR75.CoverDown.extension_mem	propext, Classical.choice, Quot.sound
+CoverChoices	KqR75.CoverDown.exists_clean_extension_of_bounds	propext, Classical.choice, Quot.sound
+CoverChoices	KqR75.CoverDown.extension_fibre_density	propext, Classical.choice, Quot.sound
+CoverChoices	_private.CoverChoices.0.KqR75.CoverDown.extension_fibre_density._proof_1_1	propext, Quot.sound
+CoverChoices	KqR75.CoverDown.exists_clean_extension	propext, Classical.choice, Quot.sound
+CoverComplete	_private.CoverComplete.0.KqR75.CoverDown.eventually_cover._proof_1_2	propext, Quot.sound
+CoverComplete	_private.CoverComplete.0.KqR75.CoverDown.eventually_cover._proof_1_3	propext, Quot.sound
+CoverComplete	_private.CoverComplete.0.KqR75.CoverDown.eventually_cover._proof_1_1	propext, Quot.sound
+CoverComplete	_private.CoverComplete.0.KqR75.CoverDown.eventually_cover._proof_1_7	propext, Classical.choice, Quot.sound
+CoverComplete	_private.CoverComplete.0.KqR75.CoverDown.eventually_cover._proof_1_4	propext, Classical.choice, Quot.sound
+CoverComplete	KqR75.CoverDown.eventually_cover	propext, Classical.choice, Quot.sound
+CoverDegrees	KqR75.CoverDown.star_adjacentVertices	propext, Classical.choice, Quot.sound
+CoverDegrees	KqR75.CoverDown.adjacentVertices_card	propext, Classical.choice, Quot.sound
+CoverDegrees	KqR75.CoverDown.card_large	propext, Classical.choice, Quot.sound
+CoverDegrees	KqR75.CoverDown.sum_degrees	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.star_step._simp_1_1	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_potential._simp_1_3	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.clique_degree._simp_1_1	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_potential._simp_1_1	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.extension_fibre_le._simp_1_2	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.star.eq_1	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.star_clique_split	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.degree.eq_1	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.pair_step_leave_card	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.star_card	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_leave_card._simp_1_1	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.degree.congr_simp	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.exists_avoiding._proof_1_1	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.star_step._simp_1_2	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.degree_sdiff_add	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_potential._simp_1_2	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.extension_fibre_le	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.pair_step_potential	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.star_step	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.extension_fibre_le._simp_1_3	propext
+CoverDown	KqR75.CoverDown.degree_union	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.clique_degree	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.extension_fibre_le._simp_1_1	propext, Classical.choice, Quot.sound
+CoverDown	KqR75.CoverDown.exists_avoiding	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.star_step._simp_1_3	propext
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_leave_card._simp_1_2	propext, Classical.choice, Quot.sound
+CoverDown	_private.CoverDown.0.KqR75.CoverDown.pair_step_potential._proof_1_5	propext, Classical.choice, Quot.sound
+CoverGuards	KqR75.CoverDown.sum_potential	propext, Classical.choice, Quot.sound
+CoverGuards	KqR75.CoverDown.star_candidates_card	propext, Classical.choice, Quot.sound
+CoverGuards	_private.CoverGuards.0.KqR75.CoverDown.pair_forbidden_card._proof_1_1	propext, Classical.choice, Quot.sound
+CoverGuards	KqR75.CoverDown.pair_forbidden_card	propext, Classical.choice, Quot.sound
+CoverGuards	KqR75.CoverDown.saturated_card	propext, Classical.choice, Quot.sound
+CoverGuards	_private.CoverGuards.0.KqR75.CoverDown.saturated_card._proof_1_1	propext, Quot.sound
+CoverIteration	KqR75.CoverDown.run_phase	propext, Classical.choice, Quot.sound
+CoverIteration	_private.CoverIteration.0.KqR75.CoverDown.run_phase._proof_1_1	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.cover_insert	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.block_uses_reserve	propext, Classical.choice, Quot.sound
+CoverPacking	_private.CoverPacking.0.KqR75.CoverDown.cover_insert._simp_1_2	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.used_sub	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.block_size	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.leave_sub	propext, Classical.choice, Quot.sound
+CoverPacking	_private.CoverPacking.0.KqR75.CoverDown.cover_insert._simp_1_1	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.covered	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.Cover.edge_disjoint	propext, Classical.choice, Quot.sound
+CoverPacking	KqR75.CoverDown.cover_empty	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_4	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_2	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_3	propext, Classical.choice, Quot.sound
+CoverPairSelector	KqR75.CoverDown.select_pair	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_1	propext, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_6	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_7	propext, Classical.choice, Quot.sound
+CoverPairSelector	_private.CoverPairSelector.0.KqR75.CoverDown.select_pair._proof_1_5	propext, Classical.choice, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_4	propext, Quot.sound
+CoverRatios	KqR75.CoverDown.eventually_cover_ratios	propext, Classical.choice, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_6	propext, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_5	propext, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_7	propext, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_1	propext, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_2	propext, Quot.sound
+CoverRatios	_private.CoverRatios.0.KqR75.CoverDown.eventually_cover_ratios._proof_1_3	propext, Quot.sound
+CoverScales	KqR75.CoverDown.obstruction_ratio	propext, Classical.choice, Quot.sound
+CoverScales	_private.CoverScales.0.KqR75.CoverDown.eventually_small_obstruction._proof_1_1	propext, Quot.sound
+CoverScales	KqR75.CoverDown.eventually_small_obstruction	propext, Classical.choice, Quot.sound
+CoverSelectors	_private.CoverSelectors.0.KqR75.CoverDown.restrict_extensions	propext, Classical.choice, Quot.sound
+CoverSelectors	_private.CoverSelectors.0.KqR75.CoverDown.select_star._proof_1_1	propext, Classical.choice, Quot.sound
+CoverSelectors	_private.CoverSelectors.0.KqR75.CoverDown.select_star._proof_1_2	propext, Classical.choice, Quot.sound
+CoverSelectors	_private.CoverSelectors.0.KqR75.CoverDown.select_star._proof_1_3	propext, Classical.choice, Quot.sound
+CoverSelectors	KqR75.CoverDown.select_star	propext, Classical.choice, Quot.sound
+CoverSelectors	_private.CoverSelectors.0.KqR75.CoverDown.extension_spec	propext, Classical.choice, Quot.sound
+CoverSteps	_private.CoverSteps.0.KqR75.CoverDown.clique_edges_subset	propext, Classical.choice, Quot.sound
+CoverSteps	_private.CoverSteps.0.KqR75.CoverDown.star_extension._proof_1_1	propext, Quot.sound
+CoverSteps	_private.CoverSteps.0.KqR75.CoverDown.pair_mem_reserve	propext, Classical.choice, Quot.sound
+CoverSteps	_private.CoverSteps.0.KqR75.CoverDown.pair_mem_reserve._simp_1_1	propext, Classical.choice, Quot.sound
+CoverSteps	KqR75.CoverDown.star_extension	propext, Classical.choice, Quot.sound
+CoverSteps	KqR75.CoverDown.pair_extension	propext, Classical.choice, Quot.sound
+CoverThresholds	KqR75.CoverDown.eventually_cover_thresholds	propext, Classical.choice, Quot.sound
+CoverThresholds	_private.CoverThresholds.0.KqR75.CoverDown.eventually_cover_thresholds._proof_1_1	propext, Classical.choice, Quot.sound
+CoverThresholds	_private.CoverThresholds.0.KqR75.CoverDown.eventually_cover_thresholds._proof_1_2	propext, Classical.choice, Quot.sound
+CoverThresholds	_private.CoverThresholds.0.KqR75.CoverDown.eventually_cover_thresholds._proof_1_3	propext, Classical.choice, Quot.sound
+CoverTransfer	_private.CoverTransfer.0.KqR75.CoverDown.physical_completion._simp_1_1	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.vertexSets_physicalSets	propext, Classical.choice, Quot.sound
+CoverTransfer	_private.CoverTransfer.0.KqR75.CoverDown.physical_completion._simp_1_3	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.reserve_vertexSets	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.vertexSets_card	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.physicalSets_mem	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.vertexSets_size	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.physical_completion	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.vertexSets_mem	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.vertexSets._proof_1	propext, Classical.choice, Quot.sound
+CoverTransfer	KqR75.CoverDown.physicalSets.eq_1	propext, Classical.choice, Quot.sound
+CoverTransfer	_private.CoverTransfer.0.KqR75.CoverDown.physical_completion._simp_1_2	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	_private.CumulativeTypeDrift.0.KqR75.CumulativeTypeDrift.sum_envelope._simp_1_2	propext, Quot.sound
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.envelope._proof_1	propext
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.envelope._proof_4	propext
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.physical_path_bound	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	_private.CumulativeTypeDrift.0.KqR75.TypeMartingale.increment.match_1.eq_1	
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.pathSum_abs_le	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	_private.CumulativeTypeDrift.0.KqR75.TypeMartingale.increment.match_1.eq_2	
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.sum_envelope	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.envelope.eq_1	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.driftConstant.eq_1	propext, Classical.choice, Quot.sound
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.envelope._proof_2	propext
+CumulativeTypeDrift	KqR75.CumulativeTypeDrift.envelope._proof_3	propext
+CumulativeTypeDrift	_private.CumulativeTypeDrift.0.KqR75.CumulativeTypeDrift.physical_path_bound._proof_1_1	propext, Classical.choice, Quot.sound
+DeletedGram	KqR75.DeletedGram.loss_row_le_outside	propext, Classical.choice, Quot.sound
+DeletedGram	KqR75.DeletedGram.loss_nonneg	propext, Classical.choice, Quot.sound
+DeletedGram	KqR75.DeletedGram.pruned_inverse_rows_le_eight	propext, Classical.choice, Quot.sound
+DeletedGram	KqR75.DeletedGram.gram_nonneg	propext, Classical.choice, Quot.sound
+DeletedGram	_private.DeletedGram.0.KqR75.DeletedGram.loss_row_le_outside._simp_1_1	propext, Quot.sound
+DesignFibre	_private.DesignFibre.0.KqR75.PhysicalCompletion.mem_designFibre._simp_1_2	propext, Classical.choice, Quot.sound
+DesignFibre	KqR75.PhysicalCompletion.designFibre.eq_1	propext, Classical.choice, Quot.sound
+DesignFibre	_private.DesignFibre.0.KqR75.PhysicalCompletion.mem_designFibre._simp_1_3	propext, Classical.choice, Quot.sound
+DesignFibre	KqR75.PhysicalCompletion.mem_designFibre	propext, Classical.choice, Quot.sound
+DesignFibre	KqR75.PhysicalCompletion.log_designFibre_of_good_histories	propext, Classical.choice, Quot.sound
+DesignFibre	KqR75.PhysicalCompletion.designFibre.congr_simp	propext, Classical.choice, Quot.sound
+DesignFibreMass	_private.DesignFibreMass.0.KqR75.PhysicalCompletion.profile_mass_of_designFibre._simp_1_1	propext, Classical.choice, Quot.sound
+DesignFibreMass	KqR75.PhysicalCompletion.profile_mass_of_designFibre	propext, Classical.choice, Quot.sound
+DesignFibreMass	_private.DesignFibreMass.0.KqR75.PhysicalCompletion.profile_mass_of_designFibre._simp_1_2	propext, Quot.sound
+DesignFibreMass	KqR75.PhysicalCompletion.designFibre_type_score_as_entropy	propext, Classical.choice, Quot.sound
+DesignFibreMass	_private.DesignFibreMass.0.KqR75.PhysicalCompletion.designFibre_type_score_as_entropy._proof_1_1	propext, Classical.choice, Quot.sound
+DesignFibreMass	KqR75.PhysicalCompletion.complete_clique_mass	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.total_eq_unit_fibre	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.edge_card	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_9	propext
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.mem_designs._simp_1_2	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileCount.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.histogram_nonneg	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileOf_box	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_sum._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_sum._simp_1_5	propext
+DesignProfileCounts	KqR75.ProfileLDP.blockMass_pos	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.histogram_margin._simp_1_2	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.designs.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_sum._simp_1_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileOf.congr_simp	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_5	propext
+DesignProfileCounts	KqR75.ProfileLDP.profiles_card_le	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.mem_designs	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileCount_singleton	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.histogram_mass	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.histogram_margin	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.blockMass_nonneg	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.mem_profiles	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.mem_designs._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_sum._simp_1_2	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileCount_mono	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.histogram_margin._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileCount_sum	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileOf_sum._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_2	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.profileCount_singleton._simp_1_6	propext, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileOf_sum	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.normalizedQuota.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	_private.DesignProfileCounts.0.KqR75.ProfileLDP.histogram_margin._simp_1_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.profileOf.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileCounts	KqR75.ProfileLDP.blockMass.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.profileOf_ordered	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.defect.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.designProfileLDP._proof_1_1	propext, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.mem_feasible_iff	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_lower_profiles._proof_1_2	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.mem_feasible_iff._simp_1_2	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_classes	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.feasible_mix._simp_1_1	propext, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_reference_pos	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_upper_profiles._proof_1_1	propext, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.designProfileLDP	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.defect.congr_simp	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.designProfileLDP._simp_1_3	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.continuous_defect	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.recover_quotas	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.mem_feasible_iff._simp_1_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_upper_profiles	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.designProfileLDP_probability	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.profileCount.congr_simp	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.histogram_ordered	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.continuous_orderedMargins	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.defect_nonneg	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.orderedMargins.eq_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_classes._proof_1_1	propext, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.mem_feasible_iff._simp_1_3	propext
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_lower_profiles	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.orderedMargins_eq_iff	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.feasible_mix	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.eventually_lower_profiles._proof_1_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.designProfileLDP._simp_1_5	propext
+DesignProfileLDP	KqR75.ProfileLDP.feasible.congr_simp	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.orderedMargins._proof_2	propext, Classical.choice, Quot.sound
+DesignProfileLDP	KqR75.ProfileLDP.orderedMargins._proof_1	propext, Classical.choice, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.designProfileLDP._simp_1_4	propext
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.designProfileLDP._simp_1_6	propext
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.recover_quotas._proof_1_1	propext, Quot.sound
+DesignProfileLDP	_private.DesignProfileLDP.0.KqR75.ProfileLDP.reference_feasible	propext, Classical.choice, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.blockMass_square_le	propext, Classical.choice, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_lower_budget._proof_1_1	propext, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.admissibleOrders_neBot._proof_1_4	propext, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_power_budget	propext, Classical.choice, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.admissibleOrders_neBot._proof_1_2	propext, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.admissibleOrders_neBot._proof_1_3	propext, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.eventually_upper_budget	propext, Classical.choice, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_total_designs._proof_1_2	propext, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_total_designs._proof_1_1	propext, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.admissibleOrders_neBot	propext, Classical.choice, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.tendsto_blockMass	propext, Classical.choice, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_power_budget._proof_1_1	propext, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.eventually_total_designs	propext, Classical.choice, Quot.sound
+DesignProfileRates	_private.DesignProfileRates.0.KqR75.ProfileLDP.eventually_upper_budget._proof_1_1	propext, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.eventually_lower_budget	propext, Classical.choice, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.admissibleOrders.eq_1	propext, Quot.sound
+DesignProfileRates	KqR75.ProfileLDP.eventually_profiles_subexponential	propext, Classical.choice, Quot.sound
+DistinctTriples	_private.DistinctTriples.0.KqR75.distinct_triple_sum._simp_1_1	propext, Quot.sound
+DistinctTriples	_private.DistinctTriples.0.KqR75.distinct_triple_sum._simp_1_3	propext, Classical.choice, Quot.sound
+DistinctTriples	KqR75.distinct_triple_sum	propext, Classical.choice, Quot.sound
+DistinctTriples	_private.DistinctTriples.0.KqR75.distinct_triple_sum._simp_1_2	propext, Quot.sound
+DistinctTriples	KqR75.triple_fraction_gap	propext, Classical.choice, Quot.sound
+EnergyExit	KqR75.EnergyExit.crossing_retained	propext, Classical.choice, Quot.sound
+EnergyExit	_private.EnergyExit.0.KqR75.EnergyExit.crossing_retained._simp_1_1	propext
+EnergyExit	_private.EnergyExit.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+EnergyExit	KqR75.EnergyExit.support_markov	propext, Classical.choice, Quot.sound
+EnergyExit	KqR75.EnergyExit.first_exit_bound	propext, Classical.choice, Quot.sound
+EnergyExit	_private.EnergyExit.0.KqR75.EnergyExit.support_markov._simp_1_1	propext
+EnergyExit	_private.EnergyExit.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+EnergyFactor	KqR75.Energy.factor_le_one	propext, Classical.choice, Quot.sound
+EnergyFactor	KqR75.Energy.weighted_step	propext, Classical.choice, Quot.sound
+ExactPairMargins	KqR75.PhysicalCompletion.exactPairMargins_iff	propext, Classical.choice, Quot.sound
+ExactPairMargins	KqR75.ColouredCliques.pairMargin.eq_1	propext, Classical.choice, Quot.sound
+FiniteAzuma	KqR75.FiniteAzuma.tail	propext, Classical.choice, Quot.sound
+FiniteAzuma	KqR75.FiniteAzuma.centered_abs_le	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_2	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_4	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_7	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_6	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_1	propext
+FiniteAzuma	KqR75.FiniteAzuma.centered_zero	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_5	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_3	propext
+FiniteAzuma	KqR75.FiniteAzuma.increment_mgf	propext, Classical.choice, Quot.sound
+FiniteAzuma	KqR75.FiniteAzuma.centered.eq_1	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_8	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_1	
+FiniteAzuma	KqR75.FiniteAzuma.history_mgf	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.increment_mgf._simp_1_3	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_5	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.centered_zero._simp_1_2	propext, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_2	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_6	propext, Classical.choice, Quot.sound
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_4	propext
+FiniteAzuma	_private.FiniteAzuma.0.KqR75.FiniteAzuma.tail._simp_1_7	propext
+FiniteProcess	KqR75.FiniteProcess.drift_bound	propext, Classical.choice, Quot.sound
+FiniteProcess	KqR75.FiniteProcess.event_markov	propext, Classical.choice, Quot.sound
+FiniteProcess	LatinonEntropy.historyExpectation.congr_simp	propext, Classical.choice, Quot.sound
+FiniteProcess	KqR75.FiniteProcess.eventMass.eq_1	propext, Classical.choice, Quot.sound
+FiniteProcess	KqR75.FiniteProcess.event_bound_of_drift	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.u0._proof_4	propext
+GeneralJohnson	KqR75.GeneralJohnson.u0._proof_1	propext
+GeneralJohnson	KqR75.GeneralJohnson.alphaNum._proof_3	propext
+GeneralJohnson	KqR75.GeneralJohnson.envelopeNum._proof_2	propext
+GeneralJohnson	KqR75.GeneralJohnson.envelope_eq	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.alphaNum._proof_2	propext
+GeneralJohnson	KqR75.GeneralJohnson.alpha_eq	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.coefficient_signs	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.orbit_identities	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.envelope_le_four	propext, Classical.choice, Quot.sound
+GeneralJohnson	KqR75.GeneralJohnson.alphaNum._proof_5	propext
+GeneralJohnson	KqR75.GeneralJohnson.u0._proof_2	propext
+GeneralJohnson	KqR75.GeneralJohnson.alphaNum._proof_4	propext
+GeneralJohnson	KqR75.GeneralJohnson.alphaNum._proof_1	propext
+GeneralJohnson	KqR75.GeneralJohnson.u0._proof_3	propext
+GeneralJohnson	KqR75.GeneralJohnson.envelopeNum._proof_1	propext
+GeneralJohnson	KqR75.GeneralJohnson.s1._proof_1	propext
+GeneralJohnson	KqR75.GeneralJohnson.s2._proof_1	propext
+GeneralJohnson	KqR75.GeneralJohnson.alpha_le_four	propext, Classical.choice, Quot.sound
+GoodPrefixProbability	_private.GoodPrefixProbability.0.KqR75.WeightedGreedy.selectedCount_eq_length_of_no_stop	propext
+GoodPrefixProbability	_private.GoodPrefixProbability.0.KqR75.WeightedGreedy.log_probability_on_good_history._proof_1_1	propext, Classical.choice, Quot.sound
+GoodPrefixProbability	_private.GoodPrefixProbability.0.KqR75.WeightedGreedy.log_probability_on_good_history._proof_1_2	propext, Classical.choice, Quot.sound
+GoodPrefixProbability	KqR75.WeightedGreedy.log_probability_on_good_history	propext, Classical.choice, Quot.sound
+GradedColumns	_private.GradedColumns.0.KqR75.GradedColumns.solve._proof_1_2	propext, Quot.sound
+GradedColumns	_private.GradedColumns.0.KqR75.GradedColumns.solve._proof_1_3	propext, Quot.sound
+GradedColumns	KqR75.GradedColumns.solve	propext, Classical.choice, Quot.sound
+GradedColumns	KqR75.GradedColumns.right_inverse	propext, Classical.choice, Quot.sound
+GradedColumns	_private.GradedColumns.0.KqR75.GradedColumns.solve._proof_1_4	propext, Quot.sound
+GradedColumns	KqR75.GradedColumns.combine.eq_1	propext, Classical.choice, Quot.sound
+GradedColumns	KqR75.GradedColumns.solve_all	propext, Classical.choice, Quot.sound
+GradedColumns	_private.GradedColumns.0.KqR75.GradedColumns.solve_all._proof_1_1	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_3	propext
+GreedyHorizon	KqR75.GreedyHorizon.horizon_failure_quarter	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_1	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_8	propext
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.no_stop_without_exit._proof_1_1	propext, Quot.sound
+GreedyHorizon	KqR75.FiniteProcess.eventMass.congr_simp	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_6	propext
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_4	propext
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_7	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_2	propext
+GreedyHorizon	KqR75.GreedyHorizon.initial_energy_zero	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+GreedyHorizon	KqR75.GreedyHorizon.no_stop_without_exit	propext, Classical.choice, Quot.sound
+GreedyHorizon	_private.GreedyHorizon.0.KqR75.GreedyHorizon.horizon_failure_quarter._simp_1_5	propext
+GreedyMoments	KqR75.GreedyMoments.error_variances	propext, Classical.choice, Quot.sound
+GreedyMoments	KqR75.GreedyMoments.sum_supported	propext, Classical.choice, Quot.sound
+GreedyMoments	KqR75.GreedyMoments.error_zero_outside	propext, Classical.choice, Quot.sound
+GreedyMoments	KqR75.GreedyMoments.mass_error	propext, Classical.choice, Quot.sound
+GreedyMoments	KqR75.WeightedGreedy.energy.eq_1	propext, Classical.choice, Quot.sound
+GreedyMoments	_private.GreedyMoments.0.KqR75.GreedyMoments.weighted_absolute_error._simp_1_1	propext, Quot.sound
+GreedyMoments	KqR75.GreedyMoments.load_error_moment	propext, Classical.choice, Quot.sound
+GreedyMoments	KqR75.GreedyMoments.weighted_absolute_error	propext, Classical.choice, Quot.sound
+GreedyProfile	KqR75.GreedyProfile.remainder_bound	propext, Classical.choice, Quot.sound
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_5	propext
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_1	propext
+GreedyProfile	KqR75.GreedyProfile.schedule_bounds	propext, Classical.choice, Quot.sound
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_7	propext
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_2	propext
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_4	propext
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_6	propext, Classical.choice, Quot.sound
+GreedyProfile	KqR75.GreedyProfile.bernoulli_lower	propext, Classical.choice, Quot.sound
+GreedyProfile	KqR75.GreedyProfile.power_le_one	propext, Classical.choice, Quot.sound
+GreedyProfile	_private.GreedyProfile.0.KqR75.GreedyProfile.schedule_bounds._simp_1_3	propext
+GreedyScales	KqR75.GreedyScales.horizon_bounds	propext, Classical.choice, Quot.sound
+GreedyScales	KqR75.GreedyScales.scaled_sum_at_prefix	propext, Classical.choice, Quot.sound
+GreedyScales	_private.GreedyScales.0.KqR75.GreedyScales.eventually_guard_scales._proof_1_1	propext, Classical.choice, Quot.sound
+GreedyScales	KqR75.GreedyScales.criticalExponent._proof_1	propext
+GreedyScales	_private.GreedyScales.0.KqR75.GreedyScales.criticalExponent_bounds._proof_1_1	propext, Quot.sound
+GreedyScales	KqR75.GreedyScales.type_drift_sums	propext, Classical.choice, Quot.sound
+GreedyScales	KqR75.GreedyScales.criticalExponent._proof_2	propext
+GreedyScales	KqR75.GreedyScales.criticalExponent_bounds	propext, Classical.choice, Quot.sound
+GreedyScales	KqR75.GreedyScales.sum_inverse_remaining_power	propext, Classical.choice, Quot.sound
+GreedyScales	KqR75.GreedyScales.eventually_guard_scales	propext, Classical.choice, Quot.sound
+GreedySchedule	KqR75.GreedySchedule.denominator_pos	propext, Classical.choice, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.selectedCount_le_length._proof_1_1	propext, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.denominator_le_available._proof_1_1	propext, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_3	propext
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_5	propext
+GreedySchedule	KqR75.GreedySchedule.variance_budget	propext, Classical.choice, Quot.sound
+GreedySchedule	KqR75.GreedySchedule.selectedCount_le_length	propext, Quot.sound
+GreedySchedule	KqR75.GreedySchedule.denominator_le_available	propext, Classical.choice, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_6	propext
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_2	propext
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_7	propext, Classical.choice, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_4	propext
+GreedySchedule	KqR75.GreedySchedule.eventually_regular	propext, Classical.choice, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.selectedCount_le_length._proof_1_2	propext, Quot.sound
+GreedySchedule	_private.GreedySchedule.0.KqR75.GreedySchedule.variance_budget._simp_1_8	propext
+GreedySchedule	KqR75.GreedySchedule.denominator.eq_1	propext, Classical.choice, Quot.sound
+GreedySchedule	KqR75.GreedySchedule.denominator._proof_1	propext
+HorizonConcentration	_private.HorizonConcentration.0.KqR75.HorizonConcentration.prefix_tail._proof_1_1	propext, Quot.sound
+HorizonConcentration	KqR75.HorizonConcentration.count_rate	propext, Classical.choice, Quot.sound
+HorizonConcentration	KqR75.HorizonConcentration.prefix_tail	propext, Classical.choice, Quot.sound
+HorizonConcentration	KqR75.HorizonConcentration.proportion_rate	propext, Classical.choice, Quot.sound
+HorizonCountTheorem	KqR75.HorizonCountTheorem.eventually_count	propext, Classical.choice, Quot.sound
+HorizonCountTheorem	_private.HorizonCountTheorem.0.KqR75.HorizonCountTheorem.eventually_count._proof_1_1	propext, Quot.sound
+HorizonCountTheorem	KqR75.HorizonCountTheorem.denominator_ge_two	propext, Classical.choice, Quot.sound
+HorizonCountTheorem	_private.HorizonCountTheorem.0.KqR75.HorizonCountTheorem.eventually_count._proof_1_2	propext, Quot.sound
+HorizonCountTheorem	_private.HorizonCountTheorem.0.KqR75.HorizonCountTheorem.eventually_count._proof_1_3	propext, Classical.choice, Quot.sound
+HostCompletionDefect	KqR75.PhysicalCompletion.defect_of_assembled_history	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.repair_positive	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.normalized_row_cap	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.normalizedGram_diag	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.availableBlocks.eq_1	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.hostIncidence_col_sum_le	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.gram_eq_hostGram	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.solve_defect	propext, Classical.choice, Quot.sound
+HostCorrection	KqR75.HostCorrection.hostIncidence_nonneg	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.ones_square	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.mul_ones	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.cardinality_of_incidence	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	_private.IncidenceAlgebra.0.KqR75.IncidenceAlgebra.gram_row_sum._simp_1_1	propext, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.ones.eq_1	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.ones_mul	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.inverse_from_incidence	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.relations	propext, Classical.choice, Quot.sound
+IncidenceAlgebra	KqR75.IncidenceAlgebra.gram_row_sum	propext, Classical.choice, Quot.sound
+JohnsonAlgebra	KqR75.JohnsonAlgebra.basis_product	propext, Classical.choice, Quot.sound
+JohnsonAlgebra	KqR75.JohnsonAlgebra.inverse_coefficients	propext, Classical.choice, Quot.sound
+JohnsonAlgebra	KqR75.JohnsonAlgebra.inverse_of_relations	propext, Classical.choice, Quot.sound
+JohnsonScalars	KqR75.Johnson.alpha_le_four	propext, Classical.choice, Quot.sound
+JohnsonScalars	KqR75.Johnson.u0._proof_1	propext
+JohnsonScalars	KqR75.Johnson.u0._proof_4	propext
+JohnsonScalars	KqR75.Johnson.alpha._proof_2	propext
+JohnsonScalars	KqR75.Johnson.alpha._proof_3	propext
+JohnsonScalars	KqR75.Johnson.s2._proof_1	propext
+JohnsonScalars	KqR75.Johnson.u1._proof_1	propext
+JohnsonScalars	KqR75.Johnson.s1._proof_1	propext
+JohnsonScalars	KqR75.Johnson.orbit_identities	propext, Classical.choice, Quot.sound
+JohnsonScalars	KqR75.Johnson.alpha._proof_1	propext
+JohnsonScalars	KqR75.Johnson.alpha._proof_4	propext
+JohnsonScalars	KqR75.Johnson.u0._proof_2	propext
+JohnsonScalars	KqR75.Johnson.u0._proof_3	propext
+JohnsonScalars	KqR75.Johnson.alpha_le_three	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.delta.eq_1	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.inverse_bound	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.restrict_lifts	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.delta.congr_simp	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.equations	propext, Classical.choice, Quot.sound
+JointCorrection	KqR75.JointCorrection.repair_positive	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.mulVec_l1_le	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.corrector_cols_le_eight	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.gram_symmetric	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.right_inverse	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.corrector.eq_1	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.corrector_rows_le	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.repair_positive	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.gram.eq_1	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.mulVec_pointwise_le	propext, Classical.choice, Quot.sound
+LoadCorrection	KqR75.LoadCorrection.inverse_cols_le_eight	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_7	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_6	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_2	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_5	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_1	propext, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._proof_1_4	propext, Quot.sound
+LowerAssembly	KqR75.PhysicalBank.Copy.congr_simp	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.remaining_subset_host	propext, Classical.choice, Quot.sound
+LowerAssembly	KqR75.CoverDown.vertexSets.eq_1	propext, Classical.choice, Quot.sound
+LowerAssembly	KqR75.PhysicalCompletion.eventually_lower_of_omni	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._simp_1_8	propext, Classical.choice, Quot.sound
+LowerAssembly	_private.LowerAssembly.0.KqR75.PhysicalCompletion.eventually_lower_of_omni._simp_1_9	propext, Classical.choice, Quot.sound
+LowerFromHost	_private.LowerFromHost.0.KqR75.PhysicalCompletion.lower_from_host._proof_1_4	propext, Classical.choice, Quot.sound
+LowerFromHost	_private.LowerFromHost.0.KqR75.PhysicalCompletion.lower_from_host._proof_1_2	propext, Classical.choice, Quot.sound
+LowerFromHost	_private.LowerFromHost.0.KqR75.PhysicalCompletion.lower_from_host._proof_1_3	propext, Classical.choice, Quot.sound
+LowerFromHost	_private.LowerFromHost.0.KqR75.PhysicalCompletion.lower_from_host._proof_1_1	propext, Classical.choice, Quot.sound
+LowerFromHost	_private.LowerFromHost.0.KqR75.PhysicalCompletion.lower_from_host._proof_1_5	propext, Classical.choice, Quot.sound
+LowerFromHost	KqR75.PhysicalCompletion.lower_from_host	propext, Classical.choice, Quot.sound
+LowerGeometry	_private.LowerGeometry.0.KqR75.PhysicalCompletion.eventually_lower_geometry._proof_1	propext, Quot.sound
+LowerGeometry	_private.LowerGeometry.0.KqR75.PhysicalCompletion.eventually_lower_geometry._proof_1_1	propext, Quot.sound
+LowerGeometry	KqR75.PhysicalCompletion.eventually_lower_geometry._proof_2	propext, Quot.sound
+LowerGeometry	KqR75.PhysicalCompletion.eventually_lower_geometry	propext, Classical.choice, Quot.sound
+LowerGeometry	_private.LowerGeometry.0.KqR75.PhysicalCompletion.eventually_lower_geometry._proof_1_2	propext, Quot.sound
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._proof_1_9	propext, Quot.sound
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._proof_1_10	propext, Classical.choice, Quot.sound
+LowerHostEvent	KqR75.PhysicalCompletion.eventually_lower_with_recovering_host	propext, Classical.choice, Quot.sound
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_6	propext
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_7	propext, Classical.choice, Quot.sound
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_4	propext
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_2	propext
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_5	propext
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_8	propext
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._proof_1_1	propext, Quot.sound
+LowerHostEvent	_private.LowerHostEvent.0.KqR75.PhysicalCompletion.eventually_lower_with_recovering_host._simp_1_3	propext
+LowerHostScales	KqR75.PhysicalCompletion.eventually_horizon_positive	propext, Classical.choice, Quot.sound
+LowerHostScales	KqR75.PhysicalCompletion.critical_completion_scales	propext, Classical.choice, Quot.sound
+LowerHostScales	KqR75.PhysicalCompletion.horizon_leave_for_cover	propext, Classical.choice, Quot.sound
+LowerHostScales	_private.LowerHostScales.0.KqR75.PhysicalCompletion.critical_completion_scales._proof_1_1	propext, Quot.sound
+LowerSeedInputs	_private.LowerSeedInputs.0.KqR75.PhysicalCompletion.profile_mass_of_unit_seed._simp_1_1	propext, Quot.sound
+LowerSeedInputs	_private.LowerSeedInputs.0.KqR75.PhysicalCompletion.eventually_interior_seed._proof_1_1	propext, Quot.sound
+LowerSeedInputs	KqR75.PhysicalCompletion.eventually_interior_seed	propext, Classical.choice, Quot.sound
+LowerSeedInputs	_private.LowerSeedInputs.0.KqR75.PhysicalCompletion.eventually_interior_seed._proof_1_4	propext, Quot.sound
+LowerSeedInputs	KqR75.PhysicalCompletion.profile_mass_of_unit_seed	propext, Classical.choice, Quot.sound
+LowerSeedInputs	_private.LowerSeedInputs.0.KqR75.PhysicalCompletion.eventually_interior_seed._proof_1_2	propext, Quot.sound
+LowerSeedInputs	_private.LowerSeedInputs.0.KqR75.PhysicalCompletion.eventually_interior_seed._proof_1_3	propext, Quot.sound
+MatrixPerturbation	KqR75.MatrixPerturbation.det_ne_zero_of_small_error	propext, Classical.choice, Quot.sound
+MatrixPerturbation	KqR75.MatrixPerturbation.inverse_rows_le_eight	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.fixedChange.eq_1	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.load_square_error	propext, Classical.choice, Quot.sound
+MeanEnergy	_private.MeanEnergy.0.KqR75.MeanEnergy.physical_fixed_drift._simp_1_1	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.fixedChange.congr_simp	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.physical_fixed_drift	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.squareLoss.eq_1	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.block_load_error	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.mean_fixed_change	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.squareLoss.congr_simp	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.load_error_product	propext, Classical.choice, Quot.sound
+MeanEnergy	KqR75.MeanEnergy.fixedChange._proof_1	propext
+MeanEnergy	KqR75.WeightedGreedy.energy.congr_simp	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.eventually_absorption_budget	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.max_degree._proof_1_1	propext, Quot.sound
+OmniBridge	KqR75.OmniBridge.exists_omni	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.physical_completion._simp_1_2	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.max_degree	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.physical_completion	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.min_degree_compl	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.physicalOmniPlacement_of_omni	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.eventually_omni	propext, Classical.choice, Quot.sound
+OmniBridge	RefinedAbsorption.Original2024.budget.eq_1	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.singleton_degree._simp_1_2	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.divisible_vertexSets._simp_1_2	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.exists_omni._proof_1_1	propext, Quot.sound
+OmniBridge	KqR75.OmniBridge.vertexSets_isRGraph	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.min_degree_compl._proof_1_1	propext, Quot.sound
+OmniBridge	KqR75.CoverDown.vertexSets.eq_1	propext, Classical.choice, Quot.sound
+OmniBridge	KqR75.OmniBridge.singleton_degree	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.eventually_omni._proof_1_1	propext, Quot.sound
+OmniBridge	KqR75.OmniBridge.divisible_vertexSets	propext, Classical.choice, Quot.sound
+OmniBridge	_private.OmniBridge.0.KqR75.OmniBridge.divisible_vertexSets._proof_1_1	propext, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.weighted_loss	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.correction_bounds	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.intersection_card	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.overcount_identity	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.overcount.congr_simp	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.correction.congr_simp	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.loss_eq_history	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.excess_nonneg	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.excess.congr_simp	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.intersection_load	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.loss.congr_simp	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.weighted_outside_loss	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.loss_on_selected	propext, Classical.choice, Quot.sound
+OverlapDrift	KqR75.OverlapDrift.excess.eq_1	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.prefix_packs	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.packs_outside_bank._simp_1_2	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.packs_union	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.assemble._simp_1_2	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.packs_outside_bank._simp_1_1	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.packs_outside_bank._simp_1_3	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.packs_outside_bank	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.prefix_cover_packs	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.assemble	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.edge_of_packs	propext, Classical.choice, Quot.sound
+PackingJoin	KqR75.PhysicalCompletion.packs_disjoint	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.assemble._simp_1_1	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.assemble._simp_1_3	propext, Classical.choice, Quot.sound
+PackingJoin	_private.PackingJoin.0.KqR75.PhysicalCompletion.edge_of_packs._proof_1_1	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.disjoint_blocks	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.cross_pair_of_resource	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.block_injective._proof_1_2	propext, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.block_injective._proof_1_3	propext, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.blocks_cover_count	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.resources_iff_cross_pair._simp_1_2	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.resources_iff_cross_pair._simp_1_4	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.slotEmbedding._proof_1	propext, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.blocks.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.blocks_cover_count._simp_1_2	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.blocks_cover_count._simp_1_4	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.blocks_histogram	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.block_injective	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.resources_iff_cross_pair	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.switch_cell	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.resources_iff_cross_pair._simp_1_1	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.mem_block	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.pair_covered_once	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.resources_iff_cross_pair._simp_1_3	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.switch_disjoint_cells	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.disjoint_blocks._proof_1_1	propext, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.block._proof_1	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.blocks_cover_count._simp_1_3	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	_private.PhysicalAffineCell.0.KqR75.PhysicalAffineCell.block_injective._proof_1_1	propext, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.block_type	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.blocks.eq_1	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.block_subset_cell	propext, Classical.choice, Quot.sound
+PhysicalAffineCell	KqR75.PhysicalAffineCell.block._proof_2	propext, Classical.choice, Quot.sound
+PhysicalBank	KqR75.ColouredCliques.part.congr_simp	propext, Quot.sound
+PhysicalBank	KqR75.PhysicalBank.place_copies	propext, Classical.choice, Quot.sound
+PhysicalBank	KqR75.PhysicalBank.switch_copies	propext, Classical.choice, Quot.sound
+PhysicalCover	KqR75.CoverDown.eventually_cover_physical	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.clique_pairs	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	KqR75.PhysicalCompletion.divisible_after_cover	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.resource_disjoint._proof_1_1	propext, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.divisible_sdiff._proof_1_1	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.divisible_after_cover._simp_1_3	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.divisible_after_cover._simp_1_1	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.cover_edges._proof_1_1	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	KqR75.PhysicalCompletion.divisible_complete	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	KqR75.PhysicalCompletion.divisible_of_packs	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.resource_disjoint	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.resource_disjoint._proof_1_2	propext, Quot.sound
+PhysicalDivisibility	KqR75.PhysicalCompletion.divisible_sdiff	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.divisible_after_cover._simp_1_2	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.divisible_after_cover._simp_1_4	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	KqR75.PhysicalCompletion.divisible_union	propext, Classical.choice, Quot.sound
+PhysicalDivisibility	_private.PhysicalDivisibility.0.KqR75.PhysicalCompletion.cover_edges	propext, Classical.choice, Quot.sound
+PhysicalDrift	KqR75.PhysicalDrift.energy_drift	propext, Classical.choice, Quot.sound
+PhysicalDrift	KqR75.WeightedGreedy.kernel.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalDrift	KqR75.PhysicalDrift.noiseConstant._proof_1	propext
+PhysicalDrift	KqR75.PhysicalDrift.noiseConstant._proof_2	propext
+PhysicalDrift	KqR75.PhysicalDrift.noiseConstant._proof_3	propext
+PhysicalDrift	KqR75.PhysicalDrift.energy_drift_regular	propext, Classical.choice, Quot.sound
+PhysicalDrift	KqR75.PhysicalDrift.energy_drift_rate	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.initial_proportion._simp_1_5	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_5	propext
+PhysicalHorizonCounts	KqR75.WeightedGreedy.valid.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_3	propext
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.fibre.eq_1	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_8	propext
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.fibre.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.eventually_dense	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	KqR75.HorizonCountTheorem.guard.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._proof_1_1	propext, Quot.sound
+PhysicalHorizonCounts	KqR75.HorizonCountTheorem.energy.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._proof_1_9	propext, Quot.sound
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.extend_nonneg	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.initial_proportion	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.eventually_count	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_2	propext
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_7	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.initial_proportion._simp_1_4	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_6	propext
+PhysicalHorizonCounts	KqR75.TypeWeights.proportion.eq_1	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._simp_1_4	propext
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_count._proof_1_10	propext, Quot.sound
+PhysicalHorizonCounts	KqR75.TypeWeights.marked.eq_1	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	KqR75.PhysicalHorizonCounts.leave_bound	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.initial_available	propext, Classical.choice, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_dense._proof_1_2	propext, Quot.sound
+PhysicalHorizonCounts	_private.PhysicalHorizonCounts.0.KqR75.PhysicalHorizonCounts.eventually_dense._proof_1_1	propext, Quot.sound
+PhysicalPrefixScore	KqR75.PhysicalCompletion.physical_prefix_score	propext, Classical.choice, Quot.sound
+PhysicalPrefixScore	_private.PhysicalPrefixScore.0.KqR75.PhysicalCompletion.physical_prefix_score._proof_1_2	propext, Classical.choice, Quot.sound
+PhysicalPrefixScore	_private.PhysicalPrefixScore.0.KqR75.PhysicalCompletion.physical_prefix_score._proof_1_3	propext, Classical.choice, Quot.sound
+PhysicalPrefixScore	_private.PhysicalPrefixScore.0.KqR75.PhysicalCompletion.physical_prefix_score._proof_1_1	propext, Classical.choice, Quot.sound
+PhysicalPrefixScore	_private.PhysicalPrefixScore.0.KqR75.PhysicalCompletion.physical_prefix_score._proof_1_4	propext, Classical.choice, Quot.sound
+PhysicalPrefixTargets	KqR75.PhysicalCompletion.prefix_counts_close_to_target	propext, Classical.choice, Quot.sound
+PhysicalPrefixTargets	_private.PhysicalPrefixTargets.0.KqR75.PhysicalCompletion.prefix_counts_close_to_target._proof_1_1	propext, Classical.choice, Quot.sound
+PhysicalPrefixTargets	_private.PhysicalPrefixTargets.0.KqR75.PhysicalCompletion.prefix_counts_close_to_target._simp_1_3	propext
+PhysicalPrefixTargets	KqR75.BankCapacity.integerHistogram.eq_1	propext, Classical.choice, Quot.sound
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_3	propext
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._proof_1_1	propext, Quot.sound
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_8	propext, Classical.choice, Quot.sound
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_9	propext
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_4	propext
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_6	propext
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_7	propext
+PhysicalProfileLifts	KqR75.PhysicalProfileLifts.bounded_directions	propext, Classical.choice, Quot.sound
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._proof_1_2	propext, Quot.sound
+PhysicalProfileLifts	KqR75.PhysicalProfileLifts.host_columns	propext, Classical.choice, Quot.sound
+PhysicalProfileLifts	_private.PhysicalProfileLifts.0.KqR75.PhysicalProfileLifts.host_columns._simp_1_5	propext
+PhysicalReserve	KqR75.PhysicalReserve.degree_le	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.edges.eq_1	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.pairEdge._proof_1	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.pairEdge.eq_1	propext, Classical.choice, Quot.sound
+PhysicalReserve	_private.PhysicalReserve.0.KqR75.PhysicalReserve.pairEdge_mem._simp_1_2	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.pairEdge.congr_simp	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.pairEdge_mem	propext, Classical.choice, Quot.sound
+PhysicalReserve	KqR75.PhysicalReserve.degree_eq_neighbours	propext, Classical.choice, Quot.sound
+PrefixCount	KqR75.WeightedGreedy.completions_of_probability_cap	propext, Classical.choice, Quot.sound
+PrefixCount	KqR75.WeightedGreedy.log_historyWeight	propext, Classical.choice, Quot.sound
+PrefixCountFromLog	KqR75.WeightedGreedy.log_outputs_of_history_score	propext, Classical.choice, Quot.sound
+PrefixLogSum	KqR75.GreedySchedule.normalizer_minus_factorial_lower	propext, Classical.choice, Quot.sound
+PrefixLogSum	_private.PrefixLogSum.0.KqR75.GreedySchedule.normalizer_minus_factorial_lower._proof_1_1	propext, Quot.sound
+PrefixLogSum	_private.PrefixLogSum.0.KqR75.GreedySchedule.log_step	propext, Classical.choice, Quot.sound
+PrefixLogSum	_private.PrefixLogSum.0.KqR75.GreedySchedule.log_factorial_upper._proof_1_1	propext, Quot.sound
+PrefixLogSum	KqR75.GreedySchedule.sum_log_remaining_lower	propext, Classical.choice, Quot.sound
+PrefixLogSum	KqR75.GreedySchedule.log_factorial_upper	propext, Classical.choice, Quot.sound
+PrefixLogSum	KqR75.GreedySchedule.sum_log_remaining_ge_neg_mass	propext, Classical.choice, Quot.sound
+PrefixMass	_private.PrefixMass.0.KqR75.GreedySchedule.relative_mass_error._proof_1_2	propext, Quot.sound
+PrefixMass	_private.PrefixMass.0.KqR75.GreedySchedule.relative_mass_error._proof_1_3	propext, Quot.sound
+PrefixMass	KqR75.GreedySchedule.relative_mass_error	propext, Classical.choice, Quot.sound
+PrefixMass	_private.PrefixMass.0.KqR75.GreedySchedule.relative_mass_error._proof_1_1	propext, Quot.sound
+PrefixMassScales	KqR75.GreedySchedule.relative_mass_at_horizon	propext, Classical.choice, Quot.sound
+PrefixMassScales	_private.PrefixMassScales.0.KqR75.GreedySchedule.relative_mass_at_horizon._proof_1_2	propext, Classical.choice, Quot.sound
+PrefixMassScales	_private.PrefixMassScales.0.KqR75.GreedySchedule.relative_mass_at_horizon._proof_1_3	propext, Classical.choice, Quot.sound
+PrefixMassScales	_private.PrefixMassScales.0.KqR75.GreedySchedule.relative_mass_at_horizon._proof_1_1	propext, Classical.choice, Quot.sound
+PrefixMassScales	KqR75.GreedySchedule.log_difference_of_relative_error	propext, Classical.choice, Quot.sound
+PrefixPacking	KqR75.WeightedGreedy.picked_card	propext, Classical.choice, Quot.sound
+PrefixPacking	KqR75.WeightedGreedy.picked_partition	propext, Classical.choice, Quot.sound
+PrefixPacking	_private.PrefixPacking.0.KqR75.WeightedGreedy.picked_partition._proof_1_2	propext, Classical.choice, Quot.sound
+PrefixPacking	KqR75.WeightedGreedy.picked.eq_1	propext, Classical.choice, Quot.sound
+PrefixPacking	_private.PrefixPacking.0.KqR75.WeightedGreedy.count_univ	propext, Classical.choice, Quot.sound
+PrefixPacking	_private.PrefixPacking.0.KqR75.WeightedGreedy.picked_partition._simp_1_3	propext, Classical.choice, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.type_score_upper	propext, Classical.choice, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.type_sum_cons._simp_1_2	propext, Classical.choice, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+PrefixProbability	KqR75.WeightedGreedy.log_probability_with_ordering	propext, Classical.choice, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.type_sum_cons._simp_1_3	propext
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.type_sum_cons._simp_1_1	propext, Classical.choice, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.log_history_upper_of_bounds._proof_1_2	propext, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.log_history_upper_of_bounds._proof_1_3	propext, Quot.sound
+PrefixProbability	_private.PrefixProbability.0.KqR75.WeightedGreedy.type_sum_cons	propext, Classical.choice, Quot.sound
+PrefixProbability	KqR75.WeightedGreedy.log_history_upper_of_bounds	propext, Classical.choice, Quot.sound
+PrefixRecovery	_private.PrefixRecovery.0.KqR75.WeightedGreedy.nodup_history._proof_1_1	propext, Classical.choice, Quot.sound
+PrefixRecovery	KqR75.WeightedGreedy.mem_picked	propext, Classical.choice, Quot.sound
+PrefixRecovery	KqR75.WeightedGreedy.nodup_history	propext, Classical.choice, Quot.sound
+PrefixRecovery	KqR75.WeightedGreedy.picked_fits	propext, Classical.choice, Quot.sound
+PrefixRecovery	_private.PrefixRecovery.0.KqR75.WeightedGreedy.mem_picked._simp_1_1	propext, Quot.sound
+PrefixRecovery	KqR75.WeightedGreedy.recover_picked	propext, Classical.choice, Quot.sound
+PrefixRecovery	KqR75.WeightedGreedy.order_fibre_card	propext, Classical.choice, Quot.sound
+PrefixScoreBudget	_private.PrefixScoreBudget.0.KqR75.PhysicalCompletion.prefix_score_error_budget._proof_1_1	propext, Quot.sound
+PrefixScoreBudget	KqR75.PhysicalCompletion.prefix_score_error_budget	propext, Classical.choice, Quot.sound
+PrefixTypeTests	_private.PrefixTypeTests.0.KqR75.PrefixTypeTests.counts_and_prefix_union._simp_1_1	propext, Classical.choice, Quot.sound
+PrefixTypeTests	_private.PrefixTypeTests.0.KqR75.PrefixTypeTests.mono_support._simp_1_1	propext, Classical.choice, Quot.sound
+PrefixTypeTests	KqR75.PrefixTypeTests.prefix_union	propext, Classical.choice, Quot.sound
+PrefixTypeTests	KqR75.PrefixTypeTests.counts_and_prefix_union	propext, Classical.choice, Quot.sound
+PrefixTypeTests	KqR75.PrefixTypeTests.mono_support	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.load_extend	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.histogram_eq_of_loads	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.histogram.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.histogram_extend	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.extend.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.highIncidence.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.hostHistogram_eq	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.margin_histogram	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.profiles_eq_of_margins	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.hostHistogram.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.repair_full_histogram	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.extend._proof_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.HostCorrection.hostIncidence.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.highIncidence_apply	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ColouredCliques.pairMargin.eq_1	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.card_block_pairs	propext, Classical.choice, Quot.sound
+ProfileBalance	KqR75.ProfileBalance.extend_coe	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.continuous_KLf_left	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.closed_gap	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.countLDP_of_bounds	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.abs_KLf_sub_le	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.continuous_KL_left	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.tendsto_KLf	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.isCompact_rate_sublevel	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.KL_eq_KLf	propext, Classical.choice, Quot.sound
+ProfileLDPPrinciple	KqR75.ProfileLDP.eventually_sum_log_le	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.tendsto_finiteTypeLaw	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.uniform_load._simp_1_3	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.finiteTypeLaw_physical_margin._simp_1_3	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw_pair_margins	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.multinomialTypeLaw_pos	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.tendsto_scaled_choose_of_le._simp_1_1	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.sum_finiteTypeLaw._simp_1_2	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.sum_finiteTypeLaw	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw.eq_1	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.tendsto_scaled_choose_of_le	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.tendsto_scaled_choose	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.finiteTypeLaw_physical_margin._proof_1_1	propext, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw.congr_simp	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.uniform_load._proof_1_1	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.uniform_load._simp_1_2	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw_nonneg	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.finiteTypeLaw_physical_margin._simp_1_4	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw_ordered_margins	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	_private.ProfileTypeLaw.0.KqR75.ProfileLDP.uniform_load	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.finiteTypeLaw_physical_margin	propext, Classical.choice, Quot.sound
+ProfileTypeLaw	KqR75.ProfileLDP.tendsto_finiteTypeLaw_of_le	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.fibre.congr_simp	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.positive	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.incidenceCount.congr_simp	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.completion_ratio	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.weight.congr_simp	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.unit_load	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.load_eq_margin	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.weight.eq_1	propext, Classical.choice, Quot.sound
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_10	propext
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_6	propext
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_7	propext
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_4	propext
+ProfileWeights	KqR75.ProfileWeights.fibre.eq_1	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.completionChoices.eq_1	
+ProfileWeights	KqR75.ProfileWeights.choose_completion	propext, Classical.choice, Quot.sound
+ProfileWeights	KqR75.ProfileWeights.fibre_mass	propext, Classical.choice, Quot.sound
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_8	propext
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_9	propext, Classical.choice, Quot.sound
+ProfileWeights	_private.ProfileWeights.0.KqR75.ProfileWeights.fibre_mass._simp_1_5	propext
+ProfileWeights	KqR75.ProfileWeights.load_by_types	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.HostCorrection.scale.eq_1	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.scaled_incidence_sum	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.deleted_sum_le	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.type_mass_defect	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.DeletedGram.gram.eq_1	propext, Classical.choice, Quot.sound
+PrunedWeights	_private.PrunedWeights.0.KqR75.PrunedWeights.host_load_defect._simp_1_2	propext
+PrunedWeights	KqR75.PrunedWeights.host_load_defect	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.deleted_row_le	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.repair_signed_column	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.HostCorrection.hostIncidence.eq_1	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.deleted_weight_le	propext, Classical.choice, Quot.sound
+PrunedWeights	KqR75.PrunedWeights.assemble_lifts	propext, Classical.choice, Quot.sound
+QuotaRounding	KqR75.SlotPairMargins.round_quotas	propext, Classical.choice, Quot.sound
+QuotaRounding	_private.QuotaRounding.0.KqR75.SlotPairMargins.round_quotas._simp_1_1	propext, Quot.sound
+R75	KqR75.PhysicalCompletion.eventually_designFibre_bilateral	propext, Classical.choice, Quot.sound
+RatioStep	KqR75.RatioStep.bounds	propext, Classical.choice, Quot.sound
+RatioStep	KqR75.RatioStep.identity	propext, Classical.choice, Quot.sound
+RatioStep	_private.RatioStep.0.KqR75.RatioStep.physical_bounds._proof_1_1	propext, Quot.sound
+RatioStep	KqR75.RatioStep.physical_bounds	propext, Classical.choice, Quot.sound
+RepairedHostSeed	_private.RepairedHostSeed.0.KqR75.SeedScales.eventually_repaired_host._simp_1_1	propext, Classical.choice, Quot.sound
+RepairedHostSeed	KqR75.SeedScales.eventually_repaired_host	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.disjoint_classes._proof_1_1	propext, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.neighbours.congr_simp	propext, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.not_in_tail	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embeddings.congr_simp	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.good_choices	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.embeddings.match_1.eq_1	propext, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embeddings._proof_1	propext, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embedding_spec	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.toFinset_injective_forall₂	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.good_choices._proof_1_2	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embedding_spec._unary	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.nodup_of_classes	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.cutLower.congr_simp	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.count_vertex_sets	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.bad_card_lt	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.embeddings.match_1._arg_pusher	propext, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.cliquesIn.eq_1	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embeddings.eq_1	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.disjoint_classes	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.count_rooted_extensions	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.good_choices._proof_1_1	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embeddings.eq_def	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.embeddings.eq_2	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.embeddings.match_1.eq_2	propext, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.mem_rootedExtensions	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.cutLower._proof_1	propext
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.forget_neighbours	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.count_cliques_large	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.assigned	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.consEmbedding._proof_1	
+ReserveCuts	KqR75.ReserveCuts.commonPair.congr_simp	propext, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.disjoint_classes._proof_1_2	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.count_cliques	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.rootedExtensions.eq_1	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.List.map_unattach.match_1.eq_1	
+ReserveCuts	KqR75.ReserveCuts.cliquesIn.congr_simp	propext, Classical.choice, Quot.sound
+ReserveCuts	KqR75.ReserveCuts.count_embeddings	propext, Classical.choice, Quot.sound
+ReserveCuts	_private.ReserveCuts.0.KqR75.ReserveCuts.clique_product	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._proof_1_1	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_3	propext
+ReserveDeletion	KqR75.ProfileBalance.hostHistogram.congr_simp	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_8	propext
+ReserveDeletion	KqR75.ReserveDeletion.eventually_repair_loads	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.repair_loads._abel_1_1	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.repair_loads._simp_1_2	propext, Quot.sound
+ReserveDeletion	KqR75.ReserveDeletion.repair_loads	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_5	propext
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_4	propext
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_7	propext, Classical.choice, Quot.sound
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_2	propext
+ReserveDeletion	_private.ReserveDeletion.0.KqR75.ReserveDeletion.eventually_repair_loads._simp_1_6	propext
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._proof_1_9	propext, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._proof_1_8	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.roots_card._proof_1_2	propext, Quot.sound
+ReserveExistence	KqR75.ReserveRandom.RootGood.congr_simp	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._simp_1_3	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.roots_card	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._simp_1_5	propext, Classical.choice, Quot.sound
+ReserveExistence	KqR75.ReserveRandom.RootGood._proof_1	propext
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.roots_card._proof_1_1	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.roots_failure._simp_1_1	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots	propext, Classical.choice, Quot.sound
+ReserveExistence	KqR75.ReserveRandom.exists_reserve	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._simp_1_2	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.mem_roots._simp_1_4	propext, Classical.choice, Quot.sound
+ReserveExistence	_private.ReserveExistence.0.KqR75.ReserveRandom.roots.eq_1	propext, Classical.choice, Quot.sound
+ReserveExistence	KqR75.ReserveRandom.roots_failure	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.cut_failure	propext, Classical.choice, Quot.sound
+ReserveRandom	_private.ReserveRandom.0.KqR75.ReserveRandom.cut_injective	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.instDecidableRelAdj._proof_1	
+ReserveRandom	KqR75.ReserveRandom.coin_law	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.instSymmAdj	Quot.sound
+ReserveRandom	KqR75.ReserveRandom.cut_tail	propext, Classical.choice, Quot.sound
+ReserveRandom	_private.ReserveRandom.0.KqR75.ReserveRandom.coin_map_measurable	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.instIsProbabilityMeasureForallSym2BoolLaw	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.coin.eq_1	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.adj.eq_1	
+ReserveRandom	KqR75.ReserveRandom.cut_sum_eq	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.coin_measurable	propext, Classical.choice, Quot.sound
+ReserveRandom	KqR75.ReserveRandom.coin_independent	propext, Classical.choice, Quot.sound
+ReserveRootLaws	KqR75.ReserveRandom.grouped_indicators	propext, Classical.choice, Quot.sound
+ReserveRootLaws	_private.ReserveRootLaws.0.KqR75.ReserveRandom.card_common_eq_sum	propext, Classical.choice, Quot.sound
+ReserveRootLaws	_private.ReserveRootLaws.0.KqR75.ReserveRandom.card_common_eq_sum._simp_1_2	propext, Classical.choice, Quot.sound
+ReserveRootLaws	KqR75.ReserveRandom.grouped_coins	propext, Classical.choice, Quot.sound
+ReserveRootLaws	_private.ReserveRootLaws.0.KqR75.ReserveRandom.rootEdges._proof_1	propext, Classical.choice, Quot.sound
+ReserveRootLaws	KqR75.ReserveRandom.all_true_probability	propext, Classical.choice, Quot.sound
+ReserveRootLaws	KqR75.ReserveRandom.common_tails	propext, Classical.choice, Quot.sound
+ReserveRootLaws	_private.ReserveRootLaws.0.KqR75.ReserveRandom.card_common_eq_sum._simp_1_1	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.nat_mul_rpow	propext, Classical.choice, Quot.sound
+ReserveScales	KqR75.ReserveRandom.eventually_reserve	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_1	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.rpow_nat_pow	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget._proof_1_4	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_7	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_5	propext, Classical.choice, Quot.sound
+ReserveScales	KqR75.ReserveRandom.eventually_reserve_counts	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_4	propext
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_7	propext
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_2	propext
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_6	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget._proof_1_2	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget._proof_1_3	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget._proof_1_1	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.critical_cut_gap._proof_1_1	propext, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_4	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget._proof_1_5	propext, Classical.choice, Quot.sound
+ReserveScales	KqR75.ReserveRandom.critical_cut_gap	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_3	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_reserve_counts._proof_1_2	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_1	propext
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_cut_budget	propext, Classical.choice, Quot.sound
+ReserveScales	KqR75.ReserveCuts.rootedExtensions.congr_simp	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_clique_budget	propext, Classical.choice, Quot.sound
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_5	propext
+ReserveScales	_private.ReserveScales.0.KqR75.ReserveRandom.eventually_root_budget._simp_1_3	propext
+ReserveTails	KqR75.ReserveTails.independent_bernoulli_sum	propext, Classical.choice, Quot.sound
+ReserveTails	KqR75.ReserveTails.exists_avoiding	propext, Classical.choice, Quot.sound
+ReserveTails	KqR75.ReserveTails.upper	propext, Classical.choice, Quot.sound
+ReserveTails	KqR75.ReserveTails.bernoulli_factor_le	propext, Classical.choice, Quot.sound
+ReserveTails	KqR75.ReserveTails.lower	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.extensions.congr_simp	propext, Classical.choice, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_succ_subset	propext, Classical.choice, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_card_le._simp_1_3	propext, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.mem_extensions	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.common.congr_simp	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.commonPair.eq_1	propext, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_card_le._proof_1_7	propext, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.extensions_card_le_density	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.extensions.eq_1	propext, Classical.choice, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_card_le._proof_1_4	propext, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_succ_subset._proof_1_1	propext, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.common.eq_1	propext, Classical.choice, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_card_le._simp_1_2	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.common_pair_eq	propext, Classical.choice, Quot.sound
+ReserveUpper	KqR75.ReserveCuts.extensions_card_le	propext, Classical.choice, Quot.sound
+ReserveUpper	_private.ReserveUpper.0.KqR75.ReserveCuts.extensions_card_le._proof_1_5	propext, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.packing_load	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.repair_after_deletion	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ProfileBalance.histogram.congr_simp	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.thresholds_of_degree._proof_1_4	propext, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_deletion._proof_1_9	propext, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_packing._proof_1_1	propext, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.compatible_after_packing._simp_1_1	propext, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.thresholds_of_degree	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_deletion._proof_1_6	propext, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.basal_card_le_of_degree._simp_1_1	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.basal_card_le_of_degree	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_deletion._proof_1_5	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.compatible_after_packing	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.basal_histogram_le_card	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_deletion._proof_1_7	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.thresholds_of_degree._proof_1_1	propext, Quot.sound
+ResidualSeed	KqR75.ResidualSeed.repair_after_packing	propext, Classical.choice, Quot.sound
+ResidualSeed	_private.ResidualSeed.0.KqR75.ResidualSeed.repair_after_deletion._proof_1_8	propext, Classical.choice, Quot.sound
+ResidualSeed	KqR75.ProfileBalance.compatible.congr_simp	propext, Classical.choice, Quot.sound
+RestrictedInverse	KqR75.RestrictedInverse.restricted_inverse_rows_le_eight	propext, Classical.choice, Quot.sound
+RestrictedInverse	KqR75.RestrictedInverse.sum_restrict_add_compl	propext, Classical.choice, Quot.sound
+RestrictedInverse	KqR75.RestrictedInverse.row_abs_mul	propext, Classical.choice, Quot.sound
+RestrictedInverse	KqR75.RestrictedInverse.restricted_abs_row_le	propext, Classical.choice, Quot.sound
+RestrictedInverse	_private.RestrictedInverse.0.KqR75.RestrictedInverse.restricted_inverse_rows_le_eight._simp_1_1	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_1	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_5	propext
+ScalarDrift	KqR75.ScalarDrift.temporal_bound	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_2	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_4	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_7	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_6	propext, Classical.choice, Quot.sound
+ScalarDrift	KqR75.ScalarDrift.regularity	propext, Classical.choice, Quot.sound
+ScalarDrift	KqR75.ScalarDrift.young_variance	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_5	propext
+ScalarDrift	KqR75.ScalarDrift.temporal_upper	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_5	propext
+ScalarDrift	KqR75.ScalarDrift.close_budget	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_6	propext, Classical.choice, Quot.sound
+ScalarDrift	KqR75.ScalarDrift.overlap_bound	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_7	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_4	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_2	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_4	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_4	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_7	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_7	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_2	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_2	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_6	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_6	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_5	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_1	propext
+ScalarDrift	KqR75.ScalarDrift.leading_bound	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.temporal_bound._simp_1_3	propext
+ScalarDrift	KqR75.ScalarDrift.eta_square_bound	propext, Classical.choice, Quot.sound
+ScalarDrift	KqR75.ScalarDrift.noise_rate	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_1	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_1	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.overlap_bound._simp_1_3	propext
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.eta_square_bound._simp_1_3	propext
+ScalarDrift	KqR75.ScalarDrift.temporal_identity	propext, Classical.choice, Quot.sound
+ScalarDrift	_private.ScalarDrift.0.KqR75.ScalarDrift.noise_rate._simp_1_3	propext
+ScaleLP	KqR75.ScaleFeasible._proof_2	propext
+ScaleLP	KqR75.scale_optimal	propext, Classical.choice, Quot.sound
+ScaleLP	KqR75.ScaleFeasible._proof_1	propext
+ScaleLP	KqR75.scale_upper	propext, Classical.choice, Quot.sound
+ScaleLP	KqR75.scale_primal	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_3	propext
+SeedLog	KqR75.ColouredCliques.seed_log_abs_le	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.seed_log_abs_le._proof_1_2	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.seed_log_abs_le._proof_1_3	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.seed_log_abs_le._proof_1_4	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_4	propext
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_7	propext
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_6	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_2	propext
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_5	propext
+SeedLog	KqR75.ColouredCliques.log_repaired_weight	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.seed_log_abs_le._proof_1_1	propext, Classical.choice, Quot.sound
+SeedLog	_private.SeedLog.0.KqR75.ColouredCliques.log_repaired_weight._simp_1_1	propext
+SeedScales	_private.SeedScales.0.KqR75.SeedScales.eventually_repair_after_packing._proof_1_2	propext, Quot.sound
+SeedScales	KqR75.SeedScales.relative_degree_bound	propext, Classical.choice, Quot.sound
+SeedScales	_private.SeedScales.0.KqR75.SeedScales.eventually_repair_after_packing._proof_1_1	propext, Quot.sound
+SeedScales	KqR75.SeedScales.eventually_repair_after_packing	propext, Classical.choice, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.moment._simp_1_1	propext, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_4	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_5	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_7	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_2	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_6	propext, Classical.choice, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_3	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.moment._simp_1_2	propext, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_8	propext
+SignedBlock	KqR75.SignedBlock.universal	propext, Classical.choice, Quot.sound
+SignedBlock	KqR75.SignedBlock.normalized	propext, Classical.choice, Quot.sound
+SignedBlock	KqR75.SignedBlock.moment	propext, Classical.choice, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_3	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_7	propext, Classical.choice, Quot.sound
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_6	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_5	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_2	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._simp_1_4	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.universal._simp_1_1	propext
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.moment._simp_1_3	
+SignedBlock	_private.SignedBlock.0.KqR75.SignedBlock.normalized._proof_1_1	propext, Classical.choice, Quot.sound
+SignedBlockScalar	KqR75.SignedBlock.polynomial._proof_1	propext
+SignedBlockScalar	KqR75.SignedBlock.polynomial_nonnegative	propext, Classical.choice, Quot.sound
+SignedBlockScalar	KqR75.SignedBlock.coefficient_expansion	propext, Classical.choice, Quot.sound
+SignedBlockScalar	KqR75.SignedBlock.certificate_identity	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_7	propext, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.cellDifference.congr_simp	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.cellDifference_margin_zero	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.physical_margin_zero	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.exists_saturating_pair	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.orderedCount_demand	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotProfiles.High.congr_simp	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.eq_of_saturating_pair._proof_1_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_4	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.sum_demand._simp_1_2	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_5	propext, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.physical_margin_mul	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.orderedCount_slots._simp_1_3	propext
+SlotPairMargins	KqR75.SlotPairMargins.rest_count	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_edge_demand._proof_1_3	propext, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.affine_coordinate_lifts	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_edge_demand._proof_1_2	propext, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.edge_profile_demand	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.demand_le_of_pos._proof_1_3	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_9	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_6	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.affine_spans_kernel._simp_1_4	propext, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.demand_le_of_pos._proof_1_5	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.affine_spans_kernel._simp_1_2	propext
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.orderedCount_slots._simp_1_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_8	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_pos_of_sum_pos	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.orderedCount_demand._proof_1_3	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.agrees_of_saturation	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_2	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.cellDifference.eq_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_3	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.demand.congr_simp	Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.orderedCount_slots	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_2	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_8	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.orderedCount.congr_simp	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_6	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.ordered_margin_invariant	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.low_eq_zero._proof_1_9	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.sum_demand	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.demand_le_of_pos._proof_1_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.affine_spans_kernel	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_edge_demand._proof_1_1	propext, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.demand_le_of_pos._proof_1_4	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.orderedCount.eq_1	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_edge_demand._proof_1_4	propext, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.low_eq_zero	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.ordered_margins_zero_iff	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.affine_coordinate_lifts._simp_1_4	propext, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_pos_of_sum_pos._proof_1_1	propext, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.physical_margin_mul._simp_1_3	
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.sum_demand._simp_1_3	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.demand_le_of_pos	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.exists_edge_demand	propext, Classical.choice, Quot.sound
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.orderedCount_slots._simp_1_4	propext
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.orderedCount_slots._simp_1_2	propext
+SlotPairMargins	KqR75.SlotPairMargins.demand.eq_1	
+SlotPairMargins	_private.SlotPairMargins.0.KqR75.SlotPairMargins.exists_saturating_pair._proof_1_7	propext, Classical.choice, Quot.sound
+SlotPairMargins	KqR75.SlotPairMargins.eq_of_saturating_pair	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.slotType_surjective	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.degree_slotType	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.AffineCellCounts.histogram.congr_simp	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.slotType._proof_1	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.slotType.eq_1	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_5	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.degree.congr_simp	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_1	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_4	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_2	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_3	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.degree.eq_1	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.slotType._proof_2	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.ColouredCliques.cliqueType.eq_1	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.cell_column	propext, Classical.choice, Quot.sound
+SlotProfiles	KqR75.SlotProfiles.cell_high_coordinates	propext, Classical.choice, Quot.sound
+SlotProfiles	_private.SlotProfiles.0.KqR75.SlotProfiles.sigmaFibre._proof_6	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.sparse_middle_bound._simp_1_1	propext, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_3	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_4	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_7	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_6	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_2	propext
+SparseGram	KqR75.SparseGram.s1_sub_s2_nonneg	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.host_inverse_rows_le_eight._simp_1_1	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_1	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_5	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.host_inverse_of_degree._proof_1_1	propext, Quot.sound
+SparseGram	KqR75.SparseGram.host_inverse_rows_le_eight	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.weightedGram_eq._simp_1_2	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_1	propext
+SparseGram	KqR75.SparseGram.weightedGram_eq	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.resources_card	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.host_inverse_rows_le_eight._simp_1_2	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.outside_mass_le	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_7	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_6	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.outsideBound_le	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_2	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_4	propext
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.outside_factor_le._simp_1_3	propext
+SparseGram	KqR75.SparseGram.outsideBound._proof_1	propext
+SparseGram	KqR75.SparseGram.outside_factor_le	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.sparse_middle_bound	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.sparse_card_bound	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.CliqueGram.pairIncidence.eq_1	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.resources.eq_1	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.weightedGram_eq._simp_1_3	propext, Classical.choice, Quot.sound
+SparseGram	KqR75.SparseGram.host_inverse_of_degree	propext, Classical.choice, Quot.sound
+SparseGram	_private.SparseGram.0.KqR75.SparseGram.s1_sub_s2_nonneg._simp_1_5	propext
+StoppedPhysical	KqR75.StoppedPhysical.regular.congr_simp	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile.match_1.eq_1	
+StoppedPhysical	KqR75.StoppedPhysical.ratio_bounds	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile.match_1.eq_2	
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_7	propext
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_6	propext
+StoppedPhysical	KqR75.StoppedPhysical.profile.eq_1	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+StoppedPhysical	KqR75.StoppedPhysical.mass_succ	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.profile_step	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_8	propext
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_9	propext
+StoppedPhysical	KqR75.StoppedPhysical.regular._proof_1	propext
+StoppedPhysical	KqR75.StoppedPhysical.terminal_tail	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.codegree_le_initial	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.live_stopped_mean	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.active_step	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.profile.eq_def	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_11	propext
+StoppedPhysical	KqR75.WeightedGreedy.stoppedEnergy.eq_1	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_5	propext
+StoppedPhysical	KqR75.StoppedPhysical.ratio.eq_1	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.regular._proof_2	propext
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+StoppedPhysical	KqR75.StoppedPhysical.profile.eq_2	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.profile_bounds	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.mass.eq_1	propext, Classical.choice, Quot.sound
+StoppedPhysical	_private.StoppedPhysical.0.KqR75.StoppedPhysical.profile_eq._simp_1_10	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.expectation	propext, Classical.choice, Quot.sound
+StoppedPhysical	KqR75.StoppedPhysical.profile_eq	propext, Classical.choice, Quot.sound
+StoppingGuard	_private.StoppingGuard.0.KqR75.StoppingGuard.regular_of_threshold._proof_1_1	propext, Quot.sound
+StoppingGuard	KqR75.StoppingGuard.regular_of_threshold	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.mean_error_after	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.physical_mean_drift	propext, Classical.choice, Quot.sound
+TimeEnergy	_private.TimeEnergy.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+TimeEnergy	KqR75.TimeEnergy.live_average	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.remainingLoss.congr_simp	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.sum_error_after	propext, Classical.choice, Quot.sound
+TimeEnergy	_private.TimeEnergy.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+TimeEnergy	KqR75.TimeEnergy.sum_complement	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.profile_shift	propext, Classical.choice, Quot.sound
+TimeEnergy	KqR75.TimeEnergy.mean_card_after	propext, Classical.choice, Quot.sound
+TransversalBank	KqR75.Transversal.pair_bijective	propext, Classical.choice, Quot.sound
+TransversalBank	KqR75.Transversal.point.eq_1	propext, Quot.sound
+TransversalBank	KqR75.Transversal.shifted_active_impossible	propext, Classical.choice, Quot.sound
+TransversalBank	KqR75.Transversal.pair_surjective	propext, Classical.choice, Quot.sound
+TransversalBank	KqR75.Transversal.pair_injective	propext, Classical.choice, Quot.sound
+TypeCountHorizon	KqR75.TypeCountHorizon.drop_support	propext, Classical.choice, Quot.sound
+TypeCountHorizon	KqR75.TypeCountHorizon.below_of_not_crossed	propext, Classical.choice, Quot.sound
+TypeCountHorizon	_private.TypeCountHorizon.0.KqR75.TypeCountHorizon.compensator_error._proof_1_1	propext, Quot.sound
+TypeCountHorizon	_private.TypeCountHorizon.0.KqR75.TypeCountHorizon.compensator_error._proof_1_2	propext, Quot.sound
+TypeCountHorizon	_private.TypeCountHorizon.0.KqR75.TypeCountHorizon.compensator_error._proof_1_3	propext, Quot.sound
+TypeCountHorizon	_private.TypeCountHorizon.0.KqR75.TypeCountHorizon.simultaneous._proof_1_1	propext, Quot.sound
+TypeCountHorizon	KqR75.TypeCountHorizon.drop_no_cross	propext, Classical.choice, Quot.sound
+TypeCountHorizon	KqR75.TypeCountHorizon.compensator_error	propext, Classical.choice, Quot.sound
+TypeCountHorizon	KqR75.TypeCountHorizon.simultaneous	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.count.eq_3	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.tail	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.count.eq_def	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.TypeCounts.indicator.match_1.eq_2	
+TypeCounts	KqR75.TypeCounts.indicator.eq_2	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.TypeCounts.count.match_1.eq_1	
+TypeCounts	KqR75.TypeCounts.path_count	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.FiniteProcess.eventMass.congr_simp	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.count.eq_2	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.indicator.congr_simp	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.TypeCounts.count.match_1.eq_3	
+TypeCounts	KqR75.TypeCounts.count.eq_1	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.live_mean	propext, Classical.choice, Quot.sound
+TypeCounts	KqR75.TypeCounts.count.congr_simp	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.TypeCounts.indicator.match_1.eq_1	
+TypeCounts	KqR75.TypeCounts.indicator_bounds	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+TypeCounts	_private.TypeCounts.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+TypeCounts	KqR75.TypeCounts.indicator.eq_1	propext, Classical.choice, Quot.sound
+TypeCounts	_private.TypeCounts.0.KqR75.TypeCounts.count.match_1.eq_2	
+TypeCounts	KqR75.TypeCounts.centered_bound	propext, Classical.choice, Quot.sound
+TypeCovariance	KqR75.TypeCovariance.difference_bound	propext, Classical.choice, Quot.sound
+TypeCovariance	_private.TypeCovariance.0.KqR75.TypeCovariance.load_mass._simp_1_1	propext, Quot.sound
+TypeCovariance	KqR75.TypeCovariance.load_mass	propext, Classical.choice, Quot.sound
+TypeCovariance	KqR75.TypeCovariance.mean_bound	propext, Classical.choice, Quot.sound
+TypeCovariance	KqR75.TypeCovariance.mean_identity	propext, Classical.choice, Quot.sound
+TypeCovariance	KqR75.TypeWeights.removed.congr_simp	propext, Classical.choice, Quot.sound
+TypeCovariance	_private.TypeCovariance.0.KqR75.TypeCovariance.mean_identity._simp_1_1	propext, Quot.sound
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_8	propext
+TypeDrift	KqR75.TypeWeights.proportion.congr_simp	propext, Classical.choice, Quot.sound
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_4	propext
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_2	propext
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_6	propext
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_7	propext, Classical.choice, Quot.sound
+TypeDrift	_private.TypeDrift.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._proof_1_1	propext, Quot.sound
+TypeDrift	KqR75.TypeDrift.mean_ratio	propext, Classical.choice, Quot.sound
+TypeDrift	KqR75.TypeDrift.physical_mean	propext, Classical.choice, Quot.sound
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_5	propext
+TypeDrift	_private.TypeDrift.0.KqR75.TypeDrift.mean_ratio._simp_1_3	propext
+TypeDrift	_private.TypeDrift.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+TypeDriftEnvelope	KqR75.TypeDriftEnvelope.absolute_error	propext, Classical.choice, Quot.sound
+TypeDriftEnvelope	KqR75.TypeDriftEnvelope.count_eq_length	propext
+TypeDriftEnvelope	KqR75.TypeDriftEnvelope.active_bound	propext, Classical.choice, Quot.sound
+TypeDriftEnvelope	_private.TypeDriftEnvelope.0.KqR75.TypeDriftEnvelope.rpow_sq	propext, Classical.choice, Quot.sound
+TypeDriftEnvelope	KqR75.TypeDriftEnvelope.drift	propext, Classical.choice, Quot.sound
+TypeMartingale	KqR75.TypeWeights.proportion.congr_simp	propext, Classical.choice, Quot.sound
+TypeMartingale	_private.TypeMartingale.0.KqR75.TypeMartingale.tail._proof_1_1	propext, Quot.sound
+TypeMartingale	_private.TypeMartingale.0.KqR75.TypeMartingale.increment.match_1.eq_1	
+TypeMartingale	KqR75.TypeMartingale.increment.eq_1	propext, Classical.choice, Quot.sound
+TypeMartingale	KqR75.TypeMartingale.increment_bound	propext, Classical.choice, Quot.sound
+TypeMartingale	KqR75.TypeMartingale.increment.congr_simp	propext, Classical.choice, Quot.sound
+TypeMartingale	KqR75.TypeMartingale.tail	propext, Classical.choice, Quot.sound
+TypeMartingale	_private.TypeMartingale.0.KqR75.TypeMartingale.increment.match_1.eq_2	
+TypeMartingale	KqR75.TypeMartingale.increment.eq_2	propext, Classical.choice, Quot.sound
+TypeScore	KqR75.ColouredCliques.type_score_as_relative_entropy	propext, Classical.choice, Quot.sound
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_6	propext, Classical.choice, Quot.sound
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_7	propext
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_4	propext
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_2	propext
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_5	propext
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_3	propext
+TypeScore	_private.TypeScore.0.KqR75.ColouredCliques.type_score_as_relative_entropy._simp_1_1	propext
+TypeTails	KqR75.TypeTails.eventually_prefix_budget	propext, Classical.choice, Quot.sound
+TypeTails	KqR75.FiniteProcess.eventMass.congr_simp	propext, Classical.choice, Quot.sound
+TypeTails	KqR75.TypeTails.eventMass_all_ge	propext, Classical.choice, Quot.sound
+TypeTails	KqR75.TypeTails.eventMass_exists_le	propext, Classical.choice, Quot.sound
+TypeTails	_private.TypeTails.0.KqR75.TypeTails.eventMass_indicator	propext, Classical.choice, Quot.sound
+TypeTails	KqR75.TypeTails.eventMass_drop	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.TypeTracking.decomposition	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.WeightedGreedy.kernel.congr_simp	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.TypeTracking.observed_tail	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.TypeTracking.physical_decomposition	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.TypeTracking.positive_increment	propext, Classical.choice, Quot.sound
+TypeTracking	_private.TypeTracking.0.KqR75.TypeTracking.telescope._simp_1_1	propext
+TypeTracking	KqR75.TypeTracking.telescope	propext, Classical.choice, Quot.sound
+TypeTracking	KqR75.TypeTracking.active_mean_bound	propext, Classical.choice, Quot.sound
+TypeTracking	_private.TypeTracking.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+TypeTracking	_private.TypeTracking.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+TypeWeights	_private.TypeWeights.0.KqR75.TypeWeights.removed_le._simp_1_2	propext
+TypeWeights	KqR75.TypeWeights.marked.congr_simp	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.WeightedGreedy.totalWeight.eq_1	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.total_marked	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.marked_bounds	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.proportion_none	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.removed.eq_1	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.removed_le	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.total_after	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.removed_mono	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.removed_nonneg	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.mean_removed	propext, Classical.choice, Quot.sound
+TypeWeights	KqR75.TypeWeights.available_marked	propext, Classical.choice, Quot.sound
+UpperDesignFibre	_private.UpperDesignFibre.0.KqR75.UpperCounting.log_designFibre_upper_with_envelope._proof_1_4	propext, Classical.choice, Quot.sound
+UpperDesignFibre	KqR75.UpperCounting.log_designFibre_upper_with_envelope	propext, Classical.choice, Quot.sound
+UpperDesignFibre	_private.UpperDesignFibre.0.KqR75.UpperCounting.reference_score_of_fibre	propext, Classical.choice, Quot.sound
+UpperDesignFibre	_private.UpperDesignFibre.0.KqR75.UpperCounting.log_designFibre_upper_with_envelope._proof_1_1	propext, Classical.choice, Quot.sound
+UpperDesignFibre	_private.UpperDesignFibre.0.KqR75.UpperCounting.log_designFibre_upper_with_envelope._proof_1_2	propext, Classical.choice, Quot.sound
+UpperDesignFibre	_private.UpperDesignFibre.0.KqR75.UpperCounting.log_designFibre_upper_with_envelope._proof_1_3	propext, Classical.choice, Quot.sound
+UpperEntropyIntegral	KqR75.UpperCounting.weighted_entropy_integral	propext, Classical.choice, Quot.sound
+UpperEntropyRate	_private.UpperEntropyRate.0.KqR75.UpperCounting.eventually_card_designFibre_upper_entropy._proof_1_1	propext, Quot.sound
+UpperEntropyRate	KqR75.UpperCounting.eventually_card_designFibre_upper_entropy	propext, Classical.choice, Quot.sound
+UpperEntropyRate	KqR75.UpperCounting.eventually_card_designFibre_upper	propext, Classical.choice, Quot.sound
+UpperExceptional	KqR75.UpperCounting.blocks_le_square	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.incident_blocks_le._proof_1_1	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_6	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_1	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.through_card	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.overlapCandidates_card_le._proof_1_1	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.through_card_le	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.overlapCandidates_card_le._proof_1_2	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_4	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.pack_limit	propext, Classical.choice, Quot.sound
+UpperExceptional	KqR75.UpperCounting.overlapCandidates_card_le	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_2	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_3	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.incident_blocks_le	propext, Classical.choice, Quot.sound
+UpperExceptional	KqR75.UpperCounting.exceptional_card_le	propext, Classical.choice, Quot.sound
+UpperExceptional	_private.UpperExceptional.0.KqR75.UpperCounting.exceptional_card_le._proof_1_5	propext, Classical.choice, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_8	propext, Classical.choice, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_9	propext
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_4	propext
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_6	propext
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_7	propext
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.scale_le_power._proof_1_1	propext, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._proof_1_2	propext, Quot.sound
+UpperExceptionalWeight	KqR75.UpperCounting.exceptional_weight_le	propext, Classical.choice, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._proof_1_1	propext, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.scale_le_power._proof_1_2	propext, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.scale_le_power._proof_1_3	propext, Quot.sound
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_5	propext
+UpperExceptionalWeight	_private.UpperExceptionalWeight.0.KqR75.UpperCounting.exceptional_weight_le._simp_1_3	propext
+UpperExceptionalWeight	KqR75.UpperCounting.scale_le_power	propext, Classical.choice, Quot.sound
+UpperFootprint	KqR75.UpperCounting.active_reference_score	propext, Classical.choice, Quot.sound
+UpperFootprint	KqR75.UpperCounting.active.eq_1	propext, Classical.choice, Quot.sound
+UpperFootprint	KqR75.UpperCounting.required_edges_of_nonexceptional	propext, Classical.choice, Quot.sound
+UpperFootprint	_private.UpperFootprint.0.KqR75.UpperCounting.disjoint_owners	propext, Classical.choice, Quot.sound
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._proof_1_1	propext, Classical.choice, Quot.sound
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_8	propext
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_3	propext
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_5	propext
+UpperGridBound	KqR75.UpperCounting.weighted_grid_upper	propext, Classical.choice, Quot.sound
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_7	propext, Classical.choice, Quot.sound
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_4	propext
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_6	propext
+UpperGridBound	_private.UpperGridBound.0.KqR75.UpperCounting.weighted_grid_upper._simp_1_2	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_6	propext, Classical.choice, Quot.sound
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_7	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_2	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_4	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.power_difference_le	propext, Classical.choice, Quot.sound
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_5	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_1	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.gridLog_le_integral._simp_1_3	propext
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.grid_cell_le	propext, Classical.choice, Quot.sound
+UpperGridIntegral	_private.UpperGridIntegral.0.KqR75.UpperCounting.log_power_difference_le	propext, Classical.choice, Quot.sound
+UpperGridIntegral	KqR75.UpperCounting.gridLog_le_integral	propext, Classical.choice, Quot.sound
+UpperIntegralBound	KqR75.UpperCounting.weighted_upper_of_exceptional_mass	propext, Classical.choice, Quot.sound
+UpperIntegralBound	KqR75.UpperCounting.weighted_integral_upper	propext, Classical.choice, Quot.sound
+UpperIntegralBound	_private.UpperIntegralBound.0.KqR75.UpperCounting.weighted_upper_of_exceptional_mass._proof_1_3	propext, Quot.sound
+UpperIntegralBound	_private.UpperIntegralBound.0.KqR75.UpperCounting.weighted_upper_of_exceptional_mass._simp_1_2	
+UpperIntegralBound	_private.UpperIntegralBound.0.KqR75.UpperCounting.weighted_upper_of_exceptional_mass._proof_1_1	propext, Quot.sound
+UpperLogCutoff	KqR75.UpperCounting.cutoff_log_error	propext, Classical.choice, Quot.sound
+UpperLogCutoff	_private.UpperLogCutoff.0.KqR75.UpperCounting.log_near_zero	propext, Classical.choice, Quot.sound
+UpperOwners	KqR75.UpperCounting.resources_inter_card_le_one	propext, Classical.choice, Quot.sound
+UpperOwners	KqR75.UpperCounting.injective_owners_of_nonexceptional	propext, Classical.choice, Quot.sound
+UpperOwners	_private.UpperOwners.0.KqR75.UpperCounting.exists_owner._proof_1_2	propext, Classical.choice, Quot.sound
+UpperOwners	KqR75.UpperCounting.owner_spec	propext, Classical.choice, Quot.sound
+UpperOwners	KqR75.UpperCounting.exists_owner	propext, Classical.choice, Quot.sound
+UpperOwners	_private.UpperOwners.0.KqR75.UpperCounting.exists_owner._simp_1_1	propext, Classical.choice, Quot.sound
+UpperOwners	KqR75.UpperCounting.owner_eq	propext, Classical.choice, Quot.sound
+UpperOwners	_private.UpperOwners.0.KqR75.UpperCounting.owner_eq._simp_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityAverage	_private.UpperPriorityAverage.0.KqR75.UpperCounting.sum_activeLogReference_le._simp_1_2	propext
+UpperPriorityAverage	KqR75.UpperCounting.sum_activeLogReference_le	propext, Classical.choice, Quot.sound
+UpperPriorityAverage	KqR75.UpperCounting.active.congr_simp	propext, Classical.choice, Quot.sound
+UpperPriorityAverage	KqR75.UpperCounting.activeLogReference.eq_1	propext, Classical.choice, Quot.sound
+UpperPriorityAverage	KqR75.UpperCounting.activeLogReference._proof_1	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.priorityKey_lt_of_label_lt	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.priorityKey_lt_of_label_lt._proof_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.mem_priorityBox	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.priorityBox.eq_1	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.priorityBox_card	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.mem_priorityBox._simp_1_2	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.priorityBox_disjoint_ratio._proof_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.priorityBox_disjoint_ratio	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.priorityKey_injective	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.priorityKey_injective._proof_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.priorityKey_label_le	propext, Classical.choice, Quot.sound
+UpperPriorityBox	_private.UpperPriorityBox.0.KqR75.UpperCounting.mem_priorityBox._simp_1_3	propext, Classical.choice, Quot.sound
+UpperPriorityBox	KqR75.UpperCounting.strict_labels_active	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	_private.UpperPriorityCounts.0.KqR75.UpperCounting.mem_strictBox._simp_1_2	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	KqR75.UpperCounting.mem_strictBox	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	_private.UpperPriorityCounts.0.KqR75.UpperCounting.ordinary_availability_card._simp_1_3	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	KqR75.UpperCounting.strictBox.eq_1	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	KqR75.UpperCounting.strictBox_card	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	KqR75.UpperCounting.strictBox._proof_1	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	_private.UpperPriorityCounts.0.KqR75.UpperCounting.ordinary_availability_card._simp_1_2	propext, Classical.choice, Quot.sound
+UpperPriorityCounts	KqR75.UpperCounting.ordinary_availability_card	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	KqR75.UpperCounting.log_reference_on_strictBox	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	_private.UpperPriorityJensen.0.KqR75.UpperCounting.sum_reference_on_strictBox._simp_1_2	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	_private.UpperPriorityJensen.0.KqR75.UpperCounting.log_reference_on_strictBox._simp_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	KqR75.UpperCounting.sum_reference_on_strictBox	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	_private.UpperPriorityJensen.0.KqR75.UpperCounting.sum_log_le_of_mean	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	_private.UpperPriorityJensen.0.KqR75.UpperCounting.sum_reference_on_strictBox._simp_1_1	propext, Classical.choice, Quot.sound
+UpperPriorityJensen	_private.UpperPriorityJensen.0.KqR75.UpperCounting.log_reference_on_strictBox._simp_1_2	propext, Classical.choice, Quot.sound
+UpperReference	KqR75.UpperCounting.profile_reference_properties	propext, Classical.choice, Quot.sound
+UpperReference	_private.UpperReference.0.KqR75.UpperCounting.available_reference_le_one._simp_1_2	propext, Classical.choice, Quot.sound
+UpperReference	KqR75.UpperCounting.available_reference_le_one	propext, Classical.choice, Quot.sound
+UpperReference	_private.UpperReference.0.KqR75.UpperCounting.available_reference_le_one._simp_1_1	propext, Classical.choice, Quot.sound
+UpperReveal	_private.UpperReveal.0.KqR75.UpperCounting.true_candidate_is_exceptional	propext, Classical.choice, Quot.sound
+UpperReveal	KqR75.UpperCounting.inactive_owner_fixed	propext, Classical.choice, Quot.sound
+UpperReveal	KqR75.UpperCounting.owner.congr_simp	propext, Classical.choice, Quot.sound
+UpperReveal	KqR75.UpperCounting.available_owner_late	propext, Classical.choice, Quot.sound
+UpperUniform	_private.UpperUniform.0.KqR75.UpperCounting.eventually_log_designFibre_upper._proof_1_4	propext, Quot.sound
+UpperUniform	KqR75.UpperCounting.eventually_log_designFibre_upper	propext, Classical.choice, Quot.sound
+UpperUniform	_private.UpperUniform.0.KqR75.UpperCounting.eventually_log_designFibre_upper._proof_1_2	propext, Quot.sound
+UpperUniform	_private.UpperUniform.0.KqR75.UpperCounting.eventually_log_designFibre_upper._proof_1_3	propext, Classical.choice, Quot.sound
+UpperUniform	_private.UpperUniform.0.KqR75.UpperCounting.eventually_log_designFibre_upper._proof_1_1	propext, Quot.sound
+UpperWeightedReveal	LatinonEntropy.availableReference.eq_1	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	_private.UpperWeightedReveal.0.KqR75.UpperCounting.owner_code_injective	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	KqR75.UpperCounting.requiredEdges._proof_1	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	_private.UpperWeightedReveal.0.KqR75.UpperCounting.weighted_reveal_bound._proof_1_1	propext, Quot.sound
+UpperWeightedReveal	LatinonEntropy.revealFibre.congr_simp	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	KqR75.UpperCounting.availableCandidates.eq_1	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	KqR75.UpperCounting.weighted_reveal_bound	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	_private.UpperWeightedReveal.0.KqR75.UpperCounting.weighted_reveal_bound._simp_1_2	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	_private.UpperWeightedReveal.0.KqR75.UpperCounting.weighted_reveal_bound._simp_1_4	propext, Classical.choice, Quot.sound
+UpperWeightedReveal	_private.UpperWeightedReveal.0.KqR75.UpperCounting.weighted_reveal_bound._simp_1_7	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_8	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_9	propext, Classical.choice, Quot.sound
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_3	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_5	propext
+WeightedEnergy	KqR75.WeightedEnergy.signed_quadratic	propext, Classical.choice, Quot.sound
+WeightedEnergy	KqR75.WeightedEnergy.incidence_sum	propext, Classical.choice, Quot.sound
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_10	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_4	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_6	propext
+WeightedEnergy	_private.WeightedEnergy.0.KqR75.WeightedEnergy.signed_quadratic._simp_1_7	propext
+WeightedEnergy	KqR75.WeightedEnergy.load.congr_simp	propext, Classical.choice, Quot.sound
+WeightedEnergy	KqR75.WeightedEnergy.load.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.availableWeight.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.selectedCount.eq_2	
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.kernel.match_1.eq_1	
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.remaining.match_1.eq_3	
+WeightedGreedy	KqR75.WeightedGreedy.remaining.eq_2	propext, Classical.choice, Quot.sound
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.kernel.match_1.eq_2	
+WeightedGreedy	KqR75.WeightedGreedy.remaining.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.stoppedEnergy.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.totalWeight.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.loss.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.remaining.match_1.eq_1	
+WeightedGreedy	KqR75.WeightedGreedy.availableWeight_nonneg	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.stopped_transition	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load_after	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.kernel.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.positive_history_valid	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.kernel._proof_8	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.stoppedEnergy_step	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.resource_selection_prob	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.error.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.kernel._proof_7	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.resource_count	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.availableWeight_after	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.live.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.availableWeight.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load_nonneg	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.selectedCount.eq_3	
+WeightedGreedy	KqR75.WeightedGreedy.stoppedEnergy_nonneg	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.remaining.eq_def	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load_zero_outside	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.selectedCount.eq_def	
+WeightedGreedy	KqR75.WeightedGreedy.selectedCount.eq_1	
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.error_after._simp_1_8	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.error_after	propext, Classical.choice, Quot.sound
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.remaining.match_1.eq_2	
+WeightedGreedy	KqR75.WeightedGreedy.remaining.eq_3	propext, Classical.choice, Quot.sound
+WeightedGreedy	LatinonEntropy.FiniteKernel.mk.congr_simp	propext, Classical.choice, Quot.sound
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.positive_history_valid._simp_1_1	propext
+WeightedGreedy	KqR75.WeightedGreedy.loss_on_selected	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.error.eq_1	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.energy_after	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.signed_energy	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.positive_some_available	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.sum_load	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.load_le_initial	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.stoppedEnergy_none	propext, Classical.choice, Quot.sound
+WeightedGreedy	KqR75.WeightedGreedy.stoppedEnergy_drift_bound	propext, Classical.choice, Quot.sound
+WeightedGreedy	_private.WeightedGreedy.0.KqR75.WeightedGreedy.sum_load._simp_1_2	propext, Quot.sound

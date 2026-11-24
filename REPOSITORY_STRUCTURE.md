@@ -52,3 +52,5 @@ its paper's edition exactly as released.
 Operational visibility is separate from edition metadata. The same files can
 undergo final audits with restricted access and subsequently be made public
 without rewriting the manuscript or companion.
+
+Paper III follows the five-directory series layout in [STEINER-PROFILES](preprints/STEINER-PROFILES/README.md).

@@ -1,0 +1,7 @@
+module
+import Reconstructed
+
+#check KqR75.PhysicalCompletion.eventually_designFibre_bilateral
+#print axioms KqR75.PhysicalCompletion.eventually_designFibre_bilateral
+#print axioms KqR75.UpperCounting.eventually_card_designFibre_upper_entropy
+#print axioms RefinedAbsorption.Original2024.theorem_1_7_two_le

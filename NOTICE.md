@@ -25,3 +25,5 @@ AI tools assisted drafting, proof development, translation and validation.
 They are not authors or independent reviewers. The author is responsible for
 the mathematical claims. Internal audit results certify only their stated
 checks and do not establish exhaustive priority or external endorsement.
+
+The licensing and attributions for Paper III are detailed in its [notice](preprints/STEINER-PROFILES/NOTICE.md).

@@ -51,6 +51,21 @@
       ],
       "doi_status": "reserved_not_published",
       "alphaxiv": "https://www.alphaxiv.org/abs/2611.steiner-latin-squares-color-statistics"
+    },
+    {
+      "title": "Counting Steiner designs with prescribed color profiles",
+      "title_es": "Conteo de diseños de Steiner con perfiles de color prescritos",
+      "directory": "preprints/STEINER-PROFILES",
+      "version": "1.0",
+      "doi": "10.5281/zenodo.24501236",
+      "id": "STEINER-PROFILES",
+      "sequence": 4,
+      "label": "Paper III",
+      "cites": [
+        "LATINON",
+        "COLORSTATS"
+      ],
+      "release_tag": "steiner-profiles-v1.0"
     }
   ],
   "series": {

@@ -1,0 +1,150 @@
+[
+  {
+    "pdf": "01_manuscript/steiner_profiles_en.pdf",
+    "pages": 12,
+    "pages_rendered": [
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-01.png",
+        "sha256": "0d267fad93b56bdf6bf9f33a905b61da7380fb5dfcd4d34fc36fc6719be277d3"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-02.png",
+        "sha256": "268fa6aab838660d361cae4e9d33437c8641d2444795f5cc01a4d5974b88e79e"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-03.png",
+        "sha256": "ec08cb30fa2e3feb2a71786406d080d422e61f7376ccbae9c989bc0c8dd5f568"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-04.png",
+        "sha256": "9c35e50613b0ab7c8afc3f9ec21cfc43c52d181caff644bb10ff4f74a1b4fae5"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-05.png",
+        "sha256": "39572faf1290a3a9b20a1b8cd21575b503baeaad99c7bae2cb85f4cc81f17054"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-06.png",
+        "sha256": "e42d1064127c5be5d63436c5587260d0affe4bffa167e4c2841b3f167db483f1"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-07.png",
+        "sha256": "9655b088160b8e035c1fcc1c638e941084752df124d326914589e68958e4b93c"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-08.png",
+        "sha256": "c0519d3ea26a42dfde3ab9914a55b343536096ed2016679d1225c4a5dadec0e9"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-09.png",
+        "sha256": "70838473fe734cb26a18cd61f680f5e568694b00cd5bcda46cc44c632bae6c33"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-10.png",
+        "sha256": "6093a8b5b87b925672ed2ae91b8b2848de8e1ca221c2622f25f57872c2022289"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-11.png",
+        "sha256": "1343a8006c02021576e58c857f0f8897c2ba04167e1211d93f7ca40df597941a"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_en-12.png",
+        "sha256": "9acec71bab3f3ab2b64f6333f2bfdd2b19872ca3969701f387ad3727099d3d1a"
+      }
+    ],
+    "sha256": "b74297d2c716c4c8a7304dca49d76dd869355d308fd21d46d75535ec5f80beb5",
+    "tex_sha256": "3b41f6b583bb76af52f59475324c05d9064fd50648bbfdb043a3eeceecc02041",
+    "source_sha256": "d8e15299e26ca98946ce8e5f852e5e70cc134f92b1b908e205b5809b71d42ca7"
+  },
+  {
+    "pdf": "01_manuscript/steiner_profiles_es.pdf",
+    "pages": 12,
+    "pages_rendered": [
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-01.png",
+        "sha256": "d0eeeb1e7d146405927a4336e47f47c46ae91cf87ff9942038053ed7c417fff3"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-02.png",
+        "sha256": "79235c32ef826994603bdf1baff296314f64675d943e40c66299c8008169d93e"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-03.png",
+        "sha256": "a5cbe1b18bce0f494674d30d97c9a8969a45419a667ac888fe9930caead9294a"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-04.png",
+        "sha256": "76158b086f57c868975dab8d8d7cf85e388a3169758c3b7b142a0b36c5902adf"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-05.png",
+        "sha256": "81002a15de40899bfe923998dcb868d9281b1627f8e4af1477835d82bb4bbe58"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-06.png",
+        "sha256": "50fa6760cc80ee404c2f96c94b9337b9f765e171b1ec9c44a4ccd9e791820be4"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-07.png",
+        "sha256": "eadbeaaeac748a0df8924ab211dbbfa6dcd821afd70acf9e36f0439ab5c8bc37"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-08.png",
+        "sha256": "9184636749aebb72ed1f0c202a7c0e8138a87cbfe8b41c43cf9b82d181ce69ef"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-09.png",
+        "sha256": "da5e5d6017b6e69850ca6f8fdbd3b760a7fd33caeccc920b8b0e9a0ab9f38098"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-10.png",
+        "sha256": "23b523644e761a1af8854a5c2be35cf55b69cf24a4b152bdb723f89f5acdba67"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-11.png",
+        "sha256": "8d740d1d938d847da7cfa560e8a785a4d17a17085b663b9dbe61d630b549dfb0"
+      },
+      {
+        "file": "02_validation/rendered/steiner_profiles_es-12.png",
+        "sha256": "ac7b3fdb5f61fe299bd1e17f3e896a02d288f623d604126683a5d900533a6125"
+      }
+    ],
+    "sha256": "db0496c3432b1b91325a77e6fc9c7e48e63675e79e003cf477ad138358776bcb",
+    "tex_sha256": "72c12246c702f4df8647933f5eae603e62e03a66ffb427640b70984f515156d9",
+    "source_sha256": "dea7ca9c0b52c328e250109864c8e15895babf2affbad295b23e4b0d0b3abbb6"
+  },
+  {
+    "pdf": "05_formalization/formal_companion_en.pdf",
+    "pages": 2,
+    "pages_rendered": [
+      {
+        "file": "02_validation/rendered/formal_companion_en-01.png",
+        "sha256": "3c310a1a893257ecb00ac9bddeb7f89602612d0ddd6fd90fd1f405c5caf4436a"
+      },
+      {
+        "file": "02_validation/rendered/formal_companion_en-02.png",
+        "sha256": "3c332439a7e8ffeeb6da87b171498d3a25520b6df5d4744b5841126b4ac9f73c"
+      }
+    ],
+    "sha256": "db5650de98b4462a45b43b05601ee0a253f9b6004369d8ad053db4c439b1cbb8",
+    "tex_sha256": "d8479508567b3fc50cc427bf74458f72c9406c32524dc3715091c08e7a0e5d20",
+    "source_sha256": "6b7d3f86f69ba44d628678c1330611860c4455dd4a55ee92992635463476ca88"
+  },
+  {
+    "pdf": "05_formalization/formal_companion_es.pdf",
+    "pages": 2,
+    "pages_rendered": [
+      {
+        "file": "02_validation/rendered/formal_companion_es-01.png",
+        "sha256": "0daf766efe821a90d7869b9c11f01260a6b73fcde118f271c47645552b6a2813"
+      },
+      {
+        "file": "02_validation/rendered/formal_companion_es-02.png",
+        "sha256": "ff4b906d094cc659787390a181e1679f02635cdf5985f1eb6300adfcf147bcc2"
+      }
+    ],
+    "sha256": "9e2ef7333f16af5a7f1075052836eb81ffac892023d1af1d4e7df00e31b1d1b7",
+    "tex_sha256": "d98b04a97bb69dc374bc4755f092153a235e0aba8f7246c4333aaff65efc0c91",
+    "source_sha256": "22fd8e85e15dc3c83224eb0e36d9dac6cae95ccd725fb03c54a19d4ef868675c"
+  }
+]

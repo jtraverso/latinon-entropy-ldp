@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "bilingual_displays": 24,
+  "paper_version": "1.0",
+  "main_statements": [
+    "1.1",
+    "10.1"
+  ],
+  "intermediate_lemmas": [
+    "2.1",
+    "3.1",
+    "6.1",
+    "7.1"
+  ],
+  "written_illustrations": [
+    "Four-point trade on 25 blocks",
+    "Two-color profile polytope",
+    "Pinsker concentration"
+  ],
+  "correspondence": "24 mathematical displays compared across languages. Five proof endings identified in each PDF. Finite column bound in Lemma 2.1 is C_q = 2(q-2)(q-1). Lean sources agree with the source freeze."
+}

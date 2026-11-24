@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the English preprint."
+title: "Counting Steiner designs with prescribed color profiles"
+type: software
+version: "1.0"
+authors:
+  - family-names: Traverso Gianini
+    given-names: Juan Pablo
+    orcid: https://orcid.org/0009-0003-6068-4096
+preferred-citation:
+  type: article
+  title: "Counting Steiner designs with prescribed color profiles"
+  authors:
+    - family-names: Traverso Gianini
+      given-names: Juan Pablo
+      orcid: https://orcid.org/0009-0003-6068-4096
+  year: 2026
+  doi: 10.5281/zenodo.24501236
+  version: "1.0"

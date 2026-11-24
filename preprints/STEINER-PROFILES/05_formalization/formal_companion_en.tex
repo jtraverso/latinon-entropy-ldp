@@ -1,0 +1,78 @@
+% Adapted from the author's public Erdos Paper IV v1.23 series_template.tex.
+% Layout provenance is recorded in 02_validation; the Markdown is semantic authority.
+\documentclass[english,11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf]
+\setmonofont{lmmono10-regular.otf}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb}
+\providecommand{\mathscr}{\mathcal}
+\usepackage[english]{babel}
+\usepackage{microtype,parskip}
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{xcolor,xurl}
+\usepackage{hyperref,bookmark}
+\usepackage{etoolbox,needspace}
+\setcounter{secnumdepth}{-\maxdimen}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcounter{none}
+\AtBeginEnvironment{longtable}{\Needspace{8\baselineskip}\small}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{7\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{6\baselineskip}}{}{}
+\urlstyle{same}
+
+\usepackage{graphicx}
+\providecommand{\pandocbounded}[1]{#1}
+
+\usepackage{float}
+
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\usepackage{tikz}
+\AtBeginEnvironment{longtable}{\Needspace{16\baselineskip}}
+\hypersetup{pdftitle={Formal companion to Counting Steiner designs with prescribed color profiles},pdfauthor={Juan Pablo Traverso Gianini},pdflang={en},colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\title{Formal companion to Counting Steiner designs with prescribed color profiles}
+\author{Juan Pablo Traverso Gianini\\\small Independent researcher, Santiago, Chile\\\small \href{mailto:jtraverso@gmail.com}{jtraverso@gmail.com}\\\small \href{https://orcid.org/0009-0003-6068-4096}{ORCID: 0009-0003-6068-4096}}\date{}\begin{document}\raggedbottom\maketitle
+\begin{center}
+\textbf{Paper III. Combinatorial entropy and counting.}\\
+\textbf{Preprint 1.0 --- November 24, 2026.}\\
+DOI: \url{https://doi.org/10.5281/zenodo.24501236}.\\
+\href{https://github.com/jtraverso/latinon-entropy-ldp/tree/main/preprints/STEINER-PROFILES/05_formalization/lean}{Lean sources in the series repository}\end{center}
+\subsection{1. Reading the two main statements}\label{reading-the-two-main-statements}
+
+For Theorem 1.1, import \path{Reconstructed} and inspect \path{KqR75.PhysicalCompletion.eventually_designFibre_bilateral} in \path{R75.lean}. A coloring is a function from the labeled point set into a nonempty finite type. A quota is integer valued. The margin equations compare counts of actual pairs, so a histogram cannot enter the lower bound merely by having the correct total mass. The conclusion gives positivity of the fiber and bounds its logarithm on both sides. The error constant precedes the quantifiers over the order, the coloring and the quota. The companion upper theorem, \path{KqR75.UpperCounting.eventually_card_designFibre_upper_entropy}, bounds the cardinality directly. This distinction matters when a fiber is empty.
+
+For Corollary 10.1, \path{KqR75.ProfileLDP.designProfileLDP_probability} in \path{DesignProfileLDP.lean} takes a sequence of colorings whose proportions tend to positive limits along admissible orders. In the closed-set bound, one tests every real number strictly below the rate at every feasible point in the closed set. For an open set, one tests each feasible point and each positive tolerance. The ratio in both conclusions is the number of designs in the event divided by the number of designs of that order. These exponential inequalities give the logarithmic limits in the manuscript and treat events of zero probability directly. Compactness of the feasible rate sublevels is the third conclusion of the same declaration.
+
+\subsection{2. Following the proof through the source}\label{following-the-proof-through-the-source}
+
+\textbf{Sections 1--2.} The margins in the theorem are defined in \path{ExactPairMargins.lean}. The three entries of the inverse for the complete graph and its column-sum estimate can be checked in \path{CompleteJohnson.lean}; restricting and inverting the perturbed matrix leads to \path{solve_defect} in \path{HostCorrection.lean}. The second correction is on the fixed-dimensional space of histograms. Its purpose is to prescribe the load on each remaining edge and the totals by type at the same time. See \path{JointCorrection.lean}.
+
+\textbf{Section 3.} The finite-field cell is realized on the actual vertex set in \path{PhysicalAffineCell.lean}. In particular \path{pair_covered_once} and \path{switch_cell} certify the edge covering and the alternative decomposition of one cell. The triangular elimination on color profiles gives an integral correction with bounded coefficients. It is also what permits rounding in the large-deviation lower bound.
+
+\textbf{Sections 4--5.} Start with the inequality on one block in \path{SignedBlock.lean}. Summing that inequality with the weights of the currently available cliques gives the signed contribution to the physical drift. The step estimate is \path{energy_drift_rate} in \path{PhysicalDrift.lean}. The stopped argument first controls the fraction of available weight of each type and then the number of choices of that type. The resulting physical count is \path{eventually_count} in \path{PhysicalHorizonCounts.lean}.
+
+\textbf{Sections 6--7.} In \path{PhysicalCover.lean}, \path{eventually_cover_physical} completes the covering of the leftover using the reserve. The graph case of Delcourt and Postle enters through \path{OmniBridge.lean}. The bridge derives placement from the imported \path{RefinedAbsorption.Original2024.theorem_1_7_two_le}. In \path{CorrectedCompletion.lean}, \path{corrected_completion} uses the reserved cells on a completed covering. At this point the histogram defect has zero pair margins and can be switched away.
+
+\textbf{Sections 8--9.} In \path{PrefixRecovery.lean}, \path{recover_picked} identifies the chosen cliques inside the final design, and \path{order_fibre_card} controls how many ordered histories are thereby counted. The upper bound has a separate route through \path{UpperWeightedReveal.lean}, \path{UpperExceptionalWeight.lean} and \path{UpperEntropyRate.lean}. It applies even if a particular type has weight zero.
+
+\textbf{Section 10.} In \path{QuotaRounding.lean}, \path{KqR75.SlotPairMargins.round_quotas} preserves the integer pair margins while approximating a real target. The comparison of finite type laws with the limiting law is in \path{ProfileTypeLaw.lean}. The count, rate and topological arguments appear in \path{DesignProfileCounts.lean}, \path{DesignProfileRates.lean} and \path{ProfileLDPPrinciple.lean}. The final assembly in \path{DesignProfileLDP.lean} uses ordered pair margins. The declaration \path{orderedMargins_eq_iff} supplies the equivalence needed to read them as the pair-type constraints in (10.1).
+
+\textbf{Named intermediate lemmas.} Lemma 2.1 uses §2's incidence inverse (\path{HostCorrection.solve_defect}); Lemma 3.1 uses \path{SlotPairMargins.affine_spans_kernel} and the physical cell switch. Lemma 6.1 uses \path{OmniBridge.exists_omni}, \path{eventually_absorption_budget} and \path{physical_completion}. Lemma 7.1 combines the good-prefix estimates with \path{corrected_completion}. The two-color diagram and the elementary Pinsker deduction in §10.1 illustrate Corollary 10.1 in the written exposition.
+
+\subsection{3. Source and verification}\label{source-and-verification}
+
+The freeze contains 162 project modules, the Lake lockfile, and the verification programs and logs. Import \path{Reconstructed} using Lean 4.35.0. Earlier incremental compilation records accompany the enumeration and LDP source certificates.
+
+The kernel loaded 59 external imports from pinned, compiled dependencies and replayed 1,997 project declarations. The catalogue printed 1,750 theorem records with their proof terms, representing 1,741 distinct names, including private and generated lemmas. Every axiom set is contained in \path{propext}, \path{Classical.choice} and \path{Quot.sound}.
+
+In \texttt{steiner-profiles-lean.zip}, look up a module and name in \texttt{verification/THEOREMS.txt} for its signature and axioms or \texttt{verification/PROOFS.txt} for its proof. The archive is the distribution copy of the full proof catalogue. Its checksum is listed in the accompanying \path{SHA256SUMS}. To repeat the checks, unpack the archive and run from \path{lean}, specifying a fresh output directory.
+
+\begin{verbatim}
+lake build
+lake env python ../verification/recheck.py ../recheck-output
+\end{verbatim}
+
+\end{document}

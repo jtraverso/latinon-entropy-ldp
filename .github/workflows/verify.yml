@@ -16,3 +16,4 @@ jobs:
       - run: python -B scripts/verify_release.py
       - run: python -B scripts/verify_ghhsbridge.py
       - run: python -B scripts/verify_colorstats.py
+      - run: python -B scripts/verify_steiner_profiles.py

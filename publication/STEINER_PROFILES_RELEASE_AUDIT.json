@@ -1,0 +1,37 @@
+{
+  "status": "PASS_INTERNAL_RELEASE_AUDIT",
+  "paper": "STEINER-PROFILES",
+  "version": "1.0",
+  "date": "2026-11-24",
+  "scope": "Internal mathematical, bibliographic and editorial review and byte-level verification of the bilingual preprint, Lean freeze and its recorded kernel checks.",
+  "official_series_base": "1ee4b8c6a65253c80facc8eb50c2c75cf0c587a7",
+  "checks": {
+    "bilateral_theorem_and_profile_LDP": "PASS",
+    "omniabsorber_hypotheses_and_divisibility": "PASS",
+    "integer_trades_and_prefix_recovery": "PASS",
+    "boundary_example_and_concentration": "PASS",
+    "prior_art_scoped": "PASS",
+    "companion_and_lean_source_identity": "PASS",
+    "typesetting_and_visual_inspection": "PASS",
+    "bilingual_mathematical_parity": "PASS",
+    "code_license_and_attribution": "PASS",
+    "reserved_DOI_and_English_metadata": "PASS",
+    "series_layout_and_citation": "PASS",
+    "finite_degree_threshold": "PASS",
+    "explicit_four_point_trade": "PASS",
+    "proof_terms_archive_member": "PASS",
+    "bibliographic_pagination": "PASS",
+    "series_disclosure_and_proof_endings": "PASS"
+  },
+  "open_internal_findings": 0,
+  "pages_inspected": 28,
+  "freeze_sha256": "c58856f5d4c43b4d7e18366a2d49c979d682407afca82a8f2b046afea952ef22",
+  "records": {
+    "PROOF_REVIEW.md": "bbc5857b8e03cf45d01c69b56b7d9a144fec05f61f159de473fd7fac2d5b0137",
+    "LITERATURE_REVIEW.md": "35cf316813c12b5f33ca7dec1b06cc75474cf91c25020ab3639ae4057f0d786c",
+    "EDITORIAL_REVIEW.md": "794b5b395e276c82d63c5c117dd16e771a6979869fa3e82a1ec912767fec6c8e",
+    "TYPESETTING.json": "ca691912a87a3e29b789325877c81349dfffd671b91ef4d1bc110aa1dd6103ef",
+    "SEMANTIC_DIFF.json": "4044751417f1cc34044268c5e28365e9292d59d826d6f83979b9ed33ef9e7178",
+    "ZENODO_RESERVATION.json": "bbbf4f08b9a38e44975a738e08e19e6696ee116fc0b0103be1660ff1b1bef29e"
+  }
+}

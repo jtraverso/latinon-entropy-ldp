@@ -10,6 +10,7 @@ not change an article's title or theorem numbering.
 | Paper I | LATINON | Entropy and large deviations for Latin squares | 1.0 | [Paper directory](preprints/LATINON/README.md) |
 | Research note | GHHSBRIDGE | The kernel and measure representations of Latinons agree: a Lean formalization | 1.0 | [Paper directory](preprints/GHHSBRIDGE/README.md) |
 | Paper II | COLORSTATS | Counting Steiner triple systems and Latin squares with prescribed color statistics | 1.0 | [Paper directory](preprints/COLORSTATS/README.md) |
+| Paper III | STEINER-PROFILES | Counting Steiner designs with prescribed color profiles | 1.0 | [Paper directory](preprints/STEINER-PROFILES/README.md) |
 
 Only completed editions appear in this catalogue. No prospective article,
 unreleased draft or forward mathematical dependency is listed.

@@ -1,0 +1,2 @@
+'KqR75.ProfileLDP.designProfileLDP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KqR75.ProfileLDP.designProfileLDP_probability' depends on axioms: [propext, Classical.choice, Quot.sound]

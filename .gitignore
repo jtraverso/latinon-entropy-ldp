@@ -8,3 +8,5 @@
 tmp/
 lean/
 !preprints/GHHSBRIDGE/02_validation/lean/
+
+!preprints/STEINER-PROFILES/05_formalization/lean/

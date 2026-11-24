@@ -1,0 +1,28 @@
+KqR75.PhysicalCompletion.eventually_designFibre_bilateral.{u_1} {C : Type u_1} [Fintype C] [DecidableEq C] [Nonempty C]
+  (q : ℕ) (hq : 3 ≤ q) (ρ κ : ℝ) (hρ : 0 < ρ) (hκ : 0 < κ) :
+  ∃ err,
+    0 ≤ err ∧
+      ∀ᶠ (n : ℕ) in Filter.atTop,
+        ∀ (colour : Fin n → C) (m : KqR75.ColouredCliques.TypeProfile C q → ℤ),
+          (∀ (c : C), ρ * ↑n ≤ ↑(KqR75.ColouredCliques.profile colour Finset.univ c)) →
+            KqR75.PhysicalCompletion.ExactPairMargins colour m →
+              (∀ (t : KqR75.ColouredCliques.TypeProfile C q),
+                  κ * (↑(Fintype.card ↥(KqR75.CompleteJohnson.Edge n)) / ↑(q.choose 2)) ≤ ↑(m t)) →
+                q.choose 2 ∣ n.choose 2 →
+                  q - 1 ∣ n - 1 →
+                    have r := q.choose 2;
+                    have z := KqR75.GreedyScales.criticalExponent q;
+                    have s := ↑(r - 1);
+                    have B := ↑(Fintype.card ↥(KqR75.CompleteJohnson.Edge n)) / ↑r;
+                    have N := fun t => ↑(KqR75.ProfileWeights.fibre (KqR75.ColouredCliques.cliqueType colour) t).card;
+                    have K := ∑ t, ↑(m t) / B * Real.log (↑(m t) / B / (N t / ↑(n.choose q)));
+                    have main := B * (Real.log ↑((n - 2).choose (q - 2)) - s - K);
+                    0 < (KqR75.PhysicalCompletion.designFibre colour m).card ∧
+                      main - err * (↑n ^ (2 - z) * Real.log ↑n) ≤
+                          Real.log ↑(KqR75.PhysicalCompletion.designFibre colour m).card ∧
+                        Real.log ↑(KqR75.PhysicalCompletion.designFibre colour m).card ≤ main + err * ↑n ^ (2 - 1 / s)
+'KqR75.PhysicalCompletion.eventually_designFibre_bilateral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KqR75.UpperCounting.eventually_card_designFibre_upper_entropy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RefinedAbsorption.Original2024.theorem_1_7_two_le' depends on axioms: [propext, Classical.choice, Quot.sound]

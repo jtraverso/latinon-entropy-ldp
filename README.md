@@ -2,11 +2,16 @@
 
 Juan Pablo Traverso Gianini
 
-A series of independently versioned preprints with bilingual manuscripts, Lean
-source freezes and per-paper audit records. The catalogue contains the article
-**Entropy and large deviations for Latin squares**, preprint 1.0, and the research
-note **The kernel and measure representations of Latinons agree: a Lean
-formalization**, preprint 1.0, and Paper II, **Counting Steiner triple systems and Latin squares with prescribed color statistics**, preprint 1.0. See [Series catalogue and publication policy](SERIES.md).
+The series contains three papers and a research note. Each edition includes an English manuscript, a Spanish translation, its Lean sources and an internal audit. [Series catalogue](SERIES.md).
+
+| | Preprint 1.0 |
+|---|---|
+| Paper I | [Entropy and large deviations for Latin squares](preprints/LATINON) |
+| Research note | [The kernel and measure representations of Latinons agree](preprints/GHHSBRIDGE) |
+| Paper II | [Counting Steiner triple systems and Latin squares with prescribed color statistics](preprints/COLORSTATS) |
+| Paper III | [Counting Steiner designs with prescribed color profiles](preprints/STEINER-PROFILES) |
+
+## Paper I. Entropy and large deviations for Latin squares
 
 Read the preprint on [alphaXiv](https://www.alphaxiv.org/abs/2611.latin-squares-entropy-large-deviations).
 
@@ -113,6 +118,12 @@ python scripts/verify_colorstats.py
 
 Reserved DOI https://doi.org/10.5281/zenodo.24308221 (deposit not yet published) ·
 [Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/colorstats-v1.0).
+
+## Paper III. Counting Steiner designs with prescribed color profiles
+
+For a fixed partition of the points into color classes, Paper III counts labeled Steiner designs with exactly prescribed interior block-type quotas for every fixed block size at least three. The enumeration gives a large-deviation principle for the profile of a uniformly chosen design.
+
+[English PDF](preprints/STEINER-PROFILES/01_manuscript/steiner_profiles_en.pdf) · [Spanish PDF](preprints/STEINER-PROFILES/01_manuscript/steiner_profiles_es.pdf) · [Formal companion](preprints/STEINER-PROFILES/05_formalization/formal_companion_en.pdf) · [Lean sources and proof catalogue](preprints/STEINER-PROFILES/05_formalization/steiner-profiles-lean.zip) · [Internal audit](publication/STEINER_PROFILES_RELEASE_AUDIT.json) · [Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/steiner-profiles-v1.0) · [DOI](https://doi.org/10.5281/zenodo.24501236).
 
 ## Licenses and status
 

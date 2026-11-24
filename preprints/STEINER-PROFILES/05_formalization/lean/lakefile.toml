@@ -1,0 +1,504 @@
+name = "KqR75"
+version = "0.1.0"
+defaultTargets = ["Reconstructed"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[require]]
+name = "LatinonEntropy"
+git = "https://github.com/jtraverso/latinon-entropy-ldp-lean.git"
+rev = "ec7025d0ecc2292292f3928183e9f03db420f379"
+
+[[require]]
+name = "refined_absorption"
+git = "https://github.com/jtraverso/refined-absorption-lean.git"
+rev = "0aa8a9838c5b6c7ee4653c0a4fb8b4ced2c29e95"
+
+[[lean_lib]]
+name = "ScaleLP"
+
+[[lean_lib]]
+name = "JohnsonScalars"
+
+[[lean_lib]]
+name = "Reconstructed"
+
+[[lean_lib]]
+name = "TransversalBank"
+
+[[lean_lib]]
+name = "SignedBlockScalar"
+
+[[lean_lib]]
+name = "GeneralJohnson"
+
+[[lean_lib]]
+name = "DistinctTriples"
+
+[[lean_lib]]
+name = "SignedBlock"
+
+[[lean_lib]]
+name = "EnergyFactor"
+
+[[lean_lib]]
+name = "WeightedEnergy"
+
+[[lean_lib]]
+name = "KqCore"
+
+[[lean_lib]]
+name = "CliqueGram"
+
+[[lean_lib]]
+name = "JohnsonAlgebra"
+
+[[lean_lib]]
+name = "IncidenceAlgebra"
+
+[[lean_lib]]
+name = "CompleteJohnson"
+
+[[lean_lib]]
+name = "FiniteProcess"
+
+[[lean_lib]]
+name = "MatrixPerturbation"
+
+[[lean_lib]]
+name = "RestrictedInverse"
+
+[[lean_lib]]
+name = "DeletedGram"
+
+[[lean_lib]]
+name = "SparseGram"
+
+[[lean_lib]]
+name = "LoadCorrection"
+
+[[lean_lib]]
+name = "HostCorrection"
+
+[[lean_lib]]
+name = "WeightedGreedy"
+
+[[lean_lib]]
+name = "FiniteAzuma"
+
+[[lean_lib]]
+name = "OverlapDrift"
+
+[[lean_lib]]
+name = "MeanEnergy"
+
+[[lean_lib]]
+name = "ScalarDrift"
+
+[[lean_lib]]
+name = "TimeEnergy"
+
+[[lean_lib]]
+name = "CodegreeLoss"
+
+[[lean_lib]]
+name = "CliqueCodegrees"
+
+[[lean_lib]]
+name = "GreedyMoments"
+
+[[lean_lib]]
+name = "GreedyProfile"
+
+[[lean_lib]]
+name = "PhysicalDrift"
+
+[[lean_lib]]
+name = "StoppedPhysical"
+
+[[lean_lib]]
+name = "TypeWeights"
+
+[[lean_lib]]
+name = "RatioStep"
+
+[[lean_lib]]
+name = "TypeMartingale"
+
+[[lean_lib]]
+name = "TypeCovariance"
+
+[[lean_lib]]
+name = "TypeDrift"
+
+[[lean_lib]]
+name = "TypeTracking"
+
+[[lean_lib]]
+name = "EnergyExit"
+
+[[lean_lib]]
+name = "StoppingGuard"
+
+[[lean_lib]]
+name = "TypeCounts"
+
+[[lean_lib]]
+name = "JointCorrection"
+
+[[lean_lib]]
+name = "ProfileWeights"
+
+[[lean_lib]]
+name = "ColouredCliques"
+
+[[lean_lib]]
+name = "PrunedWeights"
+
+[[lean_lib]]
+name = "GradedColumns"
+
+[[lean_lib]]
+name = "AffineCellCounts"
+
+[[lean_lib]]
+name = "SlotProfiles"
+
+[[lean_lib]]
+name = "SlotPairMargins"
+
+[[lean_lib]]
+name = "PhysicalProfileLifts"
+
+[[lean_lib]]
+name = "ProfileBalance"
+
+[[lean_lib]]
+name = "ResidualSeed"
+
+[[lean_lib]]
+name = "BankPlacement"
+
+[[lean_lib]]
+name = "BankCapacity"
+
+[[lean_lib]]
+name = "PhysicalAffineCell"
+
+[[lean_lib]]
+name = "PhysicalBank"
+
+[[lean_lib]]
+name = "BankScales"
+
+[[lean_lib]]
+name = "BasalBank"
+
+[[lean_lib]]
+name = "SeedScales"
+
+[[lean_lib]]
+name = "ReserveDeletion"
+
+[[lean_lib]]
+name = "GreedyScales"
+
+[[lean_lib]]
+name = "GreedySchedule"
+
+[[lean_lib]]
+name = "GreedyHorizon"
+
+[[lean_lib]]
+name = "TypeTails"
+
+[[lean_lib]]
+name = "TypeDriftEnvelope"
+
+[[lean_lib]]
+name = "CumulativeTypeDrift"
+
+[[lean_lib]]
+name = "TypeCountHorizon"
+
+[[lean_lib]]
+name = "PrefixTypeTests"
+
+[[lean_lib]]
+name = "HorizonConcentration"
+
+[[lean_lib]]
+name = "HorizonCountTheorem"
+
+[[lean_lib]]
+name = "PhysicalHorizonCounts"
+
+[[lean_lib]]
+name = "ReserveCuts"
+
+[[lean_lib]]
+name = "ReserveUpper"
+
+[[lean_lib]]
+name = "ReserveTails"
+
+[[lean_lib]]
+name = "ReserveRandom"
+
+[[lean_lib]]
+name = "ReserveRootLaws"
+
+[[lean_lib]]
+name = "ReserveExistence"
+
+[[lean_lib]]
+name = "ReserveScales"
+
+[[lean_lib]]
+name = "PhysicalReserve"
+
+[[lean_lib]]
+name = "CoverDown"
+
+[[lean_lib]]
+name = "CoverPacking"
+
+[[lean_lib]]
+name = "CoverIteration"
+
+[[lean_lib]]
+name = "CoverScales"
+
+[[lean_lib]]
+name = "CoverDegrees"
+
+[[lean_lib]]
+name = "CoverChoices"
+
+[[lean_lib]]
+name = "CoverSteps"
+
+[[lean_lib]]
+name = "CoverRatios"
+
+[[lean_lib]]
+name = "CoverGuards"
+
+[[lean_lib]]
+name = "CoverAssembly"
+
+[[lean_lib]]
+name = "CoverSelectors"
+
+[[lean_lib]]
+name = "CoverPairSelector"
+
+[[lean_lib]]
+name = "CoverBudgetScales"
+
+[[lean_lib]]
+name = "CoverThresholds"
+
+[[lean_lib]]
+name = "CoverComplete"
+
+[[lean_lib]]
+name = "CoverTransfer"
+
+[[lean_lib]]
+name = "PhysicalCover"
+
+[[lean_lib]]
+name = "BankDefect"
+
+[[lean_lib]]
+name = "BankSwitch"
+
+[[lean_lib]]
+name = "BankBudget"
+
+[[lean_lib]]
+name = "BankDesign"
+
+[[lean_lib]]
+name = "PrefixPacking"
+
+[[lean_lib]]
+name = "PrefixRecovery"
+
+[[lean_lib]]
+name = "PrefixCount"
+
+[[lean_lib]]
+name = "BankHorizon"
+
+[[lean_lib]]
+name = "PackingJoin"
+
+[[lean_lib]]
+name = "PhysicalDivisibility"
+
+[[lean_lib]]
+name = "CompletionBudget"
+
+[[lean_lib]]
+name = "BankReserve"
+
+[[lean_lib]]
+name = "PrefixMass"
+
+[[lean_lib]]
+name = "PrefixMassScales"
+
+[[lean_lib]]
+name = "PrefixLogSum"
+
+[[lean_lib]]
+name = "PrefixProbability"
+
+[[lean_lib]]
+name = "GoodPrefixProbability"
+
+[[lean_lib]]
+name = "PrefixCountFromLog"
+
+[[lean_lib]]
+name = "SeedLog"
+
+[[lean_lib]]
+name = "TypeScore"
+
+[[lean_lib]]
+name = "RepairedHostSeed"
+
+[[lean_lib]]
+name = "PhysicalPrefixScore"
+
+[[lean_lib]]
+name = "PhysicalPrefixTargets"
+
+[[lean_lib]]
+name = "PrefixScoreBudget"
+
+[[lean_lib]]
+name = "CorrectedCompletion"
+
+[[lean_lib]]
+name = "DesignFibre"
+
+[[lean_lib]]
+name = "UpperExceptional"
+
+[[lean_lib]]
+name = "UpperOwners"
+
+[[lean_lib]]
+name = "UpperReveal"
+
+[[lean_lib]]
+name = "UpperLogCutoff"
+
+[[lean_lib]]
+name = "UpperWeightedReveal"
+
+[[lean_lib]]
+name = "UpperExceptionalWeight"
+
+[[lean_lib]]
+name = "UpperFootprint"
+
+[[lean_lib]]
+name = "UpperReference"
+
+[[lean_lib]]
+name = "UpperEntropyIntegral"
+
+[[lean_lib]]
+name = "UpperPriorityBox"
+
+[[lean_lib]]
+name = "UpperPriorityCounts"
+
+[[lean_lib]]
+name = "UpperPriorityJensen"
+
+[[lean_lib]]
+name = "UpperPriorityAverage"
+
+[[lean_lib]]
+name = "UpperGridBound"
+
+[[lean_lib]]
+name = "UpperGridIntegral"
+
+[[lean_lib]]
+name = "UpperIntegralBound"
+
+[[lean_lib]]
+name = "UpperDesignFibre"
+
+[[lean_lib]]
+name = "UpperUniform"
+
+[[lean_lib]]
+name = "DesignFibreMass"
+
+[[lean_lib]]
+name = "UpperEntropyRate"
+
+[[lean_lib]]
+name = "HostCompletionDefect"
+
+[[lean_lib]]
+name = "CompletionWithCapacity"
+
+[[lean_lib]]
+name = "LowerFromHost"
+
+[[lean_lib]]
+name = "LowerHostScales"
+
+[[lean_lib]]
+name = "LowerHostEvent"
+
+[[lean_lib]]
+name = "LowerGeometry"
+
+[[lean_lib]]
+name = "LowerSeedInputs"
+
+[[lean_lib]]
+name = "LowerAssembly"
+
+[[lean_lib]]
+name = "Bilateral"
+
+[[lean_lib]]
+name = "ExactPairMargins"
+
+[[lean_lib]]
+name = "OmniBridge"
+
+[[lean_lib]]
+name = "R75"
+
+[[lean_lib]]
+name = "QuotaRounding"
+
+[[lean_lib]]
+name = "ProfileLDPPrinciple"
+
+[[lean_lib]]
+name = "ProfileTypeLaw"
+
+[[lean_lib]]
+name = "DesignProfileCounts"
+
+[[lean_lib]]
+name = "DesignProfileRates"
+
+[[lean_lib]]
+name = "DesignProfileLDP"

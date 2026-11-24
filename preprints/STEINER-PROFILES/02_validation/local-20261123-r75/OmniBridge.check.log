@@ -1,0 +1,4 @@
+'KqR75.OmniBridge.exists_omni' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KqR75.OmniBridge.physical_completion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KqR75.OmniBridge.eventually_omni' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KqR75.OmniBridge.physicalOmniPlacement_of_omni' depends on axioms: [propext, Classical.choice, Quot.sound]

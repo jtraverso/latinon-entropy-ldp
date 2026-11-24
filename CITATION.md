@@ -20,3 +20,5 @@ alphaXiv: <https://www.alphaxiv.org/abs/2611.steiner-latin-squares-color-statist
 
 The repository contains the bilingual manuscript and companion, the source-only
 Lean freeze and its internal audit. The three Zenodo DOIs are reserved; the deposits remain unpublished.
+
+Paper III. Juan Pablo Traverso Gianini, *Counting Steiner designs with prescribed color profiles*, preprint 1.0 (2026), DOI 10.5281/zenodo.24501236. [Citation metadata](preprints/STEINER-PROFILES/CITATION.cff).

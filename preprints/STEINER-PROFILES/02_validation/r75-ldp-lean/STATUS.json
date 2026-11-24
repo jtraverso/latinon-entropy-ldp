@@ -1,0 +1,44 @@
+{
+  "verdict": "PASS",
+  "scope": "Corollary 10.1, labelled design profile LDP",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "verification": "Local sequential compilation against pinned cached dependencies; direct replay through LeanChecker.replayFromImports",
+  "canonical_entry": "Reconstructed",
+  "build_exit_code": 0,
+  "kernel_replay_exit_code": 0,
+  "kernel_replay_modules": [
+    "ProfileTypeLaw",
+    "ProfileLDPPrinciple",
+    "DesignProfileCounts",
+    "DesignProfileRates",
+    "DesignProfileLDP",
+    "Reconstructed"
+  ],
+  "axioms": {
+    "KqR75.ProfileLDP.designProfileLDP": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "KqR75.ProfileLDP.designProfileLDP_probability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "r75/ProfileTypeLaw.lean": "833fa36d689e1139707e1f501204eeb1ccae3f3c86932f10f385169417ecd254",
+    "r75/ProfileLDPPrinciple.lean": "84d3de1032e90077967cb1a987e9d2518cf27fbd5cd4403829dec7fb912115ee",
+    "r75/DesignProfileCounts.lean": "2b5c03af459b410846ff7ec32774e8e8bf6f7a7f1beb406d4294c85936d08588",
+    "r75/DesignProfileRates.lean": "387ffa9b2fd57c3245908e715adb25634b47e0f2a211c7e6a1b36aef83b9cd75",
+    "r75/DesignProfileLDP.lean": "5ee79e7c3ca83d398048005077e78538201f5264ed35bd91e3a2e724dc5b310a",
+    "r75/Reconstructed.lean": "af7c7c5141194a74696d40d28faf92c94e72c6a2763d02c34c653dd8b99fd974",
+    "r75/lakefile.toml": "0788ca2e63c460bfd58e9be739f23467a83816838726c182144493a101085578",
+    "r75/lake-manifest.json": "0a256be9c91f3554454873c7a4decc3bfa87bf2d4fc5217692025a2d7bd7c261"
+  },
+  "evidence_sha256": {
+    "axioms.log": "9806ef47c20d6c2ce84ee8283dafb55615afc291367bde308f42f1c36c8b7f1e",
+    "kernel.log": "c15a04f1a30e6ce7d3e3a557ec6ee07c2947ae1bb2bc981b6d7d8baedcf54320",
+    "ReplayDesignProfile.lean": "c715fefc3fbc8b77c82a943a0608dd85ab5013789cf7bb2f34936b3475b53fe1"
+  }
+}
