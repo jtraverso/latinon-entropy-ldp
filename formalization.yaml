@@ -1,0 +1,66 @@
+version: v0.4
+project:
+  name: Counting Steiner designs with prescribed color profiles
+  description: For a fixed block size and a fixed vertex coloring into classes of linear size, this
+    formalization counts labeled Steiner designs with a prescribed interior integer histogram, bounds
+    all fibers above and proves the induced large-deviation principle at speed equal to the number
+    of blocks.
+  authors:
+  - Juan Pablo Traverso Gianini
+  responsible_maintainers:
+  - Juan Pablo Traverso Gianini
+  license: Apache-2.0
+classification:
+  arxiv:
+  - math.CO
+  - math.PR
+  msc2020:
+  - 05B05
+  - 05A16
+  - 60F10
+sources:
+- title: Counting Steiner designs with prescribed color profiles
+  type: paper
+  authors:
+  - Juan Pablo Traverso Gianini
+  id: https://doi.org/10.5281/zenodo.24501236
+  location: https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/steiner-profiles-v1.0
+  relationship: formalizes
+  note: Paper III, preprint 1.0. Theorem 1.1 and Corollary 10.1.
+related_formalizations:
+- id: https://github.com/jtraverso/refined-absorption-lean
+  relationship: builds-on
+  note: The pinned RefinedAbsorption package provides the omniabsorber used to finish the packing.
+- id: https://github.com/jtraverso/latinon-entropy-ldp-lean
+  relationship: builds-on
+  note: Pinned library dependency of the source freeze.
+status:
+  scope: The three selected declarations give both sides of the interior count, the upper bound for
+    all fibers and the large-deviation bounds including compact rate sublevels.
+  sorry_count: 3
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+automation:
+  methods:
+  - method: manual
+  - method: agent
+    models:
+    - Claude
+    - ChatGPT/Codex
+    tool_setup: Human-directed mathematical development, Lean proof implementation, tactics and editorial
+      assistance.
+  notes: The three statement holes belong to Challenge. Solution imports the unchanged proof modules
+    of the published archive.
+fidelity:
+  divergences: The probability formulation quantifies over real thresholds for closed and open events.
+    This expresses the manuscript logarithmic bounds along admissible orders, including events of
+    probability zero.
+review:
+  status: agent-reviewed
+  reviewers:
+  - Codex, under direction of the author
+  notes: Comparison with the public formal companion and the released Lean archive. The recorded
+    source freeze contains 162 modules and a kernel replay of 1,997 project declarations.

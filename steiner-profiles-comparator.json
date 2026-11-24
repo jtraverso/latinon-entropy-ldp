@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "KqR75.ProfileLDP.designProfileLDP_probability",
+    "KqR75.UpperCounting.eventually_card_designFibre_upper_entropy",
+    "KqR75.PhysicalCompletion.eventually_designFibre_bilateral"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

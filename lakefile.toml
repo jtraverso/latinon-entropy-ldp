@@ -1,0 +1,15 @@
+name = "SteinerProfilesPalomar"
+version = "1.0.0"
+defaultTargets = ["Solution"]
+
+[[require]]
+name = "KqR75"
+git = "https://github.com/jtraverso/latinon-entropy-ldp.git"
+rev = "ab9f71e846762e488ee8de148154eb258507820e"
+subDir = "preprints/STEINER-PROFILES/05_formalization/lean"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
