@@ -65,7 +65,9 @@
         "LATINON",
         "COLORSTATS"
       ],
-      "release_tag": "steiner-profiles-v1.0"
+      "release_tag": "steiner-profiles-v1.0",
+      "doi_status": "published",
+      "zenodo_record": "https://zenodo.org/records/24501236"
     }
   ],
   "series": {
