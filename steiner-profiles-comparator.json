@@ -1,6 +1,6 @@
 {
-  "challenge_module": "Challenge",
-  "solution_module": "Solution",
+  "challenge_module": "SteinerProfilesChallenge",
+  "solution_module": "SteinerProfilesSolution",
   "theorem_names": [
     "KqR75.ProfileLDP.designProfileLDP_probability",
     "KqR75.UpperCounting.eventually_card_designFibre_upper_entropy",

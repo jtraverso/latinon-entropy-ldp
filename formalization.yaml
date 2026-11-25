@@ -52,7 +52,7 @@ automation:
     - ChatGPT/Codex
     tool_setup: Human-directed mathematical development, Lean proof implementation, tactics and editorial
       assistance.
-  notes: The three statement holes belong to Challenge. Solution imports the unchanged proof modules
+  notes: The three statement holes belong to SteinerProfilesChallenge. SteinerProfilesSolution imports the unchanged proof modules
     of the published archive.
 fidelity:
   divergences: The probability formulation quantifies over real thresholds for closed and open events.
