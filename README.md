@@ -125,6 +125,17 @@ For a fixed partition of the points into color classes, Paper III counts labeled
 
 [English PDF](preprints/STEINER-PROFILES/01_manuscript/steiner_profiles_en.pdf) · [Spanish PDF](preprints/STEINER-PROFILES/01_manuscript/steiner_profiles_es.pdf) · [Formal companion](preprints/STEINER-PROFILES/05_formalization/formal_companion_en.pdf) · [Lean sources and proof catalogue](preprints/STEINER-PROFILES/05_formalization/steiner-profiles-lean.zip) · [Internal audit](publication/STEINER_PROFILES_RELEASE_AUDIT.json) · [Release](https://github.com/jtraverso/latinon-entropy-ldp/releases/tag/steiner-profiles-v1.0) · [DOI](https://doi.org/10.5281/zenodo.24501236).
 
+## Palomar registry / Registro Palomar
+
+The Lean formalizations of Paper I and of the research note are registered in [Palomar](https://palomar-registry.org), a registry of Lean-verified results that rebuilds the sources, checks the stated theorems against a Mathlib-only challenge file and replays the proofs in independent kernels.
+
+| Work | Palomar | Lean source |
+|---|---|---|
+| Paper I — Entropy and large deviations for Latin squares | **Registered** as [PALOMAR-2026-11-17-000016](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-17-000016&version=1) (version 1, 17 November 2026) · [archived copy](https://github.com/PalomarArchive/jtraverso--latinon-entropy-ldp-lean--62688703585a/tree/palomar/PALOMAR-2026-11-17-000016-v1/ec7025d0ecc2292292f3928183e9f03db420f379) | [jtraverso/latinon-entropy-ldp-lean @ ec7025d](https://github.com/jtraverso/latinon-entropy-ldp-lean/tree/ec7025d0ecc2292292f3928183e9f03db420f379) |
+| Research note — Kernel and measure representations of Latinons | **Registered** as [PALOMAR-2026-11-18-000001](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-18-000001&version=1) (version 1, 18 November 2026) · [archived copy](https://github.com/PalomarArchive/jtraverso--latinon-ghhs-bridge-lean--4d27af40ceb0/tree/palomar/PALOMAR-2026-11-18-000001-v1/7ebcc4b46c78fc900e8d6a9f0881dbb918940fdb) | [jtraverso/latinon-ghhs-bridge-lean @ 7ebcc4b](https://github.com/jtraverso/latinon-ghhs-bridge-lean/tree/7ebcc4b46c78fc900e8d6a9f0881dbb918940fdb) |
+
+*En español:* las formalizaciones en Lean del Artículo I y de la nota de investigación están registradas en Palomar (Artículo I: PALOMAR-2026-11-17-000016; nota: PALOMAR-2026-11-18-000001). Los Artículos II y III no tienen todavía una entrada en Palomar.
+
 ## Licenses and status
 
 The manuscripts and companions use [CC BY 4.0](LICENSE.md). The Lean sources
